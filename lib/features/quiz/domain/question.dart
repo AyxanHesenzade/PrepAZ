@@ -12,6 +12,7 @@ class Question {
     required this.correctAnswer,
     required this.difficulty,
     required this.solution,
+    this.solutionImagePath,
   });
 
   final String id;
@@ -31,7 +32,26 @@ class Question {
   final int difficulty;
   final String? solution;
 
+  /// Rəsmi izahın şəkli. Varsa, izah mətni əvəzinə göstərilir (kəsrlər və cədvəllər mətndə pozulur).
+  final String? solutionImagePath;
+
+  /// Eyni sual, şəkilsiz. Şəkil funksiyası söndürülən zaman istifadə olunur.
+  Question withoutImages() => Question(
+        id: id,
+        code: code,
+        topicId: topicId,
+        type: type,
+        body: body,
+        imagePath: null,
+        options: options,
+        correctAnswer: correctAnswer,
+        difficulty: difficulty,
+        solution: solution,
+      );
+
   bool get isClosed => type == QuestionType.qapali;
   bool get hasImage => imagePath != null && imagePath!.isNotEmpty;
-  bool get hasSolution => solution != null && solution!.isNotEmpty;
+  bool get hasSolutionText => solution != null && solution!.isNotEmpty;
+  bool get hasSolutionImage => solutionImagePath != null && solutionImagePath!.isNotEmpty;
+  bool get hasSolution => hasSolutionImage || hasSolutionText;
 }

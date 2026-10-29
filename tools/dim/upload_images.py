@@ -29,7 +29,7 @@ UPLOAD_DIR = HERE / "out" / "upload"
 
 def needed_files(excel):
     chosen, _skipped = select_rows(read_rows(excel))
-    return sorted({r["şəkil"] for _i, r in chosen if r["şəkil"]})
+    return sorted({r[col] for _i, r in chosen for col in ("şəkil", "izah şəkli") if r[col]})
 
 
 def upload_one(base_url, key, name, data):

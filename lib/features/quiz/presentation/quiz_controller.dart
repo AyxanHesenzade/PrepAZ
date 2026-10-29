@@ -19,7 +19,9 @@ class QuizController extends AsyncNotifier<QuizState> {
 
   @override
   Future<QuizState> build() async {
-    final questions = await _repo.getDailySet(subjectId);
+    final loaded = await _repo.getDailySet(subjectId);
+    final showImages = ref.read(imagesEnabledProvider);
+    final questions = showImages ? loaded : [for (final q in loaded) q.withoutImages()];
     final sessionId = questions.isEmpty ? null : await _repo.startSession(subjectId);
     _shownAt = DateTime.now();
     return QuizState.initial(questions, sessionId);

@@ -212,7 +212,7 @@ def parse_block(block, exam):
     }
 
 
-def column_areas(doc, q_lines):
+def column_areas(doc, q_lines, pad=4):
     """[(page_no, Rect)] of the question area, restricted to its text column (pages are two-column)."""
     groups = {}
     for l in q_lines:
@@ -230,14 +230,14 @@ def column_areas(doc, q_lines):
         x0, x1 = {0: (page.rect.x0 + 24, mid - 2), 1: (mid + 2, page.rect.x1 - 24)}.get(
             col, (page.rect.x0 + 24, page.rect.x1 - 24)
         )
-        areas.append((pn, pymupdf.Rect(x0, min(b[1] for b in boxes) - 4, x1, max(b[3] for b in boxes) + 4)))
+        areas.append((pn, pymupdf.Rect(x0, min(b[1] for b in boxes) - pad, x1, max(b[3] for b in boxes) + pad)))
     return areas
 
 
-def crop_figure(doc, q_lines, name):
+def crop_figure(doc, q_lines, name, pad=4):
     """Crops the question area into one PNG (column parts stitched top to bottom)."""
     imgs = []
-    for pn, rect in column_areas(doc, q_lines):
+    for pn, rect in column_areas(doc, q_lines, pad):
         tmp = IMAGES / f"_{name}.png"
         doc[pn].get_pixmap(matrix=pymupdf.Matrix(2, 2), clip=rect).save(tmp)
         imgs.append(Image.open(tmp).copy())
@@ -306,6 +306,7 @@ def main():
                 "visual": sorted(visual_reasons(doc, ctx + b["q_lines"])),
                 "q_lines": lines_data(ctx + b["q_lines"]),
                 "expl_visual": sorted(visual_reasons(doc, b["expl_lines"])) if b["expl_lines"] else [],
+                "expl_q_lines": lines_data(b["expl_lines"]),
                 "short_lines": sum(
                     1 for l in b["q_lines"]
                     if len(re.sub(f"[{MARKS}]", "", l["text"]).strip()) <= 14 and not re.match(r"\s*A\)", l["text"])

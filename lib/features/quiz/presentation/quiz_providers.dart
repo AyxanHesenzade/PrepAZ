@@ -1,10 +1,14 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../core/config/app_features.dart';
 import '../../../core/providers.dart';
 import '../data/supabase_question_image_repository.dart';
 import '../data/supabase_quiz_repository.dart';
 import '../domain/question_image_repository.dart';
 import '../domain/quiz_repository.dart';
+
+/// Şəkillər göstərilsin? Testlərdə override olunur.
+final imagesEnabledProvider = Provider<bool>((ref) => AppFeatures.questionImages);
 
 final quizRepositoryProvider = Provider<QuizRepository>(
   (ref) => SupabaseQuizRepository(ref.watch(supabaseClientProvider)),

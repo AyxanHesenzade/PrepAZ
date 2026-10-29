@@ -79,8 +79,9 @@ def check(path):
             err("aciq_eded answer is not a number")
         if not r["düzgün cavab"] and not flagged:
             err("empty answer and not flagged")
-        if r["şəkil"] and not (Path(path).parent.parent / "images" / r["şəkil"]).exists():
-            err("image file missing")
+        for col in ("şəkil", "izah şəkli"):
+            if r[col] and not (Path(path).parent.parent / "images" / r[col]).exists():
+                err(f"{col} file missing")
     if empty_difficulty:
         warnings.append(f"{empty_difficulty} rows with empty çətinlik (expected: teacher fills it)")
     return errors, warnings

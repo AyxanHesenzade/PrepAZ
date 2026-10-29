@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:prep_az/features/quiz/data/supabase_quiz_repository.dart';
 import 'package:prep_az/features/quiz/domain/question.dart';
 
-Map<String, dynamic> row({String type = 'qapali', Object? options, String? imagePath}) => {
+Map<String, dynamic> row({String type = 'qapali', Object? options, String? imagePath, String? solutionImage}) => {
       'id': 'uuid-1',
       'code': 'KIM-0001',
       'topic_id': 7,
@@ -13,6 +13,7 @@ Map<String, dynamic> row({String type = 'qapali', Object? options, String? image
       'correct_answer': 'C',
       'difficulty': 3,
       'solution': 'izah',
+      'solution_image_path': solutionImage,
     };
 
 void main() {
@@ -41,5 +42,13 @@ void main() {
     final q = questionFromRow({...row(options: {'A': 1}), 'difficulty': 4.0, 'topic_id': 2.0});
     expect(q.difficulty, 4);
     expect(q.options['A'], '1');
+  });
+
+  test('explanation image path is read; a missing column (before migration 003) means no image', () {
+    expect(questionFromRow(row(options: {'A': 'a'}, solutionImage: 'KIM-0001_izah.png')).hasSolutionImage, isTrue);
+    final withoutColumn = row(options: {'A': 'a'})..remove('solution_image_path');
+    final q = questionFromRow(withoutColumn);
+    expect(q.hasSolutionImage, isFalse);
+    expect(q.hasSolutionText, isTrue);
   });
 }

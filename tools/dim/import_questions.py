@@ -101,8 +101,9 @@ def validate(chosen, images_dir):
                 err(f"{col}: \\ce istifadə olunub")
             if v.count("$") % 2:
                 err(f"{col}: $ cüt deyil")
-        if r["şəkil"] and not (images_dir / r["şəkil"]).exists():
-            err(f"şəkil faylı yoxdur: {r['şəkil']}")
+        for col in ("şəkil", "izah şəkli"):
+            if r[col] and not (images_dir / r[col]).exists():
+                err(f"{col} faylı yoxdur: {r[col]}")
     if errors:
         raise ImportErrors(errors)
 
@@ -123,7 +124,7 @@ def build_sql(chosen):
             "  (" + ", ".join([
                 lit(r["kod"]), lit(r["bölmə"]), lit(r["mövzu"]), lit(r["tip"]), lit(r["sual mətni"]),
                 lit(r["şəkil"]), lit(options), lit(r["düzgün cavab"]), lit(r["çətinlik"]), lit(r["həll"]),
-                lit(groups), lit(r["il"]), lit(r["mənbədə yeri"]),
+                lit(groups), lit(r["il"]), lit(r["mənbədə yeri"]), lit(r["izah şəkli"]),
             ]) + ")"
         )
     codes = ", ".join(lit(r["kod"]) for _i, r in chosen)
@@ -144,6 +145,10 @@ begin
   if not exists (select 1 from pg_enum e join pg_type t on t.oid = e.enumtypid
                   where t.typname = 'exam_level' and e.enumlabel = 'qebul') then
     raise exception 'exam_level enum-unda qebul etiketi yoxdur: import dayandırıldı';
+  end if;
+  if not exists (select 1 from information_schema.columns
+                  where table_schema = 'public' and table_name = 'questions' and column_name = 'solution_image_path') then
+    raise exception 'questions.solution_image_path yoxdur: əvvəl db/migrations/003_solution_image.sql işlədin';
   end if;
   if (select count(*) from pg_enum e join pg_type t on t.oid = e.enumtypid
        where t.typname = 'question_type' and e.enumlabel in ('qapali', 'aciq_eded')) < 2 then
@@ -174,14 +179,14 @@ on conflict (subject_id, parent_id, name) do nothing;
 
 -- 3) questions, upserted by code
 insert into questions (code, topic_id, type, body, image_path, options, correct_answer, difficulty, solution,
-                       exam_levels, groups, year, source, source_ref, is_active)
+                       exam_levels, groups, year, source, source_ref, is_active, solution_image_path)
 select v.code, t.id, v.type::question_type, v.body, v.image_path, v.options::jsonb, v.correct,
        v.difficulty::smallint, v.solution, array['qebul']::exam_level[], v.groups::smallint[],
-       v.year::smallint, 'DİM', v.source_ref, true
+       v.year::smallint, 'DİM', v.source_ref, true, v.solution_image_path
   from (values
 {",\n".join(q_rows)}
        ) as v(code, section, topic, type, body, image_path, options, correct, difficulty, solution,
-              groups, year, source_ref)
+              groups, year, source_ref, solution_image_path)
   join subjects s on s.slug = '{SUBJECT_SLUG}'
   join topics sec on sec.subject_id = s.id and sec.parent_id is null and sec.name = v.section
   join topics t on t.subject_id = s.id and t.parent_id = sec.id and t.name = v.topic
@@ -190,7 +195,7 @@ on conflict (code) do update set
   options = excluded.options, correct_answer = excluded.correct_answer, difficulty = excluded.difficulty,
   solution = excluded.solution, exam_levels = excluded.exam_levels, groups = excluded.groups,
   year = excluded.year, source = excluded.source, source_ref = excluded.source_ref,
-  is_active = excluded.is_active;
+  is_active = excluded.is_active, solution_image_path = excluded.solution_image_path;
 
 -- 4) every approved question must now exist (a missing topic would silently drop a row from the join)
 do $$

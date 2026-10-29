@@ -6,6 +6,7 @@ import '../../../../core/theme/app_spacing.dart';
 import '../../../../core/widgets/math_text.dart';
 import '../../domain/answer_result.dart';
 import '../../domain/question.dart';
+import 'question_image.dart';
 
 /// Cavabdan sonra: düz/səhv, düzgün cavab və müəllimin yazdığı həll.
 class AnswerFeedback extends StatelessWidget {
@@ -38,7 +39,10 @@ class AnswerFeedback extends StatelessWidget {
             AppSpacing.gapS,
             Text(AppStrings.solution, style: const TextStyle(fontWeight: FontWeight.w500)),
             AppSpacing.gapXs,
-            MathText(question.solution!),
+            if (question.hasSolutionImage)
+              QuestionImage(question.solutionImagePath!)
+            else
+              MathText(question.solution!),
           ],
           if (!result.isCorrect && !pending) ...[
             AppSpacing.gapS,

@@ -104,3 +104,9 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - `build_xlsx.py` mövcud Excel-in üstünə yazmır (KIM-xxxx kodları bazada açardır).
 - Tətbiqdə məşq feature-ı hazırdır: `lib/features/quiz` (LaTeX, şəkil + zoom, izah, nəticə), ana səhifədə zəif mövzular.
 - Baza qeydi: `topic_mastery` view-ı bütün istifadəçilərin sətirlərini saxlayır; tətbiq `user_id` ilə süzür, amma view `security_invoker` deyilsə, bu RLS səviyyəsində açıqdır.
+- İzah şəkli: hər sual üçün orijinal izah `images/KIM-xxxx_izah.png` (kəsr/cədvəl mətndə pozulur). Excel sütunu `izah şəkli`, baza sütunu
+  `questions.solution_image_path` (db/migrations/003; get_daily_set da yenilənir, çünki `setof questions` qaytarır). Tətbiq şəkli mətn əvəzinə göstərir.
+- Yeni sütun əlavə etmək: `sync_new_columns.py` (təsdiqləri pozmur). Əsas Excel-i heç vaxt `build_xlsx.py --force` ilə yenidən qurma.
+- 2-ci partiya: `make_teacher_file.py --batch 2` → `muellim_2_dest.xlsx` (46 sual, orijinal şəkillər faylın içindədir); `merge_review.py out/muellim_2_dest.xlsx`.
+- Yükləmə ardıcıllığı: 003 migration → 002 migration → `import_kimya.sql` → şəkillər (`upload_images.py --prepare` və ya `--upload`).
+- Şəkillər hələlik SÖNDÜRÜLÜB: `lib/core/config/app_features.dart` → `questionImages = false` (tətbiq Storage-i çağırmır, mətn göstərir). Kod, baza sütunları və yüklənmiş fayllar saxlanılıb; yenidən açmaq üçün `true`.

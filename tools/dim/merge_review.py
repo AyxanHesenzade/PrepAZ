@@ -21,7 +21,7 @@ HEADER_ROW = 3  # rows 1-2 hold the instruction
 
 
 def read_teacher(path):
-    ws = load_workbook(path)["Müəllim 1-ci dəst"]
+    ws = load_workbook(path).worksheets[0]  # 'Müəllim 1-ci dəst' or 'Müəllim 2-ci dəst'
     header = [c.value for c in ws[HEADER_ROW]]
     col = {h: i for i, h in enumerate(header)}
     rows = []

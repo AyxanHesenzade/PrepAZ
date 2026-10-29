@@ -12,6 +12,7 @@ Question closedQuestion({
   String correct = 'B',
   String? imagePath,
   String? solution = 'İzah mətni',
+  String? solutionImagePath,
 }) =>
     Question(
       id: id,
@@ -24,6 +25,7 @@ Question closedQuestion({
       correctAnswer: correct,
       difficulty: 3,
       solution: solution,
+      solutionImagePath: solutionImagePath,
     );
 
 Question numericQuestion({String id = 'n1', String correct = '9,2'}) => Question(
@@ -87,9 +89,11 @@ class FakeImageRepository implements QuestionImageRepository {
   FakeImageRepository({this.fail = true});
 
   final bool fail;
+  int calls = 0;
 
   @override
   Future<String> signedUrl(String path) async {
+    calls++;
     if (fail) throw const AppException(AppStrings.imageFailed);
     return 'https://example.invalid/$path';
   }

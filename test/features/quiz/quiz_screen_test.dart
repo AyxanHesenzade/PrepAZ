@@ -19,9 +19,10 @@ class _HangingImages implements QuestionImageRepository {
   Future<String> signedUrl(String path) => Completer<String>().future;
 }
 
-Widget app(FakeQuizRepository repo, {QuestionImageRepository? images}) => ProviderScope(
+Widget app(FakeQuizRepository repo, {QuestionImageRepository? images, bool imagesEnabled = true}) => ProviderScope(
       retry: (_, _) => null,
       overrides: [
+        imagesEnabledProvider.overrideWithValue(imagesEnabled),
         quizRepositoryProvider.overrideWithValue(repo),
         questionImageRepositoryProvider.overrideWithValue(images ?? FakeImageRepository()),
       ],
@@ -150,5 +151,50 @@ void main() {
 
     expect(find.text(AppStrings.imageFailed), findsNothing);
     expect(find.byType(Image), findsNothing);
+  });
+
+  testWidgets('explanation image replaces the text; without an image the text is shown', (tester) async {
+    await tester.pumpWidget(app(FakeQuizRepository([
+      closedQuestion(id: 'a', correct: 'A', solution: 'Dağınıq mətn', solutionImagePath: 'KIM-0001_izah.png'),
+      closedQuestion(id: 'b', correct: 'A', solution: 'Təmiz mətn'),
+    ])));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('A)'));
+    await tester.pump();
+    await tester.tap(find.text(AppStrings.check));
+    await tester.pumpAndSettle();
+    expect(find.text('Dağınıq mətn'), findsNothing, reason: 'the image is the explanation');
+    expect(find.text(AppStrings.imageFailed), findsOneWidget, reason: 'the fake repository fails to sign the link');
+
+    await tester.tap(find.text(AppStrings.nextQuestion));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('A)'));
+    await tester.pump();
+    await tester.tap(find.text(AppStrings.check));
+    await tester.pumpAndSettle();
+    expect(find.text('Təmiz mətn'), findsOneWidget);
+  });
+
+  testWidgets('images switched off: no image is requested or shown, the text explanation appears', (tester) async {
+    final images = FakeImageRepository(fail: false);
+    await tester.pumpWidget(app(
+      FakeQuizRepository([
+        closedQuestion(correct: 'A', imagePath: 'KIM-0001.png', solution: 'Mətn izahı', solutionImagePath: 'KIM-0001_izah.png'),
+      ]),
+      images: images,
+      imagesEnabled: false,
+    ));
+    await tester.pumpAndSettle();
+
+    expect(find.byType(Image), findsNothing);
+    await tester.tap(find.text('A)'));
+    await tester.pump();
+    await tester.tap(find.text(AppStrings.check));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Mətn izahı'), findsOneWidget);
+    expect(find.text(AppStrings.imageFailed), findsNothing);
+    expect(images.calls, 0, reason: 'Storage must not be called when images are off');
   });
 }

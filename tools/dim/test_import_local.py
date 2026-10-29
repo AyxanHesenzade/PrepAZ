@@ -64,6 +64,17 @@ def approve(path, rows):
     wb.save(path)
 
 
+def reset_decisions(path):
+    """The real Excel already holds approvals; tests must start from a clean slate."""
+    wb = load_workbook(path)
+    ws = wb["suallar"]
+    header = [c.value for c in ws[1]]
+    for r in range(2, ws.max_row + 1):
+        ws.cell(r, header.index("aktiv") + 1).value = "xeyr"
+        ws.cell(r, header.index("çətinlik") + 1).value = None
+    wb.save(path)
+
+
 def pick_codes():
     ws = load_workbook(SOURCE)["suallar"]
     header = [c.value for c in ws[1]]
@@ -82,6 +93,7 @@ def main():
     work = Path(tempfile.mkdtemp())
     excel = work / "test.xlsx"
     shutil.copy(SOURCE, excel)
+    reset_decisions(excel)
     approve(excel, {c: (3, "bəli") for c in approved} | {written: (2, "bəli"), no_diff: ("", "bəli")})
 
     # ---- generate SQL
@@ -96,7 +108,25 @@ def main():
 
     srv = pgserver.get_server(Path(tempfile.mkdtemp()) / "pg")
     try:
+        migration_003 = (HERE.parent.parent / "db" / "migrations" / "003_solution_image.sql").read_text(encoding="utf-8")
+        db0 = make_db(srv, "kimya_no003")
+        try:
+            db0.execute(sql)
+            check("import without migration 003 stops at the pre-flight", False)
+        except psycopg.errors.RaiseException as e:
+            check("import without migration 003 stops at the pre-flight", "003" in str(e))
+        db0.execute("rollback")
+        check("nothing written without migration 003", db0.execute("select count(*) from questions").fetchone()[0] == 0)
+
         db = make_db(srv, "kimya_test")
+        before = db.execute("select count(*) from get_daily_set(1::smallint, 5)").fetchone()[0]
+        db.execute(migration_003)
+        db.execute(migration_003)
+        check("migration 003 is idempotent and get_daily_set still works after it",
+              db.execute("select count(*) from get_daily_set(1::smallint, 5)").fetchone()[0] == before == 0)
+        check("migration 003 adds solution_image_path",
+              db.execute("select count(*) from information_schema.columns where table_name = 'questions' "
+                         "and column_name = 'solution_image_path'").fetchone()[0] == 1)
         topics_before = db.execute("select count(*) from topics").fetchone()[0]
         db.execute(sql)
         n_q = db.execute("select count(*) from questions").fetchone()[0]
@@ -109,6 +139,8 @@ def main():
                          "and exam_levels = '{qebul}' and groups <> '{}' and is_active").fetchone()[0] == n_q)
         check("image_path stored for the image question",
               db.execute("select image_path from questions where code = %s", (image,)).fetchone()[0] == f"{image}.png")
+        check("every question has its explanation image path stored",
+              db.execute("select count(*) from questions where solution_image_path like 'KIM-%_izah.png'").fetchone()[0] == n_q)
         check("aciq_eded has no options, qapali has A-E",
               db.execute("select options is null from questions where code = %s", (numeric,)).fetchone()[0]
               and db.execute("select count(*) from jsonb_object_keys((select options from questions where code = %s))",
@@ -142,8 +174,9 @@ def main():
         db.execute("reset role")
         kimya_id = db.execute("select id from subjects where slug = 'kimya'").fetchone()[0]
         db.execute("set role authenticated")
-        daily = db.execute("select code, type, correct_answer, image_path from get_daily_set(%s::smallint, 50)",
-                           (kimya_id,)).fetchall()
+        daily = db.execute("select code, type, correct_answer, image_path, solution_image_path "
+                           "from get_daily_set(%s::smallint, 50)", (kimya_id,)).fetchall()
+        check("get_daily_set returns the explanation image path", all(r[4] for r in daily))
         check("get_daily_set returns all loaded chemistry questions", len(daily) == n_q, f"{len(daily)} vs {n_q}")
 
         by_code = {r[0]: r for r in daily}
@@ -206,6 +239,7 @@ def main():
     # ---- negative: invalid approved rows -> errors with row numbers, no SQL file
     bad_excel, bad_sql = work / "bad.xlsx", work / "bad.sql"
     shutil.copy(SOURCE, bad_excel)
+    reset_decisions(bad_excel)
     approve(bad_excel, {clean[0]: (9, "bəli"), clean[1]: (3, "bəli")})
     wb = load_workbook(bad_excel)
     ws = wb["suallar"]

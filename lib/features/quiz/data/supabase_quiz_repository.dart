@@ -80,6 +80,7 @@ Question questionFromRow(Map<String, dynamic> row) {
     correctAnswer: row['correct_answer'] as String,
     difficulty: (row['difficulty'] as num).toInt(),
     solution: row['solution'] as String?,
+    solutionImagePath: row['solution_image_path'] as String?,
   );
 }
 

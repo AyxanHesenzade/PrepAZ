@@ -19,6 +19,7 @@ from extract_kimya import FILES, IMAGES, OUT, RAW, collapse, crop_figure, parse_
 COLUMNS = [
     "kod", "fənn", "bölmə", "mövzu", "DİM mövzusu", "tip", "sual mətni", "A", "B", "C", "D", "E", "düzgün cavab", "çətinlik", "həll",
     "şəkil", "səviyyə", "qruplar", "il", "mənbə", "mənbədə yeri", "aktiv", "yoxlanmalı", "qeyd", "sinif",
+    "izah şəkli",
 ]
 ROMAN_CLASS = {"VII": "7", "VIII": "8", "IX": "9", "X": "10", "XI": "11"}
 NUMERIC = re.compile(r"-?\d+(?:[.,]\d+)?")
@@ -95,11 +96,14 @@ def build_row(r):
         "places": [f"{r['exam']}, A variantı №{r['a_no']}"],
         "crop": (r["file"], r["q_lines"]) if (r["visual"] or r["ctx_text"] or r["short_lines"] >= 5) else None,
         "file": r["file"],
+        "expl_crop": r.get("expl_q_lines") or None,
     }
 
 
 def main():
     target = OUT / "kimya_dim_yoxlama.xlsx"
+    if "--out" in sys.argv:
+        target = Path(sys.argv[sys.argv.index("--out") + 1])
     if target.exists() and "--force" not in sys.argv:
         sys.exit(
             f"{target.name} already exists. Codes (KIM-xxxx) are keys in the database and the teacher edits this file: "
@@ -136,6 +140,10 @@ def main():
         if b["crop"]:
             crop_figure(docs[b["crop"][0]], b["crop"][1], kod)
             image = f"{kod}.png"
+        expl_image = ""
+        if b["expl_crop"]:
+            expl_image = f"{kod}_izah.png"
+            crop_figure(docs[b["file"]], b["expl_crop"], f"{kod}_izah", pad=0)
         flagged = bool(b["reasons"])
         if flagged:
             flagged_by_file[b["file"]] += 1
@@ -148,11 +156,12 @@ def main():
             b["correct"], "", b["solution"], image, "qebul",
             ",".join(dict.fromkeys(b["groups"])), ",".join(str(y) for y in dict.fromkeys(b["years"])),
             "DİM", "; ".join(b["places"]), "xeyr", "bəli" if flagged else "", "; ".join(b["reasons"]), b["sinif"],
+            expl_image,
         ])
         if flagged:
             for c in ws[ws.max_row]:
                 c.fill = YELLOW
-    for col, w in zip("ABCDEFGHIJKLMNOPQRSTUVWXY", (10, 8, 16, 34, 34, 10, 60, 24, 24, 24, 24, 24, 12, 9, 50, 14, 9, 8, 8, 6, 34, 7, 11, 40, 7)):
+    for col, w in zip("ABCDEFGHIJKLMNOPQRSTUVWXYZ", (10, 8, 16, 34, 34, 10, 60, 24, 24, 24, 24, 24, 12, 9, 50, 14, 9, 8, 8, 6, 34, 7, 11, 40, 7, 16)):
         ws.column_dimensions[col].width = w
     for row in ws.iter_rows(min_row=2):
         for c in row:
@@ -174,7 +183,7 @@ def main():
     s.column_dimensions["B"].width = 30
     s.column_dimensions["C"].width = 16
     s.column_dimensions["D"].width = 34
-    wb.save(OUT / "kimya_dim_yoxlama.xlsx")
+    wb.save(target)
     print(f"questions {len(merged)} (from {sum(per_file.values())}), flagged {sum(flagged_by_file.values())}")
     print("reasons:", collections.Counter(r.split(" ")[0] + " " + (r.split(" ")[1] if " " in r else "") for b in merged for r in b["reasons"]).most_common(12))
 
