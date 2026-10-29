@@ -1,0 +1,45 @@
+import 'package:flutter_test/flutter_test.dart';
+import 'package:prep_az/features/quiz/data/supabase_quiz_repository.dart';
+import 'package:prep_az/features/quiz/domain/question.dart';
+
+Map<String, dynamic> row({String type = 'qapali', Object? options, String? imagePath}) => {
+      'id': 'uuid-1',
+      'code': 'KIM-0001',
+      'topic_id': 7,
+      'type': type,
+      'body': r'$\mathrm{H_{2}O}$',
+      'image_path': imagePath,
+      'options': options,
+      'correct_answer': 'C',
+      'difficulty': 3,
+      'solution': 'izah',
+    };
+
+void main() {
+  test('closed question: options are ordered by letter regardless of JSON order', () {
+    final q = questionFromRow(row(options: {'C': 'c', 'A': 'a', 'E': 'e', 'B': 'b', 'D': 'd'}, imagePath: 'KIM-0001.png'));
+    expect(q.type, QuestionType.qapali);
+    expect(q.options.keys.toList(), ['A', 'B', 'C', 'D', 'E']);
+    expect(q.hasImage, isTrue);
+    expect(q.imagePath, 'KIM-0001.png');
+    expect(q.topicId, 7);
+  });
+
+  test('numeric open question has no options and no image', () {
+    final q = questionFromRow(row(type: 'aciq_eded'));
+    expect(q.type, QuestionType.aciqEded);
+    expect(q.options, isEmpty);
+    expect(q.isClosed, isFalse);
+    expect(q.hasImage, isFalse);
+  });
+
+  test('empty image path counts as no image', () {
+    expect(questionFromRow(row(options: {'A': 'a'}, imagePath: '')).hasImage, isFalse);
+  });
+
+  test('numbers coming as num are converted', () {
+    final q = questionFromRow({...row(options: {'A': 1}), 'difficulty': 4.0, 'topic_id': 2.0});
+    expect(q.difficulty, 4);
+    expect(q.options['A'], '1');
+  });
+}

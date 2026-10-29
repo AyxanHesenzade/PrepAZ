@@ -1,0 +1,48 @@
+import 'package:supabase_flutter/supabase_flutter.dart';
+
+import '../../../core/constants/app_strings.dart';
+import '../../../core/error/app_exception.dart';
+import '../domain/auth_repository.dart';
+
+class SupabaseAuthRepository implements AuthRepository {
+  const SupabaseAuthRepository(this._auth);
+
+  final GoTrueClient _auth;
+
+  @override
+  Stream<bool> watchSignedIn() async* {
+    yield _auth.currentSession != null;
+    yield* _auth.onAuthStateChange.map((state) => state.session != null);
+  }
+
+  @override
+  Future<void> signIn({required String email, required String password}) {
+    return guard(
+      () => _auth.signInWithPassword(email: email, password: password),
+      mapper: _mapAuthError,
+    );
+  }
+
+  @override
+  Future<SignUpOutcome> signUp({required String email, required String password}) {
+    return guard(() async {
+      final res = await _auth.signUp(email: email, password: password);
+      return res.session == null ? SignUpOutcome.confirmationRequired : SignUpOutcome.signedIn;
+    }, mapper: _mapAuthError);
+  }
+
+  @override
+  Future<void> signOut() => guard(_auth.signOut, mapper: _mapAuthError);
+
+  static AppException? _mapAuthError(Object error) {
+    if (error is! AuthException) return null;
+    if (error is AuthRetryableFetchException) return const AppException(AppStrings.unknownError);
+    return switch (error.code) {
+      'invalid_credentials' => const AppException(AppStrings.invalidCredentials),
+      'user_already_exists' => const AppException(AppStrings.userAlreadyExists),
+      'email_not_confirmed' => const AppException(AppStrings.emailNotConfirmed),
+      'weak_password' => const AppException(AppStrings.weakPassword),
+      _ => null,
+    };
+  }
+}
