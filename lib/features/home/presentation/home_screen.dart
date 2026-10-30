@@ -7,6 +7,10 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/widgets/async_value_view.dart';
 import '../../../core/widgets/fade_slide_in.dart';
 import '../../browse/presentation/topic_list_screen.dart';
+import '../../goal/domain/exam_goal.dart';
+import '../../goal/presentation/goal_providers.dart';
+import '../../goal/presentation/goal_screen.dart';
+import '../../goal/presentation/widgets/goal_card.dart';
 import '../../menu/presentation/app_drawer.dart';
 import '../../mistakes/presentation/mistakes_screen.dart';
 import '../../quiz/presentation/quiz_screen.dart';
@@ -23,6 +27,8 @@ class HomeScreen extends ConsumerWidget {
   Future<void> _refresh(WidgetRef ref) async {
     await Future.wait([
       ref.refresh(streakDaysProvider.future),
+      ref.refresh(userGoalProvider.future),
+      ref.refresh(answeredTodayProvider.future),
       ref.refresh(subjectsProvider.future),
     ]);
   }
@@ -79,6 +85,8 @@ class HomeScreen extends ConsumerWidget {
                   ),
                   children: [
                     const FadeSlideIn(child: _StreakSection()),
+                    AppSpacing.gapM,
+                    const FadeSlideIn(index: 1, child: _GoalSection()),
                     AppSpacing.gapXl,
                     const _SubjectsSection(),
                   ],
@@ -128,6 +136,48 @@ class _StreakSection extends ConsumerWidget {
   }
 }
 
+/// Hədəf kartı. Şagird hələ hədəf seçməyibsə, ilk açılışda seçim ekranı bir dəfə özü açılır.
+class _GoalSection extends ConsumerStatefulWidget {
+  const _GoalSection();
+
+  @override
+  ConsumerState<_GoalSection> createState() => _GoalSectionState();
+}
+
+class _GoalSectionState extends ConsumerState<_GoalSection> {
+  bool _prompted = false;
+
+  Future<void> _open({bool firstTime = false}) async {
+    await Navigator.of(context).push(
+      MaterialPageRoute<void>(builder: (_) => GoalScreen(firstTime: firstTime)),
+    );
+    ref.invalidate(userGoalProvider);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    ref.listen<AsyncValue<UserGoal?>>(userGoalProvider, (_, next) {
+      // yalnız uğurla oxunub və hədəf yoxdursa; xəta olanda şagirdi narahat etmirik
+      if (_prompted || !next.hasValue || next.requireValue != null) return;
+      _prompted = true;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) _open(firstTime: true);
+      });
+    });
+    final goal = ref.watch(userGoalProvider);
+    // kart köməkçi məlumatdır: yüklənərkən və ya xəta olanda gizlənir, ana ekranı pozmur
+    if (!goal.hasValue) return const SizedBox.shrink();
+    final periods = ref.watch(examPeriodsProvider).asData?.value ?? const <ExamPeriod>[];
+    final value = goal.requireValue ?? const UserGoal();
+    return GoalCard(
+      daysLeft: value.daysLeft(periods, DateTime.now()),
+      answeredToday: ref.watch(answeredTodayProvider).asData?.value ?? 0,
+      dailyGoal: value.dailyGoal,
+      onTap: _open,
+    );
+  }
+}
+
 class _SubjectsSection extends ConsumerWidget {
   const _SubjectsSection();
 
@@ -169,6 +219,7 @@ class _SubjectItem extends ConsumerWidget {
     );
     // məşqdən sonra seriya və faizlər yenilənsin
     ref.invalidate(streakDaysProvider);
+    ref.invalidate(answeredTodayProvider);
     ref.invalidate(masteryProvider(subject.id));
   }
 
@@ -177,6 +228,7 @@ class _SubjectItem extends ConsumerWidget {
         .push(MaterialPageRoute<void>(builder: (_) => screen));
     // alt ekranlarda məşq edilmiş ola bilər
     ref.invalidate(streakDaysProvider);
+    ref.invalidate(answeredTodayProvider);
     ref.invalidate(masteryProvider(subject.id));
   }
 

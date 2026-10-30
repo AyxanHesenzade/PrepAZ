@@ -11,6 +11,10 @@ import 'package:prep_az/features/home/presentation/home_providers.dart';
 import 'package:prep_az/features/home/presentation/home_screen.dart';
 
 import '../support/fakes.dart';
+import 'goal_test.dart';
+
+import 'package:prep_az/features/goal/domain/exam_goal.dart';
+import 'package:prep_az/features/goal/presentation/goal_providers.dart';
 
 class FakeSubjects implements SubjectRepository {
   FakeSubjects(this.result);
@@ -38,7 +42,13 @@ Widget buildHome({
     overrides: [
       subjectRepositoryProvider.overrideWithValue(subjects),
       profileRepositoryProvider.overrideWithValue(profile),
-      progressRepositoryProvider.overrideWithValue(FakeProgressRepository(mastery)),
+      progressRepositoryProvider.overrideWithValue(
+        FakeProgressRepository(mastery),
+      ),
+      // hədəf artıq seçilib: ilk açılış ekranı testləri yayındırmasın
+      goalRepositoryProvider.overrideWithValue(
+        FakeGoalRepository(goal: const UserGoal(periodId: 1)),
+      ),
     ],
     child: const MaterialApp(home: HomeScreen()),
   );
@@ -52,10 +62,12 @@ void main() {
   ];
 
   testWidgets('shows streak and all subjects', (tester) async {
-    await tester.pumpWidget(buildHome(
-      subjects: FakeSubjects(() async => subjects),
-      profile: FakeProfile(3),
-    ));
+    await tester.pumpWidget(
+      buildHome(
+        subjects: FakeSubjects(() async => subjects),
+        profile: FakeProfile(3),
+      ),
+    );
     await tester.pumpAndSettle();
 
     expect(find.text(AppStrings.streak(3)), findsOneWidget);
@@ -64,11 +76,15 @@ void main() {
     }
   });
 
-  testWidgets('shows the empty-streak message when streak is 0', (tester) async {
-    await tester.pumpWidget(buildHome(
-      subjects: FakeSubjects(() async => subjects),
-      profile: FakeProfile(0),
-    ));
+  testWidgets('shows the empty-streak message when streak is 0', (
+    tester,
+  ) async {
+    await tester.pumpWidget(
+      buildHome(
+        subjects: FakeSubjects(() async => subjects),
+        profile: FakeProfile(0),
+      ),
+    );
     await tester.pumpAndSettle();
 
     expect(find.text(AppStrings.streakEmpty), findsOneWidget);
@@ -76,13 +92,15 @@ void main() {
 
   testWidgets('error shows retry and recovers after it', (tester) async {
     var fail = true;
-    await tester.pumpWidget(buildHome(
-      subjects: FakeSubjects(() async {
-        if (fail) throw AppException(AppStrings.unknownError);
-        return subjects;
-      }),
-      profile: FakeProfile(1),
-    ));
+    await tester.pumpWidget(
+      buildHome(
+        subjects: FakeSubjects(() async {
+          if (fail) throw AppException(AppStrings.unknownError);
+          return subjects;
+        }),
+        profile: FakeProfile(1),
+      ),
+    );
     await tester.pumpAndSettle();
 
     expect(find.text(AppStrings.retry), findsOneWidget);
@@ -95,30 +113,61 @@ void main() {
     expect(find.text(AppStrings.retry), findsNothing);
   });
 
-  testWidgets('each subject card has a start button and shows the weakest topics', (tester) async {
-    await tester.pumpWidget(buildHome(
-      subjects: FakeSubjects(() async => subjects.sublist(0, 1)),
-      profile: FakeProfile(0),
-      mastery: const [
-        TopicMastery(topicId: 1, topicName: 'Hidroliz', answered: 5, masteryPct: 20),
-        TopicMastery(topicId: 2, topicName: 'Metallar', answered: 5, masteryPct: 60),
-        TopicMastery(topicId: 3, topicName: 'Spirtlər', answered: 5, masteryPct: 90),
-        TopicMastery(topicId: 4, topicName: 'Alkanlar', answered: 5, masteryPct: 95),
-      ],
-    ));
-    await tester.pumpAndSettle();
+  testWidgets(
+    'each subject card has a start button and shows the weakest topics',
+    (tester) async {
+      await tester.pumpWidget(
+        buildHome(
+          subjects: FakeSubjects(() async => subjects.sublist(0, 1)),
+          profile: FakeProfile(0),
+          mastery: const [
+            TopicMastery(
+              topicId: 1,
+              topicName: 'Hidroliz',
+              answered: 5,
+              masteryPct: 20,
+            ),
+            TopicMastery(
+              topicId: 2,
+              topicName: 'Metallar',
+              answered: 5,
+              masteryPct: 60,
+            ),
+            TopicMastery(
+              topicId: 3,
+              topicName: 'Spirtlər',
+              answered: 5,
+              masteryPct: 90,
+            ),
+            TopicMastery(
+              topicId: 4,
+              topicName: 'Alkanlar',
+              answered: 5,
+              masteryPct: 95,
+            ),
+          ],
+        ),
+      );
+      await tester.pumpAndSettle();
 
-    expect(find.text(AppStrings.startQuiz), findsOneWidget);
-    expect(find.text('Hidroliz'), findsOneWidget);
-    expect(find.text('20%'), findsOneWidget);
-    expect(find.text('Alkanlar'), findsNothing, reason: 'only the 3 weakest topics are shown');
-  });
+      expect(find.text(AppStrings.startQuiz), findsOneWidget);
+      expect(find.text('Hidroliz'), findsOneWidget);
+      expect(find.text('20%'), findsOneWidget);
+      expect(
+        find.text('Alkanlar'),
+        findsNothing,
+        reason: 'only the 3 weakest topics are shown',
+      );
+    },
+  );
 
   testWidgets('no answers yet: hint instead of topics', (tester) async {
-    await tester.pumpWidget(buildHome(
-      subjects: FakeSubjects(() async => subjects.sublist(0, 1)),
-      profile: FakeProfile(0),
-    ));
+    await tester.pumpWidget(
+      buildHome(
+        subjects: FakeSubjects(() async => subjects.sublist(0, 1)),
+        profile: FakeProfile(0),
+      ),
+    );
     await tester.pumpAndSettle();
 
     expect(find.text(AppStrings.noMasteryYet), findsOneWidget);

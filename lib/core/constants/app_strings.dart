@@ -159,6 +159,51 @@ abstract final class AppStrings {
     'Your mistakes notebook is empty.',
   );
 
+  // İmtahan hədəfi
+  static String get goalTitle => _t('İmtahan hədəfi', 'Цель экзамена', 'Exam goal');
+  static String get goalPromptTitle =>
+      _t('İmtahanına nə qədər qalıb?', 'Сколько осталось до экзамена?', 'How long until your exam?');
+  static String get goalPromptText => _t(
+    'İmtahan dövrünü seç, gündəlik hədəfini qur.',
+    'Выбери период экзамена и поставь дневную цель.',
+    'Pick your exam period and set a daily goal.',
+  );
+  static String goalDaysLeft(int days) => _t(
+    '$days gün qalıb',
+    'Осталось $days дн.',
+    '$days ${days == 1 ? 'day' : 'days'} left',
+  );
+  static String get goalExamToday => _t('İmtahan bu gündür!', 'Экзамен сегодня!', 'The exam is today!');
+  static String get goalDateUnknown => _t(
+    'İmtahan tarixi seçilməyib',
+    'Дата экзамена не выбрана',
+    'No exam date selected',
+  );
+  static String goalToday(int done, int goal) => _t(
+    'Bu gün: $done / $goal sual',
+    'Сегодня: $done / $goal вопросов',
+    'Today: $done / $goal questions',
+  );
+  static String get goalReached => _t(
+    'Gündəlik hədəf tamamlandı!',
+    'Дневная цель выполнена!',
+    'Daily goal reached!',
+  );
+  static String get goalPeriod => _t('İmtahan dövrü', 'Период экзамена', 'Exam period');
+  static String get goalCustomDate => _t('Öz tarixim', 'Своя дата', 'My own date');
+  static String get goalDaily => _t('Gündəlik hədəf (sual)', 'Дневная цель (вопросов)', 'Daily goal (questions)');
+  static String get goalSave => _t('Yadda saxla', 'Сохранить', 'Save');
+  static String get goalLater => _t('Sonra', 'Позже', 'Later');
+  static String get goalSaveFailed =>
+      _t('Hədəf saxlanmadı.', 'Не удалось сохранить цель.', "Couldn't save the goal.");
+
+  /// Dövrün adı: tanınan kod üçün tərcümə, yoxsa bazadakı ad.
+  static String periodName(String code, String fallback) => switch (code) {
+    'winter' => _t('Qış dövrü', 'Зимний период', 'Winter session'),
+    'summer' => _t('Yay dövrü', 'Летний период', 'Summer session'),
+    _ => fallback,
+  };
+
   // Versiya
   static String appVersion(String version, int build) =>
       _t('Versiya $version ($build)', 'Версия $version ($build)', 'Version $version ($build)');

@@ -125,7 +125,8 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
   çıxıbsa onu mövcud sətrə birləşdirir, oxşar sualları "oxşar sual: KOD" qeydi ilə işarələyir). `build_*.py` yalnız ilk dəfə.
 - Kimya Excel-i indi 240 sual (ilk 120 yoxlanıb, sonrakı 120 təzə əlavə olunub, müəllim yoxlaması gözləyir). `make_teacher_file.py` hələ yalnız kimyadır.
 - Ehtiyat nüsxə: hər Excel üçün tək `*.backup.xlsx` (hər dəfə üstünə yazılır).
-- Sual mənbəyi: yalnız dim.gov.az. Araz/Güvən kitabları ödənişlidir, rəsmi pulsuz fayl yoxdur; yalnız nəşriyyatın özündən alınmış fayl (yazılı razılıqla) qəbul olunur.
+- Sual mənbəyi: DİM (razılaşma var) və Araz/Güvən (sahib bildirir ki, razılıq alınıb, 2026-10-30; yazılı razılığın surətini saxlamaq tövsiyə olunur). Yalnız sahibin verdiyi fayllar qəbul olunur, internetdən qeyri-rəsmi PDF çəkilmir.
+- Dərsliklər (məktəb kitabları) üçün razılıq YOXDUR: mövzu izahlarında yalnız mənbə/plan kimi, mətn öz sözlərimizlə yazılır, köçürülmür.
 
 ## Versiya
 - Cari versiya: **1.0.0**, build **3**. Mənbə: `assets/app.json`; `pubspec.yaml` → `version: 1.0.0+3` ilə eyni olmalıdır (`test/core/app_version_test.dart` uyğunsuzluğu tutur).
@@ -196,3 +197,8 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - Tətbiq: `lib/features/reports` (`showReportSheet`). Sual ekranlarında `QuestionCodeLabel` "Xəta bildir" düyməsi + kod göstərir (quiz, mövzular, səhvlər dəftəri); yan menyuda "Tətbiqdə xəta bildir".
 - Admin panel: "Bildirişlər" tabı (status süzgəci, status dəyişmə, daxili qeyd, silmə). Sual bildirişində kodu kopyalayıb Suallar tabında axtarırıq.
 
+## İmtahan hədəfi (PLAN faza B)
+- `db/migrations/010_exam_goals.sql`: `exam_periods` (qış 2027-02-15, yay 2027-06-15 = FƏRZ; yalnız admin dəyişir, silinmir) və `user_goals` (şagird yalnız özününkünü oxuyur/yazır, gündəlik hədəf 5-200). Lokal test: `tools/dim/test_migration_010.py`. Test və real Supabase-də SQL Editor-da işlədilməlidir.
+- Tətbiq: `lib/features/goal` (`GoalRepository`, `GoalScreen`, `GoalCard`). Ana ekranda seriya altında kart: "N gün qalıb" + bu günkü cavab sayı/hədəf. Hədəf yoxdursa ilk açılışda seçim ekranı bir dəfə açılır; oxuma xətasında heç nə göstərilmir.
+- Dövr adı `AppStrings.periodName(code, ad)` ilə tərcümə olunur (`winter`/`summer`); yeni kod əlavə olunsa bazadakı ad göstərilir.
+- Admin panel: Tənzimləmələr tabında "İmtahan dövrləri" (tarix + aktiv).
