@@ -1,14 +1,13 @@
 """Copies the teacher's decisions from muellim_1_dest.xlsx back into the main Excel (matched by kod).
 
 Copies: çətinlik, aktiv, müəllim qeydi (appended to qeyd; a rejected row with a note becomes yoxlanmalı).
-Validates first: one error means nothing is changed. A timestamped backup of the main Excel is kept.
+Validates first: one error means nothing is changed. One backup of the main Excel (…backup.xlsx, overwritten each time) is kept.
 
 Usage: python merge_review.py [teacher.xlsx] [--dry-run] [--approve-all]
 """
 import re
 import shutil
 import sys
-from datetime import datetime
 from pathlib import Path
 
 from openpyxl import load_workbook
@@ -104,7 +103,7 @@ def main(argv):
     if dry:
         print("(--dry-run: fayl dəyişdirilmədi)")
         return 0
-    backup = target.with_name(f"{target.stem}.backup-{datetime.now():%Y%m%d-%H%M%S}{target.suffix}")
+    backup = target.with_name(f"{target.stem}.backup{target.suffix}")
     shutil.copy(target, backup)
     wb.save(target)
     print(f"Əsas Excel yeniləndi. Ehtiyat nüsxə: {backup.name}")

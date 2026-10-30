@@ -3,15 +3,16 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/error/app_exception.dart';
 import '../domain/answer_result.dart';
 import '../domain/quiz_repository.dart';
+import '../domain/quiz_request.dart';
 import 'quiz_providers.dart';
 import 'quiz_state.dart';
 
-/// Bir fənn üzrə bugünkü məşq. `build` sualları yükləyir və sessiya açır;
+/// Bir məşq (bugünkü dəst, mövzu və ya səhvlər dəftəri). `build` sualları yükləyir və sessiya açır;
 /// xəta olsa AsyncError olur, ekran "Yenidən cəhd et" göstərir.
 class QuizController extends AsyncNotifier<QuizState> {
-  QuizController(this.subjectId);
+  QuizController(this.request);
 
-  final int subjectId;
+  final QuizRequest request;
   DateTime _shownAt = DateTime.now();
 
   QuizRepository get _repo => ref.read(quizRepositoryProvider);
@@ -19,10 +20,14 @@ class QuizController extends AsyncNotifier<QuizState> {
 
   @override
   Future<QuizState> build() async {
-    final loaded = await _repo.getDailySet(subjectId);
+    final loaded = switch (request.kind) {
+      QuizKind.daily => await _repo.getDailySet(request.subjectId),
+      QuizKind.topic => await _repo.getTopicSet(request.topicId!),
+      QuizKind.mistakes => [for (final m in await _repo.getMistakes(request.subjectId)) m.question],
+    };
     final showImages = ref.read(imagesEnabledProvider);
     final questions = showImages ? loaded : [for (final q in loaded) q.withoutImages()];
-    final sessionId = questions.isEmpty ? null : await _repo.startSession(subjectId);
+    final sessionId = questions.isEmpty ? null : await _repo.startSession(request.subjectId);
     _shownAt = DateTime.now();
     return QuizState.initial(questions, sessionId);
   }
@@ -74,4 +79,4 @@ class QuizController extends AsyncNotifier<QuizState> {
 }
 
 final quizControllerProvider =
-    AsyncNotifierProvider.autoDispose.family<QuizController, QuizState, int>(QuizController.new);
+    AsyncNotifierProvider.autoDispose.family<QuizController, QuizState, QuizRequest>(QuizController.new);

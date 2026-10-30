@@ -2,7 +2,7 @@
 
 The main Excel carries the teacher's/owner's decisions (çətinlik, aktiv), so it is never rebuilt. A fresh copy is
 built in a temp folder, proven identical on every existing cell (same codes, same content), and only the missing
-columns are copied over by code. A timestamped backup of the main Excel is kept.
+columns are copied over by code. One backup of the main Excel (…backup.xlsx, overwritten each time) is kept.
 
 Usage: python sync_new_columns.py            (run extract_kimya.py first)
 """
@@ -10,7 +10,6 @@ import shutil
 import subprocess
 import sys
 import tempfile
-from datetime import datetime
 from pathlib import Path
 
 from openpyxl import load_workbook
@@ -57,7 +56,7 @@ def main():
         print(f"XƏTA: {len(diffs)} xana təzə nüsxədən fərqlənir (məs. {diffs[:3]}), heç nə dəyişdirilmədi.")
         return 1
 
-    backup = MAIN.with_name(f"{MAIN.stem}.backup-{datetime.now():%Y%m%d-%H%M%S}{MAIN.suffix}")
+    backup = MAIN.with_name(f"{MAIN.stem}.backup{MAIN.suffix}")
     shutil.copy(MAIN, backup)
     wb = load_workbook(MAIN)
     sheet = wb["suallar"]

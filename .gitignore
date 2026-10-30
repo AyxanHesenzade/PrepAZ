@@ -49,3 +49,6 @@ app.*.map.json
 
 # Real mühit açarları
 /env/prod.json
+
+# Python
+__pycache__/

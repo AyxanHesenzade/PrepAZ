@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../core/config/app_version.dart';
 import '../../../core/constants/app_strings.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/widgets/async_value_view.dart';
 import '../../auth/presentation/auth_providers.dart';
+import '../../mistakes/presentation/mistakes_screen.dart';
 import '../../quiz/presentation/quiz_screen.dart';
 import '../domain/subject.dart';
 import '../domain/topic_mastery.dart';
 import 'home_providers.dart';
+import 'weak_topics_screen.dart';
 import 'widgets/streak_card.dart';
 import 'widgets/subject_card.dart';
 
@@ -43,8 +46,27 @@ class HomeScreen extends ConsumerWidget {
             _StreakSection(),
             AppSpacing.gapL,
             _SubjectsSection(),
+            AppSpacing.gapL,
+            _VersionLabel(),
           ],
         ),
+      ),
+    );
+  }
+}
+
+/// Səhifənin altında kiçik versiya yazısı. Oxunmasa heç nə göstərilmir (ekranı pozmamalıdır).
+class _VersionLabel extends ConsumerWidget {
+  const _VersionLabel();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final version = ref.watch(appVersionProvider).asData?.value;
+    if (version == null) return const SizedBox.shrink();
+    return Center(
+      child: Text(
+        AppStrings.appVersion(version.version, version.build),
+        style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Theme.of(context).colorScheme.outline),
       ),
     );
   }
@@ -98,6 +120,13 @@ class _SubjectItem extends ConsumerWidget {
     ref.invalidate(masteryProvider(subject.id));
   }
 
+  Future<void> _open(BuildContext context, WidgetRef ref, Widget screen) async {
+    await Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => screen));
+    // alt ekranlarda məşq edilmiş ola bilər
+    ref.invalidate(streakDaysProvider);
+    ref.invalidate(masteryProvider(subject.id));
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     // yüklənərkən və ya xəta olanda kart boş siyahı ilə görünür, məşqə başlamaq yenə mümkündür
@@ -105,6 +134,12 @@ class _SubjectItem extends ConsumerWidget {
           data: (m) => m,
           orElse: () => const <TopicMastery>[],
         );
-    return SubjectCard(subject: subject, weakTopics: weak, onStart: () => _start(context, ref));
+    return SubjectCard(
+      subject: subject,
+      weakTopics: weak,
+      onStart: () => _start(context, ref),
+      onWeakPlaces: () => _open(context, ref, WeakTopicsScreen(subject: subject)),
+      onMistakes: () => _open(context, ref, MistakesScreen(subject: subject)),
+    );
   }
 }

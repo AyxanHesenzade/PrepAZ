@@ -1,10 +1,11 @@
-"""Validates out/kimya_dim_yoxlama.xlsx. Exit code 1 on errors.
+"""Validates out/<fənn>_dim_yoxlama.xlsx. Exit code 1 on errors.
 
 The original tools/import_questions.py (--check) was lost when the old prepaz/ folder was deleted,
 so this checker enforces the rules from TASK_01 itself.
 
-Usage: python check.py [path.xlsx]
+Usage: python check.py [path.xlsx] [--subject kimya|biologiya]
 """
+import argparse
 import re
 import sys
 from pathlib import Path
@@ -12,13 +13,14 @@ from pathlib import Path
 from openpyxl import load_workbook
 
 from build_xlsx import COLUMNS
+from subjects import SUBJECTS
 
-DEFAULT = Path(__file__).parent / "out" / "kimya_dim_yoxlama.xlsx"
 TYPES = {"qapali", "aciq_eded", "yazili"}
 TEXT_COLS = ["sual mətni", "A", "B", "C", "D", "E", "düzgün cavab", "həll"]
 
 
-def check(path):
+def check(path, subject="kimya"):
+    cfg = SUBJECTS[subject]
     ws = load_workbook(path)["suallar"]
     header = [c.value for c in ws[1]]
     errors, warnings = [], []
@@ -34,11 +36,11 @@ def check(path):
         def err(msg):
             errors.append(f"{k}: {msg}")
 
-        if not re.fullmatch(r"KIM-\d{4}", k) or k in seen:
+        if not re.fullmatch(rf"{cfg['prefix']}-\d{{4}}", k) or k in seen:
             err("bad or duplicate code")
         seen.add(k)
-        if r["fənn"] != "Kimya":
-            err("fənn must be Kimya")
+        if r["fənn"] != cfg["name"]:
+            err(f"fənn must be {cfg['name']}")
         if r["tip"] not in TYPES:
             err(f"bad type {r['tip']!r}")
         if r["mövzu"] and not r["bölmə"]:
@@ -88,7 +90,11 @@ def check(path):
 
 
 if __name__ == "__main__":
-    errs, warns = check(Path(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT)
+    ap = argparse.ArgumentParser()
+    ap.add_argument("path", nargs="?", type=Path)
+    ap.add_argument("--subject", choices=SUBJECTS, default="kimya")
+    args = ap.parse_args()
+    errs, warns = check(args.path or SUBJECTS[args.subject]["excel"], args.subject)
     for w in warns:
         print("WARN", w)
     for e in errs:

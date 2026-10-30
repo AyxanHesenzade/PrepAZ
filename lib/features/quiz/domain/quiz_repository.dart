@@ -1,3 +1,4 @@
+import 'mistake_item.dart';
 import 'question.dart';
 
 /// Cavabın düzgünlüyünü, təkrar növbəsini və seriyanı baza özü hesablayır.
@@ -5,6 +6,12 @@ import 'question.dart';
 abstract interface class QuizRepository {
   /// Bugünkü dəst: əvvəl vaxtı çatmış təkrarlar, sonra ən zəif mövzular.
   Future<List<Question>> getDailySet(int subjectId, {int limit = 20});
+
+  /// Bir mövzudan təsadüfi suallar.
+  Future<List<Question>> getTopicSet(int topicId, {int limit = 10});
+
+  /// Səhvlər dəftəri: fənn üzrə təkrar növbəsindəki suallar, vaxtı ən tez çatan birinci.
+  Future<List<MistakeItem>> getMistakes(int subjectId);
 
   Future<String> startSession(int subjectId);
 

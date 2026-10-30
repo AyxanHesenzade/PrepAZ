@@ -6,6 +6,8 @@ merge_review.py copies çətinlik/aktiv/qeyd back by code.
 
 Usage: python make_teacher_file.py [--batch 2] [--force]
   batch 1 (default): the 32 clean questions.   batch 2: visual-only problems, with the original images embedded.
+       python make_teacher_file.py --subject biologiya|kimya [--from-code 121] [--force]
+  every closed/numeric question that is not yet approved, with the original images embedded -> out/muellim_biologiya.xlsx
 """
 import re
 import sys
@@ -15,6 +17,8 @@ from openpyxl import Workbook, load_workbook
 from openpyxl.drawing.image import Image as XlImage
 from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.worksheet.datavalidation import DataValidation
+
+from subjects import SUBJECTS
 
 OUT = Path(__file__).parent / "out"
 SECTION_ORDER = {"Ümumi kimya": 0, "Qeyri-üzvi kimya": 1, "Üzvi kimya": 2}
@@ -150,25 +154,41 @@ def embed(sheet, row, column, filename):
     return img.height * 0.75
 
 
-def build_batch2(force):
-    target = OUT / "muellim_2_dest.xlsx"
+GENERAL_INSTRUCTION = (
+    "Müəllim üçün qısa təlimat. Hər sualı DİM mənbəsi (imtahan tarixi, variant və nömrə) ilə tutuşdurun. "
+    "Mətn avtomatik çıxarılıb, ona görə sağdakı orijinal şəkillər (varsa) ilə də yoxlayın: sual, variantlar və "
+    "düzgün cavab düzgün olmalıdır. Hər şey düzgündürsə, 'çətinlik' (1 = çox asan, 5 = çox çətin) yazın və 'aktiv' "
+    "sütununda 'bəli' seçin. Səhv və ya şübhə varsa 'xeyr' saxlayın və nəyin səhv olduğunu 'müəllim qeydi' sütununa yazın. "
+    "'Avtomatik qeyd' sütunu proqramın nəyi şübhəli saydığını göstərir (məsələn, 'oxşar sual: BIO-0005' varsa, "
+    "iki sualdan birini 'xeyr' edin ki, təkrar olmasın)."
+)
+
+
+def build_batch2(force, subject="kimya", from_code=None):
+    """[from_code]: only questions numbered from it (e.g. 121 = the ones added by append_new.py), any subject."""
+    cfg = SUBJECTS[subject]
+    general = subject != "kimya" or from_code is not None
+    name = "muellim_biologiya.xlsx" if subject == "biologiya" else f"muellim_{subject}_yeni.xlsx"
+    target = OUT / (name if general else "muellim_2_dest.xlsx")
     if target.exists() and not force:
         sys.exit(f"{target.name} already exists (the teacher may have filled it). Use --force to overwrite.")
-    ws = load_workbook(OUT / "kimya_dim_yoxlama.xlsx")["suallar"]
+    ws = load_workbook(cfg["excel"])["suallar"]
     header = [c.value for c in ws[1]]
     rows = [dict(zip(header, ("" if v is None else str(v) for v in r))) for r in ws.iter_rows(min_row=2, values_only=True)]
     chosen = [
         r for r in rows
-        if r["aktiv"] != "bəli" and r["tip"] in ("qapali", "aciq_eded") and r["yoxlanmalı"] == "bəli"
-        and visual_only(r["qeyd"])
+        if r["aktiv"] != "bəli" and r["tip"] in ("qapali", "aciq_eded")
+        and (from_code is None or int(r["kod"].split("-")[1]) >= from_code)
+        and (r["düzgün cavab"] != "" if general else (r["yoxlanmalı"] == "bəli" and visual_only(r["qeyd"])))
     ]
-    chosen.sort(key=lambda r: (SECTION_ORDER.get(r["bölmə"], 9), r["mövzu"], r["kod"]))
+    order = {name: n for n, name in enumerate(cfg["sections"])} if general else SECTION_ORDER
+    chosen.sort(key=lambda r: (order.get(r["bölmə"], 9), r["mövzu"], r["kod"]))
 
     wb = Workbook()
     sheet = wb.active
-    sheet.title = "Müəllim 2-ci dəst"
+    sheet.title = f"Müəllim {cfg['name']}" if general else "Müəllim 2-ci dəst"
     sheet.merge_cells(start_row=1, start_column=1, end_row=1, end_column=len(HEADERS2))
-    sheet["A1"] = BATCH2_INSTRUCTION
+    sheet["A1"] = GENERAL_INSTRUCTION if general else BATCH2_INSTRUCTION
     sheet["A1"].alignment = Alignment(wrap_text=True, vertical="top")
     sheet["A1"].fill = PatternFill("solid", fgColor="DDEBF7")
     sheet.row_dimensions[1].height = 80
@@ -199,11 +219,14 @@ def build_batch2(force):
             c.alignment = Alignment(wrap_text=True, vertical="top")
     sheet.freeze_panes = "D4"
     wb.save(target)
-    print(f"teacher file (batch 2): {len(chosen)} questions -> out/{target.name}")
+    print(f"teacher file ({subject}): {len(chosen)} questions -> out/{target.name}")
 
 
 def main(argv):
-    if "--batch" in argv and argv[argv.index("--batch") + 1] == "2":
+    if "--subject" in argv:
+        from_code = int(argv[argv.index("--from-code") + 1]) if "--from-code" in argv else None
+        build_batch2("--force" in argv, argv[argv.index("--subject") + 1], from_code)
+    elif "--batch" in argv and argv[argv.index("--batch") + 1] == "2":
         build_batch2("--force" in argv)
     else:
         target = OUT / "muellim_1_dest.xlsx"

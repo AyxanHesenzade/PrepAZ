@@ -37,7 +37,8 @@ def convert(raw, flags):
     return to_tex(collapse(raw), flags)
 
 
-def build_row(r):
+def build_row(r, conv=convert):
+    """[conv] turns PDF text into the stored text; chemistry uses LaTeX, other subjects plain text."""
     flags, reasons = set(), []
     stem_raw = collapse(f"{r['ctx_text']} {r['q_text']}")
     stem_raw = re.sub(r"^\d+\.\s*", "", stem_raw)
@@ -74,14 +75,14 @@ def build_row(r):
         elif NUMERIC.fullmatch(re.sub(f"[{MARKS}]", "", answer_raw).strip()):
             qtype, correct = "aciq_eded", answer_raw.strip()
         else:
-            qtype, correct = "yazili", convert(answer_raw, flags)
+            qtype, correct = "yazili", conv(answer_raw, flags)
             reasons.append("yazılı/uyğunluq cavabı: əl ilə yoxla")
     if not r["topic"]:
         reasons.append("mövzu yoxdur")
 
-    stem = convert(stem_raw, flags)
-    options = {L: convert(t, flags) for L, t in opts_raw.items()}
-    solution = convert(r["expl"], flags)
+    stem = conv(stem_raw, flags)
+    options = {L: conv(t, flags) for L, t in opts_raw.items()}
+    solution = conv(r["expl"], flags)
     for f in sorted(flags):
         reasons.append({"formul": "formul tam çevrilmədi", "yük": "ion yükü", "rabitə": "rabitə (=, ≡)"}[f])
 
@@ -98,6 +99,19 @@ def build_row(r):
         "file": r["file"],
         "expl_crop": r.get("expl_q_lines") or None,
     }
+
+
+def excel_row(kod, subject_name, b, section, topic, image, expl_image, reasons):
+    """One Excel row (in COLUMNS order) from a [build_row] result."""
+    opts = b["options"]
+    return [
+        kod, subject_name, section, topic, b["topic"], b["type"], b["stem"],
+        opts.get("A", ""), opts.get("B", ""), opts.get("C", ""), opts.get("D", ""), opts.get("E", ""),
+        b["correct"], "", b["solution"], image, "qebul",
+        ",".join(dict.fromkeys(b["groups"])), ",".join(str(y) for y in dict.fromkeys(b["years"])),
+        "DİM", "; ".join(b["places"]), "xeyr", "bəli" if reasons else "", "; ".join(reasons), b["sinif"],
+        expl_image,
+    ]
 
 
 def main():

@@ -2,6 +2,7 @@ import 'package:prep_az/core/constants/app_strings.dart';
 import 'package:prep_az/core/error/app_exception.dart';
 import 'package:prep_az/features/home/domain/progress_repository.dart';
 import 'package:prep_az/features/home/domain/topic_mastery.dart';
+import 'package:prep_az/features/quiz/domain/mistake_item.dart';
 import 'package:prep_az/features/quiz/domain/question.dart';
 import 'package:prep_az/features/quiz/domain/question_image_repository.dart';
 import 'package:prep_az/features/quiz/domain/quiz_repository.dart';
@@ -57,6 +58,21 @@ class FakeQuizRepository implements QuizRepository {
   Future<List<Question>> getDailySet(int subjectId, {int limit = 20}) async {
     if (failLoad) throw const AppException(AppStrings.unknownError);
     return questions;
+  }
+
+  /// Mövzu üzrə sorğuda yalnız həmin mövzunun sualları qayıdır.
+  @override
+  Future<List<Question>> getTopicSet(int topicId, {int limit = 10}) async {
+    if (failLoad) throw const AppException(AppStrings.unknownError);
+    return questions.where((q) => q.topicId == topicId).take(limit).toList();
+  }
+
+  List<MistakeItem> mistakes = const [];
+
+  @override
+  Future<List<MistakeItem>> getMistakes(int subjectId) async {
+    if (failLoad) throw const AppException(AppStrings.unknownError);
+    return mistakes;
   }
 
   @override

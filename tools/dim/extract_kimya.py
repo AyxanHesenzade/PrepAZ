@@ -20,6 +20,11 @@ FILES = [
     ("2026-06-07_iv", "2026-06-07 qəbul, IV qrup", "4", 2026),
     ("2025-07-13_iv", "2025-07-13 qəbul, IV qrup", "4", 2025),
     ("2025-07-13_i", "2025-07-13 qəbul, I qrup", "1", 2025),
+    # second round: appended at the END so the codes of the first round (KIM-0001...) never change
+    ("2026-07-12_i", "2026-07-12 qəbul, I qrup", "1", 2026),
+    ("2026-06-07_i", "2026-06-07 qəbul, I qrup", "1", 2026),
+    ("2025-06-01_i", "2025-06-01 qəbul, I qrup", "1", 2025),
+    ("2025-06-01_iv", "2025-06-01 qəbul, IV qrup", "4", 2025),
 ]
 SUBJECT_HEADINGS = {"Biologiya", "Fizika", "Riyaziyyat", "Kimya", "Tarix", "Coğrafiya", "Informatika"}
 
@@ -81,8 +86,8 @@ def line_markup(line, unknown, arrows=()):
     return txt.replace(SUB_C + SUB_O, "").replace(SUP_C + SUP_O, "")
 
 
-def collect_lines(doc):
-    """Chemistry-section lines of one PDF: [{page, bbox, text, unknown, tags}] with footers removed."""
+def collect_lines(doc, subject="Kimya"):
+    """Lines of one subject section of a PDF (chemistry by default): [{page, bbox, text, unknown, tags}] with footers removed."""
     lines, active = [], False
     for pn, page in enumerate(doc):
         height = page.rect.height
@@ -101,7 +106,7 @@ def collect_lines(doc):
                 if not plain:
                     continue
                 if plain in SUBJECT_HEADINGS:
-                    active = plain == "Kimya"
+                    active = plain == subject
                     continue
                 if not active:
                     continue
@@ -282,13 +287,13 @@ def lines_data(lines):
     return [{"page": l["page"], "bbox": list(l["bbox"])} for l in lines]
 
 
-def main():
-    OUT.mkdir(exist_ok=True)
+def extract_rows(files, subject):
+    """Parsed question rows of one subject from the given [(stem, exam, group, year)] PDFs."""
     IMAGES.mkdir(exist_ok=True)
     rows = []
-    for stem, exam, group, year in FILES:
+    for stem, exam, group, year in files:
         doc = pymupdf.open(RAW / f"{stem}.pdf")
-        blocks = [parse_block(b, exam) for b in split_blocks(collect_lines(doc))]
+        blocks = [parse_block(b, exam) for b in split_blocks(collect_lines(doc, subject))]
         print(f"{stem}: {len(blocks)} questions")
         shared = []  # situation text that applies to the following topic-less tasks
         for b in blocks:
@@ -312,6 +317,12 @@ def main():
                     if len(re.sub(f"[{MARKS}]", "", l["text"]).strip()) <= 14 and not re.match(r"\s*A\)", l["text"])
                 ),
             })
+    return rows
+
+
+def main():
+    OUT.mkdir(exist_ok=True)
+    rows = extract_rows(FILES, "Kimya")
     (OUT / "parsed.json").write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
     print("total", len(rows))
 

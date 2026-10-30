@@ -13,6 +13,8 @@ class SubjectCard extends StatelessWidget {
     required this.subject,
     required this.weakTopics,
     required this.onStart,
+    required this.onWeakPlaces,
+    required this.onMistakes,
   });
 
   /// Ən zəifdən başlayaraq, artıq sıralanmış.
@@ -21,6 +23,8 @@ class SubjectCard extends StatelessWidget {
   final Subject subject;
   final List<TopicMastery> weakTopics;
   final VoidCallback onStart;
+  final VoidCallback onWeakPlaces;
+  final VoidCallback onMistakes;
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +47,14 @@ class SubjectCard extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: FilledButton.tonal(onPressed: onStart, child: const Text(AppStrings.startQuiz)),
+            ),
+            AppSpacing.gapS,
+            Row(
+              children: [
+                Expanded(child: OutlinedButton(onPressed: onWeakPlaces, child: const Text(AppStrings.weakPlacesTitle))),
+                AppSpacing.gapS,
+                Expanded(child: OutlinedButton(onPressed: onMistakes, child: const Text(AppStrings.mistakesBook))),
+              ],
             ),
           ],
         ),

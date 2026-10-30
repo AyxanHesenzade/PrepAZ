@@ -9,21 +9,37 @@ import '../../../core/widgets/math_text.dart';
 import '../../../core/widgets/message_banner.dart';
 import '../../home/domain/subject.dart';
 import '../domain/question.dart';
+import '../domain/quiz_request.dart';
 import 'quiz_controller.dart';
 import 'quiz_state.dart';
 import 'result_view.dart';
 import 'widgets/answer_feedback.dart';
 import 'widgets/option_tile.dart';
+import 'widgets/question_code_label.dart';
 import 'widgets/question_image.dart';
 
 class QuizScreen extends ConsumerWidget {
-  const QuizScreen({super.key, required this.subject});
+  const QuizScreen({super.key, required this.subject, this.kind = QuizKind.daily, this.topicId});
 
   final Subject subject;
+  final QuizKind kind;
+  final int? topicId;
+
+  QuizRequest get _request => switch (kind) {
+        QuizKind.daily => QuizRequest.daily(subject.id),
+        QuizKind.topic => QuizRequest.topic(subject.id, topicId!),
+        QuizKind.mistakes => QuizRequest.mistakes(subject.id),
+      };
+
+  String get _emptyMessage => switch (kind) {
+        QuizKind.daily => AppStrings.noQuestionsLeft,
+        QuizKind.topic => AppStrings.noQuestionsInTopic,
+        QuizKind.mistakes => AppStrings.noMistakes,
+      };
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final provider = quizControllerProvider(subject.id);
+    final provider = quizControllerProvider(_request);
     final value = ref.watch(provider);
     final title = value.maybeWhen(
       data: (s) => s.isFinished
@@ -42,11 +58,11 @@ class QuizScreen extends ConsumerWidget {
           onRetry: () => ref.invalidate(provider),
           builder: (state) {
             if (state.isEmpty) {
-              return const Center(
+              return Center(
                 child: Padding(
                   padding: AppSpacing.pagePadding,
                   child: Text(
-                    AppStrings.noQuestionsLeft,
+                    _emptyMessage,
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -115,6 +131,8 @@ class _QuestionBodyState extends State<_QuestionBody> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
+                QuestionCodeLabel(question: question),
+                AppSpacing.gapXs,
                 MathText(
                   question.body,
                   style: Theme.of(context).textTheme.titleMedium,

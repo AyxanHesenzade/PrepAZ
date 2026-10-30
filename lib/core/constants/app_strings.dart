@@ -43,6 +43,28 @@ abstract final class AppStrings {
   static const noMasteryYet = 'Hələ cavab yoxdur. Məşq etdikcə zəif mövzular burada görünəcək.';
   static const weakTopics = 'Zəif mövzular';
 
+  // Zəif yerlərim
+  static const weakPlacesTitle = 'Zəif yerlərim';
+  static const weakPlacesHint = 'Ən zəif mövzu yuxarıdadır. Mövzuya basıb yalnız onu məşq et.';
+  static const noQuestionsInTopic = 'Bu mövzuda hələ sual yoxdur.';
+
+  // Səhvlər dəftəri
+  static const mistakesBook = 'Səhvlər dəftəri';
+  static const mistakesEmpty = 'Dəftər boşdur. Səhv cavab verdiyin suallar burada toplanacaq.';
+  static const mistakesHint = 'Hər sual 1, 3, 7 və 14 gün sonra təkrar olunur. Ardıcıl 4 dəfə düz cavab verəndə dəftərdən çıxır.';
+  static const repeatMistakes = 'Səhvləri təkrar et';
+  static const dueToday = 'Bu gün təkrar';
+  static String dueInDays(int days) => '$days gün sonra təkrar';
+  static String rightAnswer(String right) => 'Düzgün cavab: $right';
+  static const noMistakes = 'Səhvlər dəftərin boşdur.';
+
+  // Versiya
+  static String appVersion(String version, int build) => 'Versiya $version ($build)';
+
+  // Sual kodu
+  static String questionCode(String code) => 'Sual kodu: $code';
+  static const codeCopied = 'Kod kopyalandı';
+
   // Məşq
   static const startQuiz = 'Bugünkü məşqə başla';
   static String questionOf(int n, int total) => 'Sual $n / $total';

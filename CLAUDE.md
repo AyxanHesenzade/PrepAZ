@@ -22,6 +22,7 @@ gündəlik planı özü qurur.
 | Oflayn | SQLite (drift) telefonda | Avtobusda/metroda internetsiz həll |
 | Düsturlar | LaTeX, `$...$` arasında | |
 | Sual daxil etmə | Excel şablonu → `tools/import_questions.py` | Sonra veb admin panel |
+| Admin panel | **React** veb səhifə (Supabase auth + RLS ilə, `admin/` qovluğu) | Müəllim Excel əvəzinə birbaşa sual əlavə/redaktə edir. Mərhələ 6; hələ yazılmayıb |
 | MVP-də AI | **Yoxdur** | Səhvdən sonra müəllimin yazdığı hazır həll göstərilir |
 | Supabase "Automatically expose new tables" | Söndürülüb | Giriş hüquqları `schema.sql`-də açıq yazılıb |
 
@@ -78,7 +79,8 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - [x] Mərhələ 1: baza, sual şablonu, import — Supabase-də quruldu, 3 nümunə sual
 - [~] Mərhələ 2: Flutter skeleti — giriş, ana səhifə (seriya, fənlər, zəif mövzular), sual ekranı, nəticə.
       Yenidən başlandı (təmiz arxitektura): auth + ana səhifə (seriya, fənlər) hazırdır. Növbəti: məşq (quiz) və nəticə ekranı
-- [ ] Mərhələ 3: "Zəif yerlərim", səhvlər dəftəri, seriya
+- [x] Mərhələ 3: "Zəif yerlərim" (mövzu üzrə məşq), səhvlər dəftəri (`features/mistakes`), seriya. `QuizRequest` (daily/topic/mistakes) məşqin mənbəyini seçir.
+      Qeyd: `review_queue` + `questions!inner` sorğusu yalnız fake ilə testlənib, real Supabase-də əl ilə yoxlanmalıdır.
 - [ ] Mərhələ 4: oflayn rejim (drift) + sinxronizasiya
 - [ ] Mərhələ 5: taymerli sınaq imtahanı, bal hesablanması
 - [ ] Mərhələ 6: veb admin panel (sual əlavə/redaktə)
@@ -103,10 +105,34 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 5. Lokal test: `python test_import_local.py` (pgserver, db/test/schema_reconstructed.sql: enum etiketləri və grantlar FƏRZDİR).
 - `build_xlsx.py` mövcud Excel-in üstünə yazmır (KIM-xxxx kodları bazada açardır).
 - Tətbiqdə məşq feature-ı hazırdır: `lib/features/quiz` (LaTeX, şəkil + zoom, izah, nəticə), ana səhifədə zəif mövzular.
-- Baza qeydi: `topic_mastery` view-ı bütün istifadəçilərin sətirlərini saxlayır; tətbiq `user_id` ilə süzür, amma view `security_invoker` deyilsə, bu RLS səviyyəsində açıqdır.
+- Baza qeydi: `topic_mastery` view-ı bütün istifadəçilərin sətirlərini saxlayırdı. `db/migrations/004_topic_mastery_security_invoker.sql` onu `security_invoker` edir
+  (lokal test: `tools/dim/test_migration_004.py`). Test və real Supabase-də SQL Editor-da işlədilməlidir; işlədilənə qədər açıqdır.
 - İzah şəkli: hər sual üçün orijinal izah `images/KIM-xxxx_izah.png` (kəsr/cədvəl mətndə pozulur). Excel sütunu `izah şəkli`, baza sütunu
   `questions.solution_image_path` (db/migrations/003; get_daily_set da yenilənir, çünki `setof questions` qaytarır). Tətbiq şəkli mətn əvəzinə göstərir.
 - Yeni sütun əlavə etmək: `sync_new_columns.py` (təsdiqləri pozmur). Əsas Excel-i heç vaxt `build_xlsx.py --force` ilə yenidən qurma.
 - 2-ci partiya: `make_teacher_file.py --batch 2` → `muellim_2_dest.xlsx` (46 sual, orijinal şəkillər faylın içindədir); `merge_review.py out/muellim_2_dest.xlsx`.
 - Yükləmə ardıcıllığı: 003 migration → 002 migration → `import_kimya.sql` → şəkillər (`upload_images.py --prepare` və ya `--upload`).
-- Şəkillər hələlik SÖNDÜRÜLÜB: `lib/core/config/app_features.dart` → `questionImages = false` (tətbiq Storage-i çağırmır, mətn göstərir). Kod, baza sütunları və yüklənmiş fayllar saxlanılıb; yenidən açmaq üçün `true`.
+- Şəkillər AÇIQDIR (`lib/core/config/app_features.dart` → `questionImages = true`): biologiya və kimyada şəkil sualın özüdür. Test Supabase-də bucket var, 120 şəkil yüklənib; qalanları təsdiqdən sonra `upload_images.py` ilə. Storage yükü ~17 MB (limit 1 GB); risk aylıq trafikdir (5 GB), lazım olsa cache + sıxma.
+
+
+## Fənlər və yeni sual əlavə etmək
+- Fənn parametrləri `tools/dim/subjects.py`-dadır (kod prefiksi, Excel, bölmələr): `kimya` (KIM-), `biologiya` (BIO-).
+- Biologiya: `extract_biologiya.py` → `build_biologiya.py` → `out/biologiya_dim_yoxlama.xlsx` (119 sual, hamısı müəllim yoxlaması gözləyir).
+  `check.py --subject biologiya`, `import_questions.py --subject biologiya`; lokal test: `test_import_biologiya.py`.
+  Bazada `subjects` cədvəlinə `biologiya` sətri əl ilə əlavə olunmalıdır (idxal SQL-i onsuz dayanır).
+- **Yeni DİM PDF əlavə etmək:** `download.py` SOURCES + `extract_kimya.py` FILES (SONUNA, köhnə kodlar sürüşməsin) → `extract_kimya.py` / `extract_biologiya.py`
+  → `python append_new.py --subject kimya|biologiya` (yalnız yeni unikal sualları əlavə edir, köhnə kod/təsdiq/şəkilə toxunmur, eyni sual başqa imtahanda
+  çıxıbsa onu mövcud sətrə birləşdirir, oxşar sualları "oxşar sual: KOD" qeydi ilə işarələyir). `build_*.py` yalnız ilk dəfə.
+- Kimya Excel-i indi 240 sual (ilk 120 yoxlanıb, sonrakı 120 təzə əlavə olunub, müəllim yoxlaması gözləyir). `make_teacher_file.py` hələ yalnız kimyadır.
+- Ehtiyat nüsxə: hər Excel üçün tək `*.backup.xlsx` (hər dəfə üstünə yazılır).
+- Sual mənbəyi: yalnız dim.gov.az. Araz/Güvən kitabları ödənişlidir, rəsmi pulsuz fayl yoxdur; yalnız nəşriyyatın özündən alınmış fayl (yazılı razılıqla) qəbul olunur.
+
+## Versiya
+- Cari versiya: **0.0.1**, build **1**. Mənbə: `assets/app.json`; `pubspec.yaml` → `version: 0.0.1+1` ilə eyni olmalıdır (`test/core/app_version_test.dart` uyğunsuzluğu tutur).
+- Yeni buraxılışda hər ikisini birlikdə dəyiş. Ana ekranın altında "Versiya 0.0.1 (1)" göstərilir.
+
+## Test Supabase-in cari vəziyyəti (2026-10-30)
+- Migrationlar işlənib: 002, 003, 004 (`topic_mastery` security_invoker).
+- Yüklənib: kimya 158 sual, biologiya 81 sual (`biologiya` fənni aktivdir). Şəkillər `question-images` bucket-indədir.
+- Gözləyən: kimyada 82 sual (yoxlanmayıb / cavabsız / yazılı), biologiyada 38 sual (yazılı, açıq tapşırıq, cavabı uyğunlaşmayan).
+- Real (prod) Supabase hələ qurulmayıb.

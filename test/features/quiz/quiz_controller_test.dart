@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:prep_az/core/constants/app_strings.dart';
+import 'package:prep_az/features/quiz/domain/quiz_request.dart';
 import 'package:prep_az/features/quiz/presentation/quiz_controller.dart';
 import 'package:prep_az/features/quiz/presentation/quiz_providers.dart';
 import 'package:prep_az/features/quiz/presentation/quiz_state.dart';
@@ -8,19 +9,19 @@ import 'package:prep_az/features/quiz/presentation/quiz_state.dart';
 import '../../support/fakes.dart';
 
 void main() {
-  const subjectId = 4;
+  const request = QuizRequest.daily(4);
   late FakeQuizRepository repo;
   late ProviderContainer container;
 
-  QuizController controller() => container.read(quizControllerProvider(subjectId).notifier);
-  QuizState state() => container.read(quizControllerProvider(subjectId)).requireValue;
+  QuizController controller() => container.read(quizControllerProvider(request).notifier);
+  QuizState state() => container.read(quizControllerProvider(request)).requireValue;
 
   Future<void> start(FakeQuizRepository fake) async {
     repo = fake;
     container = ProviderContainer(retry: (_, _) => null, overrides: [quizRepositoryProvider.overrideWithValue(repo)]);
-    container.listen(quizControllerProvider(subjectId), (_, _) {});
+    container.listen(quizControllerProvider(request), (_, _) {});
     addTearDown(container.dispose);
-    await container.read(quizControllerProvider(subjectId).future);
+    await container.read(quizControllerProvider(request).future);
   }
 
   test('loads questions and opens exactly one session', () async {
@@ -41,11 +42,11 @@ void main() {
   test('load failure becomes an error state', () async {
     repo = FakeQuizRepository([closedQuestion()])..failLoad = true;
     container = ProviderContainer(retry: (_, _) => null, overrides: [quizRepositoryProvider.overrideWithValue(repo)]);
-    container.listen(quizControllerProvider(subjectId), (_, _) {});
+    container.listen(quizControllerProvider(request), (_, _) {});
     addTearDown(container.dispose);
 
-    await expectLater(container.read(quizControllerProvider(subjectId).future), throwsA(anything));
-    expect(container.read(quizControllerProvider(subjectId)).hasError, isTrue);
+    await expectLater(container.read(quizControllerProvider(request).future), throwsA(anything));
+    expect(container.read(quizControllerProvider(request)).hasError, isTrue);
   });
 
   test('correct closed answer: server decision is shown, selection is locked', () async {

@@ -49,6 +49,9 @@ class Question {
         solution: solution,
       );
 
+  /// Problem bildirmək üçün: insan oxuya bilən kod, yoxdursa UUID.
+  String get reportCode => (code != null && code!.isNotEmpty) ? code! : id;
+
   bool get isClosed => type == QuestionType.qapali;
   bool get hasImage => imagePath != null && imagePath!.isNotEmpty;
   bool get hasSolutionText => solution != null && solution!.isNotEmpty;
