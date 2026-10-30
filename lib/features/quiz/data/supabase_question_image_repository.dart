@@ -13,6 +13,8 @@ class SupabaseQuestionImageRepository implements QuestionImageRepository {
 
   @override
   Future<String> signedUrl(String path) {
-    return guard(() => _storage.from(bucket).createSignedUrl(path, _linkLifetimeSeconds));
+    return guard(
+      () => _storage.from(bucket).createSignedUrl(path, _linkLifetimeSeconds),
+    );
   }
 }

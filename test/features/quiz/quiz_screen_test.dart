@@ -35,7 +35,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text(AppStrings.questionOf(1, 2)), findsOneWidget);
-    for (final letter in ['A)', 'B)', 'C)', 'D)', 'E)']) {
+    for (final letter in ['A', 'B', 'C', 'D', 'E']) {
       expect(find.text(letter), findsOneWidget);
     }
     final check = tester.widget<FilledButton>(find.widgetWithText(FilledButton, AppStrings.check));
@@ -60,7 +60,7 @@ void main() {
     await tester.pumpWidget(app(FakeQuizRepository([closedQuestion(correct: 'B', solution: 'Düzgün izah')])));
     await tester.pumpAndSettle();
 
-    await tester.tap(find.text('C)'));
+    await tester.tap(find.text('C'));
     await tester.pump();
     await tester.tap(find.text(AppStrings.check));
     await tester.pumpAndSettle();
@@ -80,7 +80,7 @@ void main() {
     ])));
     await tester.pumpAndSettle();
 
-    await tester.tap(find.text('A)'));
+    await tester.tap(find.text('A'));
     await tester.pump();
     await tester.tap(find.text(AppStrings.check));
     await tester.pumpAndSettle();
@@ -88,7 +88,7 @@ void main() {
     await tester.tap(find.text(AppStrings.nextQuestion));
     await tester.pumpAndSettle();
 
-    await tester.tap(find.text('E)'));
+    await tester.tap(find.text('E'));
     await tester.pump();
     await tester.tap(find.text(AppStrings.check));
     await tester.pumpAndSettle();
@@ -126,7 +126,7 @@ void main() {
 
     expect(find.text(AppStrings.imageFailed), findsOneWidget);
 
-    await tester.tap(find.text('B)'));
+    await tester.tap(find.text('B'));
     await tester.pump();
     await tester.tap(find.text(AppStrings.check));
     await tester.pumpAndSettle();
@@ -160,7 +160,7 @@ void main() {
     ])));
     await tester.pumpAndSettle();
 
-    await tester.tap(find.text('A)'));
+    await tester.tap(find.text('A'));
     await tester.pump();
     await tester.tap(find.text(AppStrings.check));
     await tester.pumpAndSettle();
@@ -169,7 +169,7 @@ void main() {
 
     await tester.tap(find.text(AppStrings.nextQuestion));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('A)'));
+    await tester.tap(find.text('A'));
     await tester.pump();
     await tester.tap(find.text(AppStrings.check));
     await tester.pumpAndSettle();
@@ -188,7 +188,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byType(Image), findsNothing);
-    await tester.tap(find.text('A)'));
+    await tester.tap(find.text('A'));
     await tester.pump();
     await tester.tap(find.text(AppStrings.check));
     await tester.pumpAndSettle();

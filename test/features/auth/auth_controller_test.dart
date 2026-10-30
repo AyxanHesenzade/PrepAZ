@@ -52,7 +52,7 @@ void main() {
   });
 
   test('sign in failure exposes the error message', () async {
-    repo.signInError = const AppException(AppStrings.invalidCredentials);
+    repo.signInError = AppException(AppStrings.invalidCredentials);
 
     await controller().submit(email: 'a@b.az', password: '123456');
 
@@ -71,7 +71,7 @@ void main() {
   });
 
   test('toggleMode switches mode and clears messages', () async {
-    repo.signInError = const AppException(AppStrings.invalidCredentials);
+    repo.signInError = AppException(AppStrings.invalidCredentials);
     await controller().submit(email: 'a@b.az', password: '123456');
 
     controller().toggleMode();

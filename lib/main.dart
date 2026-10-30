@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'app.dart';
 import 'core/config/app_config.dart';
+import 'features/settings/data/prefs_settings_repository.dart';
+import 'features/settings/presentation/settings_providers.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,8 +16,18 @@ Future<void> main() async {
     return;
   }
 
-  await Supabase.initialize(url: AppConfig.supabaseUrl, publishableKey: AppConfig.supabaseKey);
+  await Supabase.initialize(
+    url: AppConfig.supabaseUrl,
+    publishableKey: AppConfig.supabaseKey,
+  );
+  final prefs = await SharedPreferences.getInstance();
 
   // retry: null — uğursuz sorğu öz-özünə təkrarlanmır, istifadəçi "Yenidən cəhd et" basır.
-  runApp(ProviderScope(retry: (_, _) => null, child: const PrepAzApp()));
+  runApp(
+    ProviderScope(
+      retry: (_, _) => null,
+      overrides: [settingsRepositoryProvider.overrideWithValue(PrefsSettingsRepository(prefs))],
+      child: const PrepAzApp(),
+    ),
+  );
 }

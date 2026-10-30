@@ -13,14 +13,15 @@ enum QuizKind {
 /// Məşq ekranının və controller-in açarı (dəyər müqayisəsi var, `family` üçün vacibdir).
 class QuizRequest {
   const QuizRequest.daily(this.subjectId)
-      : kind = QuizKind.daily,
-        topicId = null;
+    : kind = QuizKind.daily,
+      topicId = null;
 
-  const QuizRequest.topic(this.subjectId, int this.topicId) : kind = QuizKind.topic;
+  const QuizRequest.topic(this.subjectId, int this.topicId)
+    : kind = QuizKind.topic;
 
   const QuizRequest.mistakes(this.subjectId)
-      : kind = QuizKind.mistakes,
-        topicId = null;
+    : kind = QuizKind.mistakes,
+      topicId = null;
 
   final int subjectId;
   final QuizKind kind;
@@ -28,7 +29,10 @@ class QuizRequest {
 
   @override
   bool operator ==(Object other) =>
-      other is QuizRequest && other.subjectId == subjectId && other.kind == kind && other.topicId == topicId;
+      other is QuizRequest &&
+      other.subjectId == subjectId &&
+      other.kind == kind &&
+      other.topicId == topicId;
 
   @override
   int get hashCode => Object.hash(subjectId, kind, topicId);

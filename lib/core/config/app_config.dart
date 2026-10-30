@@ -13,11 +13,14 @@ abstract final class AppConfig {
   static const _urlFromEnv = String.fromEnvironment('SUPABASE_URL');
   static const _keyFromEnv = String.fromEnvironment('SUPABASE_KEY');
 
-  static String get supabaseUrl =>
-      _urlFromEnv.isNotEmpty ? _urlFromEnv : (kDebugMode ? DebugDefaults.supabaseUrl : '');
+  static String get supabaseUrl => _urlFromEnv.isNotEmpty
+      ? _urlFromEnv
+      : (kDebugMode ? DebugDefaults.supabaseUrl : '');
 
-  static String get supabaseKey =>
-      _keyFromEnv.isNotEmpty ? _keyFromEnv : (kDebugMode ? DebugDefaults.supabaseKey : '');
+  static String get supabaseKey => _keyFromEnv.isNotEmpty
+      ? _keyFromEnv
+      : (kDebugMode ? DebugDefaults.supabaseKey : '');
 
-  static bool get isConfigured => supabaseUrl.isNotEmpty && supabaseKey.isNotEmpty;
+  static bool get isConfigured =>
+      supabaseUrl.isNotEmpty && supabaseKey.isNotEmpty;
 }

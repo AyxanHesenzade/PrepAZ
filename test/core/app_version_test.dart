@@ -37,12 +37,12 @@ void main() {
       overrides: [
         subjectRepositoryProvider.overrideWithValue(_Subjects()),
         profileRepositoryProvider.overrideWithValue(_Profile()),
-        appVersionProvider.overrideWith((ref) => const AppVersion(version: '0.0.1', build: 1)),
+        appVersionProvider.overrideWith((ref) => const AppVersion(version: '0.0.1', build: 2)),
       ],
       child: const MaterialApp(home: HomeScreen()),
     ));
     await tester.pumpAndSettle();
-    expect(find.text(AppStrings.appVersion('0.0.1', 1)), findsOneWidget);
+    expect(find.text(AppStrings.appVersion('0.0.1', 2)), findsOneWidget);
   });
 
   testWidgets('real app.json loads from the asset bundle', (tester) async {
@@ -52,7 +52,8 @@ void main() {
       addTearDown(container.dispose);
       loaded = await container.read(appVersionProvider.future);
     });
-    expect(loaded.version, '0.0.1');
-    expect(loaded.build, 1);
+    final fromFile = AppVersion.fromJson(jsonDecode(File('assets/app.json').readAsStringSync()) as Map<String, dynamic>);
+    expect(loaded.version, fromFile.version);
+    expect(loaded.build, fromFile.build);
   });
 }

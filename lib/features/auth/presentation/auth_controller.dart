@@ -8,7 +8,12 @@ import 'auth_providers.dart';
 enum AuthMode { signIn, signUp }
 
 class AuthFormState {
-  const AuthFormState({this.mode = AuthMode.signIn, this.isBusy = false, this.error, this.info});
+  const AuthFormState({
+    this.mode = AuthMode.signIn,
+    this.isBusy = false,
+    this.error,
+    this.info,
+  });
 
   final AuthMode mode;
   final bool isBusy;
@@ -18,8 +23,10 @@ class AuthFormState {
   bool get isSignUp => mode == AuthMode.signUp;
 
   AuthFormState busy() => AuthFormState(mode: mode, isBusy: true);
-  AuthFormState failed(String message) => AuthFormState(mode: mode, error: message);
-  AuthFormState notice(String message) => AuthFormState(mode: mode, info: message);
+  AuthFormState failed(String message) =>
+      AuthFormState(mode: mode, error: message);
+  AuthFormState notice(String message) =>
+      AuthFormState(mode: mode, info: message);
   AuthFormState idle() => AuthFormState(mode: mode);
 }
 
@@ -30,7 +37,9 @@ class AuthController extends Notifier<AuthFormState> {
   AuthRepository get _repo => ref.read(authRepositoryProvider);
 
   void toggleMode() {
-    state = AuthFormState(mode: state.isSignUp ? AuthMode.signIn : AuthMode.signUp);
+    state = AuthFormState(
+      mode: state.isSignUp ? AuthMode.signIn : AuthMode.signUp,
+    );
   }
 
   /// Uğurlu girişdən sonra heç nə etmirik: AuthGate sessiya dəyişikliyini görüb özü yönləndirir.
@@ -55,4 +64,6 @@ class AuthController extends Notifier<AuthFormState> {
 }
 
 final authControllerProvider =
-    NotifierProvider.autoDispose<AuthController, AuthFormState>(AuthController.new);
+    NotifierProvider.autoDispose<AuthController, AuthFormState>(
+      AuthController.new,
+    );

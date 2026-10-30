@@ -17,9 +17,18 @@ class ErrorView extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            Icon(
+              Icons.cloud_off_rounded,
+              size: 40,
+              color: Theme.of(context).colorScheme.outline,
+            ),
+            AppSpacing.gapM,
             Text(message, textAlign: TextAlign.center),
             AppSpacing.gapM,
-            OutlinedButton(onPressed: onRetry, child: const Text(AppStrings.retry)),
+            OutlinedButton(
+              onPressed: onRetry,
+              child: Text(AppStrings.retry),
+            ),
           ],
         ),
       ),

@@ -8,8 +8,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class AppVersion {
   const AppVersion({required this.version, required this.build});
 
-  factory AppVersion.fromJson(Map<String, dynamic> json) =>
-      AppVersion(version: json['version'] as String, build: (json['build'] as num).toInt());
+  factory AppVersion.fromJson(Map<String, dynamic> json) => AppVersion(
+    version: json['version'] as String,
+    build: (json['build'] as num).toInt(),
+  );
 
   static const assetPath = 'assets/app.json';
 

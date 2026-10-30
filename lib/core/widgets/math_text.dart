@@ -27,7 +27,9 @@ List<TextPart> splitMath(String input) {
   var inMath = false;
 
   void flush() {
-    if (buffer.isNotEmpty) parts.add(TextPart(buffer.toString(), isMath: inMath));
+    if (buffer.isNotEmpty) {
+      parts.add(TextPart(buffer.toString(), isMath: inMath));
+    }
     buffer.clear();
   }
 

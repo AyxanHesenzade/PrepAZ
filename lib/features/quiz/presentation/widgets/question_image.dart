@@ -20,12 +20,15 @@ class QuestionImage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final url = ref.watch(questionImageUrlProvider(path));
     return url.when(
-      loading: () => const _Placeholder(child: CircularProgressIndicator(strokeWidth: 2)),
+      loading: () =>
+          const _Placeholder(child: CircularProgressIndicator(strokeWidth: 2)),
       error: (_, _) => const _Placeholder(child: _FailedLabel()),
       data: (link) => GestureDetector(
         onTap: () => _zoom(context, link),
         child: ConstrainedBox(
-          constraints: BoxConstraints(maxHeight: compact ? _compactMaxHeight : double.infinity),
+          constraints: BoxConstraints(
+            maxHeight: compact ? _compactMaxHeight : double.infinity,
+          ),
           child: _Frame(child: _NetworkImage(link, width: double.infinity)),
         ),
       ),
@@ -67,7 +70,8 @@ class _Frame extends StatelessWidget {
   final Widget child;
 
   @override
-  Widget build(BuildContext context) => ColoredBox(color: Colors.white, child: child);
+  Widget build(BuildContext context) =>
+      ColoredBox(color: Colors.white, child: child);
 }
 
 class _NetworkImage extends StatelessWidget {
@@ -126,7 +130,10 @@ class _FailedLabel extends StatelessWidget {
       children: [
         const Icon(Icons.broken_image_outlined),
         AppSpacing.gapS,
-        Text(AppStrings.imageFailed, style: Theme.of(context).textTheme.bodyMedium),
+        Text(
+          AppStrings.imageFailed,
+          style: Theme.of(context).textTheme.bodyMedium,
+        ),
       ],
     );
   }

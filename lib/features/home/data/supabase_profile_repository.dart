@@ -12,7 +12,11 @@ class SupabaseProfileRepository implements ProfileRepository {
   Future<int> getStreakDays() {
     return guard(() async {
       final userId = _db.auth.currentUser!.id;
-      final row = await _db.from('profiles').select('streak_days').eq('id', userId).maybeSingle();
+      final row = await _db
+          .from('profiles')
+          .select('streak_days')
+          .eq('id', userId)
+          .maybeSingle();
       return (row?['streak_days'] as num?)?.toInt() ?? 0;
     });
   }

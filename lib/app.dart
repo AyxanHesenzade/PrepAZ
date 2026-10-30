@@ -1,20 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'core/constants/app_language.dart';
 import 'core/constants/app_strings.dart';
 import 'core/theme/app_theme.dart';
 import 'features/auth/presentation/auth_gate.dart';
+import 'features/update/presentation/update_gate.dart';
+import 'features/settings/presentation/settings_providers.dart';
 
-class PrepAzApp extends StatelessWidget {
+class PrepAzApp extends ConsumerWidget {
   const PrepAzApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final settings = ref.watch(settingsControllerProvider);
     return MaterialApp(
+      // dil dəyişəndə bütün ağac təzədən qurulur ki, hər mətn yeni dildə görünsün
+      key: ValueKey(settings.language),
       title: AppStrings.appName,
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
-      home: const AuthGate(),
+      themeMode: settings.themeMode.flutter,
+      locale: settings.language.locale,
+      supportedLocales: [for (final l in AppLanguage.values) l.locale],
+      localizationsDelegates: GlobalMaterialLocalizations.delegates,
+      home: const UpdateGate(child: AuthGate()),
     );
   }
 }

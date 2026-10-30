@@ -6,6 +6,7 @@ questions.image_path.
 
 Modes:
   python upload_images.py --prepare   copy the needed files to out/upload/ (for drag and drop in the dashboard)
+  python upload_images.py --folder out/upload_kitab --upload   (every PNG of a folder, e.g. the scanned-book questions)
   python upload_images.py --upload    upload through the Storage API. Needs environment variables:
                                         SUPABASE_URL          e.g. https://xxxx.supabase.co
                                         SUPABASE_SERVICE_KEY  service_role key (never commit or paste it anywhere)
@@ -56,13 +57,15 @@ def upload_one(base_url, key, name, data):
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--file", type=Path, default=HERE / "out" / "kimya_dim_yoxlama.xlsx")
+    ap.add_argument("--folder", type=Path, help="upload every PNG in this folder (e.g. out/upload_kitab) instead of the Excel selection")
     mode = ap.add_mutually_exclusive_group(required=True)
     mode.add_argument("--prepare", action="store_true")
     mode.add_argument("--upload", action="store_true")
     args = ap.parse_args(argv)
 
-    names = needed_files(args.file)
-    missing = [n for n in names if not (IMAGES / n).exists()]
+    source = args.folder or IMAGES
+    names = sorted(f.name for f in args.folder.glob("*.png")) if args.folder else needed_files(args.file)
+    missing = [n for n in names if not (source / n).exists()]
     if missing:
         print("XƏTA: şəkil faylları yoxdur:", ", ".join(missing))
         return 1
@@ -73,7 +76,7 @@ def main(argv=None):
     if args.prepare:
         UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
         for n in names:
-            shutil.copy(IMAGES / n, UPLOAD_DIR / n)
+            shutil.copy(source / n, UPLOAD_DIR / n)
         print(f"Kopyalandı: {UPLOAD_DIR}\nSupabase → Storage → {BUCKET} → Upload files ilə bu qovluqdakı faylları yükləyin.")
         return 0
 
@@ -84,7 +87,7 @@ def main(argv=None):
     done = {"uploaded": 0, "exists": 0}
     try:
         for n in names:
-            done[upload_one(url, key, n, (IMAGES / n).read_bytes())] += 1
+            done[upload_one(url, key, n, (source / n).read_bytes())] += 1
     except RuntimeError as e:
         print("XƏTA:", e)
         print(json.dumps(done))

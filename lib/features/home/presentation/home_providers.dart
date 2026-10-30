@@ -31,6 +31,8 @@ final progressRepositoryProvider = Provider<ProgressRepository>(
 );
 
 /// Fənn üzrə mövzu mənimsənilməsi (ən zəifi birinci).
-final masteryProvider = FutureProvider.autoDispose.family<List<TopicMastery>, int>(
-  (ref, subjectId) => ref.watch(progressRepositoryProvider).getMastery(subjectId),
-);
+final masteryProvider = FutureProvider.autoDispose
+    .family<List<TopicMastery>, int>(
+      (ref, subjectId) =>
+          ref.watch(progressRepositoryProvider).getMastery(subjectId),
+    );

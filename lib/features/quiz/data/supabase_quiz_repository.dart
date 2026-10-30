@@ -15,15 +15,26 @@ class SupabaseQuizRepository implements QuizRepository {
   @override
   Future<List<Question>> getDailySet(int subjectId, {int limit = 20}) {
     return guard(() async {
-      final rows = await _db.rpc('get_daily_set', params: {'p_subject': subjectId, 'p_limit': limit});
-      return (rows as List).cast<Map<String, dynamic>>().map(questionFromRow).toList();
+      final rows = await _db.rpc(
+        'get_daily_set',
+        params: {'p_subject': subjectId, 'p_limit': limit},
+      );
+      return (rows as List)
+          .cast<Map<String, dynamic>>()
+          .map(questionFromRow)
+          .toList();
     });
   }
 
   @override
   Future<List<Question>> getTopicSet(int topicId, {int limit = 10}) {
     return guard(() async {
-      final rows = await _db.from('questions').select().eq('topic_id', topicId).eq('is_active', true).limit(200);
+      final rows = await _db
+          .from('questions')
+          .select()
+          .eq('topic_id', topicId)
+          .eq('is_active', true)
+          .limit(200);
       final questions = rows.map(questionFromRow).toList()..shuffle();
       return questions.take(limit).toList();
     });
@@ -34,7 +45,9 @@ class SupabaseQuizRepository implements QuizRepository {
     return guard(() async {
       final rows = await _db
           .from('review_queue')
-          .select('due_at, interval_days, questions!inner(*, topics!inner(subject_id))')
+          .select(
+            'due_at, interval_days, questions!inner(*, topics!inner(subject_id))',
+          )
           .eq('user_id', _userId)
           .eq('questions.topics.subject_id', subjectId)
           .eq('questions.is_active', true)
@@ -91,7 +104,9 @@ class SupabaseQuizRepository implements QuizRepository {
 
 /// Bazadakı sətir → [Question]. Ayrıca funksiyadır ki, birbaşa test olunsun.
 Question questionFromRow(Map<String, dynamic> row) {
-  final raw = (row['options'] as Map?)?.cast<String, dynamic>() ?? const <String, dynamic>{};
+  final raw =
+      (row['options'] as Map?)?.cast<String, dynamic>() ??
+      const <String, dynamic>{};
   final letters = raw.keys.toList()..sort();
   return Question(
     id: row['id'] as String,
@@ -110,13 +125,13 @@ Question questionFromRow(Map<String, dynamic> row) {
 
 /// `review_queue` sətri (içində `questions` obyekti ilə) → [MistakeItem].
 MistakeItem mistakeFromRow(Map<String, dynamic> row) => MistakeItem(
-      question: questionFromRow((row['questions'] as Map).cast<String, dynamic>()),
-      dueAt: DateTime.parse(row['due_at'] as String),
-      intervalDays: (row['interval_days'] as num).toInt(),
-    );
+  question: questionFromRow((row['questions'] as Map).cast<String, dynamic>()),
+  dueAt: DateTime.parse(row['due_at'] as String),
+  intervalDays: (row['interval_days'] as num).toInt(),
+);
 
 QuestionType _parseType(String value) => switch (value) {
-      'qapali' => QuestionType.qapali,
-      'aciq_eded' => QuestionType.aciqEded,
-      _ => QuestionType.yazili,
-    };
+  'qapali' => QuestionType.qapali,
+  'aciq_eded' => QuestionType.aciqEded,
+  _ => QuestionType.yazili,
+};

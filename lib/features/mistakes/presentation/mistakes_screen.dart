@@ -23,7 +23,9 @@ class MistakesScreen extends ConsumerWidget {
 
   Future<void> _repeat(BuildContext context, WidgetRef ref) async {
     await Navigator.of(context).push(
-      MaterialPageRoute<void>(builder: (_) => QuizScreen(subject: subject, kind: QuizKind.mistakes)),
+      MaterialPageRoute<void>(
+        builder: (_) => QuizScreen(subject: subject, kind: QuizKind.mistakes),
+      ),
     );
     ref.invalidate(mistakesProvider(subject.id));
     ref.invalidate(masteryProvider(subject.id));
@@ -34,17 +36,20 @@ class MistakesScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final provider = mistakesProvider(subject.id);
     return Scaffold(
-      appBar: AppBar(title: const Text(AppStrings.mistakesBook)),
+      appBar: AppBar(title: Text(AppStrings.mistakesBook)),
       body: SafeArea(
         child: AsyncValueView<List<MistakeItem>>(
           value: ref.watch(provider),
           onRetry: () => ref.invalidate(provider),
           builder: (items) {
             if (items.isEmpty) {
-              return const Center(
+              return Center(
                 child: Padding(
                   padding: AppSpacing.pagePadding,
-                  child: Text(AppStrings.mistakesEmpty, textAlign: TextAlign.center),
+                  child: Text(
+                    AppStrings.mistakesEmpty,
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               );
             }
@@ -54,17 +59,30 @@ class MistakesScreen extends ConsumerWidget {
                   child: ListView(
                     padding: AppSpacing.pagePadding,
                     children: [
-                      const Text(AppStrings.mistakesHint),
+                      Text(
+                        AppStrings.mistakesHint,
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          color: Theme.of(context).colorScheme.onSurfaceVariant,
+                        ),
+                      ),
                       AppSpacing.gapM,
                       for (final item in items) _MistakeCard(item: item),
                     ],
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(AppSpacing.m, 0, AppSpacing.m, AppSpacing.m),
+                  padding: const EdgeInsets.fromLTRB(
+                    AppSpacing.m,
+                    0,
+                    AppSpacing.m,
+                    AppSpacing.m,
+                  ),
                   child: SizedBox(
                     width: double.infinity,
-                    child: AppButton(label: AppStrings.repeatMistakes, onPressed: () => _repeat(context, ref)),
+                    child: AppButton(
+                      label: AppStrings.repeatMistakes,
+                      onPressed: () => _repeat(context, ref),
+                    ),
                   ),
                 ),
               ],
@@ -86,30 +104,49 @@ class _MistakeCard extends StatelessWidget {
     final question = item.question;
     final text = Theme.of(context).textTheme;
     final today = DateTime.now();
-    final due = item.isDue(today) ? AppStrings.dueToday : AppStrings.dueInDays(item.daysUntilDue(today));
+    final due = item.isDue(today)
+        ? AppStrings.dueToday
+        : AppStrings.dueInDays(item.daysUntilDue(today));
     return Card(
       child: Padding(
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.all(AppSpacing.m),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
-                Expanded(child: Text(due, style: text.labelMedium)),
+                Expanded(
+                  child: Text(
+                    due,
+                    style: text.labelMedium?.copyWith(
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                  ),
+                ),
                 Expanded(child: QuestionCodeLabel(question: question)),
               ],
             ),
             AppSpacing.gapS,
-            MathText(question.body),
-            if (question.hasImage) ...[AppSpacing.gapS, QuestionImage(question.imagePath!, compact: true)],
+            if (question.body.trim().isNotEmpty) MathText(question.body),
+            if (question.hasImage) ...[
+              AppSpacing.gapS,
+              QuestionImage(
+                question.imagePath!,
+                compact: !question.isImageOnly,
+              ),
+            ],
             AppSpacing.gapS,
-            Text(AppStrings.rightAnswer(question.correctAnswer), style: text.titleSmall),
+            Text(
+              AppStrings.rightAnswer(question.correctAnswer),
+              style: text.titleSmall,
+            ),
             if (question.hasSolution)
               Theme(
-                data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
+                data: Theme.of(context)
+                    .copyWith(dividerColor: Colors.transparent),
                 child: ExpansionTile(
                   tilePadding: EdgeInsets.zero,
-                  title: const Text(AppStrings.solution),
+                  title: Text(AppStrings.solution, style: text.labelLarge),
                   expandedCrossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     if (question.hasSolutionImage)

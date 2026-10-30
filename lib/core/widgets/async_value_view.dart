@@ -23,7 +23,8 @@ class AsyncValueView<T> extends StatelessWidget {
     return value.when(
       data: builder,
       loading: () => const Center(child: CircularProgressIndicator()),
-      error: (error, _) => ErrorView(message: errorMessage(error), onRetry: onRetry),
+      error: (error, _) =>
+          ErrorView(message: errorMessage(error), onRetry: onRetry),
     );
   }
 }

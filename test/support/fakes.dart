@@ -1,3 +1,5 @@
+import 'package:prep_az/features/browse/domain/browse_repository.dart';
+import 'package:prep_az/features/browse/domain/browse_topic.dart';
 import 'package:prep_az/core/constants/app_strings.dart';
 import 'package:prep_az/core/error/app_exception.dart';
 import 'package:prep_az/features/home/domain/progress_repository.dart';
@@ -29,6 +31,20 @@ Question closedQuestion({
       solutionImagePath: solutionImagePath,
     );
 
+/// Skan edilmiş kitabdan sual: mətn yoxdur, sual və variantlar şəkildədir, bazada variantlar yalnız hərfdir.
+Question imageOnlyQuestion({String id = 'i1', String correct = 'B'}) => Question(
+      id: id,
+      code: 'KT1-S01-$id',
+      topicId: 1,
+      type: QuestionType.qapali,
+      body: '',
+      imagePath: 'KT1-S01-$id.png',
+      options: const {'A': 'A', 'B': 'B', 'C': 'C', 'D': 'D', 'E': 'E'},
+      correctAnswer: correct,
+      difficulty: 3,
+      solution: null,
+    );
+
 Question numericQuestion({String id = 'n1', String correct = '9,2'}) => Question(
       id: id,
       code: 'KIM-$id',
@@ -56,14 +72,14 @@ class FakeQuizRepository implements QuizRepository {
 
   @override
   Future<List<Question>> getDailySet(int subjectId, {int limit = 20}) async {
-    if (failLoad) throw const AppException(AppStrings.unknownError);
+    if (failLoad) throw AppException(AppStrings.unknownError);
     return questions;
   }
 
   /// Mövzu üzrə sorğuda yalnız həmin mövzunun sualları qayıdır.
   @override
   Future<List<Question>> getTopicSet(int topicId, {int limit = 10}) async {
-    if (failLoad) throw const AppException(AppStrings.unknownError);
+    if (failLoad) throw AppException(AppStrings.unknownError);
     return questions.where((q) => q.topicId == topicId).take(limit).toList();
   }
 
@@ -71,7 +87,7 @@ class FakeQuizRepository implements QuizRepository {
 
   @override
   Future<List<MistakeItem>> getMistakes(int subjectId) async {
-    if (failLoad) throw const AppException(AppStrings.unknownError);
+    if (failLoad) throw AppException(AppStrings.unknownError);
     return mistakes;
   }
 
@@ -83,7 +99,7 @@ class FakeQuizRepository implements QuizRepository {
 
   @override
   Future<void> finishSession(String sessionId) async {
-    if (failFinish) throw const AppException(AppStrings.unknownError);
+    if (failFinish) throw AppException(AppStrings.unknownError);
     sessionsFinished++;
   }
 
@@ -94,7 +110,7 @@ class FakeQuizRepository implements QuizRepository {
     required String? given,
     required int timeMs,
   }) async {
-    if (failSubmit) throw const AppException(AppStrings.unknownError);
+    if (failSubmit) throw AppException(AppStrings.unknownError);
     submitted.add((questionId: questionId, given: given, timeMs: timeMs));
     final question = questions.firstWhere((q) => q.id == questionId);
     return given != null && given.toUpperCase() == question.correctAnswer.toUpperCase();
@@ -110,7 +126,7 @@ class FakeImageRepository implements QuestionImageRepository {
   @override
   Future<String> signedUrl(String path) async {
     calls++;
-    if (fail) throw const AppException(AppStrings.imageFailed);
+    if (fail) throw AppException(AppStrings.imageFailed);
     return 'https://example.invalid/$path';
   }
 }
@@ -122,4 +138,17 @@ class FakeProgressRepository implements ProgressRepository {
 
   @override
   Future<List<TopicMastery>> getMastery(int subjectId) async => topics;
+}
+
+class FakeBrowseRepository implements BrowseRepository {
+  FakeBrowseRepository(this.questions);
+
+  final List<Question> questions;
+
+  @override
+  Future<List<BrowseTopic>> getTopics(int subjectId) async =>
+      [BrowseTopic(id: 1, name: 'Əsas anlayışlar', questionCount: questions.length)];
+
+  @override
+  Future<List<Question>> getTopicQuestions(int topicId) async => questions;
 }

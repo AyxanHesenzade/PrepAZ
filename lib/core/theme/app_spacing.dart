@@ -16,3 +16,12 @@ abstract final class AppSpacing {
   static const gapL = SizedBox(height: l, width: l);
   static const gapXl = SizedBox(height: xl, width: xl);
 }
+
+/// Künc yumrulaqlığı: bütün kartlar, düymələr və xanalar bu ölçülərdən istifadə edir.
+abstract final class AppRadius {
+  static const double s = 12;
+  static const double m = 20;
+  static const double l = 26;
+  static const double xl = 34;
+  static const double pill = 99;
+}

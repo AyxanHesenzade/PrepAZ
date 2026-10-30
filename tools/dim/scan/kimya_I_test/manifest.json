@@ -1,0 +1,1320 @@
+[
+ {
+  "number": 1,
+  "page": 3,
+  "column": 0,
+  "box": [
+   0,
+   203,
+   580,
+   336
+  ],
+  "file": "q001.png",
+  "gutter": 566,
+  "draft_text": "1.Distilla ilo ayirma usulu osason maddolorin hanst xassosinin muxtolifliyina osaslanir? B) gaynama temperaturu A)arima temperaturu D)sIxligi C)hollolmasi E) donma temperaturu"
+ },
+ {
+  "number": 2,
+  "page": 3,
+  "column": 0,
+  "box": [
+   0,
+   336,
+   580,
+   470
+  ],
+  "file": "q002.png",
+  "gutter": 566,
+  "draft_text": "2.Durultma ilo ayrma usulu asason maddolorin hansi xassasinin muxtolifliyina asaslanir? A)maqnitlasma qabiliyyati B) adsorbsiya D)qaynama temperatur C)sixligin E)donma temperaturu"
+ },
+ {
+  "number": 3,
+  "page": 3,
+  "column": 0,
+  "box": [
+   0,
+   470,
+   580,
+   610
+  ],
+  "file": "q003.png",
+  "gutter": 566,
+  "draft_text": "3.Xromatoqrafiyaila ayirma usulu asasanmaddalorin hansi xassosinin muxtalifliyina asaslanir? B) adsorbsiya qabiliyyati A)orima temperaturu C)qaynama temperaturu E)donma temperaturu D)hollolmasi"
+ },
+ {
+  "number": 4,
+  "page": 3,
+  "column": 0,
+  "box": [
+   0,
+   610,
+   580,
+   675
+  ],
+  "file": "q004.png",
+  "gutter": 566,
+  "draft_text": "4.Hansi kimyavi isara basit maddoni gostarir? E)Br D)N C)C1 B)H A)Ne"
+ },
+ {
+  "number": 5,
+  "page": 3,
+  "column": 0,
+  "box": [
+   0,
+   675,
+   580,
+   741
+  ],
+  "file": "q005.png",
+  "gutter": 566,
+  "draft_text": "5.Hansi kimyavi isara basit maddoni gostarir? E)Ar D)I A)N C)F B)CI"
+ },
+ {
+  "number": 6,
+  "page": 3,
+  "column": 0,
+  "box": [
+   0,
+   741,
+   580,
+   835
+  ],
+  "file": "q006.png",
+  "gutter": 566,
+  "draft_text": "6.Basit maddalori muayyan edin. C) H2,O2 A) O2,HCI B)HO,N E)N,HCI D)HO,HCI"
+ },
+ {
+  "number": 7,
+  "page": 3,
+  "column": 0,
+  "box": [
+   0,
+   835,
+   580,
+   925
+  ],
+  "file": "q007.png",
+  "gutter": 566,
+  "draft_text": "7.Murakkab maddolorimuoyyan edin. II.N2 III.HNO IV.S I.NH3 A)ⅡI,II B)I,III 1'1 CIIID)IIIIVE)IIIV"
+ },
+ {
+  "number": 8,
+  "page": 3,
+  "column": 0,
+  "box": [
+   0,
+   925,
+   580,
+   1018
+  ],
+  "file": "q008.png",
+  "gutter": 566,
+  "draft_text": "8.Basit maddolari muayyan edin. I.Fe III.FeS II.HO IV.S A)IIIVB)III C)II,III D)I,IVE)II,IV"
+ },
+ {
+  "number": 9,
+  "page": 3,
+  "column": 0,
+  "box": [
+   0,
+   1018,
+   580,
+   1082
+  ],
+  "file": "q009.png",
+  "gutter": 566,
+  "draft_text": "9.Nacib qazi muayyan edin. A)Ne B)C C)P D)H E)O"
+ },
+ {
+  "number": 10,
+  "page": 3,
+  "column": 0,
+  "box": [
+   0,
+   1082,
+   580,
+   1143
+  ],
+  "file": "q010.png",
+  "gutter": 566,
+  "draft_text": "10.Nacib qazi muayyan edin. A)H B)Ar C)O D)N E)CI"
+ },
+ {
+  "number": 11,
+  "page": 3,
+  "column": 0,
+  "box": [
+   0,
+   1143,
+   580,
+   1228
+  ],
+  "file": "q011.png",
+  "gutter": 566,
+  "draft_text": "11.Hansi element ikiatomlubasit maddmalagotirir? A)azot B)karbon C) silisium D)helium E)domir"
+ },
+ {
+  "number": 12,
+  "page": 3,
+  "column": 0,
+  "box": [
+   0,
+   1228,
+   580,
+   1349
+  ],
+  "file": "q012.png",
+  "gutter": 566,
+  "draft_text": "12.Hansi element ikiatomlu basit maddamala gatirmir? A) oksigen B)azot C) xlor D) silisium E)hidrogen"
+ },
+ {
+  "number": 13,
+  "page": 3,
+  "column": 0,
+  "box": [
+   0,
+   1349,
+   580,
+   1420
+  ],
+  "file": "q013.png",
+  "gutter": 566,
+  "draft_text": "13.Metali muoyyon cdin B)O2 D)H2 C)Fe E)I2 A)F2"
+ },
+ {
+  "number": 14,
+  "page": 3,
+  "column": 0,
+  "box": [
+   0,
+   1420,
+   580,
+   1493
+  ],
+  "file": "q014.png",
+  "gutter": 566,
+  "draft_text": "14.Qeyri-metali muayyan cdin D) O2 E)AI C)Na B)Fe A)Zn"
+ },
+ {
+  "number": 17,
+  "page": 3,
+  "column": 1,
+  "box": [
+   557,
+   296,
+   1080,
+   480
+  ],
+  "file": "q017.png",
+  "gutter": 566,
+  "draft_text": "17. Xorak duzu va cay qumu qarisigin bir-birindon necaayirmaqolar? A)suilqmqmkula B)distillavacokdurmokla C) xromatoqrafiya va kristallasdirmaqla D)buxarlandirma vamaqnitla tasir etmokla E) suilaqarisdirmaq va distill etmakla"
+ },
+ {
+  "number": 18,
+  "page": 3,
+  "column": 1,
+  "box": [
+   557,
+   480,
+   1080,
+   628
+  ],
+  "file": "q018.png",
+  "gutter": 566,
+  "draft_text": "18.Dordvalentli clementin oksidinin molyar katlosinin oksigenin molyar kutlosina olan nisbati 2-ya barabardir.Bu elementin nisbi atom kutlosini muayyan edin.A,(O)=16 B)48 C)32 A)24 D)27 E)12"
+ },
+ {
+  "number": 19,
+  "page": 3,
+  "column": 1,
+  "box": [
+   557,
+   628,
+   1080,
+   744
+  ],
+  "file": "q019.png",
+  "gutter": 566,
+  "draft_text": "19.Eynicinsli qansigi muayyan edin. B) kukardlo su A)qumlaxorakduzu D) benzinla su C)domirloqumun nsenznpyeox("
+ },
+ {
+  "number": 20,
+  "page": 3,
+  "column": 1,
+  "box": [
+   557,
+   744,
+   1080,
+   908
+  ],
+  "file": "q020.png",
+  "gutter": 566,
+  "draft_text": "20.Eynicinsli qarisigi muoyyan edin A) kukard tozunun qumla qarisigi B) qumun gilila qarisig1 C)damir tozununkukurd tozuilaqarisigt D) domir tozunun su ila qansigi E) etil spirtinin su ila qarisig"
+ },
+ {
+  "number": 21,
+  "page": 3,
+  "column": 1,
+  "box": [
+   557,
+   908,
+   1080,
+   1039
+  ],
+  "file": "q021.png",
+  "gutter": 566,
+  "draft_text": "21.kivalentlimetaln sulfat duzunun molyar kutlsi hominmetalnmolyarkutlasindon2,5 dofa coxdursa,metalin nisbi atom kutiasini hesablayin A,（S)=32,A,（O)=16 E）24 D)40 A)65 C)64 B)56"
+ },
+ {
+  "number": 22,
+  "page": 3,
+  "column": 1,
+  "box": [
+   557,
+   1039,
+   1080,
+   1497
+  ],
+  "file": "q022.png",
+  "gutter": 566,
+  "draft_text": "22. 1kivalentlimetalin bromid duzunun nisbimolekul kutlasi homin metalnnisbiatomkatlasindan5df coxdursa,metalin nisbi atom kutlasinimuayyan edin.A,(Br)=80 E)40 D)56 A)12 B)20 C)24 elementlor gostarilmisdir? B) kakurd,oksigen A)helium,azot D) arqon,helium C) oksigen, kalium E)mis,azot gotiran elementlor gostorilmisdir? B) oksigen,arqon A) fosfor,neon D) kukard,fosfor C)kakard,helium E) hidrogen.helium"
+ },
+ {
+  "number": 26,
+  "page": 4,
+  "column": 0,
+  "box": [
+   0,
+   227,
+   514,
+   427
+  ],
+  "file": "q026.png",
+  "gutter": 500,
+  "draft_text": "26.Hansthaldahidrogen basit maddkimi deyil kimyavi element kimi gostorilmisdir? A) hidrogen suyun torkibino daxildir B) hidrogen an yungul qazdir C) hidrogen oksigenlo reaksiyaya girir D)hidrogen reduksiyaedicidir E)iki hacm hidrogen bir hacm oksigen ila \"guruldayici qaz”amala gatirir."
+ },
+ {
+  "number": 27,
+  "page": 4,
+  "column": 0,
+  "box": [
+   0,
+   427,
+   514,
+   559
+  ],
+  "file": "q027.png",
+  "gutter": 500,
+  "draft_text": "27.Adisoraitd qaz halinda ikiatomlu basit maddalor amol gatiran elementlari muayyan edin. B) kukurd,hidrogen A) oksigen,karbon D)azot,xlor C)fluor,helium E)fluor,brom"
+ },
+ {
+  "number": 28,
+  "page": 4,
+  "column": 0,
+  "box": [
+   0,
+   559,
+   514,
+   691
+  ],
+  "file": "q028.png",
+  "gutter": 500,
+  "draft_text": "28.Adisaraitda qaz halinda olan biratomlu basit maddolari muoyyan edin. B) kukurd,oksigen A)mis,arqon D)helium, azot C) oksigen,kalium E) arqon,helium"
+ },
+ {
+  "number": 29,
+  "page": 4,
+  "column": 0,
+  "box": [
+   0,
+   691,
+   514,
+   824
+  ],
+  "file": "q029.png",
+  "gutter": 500,
+  "draft_text": "29.Coxatomlu basit maddalaramalagatiran elementlari muayyan edin. B)azot,arqon A)kukurd,fosfor D) fosfor,neon C) kukard,helium E) silisium,helium"
+ },
+ {
+  "number": 30,
+  "page": 4,
+  "column": 0,
+  "box": [
+   0,
+   824,
+   514,
+   955
+  ],
+  "file": "q030.png",
+  "gutter": 500,
+  "draft_text": "30.Muxtolifcinsli qarisiqlar muayyan edin 1.xorak duzu +su II.kukurd+su Il.sakor+su IV.tabasir + su A)II,IV B) II,III C)I,III D)III,V E)yalniz III"
+ },
+ {
+  "number": 31,
+  "page": 4,
+  "column": 0,
+  "box": [
+   0,
+   955,
+   514,
+   1087
+  ],
+  "file": "q031.png",
+  "gutter": 500,
+  "draft_text": "31.Eynicinsli qarisiqlari muayyan edin I.qlakoza +su Il.neft+su II.xork duzu +su IV.qum +su A)II,IV B)IL,III C) IL,IV D)yalnizI E)I,III"
+ },
+ {
+  "number": 32,
+  "page": 4,
+  "column": 0,
+  "box": [
+   0,
+   1087,
+   514,
+   1190
+  ],
+  "file": "q032.png",
+  "gutter": 500,
+  "draft_text": "32.Qarisiqlari muayyon edin I.sakar II.hava III.benzin A)II,III B) yalniz II C)III D) yalniz III E)I,II"
+ },
+ {
+  "number": 33,
+  "page": 4,
+  "column": 0,
+  "box": [
+   0,
+   1190,
+   514,
+   1292
+  ],
+  "file": "q033.png",
+  "gutter": 500,
+  "draft_text": "33.Saf maddalori muayyan edin. I.oksigen I.benzin II.sirka tursusu A)L,II B)I,ⅡI D) yalnizI E)yalniz III"
+ },
+ {
+  "number": 34,
+  "page": 4,
+  "column": 0,
+  "box": [
+   0,
+   1292,
+   514,
+   1477
+  ],
+  "file": "q034.png",
+  "gutter": 500,
+  "draft_text": "34.Basit maddalari muayyn edin. A)qum,nisasta, sink,hidrogen B) su, dmir, skr, xorak du C) almaz, civa, oksigen, oon E) qlokoza,dmir, sink,narium"
+ },
+ {
+  "number": 35,
+  "page": 4,
+  "column": 1,
+  "box": [
+   491,
+   73,
+   1080,
+   155
+  ],
+  "file": "q035.png",
+  "gutter": 500,
+  "draft_text": "35.Hansi elementlar metallara aiddir? C) Mg,Cr,N B)Ba,Be,Mn A) Si,Ca,Cu E)H,O,Fe D)S,K,B"
+ },
+ {
+  "number": 36,
+  "page": 4,
+  "column": 1,
+  "box": [
+   491,
+   155,
+   1080,
+   238
+  ],
+  "file": "q036.png",
+  "gutter": 500,
+  "draft_text": "36.Hansi elementlor qeyri-metallara aiddir? C)Ba,Si,S B)Na,S,P A) O,P,Ca E)B,Si,Br D) C,Mg,Mn"
+ },
+ {
+  "number": 37,
+  "page": 4,
+  "column": 1,
+  "box": [
+   491,
+   238,
+   1080,
+   371
+  ],
+  "file": "q037.png",
+  "gutter": 500,
+  "draft_text": "37.Etil spirtinin su il qarisigin hans Osulla ayirmaq olar? B)suzmakla A)cokdarmakla D) distilloila C)maqnitla tasir etmokla E)ayinici qifla"
+ },
+ {
+  "number": 38,
+  "page": 4,
+  "column": 1,
+  "box": [
+   491,
+   371,
+   1080,
+   502
+  ],
+  "file": "q038.png",
+  "gutter": 500,
+  "draft_text": "38.Xorak duzunun su ila qarisigini hansi usulla ayirirlar? B) maqnitlo tasir etmakla A)cokdurmokla C) suzmakla D)ayirici qifla E)buxarlandirmaqla"
+ },
+ {
+  "number": 39,
+  "page": 4,
+  "column": 1,
+  "box": [
+   491,
+   502,
+   1080,
+   655
+  ],
+  "file": "q039.png",
+  "gutter": 500,
+  "draft_text": "39.Hansi ifad basit maddoya aiddir? A)kakurd-sulfat tursusunun torkibinda B)mis-miskuporosunun torkibinda C)oksigen -kakurd qazinin torkibinda D)azot-nitrat tursusunun tarkibinda E)oksigen-havanin tarkibinda"
+ },
+ {
+  "number": 40,
+  "page": 4,
+  "column": 1,
+  "box": [
+   491,
+   655,
+   1080,
+   785
+  ],
+  "file": "q040.png",
+  "gutter": 500,
+  "draft_text": "40.Yalniz bosit maddalordan ibarat sirani muyyn edin. A) oksigen,potas,gip B) marmar,xlor,soda C)yod,pirit,kukard D)ag fosfor,qum,his E) ozon,qrafit, yod"
+ },
+ {
+  "number": 41,
+  "page": 4,
+  "column": 1,
+  "box": [
+   491,
+   785,
+   1080,
+   869
+  ],
+  "file": "q041.png",
+  "gutter": 500,
+  "draft_text": "41.Saf maddoni muayyan edin. B)hava C) doniz suyu A)ozon E) tobiiqaz D)polad"
+ },
+ {
+  "number": 42,
+  "page": 4,
+  "column": 1,
+  "box": [
+   491,
+   869,
+   1080,
+   975
+  ],
+  "file": "q042.png",
+  "gutter": 500,
+  "draft_text": "42.Hansi ifadonin manasi yoxdur? A)“saxaroza molekulu\" B)“qlukoza molekulu” C)“benzol molekulu\" D)“azot molekulu” E)\"hava molekulu”"
+ },
+ {
+  "number": 43,
+  "page": 4,
+  "column": 1,
+  "box": [
+   491,
+   975,
+   1080,
+   1084
+  ],
+  "file": "q043.png",
+  "gutter": 500,
+  "draft_text": "43.Hansi ifadonin manasi var? B)“hava molekulu\" A)\"kerosin molekulu” C)“neft molekulu” D)“tabi qaz molekulu” E)“qlukoza molekulu\""
+ },
+ {
+  "number": 44,
+  "page": 4,
+  "column": 1,
+  "box": [
+   491,
+   1084,
+   1080,
+   1193
+  ],
+  "file": "q044.png",
+  "gutter": 500,
+  "draft_text": "44.Suda hall olan mayelori sudamahluldan hansi usulla ayirmaq olar? A) stizma B)distilla C) durultma D)cokdurma E)kristallasma"
+ },
+ {
+  "number": 45,
+  "page": 4,
+  "column": 1,
+  "box": [
+   491,
+   1193,
+   1080,
+   1330
+  ],
+  "file": "q045.png",
+  "gutter": 500,
+  "draft_text": "45.Suda holl olan barkmaddoni suda mhluldan hansi usulla ayirirlar? B)suzma A)durultma D) cokdurma C)buxarlandirma E)maqnitla tasir ctma"
+ },
+ {
+  "number": 46,
+  "page": 4,
+  "column": 1,
+  "box": [
+   491,
+   1330,
+   1080,
+   1498
+  ],
+  "file": "q046.png",
+  "gutter": 500,
+  "draft_text": "46.Hansi element sakkizatomlubasitmaddmal gatirir? A)azot B)fosfor C) oksigen D) kukard E)yod -5-"
+ },
+ {
+  "number": 47,
+  "page": 5,
+  "column": 0,
+  "box": [
+   0,
+   62,
+   601,
+   147
+  ],
+  "file": "q047.png",
+  "gutter": 587,
+  "draft_text": "47.Hanst element Ocatomlu bosit maddomala galirir? C)oksigen B)fosfor A)xlor E)yod D)azot"
+ },
+ {
+  "number": 48,
+  "page": 5,
+  "column": 0,
+  "box": [
+   0,
+   147,
+   601,
+   257
+  ],
+  "file": "q048.png",
+  "gutter": 587,
+  "draft_text": "48.Hansiclement dordatomlubositmaddmal gatirir? C)agfosfor B)oksigen A)xlor E)yod D)azot"
+ },
+ {
+  "number": 49,
+  "page": 5,
+  "column": 0,
+  "box": [
+   0,
+   257,
+   601,
+   331
+  ],
+  "file": "q049.png",
+  "gutter": 587,
+  "draft_text": "49.Qarisig1 muayyon cdin. C)hava B)brom A)xlor E)domir D) yod"
+ },
+ {
+  "number": 50,
+  "page": 5,
+  "column": 0,
+  "box": [
+   0,
+   331,
+   601,
+   417
+  ],
+  "file": "q050.png",
+  "gutter": 587,
+  "draft_text": "50.Hanst sirada yalniz qeyri-metallar gostorilmisdir? C)S,Ca B)P,K A) Ca,Na E)Na,Si D) C,P"
+ },
+ {
+  "number": 51,
+  "page": 5,
+  "column": 0,
+  "box": [
+   0,
+   417,
+   601,
+   499
+  ],
+  "file": "q051.png",
+  "gutter": 587,
+  "draft_text": "51.Murokkabmaddoni muayyan edin C)fosfor B)su A)oksigen E)qrafit D)kukurd"
+ },
+ {
+  "number": 52,
+  "page": 5,
+  "column": 0,
+  "box": [
+   0,
+   499,
+   601,
+   581
+  ],
+  "file": "q052.png",
+  "gutter": 587,
+  "draft_text": "52.Su ilomuxtolifcinsliqansiq mala gatiran: C) kerosin B)etil spirti A)xorakduzu E)sirka tursusu jeyes (a"
+ },
+ {
+  "number": 53,
+  "page": 5,
+  "column": 0,
+  "box": [
+   0,
+   581,
+   601,
+   663
+  ],
+  "file": "q053.png",
+  "gutter": 587,
+  "draft_text": "53.Su ilo eynicinsli qarisiq mal gatiron: ieyes ( B)qum A)gil E)kerosin D)neft"
+ },
+ {
+  "number": 54,
+  "page": 5,
+  "column": 0,
+  "box": [
+   0,
+   663,
+   601,
+   752
+  ],
+  "file": "q054.png",
+  "gutter": 587,
+  "draft_text": "54.Hansi qeyri-metal adi saraitda bork haldadir? C)brom B)xlor A)fluor D)fosfor E)azot"
+ },
+ {
+  "number": 55,
+  "page": 5,
+  "column": 0,
+  "box": [
+   0,
+   752,
+   601,
+   843
+  ],
+  "file": "q055.png",
+  "gutter": 587,
+  "draft_text": "55.Hansi elementin allotropik sokildoyismosi yoxdur? A)oksigen B)azot E) karbon D)kakard"
+ },
+ {
+  "number": 56,
+  "page": 5,
+  "column": 0,
+  "box": [
+   0,
+   843,
+   601,
+   1026
+  ],
+  "file": "q056.png",
+  "gutter": 587,
+  "draft_text": "56.Kondenslosma zamani maddonin aqreqat hali dayisir: 1.barkdon—→qaza 2.qazdan—→mayeya 3.mayedan—→qaza A)yalnz1 B)yalniz 2 C)yalnz3 D)1;2 E)2,3"
+ },
+ {
+  "number": 57,
+  "page": 5,
+  "column": 0,
+  "box": [
+   0,
+   1026,
+   601,
+   1161
+  ],
+  "file": "q057.png",
+  "gutter": 587,
+  "draft_text": "57.Hansiifadolor qeyri-metallarin xarakterikfiziki nppie eulelessex I.Elektriki kecirmirlor I1. Istiliyi yaxs kecirirlr II.Kovrakdirlor IV.Metal parltis A)I,IVB)I,II C)IIID)ILIV"
+ },
+ {
+  "number": 58,
+  "page": 5,
+  "column": 0,
+  "box": [
+   0,
+   1161,
+   601,
+   1534
+  ],
+  "file": "q058.png",
+  "gutter": 587,
+  "draft_text": "58.Hansimaddalarin +10°C-dan+60°C-dak temperatur intervalinda aqreqat hali dayismir? lqavmama °℃ tarima ℃ X +40 +152 Y +5 +230 Z -10 +80 A)X,Z C)Y,Z B)X, Y D) yalnizY E) yalniz Z -6-"
+ },
+ {
+  "number": 60,
+  "page": 5,
+  "column": 1,
+  "box": [
+   578,
+   280,
+   1080,
+   590
+  ],
+  "file": "q060.png",
+  "gutter": 587,
+  "draft_text": "60. Allotropik sokildayismalarinin Elementlor olmasi X + Y 一 XvaYhansielementlarolabilor? Y Si,P,N A) S,O.Cr C,Si,Fe S,P,A1 B) O,CI,N S,P,C C) S,P,O AI,N,Cr D) E)AI,N,Cr Si,S,C"
+ },
+ {
+  "number": 61,
+  "page": 5,
+  "column": 1,
+  "box": [
+   578,
+   590,
+   1080,
+   899
+  ],
+  "file": "q061.png",
+  "gutter": 587,
+  "draft_text": "61. Allotropiksokildayismalorinin Elementlor olmasi X 一 Y + XvaYhansi elementlar ola bilor? Y 又 A)O,P,Si S,N,Ca B)P,AI,S N,Br,O Al,Ba,Zn )Na,Ca,P C) N,CI,Mg O,P,C D) E)AI,S,Cr O,Fe,AI"
+ },
+ {
+  "number": 62,
+  "page": 5,
+  "column": 1,
+  "box": [
+   578,
+   899,
+   1080,
+   1036
+  ],
+  "file": "q062.png",
+  "gutter": 587,
+  "draft_text": "62. Buz→ su Hansi morhalolord fiziki hadisobas verir? C)III A)I,II B)IIV E)I,III D) III,IV"
+ },
+ {
+  "number": 63,
+  "page": 5,
+  "column": 1,
+  "box": [
+   578,
+   1036,
+   1080,
+   1512
+  ],
+  "file": "q063.png",
+  "gutter": 587,
+  "draft_text": "63. Aynlma usulu Aqreqat hali A X 人 B maye A maddasi Bilmuxtalifcinsli qarsiq amala gotirirso,XvaY-i muyyan edin. X Y A) bark ayiriciqif B) distilla qaz C) bork buxarlandirma D) maye ayinci qif E) maye edin. IV.HCI I.NaH 1II.SiO2 III.CO2 C)1I,IV A)1,III B) II,III D) III,IV E)I.II"
+ },
+ {
+  "number": 65,
+  "page": 6,
+  "column": 0,
+  "box": [
+   0,
+   97,
+   522,
+   347
+  ],
+  "file": "q065.png",
+  "gutter": 508,
+  "draft_text": "65. Qarsigin Aqreqat hal Maddolor novu maye X moxtolifcinsli bork Y XvaYmaddlorindon ibarotqansg hansi usulla ayrrlar? B)suzmoklo A) buxarlandumaqla D)aynci qifla C) distillo ctmokla E)maqnitlo tosir etmoklo"
+ },
+ {
+  "number": 66,
+  "page": 6,
+  "column": 0,
+  "box": [
+   0,
+   347,
+   522,
+   603
+  ],
+  "file": "q066.png",
+  "gutter": 508,
+  "draft_text": "66. Qansigin Aqreqat hali Maddslor novu X maye eynicinsli bark Y Xvo Ymaddolorindon ibaret qansigihansi usulla avnrlar? ( A)cokdurmokla C) aynci qifla D)maqnitlo tosiretmokla E)buxarlandirmaqla"
+ },
+ {
+  "number": 67,
+  "page": 6,
+  "column": 0,
+  "box": [
+   0,
+   603,
+   522,
+   966
+  ],
+  "file": "q067.png",
+  "gutter": 508,
+  "draft_text": "67. euue Qaynama Maddalar temperaturu,°C temperaturu,°C +100 0 X -10 -60 Y +140 +30 Z +20°C temperaturdaX,YvaZmaddlorinin aqreqat halini muayyan edin Z Y X bark A) maye qaz bark B) maye qaz bark C) gaz maye bark D) qaz maye maye E) qaz"
+ },
+ {
+  "number": 68,
+  "page": 6,
+  "column": 0,
+  "box": [
+   0,
+   966,
+   522,
+   1314
+  ],
+  "file": "q068.png",
+  "gutter": 508,
+  "draft_text": "68. Qaynama eue Maddalar temperaturu,°℃ temperaturu, °C +100 0 X -10 -60 Y +140 +20 Z +10°C temperaturdaX,YvaZmaddslarinin aqreqa halini muoyyan edin. Z X Y A)bark maye qaz. B) maye qaz C) zeb bark maye D) bark gaz maye E) bark maye zeb"
+ },
+ {
+  "number": 69,
+  "page": 6,
+  "column": 0,
+  "box": [
+   0,
+   1314,
+   522,
+   1429
+  ],
+  "file": "q069.png",
+  "gutter": 508,
+  "draft_text": "69. Eyni maddonin aqreqat hallan X, Y vZil isar edilmisdir.Y-i X- cevirmak ucun qizdirmaq lazimdir.Z-inmolyar hocmi an boyukdur. Maddolarin aqreqat halni musyyan edin.",
+  "continued_from": {
+   "page": 6,
+   "column": 1,
+   "rows": [
+    82,
+    222
+   ]
+  }
+ },
+ {
+  "number": 70,
+  "page": 6,
+  "column": 1,
+  "box": [
+   499,
+   222,
+   1080,
+   467
+  ],
+  "file": "q070.png",
+  "gutter": 508,
+  "draft_text": "70.Eynimaddonin aqreqat hallar X,YvaZilisar edilmisdir.Z-i Y- cevirmakucun soyutmaq lazimdir.X-inmolyarhacmian boyakdur. Maddolorin aqreqathalinimuoyyanedin Maye Qaz Bark Z Y A) X Z X Y B) Y Z X C) X Y Z D) X Z E) Y"
+ },
+ {
+  "number": 71,
+  "page": 6,
+  "column": 1,
+  "box": [
+   499,
+   467,
+   1080,
+   768
+  ],
+  "file": "q071.png",
+  "gutter": 508,
+  "draft_text": "71.X maddosinin su il qarisigini distillaetmakla, Ymaddasinin suilaqarsigini is suzmokla ayrirlar. XvaYmaddalori ucunuygun olanlari muayyan edin. 2.qum 1. etil spirti 4.sirka tursusu 3.tobasir Y X 1,4 A)2,3 B)1,3 2,4 C) 1, 4 2,3 D)1,2 3,4 1,2 E)3,4"
+ },
+ {
+  "number": 72,
+  "page": 6,
+  "column": 1,
+  "box": [
+   499,
+   768,
+   1080,
+   991
+  ],
+  "file": "q072.png",
+  "gutter": 508,
+  "draft_text": "72.X:Cisim Y:Madda XvaY-i muayyon edin. Y X oksigen A) masa hidrogen B) su C) oksigen toxum stokan D) masa E) bitkiyagi su"
+ },
+ {
+  "number": 73,
+  "page": 6,
+  "column": 1,
+  "box": [
+   499,
+   991,
+   1080,
+   1216
+  ],
+  "file": "q073.png",
+  "gutter": 508,
+  "draft_text": "73.X:Cisim Y:Madda ueenex Y X A)hidrogen su B)aluminium masa C)parta su D) qranit parcasi masa E)su oksigen"
+ },
+ {
+  "number": 74,
+  "page": 6,
+  "column": 1,
+  "box": [
+   499,
+   1216,
+   1080,
+   1317
+  ],
+  "file": "q074.png",
+  "gutter": 508,
+  "draft_text": "74.Muxtlifcinsli qarisiqlari muoyyan edin Il.cayqumu +su ns+nznpyeiox1 IV.benzin +su ns+JeyesI A) IIIVB)II,IC）I.IID) IILIVE)yalzIII"
+ },
+ {
+  "number": 75,
+  "page": 6,
+  "column": 1,
+  "box": [
+   499,
+   1317,
+   1080,
+   1483
+  ],
+  "file": "q075.png",
+  "gutter": 508,
+  "draft_text": "75.Eynicinsli qarsqlarmuyyn edin Ilyag+su I.sakar+su IV.cay qumu+su IIl.soda+su C) III,IV B)II,II A)yalnzI E) II,IV 11I'1(0 7-"
+ },
+ {
+  "number": 76,
+  "page": 7,
+  "column": 0,
+  "box": [
+   0,
+   88,
+   566,
+   426
+  ],
+  "file": "q076.png",
+  "gutter": 552,
+  "draft_text": "76.Ayinci qifinkomoyiila ayrilmasi 人 sakildski kimi olarsa,XvaY X maddalarinimuayyan edin Y X duz A) sokar B) benzin su bitki yagi C) su duz D) su E) bitki yagi su"
+ },
+ {
+  "number": 77,
+  "page": 7,
+  "column": 0,
+  "box": [
+   0,
+   426,
+   566,
+   768
+  ],
+  "file": "q077.png",
+  "gutter": 552,
+  "draft_text": "77.Ayinici qifinkomayi ilo ayrilmas1 sakildaki kimi olarsa,Xva Y-i X muayyan edin. Y A) reyes su benzin B) su C) sakar su D) sakar duz E) benzin su"
+ },
+ {
+  "number": 78,
+  "page": 7,
+  "column": 0,
+  "box": [
+   0,
+   768,
+   566,
+   896
+  ],
+  "file": "q078.png",
+  "gutter": 552,
+  "draft_text": "78.Su ila gildan ibarat qarisiqdan gili hansi usulla ayirmaqolar? A) xromatoqrafiya usulu il B) suzmokla C)kristallasdirmaqla D)maqnitlo tasir etmokla E) distillo etmokla"
+ },
+ {
+  "number": 79,
+  "page": 7,
+  "column": 0,
+  "box": [
+   0,
+   896,
+   566,
+   1027
+  ],
+  "file": "q079.png",
+  "gutter": 552,
+  "draft_text": "79.Su ila qumdan ibarat qarisiqdanqumu hansi usulla ayirmaqolar? A)suzmakla B) xromatoqrafiya usului C) kristallasdirmaqla D)maqnitla tasir etmakla E)distillo etmakl"
+ },
+ {
+  "number": 80,
+  "page": 7,
+  "column": 0,
+  "box": [
+   0,
+   1027,
+   566,
+   1334
+  ],
+  "file": "q080.png",
+  "gutter": 552,
+  "draft_text": "80.Buxarlandirma Usuluilaayrlmas1 sokildaki kimi olarsa,XvaY maddalorini muayyon edin 文 Y A) su xorakduzu B) su rexes C) sakar nznpyerox D) Su umb nznp yeiox (3 su"
+ },
+ {
+  "number": 81,
+  "page": 7,
+  "column": 0,
+  "box": [
+   0,
+   1334,
+   566,
+   1493
+  ],
+  "file": "q081.png",
+  "gutter": 552,
+  "draft_text": "81.Basit maddalori muayyan edin A)kukard,natrium-xlorid,azot B) oksigen, su,hidrogen C) ozon,natrium,kukurd D) azot,hidrogen,kalsium-oksid E) kalium,xlor,xlorid tursusu"
+ },
+ {
+  "number": 82,
+  "page": 7,
+  "column": 1,
+  "box": [
+   543,
+   84,
+   1080,
+   219
+  ],
+  "file": "q082.png",
+  "gutter": 552,
+  "draft_text": "82.Eyni soraitdmuxtlifkutlli etil spirti ucun eynidir: 1.qaynama temperaturu II.hacmi III. sixlig1 A)I,IIB)yalnzIC)I,IID) II,IIE)yalnII"
+ },
+ {
+  "number": 83,
+  "page": 7,
+  "column": 1,
+  "box": [
+   543,
+   219,
+   1080,
+   347
+  ],
+  "file": "q083.png",
+  "gutter": 552,
+  "draft_text": "83.Eyni soraitd muxtolif kutlali su ucun eynidir: 1.qaynama temperaturu II.hacmi III. sixlig1 A) I, IIB)yalnz I C) I,IID) II,I E）yalnizII"
+ },
+ {
+  "number": 84,
+  "page": 7,
+  "column": 1,
+  "box": [
+   543,
+   347,
+   1080,
+   538
+  ],
+  "file": "q084.png",
+  "gutter": 552,
+  "draft_text": "84.Atom katla vahidi kimi 16O atomunun katlosinin 1 -i qobul edilarso,elementlarin nisbi atom 16 katlolori neca dayisor? A)dayismaz B)32dafoartar C)32dafaazalar D)16 dafo artar E)16 dafaazalar"
+ },
+ {
+  "number": 85,
+  "page": 7,
+  "column": 1,
+  "box": [
+   543,
+   538,
+   1080,
+   737
+  ],
+  "file": "q085.png",
+  "gutter": 552,
+  "draft_text": "85.Atomkutlo vahidi kimi 4N atomunun katlosinin 1 -i qobul edilorso,elementlarinnisbi atom 14 kutlolari neca dayisor? A)28dofazalar B)28dafoartar C) doyismaz D)14dofartar E)14dafazalar"
+ },
+ {
+  "number": 86,
+  "page": 7,
+  "column": 1,
+  "box": [
+   543,
+   737,
+   1080,
+   1043
+  ],
+  "file": "q086.png",
+  "gutter": 552,
+  "draft_text": "86.Kukurd,dmir qirintlarivxork duzundanibart qarisigi ayirmaq ucunyerinayetirilacaktacruba islarininardicilligini muayyanedin. SU 2 1 3 4 A)4,2,1,3 B)3,4,2,1 C)3,4,1,2 D)1,2,3,4 E)2,3,4,1"
+ },
+ {
+  "number": 87,
+  "page": 7,
+  "column": 1,
+  "box": [
+   543,
+   1043,
+   1080,
+   1503
+  ],
+  "file": "q087.png",
+  "gutter": 552,
+  "draft_text": "87.Eyler-Venn diaqramina sason X,YvZ-i muyyn edin. Distilla suyu Etil spirti+su X Z Y X 人 Z A) Safmaddodir Qaz haldadir Qarisiqdir B) Torkibi sabildir Maye haldadir Eynicinsli qarisiqdir Borkhaldadir Rongli mohluldur D) Qazhaldadir Maye haldadir Maye haldadur Maye haldadur E) Eynicinsli Maye haldadrTorkibi sabitdir npbisiub"
+ },
+ {
+  "number": 88,
+  "page": 8,
+  "column": 0,
+  "box": [
+   0,
+   109,
+   544,
+   397
+  ],
+  "file": "q088.png",
+  "gutter": 530,
+  "draft_text": "88. Qansigin torkibi Qarisiq X Sikatursusu +su Etil spirti +su Y HansifadlorXvoYqarstqlarnn hor ikisino aiddir? 1.Distillo asulu ilo ayumaq olar 2.Eynicinsli qansiqdir 3.Elektrk corayann kecirir B)1.2 C)2.3 A)yalnz2 E)yalnz1 D)1,3"
+ },
+ {
+  "number": 89,
+  "page": 8,
+  "column": 0,
+  "box": [
+   0,
+   397,
+   544,
+   705
+  ],
+  "file": "q089.png",
+  "gutter": 530,
+  "draft_text": "89. Halledicilor X Y Z hallolmur hollolur hall olur su hall olur hall olmur spirt hollolmur efir hallolur hallolur hollolmur XYva Zmaddalrindon ibarat qarsiqdanbu maddalori ayirmaq ucun holledicilardan hansi ardicillqla istifada etmaklazimdir? A) spirt,efir,su B) efir, su, spirt D) su, efir, spirt C)su,sirt,ir E)spirt,su,fir"
+ },
+ {
+  "number": 90,
+  "page": 8,
+  "column": 0,
+  "box": [
+   0,
+   705,
+   544,
+   1004
+  ],
+  "file": "q090.png",
+  "gutter": 530,
+  "draft_text": "90. Qarisiqlar Qarisigin novu homogen X+X Y+Z heterogen X,Yva Z-i muayyan edin Z Y sokar etil spirti A) su etil spirti B) sakar su etil spirti C) neft su D) etil spirti neft su neft E) etil spirti su"
+ },
+ {
+  "number": 91,
+  "page": 8,
+  "column": 0,
+  "box": [
+   0,
+   1004,
+   544,
+   1164
+  ],
+  "file": "q091.png",
+  "gutter": 530,
+  "draft_text": "91.Oksigen,fosfor vakukurd elementlori ucun umumi olan ifadalari muayyan edin. ICoxatomlubasitmaddalarmlagotirirlor Il.Allotropik sakildayismalorimovcuddur IIl.Aqreqat hallar eynidir (n.s.) A)yalnzII B)IIII C)II,III D)yalnzI E）1,ⅡI"
+ },
+ {
+  "number": 92,
+  "page": 8,
+  "column": 0,
+  "box": [
+   0,
+   1164,
+   544,
+   1321
+  ],
+  "file": "q092.png",
+  "gutter": 530,
+  "draft_text": "92.Hidrogen,fosfor vkakurd elementlri cun umumi olan ifadslori muoyyan edin. I.Coxatomlubositmaddslor omalagatirirlar Il.Allotropik skildayismslorimovcuddur II.Dayiskon valentidirlar A) yalnzI B) 1,II C)II,I D)I,III E)yalnz III"
+ },
+ {
+  "number": 93,
+  "page": 8,
+  "column": 0,
+  "box": [
+   0,
+   1321,
+   544,
+   1462
+  ],
+  "file": "q093.png",
+  "gutter": 530,
+  "draft_text": "93. Halledicilor Zmaddosi Ymaddosi Xmaddasi I hallolmur holl olur hollolur II hallolur hollolmur hallolmur hollolmur hollolmur hollolur IⅢI",
+  "continued_from": {
+   "page": 8,
+   "column": 1,
+   "rows": [
+    82,
+    273
+   ]
+  }
+ },
+ {
+  "number": 94,
+  "page": 8,
+  "column": 1,
+  "box": [
+   521,
+   273,
+   1080,
+   575
+  ],
+  "file": "q094.png",
+  "gutter": 530,
+  "draft_text": "94. Ymaddasi Zmaddasi Holledicilar hollolmur hallolmur hallolur 1 hallolmur hollolur hallolur II hallolur IⅢI hallolmur hallolur X,YvaZbarkmaddalorindan ibarat qarisiqdak maddalaribir-birindan ayirmaq ucunhansi holledicilardonvhansiardicilliqla istifadaetmak olar? B) yalniz II A)vvalc I,sonrais II D)yalnizI C)avvlc I,sonra is II E) yalniz III"
+ },
+ {
+  "number": 95,
+  "page": 8,
+  "column": 1,
+  "box": [
+   521,
+   575,
+   1080,
+   966
+  ],
+  "file": "q095.png",
+  "gutter": 530,
+  "draft_text": "95.Hansi halda kimyavi hadiso bas verar? SiO2 lmhml KMnO, HO 2. 1. NaO Yod HO 4. 3."
+ },
+ {
+  "number": 96,
+  "page": 8,
+  "column": 1,
+  "box": [
+   521,
+   966,
+   1080,
+   1262
+  ],
+  "file": "q096.png",
+  "gutter": 530,
+  "draft_text": "96.tqaynama IⅡ zaman Hansiifadalardogrudur? 1.Ixatt saf suya aiddir 2.Ixatt xorokduzunun sudamshluluna aiddir 3.1I xott saf suya aiddir 4.III xtt etil spirtinin suda mshluluna aiddir 5.l xatt xork duzunun sudamahluluna aiddir"
+ },
+ {
+  "number": 97,
+  "page": 8,
+  "column": 1,
+  "box": [
+   521,
+   1262,
+   1080,
+   1527
+  ],
+  "file": "q097.png",
+  "gutter": 530,
+  "draft_text": "97.Ayirici qifdaki maddolori musyyon edin. X 人 X 1.benzin Su Y benzin 2.su 3.etil spirti su bitkiyagi 4.su 5.bitki yagi su 9-"
+ },
+ {
+  "number": 98,
+  "page": 9,
+  "column": 0,
+  "box": [
+   0,
+   100,
+   543,
+   278
+  ],
+  "file": "q098.png",
+  "gutter": 529,
+  "draft_text": "98.Uygunlugu muoyyan edin. Qanisigin torkibi: Ayrlma Usulu: a.etil spirti + su 1.Ayinici qifla b.tobasir + su 2.Sozma c.neft+su d.xorakduzu+su e.qum+su"
+ },
+ {
+  "number": 99,
+  "page": 9,
+  "column": 0,
+  "box": [
+   0,
+   278,
+   543,
+   441
+  ],
+  "file": "q099.png",
+  "gutter": 529,
+  "draft_text": "99.Uygunlugumuoyyan edin a.hava 1.Basitmadda b.almaz 2.Murakkobmadda 3.Qarisiq c.civa d.benzin e.fosfin"
+ },
+ {
+  "number": 100,
+  "page": 9,
+  "column": 0,
+  "box": [
+   0,
+   441,
+   543,
+   1443
+  ],
+  "file": "q100.png",
+  "gutter": 529,
+  "draft_text": "100.Uygunlugu muayyan edin a.sokor L.Bositmadda b.neft 2.Murakkab madda 3.Qaris1q c.qrafit d.duman e.ammonyak Valentlik.Kimyaviformullarintartibi VIIII 1.Valentliy asasan MnO formulu muayyan edin. A)Mn2O7 B)MnO C)MnO2 D) Mn;O4 E)MnO 2.Valentliya asasan FeOformulumuayyan edin. A)FeOB)FeOC)FeO4D)FeOE)Fe2O 3.0= C= O birlosmosindakarbon neco valentlidir? A)V 1( C)ⅢI D)IV E)I 4.H-O H-O Birlosmadakukurdnecavalentlidir? A)II B)VI D)IV E)V 5.Hansi birlasmodakukurd dordvalentlidir? A)SOB)CuSC)SOD)CaSE)Fe2S E)Fe2S; 6.Hanst halda oksidin formulu duzgun gostarilib? VI IVI A)Al2O3 B)P2O3 C)Mn2O2 ⅡⅡ D)Na2O2 E)MgO2 7.Hansi metal birlasmalorda Ivalentlidir? A)Fe B)Ca C)Mg D)AI E)Na 8.Valentliklarouygun olaraq hansi formul duzgun gostorilmisdir? ⅡIIA A)Mn2O3 IIII VII B)CrO C) CrO3 D)P2O3 I E) LiO"
+ }
+]

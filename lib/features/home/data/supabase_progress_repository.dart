@@ -24,9 +24,9 @@ class SupabaseProgressRepository implements ProgressRepository {
   }
 
   static TopicMastery _toMastery(Map<String, dynamic> row) => TopicMastery(
-        topicId: (row['topic_id'] as num).toInt(),
-        topicName: row['topic_name'] as String,
-        answered: (row['answered'] as num).toInt(),
-        masteryPct: (row['mastery_pct'] as num).toInt(),
-      );
+    topicId: (row['topic_id'] as num).toInt(),
+    topicName: row['topic_name'] as String,
+    answered: (row['answered'] as num).toInt(),
+    masteryPct: (row['mastery_pct'] as num).toInt(),
+  );
 }

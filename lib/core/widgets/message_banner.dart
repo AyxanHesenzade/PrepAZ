@@ -8,7 +8,8 @@ enum MessageKind { error, info }
 class MessageBanner extends StatelessWidget {
   const MessageBanner(this.message, {super.key, this.kind = MessageKind.info});
 
-  const MessageBanner.error(this.message, {super.key}) : kind = MessageKind.error;
+  const MessageBanner.error(this.message, {super.key})
+    : kind = MessageKind.error;
 
   final String message;
   final MessageKind kind;
@@ -21,11 +22,15 @@ class MessageBanner extends StatelessWidget {
       padding: const EdgeInsets.all(AppSpacing.m),
       decoration: BoxDecoration(
         color: isError ? scheme.errorContainer : scheme.secondaryContainer,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(AppRadius.m),
       ),
       child: Text(
         message,
-        style: TextStyle(color: isError ? scheme.onErrorContainer : scheme.onSecondaryContainer),
+        style: TextStyle(
+          color: isError
+              ? scheme.onErrorContainer
+              : scheme.onSecondaryContainer,
+        ),
       ),
     );
   }

@@ -22,9 +22,10 @@ Future<T> guard<T>(
   } on AppException {
     rethrow;
   } catch (error) {
-    throw mapper?.call(error) ?? const AppException(AppStrings.unknownError);
+    throw mapper?.call(error) ?? AppException(AppStrings.unknownError);
   }
 }
 
 /// Provider xətasından istifadəçi mesajı çıxarır.
-String errorMessage(Object error) => error is AppException ? error.message : AppStrings.unknownError;
+String errorMessage(Object error) =>
+    error is AppException ? error.message : AppStrings.unknownError;

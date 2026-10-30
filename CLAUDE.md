@@ -22,7 +22,7 @@ gündəlik planı özü qurur.
 | Oflayn | SQLite (drift) telefonda | Avtobusda/metroda internetsiz həll |
 | Düsturlar | LaTeX, `$...$` arasında | |
 | Sual daxil etmə | Excel şablonu → `tools/import_questions.py` | Sonra veb admin panel |
-| Admin panel | **React** veb səhifə (Supabase auth + RLS ilə, `admin/` qovluğu) | Müəllim Excel əvəzinə birbaşa sual əlavə/redaktə edir. Mərhələ 6; hələ yazılmayıb |
+| Admin panel | **React (Vite) + Ant Design**, ayrıca qovluq: `C:\Users\ayxan.hv\Desktop\PrepAzAdmin` (öz README-si var). Supabase auth + RLS (`admins` cədvəli, `is_admin()`, migration 005) | Müəllim Excel əvəzinə birbaşa sual əlavə/redaktə edir. Mərhələ 6: v1 yazılıb (siyahı, süzgəc, redaktə, aktiv/passiv, yeni sual, şəkil yükləmə, LaTeX önbaxış) |
 | MVP-də AI | **Yoxdur** | Səhvdən sonra müəllimin yazdığı hazır həll göstərilir |
 | Supabase "Automatically expose new tables" | Söndürülüb | Giriş hüquqları `schema.sql`-də açıq yazılıb |
 
@@ -83,7 +83,7 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
       Qeyd: `review_queue` + `questions!inner` sorğusu yalnız fake ilə testlənib, real Supabase-də əl ilə yoxlanmalıdır.
 - [ ] Mərhələ 4: oflayn rejim (drift) + sinxronizasiya
 - [ ] Mərhələ 5: taymerli sınaq imtahanı, bal hesablanması
-- [ ] Mərhələ 6: veb admin panel (sual əlavə/redaktə)
+- [~] Mərhələ 6: veb admin panel. v1 hazırdır (`PrepAzAdmin`), migration 005 işlədilməli. Növbəti: mövzu idarəsi
 - [ ] Mərhələ 7: Play Store-a çıxış
 
 
@@ -128,11 +128,71 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - Sual mənbəyi: yalnız dim.gov.az. Araz/Güvən kitabları ödənişlidir, rəsmi pulsuz fayl yoxdur; yalnız nəşriyyatın özündən alınmış fayl (yazılı razılıqla) qəbul olunur.
 
 ## Versiya
-- Cari versiya: **0.0.1**, build **1**. Mənbə: `assets/app.json`; `pubspec.yaml` → `version: 0.0.1+1` ilə eyni olmalıdır (`test/core/app_version_test.dart` uyğunsuzluğu tutur).
-- Yeni buraxılışda hər ikisini birlikdə dəyiş. Ana ekranın altında "Versiya 0.0.1 (1)" göstərilir.
+- Cari versiya: **1.0.0**, build **3**. Mənbə: `assets/app.json`; `pubspec.yaml` → `version: 1.0.0+3` ilə eyni olmalıdır (`test/core/app_version_test.dart` uyğunsuzluğu tutur).
+- Yeni buraxılışda hər ikisini birlikdə dəyiş. Ana ekranın altında "Versiya 1.0.0 (3)" göstərilir.
 
 ## Test Supabase-in cari vəziyyəti (2026-10-30)
 - Migrationlar işlənib: 002, 003, 004 (`topic_mastery` security_invoker).
 - Yüklənib: kimya 158 sual, biologiya 81 sual (`biologiya` fənni aktivdir). Şəkillər `question-images` bucket-indədir.
 - Gözləyən: kimyada 82 sual (yoxlanmayıb / cavabsız / yazılı), biologiyada 38 sual (yazılı, açıq tapşırıq, cavabı uyğunlaşmayan).
 - Real (prod) Supabase hələ qurulmayıb.
+
+## Admin panel (Mərhələ 6)
+- `db/migrations/005_admin_panel.sql`: `admins` cədvəli, `is_admin()`, adminə bütün sualları görmək/əlavə/yeniləmək, mövzu əlavəsi, `question-images` bucket-inə yükləmə.
+  Sual SİLİNMİR (is_active=false). Lokal test: `tools/dim/test_migration_005.py` (19 yoxlama).
+- Admin əlavə etmək (yalnız SQL Editor-da əl ilə): `insert into admins (user_id) select id from auth.users where email = '...';`
+- Panel yalnız açıq URL + publishable key bilir (`PrepAzAdmin/.env.local`). service_role heç vaxt.
+- Redaktor köməkçiləri (`PrepAzAdmin/src/lib/formula.js`, testli): düstur çevirici (`H2SO4 + 2NaOH -> Na2SO4 + 2H2O` → `$\mathrm{...}$`, ion yükü üçün `Fe^3+`),
+  simvol düymələri (→ ⇌ ↑ ↓ Δ ° · × ≥ ≤ indeks kəsr kök), "Yapışdır və böl" (A–E variantlarını ayırır), oxşar sual xəbərdarlığı.
+
+## Skan edilmiş test kitabları (şəkil-sual)
+- Mənbə: sahibin əlindəki nəşriyyat/DİM test topluları (şəkil PDF). Yalnız sahibin verdiyi fayllar; internetdən qeyri-rəsmi PDF çəkilmir.
+- `tools/dim/scan_segment.py KITAB.pdf --first N --last M --start 1 --stop 100 --out scan/<ad>`: RapidOCR yalnız sual nömrələrinin yerini tapır
+  (ardıcıl artan nömrə qaydası), hər sual ayrıca təmizlənmiş şəkil kimi kəsilir (haşiyə silinir, ağ kağız, 2x böyütmə). Nümunədə 87/100 tapıldı;
+  OCR bəzi sətirləri (səhifə yuxarısı, əyri sətirlər) oxumur. Tapılmayanlar hesabatda "missing" kimi görünür.
+- Cavab açarı kitabın sonundan əl ilə JSON-a yazılır (`scan/kimya_I_bolme1_cavablar.json`). Uyğunlaşdırma tipli (A–E olmayan) suallar yüklənmir.
+- `tools/dim/import_scans.py` → `out/import_kt1_s01.sql` + `out/upload_kitab/` (şəkillər koda görə adlanır). Kod: `KT<kitab>-S<bölmə>-Q<nömrə>`
+  (məs. `KT1-S01-Q030`): problem bildirişində kod birbaşa kitabda yeri göstərir. Sual mətni BOŞDUR, variantlar yalnız hərfdir ("A".."E").
+- Tətbiq: `Question.isImageOnly` (mətn boş + şəkil var) → şəkil + A–E hərf düymələri (`LetterOptions`). Admin panel mətn boş ola bilər (şəkil varsa).
+- Kitablar: 1 = "Kimya test toplusu I" (DİM, 2025, 359 səhifə): bölmə 1 = səhifə 3–9 (sual 1–100), cavablar səhifə 331.
+- Kitab 1 bölmələri: **bölmə 1** (səhifə 3–9, 87/100 sual yükləndi, mövzu "Kimyanın əsas anlayışları"), **bölmə 2** "Valentlik. Kimyəvi formulların tərtibi"
+  (pdf səhifə 9, sol sütunda başlıqdan sonra, 16/16 sual, mövzu "Valentlik və kimyəvi formulların tərtibi"; əmr: `--first 9 --last 9 --start 1 --stop 16 --skip-above 9:0:630 --pad 18`).
+  Növbəti bölmə 3 "Kimyəvi formullar üzrə hesablamalar" pdf səhifə 10-dan başlayır. Hər bölmə üçün `scan/kimya_I_bolmeN_cavablar.json` əl ilə yazılır.
+- `scan_segment.py` seçimləri: `--skip-above PAGE:COL:Y` (başlıqdan əvvəlki hissəni at), `--pad` (nömrədən yuxarı pay, valentlik işarələri üçün), `--recrop` (OCR-sız yenidən kəsmə).
+  Lokal test: `test_import_scans.py out/import_kt1_sNN.sql`.
+- **Yükləmə qovluqları (qayda):** sahib həmişə TƏK qovluqdan yükləyir: `tools/dim/out/upload_kitab/` = yalnız hələ yüklənməmiş yeni şəkillər.
+  Sahib "ok" deyəndən sonra bu şəkillər `tools/dim/out/images_kitab/` qovluğuna köçürülür (artıq Storage-dədir). Yeni qovluq açılmır.
+  Düzəldilmiş şəkil (eyni ad) yenidən yüklənəndə əvvəl Storage-dəki köhnəsi silinməlidir. `import_scans.py` yeni şəkilləri `upload_kitab`-a yazır.
+- Bölmə 3 "Kimyəvi formullar üzrə hesablamalar": pdf səhifə 10-14, 75 sual kəsilib, yalnız 1-53 (hərf cavablı) yüklənir; 54-60 çoxseçimli, 61-75 ədədi cavablıdır.
+  Əmr: `--first 10 --last 15 --start 1 --stop 75 --skip-above 10:0:105` (`--pad` defoltla: böyük pad əvvəlki sualın son sətrini yeyir).
+  `scan_segment.py` indi sütunun sonunda davam edən sualları (`stitch_continuations`, `CONT_TOP`) avtomatik birləşdirir. Kəsmənin kənarı əyri sətirdə yanılsa, `manifest.json`-da `box` düzəldilib `--recrop` işlədilir.
+
+## Dizayn, dil və menyu (tətbiq)
+- Tema: `lib/core/theme` (böyük yumru künclər `AppRadius`, pill düymələr, Plus Jakarta Sans şrifti `assets/fonts`, fənn rəngləri `AppColors.subjectAccent`).
+  Ortaq animasiyalı elementlər: `Pressable`, `FadeSlideIn`, `SoftProgressBar` (`lib/core/widgets`). Sonsuz animasiya yazılmır (testlər `pumpAndSettle` işlədir).
+- Tətbiq interfeys dili: AZ / RU / EN (sualların dili bundan asılı deyil). `AppStrings` getter-dir (`const` deyil!): hər mətn `_t(az, ru, en)` ilə yazılır,
+  yeni mətn əlavə edəndə üç dili də yaz. Dil `AppStrings.language`-dədir, ayarlar onu dəyişir; `PrepAzApp` dil dəyişəndə ağacı təzədən qurur.
+- Ayarlar (dil + gündüz/gecə/sistem): `features/settings`, SharedPreferences-də saxlanır (`main.dart` override edir; testdə `InMemorySettingsRepository`).
+- Ana səhifədə yan menyu (`features/menu/app_drawer.dart`): Dil, Görünüş (basanda açılır), Tövsiyə olunan müəllimlər, Çıxış. Versiya yazısı ekranın altında sabitdir.
+- Tövsiyə olunan müəllimlər: məlumat YALNIZ `lib/features/teachers/data/teachers_data.dart`-da yazılır (ad, fənn, telefon, tanıtım, hazırlıq təklifi).
+  Faylda hazırda NÜMUNƏ sətir var: real məlumatla əvəz et. Zəng/WhatsApp `url_launcher` ilə açılır.
+
+## Tövsiyə olunan müəllimlər (dinamik)
+- Baza: `db/migrations/006_teachers.sql` (`teachers` cədvəli, RLS: istifadəçi yalnız `is_active and consent` olanları görür, admin hamısını; silinmir; public bucket `teacher-photos`). Lokal test: `tools/dim/test_migration_006.py`.
+- Nümunə (saxta) məlumat: `db/seed/teachers_demo.sql`, fotolar `tools/teachers/upload/` (`make_demo_photos.py`). Real buraxılışdan əvvəl "Nümunə ..." sətirləri passiv edilməlidir.
+- Tətbiq: `lib/features/teachers` (repository + `teachersProvider` FutureProvider; ekranı dizayn agenti də dəyişə bilər). Admin panel: "Müəllimlər" tabı (`TeachersPage`, `TeacherDrawer`, `lib/teachers.js`).
+- Müəllimdən məlumat toplama forması: ad, fənn, format (əyani/online/hər ikisi), yer, nömrə, haqqında, təklif, foto, razılıq (bəli/xeyr). Razılıq yoxdursa göstərilmir.
+- Növbəti: məcburi yeniləmə ekranı (minimum versiya bazadan oxunur), tətbiqin adi yeniləmə xəbərdarlığı.
+
+## Məcburi yeniləmə
+- `db/migrations/008_app_config.sql`: tək sətirli `app_config` (`min_version`, `latest_version`, `update_url`); anon də oxuya bilər (giriş əvvəli yoxlanır), yalnız admin dəyişir. Lokal test: `tools/dim/test_migration_008.py`.
+- Tətbiq: `lib/features/update` (`UpdateGate` `app.dart`-da `AuthGate`-i sarıyır). Versiya `assets/app.json`-dan (`1.0.0+3`) bazadakı ilə müqayisə olunur:
+  `min_version`-dan aşağı → bağlanmayan `ForceUpdateScreen`; `latest_version`-dan aşağı → bir dəfə "Sonra" düyməli xəbərdarlıq. Oxunmasa (internet yox / cədvəl yox) heç nə bloklanmır.
+- Admin panel: "Tənzimləmələr" tabı. Yeni buraxılışda ƏVVƏL APK/mağaza yüklənir və link yazılır, SONRA `latest_version` (və lazımsa `min_version`) qaldırılır.
+
+## Problem bildirişləri
+- `db/migrations/009_reports.sql`: `reports` (kind `question`/`app`, `question_id` + `question_code`, açıqlama 10-1000 simvol MƏCBURİ, `app_version`, status new/seen/done, `admin_note`).
+  İstifadəçi yalnız əlavə edir (öz adından), oxuya bilməz; admin oxuyur/dəyişir/silir. Saatda 10 bildiriş limiti (`security definer` trigger: RLS səbəbindən adi istifadəçi sayı görə bilmir). Lokal test: `tools/dim/test_migration_009.py`.
+- Tətbiq: `lib/features/reports` (`showReportSheet`). Sual ekranlarında `QuestionCodeLabel` "Xəta bildir" düyməsi + kod göstərir (quiz, mövzular, səhvlər dəftəri); yan menyuda "Tətbiqdə xəta bildir".
+- Admin panel: "Bildirişlər" tabı (status süzgəci, status dəyişmə, daxili qeyd, silmə). Sual bildirişində kodu kopyalayıb Suallar tabında axtarırıq.
+

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/constants/app_strings.dart';
+import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/widgets/app_button.dart';
 import '../../../core/widgets/math_text.dart';
@@ -24,20 +25,62 @@ class ResultView extends StatelessWidget {
     return ListView(
       padding: AppSpacing.pagePadding,
       children: [
-        Center(child: Text('$correct / $total', style: text.displayMedium)),
-        Center(child: Text(AppStrings.percentCorrect(percent), style: text.titleMedium)),
+        AppSpacing.gapM,
+        Center(
+          child: SizedBox(
+            width: 184,
+            height: 184,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                TweenAnimationBuilder<double>(
+                  tween: Tween(end: total == 0 ? 0 : correct / total),
+                  duration: const Duration(milliseconds: 1100),
+                  curve: Curves.easeOutCubic,
+                  builder: (context, value, _) => SizedBox.expand(
+                    child: CircularProgressIndicator(
+                      value: value,
+                      strokeWidth: 14,
+                      strokeCap: StrokeCap.round,
+                      color: AppColors.forMastery(percent),
+                      backgroundColor: Theme.of(context)
+                          .colorScheme
+                          .surfaceContainerHighest,
+                    ),
+                  ),
+                ),
+                Text('$correct / $total', style: text.displaySmall),
+              ],
+            ),
+          ),
+        ),
+        AppSpacing.gapM,
+        Center(
+          child: Text(
+            AppStrings.percentCorrect(percent),
+            style: text.titleMedium,
+          ),
+        ),
         AppSpacing.gapL,
         if (wrong.isEmpty)
-          const Center(child: Text(AppStrings.allCorrect))
+          Center(child: Text(AppStrings.allCorrect, style: text.bodyLarge))
         else ...[
           Text(AppStrings.wrongTitle(wrong.length), style: text.titleMedium),
           AppSpacing.gapXs,
-          const Text(AppStrings.wrongHint),
+          Text(
+            AppStrings.wrongHint,
+            style: text.bodyMedium?.copyWith(
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
+            ),
+          ),
           AppSpacing.gapM,
           for (final result in wrong) _WrongAnswerCard(result: result),
         ],
         AppSpacing.gapL,
-        AppButton(label: AppStrings.backHome, onPressed: () => Navigator.of(context).pop()),
+        AppButton(
+          label: AppStrings.backHome,
+          onPressed: () => Navigator.of(context).pop(),
+        ),
       ],
     );
   }
@@ -53,16 +96,28 @@ class _WrongAnswerCard extends StatelessWidget {
     final question = result.question;
     return Card(
       child: Padding(
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.all(AppSpacing.m),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            MathText(question.body),
-            if (question.hasImage) ...[AppSpacing.gapS, QuestionImage(question.imagePath!, compact: true)],
+            if (question.body.trim().isNotEmpty) MathText(question.body),
+            // şəkil-sualda sualın özü şəkildir: kiçildilmir
+            if (question.hasImage) ...[
+              AppSpacing.gapS,
+              QuestionImage(
+                question.imagePath!,
+                compact: !question.isImageOnly,
+              ),
+            ],
             AppSpacing.gapS,
             Text(
-              AppStrings.yourVsRight(result.given ?? '-', question.correctAnswer),
-              style: Theme.of(context).textTheme.bodySmall,
+              AppStrings.yourVsRight(
+                result.given ?? '-',
+                question.correctAnswer,
+              ),
+              style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
+              ),
             ),
           ],
         ),

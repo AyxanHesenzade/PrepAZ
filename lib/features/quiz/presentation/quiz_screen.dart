@@ -6,6 +6,7 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/widgets/app_button.dart';
 import '../../../core/widgets/async_value_view.dart';
 import '../../../core/widgets/math_text.dart';
+import '../../../core/widgets/soft_progress_bar.dart';
 import '../../../core/widgets/message_banner.dart';
 import '../../home/domain/subject.dart';
 import '../domain/question.dart';
@@ -14,28 +15,34 @@ import 'quiz_controller.dart';
 import 'quiz_state.dart';
 import 'result_view.dart';
 import 'widgets/answer_feedback.dart';
+import 'widgets/letter_options.dart';
 import 'widgets/option_tile.dart';
 import 'widgets/question_code_label.dart';
 import 'widgets/question_image.dart';
 
 class QuizScreen extends ConsumerWidget {
-  const QuizScreen({super.key, required this.subject, this.kind = QuizKind.daily, this.topicId});
+  const QuizScreen({
+    super.key,
+    required this.subject,
+    this.kind = QuizKind.daily,
+    this.topicId,
+  });
 
   final Subject subject;
   final QuizKind kind;
   final int? topicId;
 
   QuizRequest get _request => switch (kind) {
-        QuizKind.daily => QuizRequest.daily(subject.id),
-        QuizKind.topic => QuizRequest.topic(subject.id, topicId!),
-        QuizKind.mistakes => QuizRequest.mistakes(subject.id),
-      };
+    QuizKind.daily => QuizRequest.daily(subject.id),
+    QuizKind.topic => QuizRequest.topic(subject.id, topicId!),
+    QuizKind.mistakes => QuizRequest.mistakes(subject.id),
+  };
 
   String get _emptyMessage => switch (kind) {
-        QuizKind.daily => AppStrings.noQuestionsLeft,
-        QuizKind.topic => AppStrings.noQuestionsInTopic,
-        QuizKind.mistakes => AppStrings.noMistakes,
-      };
+    QuizKind.daily => AppStrings.noQuestionsLeft,
+    QuizKind.topic => AppStrings.noQuestionsInTopic,
+    QuizKind.mistakes => AppStrings.noMistakes,
+  };
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -61,10 +68,7 @@ class QuizScreen extends ConsumerWidget {
               return Center(
                 child: Padding(
                   padding: AppSpacing.pagePadding,
-                  child: Text(
-                    _emptyMessage,
-                    textAlign: TextAlign.center,
-                  ),
+                  child: Text(_emptyMessage, textAlign: TextAlign.center),
                 ),
               );
             }
@@ -122,27 +126,39 @@ class _QuestionBodyState extends State<_QuestionBody> {
 
     return Column(
       children: [
-        LinearProgressIndicator(
-          value: (state.index + (answered ? 1 : 0)) / state.questions.length,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: AppSpacing.m + 4),
+          child: SoftProgressBar(
+            value: (state.index + (answered ? 1 : 0)) / state.questions.length,
+            color: Theme.of(context).colorScheme.primary,
+          ),
         ),
         Expanded(
           child: SingleChildScrollView(
-            padding: AppSpacing.pagePadding,
+            padding: const EdgeInsets.all(AppSpacing.m + 4),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 QuestionCodeLabel(question: question),
                 AppSpacing.gapXs,
-                MathText(
-                  question.body,
-                  style: Theme.of(context).textTheme.titleMedium,
-                ),
+                if (question.body.trim().isNotEmpty)
+                  MathText(
+                    question.body,
+                    style: Theme.of(context).textTheme.titleMedium
+                        ?.copyWith(height: 1.4),
+                  ),
                 if (question.hasImage) ...[
                   AppSpacing.gapM,
                   QuestionImage(question.imagePath!),
                 ],
                 AppSpacing.gapL,
-                if (question.isClosed)
+                if (question.isClosed && question.isImageOnly)
+                  LetterOptions(
+                    letters: question.options.keys.toList(),
+                    statusOf: (letter) => _statusOf(letter, question, state),
+                    onTap: answered ? null : controller.select,
+                  )
+                else if (question.isClosed)
                   for (final entry in question.options.entries)
                     OptionTile(
                       letter: entry.key,
@@ -176,9 +192,9 @@ class _QuestionBodyState extends State<_QuestionBody> {
         ),
         Padding(
           padding: const EdgeInsets.fromLTRB(
-            AppSpacing.m,
-            0,
-            AppSpacing.m,
+            AppSpacing.m + 4,
+            AppSpacing.s,
+            AppSpacing.m + 4,
             AppSpacing.m,
           ),
           child: answered
@@ -197,13 +213,15 @@ class _QuestionBodyState extends State<_QuestionBody> {
                       onPressed: state.isSending
                           ? null
                           : () => controller.check(skip: true),
-                      child: const Text(AppStrings.dontKnow),
+                      child: Text(AppStrings.dontKnow),
                     ),
-                    const Spacer(),
-                    AppButton(
-                      label: AppStrings.check,
-                      isLoading: state.isSending,
-                      onPressed: state.canSubmit ? controller.check : null,
+                    AppSpacing.gapS,
+                    Expanded(
+                      child: AppButton(
+                        label: AppStrings.check,
+                        isLoading: state.isSending,
+                        onPressed: state.canSubmit ? controller.check : null,
+                      ),
                     ),
                   ],
                 ),
@@ -215,9 +233,13 @@ class _QuestionBodyState extends State<_QuestionBody> {
   OptionStatus _statusOf(String letter, Question question, QuizState state) {
     final result = state.currentResult;
     if (result == null) {
-      return letter == state.selected ? OptionStatus.selected : OptionStatus.idle;
+      return letter == state.selected
+          ? OptionStatus.selected
+          : OptionStatus.idle;
     }
-    if (letter == question.correctAnswer.toUpperCase()) return OptionStatus.correct;
+    if (letter == question.correctAnswer.toUpperCase()) {
+      return OptionStatus.correct;
+    }
     if (letter == result.given) return OptionStatus.wrong;
     return OptionStatus.idle;
   }
@@ -259,7 +281,7 @@ class _AnswerFieldState extends State<_AnswerField> {
       keyboardType: numeric
           ? const TextInputType.numberWithOptions(decimal: true, signed: true)
           : TextInputType.text,
-      decoration: const InputDecoration(labelText: AppStrings.yourAnswerField),
+      decoration: InputDecoration(labelText: AppStrings.yourAnswerField),
     );
   }
 }

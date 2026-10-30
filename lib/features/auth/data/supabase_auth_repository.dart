@@ -24,10 +24,15 @@ class SupabaseAuthRepository implements AuthRepository {
   }
 
   @override
-  Future<SignUpOutcome> signUp({required String email, required String password}) {
+  Future<SignUpOutcome> signUp({
+    required String email,
+    required String password,
+  }) {
     return guard(() async {
       final res = await _auth.signUp(email: email, password: password);
-      return res.session == null ? SignUpOutcome.confirmationRequired : SignUpOutcome.signedIn;
+      return res.session == null
+          ? SignUpOutcome.confirmationRequired
+          : SignUpOutcome.signedIn;
     }, mapper: _mapAuthError);
   }
 
@@ -36,12 +41,16 @@ class SupabaseAuthRepository implements AuthRepository {
 
   static AppException? _mapAuthError(Object error) {
     if (error is! AuthException) return null;
-    if (error is AuthRetryableFetchException) return const AppException(AppStrings.unknownError);
+    if (error is AuthRetryableFetchException) {
+      return AppException(AppStrings.unknownError);
+    }
     return switch (error.code) {
-      'invalid_credentials' => const AppException(AppStrings.invalidCredentials),
-      'user_already_exists' => const AppException(AppStrings.userAlreadyExists),
-      'email_not_confirmed' => const AppException(AppStrings.emailNotConfirmed),
-      'weak_password' => const AppException(AppStrings.weakPassword),
+      'invalid_credentials' => AppException(
+        AppStrings.invalidCredentials,
+      ),
+      'user_already_exists' => AppException(AppStrings.userAlreadyExists),
+      'email_not_confirmed' => AppException(AppStrings.emailNotConfirmed),
+      'weak_password' => AppException(AppStrings.weakPassword),
       _ => null,
     };
   }

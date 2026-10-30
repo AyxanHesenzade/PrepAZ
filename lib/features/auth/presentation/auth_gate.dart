@@ -13,8 +13,10 @@ class AuthGate extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final signedIn = ref.watch(isSignedInProvider);
     return signedIn.when(
-      data: (isSignedIn) => isSignedIn ? const HomeScreen() : const AuthScreen(),
-      loading: () => const Scaffold(body: Center(child: CircularProgressIndicator())),
+      data: (isSignedIn) =>
+          isSignedIn ? const HomeScreen() : const AuthScreen(),
+      loading: () =>
+          const Scaffold(body: Center(child: CircularProgressIndicator())),
       error: (_, _) => const AuthScreen(),
     );
   }

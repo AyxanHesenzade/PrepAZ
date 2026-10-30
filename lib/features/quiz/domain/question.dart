@@ -37,24 +37,28 @@ class Question {
 
   /// Eyni sual, şəkilsiz. Şəkil funksiyası söndürülən zaman istifadə olunur.
   Question withoutImages() => Question(
-        id: id,
-        code: code,
-        topicId: topicId,
-        type: type,
-        body: body,
-        imagePath: null,
-        options: options,
-        correctAnswer: correctAnswer,
-        difficulty: difficulty,
-        solution: solution,
-      );
+    id: id,
+    code: code,
+    topicId: topicId,
+    type: type,
+    body: body,
+    imagePath: null,
+    options: options,
+    correctAnswer: correctAnswer,
+    difficulty: difficulty,
+    solution: solution,
+  );
 
   /// Problem bildirmək üçün: insan oxuya bilən kod, yoxdursa UUID.
   String get reportCode => (code != null && code!.isNotEmpty) ? code! : id;
 
   bool get isClosed => type == QuestionType.qapali;
+
+  /// Sual yalnız şəkildir (skan edilmiş kitab): mətn yoxdur, variantlar şəkildədir, ekranda yalnız A–E düymələri göstərilir.
+  bool get isImageOnly => body.trim().isEmpty && hasImage;
   bool get hasImage => imagePath != null && imagePath!.isNotEmpty;
   bool get hasSolutionText => solution != null && solution!.isNotEmpty;
-  bool get hasSolutionImage => solutionImagePath != null && solutionImagePath!.isNotEmpty;
+  bool get hasSolutionImage =>
+      solutionImagePath != null && solutionImagePath!.isNotEmpty;
   bool get hasSolution => hasSolutionImage || hasSolutionText;
 }

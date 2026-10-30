@@ -15,7 +15,8 @@ class QuizState {
     required this.isFinished,
   });
 
-  factory QuizState.initial(List<Question> questions, String? sessionId) => QuizState._(
+  factory QuizState.initial(List<Question> questions, String? sessionId) =>
+      QuizState._(
         questions: questions,
         sessionId: sessionId,
         index: 0,
@@ -67,25 +68,30 @@ class QuizState {
     String? Function()? error,
     List<AnswerResult>? results,
     bool? isFinished,
-  }) =>
-      QuizState._(
-        questions: questions,
-        sessionId: sessionId,
-        index: index ?? this.index,
-        selected: selected != null ? selected() : this.selected,
-        input: input ?? this.input,
-        isSending: isSending ?? this.isSending,
-        error: error != null ? error() : this.error,
-        results: results ?? this.results,
-        isFinished: isFinished ?? this.isFinished,
-      );
+  }) => QuizState._(
+    questions: questions,
+    sessionId: sessionId,
+    index: index ?? this.index,
+    selected: selected != null ? selected() : this.selected,
+    input: input ?? this.input,
+    isSending: isSending ?? this.isSending,
+    error: error != null ? error() : this.error,
+    results: results ?? this.results,
+    isFinished: isFinished ?? this.isFinished,
+  );
 
   QuizState withSelected(String letter) => _copy(selected: () => letter);
   QuizState withInput(String text) => _copy(input: text);
   QuizState sending() => _copy(isSending: true, error: () => null);
-  QuizState failed(String message) => _copy(isSending: false, error: () => message);
+  QuizState failed(String message) =>
+      _copy(isSending: false, error: () => message);
   QuizState answered(AnswerResult result) =>
       _copy(isSending: false, error: () => null, results: [...results, result]);
-  QuizState advanced() => _copy(index: index + 1, selected: () => null, input: '', error: () => null);
+  QuizState advanced() => _copy(
+    index: index + 1,
+    selected: () => null,
+    input: '',
+    error: () => null,
+  );
   QuizState finished() => _copy(isFinished: true);
 }

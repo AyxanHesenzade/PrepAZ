@@ -23,11 +23,17 @@ class QuizController extends AsyncNotifier<QuizState> {
     final loaded = switch (request.kind) {
       QuizKind.daily => await _repo.getDailySet(request.subjectId),
       QuizKind.topic => await _repo.getTopicSet(request.topicId!),
-      QuizKind.mistakes => [for (final m in await _repo.getMistakes(request.subjectId)) m.question],
+      QuizKind.mistakes => [
+        for (final m in await _repo.getMistakes(request.subjectId)) m.question,
+      ],
     };
     final showImages = ref.read(imagesEnabledProvider);
-    final questions = showImages ? loaded : [for (final q in loaded) q.withoutImages()];
-    final sessionId = questions.isEmpty ? null : await _repo.startSession(request.subjectId);
+    final questions = showImages
+        ? loaded
+        : [for (final q in loaded) q.withoutImages()];
+    final sessionId = questions.isEmpty
+        ? null
+        : await _repo.startSession(request.subjectId);
     _shownAt = DateTime.now();
     return QuizState.initial(questions, sessionId);
   }
@@ -55,7 +61,11 @@ class QuizController extends AsyncNotifier<QuizState> {
         given: given,
         timeMs: DateTime.now().difference(_shownAt).inMilliseconds,
       );
-      state = AsyncData(s.answered(AnswerResult(question: s.current, given: given, isCorrect: isCorrect)));
+      state = AsyncData(
+        s.answered(
+          AnswerResult(question: s.current, given: given, isCorrect: isCorrect),
+        ),
+      );
     } on AppException catch (e) {
       state = AsyncData(s.failed(e.message));
     }
@@ -78,5 +88,5 @@ class QuizController extends AsyncNotifier<QuizState> {
   }
 }
 
-final quizControllerProvider =
-    AsyncNotifierProvider.autoDispose.family<QuizController, QuizState, QuizRequest>(QuizController.new);
+final quizControllerProvider = AsyncNotifierProvider.autoDispose
+    .family<QuizController, QuizState, QuizRequest>(QuizController.new);

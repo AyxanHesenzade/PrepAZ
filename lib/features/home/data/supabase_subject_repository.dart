@@ -12,14 +12,17 @@ class SupabaseSubjectRepository implements SubjectRepository {
   @override
   Future<List<Subject>> getSubjects() {
     return guard(() async {
-      final rows = await _db.from('subjects').select('id, slug, name').order('sort_order');
+      final rows = await _db
+          .from('subjects')
+          .select('id, slug, name')
+          .order('sort_order');
       return rows.map(_toSubject).toList();
     });
   }
 
   static Subject _toSubject(Map<String, dynamic> row) => Subject(
-        id: (row['id'] as num).toInt(),
-        slug: row['slug'] as String,
-        name: row['name'] as String,
-      );
+    id: (row['id'] as num).toInt(),
+    slug: row['slug'] as String,
+    name: row['name'] as String,
+  );
 }

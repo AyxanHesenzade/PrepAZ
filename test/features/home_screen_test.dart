@@ -78,7 +78,7 @@ void main() {
     var fail = true;
     await tester.pumpWidget(buildHome(
       subjects: FakeSubjects(() async {
-        if (fail) throw const AppException(AppStrings.unknownError);
+        if (fail) throw AppException(AppStrings.unknownError);
         return subjects;
       }),
       profile: FakeProfile(1),

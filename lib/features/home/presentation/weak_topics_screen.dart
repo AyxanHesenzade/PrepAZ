@@ -17,10 +17,18 @@ class WeakTopicsScreen extends ConsumerWidget {
 
   final Subject subject;
 
-  Future<void> _practise(BuildContext context, WidgetRef ref, TopicMastery topic) async {
+  Future<void> _practise(
+    BuildContext context,
+    WidgetRef ref,
+    TopicMastery topic,
+  ) async {
     await Navigator.of(context).push(
       MaterialPageRoute<void>(
-        builder: (_) => QuizScreen(subject: subject, kind: QuizKind.topic, topicId: topic.topicId),
+        builder: (_) => QuizScreen(
+          subject: subject,
+          kind: QuizKind.topic,
+          topicId: topic.topicId,
+        ),
       ),
     );
     ref.invalidate(masteryProvider(subject.id));
@@ -31,36 +39,50 @@ class WeakTopicsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final provider = masteryProvider(subject.id);
     return Scaffold(
-      appBar: AppBar(title: const Text(AppStrings.weakPlacesTitle)),
+      appBar: AppBar(title: Text(AppStrings.weakPlacesTitle)),
       body: SafeArea(
         child: AsyncValueView<List<TopicMastery>>(
           value: ref.watch(provider),
           onRetry: () => ref.invalidate(provider),
           builder: (topics) {
             if (topics.isEmpty) {
-              return const Center(
+              return Center(
                 child: Padding(
                   padding: AppSpacing.pagePadding,
-                  child: Text(AppStrings.noMasteryYet, textAlign: TextAlign.center),
+                  child: Text(
+                    AppStrings.noMasteryYet,
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               );
             }
             return ListView(
               padding: AppSpacing.pagePadding,
               children: [
-                const Text(AppStrings.weakPlacesHint),
+                Text(
+                  AppStrings.weakPlacesHint,
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    color: Theme.of(context).colorScheme.onSurfaceVariant,
+                  ),
+                ),
                 AppSpacing.gapM,
                 for (final topic in topics)
                   Card(
                     child: InkWell(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(AppRadius.l),
                       onTap: () => _practise(context, ref, topic),
                       child: Padding(
-                        padding: const EdgeInsets.all(12),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: AppSpacing.m,
+                          vertical: AppSpacing.s,
+                        ),
                         child: Row(
                           children: [
                             Expanded(child: MasteryRow(mastery: topic)),
-                            const Icon(Icons.chevron_right),
+                            Icon(
+                              Icons.chevron_right_rounded,
+                              color: Theme.of(context).colorScheme.outline,
+                            ),
                           ],
                         ),
                       ),
