@@ -129,8 +129,8 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - Dərsliklər (məktəb kitabları) üçün razılıq YOXDUR: mövzu izahlarında yalnız mənbə/plan kimi, mətn öz sözlərimizlə yazılır, köçürülmür.
 
 ## Versiya
-- Cari versiya: **1.1.1**, build **6**. Mənbə: `assets/app.json`; `pubspec.yaml` → `version: 1.1.1+6` ilə eyni olmalıdır (`test/core/app_version_test.dart` uyğunsuzluğu tutur).
-- Yeni buraxılışda hər ikisini birlikdə dəyiş. Ana ekranın altında "Versiya 1.1.1 (6)" göstərilir.
+- Cari versiya: **1.1.2**, build **7**. Mənbə: `assets/app.json`; `pubspec.yaml` → `version: 1.1.2+7` ilə eyni olmalıdır (`test/core/app_version_test.dart` uyğunsuzluğu tutur).
+- Yeni buraxılışda hər ikisini birlikdə dəyiş. Ana ekranın altında "Versiya 1.1.2 (7)" göstərilir.
 
 ## Test Supabase-in cari vəziyyəti (2026-10-30)
 - Migrationlar işlənib: 002, 003, 004 (`topic_mastery` security_invoker).
@@ -147,6 +147,7 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
   simvol düymələri (→ ⇌ ↑ ↓ Δ ° · × ≥ ≤ indeks kəsr kök), "Yapışdır və böl" (A–E variantlarını ayırır), oxşar sual xəbərdarlığı.
 
 ## Skan edilmiş test kitabları (şəkil-sual)
+- **Kitabda harada dayandığımız `KITAB_IRELILEYIS.md`-dədir.** Kitab işinə başlamazdan əvvəl onu oxu, hər bölmə bitəndə mütləq yenilə (bölmə cədvəli, "Qısa vəziyyət", tarix).
 - Mənbə: sahibin əlindəki nəşriyyat/DİM test topluları (şəkil PDF). Yalnız sahibin verdiyi fayllar; internetdən qeyri-rəsmi PDF çəkilmir.
 - `tools/dim/scan_segment.py KITAB.pdf --first N --last M --start 1 --stop 100 --out scan/<ad>`: RapidOCR yalnız sual nömrələrinin yerini tapır
   (ardıcıl artan nömrə qaydası), hər sual ayrıca təmizlənmiş şəkil kimi kəsilir (haşiyə silinir, ağ kağız, 2x böyütmə). Nümunədə 87/100 tapıldı;
@@ -187,7 +188,7 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 
 ## Məcburi yeniləmə
 - `db/migrations/008_app_config.sql`: tək sətirli `app_config` (`min_version`, `latest_version`, `update_url`); anon də oxuya bilər (giriş əvvəli yoxlanır), yalnız admin dəyişir. Lokal test: `tools/dim/test_migration_008.py`.
-- Tətbiq: `lib/features/update` (`UpdateGate` `app.dart`-da `AuthGate`-i sarıyır). Versiya `assets/app.json`-dan (`1.1.1+6`) bazadakı ilə müqayisə olunur:
+- Tətbiq: `lib/features/update` (`UpdateGate` `app.dart`-da `AuthGate`-i sarıyır). Versiya `assets/app.json`-dan (`1.1.2+7`) bazadakı ilə müqayisə olunur:
   `min_version`-dan aşağı → bağlanmayan `ForceUpdateScreen`; `latest_version`-dan aşağı → bir dəfə "Sonra" düyməli xəbərdarlıq. Oxunmasa (internet yox / cədvəl yox) heç nə bloklanmır.
 - Admin panel: "Tənzimləmələr" tabı. Yeni buraxılışda ƏVVƏL APK/mağaza yüklənir və link yazılır, SONRA `latest_version` (və lazımsa `min_version`) qaldırılır.
 
@@ -204,7 +205,7 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - Admin panel: Tənzimləmələr tabında "İmtahan dövrləri" (tarix + aktiv).
 
 ## Giriş və qeydiyyat
-- Ekran: `AuthScreen` (Daxil ol / Qeydiyyat tabları). Təsdiq lazımdırsa `EmailConfirmView` açılır: 3 addımlı təlimat, "Təsdiqlədim, davam et", "Yenidən göndər", "Geri qayıt".
+- Ekran: `AuthScreen`. Əvvəlcə `AuthChoiceView` açılır: "Yeni istifadəçiyəm" / "Hesabım var" (tester tabları görmədiyi üçün tablar çıxarıldı), sonra ayrıca forma, yuxarıda geri düyməsi. Təsdiq lazımdırsa `EmailConfirmView` açılır: 3 addımlı təlimat, "Təsdiqlədim, davam et", "Yenidən göndər", "Geri qayıt".
 - Sahibin qərarı (test mərhələsi, pulsuz Supabase): deep link YOXDUR, Supabase-in link ayarlarına toxunulmur. Məktubdakı link boş səhifə aça bilər, amma e-poçt təsdiqlənir.
 - İstifadəçi tətbiqə qayıdanda `checkConfirmedSilently` yaddaşdakı parolla özü daxil olur. Parol yalnız yaddaşda qalır, heç yerə yazılmır.
 - Təsdiqli e-poçtla təkrar qeydiyyatda Supabase xəta vermir, boş `identities` qaytarır: bu, `AccountExistsException` olur və ekran girişə keçir.

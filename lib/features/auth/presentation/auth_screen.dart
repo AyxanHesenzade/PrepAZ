@@ -11,6 +11,7 @@ import '../../../core/widgets/app_text_field.dart';
 import '../../../core/widgets/fade_slide_in.dart';
 import '../../../core/widgets/message_banner.dart';
 import 'auth_controller.dart';
+import 'widgets/auth_choice_view.dart';
 import 'widgets/email_confirm_view.dart';
 import 'widgets/numbered_steps.dart';
 
@@ -41,36 +42,64 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
         .submit(email: _email.text.trim(), password: _password.text);
   }
 
+  AuthController get _controller => ref.read(authControllerProvider.notifier);
+
   String _subtitle(AuthFormState form) {
     if (form.awaitingConfirmation) return AppStrings.confirmTitle;
-    return form.isSignUp ? AppStrings.signUpTitle : AppStrings.signInTitle;
+    return switch (form.mode) {
+      AuthMode.choose => AppStrings.choiceTitle,
+      AuthMode.signIn => AppStrings.signInTitle,
+      AuthMode.signUp => AppStrings.signUpTitle,
+    };
   }
+
+  /// Forma ekranından seçim ekranına qayıdış. Yazılmış e-poçt silinmir.
+  void _backToChoice() => _controller.setMode(AuthMode.choose);
 
   @override
   Widget build(BuildContext context) {
     final form = ref.watch(authControllerProvider);
+    final onForm = !form.awaitingConfirmation && !form.isChoosing;
 
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            _AuthHero(subtitle: _subtitle(form)),
-            Center(
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 420),
-                child: Padding(
-                  padding: const EdgeInsets.all(AppSpacing.l),
-                  child: form.awaitingConfirmation
-                      ? const EmailConfirmView()
-                      : _buildForm(form),
+    return PopScope(
+      canPop: !onForm,
+      onPopInvokedWithResult: (didPop, _) {
+        if (!didPop && !form.isBusy) _backToChoice();
+      },
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              _AuthHero(
+                subtitle: _subtitle(form),
+                onBack: onForm && !form.isBusy ? _backToChoice : null,
+              ),
+              Center(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 420),
+                  child: Padding(
+                    padding: const EdgeInsets.all(AppSpacing.l),
+                    child: _buildBody(form),
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
+  }
+
+  Widget _buildBody(AuthFormState form) {
+    if (form.awaitingConfirmation) return const EmailConfirmView();
+    if (form.isChoosing) {
+      return AuthChoiceView(
+        onNewUser: () => _controller.setMode(AuthMode.signUp),
+        onExistingUser: () => _controller.setMode(AuthMode.signIn),
+      );
+    }
+    return _buildForm(form);
   }
 
   Widget _buildForm(AuthFormState form) {
@@ -80,26 +109,6 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SegmentedButton<AuthMode>(
-              showSelectedIcon: false,
-              segments: [
-                ButtonSegment(
-                  value: AuthMode.signIn,
-                  label: Text(AppStrings.signInTab),
-                ),
-                ButtonSegment(
-                  value: AuthMode.signUp,
-                  label: Text(AppStrings.signUpTab),
-                ),
-              ],
-              selected: {form.mode},
-              onSelectionChanged: form.isBusy
-                  ? null
-                  : (selected) => ref
-                        .read(authControllerProvider.notifier)
-                        .setMode(selected.single),
-            ),
-            AppSpacing.gapM,
             if (form.isSignUp)
               _AuthGuide(
                 title: AppStrings.signUpGuideTitle,
@@ -176,11 +185,9 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
             TextButton(
               onPressed: form.isBusy
                   ? null
-                  : () => ref
-                        .read(authControllerProvider.notifier)
-                        .setMode(
-                          form.isSignUp ? AuthMode.signIn : AuthMode.signUp,
-                        ),
+                  : () => _controller.setMode(
+                      form.isSignUp ? AuthMode.signIn : AuthMode.signUp,
+                    ),
               child: Text(
                 form.isSignUp
                     ? AppStrings.switchToSignIn
@@ -237,9 +244,12 @@ class _AuthGuide extends StatelessWidget {
 
 /// Giriş ekranının yuxarısı: gradientli, aşağı tərəfi yumru, forma üçün yer saxlayan başlıq.
 class _AuthHero extends StatelessWidget {
-  const _AuthHero({required this.subtitle});
+  const _AuthHero({required this.subtitle, this.onBack});
 
   final String subtitle;
+
+  /// Doludursa, solda geri düyməsi görünür.
+  final VoidCallback? onBack;
 
   @override
   Widget build(BuildContext context) {
@@ -266,6 +276,15 @@ class _AuthHero extends StatelessWidget {
         children: [
           Row(
             children: [
+              if (onBack != null) ...[
+                IconButton(
+                  tooltip: AppStrings.back,
+                  color: Colors.white,
+                  icon: const Icon(Icons.arrow_back_rounded),
+                  onPressed: onBack,
+                ),
+                AppSpacing.gapS,
+              ],
               const AppLogo(size: 48),
               AppSpacing.gapM,
               Text(

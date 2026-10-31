@@ -1,0 +1,520 @@
+[
+ {
+  "number": 1,
+  "page": 17,
+  "column": 0,
+  "box": [
+   0,
+   305,
+   619,
+   387
+  ],
+  "file": "q001.png",
+  "gutter": 605,
+  "draft_text": "1. Al + 02 →Al2O3 (onliyinda oksigenin omsalni maoyyan edin. E)3 D) 1 C) 2 B) 4 A)6"
+ },
+ {
+  "number": 2,
+  "page": 17,
+  "column": 0,
+  "box": [
+   0,
+   387,
+   619,
+   470
+  ],
+  "file": "q002.png",
+  "gutter": 605,
+  "draft_text": "2. AI + HCI -→AICI + H2 Ionliyinda HCl-un amsalini muayyon edin. E)5 D)4 C) 3 B) 6 A) 2"
+ },
+ {
+  "number": 3,
+  "page": 17,
+  "column": 0,
+  "box": [
+   0,
+   470,
+   619,
+   673
+  ],
+  "file": "q003.png",
+  "gutter": 605,
+  "draft_text": "3. 2C,H, + 1302-→8C02 + yI20 lanliyinda x va y-in qiymatlorini muayyon edin. A) B) 10 C) D) E)"
+ },
+ {
+  "number": 4,
+  "page": 17,
+  "column": 0,
+  "box": [
+   0,
+   673,
+   619,
+   762
+  ],
+  "file": "q004.png",
+  "gutter": 605,
+  "draft_text": "4. 4X + 502- 4NO +6H20 X maddasini mtayyon edin. A) HNO3 B) N2H4C) NH2OH D) NH3 E)HNO2"
+ },
+ {
+  "number": 5,
+  "page": 17,
+  "column": 0,
+  "box": [
+   0,
+   762,
+   619,
+   875
+  ],
+  "file": "q005.png",
+  "gutter": 605,
+  "draft_text": "5. 4X + 3022N2 + 6H20 X maddasini muayyen edin A) N2H4 B) NH3 HO\"HN (O D) HNO3 E) HNO2"
+ },
+ {
+  "number": 6,
+  "page": 17,
+  "column": 0,
+  "box": [
+   0,
+   875,
+   619,
+   965
+  ],
+  "file": "q006.png",
+  "gutter": 605,
+  "draft_text": "6. X + 602 → 4C02 + 4H20 X maddosini milayyan edin. A) CgH6B) C4Hs C) C,H D) C4H6 E) C,H:O2"
+ },
+ {
+  "number": 7,
+  "page": 17,
+  "column": 0,
+  "box": [
+   0,
+   965,
+   619,
+   1063
+  ],
+  "file": "q007.png",
+  "gutter": 605,
+  "draft_text": "7. Kalsium kukurdla 5:4 katla nisbatinda birlasir."
+ },
+ {
+  "number": 8,
+  "page": 17,
+  "column": 0,
+  "box": [
+   0,
+   1074,
+   619,
+   1188
+  ],
+  "file": "q008.png",
+  "gutter": 605,
+  "draft_text": "8. Kalsium kakurdla 5:4 kutla nisbatinds birlasir. 80 q kalsium neco qram kuktrdla reaksiyaya daxil olar? A) 45B) 100C) 64D) 32 E) 180"
+ },
+ {
+  "number": 9,
+  "page": 17,
+  "column": 0,
+  "box": [
+   0,
+   1188,
+   619,
+   1391
+  ],
+  "file": "q009.png",
+  "gutter": 605,
+  "draft_text": "9. 4Fe,S,+ 1102 →zFe20; + 8S02 x, y ve z-i mtayyan edin. A) B) 12"
+ },
+ {
+  "number": 10,
+  "page": 17,
+  "column": 1,
+  "box": [
+   596,
+   40,
+   1080,
+   210
+  ],
+  "file": "q010.png",
+  "gutter": 605,
+  "draft_text": ""
+ },
+ {
+  "number": 11,
+  "page": 17,
+  "column": 1,
+  "box": [
+   596,
+   226,
+   1080,
+   310
+  ],
+  "file": "q011.png",
+  "gutter": 605,
+  "draft_text": ""
+ },
+ {
+  "number": 12,
+  "page": 17,
+  "column": 1,
+  "box": [
+   596,
+   314,
+   1080,
+   388
+  ],
+  "file": "q012.png",
+  "gutter": 605,
+  "draft_text": ""
+ },
+ {
+  "number": 13,
+  "page": 17,
+  "column": 1,
+  "box": [
+   596,
+   398,
+   1080,
+   494
+  ],
+  "file": "q013.png",
+  "gutter": 605,
+  "draft_text": ""
+ },
+ {
+  "number": 14,
+  "page": 17,
+  "column": 1,
+  "box": [
+   596,
+   506,
+   1080,
+   599
+  ],
+  "file": "q014.png",
+  "gutter": 605,
+  "draft_text": "14. 16 q filizin tam yanmasindan 12,8 g S02 alinr. Filizd kakurduin katla payini (%) hesablayn. A.(S)-32; A(O)=16 B) 32 C)80 D) 60 A) 20  C) 80  E)40"
+ },
+ {
+  "number": 15,
+  "page": 17,
+  "column": 1,
+  "box": [
+   596,
+   599,
+   1080,
+   763
+  ],
+  "file": "q015.png",
+  "gutter": 605,
+  "draft_text": "15. Kalsium-xlorid kristalhidratinin 43,8 qramin kozortdikda onun kutlosi 21,6 q azalr. Kristalhidratin formulunu muayyen edin. M(CaCl2)=111,M(H20)-18 A) CaCl2 H,OB) CaCl2 6H20 C) CaCl2 2H20 D) CaC12 4H20 E) CaCh, 8H,0"
+ },
+ {
+  "number": 16,
+  "page": 17,
+  "column": 1,
+  "box": [
+   596,
+   763,
+   1080,
+   871
+  ],
+  "file": "q016.png",
+  "gutter": 605,
+  "draft_text": "16. 8 q kalsiumun artiqlamasi ila goturalmus kakardla reaksiyasindan neco qram kalsium-sulfid alinar? A.(Ca)=40, A.(S)=32 A) 14,5B) 11,2C) 12,4D) 10,5E) 14,4"
+ },
+ {
+  "number": 17,
+  "page": 17,
+  "column": 1,
+  "box": [
+   596,
+   871,
+   1080,
+   1028
+  ],
+  "file": "q017.png",
+  "gutter": 605,
+  "draft_text": "17. Qapall qabda eyni kuitlali Al va oksigenin reaksiyasindan 204 q oksid alinmissa, qabda hans madda va nega qram artiq qalmisdir? A(AI)=27, A(O)=16 C) Al. 54q B) AI, 27 q A) 02, 12 q D) 02, 96 q E) 02. 108 q"
+ },
+ {
+  "number": 18,
+  "page": 17,
+  "column": 1,
+  "box": [
+   596,
+   1028,
+   1080,
+   1190
+  ],
+  "file": "q018.png",
+  "gutter": 605,
+  "draft_text": "18. Qapal qabda eyni kutlali Ca va oksigenin A(Ca)=40; A.(0)=16 C) Ca, 48 g B) Ca, 56 q A) O2, 48 q D) 02, 16 q E) O2, 44 q reaksiya ucun hansi ifada dogrudur? A.(S)=32, A.(Zn)=65 A) 22,4 q ZnS alinar E) 21.4 q ZnS alnar"
+ },
+ {
+  "number": 19,
+  "page": 17,
+  "column": 1,
+  "box": [
+   596,
+   1200,
+   1080,
+   1401
+  ],
+  "file": "q019.png",
+  "gutter": 605,
+  "draft_text": ""
+ },
+ {
+  "number": 20,
+  "page": 18,
+  "column": 0,
+  "box": [
+   0,
+   86,
+   539,
+   280
+  ],
+  "file": "q020.png",
+  "gutter": 525,
+  "draft_text": "20. 4 q kalsium zarina 4 q kakurd olava edilmis va qizdinlmisdir. Bu reaksiya ucun hanst ifada dogrudur? A,(Ca)=40, A,(S)=32 A) 6 q CaS alinar, 2 q S artiq qalar B) 7,2 q CaS alinar, 0,8 q S artiq qalar C) 8 q CaS alinar D) 7,2 q CaS alinar, 0,8 q Ca artuq qalar E) 9 q CaS alinar"
+ },
+ {
+  "number": 21,
+  "page": 18,
+  "column": 0,
+  "box": [
+   0,
+   280,
+   539,
+   476
+  ],
+  "file": "q021.png",
+  "gutter": 525,
+  "draft_text": "21. 12,8 q Cu va 8 q S qarisig1 qizdirlmisdir. Bu reaksiya ucun hansi ifada dogrudur? A,(Cu)=64, A.(S)=32 A) 19,2 q CuS alnar, 1,6 q S artiq qalar B) 20,8 q CuS alinar, qaliq qalmaz C) 19,2 q CuS alinar, 1,6 q Cu artiq qalar D) 20 q CuS alinar, 0,8 q S artiq qalar E) 15,0 q CuS alinar, 5,8 q Cu artiq qalar"
+ },
+ {
+  "number": 22,
+  "page": 18,
+  "column": 0,
+  "box": [
+   0,
+   476,
+   539,
+   578
+  ],
+  "file": "q022.png",
+  "gutter": 525,
+  "draft_text": "22. 4 q tzvi maddo yandiqda 8,8 q CO2 omols galmisss, bubirlasmadakarbonunkutlpayini (%)muayyon edin. A(O)=16, A(C)=12 A) 40B)20(C)60 E) 55 D) 50"
+ },
+ {
+  "number": 23,
+  "page": 18,
+  "column": 0,
+  "box": [
+   0,
+   578,
+   539,
+   793
+  ],
+  "file": "q023.png",
+  "gutter": 525,
+  "draft_text": "23. 5 q kalsium ve 5 q kakurd arasnda bas veran reaksiya zamani maddalardan biri tam reaksiyaya daxil olmusdur Bu reaksiya tictin hansi ifade dogrudur? A.(Ca)=40, A.(S)=32 A) 9 g CaS alinar, 1 q S artiq qalar B) 6 q CaS alinar, 3 q S artiq qalar C) 10 q CaS alinar D) 7,2 q CaS alinar, 2,8 q Ca artuq qalar E) 9 q CaS alinar, 2 q S arliq qalar"
+ },
+ {
+  "number": 24,
+  "page": 18,
+  "column": 0,
+  "box": [
+   0,
+   793,
+   539,
+   898
+  ],
+  "file": "q024.png",
+  "gutter": 525,
+  "draft_text": "24. 1,4 q ikivalentli metal oksidi su ile reaksiyaya daxil olarag l,85 g asas amolo gotirir, Metali muayyon edin. A.(O)=16, A.(H)=1 BDo (3 BAer (aBW (O(aUZs, (V"
+ },
+ {
+  "number": 25,
+  "page": 18,
+  "column": 0,
+  "box": [
+   0,
+   898,
+   539,
+   1010
+  ],
+  "file": "q025.png",
+  "gutter": 525,
+  "draft_text": "25.Xm+Y,→2XY 2Xm+Zz→2T T birlasmosinin formulunu muayyon edin. A)X2ZB) XZC)XZ2D)X,ZE)XZ"
+ },
+ {
+  "number": 26,
+  "page": 18,
+  "column": 0,
+  "box": [
+   0,
+   1010,
+   539,
+   1234
+  ],
+  "file": "q026.png",
+  "gutter": 525,
+  "draft_text": "26. Al4C + 12H20 -→ 3X + 4A1(OH)3 X +aO2-→bCO2+ cH2O a, b va c-ni mtayyon edin. A) B) C) D) E)"
+ },
+ {
+  "number": 27,
+  "page": 18,
+  "column": 0,
+  "box": [
+   0,
+   1234,
+   539,
+   1472
+  ],
+  "file": "q027.png",
+  "gutter": 525,
+  "draft_text": "27. 2CH. 550°.kat.X + 2H2 550° kat.X + 2H2 X + aO2 →bcO2 + cH20 a, b va c-ni maayyan edin. A) B) C) D) E)"
+ },
+ {
+  "number": 28,
+  "page": 18,
+  "column": 1,
+  "box": [
+   516,
+   93,
+   1080,
+   264
+  ],
+  "file": "q028.png",
+  "gutter": 525,
+  "draft_text": "28. 18,6 q natrium-yodid kristalhidratinin tam kozordilmosindan 3,6 q su alinmisdir.Kristalhidratin formulunumuayyon edin.M.(Nal)=150, M(H,0)=18 B) Nal - H20 A) Nal : 4H20 C) Nal - 3H20 D) Nal - 2H20 E) Nal 5H20"
+ },
+ {
+  "number": 29,
+  "page": 18,
+  "column": 1,
+  "box": [
+   516,
+   264,
+   1080,
+   620
+  ],
+  "file": "q029.png",
+  "gutter": 525,
+  "draft_text": "29. 4Al + 302→ 2Al203 Katla, q reaksiyasi ticun hansi ifadalor dogrudur? A(A1)-27; A.(O)=16 zaman 1.Xmaddosi aluminiumdur 2. Y maddasi oksigendir 3c=2m-b-a 4.bqramYreaksiyaya daxil olub 5. a qram X reaksiyaya daxil olub 6. c=a+b"
+ },
+ {
+  "number": 30,
+  "page": 18,
+  "column": 1,
+  "box": [
+   516,
+   620,
+   1080,
+   970
+  ],
+  "file": "q030.png",
+  "gutter": 525,
+  "draft_text": "Kutla, q 30. 2AI + 3S → Al2S3 Qrafikaasasanreaksiyauicun hanst ifadolar dogrudur? A(AI)-27, A(S)=32 zaman 1.X maddosikukarddtr. 2.Ymaddesialiminiumdur 3a qram X reaksiyaya daxil olub. 4. b qram Y reaksiyaya daxil olub. 5.c=2m-b-a 6. c=a+b"
+ },
+ {
+  "number": 31,
+  "page": 18,
+  "column": 1,
+  "box": [
+   516,
+   970,
+   1080,
+   1180
+  ],
+  "file": "q031.png",
+  "gutter": 525,
+  "draft_text": "m,q 31. X2 va Y2-nin qarsilqli tasirindan Zmaddasi 68 alinmisdir. Qrafika asason 56 \"c\"-ni hesablayin. 38 zaman"
+ },
+ {
+  "number": 32,
+  "page": 18,
+  "column": 1,
+  "box": [
+   516,
+   1180,
+   1080,
+   1384
+  ],
+  "file": "q032.png",
+  "gutter": 525,
+  "draft_text": "m, q 32. X2 va Y2-nin qarsiliql tasirindon Z maddasi 72 almmisdir.Qrafika 64 osason\"c\"-ni hosablayin. 32 zaman"
+ },
+ {
+  "number": 33,
+  "page": 19,
+  "column": 0,
+  "box": [
+   0,
+   68,
+   587,
+   192
+  ],
+  "file": "q033.png",
+  "gutter": 573,
+  "draft_text": "33. 2C,H,N + 1102 -→ 6C02 + 10H20 + 2N2 reaksiya tonliyina osason C.H,N, birlesmosinin nisbi molekul kotlosini hesablayin. Ar(C)-12; A.(H)-1; A(N)-14"
+ },
+ {
+  "number": 34,
+  "page": 19,
+  "column": 0,
+  "box": [
+   0,
+   192,
+   587,
+   324
+  ],
+  "file": "q034.png",
+  "gutter": 573,
+  "draft_text": "34. 1,2 q maqnezium 8 q X2 ila reaksiyaya tam daxil olaraq MgX2 amala gotirir, X-in nisbi atom kutlasini hesablayin. A.(Mg)-24"
+ },
+ {
+  "number": 35,
+  "page": 19,
+  "column": 0,
+  "box": [
+   0,
+   324,
+   587,
+   551
+  ],
+  "file": "q035.png",
+  "gutter": 573,
+  "draft_text": "35. XY2+2H20 -→Z + T Kutlosi, q 32 XY2 18 H20 37 T-nin nisbi molekul kutlasini hesablayin. A.(H)=1; A.(O)=16"
+ },
+ {
+  "number": 36,
+  "page": 19,
+  "column": 0,
+  "box": [
+   0,
+   551,
+   587,
+   795
+  ],
+  "file": "q036.png",
+  "gutter": 573,
+  "draft_text": "36. XY2+2H2O -→Z + T Katlosi, q 32 XY2 18 H20 13 Z-in nisbi molekul kutlosini hesablayim. A.(HD=1; A(O)-16"
+ },
+ {
+  "number": 37,
+  "page": 19,
+  "column": 0,
+  "box": [
+   0,
+   795,
+   587,
+   1534
+  ],
+  "file": "q037.png",
+  "gutter": 573,
+  "draft_text": "Kutlo, q 37. X-in 80%-i reaksiyaya daxil olursa, m-i mayyon edin. 40 16- zaman Otrafli yazili cavab talab olunan tapsirqlar 1. 10 q aluminium uzorina 16 q kukurd alavo edilorak qizdirildiqda maddalardan biri tam sarf olunur. Reaksiyadan sonra artiq qalan maddanin kutlosini (q-la) (1) va reaksiya mohsulunun kutlesini (q-la) (2) hesablayin. A(AI)-27, A.(S)=32 2. III valentli metalin oksidinin molyar hidroksidininmolyar 9. katlosi kutlasi (mol) (mol) x - y = 24 olarsa, x (1) vo y-i (2) hesablayin A(O)=16, A.(H)=1 -20"
+ }
+]

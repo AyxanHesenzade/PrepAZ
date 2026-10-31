@@ -23,7 +23,7 @@ void main() {
 
   Future<void> register(WidgetTester tester) async {
     repo.signUpOutcome = SignUpOutcome.confirmationRequired;
-    await tester.tap(find.text(AppStrings.signUpTab));
+    await tester.tap(find.text(AppStrings.choiceNewTitle));
     await tester.pumpAndSettle();
     await tester.enterText(find.byType(TextFormField).at(0), 'a@b.az');
     await tester.enterText(find.byType(TextFormField).at(1), '123456');
@@ -35,18 +35,43 @@ void main() {
 
   setUp(() => repo = FakeAuthRepository());
 
-  testWidgets('the sign in tab tells new users to tap the link first', (tester) async {
+  testWidgets('first screen asks new or existing and shows no form', (tester) async {
     await pumpScreen(tester);
+
+    expect(find.text(AppStrings.choiceNewTitle), findsOneWidget);
+    expect(find.text(AppStrings.choiceExistingTitle), findsOneWidget);
+    expect(find.byType(TextFormField), findsNothing);
+  });
+
+  testWidgets('the back button returns to the choice and keeps the email', (tester) async {
+    await pumpScreen(tester);
+    await tester.tap(find.text(AppStrings.choiceExistingTitle));
+    await tester.pumpAndSettle();
+    await tester.enterText(find.byType(TextFormField).at(0), 'a@b.az');
+
+    await tester.tap(find.byTooltip(AppStrings.back));
+    await tester.pumpAndSettle();
+    expect(find.text(AppStrings.choiceNewTitle), findsOneWidget);
+
+    await tester.tap(find.text(AppStrings.choiceExistingTitle));
+    await tester.pumpAndSettle();
+    expect(find.text('a@b.az'), findsOneWidget);
+  });
+
+  testWidgets('the sign in screen tells new users to tap the link first', (tester) async {
+    await pumpScreen(tester);
+    await tester.tap(find.text(AppStrings.choiceExistingTitle));
+    await tester.pumpAndSettle();
 
     expect(find.text(AppStrings.signInGuideForm), findsOneWidget);
     expect(find.text(AppStrings.signInGuideNewUser), findsOneWidget);
   });
 
-  testWidgets('the sign up tab explains the email step', (tester) async {
+  testWidgets('the sign up screen explains the email step', (tester) async {
     await pumpScreen(tester);
     expect(find.text(AppStrings.signUpGuideTitle), findsNothing);
 
-    await tester.tap(find.text(AppStrings.signUpTab));
+    await tester.tap(find.text(AppStrings.choiceNewTitle));
     await tester.pumpAndSettle();
 
     expect(find.text(AppStrings.signUpGuideTitle), findsOneWidget);
@@ -56,6 +81,8 @@ void main() {
 
   testWidgets('the link under the button switches to sign up', (tester) async {
     await pumpScreen(tester);
+    await tester.tap(find.text(AppStrings.choiceExistingTitle));
+    await tester.pumpAndSettle();
 
     final link = find.text(AppStrings.switchToSignUp);
     await tester.ensureVisible(link);
@@ -67,6 +94,8 @@ void main() {
 
   testWidgets('the eye button reveals the password', (tester) async {
     await pumpScreen(tester);
+    await tester.tap(find.text(AppStrings.choiceExistingTitle));
+    await tester.pumpAndSettle();
     bool obscured() => tester.widget<EditableText>(find.byType(EditableText).at(1)).obscureText;
     expect(obscured(), isTrue);
 

@@ -18,7 +18,8 @@ import pymupdf
 from PIL import Image, ImageFilter, ImageOps
 from rapidocr_onnxruntime import RapidOCR
 
-NUMBER = re.compile(r"^\s*(\d{1,3})\s*[.,)]?\s*\S")
+# the character after the number must not be a dash: the page number "-15-" reads as "15-"
+NUMBER = re.compile(r"^\s*(\d{1,3})(?!\d)\s*[.,)]?\s*[^\s\-–—]")
 SCALE = 1.5          # OCR works on an enlarged copy of each column
 PAD = 6
 MAX_JUMP = 30

@@ -133,7 +133,12 @@ void main() {
     expect(repo.signInCalls, 0);
   });
 
+  test('starts on the choice between a new and an existing account', () {
+    expect(state().isChoosing, isTrue);
+  });
+
   test('setMode switches mode and clears messages', () async {
+    controller().setMode(AuthMode.signIn);
     repo.signInError = AppException(AppStrings.invalidCredentials);
     await controller().submit(email: 'a@b.az', password: '123456');
 

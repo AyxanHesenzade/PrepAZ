@@ -1,0 +1,450 @@
+[
+ {
+  "number": 1,
+  "page": 14,
+  "column": 1,
+  "box": [
+   500,
+   804,
+   1080,
+   914
+  ],
+  "file": "q001.png",
+  "gutter": 509,
+  "draft_text": "1. Hansi halda kimyavi hadisa bas verir? A) maye havadan oksigen alindiqda B) su buxarlandiqda C) su donduqda epyipue zng (a E) suyun elektrolizinde"
+ },
+ {
+  "number": 2,
+  "page": 14,
+  "column": 1,
+  "box": [
+   500,
+   914,
+   1080,
+   1001
+  ],
+  "file": "q002.png",
+  "gutter": 509,
+  "draft_text": "2. Hanst halda kimyovi hadisa bas verir? A)buxarlanma euue (a C) kristallasma D) yanma E) s0zmo"
+ },
+ {
+  "number": 3,
+  "page": 14,
+  "column": 1,
+  "box": [
+   500,
+   1001,
+   1080,
+   1158
+  ],
+  "file": "q003.png",
+  "gutter": 509,
+  "draft_text": "3.Fiziki hadisani maoyyon edin. A) O2-don suyun alinmasi B) H2-dan suyun alnmasi C) siduin tursumasi D) suyun buxarlanmasi E) damirin paslanmasi"
+ },
+ {
+  "number": 4,
+  "page": 14,
+  "column": 1,
+  "box": [
+   500,
+   1158,
+   1080,
+   1263
+  ],
+  "file": "q004.png",
+  "gutter": 509,
+  "draft_text": "4.Kimyovi hadisani maayyan edin A)buzun orimasi B) suyun donmasi C) sudan tursumasi D) qurgusunun erimasi E) domirin xirdalanmasi"
+ },
+ {
+  "number": 5,
+  "page": 14,
+  "column": 1,
+  "box": [
+   500,
+   1263,
+   1080,
+   1458
+  ],
+  "file": "q005.png",
+  "gutter": 509,
+  "draft_text": "5.2C,H, +1102→ 8C02 +yH20 tanliyinda x va y-in qiymatlorini maayyon edim A) B) E) 15 -"
+ },
+ {
+  "number": 6,
+  "page": 15,
+  "column": 0,
+  "box": [
+   0,
+   53,
+   559,
+   244
+  ],
+  "file": "q006.png",
+  "gutter": 545,
+  "draft_text": "6. Hansi halda hadisolarin novu dozgun gostorilmisdir? Kimyavi Fiziki barkima cuue A) distilla yanma B) elektroliz sublimasiya hidroliz oksidlosma D) sublimasiya qicqurma E)"
+ },
+ {
+  "number": 7,
+  "page": 15,
+  "column": 0,
+  "box": [
+   0,
+   244,
+   559,
+   422
+  ],
+  "file": "q007.png",
+  "gutter": 545,
+  "draft_text": "E) 7. Hansi halda hadisolarin novu duzgun gostorilmisdir? Fiziki Kimyavi elektroliz A)kondenslasma yanma B) distillo kondenslasma C) qicqurma cuserpisyo curyreq(a qicqirma E) hidroliz zeb maye"
+ },
+ {
+  "number": 8,
+  "page": 15,
+  "column": 0,
+  "box": [
+   0,
+   438,
+   559,
+   556
+  ],
+  "file": "q008.png",
+  "gutter": 545,
+  "draft_text": "bork 8. 4-cu oxla gostorilan hadisonin adr: C) buxarlanma eume ( A)kondenslasma E) sublima D) donma qaz"
+ },
+ {
+  "number": 9,
+  "page": 15,
+  "column": 0,
+  "box": [
+   0,
+   570,
+   559,
+   689
+  ],
+  "file": "q009.png",
+  "gutter": 545,
+  "draft_text": "qaz bork maye 9. Hans ox sxemde arimoni gostarir? E)5 D) 3 C) 2 B)1 A) 4"
+ },
+ {
+  "number": 10,
+  "page": 15,
+  "column": 0,
+  "box": [
+   0,
+   702,
+   559,
+   857
+  ],
+  "file": "q010.png",
+  "gutter": 545,
+  "draft_text": "10.Kimyavihadisanimtayyon edin. A)stsonin arimasi B)benzinin yanmasi C) sokarin suda hall olmasi D) metalin arimosi E) suyun buxarlanmasi"
+ },
+ {
+  "number": 11,
+  "page": 15,
+  "column": 0,
+  "box": [
+   0,
+   857,
+   559,
+   1017
+  ],
+  "file": "q011.png",
+  "gutter": 545,
+  "draft_text": "11. Sublimasiya zamani maddonin aqreqat hal dayisir: 1.barkdanqaza 2. qazdan -→mayeya 3. mayedan →qaza C) yalniz 3 B) yalniz 2 A) 1,3 D) 1, 2 E) yalniz 1"
+ },
+ {
+  "number": 12,
+  "page": 15,
+  "column": 0,
+  "box": [
+   0,
+   1017,
+   559,
+   1126
+  ],
+  "file": "q012.png",
+  "gutter": 545,
+  "draft_text": "12. Su-→buz cevrilmesinda hansi proseslor bas verir? I. sixhg azalr I. torkib doyisir III. sixhq artur IV.hacmdoyisir A)I,IVB)I, IIC)I,I ) I, III )II, IV"
+ },
+ {
+  "number": 13,
+  "page": 15,
+  "column": 0,
+  "box": [
+   0,
+   1126,
+   559,
+   1256
+  ],
+  "file": "q013.png",
+  "gutter": 545,
+  "draft_text": "13.Subuz cevrilmasinda hansi proseslar bas vermir? I. torkib dayisir II, sixliq azalur III. sixhiq artur IV. hacm dayisir A) II,IV B)I,III C)I, II D)I,IV E)III,IV"
+ },
+ {
+  "number": 14,
+  "page": 15,
+  "column": 0,
+  "box": [
+   0,
+   1256,
+   559,
+   1420
+  ],
+  "file": "q014.png",
+  "gutter": 545,
+  "draft_text": "14.Fiziki hadisalori mdayyan edin. LFenolun arimosi II.Nisastadan qlukozanin alinmasi IIl. Kartofdan nisastanin alinmasi A) II, III C)I, II D) yalniz II E) yalniz 1"
+ },
+ {
+  "number": 15,
+  "page": 15,
+  "column": 1,
+  "box": [
+   536,
+   47,
+   1080,
+   188
+  ],
+  "file": "q015.png",
+  "gutter": 545,
+  "draft_text": "15.Fiziki hadisolori muoyyon edin. II Qlukozanin spirta qucqurmasi III.Neftdon mazutun alinmasi C) II, II B)I, II A) yalniz I E) yalniz II D) I, III su buxan"
+ },
+ {
+  "number": 16,
+  "page": 15,
+  "column": 1,
+  "box": [
+   536,
+   204,
+   1080,
+   352
+  ],
+  "file": "q016.png",
+  "gutter": 545,
+  "draft_text": "su buxan 16.Hava-→oksigen- +su- Hansi marhalalardo fiziki hadiso bas verir? C) I, III B) I, II A) yalnz III E) yalniz II D) yalniz I oksigensubuz"
+ },
+ {
+  "number": 17,
+  "page": 15,
+  "column": 1,
+  "box": [
+   536,
+   364,
+   1080,
+   516
+  ],
+  "file": "q017.png",
+  "gutter": 545,
+  "draft_text": "17.Hava- Hansi marhalalorda kimyavi hadise bas verir? B) yalniz I C) yalniz III A)I, II E) II, III D) yalniz II"
+ },
+ {
+  "number": 18,
+  "page": 15,
+  "column": 1,
+  "box": [
+   536,
+   525,
+   1080,
+   799
+  ],
+  "file": "q018.png",
+  "gutter": 545,
+  "draft_text": "18.Hansr reaksiya sxeminda bork kutlo+ kutlonin zamandan asili olaraq dayismesi verilmis qrafika uygundur? zaman A) C(b) LA(b) + B() B) A(b) + B(b) -t C(m) C) A(q) + B(b) t C(g) D) A(q) + B(g) t, C(q) E) A(b) + B(q)t C(b)"
+ },
+ {
+  "number": 19,
+  "page": 15,
+  "column": 1,
+  "box": [
+   536,
+   803,
+   1080,
+   1071
+  ],
+  "file": "q019.png",
+  "gutter": 545,
+  "draft_text": "19.Hansi reaksiya sxeminda bork kutla katlenin zamandan asili olaraq doyismasi verilmis qrafika uy gundur? zaman A) C(b) t=A(m) + B(m) B) C(b) t A(q) + B(q) C) C(b) t, A(b) + B(q) D) A(b) + B(q) t C(b) E) A(b) + B(m) _t_C(b)"
+ },
+ {
+  "number": 20,
+  "page": 15,
+  "column": 1,
+  "box": [
+   536,
+   1071,
+   1080,
+   1407
+  ],
+  "file": "q020.png",
+  "gutter": 545,
+  "draft_text": "20. Laboratoriyada X, Y va Z maddalerinin analizindan asagidaki naticalor hasil olunur: . X-in torkibi N2, O2 ve CO2 qazlarndan teskil olunub  Y-in tarkibinde kakao, yag va karbohidrat var . Z -maddasi O2 molekullarindan ibarotdir Hansi ifadolar dogrudur? L X-muxtolifcinsli qarisiqdir II.Y-saf maddedir III. Z-bosit maddadir C)I, II A)yalnizIll B) II, III D) yalniz I E) I, II"
+ },
+ {
+  "number": 21,
+  "page": 16,
+  "column": 0,
+  "box": [
+   0,
+   101,
+   526,
+   536
+  ],
+  "file": "q021.png",
+  "gutter": 512,
+  "draft_text": "21. Qrafiklar aciq qabda aparilan reaksiyalarda qabda olan maddo katiasinin zamandan asililiginu ifada cdir. Qrafiklorin reaksiyalarla uygunlugunu mtoyyon edin. kuitlot kutlon Zaman 1. A(b) L B(q) + C(g) 2. A(b)  B(b) + C(g) 3. A(b) + B(b) LC(b) B) 2, 3 C) 2, 3 D) 1,2 E)"
+ },
+ {
+  "number": 22,
+  "page": 16,
+  "column": 0,
+  "box": [
+   0,
+   536,
+   526,
+   988
+  ],
+  "file": "q022.png",
+  "gutter": 512,
+  "draft_text": "22. Qrafiklor aciq qabda aparlan reaksiyalarda qabda olan madde kutlasinin zamandan asililigini ifade edir. Qrafiklarin reaksiyalarla uygunlugunu mtayyan edin. kutist kutlot Zaman zarnan 1. A(b) LB() + C(q) 2. A(b)  B(b) + C(q) 3. A(b) + B(q) L=C(b) A) B) C) 2, 3 D) 1,3 1,2"
+ },
+ {
+  "number": 23,
+  "page": 16,
+  "column": 0,
+  "box": [
+   0,
+   988,
+   526,
+   1191
+  ],
+  "file": "q023.png",
+  "gutter": 512,
+  "draft_text": "23. Kimyovi hadisa Domirin Suyun Hidrogenin Yodun paslanmas! donmast sublimasiyas! yanmasi Hansilar dogrudur?"
+ },
+ {
+  "number": 24,
+  "page": 16,
+  "column": 0,
+  "box": [
+   0,
+   1191,
+   526,
+   1416
+  ],
+  "file": "q024.png",
+  "gutter": 512,
+  "draft_text": "24. Kimyavi hadisa Domirin Suyun Yodun Hidrogenin paslanmast donmas! sublimasiyas! yanmas! Hansilar dogru deyit?"
+ },
+ {
+  "number": 25,
+  "page": 16,
+  "column": 1,
+  "box": [
+   503,
+   93,
+   1080,
+   197
+  ],
+  "file": "q025.png",
+  "gutter": 512,
+  "draft_text": "25.Hansi proseslarda maddalarin kimyavi tarkibi doyisir? 2. oksidlasma 1. krekinq 4.distilla 3. sublimasiya"
+ },
+ {
+  "number": 26,
+  "page": 16,
+  "column": 1,
+  "box": [
+   503,
+   197,
+   1080,
+   302
+  ],
+  "file": "q026.png",
+  "gutter": 512,
+  "draft_text": "26.Hans proseslarda maddolorin kimyavi torkibi dayismir? 1. kreking 2. oksidlasma 4.distilla 3. sublimasiya"
+ },
+ {
+  "number": 27,
+  "page": 16,
+  "column": 1,
+  "box": [
+   503,
+   302,
+   1080,
+   594
+  ],
+  "file": "q027.png",
+  "gutter": 512,
+  "draft_text": "27.\"Azeri light\"- Azarbaycana aid\"Azori\" va\"Ciraq” neft yataqlarindan hasil edilan neftin ticarot markasidirTorkibindakakurdun katlapayinin maksimum 0,14% olmasive bir sira digor muhum gostoricilara malik olduguna goro bu neft markasi dunya bazarinda yuksak keyfiyyotli xammal hesab edilir. \"Azeri light\"acun dogru ifadalari muayyon edin. IEynicinsli qanisiqdir II. 20 ton bu neftin torkibinda maksimum 28 kq kukurdolur III Sabit qaynama temperaturuna malikdir"
+ },
+ {
+  "number": 28,
+  "page": 16,
+  "column": 1,
+  "box": [
+   503,
+   594,
+   1080,
+   839
+  ],
+  "file": "q028.png",
+  "gutter": 512,
+  "draft_text": "28.Trinitroqliserin (C,H,N,O,)yuksak partlayici tosira malik maddadir.Zarbonin tasirindan partladig ucun silah istehsalinda tetbig olunur Partlamasi naticasinda amalo galan qazlarin har biri havanin torkibinda var Dogru ifadalari mtayyon edin . Partlamasinda alinan qazlarn qarisigi homogendir 2.Trinitroqliserin sabit orima temperaturuna malikdir 3.Tninitroqliserin qarisiqmaddadir"
+ },
+ {
+  "number": 29,
+  "page": 16,
+  "column": 1,
+  "box": [
+   503,
+   839,
+   1080,
+   1048
+  ],
+  "file": "q029.png",
+  "gutter": 512,
+  "draft_text": "29. Hadisaminnovu Hadisalar fiziki damirin paslanmasi fiziki iseueuueyes kimyovi benzininyanmasi kimyvi iseuuemuesns kimyavi sudun tursumasi"
+ },
+ {
+  "number": 30,
+  "page": 16,
+  "column": 1,
+  "box": [
+   503,
+   1048,
+   1080,
+   1244
+  ],
+  "file": "q030.png",
+  "gutter": 512,
+  "draft_text": "30. Hadisanin novi Hadisalar No fiziki damirinpaslanmast fiziki iseueueyes kimyevi samin yanmasi kimyovi metalin orimasi kimyavi sudan oksigenin alinmasi"
+ },
+ {
+  "number": 31,
+  "page": 16,
+  "column": 1,
+  "box": [
+   503,
+   1244,
+   1080,
+   1510
+  ],
+  "file": "q031.png",
+  "gutter": 512,
+  "draft_text": "31. \"Naxcivan duzu\" torkibindo 84 minerali birlosdiran n faydal mohsullardan biri hesab olunur.1927-ci ildon baslayaraq Naxcivanda dag yutagundan duz cixanlmaga baslanilib, Bu yatagdan cixarilan tobii duzun torkibinda 95% NaCl, 5% isa hall olmayan quru qalq olur Neoo lon\"Naxcivan duzu\"artuq miqdar suda holl edilan zaman 250 kq hall olmayan hisso qalar? 7-"
+ },
+ {
+  "number": 32,
+  "page": 17,
+  "column": 0,
+  "box": [
+   0,
+   37,
+   619,
+   1334
+  ],
+  "file": "q032.png",
+  "gutter": 605,
+  "draft_text": "32. Qizil mamulatlarinin ayari onlarin (arkibindoki saf qizalin faizini gostorir v karat (K) ila olcalur Saf qizil 24 K olaraq adlandirilir, bu qizilin 100% saf oldugunu gostorir 12 K oyarl qizil momulatlarinin 50%-j saf qizil, 50%-i isa digor metallarin qarisigindan taskil olunur. 18 K oyurli 20 q qizil zinal asyasinin tarkibindo nece qram snf qzil oldugunu hesablayin. Kimyavi tanliklar izra hesablamalar 1. Al + 02 →Al2O3 (onliyinda oksigenin omsalni maoyyan edin. E)3 D) 1 C) 2 B) 4 A)6 2. AI + HCI -→AICI + H2 Ionliyinda HCl-un amsalini muayyon edin. E)5 D)4 C) 3 B) 6 A) 2 3. 2C,H, + 1302-→8C02 + yI20 lanliyinda x va y-in qiymatlorini muayyon edin. A) B) 10 C) D) E) 4. 4X + 502- 4NO +6H20 X maddasini mtayyon edin. A) HNO3 B) N2H4C) NH2OH D) NH3 E)HNO2 5. 4X + 3022N2 + 6H20 X maddasini muayyen edin A) N2H4 B) NH3 HO\"HN (O D) HNO3 E) HNO2 6. X + 602 → 4C02 + 4H20 X maddosini milayyan edin. A) CgH6B) C4Hs C) C,H D) C4H6 E) C,H:O2 7. Kalsium kukurdla 5:4 katla nisbatinda birlasir. 16 q kuktird neca qram kalsiumla reaksiyaya daxil Olar? A) 12  C)36D)10 B) 20 D) 10 E) 15 8. Kalsium kakurdla 5:4 kutla nisbatinds birlasir. 80 q kalsium neco qram kuktrdla reaksiyaya daxil olar? A) 45B) 100C) 64D) 32 E) 180 9. 4Fe,S,+ 1102 →zFe20; + 8S02 x, y ve z-i mtayyan edin. A) B) 12"
+ }
+]

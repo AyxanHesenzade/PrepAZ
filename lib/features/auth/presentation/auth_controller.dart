@@ -5,11 +5,12 @@ import '../../../core/error/app_exception.dart';
 import '../domain/auth_repository.dart';
 import 'auth_providers.dart';
 
-enum AuthMode { signIn, signUp }
+/// [choose]: istifadəçi hələ yeni olub-olmadığını seçməyib.
+enum AuthMode { choose, signIn, signUp }
 
 class AuthFormState {
   const AuthFormState({
-    this.mode = AuthMode.signIn,
+    this.mode = AuthMode.choose,
     this.isBusy = false,
     this.error,
     this.info,
@@ -24,6 +25,7 @@ class AuthFormState {
   /// Təsdiq gözləyən e-poçt. Doludursa, ekranda forma yox, təlimat göstərilir.
   final String? pendingEmail;
 
+  bool get isChoosing => mode == AuthMode.choose;
   bool get isSignUp => mode == AuthMode.signUp;
   bool get awaitingConfirmation => pendingEmail != null;
 
@@ -69,7 +71,7 @@ class AuthController extends Notifier<AuthFormState> {
     } on EmailNotConfirmedException {
       _awaitConfirmation(email, password);
     } on AccountExistsException catch (e) {
-      state = AuthFormState(error: e.message);
+      state = AuthFormState(mode: AuthMode.signIn, error: e.message);
     } on AppException catch (e) {
       state = state.failed(e.message);
     }

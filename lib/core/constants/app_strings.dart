@@ -35,8 +35,28 @@ abstract final class AppStrings {
       _t('Yeni hesab yaradın', 'Создайте новый аккаунт', 'Create a new account');
   static String get signInAction => _t('Daxil ol', 'Войти', 'Sign in');
   static String get signUpAction => _t('Hesab yarat', 'Создать аккаунт', 'Create account');
-  static String get signInTab => _t('Daxil ol', 'Вход', 'Sign in');
-  static String get signUpTab => _t('Qeydiyyat', 'Регистрация', 'Sign up');
+  static String get back => _t('Geri', 'Назад', 'Back');
+  static String get choiceTitle =>
+      _t('Xoş gəlmisiniz!', 'Добро пожаловать!', 'Welcome!');
+  static String get choiceQuestion => _t(
+    'PrepAZ-da hesabınız var?',
+    'У вас есть аккаунт в PrepAZ?',
+    'Do you have a PrepAZ account?',
+  );
+  static String get choiceNewTitle =>
+      _t('Yeni istifadəçiyəm', 'Я новый пользователь', "I'm new here");
+  static String get choiceNewSubtitle => _t(
+    'Hesabım yoxdur, yeni hesab yaradım',
+    'Аккаунта нет, создать новый',
+    "I don't have an account, create one",
+  );
+  static String get choiceExistingTitle =>
+      _t('Hesabım var', 'У меня есть аккаунт', 'I have an account');
+  static String get choiceExistingSubtitle => _t(
+    'E-poçt və parolumla daxil olum',
+    'Войти по почте и паролю',
+    'Sign in with my email and password',
+  );
   static String get switchToSignIn => _t(
     'Hesabınız var? Daxil olun',
     'Уже есть аккаунт? Войдите',
