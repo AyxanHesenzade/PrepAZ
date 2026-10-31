@@ -34,29 +34,145 @@ abstract final class AppStrings {
   static String get signUpTitle =>
       _t('Yeni hesab yaradın', 'Создайте новый аккаунт', 'Create a new account');
   static String get signInAction => _t('Daxil ol', 'Войти', 'Sign in');
-  static String get signUpAction => _t('Qeydiyyat', 'Регистрация', 'Sign up');
+  static String get signUpAction => _t('Hesab yarat', 'Создать аккаунт', 'Create account');
+  static String get signInTab => _t('Daxil ol', 'Вход', 'Sign in');
+  static String get signUpTab => _t('Qeydiyyat', 'Регистрация', 'Sign up');
   static String get switchToSignIn => _t(
-    'Hesabım var — daxil ol',
-    'У меня есть аккаунт — войти',
-    'I have an account — sign in',
+    'Hesabınız var? Daxil olun',
+    'Уже есть аккаунт? Войдите',
+    'Already have an account? Sign in',
   );
   static String get switchToSignUp => _t(
-    'Hesabım yoxdur — qeydiyyat',
-    'У меня нет аккаунта — регистрация',
-    "I don't have an account — sign up",
+    'Hesabınız yoxdur? Yeni hesab yaradın',
+    'Нет аккаунта? Создайте новый',
+    "Don't have an account? Create one",
   );
   static String get email => _t('E-poçt', 'Эл. почта', 'Email');
   static String get password => _t('Parol', 'Пароль', 'Password');
   static String get signOut => _t('Çıxış', 'Выйти', 'Sign out');
-  static String get confirmEmailNotice => _t(
-    'Hesab yaradıldı. E-poçtunuza gələn linklə təsdiqləyin, sonra daxil olun.',
-    'Аккаунт создан. Подтвердите его по ссылке из письма, затем войдите.',
-    'Account created. Confirm it via the link we emailed you, then sign in.',
+  static String get showPassword =>
+      _t('Parolu göstər', 'Показать пароль', 'Show password');
+  static String get hidePassword =>
+      _t('Parolu gizlət', 'Скрыть пароль', 'Hide password');
+  static String get signInGuideTitle =>
+      _t('Necə daxil olum?', 'Как войти?', 'How do I sign in?');
+  static String get signInGuideForm => _t(
+    'E-poçtunuzu və PrepAZ üçün yaratdığınız parolu yazın.',
+    'Введите почту и пароль, который вы создали для PrepAZ.',
+    'Enter your email and the password you created for PrepAZ.',
+  );
+  static String get signInGuideTap => _t(
+    '"Daxil ol" düyməsinə basın.',
+    'Нажмите «Войти».',
+    'Tap "Sign in".',
+  );
+  static String get signInGuideNewUser => _t(
+    'Yeni qeydiyyatdan keçmisiniz? Əvvəl e-poçtunuza gələn məktubdakı linkə basın, sonra bura qayıdıb daxil olun.',
+    'Только что зарегистрировались? Сначала нажмите на ссылку в письме, затем вернитесь сюда и войдите.',
+    'Just signed up? First tap the link in the email we sent you, then come back here and sign in.',
+  );
+  static String get emailExample => 'ad@gmail.com';
+  static String get emailSignInHelper => _t(
+    'Qeydiyyatda yazdığınız e-poçt',
+    'Почта, указанная при регистрации',
+    'The email you signed up with',
+  );
+  static String get passwordSignInHelper => _t(
+    'PrepAZ üçün yaratdığınız parol',
+    'Пароль, который вы создали для PrepAZ',
+    'The password you created for PrepAZ',
+  );
+  static String get emailSignUpHelper => _t(
+    'Təsdiq məktubu bura gələcək. Açıb oxuya bildiyiniz e-poçtu yazın.',
+    'Письмо придёт сюда. Укажите почту, к которой у вас есть доступ.',
+    "The confirmation email goes here. Use an address you can open.",
+  );
+  static String passwordSignUpHelper(int min) => _t(
+    'PrepAZ üçün yeni parol yaradın, ən azı $min simvol. E-poçtunuzun parolunu yazmayın.',
+    'Придумайте новый пароль для PrepAZ, не менее $min символов. Не используйте пароль от почты.',
+    'Create a new password for PrepAZ, at least $min characters. Not your email password.',
+  );
+  static String get signUpGuideTitle => _t(
+    'Hesab yaratmaq 3 addımdır',
+    'Создать аккаунт: 3 шага',
+    'Creating an account takes 3 steps',
+  );
+  static String get signUpGuideForm => _t(
+    'E-poçtunuzu yazın, yeni parol yaradın və "Hesab yarat" düyməsinə basın.',
+    'Введите почту, придумайте пароль и нажмите «Создать аккаунт».',
+    'Enter your email, create a password and tap "Create account".',
+  );
+  static String get signUpGuideLink => _t(
+    'E-poçtunuza gələn məktubu açın və içindəki linkə basın.',
+    'Откройте письмо на почте и нажмите на ссылку в нём.',
+    'Open the email we send you and tap the link inside.',
+  );
+  static String get signUpGuideReturn => _t(
+    'PrepAZ-a qayıdın: hesabınız hazırdır.',
+    'Вернитесь в PrepAZ: аккаунт готов.',
+    'Come back to PrepAZ: your account is ready.',
+  );
+
+  // E-poçt təsdiqi
+  static String get confirmTitle => _t(
+    'Son addım: e-poçtunuzu təsdiqləyin',
+    'Последний шаг: подтвердите почту',
+    'Last step: confirm your email',
+  );
+  static String get confirmHeadline => _t(
+    'Az qaldı!',
+    'Почти готово!',
+    'Almost there!',
+  );
+  static String get confirmSentTo => _t(
+    'Təsdiq məktubunu bu ünvana göndərdik:',
+    'Мы отправили письмо с подтверждением на адрес:',
+    'We sent a confirmation email to:',
+  );
+  static String get confirmStepOpen => _t(
+    'E-poçtunuzu açın. Məktub görünmürsə, 1–2 dəqiqə gözləyin və Spam qovluğuna baxın.',
+    'Откройте почту. Если письма нет, подождите 1–2 минуты и проверьте папку «Спам».',
+    "Open your email. If it isn't there, wait 1–2 minutes and check your Spam folder.",
+  );
+  static String get confirmStepTap => _t(
+    'Məktubdakı təsdiq linkinə basın. Boş səhifə açılsa, narahat olmayın: hesabınız təsdiqlənib.',
+    'Нажмите на ссылку в письме. Если откроется пустая страница, не волнуйтесь: аккаунт подтверждён.',
+    "Tap the link in the email. If a blank page opens, don't worry: your account is confirmed.",
+  );
+  static String get confirmStepReturn => _t(
+    'PrepAZ-a qayıdın: özü daxil olacaq. Olmasa, aşağıdakı düyməyə basın.',
+    'Вернитесь в PrepAZ: вход выполнится сам. Если нет, нажмите кнопку ниже.',
+    "Come back to PrepAZ and you'll be signed in. If not, tap the button below.",
+  );
+  static String get confirmCheckAction =>
+      _t('Təsdiqlədim, davam et', 'Я подтвердил(а), продолжить', "I've confirmed, continue");
+  static String get confirmResendAction =>
+      _t('Məktub gəlmədi? Yenidən göndər', 'Письмо не пришло? Отправить снова', "Didn't get it? Send again");
+  static String get confirmBackAction =>
+      _t('Geri qayıt və e-poçtu dəyiş', 'Назад: изменить адрес', 'Go back and change email');
+  static String get confirmationResent => _t(
+    'Məktubu yenidən göndərdik. Gələnlər və Spam qovluğuna baxın.',
+    'Письмо отправлено снова. Проверьте «Входящие» и «Спам».',
+    'Sent again. Check your Inbox and Spam folders.',
+  );
+  static String get emailStillNotConfirmed => _t(
+    'E-poçt hələ təsdiqlənməyib. Məktubdakı linkə basıb yenidən yoxlayın.',
+    'Почта ещё не подтверждена. Нажмите на ссылку в письме и проверьте снова.',
+    "Your email isn't confirmed yet. Tap the link in the email, then try again.",
+  );
+  static String get emailRateLimit => _t(
+    'Çox tez-tez məktub istənildi. Bir az gözləyib yenidən cəhd edin.',
+    'Слишком много запросов письма. Подождите немного и попробуйте снова.',
+    'Too many emails requested. Please wait a while and try again.',
   );
 
   // Validasiya
   static String get invalidEmail =>
-      _t('Düzgün e-poçt yazın', 'Введите корректный адрес эл. почты', 'Enter a valid email');
+      _t(
+        'E-poçtu tam yazın, məsələn: ad@gmail.com',
+        'Введите полный адрес, например: ad@gmail.com',
+        'Enter your full email, for example: ad@gmail.com',
+      );
   static String shortPassword(int min) =>
       _t('Ən azı $min simvol', 'Не менее $min символов', 'At least $min characters');
 
@@ -327,6 +443,72 @@ abstract final class AppStrings {
     'Your answer: $given  ·  Correct: $right',
   );
   static String get backHome => _t('Ana səhifəyə qayıt', 'На главную', 'Back to home');
+
+  // Öyrədici tur
+  static String get tourGotIt => _t('Anladım', 'Понятно', 'Got it');
+  static String get tourReplay =>
+      _t('Öyrədicini yenidən aç', 'Открыть обучение снова', 'Replay the tour');
+  static String get tourFinish => _t('Başlayaq!', 'Начнём!', "Let's go!");
+  static String get tourWelcome => _t(
+    'Salam! Mən sənin PrepAZ köməkçinəm. Gəl, tətbiqi birlikdə gəzək, bir dəqiqə çəkəcək.',
+    'Привет! Я твой помощник в PrepAZ. Давай вместе посмотрим приложение, это займёт минуту.',
+    "Hi! I'm your PrepAZ helper. Let's take a quick tour together, it only takes a minute.",
+  );
+  static String get tourOpenMenu => _t(
+    'Əvvəlcə menyuya baxaq. Yuxarıda işıqlanan düyməyə bas.',
+    'Сначала посмотрим меню. Нажми на подсвеченную кнопку вверху.',
+    "Let's start with the menu. Tap the highlighted button at the top.",
+  );
+  static String get tourLanguage => _t(
+    'Dil: tətbiqin dilini dəyişir. Azərbaycan, rus və ingilis dili var. Sualların dili dəyişmir.',
+    'Язык: меняет язык приложения. Есть азербайджанский, русский и английский. Язык вопросов не меняется.',
+    "Language: changes the app's language. Azerbaijani, Russian and English are available. Questions stay in their own language.",
+  );
+  static String get tourAppearance => _t(
+    'Görünüş: gündüz və ya gecə rejimini seçirsən. Gözün yorulanda gecə rejimini aç.',
+    'Оформление: выбираешь дневной или ночной режим. Когда устанут глаза, включи ночной.',
+    'Appearance: choose light or dark mode. When your eyes get tired, turn on dark mode.',
+  );
+  static String get tourTeachers => _t(
+    'Tövsiyə olunan müəllimlər: hazırlıq üçün müəllimlərin siyahısı. Onlarla birbaşa əlaqə saxlaya bilərsən.',
+    'Рекомендуемые учителя: список учителей для подготовки. С ними можно связаться напрямую.',
+    'Recommended teachers: a list of teachers for exam prep. You can contact them directly.',
+  );
+  static String get tourReport => _t(
+    'Tətbiqdə xəta bildir: nəsə işləmirsə, buradan bizə yaz.',
+    'Сообщить об ошибке: если что-то не работает, напиши нам отсюда.',
+    "Report an app problem: if something doesn't work, tell us here.",
+  );
+  static String get tourSignOut => _t(
+    'Çıxış: hesabından çıxırsan. İrəliləyişin itmir, yenidən daxil olanda yerindədir.',
+    'Выйти: выход из аккаунта. Прогресс не пропадёт, он будет на месте, когда войдёшь снова.',
+    "Sign out: leaves your account. Your progress stays safe for when you sign back in.",
+  );
+  static String get tourPractice => _t(
+    'Hər gün buradan başla. Əvvəl təkrar etməli olduğun suallar, sonra zəif mövzuların gəlir.',
+    'Начинай отсюда каждый день. Сначала вопросы на повторение, затем твои слабые темы.',
+    'Start here every day. First come the questions to review, then your weak topics.',
+  );
+  static String get tourWeakPlaces => _t(
+    'Zəif yerlərim: ən zəif olduğun mövzular. Mövzunu seç və yalnız onu məşq et.',
+    'Мои слабые места: темы, где ты слабее всего. Выбери тему и тренируй только её.',
+    'My weak spots: the topics you find hardest. Pick one and practice just that.',
+  );
+  static String get tourMistakes => _t(
+    'Səhvlər dəftəri: səhv etdiyin suallar buraya düşür. Onları öyrənənə qədər yenidən qarşına çıxacaq.',
+    'Тетрадь ошибок: сюда попадают вопросы, где ты ошибся. Они будут возвращаться, пока ты их не выучишь.',
+    "Mistakes notebook: questions you got wrong land here. They come back until you've learned them.",
+  );
+  static String get tourTopics => _t(
+    'Mövzular: fənnin bütün mövzuları. Axtar, mövzunu seç və sualları sıra ilə həll et.',
+    'Темы: все темы предмета. Найди нужную тему и решай вопросы по порядку.',
+    "Topics: all of the subject's topics. Search, pick one and solve its questions in order.",
+  );
+  static String get tourDone => _t(
+    'Hazırsan! İndi ilk məşqinə başla. Uğurlar!',
+    'Готово! Теперь начни первую тренировку. Удачи!',
+    "You're all set! Now start your first practice. Good luck!",
+  );
 
   // Menyu
   static String get menu => _t('Menyu', 'Меню', 'Menu');

@@ -11,6 +11,7 @@ class PrefsSettingsRepository implements SettingsRepository {
 
   static const _languageKey = 'settings.language';
   static const _themeKey = 'settings.theme';
+  static const _tourSeenKey = 'settings.tour_seen';
 
   final SharedPreferences _prefs;
 
@@ -20,6 +21,7 @@ class PrefsSettingsRepository implements SettingsRepository {
     return AppSettings(
       language: AppLanguage.fromCode(_prefs.getString(_languageKey)),
       themeMode: AppThemeMode.values.firstWhere((m) => m.name == theme, orElse: () => AppThemeMode.system),
+      tourSeen: _prefs.getBool(_tourSeenKey) ?? false,
     );
   }
 
@@ -27,5 +29,6 @@ class PrefsSettingsRepository implements SettingsRepository {
   Future<void> save(AppSettings settings) => guard(() async {
         await _prefs.setString(_languageKey, settings.language.code);
         await _prefs.setString(_themeKey, settings.themeMode.name);
+        await _prefs.setBool(_tourSeenKey, settings.tourSeen);
       });
 }

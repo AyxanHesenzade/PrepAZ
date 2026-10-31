@@ -18,6 +18,10 @@ class SubjectCard extends StatelessWidget {
     required this.onWeakPlaces,
     required this.onMistakes,
     required this.onTopics,
+    this.startKey,
+    this.weakPlacesKey,
+    this.mistakesKey,
+    this.topicsKey,
   });
 
   /// Ən zəifdən başlayaraq, artıq sıralanmış.
@@ -29,6 +33,12 @@ class SubjectCard extends StatelessWidget {
   final VoidCallback onWeakPlaces;
   final VoidCallback onMistakes;
   final VoidCallback onTopics;
+
+  /// Öyrədici tur düymələri bu açarlarla tapır (yalnız birinci kartda verilir).
+  final Key? startKey;
+  final Key? weakPlacesKey;
+  final Key? mistakesKey;
+  final Key? topicsKey;
 
   static IconData iconFor(String slug) => switch (slug) {
     'kimya' => Icons.science_rounded,
@@ -116,6 +126,7 @@ class SubjectCard extends StatelessWidget {
           ),
           AppSpacing.gapM,
           Pressable(
+            key: startKey,
             onTap: onStart,
             child: Container(
               height: 58,
@@ -127,9 +138,13 @@ class SubjectCard extends StatelessWidget {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(
-                    AppStrings.startQuiz,
-                    style: text.titleMedium?.copyWith(color: Colors.white),
+                  Flexible(
+                    child: Text(
+                      AppStrings.startQuiz,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: text.titleMedium?.copyWith(color: Colors.white),
+                    ),
                   ),
                   AppSpacing.gapS,
                   const Icon(
@@ -146,6 +161,7 @@ class SubjectCard extends StatelessWidget {
             children: [
               Expanded(
                 child: _SoftAction(
+                  key: weakPlacesKey,
                   icon: Icons.insights_rounded,
                   label: AppStrings.weakPlacesTitle,
                   color: accent,
@@ -155,6 +171,7 @@ class SubjectCard extends StatelessWidget {
               AppSpacing.gapS,
               Expanded(
                 child: _SoftAction(
+                  key: mistakesKey,
                   icon: Icons.menu_book_rounded,
                   label: AppStrings.mistakesBook,
                   color: accent,
@@ -165,6 +182,7 @@ class SubjectCard extends StatelessWidget {
           ),
           AppSpacing.gapS,
           _SoftAction(
+            key: topicsKey,
             icon: Icons.list_alt_rounded,
             label: AppStrings.topicsTitle,
             color: accent,
@@ -178,6 +196,7 @@ class SubjectCard extends StatelessWidget {
 
 class _SoftAction extends StatelessWidget {
   const _SoftAction({
+    super.key,
     required this.icon,
     required this.label,
     required this.color,

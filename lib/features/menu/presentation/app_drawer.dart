@@ -12,6 +12,7 @@ import '../../settings/domain/app_settings.dart';
 import '../../settings/presentation/settings_providers.dart';
 import '../../reports/presentation/report_sheet.dart';
 import '../../teachers/presentation/teachers_screen.dart';
+import '../../tour/presentation/tour_targets.dart';
 
 /// Yan menyu: dil, görünüş (gündüz/gecə), tövsiyə olunan müəllimlər və çıxış.
 /// Dil və görünüş bölmələrinə basanda açılır.
@@ -22,6 +23,7 @@ class AppDrawer extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final settings = ref.watch(settingsControllerProvider);
     final controller = ref.read(settingsControllerProvider.notifier);
+    final tour = TourScope.maybeOf(context);
     final scheme = Theme.of(context).colorScheme;
 
     final themeLabels = {
@@ -48,6 +50,7 @@ class AppDrawer extends ConsumerWidget {
               padding: const EdgeInsets.all(AppSpacing.m),
               children: [
                 _ExpandableSection(
+                  key: tour?.language,
                   icon: Icons.translate_rounded,
                   title: AppStrings.languageTitle,
                   value: settings.language.nativeName,
@@ -59,6 +62,7 @@ class AppDrawer extends ConsumerWidget {
                   ),
                 ),
                 _ExpandableSection(
+                  key: tour?.appearance,
                   icon: Icons.contrast_rounded,
                   title: AppStrings.appearance,
                   value: themeLabels[settings.themeMode]!,
@@ -71,6 +75,7 @@ class AppDrawer extends ConsumerWidget {
                   ),
                 ),
                 _NavTile(
+                  key: tour?.teachers,
                   icon: Icons.workspace_premium_rounded,
                   title: AppStrings.teachersTitle,
                   onTap: () {
@@ -79,6 +84,7 @@ class AppDrawer extends ConsumerWidget {
                   },
                 ),
                 _NavTile(
+                  key: tour?.report,
                   icon: Icons.bug_report_outlined,
                   title: AppStrings.reportAppTitle,
                   onTap: () {
@@ -96,6 +102,7 @@ class AppDrawer extends ConsumerWidget {
             child: Padding(
               padding: const EdgeInsets.all(AppSpacing.m),
               child: _NavTile(
+                key: tour?.signOut,
                 icon: Icons.logout_rounded,
                 title: AppStrings.signOut,
                 color: scheme.error,
@@ -144,7 +151,7 @@ class _DrawerHeader extends StatelessWidget {
 
 /// Basanda aşağı açılan bölmə: bağlı olanda cari dəyəri göstərir.
 class _ExpandableSection extends StatefulWidget {
-  const _ExpandableSection({required this.icon, required this.title, required this.value, required this.child});
+  const _ExpandableSection({super.key, required this.icon, required this.title, required this.value, required this.child});
 
   final IconData icon;
   final String title;
@@ -268,7 +275,7 @@ class _Choices<T> extends StatelessWidget {
 }
 
 class _NavTile extends StatelessWidget {
-  const _NavTile({required this.icon, required this.title, required this.onTap, this.color});
+  const _NavTile({super.key, required this.icon, required this.title, required this.onTap, this.color});
 
   final IconData icon;
   final String title;

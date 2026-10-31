@@ -129,8 +129,8 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - Dərsliklər (məktəb kitabları) üçün razılıq YOXDUR: mövzu izahlarında yalnız mənbə/plan kimi, mətn öz sözlərimizlə yazılır, köçürülmür.
 
 ## Versiya
-- Cari versiya: **1.0.0**, build **3**. Mənbə: `assets/app.json`; `pubspec.yaml` → `version: 1.0.0+3` ilə eyni olmalıdır (`test/core/app_version_test.dart` uyğunsuzluğu tutur).
-- Yeni buraxılışda hər ikisini birlikdə dəyiş. Ana ekranın altında "Versiya 1.0.0 (3)" göstərilir.
+- Cari versiya: **1.1.0**, build **5**. Mənbə: `assets/app.json`; `pubspec.yaml` → `version: 1.1.0+5` ilə eyni olmalıdır (`test/core/app_version_test.dart` uyğunsuzluğu tutur).
+- Yeni buraxılışda hər ikisini birlikdə dəyiş. Ana ekranın altında "Versiya 1.1.0 (5)" göstərilir.
 
 ## Test Supabase-in cari vəziyyəti (2026-10-30)
 - Migrationlar işlənib: 002, 003, 004 (`topic_mastery` security_invoker).
@@ -187,7 +187,7 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 
 ## Məcburi yeniləmə
 - `db/migrations/008_app_config.sql`: tək sətirli `app_config` (`min_version`, `latest_version`, `update_url`); anon də oxuya bilər (giriş əvvəli yoxlanır), yalnız admin dəyişir. Lokal test: `tools/dim/test_migration_008.py`.
-- Tətbiq: `lib/features/update` (`UpdateGate` `app.dart`-da `AuthGate`-i sarıyır). Versiya `assets/app.json`-dan (`1.0.0+3`) bazadakı ilə müqayisə olunur:
+- Tətbiq: `lib/features/update` (`UpdateGate` `app.dart`-da `AuthGate`-i sarıyır). Versiya `assets/app.json`-dan (`1.1.0+5`) bazadakı ilə müqayisə olunur:
   `min_version`-dan aşağı → bağlanmayan `ForceUpdateScreen`; `latest_version`-dan aşağı → bir dəfə "Sonra" düyməli xəbərdarlıq. Oxunmasa (internet yox / cədvəl yox) heç nə bloklanmır.
 - Admin panel: "Tənzimləmələr" tabı. Yeni buraxılışda ƏVVƏL APK/mağaza yüklənir və link yazılır, SONRA `latest_version` (və lazımsa `min_version`) qaldırılır.
 
@@ -202,3 +202,18 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - Tətbiq: `lib/features/goal` (`GoalRepository`, `GoalScreen`, `GoalCard`). Ana ekranda seriya altında kart: "N gün qalıb" + bu günkü cavab sayı/hədəf. Hədəf yoxdursa ilk açılışda seçim ekranı bir dəfə açılır; oxuma xətasında heç nə göstərilmir.
 - Dövr adı `AppStrings.periodName(code, ad)` ilə tərcümə olunur (`winter`/`summer`); yeni kod əlavə olunsa bazadakı ad göstərilir.
 - Admin panel: Tənzimləmələr tabında "İmtahan dövrləri" (tarix + aktiv).
+
+## Giriş və qeydiyyat
+- Ekran: `AuthScreen` (Daxil ol / Qeydiyyat tabları). Təsdiq lazımdırsa `EmailConfirmView` açılır: 3 addımlı təlimat, "Təsdiqlədim, davam et", "Yenidən göndər", "Geri qayıt".
+- Sahibin qərarı (test mərhələsi, pulsuz Supabase): deep link YOXDUR, Supabase-in link ayarlarına toxunulmur. Məktubdakı link boş səhifə aça bilər, amma e-poçt təsdiqlənir.
+- İstifadəçi tətbiqə qayıdanda `checkConfirmedSilently` yaddaşdakı parolla özü daxil olur. Parol yalnız yaddaşda qalır, heç yerə yazılmır.
+- Təsdiqli e-poçtla təkrar qeydiyyatda Supabase xəta vermir, boş `identities` qaytarır: bu, `AccountExistsException` olur və ekran girişə keçir.
+- Parol bərpası hələ yoxdur.
+
+## Öyrədici tur
+- `lib/features/tour`: hədəf seçimi bağlanan kimi (hədəf artıq varsa və ya oxunmursa, ana ekran açılanda) bir dəfə başlayır. Bayraq telefonda: `AppSettings.tourSeen` (`settings.tour_seen`, SharedPreferences), yalnız son addımda true olur; yarıda bağlansa, yenidən başlayır.
+- Ardıcıllıq (`TourStep`): salam → menyu düyməsinə basmaq (burada "Anladım" yoxdur, işıqlı düyməyə basılır) → Dil, Görünüş, Müəllimlər, Xəta bildir, Çıxış → yan menyu bağlanır → birinci fənn kartı: Bugünkü məşq, Zəif yerlərim, Səhvlər dəftəri, Mövzular → son. Fənn yoxdursa, kart addımları atlanır. Tur atlanmır (sahibin istədiyi kimi yalnız "Anladım").
+- Hədəf elementlər `TourTargets`-dəki GlobalKey-lərlə tapılır. Açarlar `HomeScreen`-in State-ində yaşayır və `TourScope` ilə ötürülür. Onları provider-ə və ya qlobal yerə qoyma: dil dəyişəndə `PrepAzApp` ağacı yenidən qurur, qlobal GlobalKey köhnə ekranı açıq yan menyu ilə köçürür və tətbiq donur. Yeni menyu elementi əlavə edəndə `TourStep`, `keyFor`, `_message` və üç dildə mətn də əlavə olunur.
+- Ana ekranın başlığındakı balaca köməkçiyə (`HeaderMascot`) basanda tur bayraqdan asılı olmayaraq yenidən açılır (`TourController.replay`).
+- Köməkçi `lib/core/widgets/mascot`-dadır: `Mascot` (widget), `MascotBehavior` (hərəkət: `TalkingMascot`, `IdleMascot`), `MascotPose` (bir anın vəziyyəti), `MascotPainter` (yalnız boyayır), `MascotStyle` (rəng və ölçülər). Yeni hərəkət = `MascotBehavior`-un yeni implementasiyası, boyama kodu dəyişmir; görünüş = yalnız `MascotStyle`.
+- Köməkçi sonsuz animasiyadır (ümumi qaydadan yeganə istisna). Testlər üçün: `mascotMotionProvider` defoltda false-dur, `main.dart` true edir; `InMemorySettingsRepository` defoltda `tourSeen: true`-dur; tur testlərində `pumpAndSettle` yox, `pump` işlədilir.

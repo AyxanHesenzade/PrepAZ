@@ -5,6 +5,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'app.dart';
 import 'core/config/app_config.dart';
+import 'core/providers.dart';
 import 'features/settings/data/prefs_settings_repository.dart';
 import 'features/settings/presentation/settings_providers.dart';
 
@@ -26,7 +27,10 @@ Future<void> main() async {
   runApp(
     ProviderScope(
       retry: (_, _) => null,
-      overrides: [settingsRepositoryProvider.overrideWithValue(PrefsSettingsRepository(prefs))],
+      overrides: [
+        settingsRepositoryProvider.overrideWithValue(PrefsSettingsRepository(prefs)),
+        mascotMotionProvider.overrideWithValue(true),
+      ],
       child: const PrepAzApp(),
     ),
   );

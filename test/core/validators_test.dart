@@ -7,6 +7,7 @@ void main() {
     test('rejects empty', () => expect(Validators.email(''), isNotNull));
     test('rejects null', () => expect(Validators.email(null), isNotNull));
     test('rejects missing @', () => expect(Validators.email('abc.az'), isNotNull));
+    test('rejects a missing domain', () => expect(Validators.email('ad@gmail'), isNotNull));
   });
 
   group('Validators.password', () {

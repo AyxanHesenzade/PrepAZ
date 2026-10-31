@@ -30,10 +30,21 @@ class SupabaseAuthRepository implements AuthRepository {
   }) {
     return guard(() async {
       final res = await _auth.signUp(email: email, password: password);
-      return res.session == null
-          ? SignUpOutcome.confirmationRequired
-          : SignUpOutcome.signedIn;
+      if (res.session != null) return SignUpOutcome.signedIn;
+      // Təsdiqli hesab olanda Supabase xəta vermir, boş identities qaytarır və məktub göndərmir.
+      if (res.user?.identities?.isEmpty ?? false) {
+        throw AccountExistsException();
+      }
+      return SignUpOutcome.confirmationRequired;
     }, mapper: _mapAuthError);
+  }
+
+  @override
+  Future<void> resendConfirmation({required String email}) {
+    return guard(
+      () => _auth.resend(email: email, type: OtpType.signup),
+      mapper: _mapAuthError,
+    );
   }
 
   @override
@@ -48,9 +59,11 @@ class SupabaseAuthRepository implements AuthRepository {
       'invalid_credentials' => AppException(
         AppStrings.invalidCredentials,
       ),
-      'user_already_exists' => AppException(AppStrings.userAlreadyExists),
-      'email_not_confirmed' => AppException(AppStrings.emailNotConfirmed),
+      'user_already_exists' => AccountExistsException(),
+      'email_not_confirmed' => EmailNotConfirmedException(),
       'weak_password' => AppException(AppStrings.weakPassword),
+      'email_address_invalid' => AppException(AppStrings.invalidEmail),
+      'over_email_send_rate_limit' => AppException(AppStrings.emailRateLimit),
       _ => null,
     };
   }

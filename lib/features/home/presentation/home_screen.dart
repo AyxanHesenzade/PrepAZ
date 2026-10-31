@@ -14,17 +14,28 @@ import '../../goal/presentation/widgets/goal_card.dart';
 import '../../menu/presentation/app_drawer.dart';
 import '../../mistakes/presentation/mistakes_screen.dart';
 import '../../quiz/presentation/quiz_screen.dart';
+import '../../tour/presentation/tour_controller.dart';
+import '../../tour/presentation/tour_targets.dart';
+import '../../tour/presentation/widgets/tour_overlay.dart';
 import '../domain/subject.dart';
 import '../domain/topic_mastery.dart';
 import 'home_providers.dart';
 import 'weak_topics_screen.dart';
+import 'widgets/header_mascot.dart';
 import 'widgets/streak_card.dart';
 import 'widgets/subject_card.dart';
 
-class HomeScreen extends ConsumerWidget {
+class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
 
-  Future<void> _refresh(WidgetRef ref) async {
+  @override
+  ConsumerState<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends ConsumerState<HomeScreen> {
+  final _tour = TourTargets();
+
+  Future<void> _refresh() async {
     await Future.wait([
       ref.refresh(streakDaysProvider.future),
       ref.refresh(userGoalProvider.future),
@@ -34,68 +45,81 @@ class HomeScreen extends ConsumerWidget {
   }
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    return Scaffold(
-      drawer: const AppDrawer(),
-      body: SafeArea(
-        child: Column(
-          children: [
-            // başlıq sabitdir: siyahı sürüşəndə yerində qalır
-            Padding(
-              padding: const EdgeInsets.fromLTRB(
-                AppSpacing.m + 4,
-                AppSpacing.m,
-                AppSpacing.m + 4,
-                AppSpacing.s,
-              ),
-              child: Row(
+    return TourScope(
+      targets: _tour,
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          Scaffold(
+            key: _tour.scaffold,
+            drawer: const AppDrawer(),
+            body: SafeArea(
+              child: Column(
                 children: [
-                  Builder(
-                    builder: (context) => IconButton.filledTonal(
-                      tooltip: AppStrings.menu,
-                      style: IconButton.styleFrom(
-                        backgroundColor: scheme.surfaceContainerLowest,
-                        foregroundColor: scheme.onSurface,
-                        fixedSize: const Size(48, 48),
-                      ),
-                      icon: const Icon(Icons.menu_rounded),
-                      onPressed: () => Scaffold.of(context).openDrawer(),
+                  // başlıq sabitdir: siyahı sürüşəndə yerində qalır
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(
+                      AppSpacing.m + 4,
+                      AppSpacing.m,
+                      AppSpacing.m + 4,
+                      AppSpacing.s,
+                    ),
+                    child: Row(
+                      children: [
+                        Builder(
+                          builder: (context) => IconButton.filledTonal(
+                            key: _tour.menuButton,
+                            tooltip: AppStrings.menu,
+                            style: IconButton.styleFrom(
+                              backgroundColor: scheme.surfaceContainerLowest,
+                              foregroundColor: scheme.onSurface,
+                              fixedSize: const Size(48, 48),
+                            ),
+                            icon: const Icon(Icons.menu_rounded),
+                            onPressed: () => Scaffold.of(context).openDrawer(),
+                          ),
+                        ),
+                        AppSpacing.gapM,
+                        Expanded(
+                          child: Text(
+                            AppStrings.homeTitle,
+                            style: Theme.of(context).textTheme.headlineMedium,
+                          ),
+                        ),
+                        const HeaderMascot(),
+                      ],
                     ),
                   ),
-                  AppSpacing.gapM,
                   Expanded(
-                    child: Text(
-                      AppStrings.homeTitle,
-                      style: Theme.of(context).textTheme.headlineMedium,
+                    child: RefreshIndicator(
+                      onRefresh: _refresh,
+                      child: ListView(
+                        padding: const EdgeInsets.fromLTRB(
+                          AppSpacing.m + 4,
+                          AppSpacing.m,
+                          AppSpacing.m + 4,
+                          AppSpacing.l,
+                        ),
+                        children: [
+                          const FadeSlideIn(child: _StreakSection()),
+                          AppSpacing.gapM,
+                          const FadeSlideIn(index: 1, child: _GoalSection()),
+                          AppSpacing.gapXl,
+                          const _SubjectsSection(),
+                        ],
+                      ),
                     ),
                   ),
+                  const _VersionFooter(),
                 ],
               ),
             ),
-            Expanded(
-              child: RefreshIndicator(
-                onRefresh: () => _refresh(ref),
-                child: ListView(
-                  padding: const EdgeInsets.fromLTRB(
-                    AppSpacing.m + 4,
-                    AppSpacing.m,
-                    AppSpacing.m + 4,
-                    AppSpacing.l,
-                  ),
-                  children: [
-                    const FadeSlideIn(child: _StreakSection()),
-                    AppSpacing.gapM,
-                    const FadeSlideIn(index: 1, child: _GoalSection()),
-                    AppSpacing.gapXl,
-                    const _SubjectsSection(),
-                  ],
-                ),
-              ),
-            ),
-            const _VersionFooter(),
-          ],
-        ),
+          ),
+          // yan menyunun da üstündə qalsın deyə Scaffold-un xaricindədir
+          const TourOverlay(),
+        ],
       ),
     );
   }
@@ -117,7 +141,8 @@ class _VersionFooter extends ConsumerWidget {
       child: Text(
         AppStrings.appVersion(version.version, version.build),
         textAlign: TextAlign.center,
-        style: Theme.of(context).textTheme.labelMedium?.copyWith(color: scheme.outline),
+        style: Theme.of(context).textTheme.labelMedium
+            ?.copyWith(color: scheme.outline),
       ),
     );
   }
@@ -152,13 +177,25 @@ class _GoalSectionState extends ConsumerState<_GoalSection> {
       MaterialPageRoute<void>(builder: (_) => GoalScreen(firstTime: firstTime)),
     );
     ref.invalidate(userGoalProvider);
+    if (firstTime && mounted) _startTour();
+  }
+
+  /// Hədəf seçimindən sonra (və ya seçim lazım deyilsə) ilk açılışda tur başlayır.
+  void _startTour() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) ref.read(tourControllerProvider.notifier).start();
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     ref.listen<AsyncValue<UserGoal?>>(userGoalProvider, (_, next) {
+      if (next.isLoading || _prompted) return;
+      if (next.hasError || next.value != null) {
+        _startTour();
+        return;
+      }
       // yalnız uğurla oxunub və hədəf yoxdursa; xəta olanda şagirdi narahat etmirik
-      if (_prompted || !next.hasValue || next.requireValue != null) return;
       _prompted = true;
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted) _open(firstTime: true);
@@ -167,7 +204,8 @@ class _GoalSectionState extends ConsumerState<_GoalSection> {
     final goal = ref.watch(userGoalProvider);
     // kart köməkçi məlumatdır: yüklənərkən və ya xəta olanda gizlənir, ana ekranı pozmur
     if (!goal.hasValue) return const SizedBox.shrink();
-    final periods = ref.watch(examPeriodsProvider).asData?.value ?? const <ExamPeriod>[];
+    final periods =
+        ref.watch(examPeriodsProvider).asData?.value ?? const <ExamPeriod>[];
     final value = goal.requireValue ?? const UserGoal();
     return GoalCard(
       daysLeft: value.daysLeft(periods, DateTime.now()),
@@ -199,7 +237,7 @@ class _SubjectsSection extends ConsumerWidget {
             for (final (i, subject) in subjects.indexed)
               FadeSlideIn(
                 index: i + 1,
-                child: _SubjectItem(subject: subject),
+                child: _SubjectItem(subject: subject, isFirst: i == 0),
               ),
           ],
         );
@@ -209,9 +247,12 @@ class _SubjectsSection extends ConsumerWidget {
 }
 
 class _SubjectItem extends ConsumerWidget {
-  const _SubjectItem({required this.subject});
+  const _SubjectItem({required this.subject, required this.isFirst});
 
   final Subject subject;
+
+  /// Öyrədici tur yalnız birinci fənn kartını göstərir.
+  final bool isFirst;
 
   Future<void> _start(BuildContext context, WidgetRef ref) async {
     await Navigator.of(context).push(
@@ -238,9 +279,14 @@ class _SubjectItem extends ConsumerWidget {
     final weak = ref
         .watch(masteryProvider(subject.id))
         .maybeWhen(data: (m) => m, orElse: () => const <TopicMastery>[]);
+    final tour = isFirst ? TourScope.maybeOf(context) : null;
     return SubjectCard(
       subject: subject,
       weakTopics: weak,
+      startKey: tour?.practice,
+      weakPlacesKey: tour?.weakPlaces,
+      mistakesKey: tour?.mistakes,
+      topicsKey: tour?.topics,
       onStart: () => _start(context, ref),
       onWeakPlaces: () =>
           _open(context, ref, WeakTopicsScreen(subject: subject)),

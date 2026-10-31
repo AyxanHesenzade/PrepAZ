@@ -24,6 +24,8 @@ class SettingsController extends Notifier<AppSettings> {
 
   Future<void> setThemeMode(AppThemeMode mode) => _update(state.copyWith(themeMode: mode));
 
+  Future<void> setTourSeen() => _update(state.copyWith(tourSeen: true));
+
   Future<void> _update(AppSettings next) async {
     if (next == state) return;
     AppStrings.language = next.language;
