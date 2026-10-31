@@ -129,8 +129,8 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - Dərsliklər (məktəb kitabları) üçün razılıq YOXDUR: mövzu izahlarında yalnız mənbə/plan kimi, mətn öz sözlərimizlə yazılır, köçürülmür.
 
 ## Versiya
-- Cari versiya: **1.1.0**, build **5**. Mənbə: `assets/app.json`; `pubspec.yaml` → `version: 1.1.0+5` ilə eyni olmalıdır (`test/core/app_version_test.dart` uyğunsuzluğu tutur).
-- Yeni buraxılışda hər ikisini birlikdə dəyiş. Ana ekranın altında "Versiya 1.1.0 (5)" göstərilir.
+- Cari versiya: **1.1.1**, build **6**. Mənbə: `assets/app.json`; `pubspec.yaml` → `version: 1.1.1+6` ilə eyni olmalıdır (`test/core/app_version_test.dart` uyğunsuzluğu tutur).
+- Yeni buraxılışda hər ikisini birlikdə dəyiş. Ana ekranın altında "Versiya 1.1.1 (6)" göstərilir.
 
 ## Test Supabase-in cari vəziyyəti (2026-10-30)
 - Migrationlar işlənib: 002, 003, 004 (`topic_mastery` security_invoker).
@@ -187,7 +187,7 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 
 ## Məcburi yeniləmə
 - `db/migrations/008_app_config.sql`: tək sətirli `app_config` (`min_version`, `latest_version`, `update_url`); anon də oxuya bilər (giriş əvvəli yoxlanır), yalnız admin dəyişir. Lokal test: `tools/dim/test_migration_008.py`.
-- Tətbiq: `lib/features/update` (`UpdateGate` `app.dart`-da `AuthGate`-i sarıyır). Versiya `assets/app.json`-dan (`1.1.0+5`) bazadakı ilə müqayisə olunur:
+- Tətbiq: `lib/features/update` (`UpdateGate` `app.dart`-da `AuthGate`-i sarıyır). Versiya `assets/app.json`-dan (`1.1.1+6`) bazadakı ilə müqayisə olunur:
   `min_version`-dan aşağı → bağlanmayan `ForceUpdateScreen`; `latest_version`-dan aşağı → bir dəfə "Sonra" düyməli xəbərdarlıq. Oxunmasa (internet yox / cədvəl yox) heç nə bloklanmır.
 - Admin panel: "Tənzimləmələr" tabı. Yeni buraxılışda ƏVVƏL APK/mağaza yüklənir və link yazılır, SONRA `latest_version` (və lazımsa `min_version`) qaldırılır.
 
@@ -217,3 +217,9 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - Ana ekranın başlığındakı balaca köməkçiyə (`HeaderMascot`) basanda tur bayraqdan asılı olmayaraq yenidən açılır (`TourController.replay`).
 - Köməkçi `lib/core/widgets/mascot`-dadır: `Mascot` (widget), `MascotBehavior` (hərəkət: `TalkingMascot`, `IdleMascot`), `MascotPose` (bir anın vəziyyəti), `MascotPainter` (yalnız boyayır), `MascotStyle` (rəng və ölçülər). Yeni hərəkət = `MascotBehavior`-un yeni implementasiyası, boyama kodu dəyişmir; görünüş = yalnız `MascotStyle`.
 - Köməkçi sonsuz animasiyadır (ümumi qaydadan yeganə istisna). Testlər üçün: `mascotMotionProvider` defoltda false-dur, `main.dart` true edir; `InMemorySettingsRepository` defoltda `tourSeen: true`-dur; tur testlərində `pumpAndSettle` yox, `pump` işlədilir.
+
+## Android imza açarı
+- Release build-lər `android/app/prepaz-release.jks` (alias `prepaz`) ilə imzalanır; şifrə `android/key.properties`-dədir. Hər ikisi gitignore-dadır, şifrə repoya yazılmır.
+- Sertifikat SHA-256: `bca577b1454d2dfdb1afa03a544347606cd7ef7e500b9c5803c3f715b1810a3a`. Bu açar itsə, tətbiqi eyni imza ilə yeniləmək mümkün olmur; ehtiyat nüsxə saxlanmalıdır.
+- `key.properties` yoxdursa, release build xəta ilə dayanır (debug açarına səssiz keçmir). Başqa kompüterdən build üçün bu iki fayl ora köçürülməlidir.
+- Yığma: `flutter build apk --release --dart-define-from-file=env/test.json` (test), real baza qurulandan sonra `env/prod.json`.
