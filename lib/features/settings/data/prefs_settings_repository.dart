@@ -12,6 +12,7 @@ class PrefsSettingsRepository implements SettingsRepository {
   static const _languageKey = 'settings.language';
   static const _themeKey = 'settings.theme';
   static const _tourSeenKey = 'settings.tour_seen';
+  static const _pendingLegalKey = 'settings.legal_pending';
 
   final SharedPreferences _prefs;
 
@@ -22,6 +23,7 @@ class PrefsSettingsRepository implements SettingsRepository {
       language: AppLanguage.fromCode(_prefs.getString(_languageKey)),
       themeMode: AppThemeMode.values.firstWhere((m) => m.name == theme, orElse: () => AppThemeMode.system),
       tourSeen: _prefs.getBool(_tourSeenKey) ?? false,
+      pendingLegalVersion: _prefs.getInt(_pendingLegalKey) ?? 0,
     );
   }
 
@@ -30,5 +32,6 @@ class PrefsSettingsRepository implements SettingsRepository {
         await _prefs.setString(_languageKey, settings.language.code);
         await _prefs.setString(_themeKey, settings.themeMode.name);
         await _prefs.setBool(_tourSeenKey, settings.tourSeen);
+        await _prefs.setInt(_pendingLegalKey, settings.pendingLegalVersion);
       });
 }

@@ -6,6 +6,7 @@ import 'core/constants/app_language.dart';
 import 'core/constants/app_strings.dart';
 import 'core/theme/app_theme.dart';
 import 'features/auth/presentation/auth_gate.dart';
+import 'features/legal/presentation/legal_acceptance_recorder.dart';
 import 'features/update/presentation/update_gate.dart';
 import 'features/settings/presentation/settings_providers.dart';
 
@@ -26,7 +27,7 @@ class PrepAzApp extends ConsumerWidget {
       locale: settings.language.locale,
       supportedLocales: [for (final l in AppLanguage.values) l.locale],
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
-      home: const UpdateGate(child: AuthGate()),
+      home: const UpdateGate(child: LegalAcceptanceRecorder(child: AuthGate())),
     );
   }
 }

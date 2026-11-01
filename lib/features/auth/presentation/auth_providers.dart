@@ -5,7 +5,7 @@ import '../data/supabase_auth_repository.dart';
 import '../domain/auth_repository.dart';
 
 final authRepositoryProvider = Provider<AuthRepository>(
-  (ref) => SupabaseAuthRepository(ref.watch(supabaseClientProvider).auth),
+  (ref) => SupabaseAuthRepository(ref.watch(supabaseClientProvider)),
 );
 
 /// true = istifadəçi daxil olub.

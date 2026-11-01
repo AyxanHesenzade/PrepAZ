@@ -2,105 +2,147 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/constants/app_strings.dart';
-import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_spacing.dart';
+import '../../../core/widgets/app_button.dart';
 import '../../../core/widgets/async_value_view.dart';
 import '../../../core/widgets/math_text.dart';
+import '../../../core/widgets/message_banner.dart';
 import '../../quiz/domain/question.dart';
 import '../../quiz/presentation/widgets/letter_options.dart';
 import '../../quiz/presentation/widgets/option_tile.dart';
 import '../../quiz/presentation/widgets/question_code_label.dart';
 import '../../quiz/presentation/widgets/question_image.dart';
 import '../domain/browse_topic.dart';
-import 'browse_providers.dart';
+import 'topic_exam_controller.dart';
+import 'topic_exam_state.dart';
+import 'widgets/topic_result_view.dart';
 
-/// Mövzunun sualları ardıcıl. İstənilən suala keçmək olur. Cavab yalnız ekranda göstərilir, bazaya yazılmır.
+/// Mövzunun testləri qaldığı yerdən. Düz/səhv göstərilmir, nəticə "Bitir"-dən sonra açılır.
 class TopicQuestionsScreen extends ConsumerWidget {
-  const TopicQuestionsScreen({super.key, required this.topic});
+  const TopicQuestionsScreen({
+    super.key,
+    required this.subjectId,
+    required this.topic,
+  });
 
+  final int subjectId;
   final BrowseTopic topic;
+
+  TopicExamKey get _key => (subjectId: subjectId, topicId: topic.id);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final provider = browseQuestionsProvider(topic.id);
-    return Scaffold(
-      appBar: AppBar(title: Text(topic.name)),
-      body: SafeArea(
-        child: AsyncValueView<List<Question>>(
-          value: ref.watch(provider),
-          onRetry: () => ref.invalidate(provider),
-          builder: (questions) {
-            if (questions.isEmpty) {
-              return Center(
-                child: Padding(
-                  padding: AppSpacing.pagePadding,
-                  child: Text(AppStrings.noQuestionsInTopic),
-                ),
+    final provider = topicExamControllerProvider(_key);
+    final exam = ref.watch(provider);
+    final s = exam.asData?.value;
+    final solving = s != null && !s.finished && !s.isCompleted;
+    return PopScope(
+      canPop: s?.isSending != true,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(topic.name),
+          actions: [
+            if (solving && s.given.isNotEmpty)
+              TextButton(
+                onPressed: s.isSending ? null : () => _finish(context, ref, s),
+                child: Text(AppStrings.finishAction),
+              ),
+          ],
+        ),
+        body: SafeArea(
+          child: AsyncValueView<TopicExamState>(
+            value: exam,
+            onRetry: () => ref.invalidate(provider),
+            builder: (state) {
+              final controller = ref.read(provider.notifier);
+              if (state.finished) {
+                return TopicResultView(
+                  state: state,
+                  onContinue: _hasMore(state) ? controller.continueSolving : null,
+                );
+              }
+              if (state.all.isEmpty) {
+                return Center(
+                  child: Padding(
+                    padding: AppSpacing.pagePadding,
+                    child: Text(AppStrings.noQuestionsInTopic),
+                  ),
+                );
+              }
+              if (state.isCompleted) {
+                return _Completed(state: state, onRestart: controller.restart);
+              }
+              return _Exam(
+                state: state,
+                controller: controller,
+                onFinish: () => _finish(context, ref, state),
               );
-            }
-            return _Browser(questions: questions);
-          },
+            },
+          ),
         ),
       ),
     );
   }
+
+  /// Bu dəfə göndərilməyən testlər qalıb.
+  bool _hasMore(TopicExamState s) =>
+      s.all.any((q) => !s.latest.containsKey(q.id) && !s.results.containsKey(q.id));
+
+  Future<void> _finish(BuildContext context, WidgetRef ref, TopicExamState s) async {
+    final open = s.unanswered.length;
+    if (open > 0) {
+      final confirmed = await showDialog<bool>(
+        context: context,
+        builder: (dialog) => AlertDialog(
+          content: Text(AppStrings.finishConfirm(open)),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(dialog).pop(false),
+              child: Text(AppStrings.continueSolving),
+            ),
+            TextButton(
+              onPressed: () => Navigator.of(dialog).pop(true),
+              child: Text(AppStrings.finishAction),
+            ),
+          ],
+        ),
+      );
+      if (confirmed != true) return;
+    }
+    await ref.read(topicExamControllerProvider(_key).notifier).finish();
+  }
 }
 
-class _Browser extends StatefulWidget {
-  const _Browser({required this.questions});
+class _Exam extends StatelessWidget {
+  const _Exam({
+    required this.state,
+    required this.controller,
+    required this.onFinish,
+  });
 
-  final List<Question> questions;
+  final TopicExamState state;
+  final TopicExamController controller;
+  final VoidCallback onFinish;
 
-  @override
-  State<_Browser> createState() => _BrowserState();
-}
-
-class _BrowserState extends State<_Browser> {
-  int _index = 0;
-
-  /// Sual id -> seçilən hərf. Yalnız bu ekranın yaddaşında.
-  final _picked = <String, String>{};
-  final _revealed = <String>{};
-
-  List<Question> get _questions => widget.questions;
-
-  bool _isRight(Question q, String letter) =>
-      letter.toUpperCase() == q.correctAnswer.toUpperCase();
-
-  void _go(int i) => setState(() => _index = i.clamp(0, _questions.length - 1));
-
-  Future<void> _jump() async {
+  Future<void> _jump(BuildContext context) async {
     final chosen = await showModalBottomSheet<int>(
       context: context,
       isScrollControlled: true,
       showDragHandle: true,
-      builder: (_) => _JumpSheet(
-        questions: _questions,
-        current: _index,
-        statusOf: (q) {
-          final p = _picked[q.id];
-          return p == null ? null : _isRight(q, p);
-        },
-      ),
+      builder: (_) => _JumpSheet(state: state),
     );
-    if (chosen != null) _go(chosen);
+    if (chosen != null) controller.go(chosen);
   }
 
   @override
   Widget build(BuildContext context) {
-    final q = _questions[_index];
+    final q = state.current;
     final scheme = Theme.of(context).colorScheme;
-    final picked = _picked[q.id];
-    final showResult = picked != null || _revealed.contains(q.id);
+    final picked = state.given[q.id];
+    final canFinish = state.isLast && state.unanswered.isEmpty;
 
-    OptionStatus statusOf(String letter) {
-      if (!showResult) return OptionStatus.idle;
-      if (_isRight(q, letter)) return OptionStatus.correct;
-      if (letter == picked) return OptionStatus.wrong;
-      return OptionStatus.idle;
-    }
-
-    void pick(String letter) => setState(() => _picked[q.id] = letter);
+    OptionStatus statusOf(String letter) =>
+        letter == picked ? OptionStatus.selected : OptionStatus.idle;
 
     return Column(
       children: [
@@ -110,17 +152,27 @@ class _BrowserState extends State<_Browser> {
             children: [
               Expanded(
                 child: LinearProgressIndicator(
-                  value: (_index + 1) / _questions.length,
+                  value: state.numberOf(q) / state.all.length,
                 ),
               ),
               AppSpacing.gapS,
               Text(
-                AppStrings.questionOf(_index + 1, _questions.length),
+                AppStrings.questionOf(state.numberOf(q), state.all.length),
                 style: Theme.of(context).textTheme.labelMedium,
               ),
             ],
           ),
         ),
+        if (state.isSending)
+          Padding(
+            padding: const EdgeInsets.all(AppSpacing.s),
+            child: Text(AppStrings.sendingAnswers),
+          ),
+        if (state.error != null)
+          Padding(
+            padding: const EdgeInsets.all(AppSpacing.s),
+            child: MessageBanner.error(AppStrings.answersNotSent),
+          ),
         Expanded(
           child: SingleChildScrollView(
             key: ValueKey(q.id),
@@ -145,7 +197,7 @@ class _BrowserState extends State<_Browser> {
                   LetterOptions(
                     letters: q.options.keys.toList(),
                     statusOf: statusOf,
-                    onTap: pick,
+                    onTap: controller.answer,
                   )
                 else if (q.isClosed)
                   for (final e in q.options.entries)
@@ -153,21 +205,15 @@ class _BrowserState extends State<_Browser> {
                       letter: e.key,
                       text: e.value,
                       status: statusOf(e.key),
-                      onTap: () => pick(e.key),
+                      onTap: () => controller.answer(e.key),
                     )
-                else if (!showResult)
-                  OutlinedButton(
-                    onPressed: () => setState(() => _revealed.add(q.id)),
-                    child: Text(AppStrings.showAnswer),
-                  ),
-                if (showResult) ...[
-                  AppSpacing.gapM,
-                  _Verdict(
+                else
+                  _TypedAnswer(
+                    key: ValueKey('typed-${q.id}'),
                     question: q,
-                    picked: picked,
-                    right: picked != null && _isRight(q, picked),
+                    initial: picked ?? '',
+                    onChanged: controller.answer,
                   ),
-                ],
               ],
             ),
           ),
@@ -181,26 +227,32 @@ class _BrowserState extends State<_Browser> {
           child: Row(
             children: [
               TextButton.icon(
-                onPressed: _index == 0 ? null : () => _go(_index - 1),
+                onPressed: state.index == 0 || state.isSending
+                    ? null
+                    : () => controller.go(state.index - 1),
                 icon: const Icon(Icons.chevron_left_rounded),
                 label: Text(AppStrings.previousQuestion),
               ),
               Expanded(
                 child: Center(
                   child: TextButton(
-                    onPressed: _jump,
+                    onPressed: state.isSending ? null : () => _jump(context),
                     child: Text(AppStrings.jumpToQuestion),
                   ),
                 ),
               ),
-              TextButton.icon(
-                onPressed: _index == _questions.length - 1
-                    ? null
-                    : () => _go(_index + 1),
-                iconAlignment: IconAlignment.end,
-                icon: const Icon(Icons.chevron_right_rounded),
-                label: Text(AppStrings.nextQuestion),
-              ),
+              if (canFinish)
+                FilledButton(
+                  onPressed: state.isSending ? null : onFinish,
+                  child: Text(AppStrings.finishAction),
+                )
+              else
+                TextButton.icon(
+                  onPressed: state.isSending ? null : controller.next,
+                  iconAlignment: IconAlignment.end,
+                  icon: const Icon(Icons.chevron_right_rounded),
+                  label: Text(AppStrings.nextQuestion),
+                ),
             ],
           ),
         ),
@@ -209,71 +261,84 @@ class _BrowserState extends State<_Browser> {
   }
 }
 
-class _Verdict extends StatelessWidget {
-  const _Verdict({
+class _TypedAnswer extends StatefulWidget {
+  const _TypedAnswer({
+    super.key,
     required this.question,
-    required this.picked,
-    required this.right,
+    required this.initial,
+    required this.onChanged,
   });
 
   final Question question;
-  final String? picked;
-  final bool right;
+  final String initial;
+  final ValueChanged<String> onChanged;
+
+  @override
+  State<_TypedAnswer> createState() => _TypedAnswerState();
+}
+
+class _TypedAnswerState extends State<_TypedAnswer> {
+  late final _controller = TextEditingController(text: widget.initial);
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final scheme = Theme.of(context).colorScheme;
-    final accent = picked == null
-        ? scheme.outline
-        : (right ? AppColors.success : scheme.error);
-    final title = picked == null
-        ? AppStrings.rightAnswer(question.correctAnswer)
-        : right
-        ? AppStrings.correct
-        : AppStrings.wrong(question.correctAnswer);
-    return Container(
-      padding: const EdgeInsets.all(AppSpacing.m),
-      decoration: BoxDecoration(
-        color: accent.withValues(alpha: 0.08),
-        borderRadius: BorderRadius.circular(AppRadius.l),
-        border: Border.all(color: accent.withValues(alpha: 0.35)),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(title, style: Theme.of(context).textTheme.titleMedium),
-          if (question.hasSolution) ...[
-            AppSpacing.gapM,
+    final numeric = widget.question.type == QuestionType.aciqEded;
+    return TextField(
+      controller: _controller,
+      onChanged: widget.onChanged,
+      keyboardType: numeric
+          ? const TextInputType.numberWithOptions(decimal: true, signed: true)
+          : TextInputType.text,
+      decoration: InputDecoration(labelText: AppStrings.yourAnswerField),
+    );
+  }
+}
+
+class _Completed extends StatelessWidget {
+  const _Completed({required this.state, required this.onRestart});
+
+  final TopicExamState state;
+  final VoidCallback onRestart;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Padding(
+        padding: AppSpacing.pagePadding,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
             Text(
-              AppStrings.solution,
-              style: Theme.of(context).textTheme.labelLarge
-                  ?.copyWith(color: scheme.onSurfaceVariant),
+              AppStrings.topicDone,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
             AppSpacing.gapS,
-            if (question.hasSolutionImage)
-              QuestionImage(question.solutionImagePath!)
-            else
-              MathText(question.solution!),
+            Text(
+              AppStrings.topicCorrectOf(state.correctBefore, state.all.length),
+              textAlign: TextAlign.center,
+            ),
+            AppSpacing.gapL,
+            AppButton(label: AppStrings.restartTopic, onPressed: onRestart),
           ],
-        ],
+        ),
       ),
     );
   }
 }
 
-/// Nömrə şəbəkəsi: cavablananlar yaşıl/qırmızı, hazırkı sual çərçivəli.
+/// Nömrə şəbəkəsi: cavablananlar rəngli, hazırkı test çərçivəli. Düz/səhv göstərilmir.
 class _JumpSheet extends StatelessWidget {
-  const _JumpSheet({
-    required this.questions,
-    required this.current,
-    required this.statusOf,
-  });
+  const _JumpSheet({required this.state});
 
-  final List<Question> questions;
-  final int current;
-
-  /// null = cavablanmayıb, true = düz, false = səhv.
-  final bool? Function(Question) statusOf;
+  final TopicExamState state;
 
   @override
   Widget build(BuildContext context) {
@@ -293,26 +358,26 @@ class _JumpSheet extends StatelessWidget {
             mainAxisSpacing: AppSpacing.s,
             crossAxisSpacing: AppSpacing.s,
           ),
-          itemCount: questions.length,
+          itemCount: state.questions.length,
           itemBuilder: (context, i) {
-            final s = statusOf(questions[i]);
-            final color = s == null
-                ? scheme.surfaceContainerHighest
-                : (s ? AppColors.success : scheme.error).withValues(alpha: 0.2);
+            final q = state.questions[i];
+            final answered = state.given.containsKey(q.id);
             return InkWell(
               borderRadius: BorderRadius.circular(AppRadius.m),
               onTap: () => Navigator.of(context).pop(i),
               child: Container(
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: color,
+                  color: answered
+                      ? scheme.primary.withValues(alpha: 0.2)
+                      : scheme.surfaceContainerHighest,
                   borderRadius: BorderRadius.circular(AppRadius.m),
                   border: Border.all(
-                    color: i == current ? scheme.primary : Colors.transparent,
+                    color: i == state.index ? scheme.primary : Colors.transparent,
                     width: 2,
                   ),
                 ),
-                child: Text('${i + 1}'),
+                child: Text('${state.numberOf(q)}'),
               ),
             );
           },

@@ -5,12 +5,14 @@ import '../../../core/constants/app_strings.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/widgets/async_value_view.dart';
 import '../../home/domain/subject.dart';
+import '../../home/domain/topic_mastery.dart';
+import '../../home/presentation/home_providers.dart';
 import '../domain/browse_topic.dart';
 import '../domain/search_fold.dart';
 import 'browse_providers.dart';
 import 'topic_questions_screen.dart';
 
-/// Fənnin mövzuları. Cavablar yazılmır, yalnız sualları ardıcıl həll etmək üçündür.
+/// Fənnin mövzuları və hər birində nə qədər testin həll edildiyi.
 class TopicListScreen extends ConsumerStatefulWidget {
   const TopicListScreen({super.key, required this.subject});
 
@@ -26,6 +28,14 @@ class _TopicListScreenState extends ConsumerState<TopicListScreen> {
 
   Subject get subject => widget.subject;
 
+  String _subtitle(BrowseTopic topic, TopicMastery? progress) {
+    if (progress == null) return AppStrings.questionCount(topic.questionCount);
+    if (progress.answered >= topic.questionCount) {
+      return '${AppStrings.topicDone} · ${AppStrings.topicCorrectOf(progress.correct, topic.questionCount)}';
+    }
+    return AppStrings.topicSolved(progress.answered, topic.questionCount);
+  }
+
   @override
   void dispose() {
     _search.dispose();
@@ -36,6 +46,12 @@ class _TopicListScreenState extends ConsumerState<TopicListScreen> {
   Widget build(BuildContext context) {
     final provider = browseTopicsProvider(subject.id);
     final scheme = Theme.of(context).colorScheme;
+    // irəliləyiş oxunmasa, mövzular yenə açılır
+    final progress = {
+      for (final m
+          in ref.watch(masteryProvider(subject.id)).asData?.value ?? const <TopicMastery>[])
+        m.topicId: m,
+    };
     return Scaffold(
       appBar: AppBar(title: Text(AppStrings.topicsTitle)),
       body: SafeArea(
@@ -104,7 +120,7 @@ class _TopicListScreenState extends ConsumerState<TopicListScreen> {
                           child: ListTile(
                             title: Text(topic.name),
                             subtitle: Text(
-                              AppStrings.questionCount(topic.questionCount),
+                              _subtitle(topic, progress[topic.id]),
                             ),
                             trailing: Icon(
                               Icons.chevron_right_rounded,
@@ -113,7 +129,7 @@ class _TopicListScreenState extends ConsumerState<TopicListScreen> {
                             onTap: () => Navigator.of(context).push(
                               MaterialPageRoute<void>(
                                 builder: (_) =>
-                                    TopicQuestionsScreen(topic: topic),
+                                    TopicQuestionsScreen(subjectId: subject.id, topic: topic),
                               ),
                             ),
                           ),

@@ -28,4 +28,7 @@ abstract interface class AuthRepository {
   Future<void> resendConfirmation({required String email});
 
   Future<void> signOut();
+
+  /// Hesabı və ona bağlı bütün məlumatları birdəfəlik silir, sonra çıxış edir.
+  Future<void> deleteAccount();
 }

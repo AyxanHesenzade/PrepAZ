@@ -62,7 +62,8 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - `answers`-ə insert → `is_correct` SERVERDƏ hesablanır (tətbiqin göndərdiyi dəyər nəzərə alınmır).
 - Səhv cavab → `review_queue` (1 → 3 → 7 → 14 gün); 4 ardıcıl düz → növbədən çıxır.
 - `profiles.streak_days` avtomatik; istifadəçi dəyişə bilməz.
-- `topic_mastery` view — mövzu üzrə son 30 cavabın faizi.
+- `topic_mastery` view — mövzu üzrə son 30 cavabın faizi, yalnız `get_daily_set` üçün.
+- `topic_progress` view (`db/migrations/013_topic_progress.sql`, lokal test: `tools/dim/test_migration_013.py`) — ekranda göstərilən nəticə: mövzudakı BÜTÜN aktiv testlərə görə, hər test bir dəfə, son cavab həlledicidir. Tətbiqdə `TopicMastery`: yaxşı = bütün testlərin ≥70%-i düz; zəif = ən azı 5 test həll edilib (kiçik mövzuda hamısı) və həll edilənlərin <70%-i düz; qalanı "davam edən".
 - `get_daily_set(subject_id, limit)` RPC — əvvəl vaxtı çatmış təkrarlar, sonra zəif mövzular.
 - Cavablar dəyişdirilə/silinə bilməz.
 
@@ -129,8 +130,8 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - Dərsliklər (məktəb kitabları) üçün razılıq YOXDUR: mövzu izahlarında yalnız mənbə/plan kimi, mətn öz sözlərimizlə yazılır, köçürülmür.
 
 ## Versiya
-- Cari versiya: **1.1.2**, build **7**. Mənbə: `assets/app.json`; `pubspec.yaml` → `version: 1.1.2+7` ilə eyni olmalıdır (`test/core/app_version_test.dart` uyğunsuzluğu tutur).
-- Yeni buraxılışda hər ikisini birlikdə dəyiş. Ana ekranın altında "Versiya 1.1.2 (7)" göstərilir.
+- Cari versiya: **1.2.0**, build **8**. Mənbə: `assets/app.json`; `pubspec.yaml` → `version: 1.2.0+8` ilə eyni olmalıdır (`test/core/app_version_test.dart` uyğunsuzluğu tutur).
+- Yeni buraxılışda hər ikisini birlikdə dəyiş. Ana ekranın altında "Versiya 1.2.0 (8)" göstərilir.
 
 ## Test Supabase-in cari vəziyyəti (2026-10-30)
 - Migrationlar işlənib: 002, 003, 004 (`topic_mastery` security_invoker).
@@ -188,7 +189,7 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 
 ## Məcburi yeniləmə
 - `db/migrations/008_app_config.sql`: tək sətirli `app_config` (`min_version`, `latest_version`, `update_url`); anon də oxuya bilər (giriş əvvəli yoxlanır), yalnız admin dəyişir. Lokal test: `tools/dim/test_migration_008.py`.
-- Tətbiq: `lib/features/update` (`UpdateGate` `app.dart`-da `AuthGate`-i sarıyır). Versiya `assets/app.json`-dan (`1.1.2+7`) bazadakı ilə müqayisə olunur:
+- Tətbiq: `lib/features/update` (`UpdateGate` `app.dart`-da `AuthGate`-i sarıyır). Versiya `assets/app.json`-dan (`1.2.0+8`) bazadakı ilə müqayisə olunur:
   `min_version`-dan aşağı → bağlanmayan `ForceUpdateScreen`; `latest_version`-dan aşağı → bir dəfə "Sonra" düyməli xəbərdarlıq. Oxunmasa (internet yox / cədvəl yox) heç nə bloklanmır.
 - Admin panel: "Tənzimləmələr" tabı. Yeni buraxılışda ƏVVƏL APK/mağaza yüklənir və link yazılır, SONRA `latest_version` (və lazımsa `min_version`) qaldırılır.
 
@@ -213,7 +214,7 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 
 ## Öyrədici tur
 - `lib/features/tour`: hədəf seçimi bağlanan kimi (hədəf artıq varsa və ya oxunmursa, ana ekran açılanda) bir dəfə başlayır. Bayraq telefonda: `AppSettings.tourSeen` (`settings.tour_seen`, SharedPreferences), yalnız son addımda true olur; yarıda bağlansa, yenidən başlayır.
-- Ardıcıllıq (`TourStep`): salam → menyu düyməsinə basmaq (burada "Anladım" yoxdur, işıqlı düyməyə basılır) → Dil, Görünüş, Müəllimlər, Xəta bildir, Çıxış → yan menyu bağlanır → birinci fənn kartı: Bugünkü məşq, Zəif yerlərim, Səhvlər dəftəri, Mövzular → son. Fənn yoxdursa, kart addımları atlanır. Tur atlanmır (sahibin istədiyi kimi yalnız "Anladım").
+- Ardıcıllıq (`TourStep`): salam → menyu düyməsinə basmaq (burada "Anladım" yoxdur, işıqlı düyməyə basılır) → Dil, Görünüş, Müəllimlər, Xəta bildir, Şərtlər və məxfilik, Hesabı sil, Çıxış → yan menyu bağlanır → birinci fənn kartı: Bugünkü məşq, Zəif yerlərim, Səhvlər dəftəri, Mövzular → son. Fənn yoxdursa, kart addımları atlanır. Tur atlanmır (sahibin istədiyi kimi yalnız "Anladım").
 - Hədəf elementlər `TourTargets`-dəki GlobalKey-lərlə tapılır. Açarlar `HomeScreen`-in State-ində yaşayır və `TourScope` ilə ötürülür. Onları provider-ə və ya qlobal yerə qoyma: dil dəyişəndə `PrepAzApp` ağacı yenidən qurur, qlobal GlobalKey köhnə ekranı açıq yan menyu ilə köçürür və tətbiq donur. Yeni menyu elementi əlavə edəndə `TourStep`, `keyFor`, `_message` və üç dildə mətn də əlavə olunur.
 - Ana ekranın başlığındakı balaca köməkçiyə (`HeaderMascot`) basanda tur bayraqdan asılı olmayaraq yenidən açılır (`TourController.replay`).
 - Köməkçi `lib/core/widgets/mascot`-dadır: `Mascot` (widget), `MascotBehavior` (hərəkət: `TalkingMascot`, `IdleMascot`), `MascotPose` (bir anın vəziyyəti), `MascotPainter` (yalnız boyayır), `MascotStyle` (rəng və ölçülər). Yeni hərəkət = `MascotBehavior`-un yeni implementasiyası, boyama kodu dəyişmir; görünüş = yalnız `MascotStyle`.
@@ -224,3 +225,20 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - Sertifikat SHA-256: `bca577b1454d2dfdb1afa03a544347606cd7ef7e500b9c5803c3f715b1810a3a`. Bu açar itsə, tətbiqi eyni imza ilə yeniləmək mümkün olmur; ehtiyat nüsxə saxlanmalıdır.
 - `key.properties` yoxdursa, release build xəta ilə dayanır (debug açarına səssiz keçmir). Başqa kompüterdən build üçün bu iki fayl ora köçürülməlidir.
 - Yığma: `flutter build apk --release --dart-define-from-file=env/test.json` (test), real baza qurulandan sonra `env/prod.json`.
+
+## İstifadə şərtləri və məxfilik
+- `lib/features/legal`: razılıq YALNIZ qeydiyyat formasının altındadır (`SignUpConsent`, qutu işarələnmədən "Hesab yarat" işləmir). Girişdə yoxdur, ayrıca ekran yoxdur (sahibin qərarı). Mətnlər `data/legal_texts.dart`-da üç dildədir; yan menyuda "Şərtlər və məxfilik".
+- Qeydiyyatda versiya telefonda gözləyir (`AppSettings.pendingLegalVersion`), `LegalAcceptanceRecorder` daxil olanda onu `legal_acceptances`-ə yazıb təmizləyir (`db/migrations/011_legal_acceptances.sql`, lokal test: `tools/dim/test_migration_011.py`). Yazılmasa, heç nə bloklanmır, növbəti açılışda təkrarlanır.
+- Mətn mahiyyətcə dəyişəndə `currentLegalVersion` və `AppStrings.legalLastUpdated` birlikdə dəyişir. Mövcud istifadəçilərdən razılıq soruşulmur.
+- Sahibin qərarları: tətbiq sahibi Ayxan Həsənzadə (fiziki şəxs), ödəniş gələcəkdə ola bilər, şərtlərdə sualların mənbəyi barədə heç nə yazılmır (test bunu yoxlayır). Əlaqə kanalı hələlik "Tətbiqdə xəta bildir"-dir.
+- Mətnə hüquqşünas baxmayıb.
+
+## Hesabı silmək
+- `db/migrations/012_delete_account.sql`: `delete_my_account()` RPC (`security definer`), istifadəçi məlumatları `auth.users`-dən kaskadla silinir. Admin hesabı rədd olunur (`admin_account`). Lokal test: `tools/dim/test_migration_012.py`.
+- Tətbiq: yan menyuda "Hesabı sil" → `showDeleteAccountDialog` → `AuthRepository.deleteAccount()`. Play Store veb silmə linki də istəyir, o hələ yoxdur.
+
+## Mövzular və Tədris
+- Mövzular = şagirdin özünün seçib başdan sona işlədiyi yer (`lib/features/browse`: `TopicExamController`, `TopicQuestionsScreen`, `TopicResultView`). Bütün testlər işlənir, düz/səhv gedişdə GÖSTƏRİLMİR, nəticə sonda: hər test üçün ✓/✗, doğru cavab, izah, irəliləyiş. Cavablar "Bitir"-də bazaya yazılır (5-5), göndərilə bilməyənlər qaralamada qalır.
+- Yarıda çıxanda cavablar telefonda saxlanır (`TopicDraftRepository`, SharedPreferences, hər istifadəçi üçün ayrıca) və şagird qaldığı yerdən davam edir ("Bitir" istənilən vaxt mümkündür). Bitmiş mövzu "Yenidən başla" ilə təkrar işlənir, son cavab həlledicidir.
+- Cavabsız buraxılan test səhv sayılmır: sonda ona qayıdılır.
+- Mövzu izahı Mövzular-da OLMAYACAQ. Ayrıca "Tədris" bölməsi olacaq (hələ yazılmayıb): bütün kimya mövzuları, şagird dərs oxuyur. Mətn dərslikdən köçürülmür, öz sözlərimizlə yazılır.

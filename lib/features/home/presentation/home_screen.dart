@@ -276,13 +276,13 @@ class _SubjectItem extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     // yüklənərkən və ya xəta olanda kart boş siyahı ilə görünür, məşqə başlamaq yenə mümkündür
-    final weak = ref
+    final topics = ref
         .watch(masteryProvider(subject.id))
         .maybeWhen(data: (m) => m, orElse: () => const <TopicMastery>[]);
     final tour = isFirst ? TourScope.maybeOf(context) : null;
     return SubjectCard(
       subject: subject,
-      weakTopics: weak,
+      topics: topics,
       startKey: tour?.practice,
       weakPlacesKey: tour?.weakPlaces,
       mistakesKey: tour?.mistakes,

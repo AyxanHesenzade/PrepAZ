@@ -141,9 +141,10 @@ class FakeProgressRepository implements ProgressRepository {
 }
 
 class FakeBrowseRepository implements BrowseRepository {
-  FakeBrowseRepository(this.questions);
+  FakeBrowseRepository(this.questions, {this.latest = const {}});
 
   final List<Question> questions;
+  Map<String, bool> latest;
 
   @override
   Future<List<BrowseTopic>> getTopics(int subjectId) async =>
@@ -151,4 +152,7 @@ class FakeBrowseRepository implements BrowseRepository {
 
   @override
   Future<List<Question>> getTopicQuestions(int topicId) async => questions;
+
+  @override
+  Future<Map<String, bool>> getLatestAnswers(int topicId) async => latest;
 }

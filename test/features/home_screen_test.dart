@@ -114,37 +114,17 @@ void main() {
   });
 
   testWidgets(
-    'each subject card has a start button and shows the weakest topics',
+    'each subject card has a start button and splits weak and strong topics',
     (tester) async {
       await tester.pumpWidget(
         buildHome(
           subjects: FakeSubjects(() async => subjects.sublist(0, 1)),
           profile: FakeProfile(0),
           mastery: const [
-            TopicMastery(
-              topicId: 1,
-              topicName: 'Hidroliz',
-              answered: 5,
-              masteryPct: 20,
-            ),
-            TopicMastery(
-              topicId: 2,
-              topicName: 'Metallar',
-              answered: 5,
-              masteryPct: 60,
-            ),
-            TopicMastery(
-              topicId: 3,
-              topicName: 'Spirtlər',
-              answered: 5,
-              masteryPct: 90,
-            ),
-            TopicMastery(
-              topicId: 4,
-              topicName: 'Alkanlar',
-              answered: 5,
-              masteryPct: 95,
-            ),
+            TopicMastery(topicId: 1, topicName: 'Hidroliz', total: 10, answered: 5, correct: 1),
+            TopicMastery(topicId: 2, topicName: 'Metallar', total: 10, answered: 2, correct: 2),
+            TopicMastery(topicId: 3, topicName: 'Spirtlər', total: 10, answered: 8, correct: 7),
+            TopicMastery(topicId: 4, topicName: 'Alkanlar', total: 10, answered: 10, correct: 9),
           ],
         ),
       );
@@ -152,14 +132,72 @@ void main() {
 
       expect(find.text(AppStrings.startQuiz), findsOneWidget);
       expect(find.text('Hidroliz'), findsOneWidget);
-      expect(find.text('20%'), findsOneWidget);
-      expect(
-        find.text('Alkanlar'),
-        findsNothing,
-        reason: 'only the 3 weakest topics are shown',
-      );
+      expect(find.text('10% · 1/10'), findsOneWidget);
+      expect(find.text(AppStrings.weakTopics), findsOneWidget);
+      expect(find.text(AppStrings.strongTopics), findsOneWidget);
+      expect(find.text('Alkanlar'), findsOneWidget);
+      expect(find.text('Metallar'), findsNothing, reason: 'still in progress');
     },
   );
+
+  testWidgets('five right out of a hundred is neither strong nor weak', (tester) async {
+    await tester.pumpWidget(
+      buildHome(
+        subjects: FakeSubjects(() async => subjects.sublist(0, 1)),
+        profile: FakeProfile(0),
+        mastery: const [
+          TopicMastery(topicId: 1, topicName: 'Hidroliz', total: 100, answered: 5, correct: 5),
+        ],
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Hidroliz'), findsNothing);
+    expect(find.text(AppStrings.weakTopics), findsNothing);
+    expect(find.text(AppStrings.strongTopics), findsNothing);
+    expect(find.text(AppStrings.needMoreAnswers), findsOneWidget);
+  });
+
+  testWidgets('high scores are never called weak', (tester) async {
+    await tester.pumpWidget(
+      buildHome(
+        subjects: FakeSubjects(() async => subjects.sublist(0, 1)),
+        profile: FakeProfile(0),
+        mastery: const [
+          TopicMastery(topicId: 1, topicName: 'Məhlullar', total: 10, answered: 10, correct: 10),
+        ],
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text(AppStrings.weakTopics), findsNothing);
+    expect(find.text(AppStrings.strongTopics), findsOneWidget);
+    expect(find.text('Məhlullar'), findsOneWidget);
+  });
+
+  group('TopicMastery', () {
+    TopicMastery topic(int total, int answered, int correct) =>
+        TopicMastery(topicId: 1, topicName: 'x', total: total, answered: answered, correct: correct);
+
+    test('the percent is measured against every test in the topic', () {
+      expect(topic(100, 5, 5).masteryPct, 5);
+      expect(topic(100, 5, 5).isStrong, isFalse);
+      expect(topic(100, 5, 5).isWeak, isFalse);
+    });
+
+    test('strong means most of the whole topic is right', () {
+      expect(topic(100, 70, 70).isStrong, isTrue);
+      expect(topic(100, 69, 69).isStrong, isFalse);
+      expect(topic(3, 3, 3).isStrong, isTrue);
+    });
+
+    test('weak needs enough solved tests with a low share right', () {
+      expect(topic(100, 5, 3).isWeak, isTrue);
+      expect(topic(100, 4, 0).isWeak, isFalse);
+      expect(topic(100, 5, 4).isWeak, isFalse);
+      expect(topic(3, 3, 0).isWeak, isTrue, reason: 'a small topic can be finished under the minimum');
+    });
+  });
 
   testWidgets('no answers yet: hint instead of topics', (tester) async {
     await tester.pumpWidget(

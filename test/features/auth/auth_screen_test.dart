@@ -5,6 +5,8 @@ import 'package:prep_az/core/constants/app_strings.dart';
 import 'package:prep_az/features/auth/domain/auth_repository.dart';
 import 'package:prep_az/features/auth/presentation/auth_providers.dart';
 import 'package:prep_az/features/auth/presentation/auth_screen.dart';
+import 'package:prep_az/features/legal/presentation/legal_screen.dart';
+import 'package:prep_az/features/legal/presentation/widgets/sign_up_consent.dart';
 
 import 'fake_auth_repository.dart';
 
@@ -27,6 +29,9 @@ void main() {
     await tester.pumpAndSettle();
     await tester.enterText(find.byType(TextFormField).at(0), 'a@b.az');
     await tester.enterText(find.byType(TextFormField).at(1), '123456');
+    await tester.ensureVisible(find.byType(Checkbox));
+    await tester.tap(find.byType(Checkbox));
+    await tester.pump();
     final submit = find.widgetWithText(FilledButton, AppStrings.signUpAction);
     await tester.ensureVisible(submit);
     await tester.tap(submit);
@@ -34,6 +39,37 @@ void main() {
   }
 
   setUp(() => repo = FakeAuthRepository());
+
+  testWidgets('sign-up stays locked until the terms are accepted', (tester) async {
+    await pumpScreen(tester);
+    await tester.tap(find.text(AppStrings.choiceNewTitle));
+    await tester.pumpAndSettle();
+    final submit = find.widgetWithText(FilledButton, AppStrings.signUpAction);
+    expect(tester.widget<FilledButton>(submit).onPressed, isNull);
+
+    await tester.ensureVisible(find.byType(Checkbox));
+    await tester.tap(find.byType(Checkbox));
+    await tester.pump();
+    expect(tester.widget<FilledButton>(submit).onPressed, isNotNull);
+  });
+
+  testWidgets('sign-in shows no consent box', (tester) async {
+    await pumpScreen(tester);
+    await tester.tap(find.text(AppStrings.choiceExistingTitle));
+    await tester.pumpAndSettle();
+    expect(find.byType(Checkbox), findsNothing);
+    expect(tester.widget<FilledButton>(find.widgetWithText(FilledButton, AppStrings.signInAction)).onPressed, isNotNull);
+  });
+
+  testWidgets('tapping a document name opens it', (tester) async {
+    await pumpScreen(tester);
+    await tester.tap(find.text(AppStrings.choiceNewTitle));
+    await tester.pumpAndSettle();
+    await tester.ensureVisible(find.byType(SignUpConsent));
+    await tester.tapOnText(find.textRange.ofSubstring(AppStrings.legalConsentPrivacy));
+    await tester.pumpAndSettle();
+    expect(find.byType(LegalDocumentScreen), findsOneWidget);
+  });
 
   testWidgets('first screen asks new or existing and shows no form', (tester) async {
     await pumpScreen(tester);

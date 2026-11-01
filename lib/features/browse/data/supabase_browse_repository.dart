@@ -72,4 +72,25 @@ class SupabaseBrowseRepository implements BrowseRepository {
       return rows.map(questionFromRow).toList();
     });
   }
+
+  @override
+  Future<Map<String, bool>> getLatestAnswers(int topicId) {
+    return guard(() async {
+      final latest = <String, bool>{};
+      for (var from = 0; ; from += _page) {
+        final rows = await _db
+            .from('answers')
+            .select('question_id, is_correct, questions!inner(topic_id)')
+            .eq('user_id', _db.auth.currentUser!.id)
+            .eq('questions.topic_id', topicId)
+            .order('answered_at')
+            .order('id')
+            .range(from, from + _page - 1);
+        for (final row in rows) {
+          latest[row['question_id'] as String] = row['is_correct'] as bool;
+        }
+        if (rows.length < _page) return latest;
+      }
+    });
+  }
 }

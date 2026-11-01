@@ -10,6 +10,8 @@ class TourTargets {
   final appearance = GlobalKey();
   final teachers = GlobalKey();
   final report = GlobalKey();
+  final legal = GlobalKey();
+  final deleteAccount = GlobalKey();
   final signOut = GlobalKey();
   final practice = GlobalKey();
   final weakPlaces = GlobalKey();
@@ -23,6 +25,8 @@ class TourTargets {
     TourStep.appearance => appearance,
     TourStep.teachers => teachers,
     TourStep.report => report,
+    TourStep.legal => legal,
+    TourStep.deleteAccount => deleteAccount,
     TourStep.signOut => signOut,
     TourStep.practice => practice,
     TourStep.weakPlaces => weakPlaces,

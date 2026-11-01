@@ -154,15 +154,17 @@ void main() {
     testWidgets('lists all topics and opens a topic quiz', (tester) async {
       final repo = FakeQuizRepository([closedQuestion(id: 'a', body: 'Mövzu sualı')]);
       const topics = [
-        TopicMastery(topicId: 1, topicName: 'Turşular', answered: 10, masteryPct: 30),
-        TopicMastery(topicId: 2, topicName: 'Əsaslar', answered: 8, masteryPct: 55),
-        TopicMastery(topicId: 3, topicName: 'Duzlar', answered: 9, masteryPct: 60),
-        TopicMastery(topicId: 4, topicName: 'Oksidlər', answered: 7, masteryPct: 90),
+        TopicMastery(topicId: 1, topicName: 'Turşular', total: 10, answered: 10, correct: 3),
+        TopicMastery(topicId: 2, topicName: 'Əsaslar', total: 10, answered: 9, correct: 5),
+        TopicMastery(topicId: 3, topicName: 'Duzlar', total: 10, answered: 2, correct: 2),
+        TopicMastery(topicId: 4, topicName: 'Oksidlər', total: 10, answered: 10, correct: 9),
       ];
       await tester.pumpWidget(_app(const WeakTopicsScreen(subject: _subject), quiz: repo, mastery: topics));
       await tester.pumpAndSettle();
 
-      // ana səhifədəki kartdan fərqli olaraq 3-lə məhdudlaşmır
+      expect(find.text(AppStrings.weakTopics), findsOneWidget);
+      expect(find.text(AppStrings.strongTopics), findsOneWidget);
+      expect(find.text(AppStrings.inProgressTopics), findsOneWidget);
       expect(find.text('Oksidlər'), findsOneWidget);
 
       await tester.tap(find.text('Turşular'));

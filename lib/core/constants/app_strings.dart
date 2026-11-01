@@ -70,6 +70,21 @@ abstract final class AppStrings {
   static String get email => _t('E-poçt', 'Эл. почта', 'Email');
   static String get password => _t('Parol', 'Пароль', 'Password');
   static String get signOut => _t('Çıxış', 'Выйти', 'Sign out');
+  static String get deleteAccount => _t('Hesabı sil', 'Удалить аккаунт', 'Delete account');
+  static String get deleteAccountQuestion =>
+      _t('Hesab silinsin?', 'Удалить аккаунт?', 'Delete your account?');
+  static String get deleteAccountWarning => _t(
+    'Hesabınız, cavablarınız, səhvləriniz və seriyanız birdəfəlik silinəcək. Bunu geri qaytarmaq olmur.',
+    'Ваш аккаунт, ответы, ошибки и серия будут удалены навсегда. Это нельзя отменить.',
+    'Your account, answers, mistakes and streak will be permanently deleted. This cannot be undone.',
+  );
+  static String get deleteAccountConfirm => _t('Bəli, sil', 'Да, удалить', 'Yes, delete');
+  static String get deleteAccountAdmin => _t(
+    'Admin hesabı tətbiqdən silinmir.',
+    'Аккаунт администратора нельзя удалить из приложения.',
+    "An admin account can't be deleted from the app.",
+  );
+  static String get cancel => _t('İmtina', 'Отмена', 'Cancel');
   static String get showPassword =>
       _t('Parolu göstər', 'Показать пароль', 'Show password');
   static String get hidePassword =>
@@ -233,19 +248,28 @@ abstract final class AppStrings {
 
   // Zəif mövzular
   static String get noMasteryYet => _t(
-    'Hələ cavab yoxdur. Məşq etdikcə zəif mövzular burada görünəcək.',
-    'Ответов пока нет. По мере практики здесь появятся слабые темы.',
-    'No answers yet. Weak topics will appear here as you practice.',
+    'Hələ cavab yoxdur. Məşq etdikcə zəif və yaxşı bildiyin mövzular burada görünəcək.',
+    'Ответов пока нет. По мере практики здесь появятся слабые и хорошо известные темы.',
+    'No answers yet. Your weak and strong topics will appear here as you practice.',
   );
   static String get weakTopics => _t('Zəif mövzular', 'Слабые темы', 'Weak topics');
+  static String get strongTopics =>
+      _t('Yaxşı bildiyin mövzular', 'Темы, которые ты знаешь хорошо', 'Topics you know well');
+  static String get inProgressTopics =>
+      _t('Davam edən mövzular', 'Темы в процессе', 'Topics in progress');
 
   // Zəif yerlərim
   static String get weakPlacesTitle =>
       _t('Zəif yerlərim', 'Мои слабые места', 'My weak spots');
-  static String get weakPlacesHint => _t(
-    'Ən zəif mövzu yuxarıdadır. Mövzuya basıb yalnız onu məşq et.',
-    'Самая слабая тема вверху. Нажми на тему и тренируй только её.',
-    'The weakest topic is at the top. Tap a topic to practice just that one.',
+  static String weakPlacesHint(int min, int pct) => _t(
+    'Faiz mövzudakı bütün testlərə görədir: 100 testdən 5-i düzdürsə, 5%. $pct%-ə çatanda mövzunu yaxşı bilirsən. $min və daha çox test həll edib onların $pct%-dən azını düz tapmısansa, mövzu zəifdir.',
+    'Процент считается по всем тестам темы: 5 верных из 100 — это 5%. С $pct% тема считается освоенной. Если решено $min и больше тестов и верных среди них меньше $pct%, тема слабая.',
+    'The percentage covers every test in the topic: 5 right out of 100 is 5%. At $pct% you know the topic well. If you solved $min or more tests and got under $pct% of them right, the topic is weak.',
+  );
+  static String get needMoreAnswers => _t(
+    'Hələ az test həll etmisən. Mövzuda nə qədər çox həll etsən, nəticə o qədər dəqiq olacaq.',
+    'Решено пока мало тестов. Чем больше решишь по теме, тем точнее результат.',
+    'You have solved only a few tests so far. The more you solve in a topic, the more accurate the result.',
   );
   static String get noQuestionsInTopic => _t(
     'Bu mövzuda hələ sual yoxdur.',
@@ -256,9 +280,9 @@ abstract final class AppStrings {
   // Mövzular (cavablar yazılmır)
   static String get topicsTitle => _t('Mövzular', 'Темы', 'Topics');
   static String get topicsHint => _t(
-    'Mövzunu aç, sualları ardıcıl həll et və istədiyin suala keç. Bu bölmədə cavablar yadda saxlanmır.',
-    'Открой тему, решай вопросы по порядку и переходи к любому из них. В этом разделе ответы не сохраняются.',
-    "Open a topic, solve questions in order and jump to any one. Answers aren't saved in this section.",
+    'Mövzunu aç və testləri qaldığın yerdən həll et. Düz və ya səhv olduğunu "Bitir" basanda görəcəksən.',
+    'Открой тему и решай тесты с того места, где остановился. Верно или нет, увидишь после «Завершить».',
+    'Open a topic and carry on where you left off. You will see what was right after you tap "Finish".',
   );
   static String get searchTopics => _t('Mövzu axtar', 'Поиск темы', 'Search topics');
   static String get noTopicsFound =>
@@ -267,7 +291,38 @@ abstract final class AppStrings {
   static String get jumpToQuestion =>
       _t('Suala keç', 'Перейти к вопросу', 'Jump to question');
   static String get previousQuestion => _t('Əvvəlki', 'Назад', 'Previous');
-  static String get showAnswer => _t('Cavabı göstər', 'Показать ответ', 'Show answer');
+  static String get finishAction => _t('Bitir', 'Завершить', 'Finish');
+  static String get continueSolving => _t('Davam et', 'Продолжить', 'Continue');
+  static String get backToTopics => _t('Mövzulara qayıt', 'К темам', 'Back to topics');
+  static String get restartTopic => _t('Yenidən başla', 'Начать заново', 'Start again');
+  static String get topicDone => _t('Tamamlandı', 'Завершено', 'Completed');
+  static String get sendingAnswers =>
+      _t('Cavablar yoxlanılır...', 'Проверяем ответы...', 'Checking your answers...');
+  static String get answersNotSent => _t(
+    'Cavablar göndərilmədi, amma itməyib. İnterneti yoxlayıb yenidən "Bitir" bas.',
+    'Ответы не отправлены, но не потеряны. Проверь интернет и снова нажми «Завершить».',
+    'Your answers were not sent, but they are safe. Check your internet and tap "Finish" again.',
+  );
+  static String finishConfirm(int n) => _t(
+    '$n test cavabsız qalıb. Onlara sonra qayıda bilərsən. Bitirək?',
+    'Без ответа осталось тестов: $n. К ним можно вернуться позже. Завершить?',
+    '$n tests are unanswered. You can come back to them later. Finish now?',
+  );
+  static String topicSolved(int solved, int total) => _t(
+    '$solved/$total həll edilib',
+    'Решено $solved из $total',
+    '$solved of $total solved',
+  );
+  static String topicCorrectOf(int correct, int total) => _t(
+    '$correct/$total düz',
+    'Верно $correct из $total',
+    '$correct of $total right',
+  );
+  static String topicProgressChange(int before, int after, int total) => _t(
+    'Mövzu: $before/$total → $after/$total düz',
+    'Тема: верно $before/$total → $after/$total',
+    'Topic: $before/$total → $after/$total right',
+  );
 
   // Səhvlər dəftəri
   static String get mistakesBook =>
@@ -499,6 +554,16 @@ abstract final class AppStrings {
     'Сообщить об ошибке: если что-то не работает, напиши нам отсюда.',
     "Report an app problem: if something doesn't work, tell us here.",
   );
+  static String get tourLegal => _t(
+    'Şərtlər və məxfilik: qəbul etdiyin sənədləri burada istənilən vaxt oxuya bilərsən.',
+    'Условия и конфиденциальность: здесь можно в любой момент прочитать принятые документы.',
+    'Terms and privacy: read the documents you accepted here at any time.',
+  );
+  static String get tourDeleteAccount => _t(
+    'Hesabı sil: hesabını və bütün nəticələrini birdəfəlik silir. Bunu geri qaytarmaq olmur.',
+    'Удалить аккаунт: навсегда удаляет аккаунт и все результаты. Это нельзя отменить.',
+    'Delete account: permanently removes your account and all your results. This cannot be undone.',
+  );
   static String get tourSignOut => _t(
     'Çıxış: hesabından çıxırsan. İrəliləyişin itmir, yenidən daxil olanda yerindədir.',
     'Выйти: выход из аккаунта. Прогресс не пропадёт, он будет на месте, когда войдёшь снова.',
@@ -520,9 +585,9 @@ abstract final class AppStrings {
     "Mistakes notebook: questions you got wrong land here. They come back until you've learned them.",
   );
   static String get tourTopics => _t(
-    'Mövzular: fənnin bütün mövzuları. Axtar, mövzunu seç və sualları sıra ilə həll et.',
-    'Темы: все темы предмета. Найди нужную тему и решай вопросы по порядку.',
-    "Topics: all of the subject's topics. Search, pick one and solve its questions in order.",
+    'Mövzular: fənnin bütün mövzuları. Mövzunu seç, bütün testləri həll et, nəticəni sonda gör.',
+    'Темы: все темы предмета. Выбери тему, реши все тесты и в конце увидишь результат.',
+    "Topics: all of the subject's topics. Pick one, solve every test and see your result at the end.",
   );
   static String get tourDone => _t(
     'Hazırsan! İndi ilk məşqinə başla. Uğurlar!',
@@ -563,6 +628,30 @@ abstract final class AppStrings {
       _t('Hazırlıq təklifi', 'Предложение по подготовке', 'Preparation offer');
   static String get callAction => _t('Zəng et', 'Позвонить', 'Call');
   static const whatsappAction = 'WhatsApp';
+
+  // Şərtlər və məxfilik
+  static String get legalMenuTitle =>
+      _t('Şərtlər və məxfilik', 'Условия и конфиденциальность', 'Terms and privacy');
+  static String get legalTermsTitle =>
+      _t('İstifadə şərtləri', 'Условия использования', 'Terms of Use');
+  static String get legalPrivacyTitle =>
+      _t('Məxfilik siyasəti', 'Политика конфиденциальности', 'Privacy Policy');
+  static String get legalConsentStart => _t('', 'Принимаю ', 'I accept the ');
+  static String get legalConsentTerms =>
+      _t('İstifadə şərtlərini', 'Условия использования', 'Terms of Use');
+  static String get legalConsentJoin => _t(' və ', ' и ', ' and ');
+  static String get legalConsentPrivacy =>
+      _t('Məxfilik siyasətini', 'Политику конфиденциальности', 'Privacy Policy');
+  static String get legalConsentEnd => _t(
+    ' qəbul edirəm. 18 yaşdan kiçikəmsə, valideynimin razılığı var.',
+    '. Если мне нет 18 лет, у меня есть согласие родителя.',
+    ". If I am under 18, I have my parent's consent.",
+  );
+  static String get legalLastUpdated => _t(
+    'Son yenilənmə: 31 oktyabr 2026',
+    'Последнее обновление: 31 октября 2026',
+    'Last updated: 31 October 2026',
+  );
   static String get contactFailed => _t(
     'Açmaq alınmadı. Nömrə kopyalandı.',
     'Не удалось открыть. Номер скопирован.',

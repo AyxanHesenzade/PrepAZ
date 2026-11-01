@@ -13,7 +13,7 @@ class SubjectCard extends StatelessWidget {
   const SubjectCard({
     super.key,
     required this.subject,
-    required this.weakTopics,
+    required this.topics,
     required this.onStart,
     required this.onWeakPlaces,
     required this.onMistakes,
@@ -24,11 +24,12 @@ class SubjectCard extends StatelessWidget {
     this.topicsKey,
   });
 
-  /// Ən zəifdən başlayaraq, artıq sıralanmış.
-  static const maxTopicsShown = 3;
+  static const maxWeakShown = 3;
+  static const maxStrongShown = 2;
 
   final Subject subject;
-  final List<TopicMastery> weakTopics;
+  /// Ən zəifdən başlayaraq, artıq sıralanmış.
+  final List<TopicMastery> topics;
   final VoidCallback onStart;
   final VoidCallback onWeakPlaces;
   final VoidCallback onMistakes;
@@ -56,7 +57,9 @@ class SubjectCard extends StatelessWidget {
       accent.withValues(alpha: isLight ? 0.10 : 0.16),
       scheme.surfaceContainerLowest,
     );
-    final shown = weakTopics.take(maxTopicsShown).toList();
+    final weak = topics.where((t) => t.isWeak).take(maxWeakShown).toList();
+    final strong = topics.reversed.where((t) => t.isStrong).take(maxStrongShown).toList();
+    final message = topics.isEmpty ? AppStrings.noMasteryYet : AppStrings.needMoreAnswers;
 
     return Container(
       margin: const EdgeInsets.only(bottom: AppSpacing.m),
@@ -100,11 +103,11 @@ class SubjectCard extends StatelessWidget {
               color: scheme.surfaceContainerLowest,
               borderRadius: BorderRadius.circular(AppRadius.l),
             ),
-            child: shown.isEmpty
+            child: weak.isEmpty && strong.isEmpty
                 ? Padding(
                     padding: const EdgeInsets.only(bottom: AppSpacing.s),
                     child: Text(
-                      AppStrings.noMasteryYet,
+                      message,
                       style: text.bodyMedium?.copyWith(
                         color: scheme.onSurfaceVariant,
                       ),
@@ -113,14 +116,11 @@ class SubjectCard extends StatelessWidget {
                 : Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        AppStrings.weakTopics,
-                        style: text.labelMedium?.copyWith(
-                          color: scheme.onSurfaceVariant,
-                        ),
-                      ),
-                      AppSpacing.gapXs,
-                      for (final topic in shown) MasteryRow(mastery: topic),
+                      if (weak.isNotEmpty)
+                        MasteryGroup(title: AppStrings.weakTopics, topics: weak),
+                      if (weak.isNotEmpty && strong.isNotEmpty) AppSpacing.gapS,
+                      if (strong.isNotEmpty)
+                        MasteryGroup(title: AppStrings.strongTopics, topics: strong),
                     ],
                   ),
           ),

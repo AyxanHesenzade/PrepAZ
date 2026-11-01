@@ -9,6 +9,8 @@ class FakeAuthRepository implements AuthRepository {
   String? lastSignInEmail;
   String? lastSignInPassword;
   final resentTo = <String>[];
+  Object? deleteError;
+  int deleteCalls = 0;
 
   @override
   Future<void> signIn({required String email, required String password}) async {
@@ -32,6 +34,12 @@ class FakeAuthRepository implements AuthRepository {
 
   @override
   Future<void> signOut() async {}
+
+  @override
+  Future<void> deleteAccount() async {
+    deleteCalls++;
+    if (deleteError != null) throw deleteError!;
+  }
 
   @override
   Stream<bool> watchSignedIn() => Stream.value(false);

@@ -82,6 +82,8 @@ void main() {
       AppStrings.tourAppearance,
       AppStrings.tourTeachers,
       AppStrings.tourReport,
+      AppStrings.tourLegal,
+      AppStrings.tourDeleteAccount,
       AppStrings.tourSignOut,
     ]) {
       expect(find.text(message), findsOneWidget);
@@ -185,7 +187,7 @@ void main() {
 
     await gotIt(tester);
     await tapMenu(tester);
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 7; i++) {
       await gotIt(tester);
     }
 

@@ -8,6 +8,8 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/widgets/app_logo.dart';
 import '../../../core/widgets/pressable.dart';
 import '../../auth/presentation/auth_providers.dart';
+import '../../auth/presentation/widgets/delete_account_dialog.dart';
+import '../../legal/presentation/legal_screen.dart';
 import '../../settings/domain/app_settings.dart';
 import '../../settings/presentation/settings_providers.dart';
 import '../../reports/presentation/report_sheet.dart';
@@ -92,6 +94,27 @@ class AppDrawer extends ConsumerWidget {
                     final root = navigator.context;
                     navigator.pop();
                     showReportSheet(root);
+                  },
+                ),
+                _NavTile(
+                  key: tour?.legal,
+                  icon: Icons.gavel_rounded,
+                  title: AppStrings.legalMenuTitle,
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => const LegalScreen()));
+                  },
+                ),
+                _NavTile(
+                  key: tour?.deleteAccount,
+                  icon: Icons.delete_outline_rounded,
+                  title: AppStrings.deleteAccount,
+                  color: scheme.error,
+                  onTap: () {
+                    final navigator = Navigator.of(context);
+                    final root = navigator.context;
+                    navigator.pop();
+                    showDeleteAccountDialog(root);
                   },
                 ),
               ],

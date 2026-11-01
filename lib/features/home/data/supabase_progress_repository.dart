@@ -14,19 +14,20 @@ class SupabaseProgressRepository implements ProgressRepository {
     return guard(() async {
       // user_id süzgəci vacibdir: view bütün istifadəçilərin sətirlərini saxlayır.
       final rows = await _db
-          .from('topic_mastery')
-          .select('topic_id, topic_name, answered, mastery_pct')
+          .from('topic_progress')
+          .select('topic_id, topic_name, total_questions, answered, correct')
           .eq('subject_id', subjectId)
-          .eq('user_id', _db.auth.currentUser!.id)
-          .order('mastery_pct');
-      return rows.map(_toMastery).toList();
+          .eq('user_id', _db.auth.currentUser!.id);
+      return rows.map(_toMastery).toList()
+        ..sort((a, b) => a.masteryPct.compareTo(b.masteryPct));
     });
   }
 
   static TopicMastery _toMastery(Map<String, dynamic> row) => TopicMastery(
     topicId: (row['topic_id'] as num).toInt(),
     topicName: row['topic_name'] as String,
+    total: (row['total_questions'] as num).toInt(),
     answered: (row['answered'] as num).toInt(),
-    masteryPct: (row['mastery_pct'] as num).toInt(),
+    correct: (row['correct'] as num).toInt(),
   );
 }

@@ -10,6 +10,9 @@ import '../../../core/widgets/app_logo.dart';
 import '../../../core/widgets/app_text_field.dart';
 import '../../../core/widgets/fade_slide_in.dart';
 import '../../../core/widgets/message_banner.dart';
+import '../../legal/domain/legal_document.dart';
+import '../../legal/presentation/widgets/sign_up_consent.dart';
+import '../../settings/presentation/settings_providers.dart';
 import 'auth_controller.dart';
 import 'widgets/auth_choice_view.dart';
 import 'widgets/email_confirm_view.dart';
@@ -27,6 +30,7 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
   final _email = TextEditingController();
   final _password = TextEditingController();
   bool _showPassword = false;
+  bool _agreed = false;
 
   @override
   void dispose() {
@@ -36,7 +40,12 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
   }
 
   void _submit() {
+    final signUp = ref.read(authControllerProvider).isSignUp;
+    if (signUp && !_agreed) return;
     if (!_formKey.currentState!.validate()) return;
+    if (signUp) {
+      ref.read(settingsControllerProvider.notifier).acceptLegal(currentLegalVersion);
+    }
     ref
         .read(authControllerProvider.notifier)
         .submit(email: _email.text.trim(), password: _password.text);
@@ -173,13 +182,20 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
               AppSpacing.gapM,
               MessageBanner(form.info!),
             ],
+            if (form.isSignUp) ...[
+              AppSpacing.gapM,
+              SignUpConsent(
+                value: _agreed,
+                onChanged: (value) => setState(() => _agreed = value),
+              ),
+            ],
             AppSpacing.gapL,
             AppButton(
               label: form.isSignUp
                   ? AppStrings.signUpAction
                   : AppStrings.signInAction,
               isLoading: form.isBusy,
-              onPressed: _submit,
+              onPressed: form.isSignUp && !_agreed ? null : _submit,
             ),
             AppSpacing.gapS,
             TextButton(

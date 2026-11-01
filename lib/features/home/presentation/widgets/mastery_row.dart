@@ -12,8 +12,11 @@ class MasteryRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = AppColors.forMastery(mastery.masteryPct);
     final text = Theme.of(context).textTheme;
+    final rated = mastery.isWeak || mastery.isStrong;
+    final color = rated
+        ? AppColors.forMastery(mastery.masteryPct)
+        : Theme.of(context).colorScheme.outline;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: AppSpacing.s - 1),
       child: Column(
@@ -23,7 +26,7 @@ class MasteryRow extends StatelessWidget {
             children: [
               Expanded(child: Text(mastery.topicName, style: text.bodyMedium)),
               Text(
-                '${mastery.masteryPct}%',
+                '${mastery.masteryPct}% · ${mastery.correct}/${mastery.total}',
                 style: text.labelLarge?.copyWith(color: color),
               ),
             ],
@@ -32,6 +35,32 @@ class MasteryRow extends StatelessWidget {
           SoftProgressBar(value: mastery.masteryPct / 100, color: color),
         ],
       ),
+    );
+  }
+}
+
+/// Başlıq və altında mövzular: "Zəif mövzular", "Yaxşı bildiyin mövzular".
+class MasteryGroup extends StatelessWidget {
+  const MasteryGroup({super.key, required this.title, required this.topics});
+
+  final String title;
+  final List<TopicMastery> topics;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: theme.textTheme.labelMedium?.copyWith(
+            color: theme.colorScheme.onSurfaceVariant,
+          ),
+        ),
+        AppSpacing.gapXs,
+        for (final topic in topics) MasteryRow(mastery: topic),
+      ],
     );
   }
 }

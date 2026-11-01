@@ -5,9 +5,11 @@ import '../../../core/error/app_exception.dart';
 import '../domain/auth_repository.dart';
 
 class SupabaseAuthRepository implements AuthRepository {
-  const SupabaseAuthRepository(this._auth);
+  const SupabaseAuthRepository(this._db);
 
-  final GoTrueClient _auth;
+  final SupabaseClient _db;
+
+  GoTrueClient get _auth => _db.auth;
 
   @override
   Stream<bool> watchSignedIn() async* {
@@ -49,6 +51,21 @@ class SupabaseAuthRepository implements AuthRepository {
 
   @override
   Future<void> signOut() => guard(_auth.signOut, mapper: _mapAuthError);
+
+  @override
+  Future<void> deleteAccount() {
+    return guard(() async {
+      await _db.rpc<void>('delete_my_account');
+      await _auth.signOut(scope: SignOutScope.local);
+    }, mapper: _mapDeleteError);
+  }
+
+  static AppException? _mapDeleteError(Object error) {
+    if (error is PostgrestException && error.message.contains('admin_account')) {
+      return AppException(AppStrings.deleteAccountAdmin);
+    }
+    return _mapAuthError(error);
+  }
 
   static AppException? _mapAuthError(Object error) {
     if (error is! AuthException) return null;

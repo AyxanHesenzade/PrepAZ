@@ -6,6 +6,8 @@ enum TourStep {
   appearance,
   teachers,
   report,
+  legal,
+  deleteAccount,
   signOut,
   practice,
   weakPlaces,

@@ -26,6 +26,10 @@ class SettingsController extends Notifier<AppSettings> {
 
   Future<void> setTourSeen() => _update(state.copyWith(tourSeen: true));
 
+  Future<void> acceptLegal(int version) => _update(state.copyWith(pendingLegalVersion: version));
+
+  Future<void> clearPendingLegal() => _update(state.copyWith(pendingLegalVersion: 0));
+
   Future<void> _update(AppSettings next) async {
     if (next == state) return;
     AppStrings.language = next.language;
