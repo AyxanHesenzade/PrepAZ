@@ -137,7 +137,7 @@ class _MistakeCard extends StatelessWidget {
             ],
             AppSpacing.gapS,
             Text(
-              AppStrings.rightAnswer(question.correctAnswer),
+              AppStrings.rightAnswer(question.rightAnswerText),
               style: text.titleSmall,
             ),
             if (question.hasSolution)

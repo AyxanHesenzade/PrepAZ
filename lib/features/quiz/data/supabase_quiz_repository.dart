@@ -133,5 +133,7 @@ MistakeItem mistakeFromRow(Map<String, dynamic> row) => MistakeItem(
 QuestionType _parseType(String value) => switch (value) {
   'qapali' => QuestionType.qapali,
   'aciq_eded' => QuestionType.aciqEded,
+  'coxlu_secim' => QuestionType.coxluSecim,
+  'uygunlasdirma' => QuestionType.uygunlasdirma,
   _ => QuestionType.yazili,
 };

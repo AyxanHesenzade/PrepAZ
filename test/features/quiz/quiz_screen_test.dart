@@ -120,6 +120,44 @@ void main() {
     expect(find.text(AppStrings.correct), findsOneWidget);
   });
 
+  testWidgets('multi-choice field keeps only digits and shows the answer as 1,3,5', (tester) async {
+    await tester.pumpWidget(app(FakeQuizRepository([multiChoiceQuestion(correct: '135')])));
+    await tester.pumpAndSettle();
+
+    await tester.enterText(find.byType(TextField), '1.2,4');
+    await tester.pump();
+    expect(find.text('124'), findsOneWidget);
+
+    await tester.tap(find.text(AppStrings.check));
+    await tester.pumpAndSettle();
+    expect(find.text(AppStrings.wrong('1,3,5')), findsOneWidget);
+  });
+
+  testWidgets('matching question: letters are picked per row and sent as E;A;BC', (tester) async {
+    final repo = FakeQuizRepository([matchingQuestion(correct: 'E;A;BC')]);
+    await tester.pumpWidget(app(repo));
+    await tester.pumpAndSettle();
+
+    expect(find.byType(TextField), findsNothing);
+    expect(find.text(AppStrings.check), findsOneWidget);
+    Future<void> pick(String letter, int row) async {
+      await tester.tap(find.text(letter).at(row));
+      await tester.pump();
+    }
+
+    await pick('e', 0);
+    await pick('a', 1);
+    await pick('c', 2);
+    await pick('b', 2);
+    await pick('d', 2);
+    await pick('d', 2); // ikinci toxunuş seçimi götürür
+    await tester.tap(find.text(AppStrings.check));
+    await tester.pumpAndSettle();
+
+    expect(repo.submitted.single.given, 'E;A;BC');
+    expect(find.text(AppStrings.correct), findsOneWidget);
+  });
+
   testWidgets('image that fails to load shows "Şəkil yüklənmədi" but the question stays solvable', (tester) async {
     await tester.pumpWidget(app(FakeQuizRepository([closedQuestion(imagePath: 'KIM-0001.png', correct: 'B')])));
     await tester.pumpAndSettle();

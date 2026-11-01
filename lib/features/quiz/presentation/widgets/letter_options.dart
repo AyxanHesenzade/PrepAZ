@@ -27,7 +27,7 @@ class LetterOptions extends StatelessWidget {
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: AppSpacing.xs),
-              child: _LetterButton(
+              child: LetterButton(
                 letter: letter,
                 status: statusOf(letter),
                 onTap: onTap == null ? null : () => onTap!(letter),
@@ -39,16 +39,19 @@ class LetterOptions extends StatelessWidget {
   }
 }
 
-class _LetterButton extends StatelessWidget {
-  const _LetterButton({
+class LetterButton extends StatelessWidget {
+  const LetterButton({
+    super.key,
     required this.letter,
     required this.status,
     required this.onTap,
+    this.height = 60,
   });
 
   final String letter;
   final OptionStatus status;
   final VoidCallback? onTap;
+  final double height;
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +65,7 @@ class _LetterButton extends StatelessWidget {
       onTap: onTap,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 220),
-        height: 60,
+        height: height,
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: idle ? background : badgeBackground,

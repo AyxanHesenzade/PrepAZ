@@ -16,6 +16,7 @@ import 'quiz_state.dart';
 import 'result_view.dart';
 import 'widgets/answer_feedback.dart';
 import 'widgets/letter_options.dart';
+import 'widgets/open_answer_input.dart';
 import 'widgets/option_tile.dart';
 import 'widgets/question_code_label.dart';
 import 'widgets/question_image.dart';
@@ -169,9 +170,10 @@ class _QuestionBodyState extends State<_QuestionBody> {
                           : () => controller.select(entry.key),
                     )
                 else
-                  _AnswerField(
+                  OpenAnswerInput(
                     key: ValueKey(question.id),
                     question: question,
+                    value: state.input,
                     enabled: !answered,
                     onChanged: controller.type,
                   ),
@@ -242,46 +244,5 @@ class _QuestionBodyState extends State<_QuestionBody> {
     }
     if (letter == result.given) return OptionStatus.wrong;
     return OptionStatus.idle;
-  }
-}
-
-/// Açıq sualın cavab xanası. Sual dəyişəndə `key` sayəsində təzədən yaranır.
-class _AnswerField extends StatefulWidget {
-  const _AnswerField({
-    super.key,
-    required this.question,
-    required this.enabled,
-    required this.onChanged,
-  });
-
-  final Question question;
-  final bool enabled;
-  final ValueChanged<String> onChanged;
-
-  @override
-  State<_AnswerField> createState() => _AnswerFieldState();
-}
-
-class _AnswerFieldState extends State<_AnswerField> {
-  final _controller = TextEditingController();
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final numeric = widget.question.type == QuestionType.aciqEded;
-    return TextField(
-      controller: _controller,
-      enabled: widget.enabled,
-      onChanged: widget.onChanged,
-      keyboardType: numeric
-          ? const TextInputType.numberWithOptions(decimal: true, signed: true)
-          : TextInputType.text,
-      decoration: InputDecoration(labelText: AppStrings.yourAnswerField),
-    );
   }
 }

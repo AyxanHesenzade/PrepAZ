@@ -1,10 +1,37 @@
 {
-  "_comment": "Kimya test toplusu I (DIM, 2025), bolme 4 'Fiziki ve kimyevi hadiseler. Kimyevi tenlikler'. Yalniz 1-22 (herf cavabli) yuklenir; 23-30 coxsecimli, 31-32 eded cavabli.",
-  "answers": {
-    "1": "E", "2": "D", "3": "D", "4": "C", "5": "E", "6": "C", "7": "C", "8": "D", "9": "B", "10": "B",
-    "11": "E", "12": "E", "13": "B", "14": "C", "15": "D", "16": "C", "17": "D", "18": "E", "19": "C", "20": "A",
-    "21": "A", "22": "B",
-    "23": "2,4", "24": "1,3", "25": "1,2", "26": "3,4", "27": "1,2", "28": "1,2", "29": "2,3,5", "30": "1,4",
-    "31": "5", "32": "15"
-  }
+ "_comment": "Kimya test toplusu I (DIM, 2025), bolme 4 'Fiziki ve kimyevi hadiseler. Kimyevi tenlikler'. 23-30 coxlu secim, 31-32 eded. Format: herf = qapali; '1,3' = coxlu secim (vergul); 'c; b, e' = uygunlashdirma (; setir, , herf); eded = aciq (onluq noqte ile: 12.5).",
+ "answers": {
+  "1": "E",
+  "2": "D",
+  "3": "D",
+  "4": "C",
+  "5": "E",
+  "6": "C",
+  "7": "C",
+  "8": "D",
+  "9": "B",
+  "10": "B",
+  "11": "E",
+  "12": "E",
+  "13": "B",
+  "14": "C",
+  "15": "D",
+  "16": "C",
+  "17": "D",
+  "18": "E",
+  "19": "C",
+  "20": "A",
+  "21": "A",
+  "22": "B",
+  "23": "2,4",
+  "24": "1,3",
+  "25": "1,2",
+  "26": "3,4",
+  "27": "1,2",
+  "28": "1,2",
+  "29": "2,3,5",
+  "30": "1,4",
+  "31": "5",
+  "32": "15"
+ }
 }

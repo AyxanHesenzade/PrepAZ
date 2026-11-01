@@ -7,8 +7,8 @@ import '../../../core/widgets/app_button.dart';
 import '../../../core/widgets/async_value_view.dart';
 import '../../../core/widgets/math_text.dart';
 import '../../../core/widgets/message_banner.dart';
-import '../../quiz/domain/question.dart';
 import '../../quiz/presentation/widgets/letter_options.dart';
+import '../../quiz/presentation/widgets/open_answer_input.dart';
 import '../../quiz/presentation/widgets/option_tile.dart';
 import '../../quiz/presentation/widgets/question_code_label.dart';
 import '../../quiz/presentation/widgets/question_image.dart';
@@ -208,10 +208,10 @@ class _Exam extends StatelessWidget {
                       onTap: () => controller.answer(e.key),
                     )
                 else
-                  _TypedAnswer(
+                  OpenAnswerInput(
                     key: ValueKey('typed-${q.id}'),
                     question: q,
-                    initial: picked ?? '',
+                    value: picked ?? '',
                     onChanged: controller.answer,
                   ),
               ],
@@ -257,45 +257,6 @@ class _Exam extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-}
-
-class _TypedAnswer extends StatefulWidget {
-  const _TypedAnswer({
-    super.key,
-    required this.question,
-    required this.initial,
-    required this.onChanged,
-  });
-
-  final Question question;
-  final String initial;
-  final ValueChanged<String> onChanged;
-
-  @override
-  State<_TypedAnswer> createState() => _TypedAnswerState();
-}
-
-class _TypedAnswerState extends State<_TypedAnswer> {
-  late final _controller = TextEditingController(text: widget.initial);
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final numeric = widget.question.type == QuestionType.aciqEded;
-    return TextField(
-      controller: _controller,
-      onChanged: widget.onChanged,
-      keyboardType: numeric
-          ? const TextInputType.numberWithOptions(decimal: true, signed: true)
-          : TextInputType.text,
-      decoration: InputDecoration(labelText: AppStrings.yourAnswerField),
     );
   }
 }

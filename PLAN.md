@@ -6,7 +6,7 @@ Yayım: Play Store-a qədər Google Drive ilə APK.
 ## Hazır olanlar
 Gündəlik məşq, zəif mövzular, səhvlər dəftəri (aralıqlı təkrar), seriya, "Mövzular" (axtarış, ardıcıl həll, suala keçid),
 tövsiyə olunan müəllimlər, məcburi yeniləmə ekranı, xəta bildirişi, 3 dil, admin panel (suallar, müəllimlər, bildirişlər, tənzimləmələr).
-Kitab 1-dən 156 şəkil-sual (bölmə 1, 2, 3).
+Kitab 1-dən 206 şəkil-sual (bölmə 1–5), üstəgəl yüklənməyi gözləyən 47 açıq sual.
 
 ## Fazalar
 
@@ -26,7 +26,7 @@ Kitab 1-dən 156 şəkil-sual (bölmə 1, 2, 3).
 ### A. Məzmun
 - Mənbələr: DİM (razılaşma var), Araz və Güvən (sahib bildirir ki, razılıq alınıb; yazılı razılığın surətini saxlamaq tövsiyə olunur).
 - Dərsliklər üçün razılıq YOXDUR: mətn köçürülmür, izahlar öz sözlərimizlə yazılır, müəllim yoxlayır.
-- Şəkil-suallarda **ədədi və çoxseçimli cavab dəstəyi** lazımdır. Bölmə 3-də 54–75-ci suallar (22 sual) bu səbəbdən yüklənməyib. Tətbiq `aciq_eded` tipini artıq bilir, yalnız şəkil-sual üçün cavab xanası yoxdur.
+- Şəkil-suallarda ədədi, çoxseçimli və uyğunlaşdırma cavabları dəstəklənir (1.3.0, migration 014).
 
 ### B. Hədəf
 - İmtahan dövrləri bazada saxlanır, admin paneldən dəyişir. Şagird dəqiq tarix yazmır, dövr seçir. İstəsə öz tarixini də yaza bilər.

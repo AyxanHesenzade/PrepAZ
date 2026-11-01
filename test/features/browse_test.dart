@@ -10,6 +10,7 @@ import 'package:prep_az/features/home/domain/subject.dart';
 import 'package:prep_az/features/home/domain/topic_mastery.dart';
 import 'package:prep_az/features/home/presentation/home_providers.dart';
 import 'package:prep_az/features/quiz/domain/question.dart';
+import 'package:prep_az/features/quiz/presentation/widgets/open_answer_input.dart';
 import 'package:prep_az/features/quiz/presentation/quiz_providers.dart';
 
 import '../support/fakes.dart';
@@ -202,6 +203,21 @@ void main() {
     await _tap(tester, AppStrings.nextQuestion);
     await _tap(tester, AppStrings.previousQuestion);
     expect(find.text('5'), findsOneWidget);
+  });
+
+  testWidgets('a matching answer survives going back to it', (tester) async {
+    final questions = [matchingQuestion(id: 'u1', correct: 'E;A;BC'), multiChoiceQuestion(id: 'm1', correct: '135')];
+    await tester.pumpWidget(_app(FakeBrowseRepository(questions)));
+    await _open(tester);
+    await tester.tap(find.text('e').at(0));
+    await tester.pump();
+    await _tap(tester, AppStrings.nextQuestion);
+    await tester.enterText(find.byType(TextField), '13');
+    await _tap(tester, AppStrings.previousQuestion);
+    await tester.pump();
+
+    final grid = tester.widget<MatchingGrid>(find.byType(MatchingGrid));
+    expect(grid.value, 'E;;');
   });
 
   testWidgets('search filters topics, ignores case and Azerbaijani letters', (tester) async {

@@ -51,4 +51,19 @@ void main() {
     expect(q.hasSolutionImage, isFalse);
     expect(q.hasSolutionText, isTrue);
   });
+
+  test('new open types are parsed and answers are shown readably', () {
+    expect(questionFromRow(row(type: 'coxlu_secim')).type, QuestionType.coxluSecim);
+    final matching = questionFromRow(row(
+      type: 'uygunlasdirma',
+      options: {'2': 'ABCDE', '1': 'ABCDE', '3': 'ABCDE'},
+    ));
+    expect(matching.type, QuestionType.uygunlasdirma);
+    expect(matching.formatAnswer('E;A;BC'), '1-e, 2-a, 3-bc');
+    expect(matching.formatAnswer('E;;'), '1-e, 2-?, 3-?');
+    expect(matching.formatAnswer(null), '-');
+    expect(questionFromRow(row(type: 'coxlu_secim')).formatAnswer('135'), '1,3,5');
+    expect(questionFromRow(row(type: 'coxlu_secim')).formatAnswer('1,3,5'), '1,3,5');
+    expect(questionFromRow(row(type: 'aciq_eded')).formatAnswer('12,5'), '12,5');
+  });
 }

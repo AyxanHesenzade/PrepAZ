@@ -105,7 +105,10 @@ class _ResultCard extends StatelessWidget {
             ],
             AppSpacing.gapS,
             Text(
-              AppStrings.yourVsRight(result.given ?? '-', question.correctAnswer),
+              AppStrings.yourVsRight(
+                question.formatAnswer(result.given),
+                question.rightAnswerText,
+              ),
               style: text.labelLarge?.copyWith(color: color),
             ),
             if (question.hasSolution) ...[

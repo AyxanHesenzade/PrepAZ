@@ -1,4 +1,4 @@
-enum QuestionType { qapali, aciqEded, yazili }
+enum QuestionType { qapali, aciqEded, coxluSecim, uygunlasdirma, yazili }
 
 class Question {
   const Question({
@@ -26,7 +26,8 @@ class Question {
   /// `question-images` bucket-ində yol. Yoxdursa şəkil yoxdur.
   final String? imagePath;
 
-  /// Qapalı sual üçün: {"A": "...", "B": "..."} hərf sırası ilə. Digər tiplərdə boşdur.
+  /// Qapalı sual üçün: {"A": "...", "B": "..."} hərf sırası ilə.
+  /// Uyğunlaşdırma üçün: {"1": "ABCDE", "2": "ABCDE"} (sətir -> seçilə bilən hərflər). Digər tiplərdə boşdur.
   final Map<String, String> options;
   final String correctAnswer;
   final int difficulty;
@@ -53,6 +54,27 @@ class Question {
   String get reportCode => (code != null && code!.isNotEmpty) ? code! : id;
 
   bool get isClosed => type == QuestionType.qapali;
+  bool get isMultiChoice => type == QuestionType.coxluSecim;
+  bool get isMatching => type == QuestionType.uygunlasdirma;
+
+  /// Cavabın ekranda görünüşü: çoxseçimli `135` → `1,3,5`, uyğunlaşdırma `E;A;BC` → `1-e, 2-a, 3-bc`.
+  String formatAnswer(String? raw) {
+    if (raw == null || raw.trim().isEmpty) return '-';
+    if (isMultiChoice) {
+      return raw.replaceAll(RegExp(r'[^0-9]'), '').split('').join(',');
+    }
+    if (isMatching) {
+      final picked = raw.split(';');
+      final rows = options.keys.toList();
+      return [
+        for (var i = 0; i < rows.length; i++)
+          '${rows[i]}-${i < picked.length && picked[i].isNotEmpty ? picked[i].toLowerCase() : '?'}',
+      ].join(', ');
+    }
+    return raw;
+  }
+
+  String get rightAnswerText => formatAnswer(correctAnswer);
 
   /// Sual yalnız şəkildir (skan edilmiş kitab): mətn yoxdur, variantlar şəkildədir, ekranda yalnız A–E düymələri göstərilir.
   bool get isImageOnly => body.trim().isEmpty && hasImage;

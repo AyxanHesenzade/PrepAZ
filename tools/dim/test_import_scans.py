@@ -30,6 +30,7 @@ def main():
         db.execute((DB_DIR / "schema_reconstructed.sql").read_text(encoding="utf-8"))
         db.execute("insert into subjects (slug, name, sort_order, is_active) values ('kimya','Kimya',1,true)")
         db.execute((HERE.parent.parent / "db" / "migrations" / "003_solution_image.sql").read_text(encoding="utf-8"))
+        db.execute((HERE.parent.parent / "db" / "migrations" / "014_open_question_types.sql").read_text(encoding="utf-8"))
         sql = SQL.read_text(encoding="utf-8")
         prefix = re.search(r"(KT[0-9]+-S[0-9]{2})-Q", sql).group(1)        # e.g. KT1-S02
         first = re.search(r"'(" + prefix + r"-Q[0-9]{3})'", sql).group(1)    # any code of this file
@@ -39,6 +40,18 @@ def main():
         db.execute(sql)  # safe to run again
         n = db.execute("select count(*) from questions where code like '" + prefix + "-Q%'").fetchone()[0]
         check(f"{n} questions loaded once (second run changed nothing)", n == expected and n > 0)
+        if SQL.stem.endswith("_aciq"):
+            check("every open question has an empty text, its image and no closed type", db.execute(
+                "select count(*) from questions where code like %s and (body <> '' or image_path <> code || '.png' or type = 'qapali')",
+                (prefix + "-Q%",)).fetchone()[0] == 0)
+            check("matching questions have one option per row", db.execute(
+                "select count(*) from questions where code like %s and type = 'uygunlasdirma' "
+                "and (select count(*) from jsonb_object_keys(options)) <> array_length(string_to_array(correct_answer, ';'), 1)",
+                (prefix + "-Q%",)).fetchone()[0] == 0)
+            for t, in db.execute("select distinct type::text from questions").fetchall():
+                print("type", t, db.execute("select code, correct_answer, options from questions where type::text = %s limit 1", (t,)).fetchone())
+            print(f"\n{len(failures)} failures")
+            sys.exit(1 if failures else 0)
         row = db.execute("select body, image_path, options, correct_answer, type::text, difficulty, is_active, source, source_ref, "
                          "year, groups from questions where code = %s", (first,)).fetchone()
         check(f"{first} has empty text and its own image", row[0] == "" and row[1] == f"{first}.png")

@@ -130,10 +130,11 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - Dərsliklər (məktəb kitabları) üçün razılıq YOXDUR: mövzu izahlarında yalnız mənbə/plan kimi, mətn öz sözlərimizlə yazılır, köçürülmür.
 
 ## Versiya
-- Cari versiya: **1.2.0**, build **8**. Mənbə: `assets/app.json`; `pubspec.yaml` → `version: 1.2.0+8` ilə eyni olmalıdır (`test/core/app_version_test.dart` uyğunsuzluğu tutur).
-- Yeni buraxılışda hər ikisini birlikdə dəyiş. Ana ekranın altında "Versiya 1.2.0 (8)" göstərilir.
+- Cari versiya: **1.3.0**, build **9**. Mənbə: `assets/app.json`; `pubspec.yaml` → `version: 1.3.0+9` ilə eyni olmalıdır (`test/core/app_version_test.dart` uyğunsuzluğu tutur).
+- Yeni buraxılışda hər ikisini birlikdə dəyiş. Ana ekranın altında "Versiya 1.3.0 (9)" göstərilir.
 
-## Test Supabase-in cari vəziyyəti (2026-10-30)
+## Test Supabase-in cari vəziyyəti (2026-11-02)
+- Migration 014 işlənib, kitab 1-dən 253 şəkil-sual yüklənib (206 qapalı, 47 açıq).
 - Migrationlar işlənib: 002, 003, 004 (`topic_mastery` security_invoker).
 - Yüklənib: kimya 158 sual, biologiya 81 sual (`biologiya` fənni aktivdir). Şəkillər `question-images` bucket-indədir.
 - Gözləyən: kimyada 82 sual (yoxlanmayıb / cavabsız / yazılı), biologiyada 38 sual (yazılı, açıq tapşırıq, cavabı uyğunlaşmayan).
@@ -153,9 +154,9 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - `tools/dim/scan_segment.py KITAB.pdf --first N --last M --start 1 --stop 100 --out scan/<ad>`: RapidOCR yalnız sual nömrələrinin yerini tapır
   (ardıcıl artan nömrə qaydası), hər sual ayrıca təmizlənmiş şəkil kimi kəsilir (haşiyə silinir, ağ kağız, 2x böyütmə). Nümunədə 87/100 tapıldı;
   OCR bəzi sətirləri (səhifə yuxarısı, əyri sətirlər) oxumur. Tapılmayanlar hesabatda "missing" kimi görünür.
-- Cavab açarı kitabın sonundan əl ilə JSON-a yazılır (`scan/kimya_I_bolme1_cavablar.json`). Uyğunlaşdırma tipli (A–E olmayan) suallar yüklənmir.
+- Cavab açarı kitabın sonundan əl ilə JSON-a yazılır (`scan/kimya_I_bolme1_cavablar.json`). Açarın forması tipi təyin edir ("Açıq sual tipləri" bölməsinə bax).
 - `tools/dim/import_scans.py` → `out/import_kt1_s01.sql` + `out/upload_kitab/` (şəkillər koda görə adlanır). Kod: `KT<kitab>-S<bölmə>-Q<nömrə>`
-  (məs. `KT1-S01-Q030`): problem bildirişində kod birbaşa kitabda yeri göstərir. Sual mətni BOŞDUR, variantlar yalnız hərfdir ("A".."E").
+  (məs. `KT1-S01-Q030`): problem bildirişində kod birbaşa kitabda yeri göstərir. Sual mətni BOŞDUR, qapalı sualda variantlar yalnız hərfdir ("A".."E").
 - Tətbiq: `Question.isImageOnly` (mətn boş + şəkil var) → şəkil + A–E hərf düymələri (`LetterOptions`). Admin panel mətn boş ola bilər (şəkil varsa).
 - Kitablar: 1 = "Kimya test toplusu I" (DİM, 2025, 359 səhifə): bölmə 1 = səhifə 3–9 (sual 1–100), cavablar səhifə 331.
 - Kitab 1 bölmələri: **bölmə 1** (səhifə 3–9, 87/100 sual yükləndi, mövzu "Kimyanın əsas anlayışları"), **bölmə 2** "Valentlik. Kimyəvi formulların tərtibi"
@@ -169,6 +170,17 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - Bölmə 3 "Kimyəvi formullar üzrə hesablamalar": pdf səhifə 10-14, 75 sual kəsilib, yalnız 1-53 (hərf cavablı) yüklənir; 54-60 çoxseçimli, 61-75 ədədi cavablıdır.
   Əmr: `--first 10 --last 15 --start 1 --stop 75 --skip-above 10:0:105` (`--pad` defoltla: böyük pad əvvəlki sualın son sətrini yeyir).
   `scan_segment.py` indi sütunun sonunda davam edən sualları (`stitch_continuations`, `CONT_TOP`) avtomatik birləşdirir. Kəsmənin kənarı əyri sətirdə yanılsa, `manifest.json`-da `box` düzəldilib `--recrop` işlədilir.
+
+## Açıq sual tipləri
+- `db/migrations/014_open_question_types.sql` (lokal test: `tools/dim/test_migration_014.py`). Yoxlama serverdədir (`check_answer`).
+- `aciq_eded`: yazı xanası, `12,5` və `12.5` eyni sayılır. Açar JSON-da onluq NÖQTƏ ilə: `12.5`.
+- `coxlu_secim`: yalnız rəqəm yazılan xana, şagird `135` yazır, ekranda `1,3,5` görünür. Sıra və təkrar fərq etmir. Açarda vergüllə: `1,3,5`; bazada `135`.
+- `uygunlasdirma`: sətir-hərf cədvəli (`MatchingGrid`), bir sətirdə bir neçə hərf seçilə bilər. Açarda kitabdakı kimi `c; b, e`; bazada `C;BE`, `options = {"1": "ABCDE", "2": "ABCDE"}`. Ekranda `1-c, 2-be`.
+- Bütün sətirlər və hərflər düz olmasa, cavab səhvdir (qismən bal yoxdur).
+- Tətbiq: `OpenAnswerInput` (`lib/features/quiz/presentation/widgets`) hər iki ekranda işləyir; cavabı göstərmək üçün `Question.formatAnswer` / `rightAnswerText`, `correctAnswer` birbaşa göstərilmir.
+- Şəkil-suallar: `import_scans.py` tipi açardan özü tapır; `--open-only` qapalıları buraxır (`out/import_kt<kitab>_s<bölmə>_aciq.sql`).
+- Köhnə APK bu tipləri tanımır: yeni tipli sual yükləməzdən əvvəl tətbiq yenilənməlidir (`min_version`).
+- Admin panel (`PrepAzAdmin`) bu kompüterdə yoxdur, yeni tiplərə hələ uyğunlaşdırılmayıb.
 
 ## Dizayn, dil və menyu (tətbiq)
 - Tema: `lib/core/theme` (böyük yumru künclər `AppRadius`, pill düymələr, Plus Jakarta Sans şrifti `assets/fonts`, fənn rəngləri `AppColors.subjectAccent`).
@@ -189,7 +201,7 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 
 ## Məcburi yeniləmə
 - `db/migrations/008_app_config.sql`: tək sətirli `app_config` (`min_version`, `latest_version`, `update_url`); anon də oxuya bilər (giriş əvvəli yoxlanır), yalnız admin dəyişir. Lokal test: `tools/dim/test_migration_008.py`.
-- Tətbiq: `lib/features/update` (`UpdateGate` `app.dart`-da `AuthGate`-i sarıyır). Versiya `assets/app.json`-dan (`1.2.0+8`) bazadakı ilə müqayisə olunur:
+- Tətbiq: `lib/features/update` (`UpdateGate` `app.dart`-da `AuthGate`-i sarıyır). Versiya `assets/app.json`-dan (`1.3.0+9`) bazadakı ilə müqayisə olunur:
   `min_version`-dan aşağı → bağlanmayan `ForceUpdateScreen`; `latest_version`-dan aşağı → bir dəfə "Sonra" düyməli xəbərdarlıq. Oxunmasa (internet yox / cədvəl yox) heç nə bloklanmır.
 - Admin panel: "Tənzimləmələr" tabı. Yeni buraxılışda ƏVVƏL APK/mağaza yüklənir və link yazılır, SONRA `latest_version` (və lazımsa `min_version`) qaldırılır.
 

@@ -1,13 +1,13 @@
 # Test kitabları: harada dayanmışıq
 
 Hər bölmə bitəndən sonra bu fayl yenilənir. Yeni işə başlamazdan əvvəl buradan bax.
-Son yenilənmə: 2026-10-31
+Son yenilənmə: 2026-11-02
 
 ## Qısa vəziyyət
 - **Kitab 1:** "Kimya test toplusu I" (DİM, 2025, 359 səhifə)
 - **Fayl:** `tools/dim/Kimya test toplusu I 2025 _250822_103034.pdf`
 - **Hazır bölmələr:** 1, 2, 3, 4, 5
-- **Bazada:** 206 şəkil-sual
+- **Bazada:** 253 şəkil-sual (206 qapalı, 47 açıq)
 - **Növbəti:** pdf səhifə 19-da, sol sütunda "Ətraflı yazılı cavab tələb olunan tapşırıqlar" başlayır (pdf səhifə 20-nin sonuna qədər, 18 tapşırıq). Bunlar test deyil, ayrıca qərar lazımdır. Sonrakı test bölməsi pdf səhifə 21-dən yoxlanmalıdır.
 - **Səhifə qeydi:** kitabda çap olunmuş səhifə nömrəsi = pdf səhifəsi + 1 (pdf 15 = kitabda 16).
 
@@ -15,24 +15,22 @@ Son yenilənmə: 2026-10-31
 
 | Bölmə | Ad / mövzu | PDF səhifə | Kəsilib | Yüklənib | Yüklənməyib | Kod | Cavab faylı |
 |---|---|---|---|---|---|---|---|
-| 1 | Kimyanın əsas anlayışları | 3–9 | 87 | 87 | 13 sual (1–100 arası) | `KT1-S01-Qnnn` | `scan/kimya_I_bolme1_cavablar.json` |
+| 1 | Kimyanın əsas anlayışları | 3–9 | 93 | 87 + 6 açıq (95–100) | 7 sual (OCR tapmayıb) | `KT1-S01-Qnnn` | `scan/kimya_I_bolme1_cavablar.json` |
 | 2 | Valentlik və kimyəvi formulların tərtibi | 9 | 16 | 16 | yoxdur | `KT1-S02-Qnnn` | `scan/kimya_I_bolme2_cavablar.json` |
-| 3 | Kimyəvi formullar üzrə hesablamalar | 10–14 | 75 | 53 (1–53) | 22 sual (54–75) | `KT1-S03-Qnnn` | `scan/kimya_I_bolme3_cavablar.json` |
-| 4 | Fiziki və kimyəvi hadisələr, kimyəvi tənliklər | 14 (sağ sütun)–17 | 32 | 22 (1–22) | 10 sual (23–32) | `KT1-S04-Qnnn` | `scan/kimya_I_bolme4_cavablar.json` |
-| 5 | Kimyəvi tənliklər üzrə hesablamalar | 17–19 | 37 | 28 (1–28) | 9 sual (29–37) | `KT1-S05-Qnnn` | `scan/kimya_I_bolme5_cavablar.json` |
+| 3 | Kimyəvi formullar üzrə hesablamalar | 10–14 | 75 | 53 (1–53) + 22 açıq (54–75) | yoxdur | `KT1-S03-Qnnn` | `scan/kimya_I_bolme3_cavablar.json` |
+| 4 | Fiziki və kimyəvi hadisələr, kimyəvi tənliklər | 14 (sağ sütun)–17 | 32 | 22 (1–22) + 10 açıq (23–32) | yoxdur | `KT1-S04-Qnnn` | `scan/kimya_I_bolme4_cavablar.json` |
+| 5 | Kimyəvi tənliklər üzrə hesablamalar | 17–19 | 37 | 28 (1–28) + 9 açıq (29–37) | yoxdur | `KT1-S05-Qnnn` | `scan/kimya_I_bolme5_cavablar.json` |
 
 Cavablar kitabda səhifə 331-dən başlayır.
 
 ## Yarımçıq qalan suallar
-- **Bölmə 1:** 13 sual yoxdur. OCR tapmayanlar və A–E olmayan uyğunlaşdırma sualları. Dəqiq siyahı `scan/kimya_I_test/manifest.json`-da.
-- **Bölmə 3, sual 54–60:** çoxseçimli cavab. Tətbiqdə şəkil-sual üçün dəstək yoxdur.
-- **Bölmə 3, sual 61–75:** ədədi cavab. Tətbiqdə şəkil-sual üçün cavab xanası yoxdur.
-- **Bölmə 4, sual 23–30:** çoxseçimli cavab. Açar `scan/kimya_I_bolme4_cavablar.json`-da saxlanıb (məs. 23 = "2,4").
-- **Bölmə 4, sual 31–32:** ədədi cavab (31 = 5, 32 = 15). Şəkillər kəsilib, amma 32-ci sualın şəkli yoxlanmayıb.
-- **Bölmə 5, sual 29–30:** çoxseçimli cavab (1,2,3 və 1,2,5). Açar faylda saxlanıb.
-- **Bölmə 5, sual 31–37:** ədədi cavab. Açar faylda saxlanıb, şəkillər yoxlanmayıb.
+- **Bölmə 1:** 7 sual yoxdur (OCR tapmayıb). Dəqiq siyahı `scan/kimya_I_test/manifest.json`-da.
 
-Bu tip suallar üçün əvvəl tətbiq dəyişməli və yeni APK çıxmalıdır. Yalnız A–E hərf cavablı suallar tətbiqi yeniləmədən bazadan gəlir.
+## Açıq suallar (47, açarları kitabdan oxunub, şəkilləri gözlə yoxlanıb)
+- **Çoxseçimli (18):** bölmə 1: 95–97, bölmə 3: 54–58, bölmə 4: 23–30, bölmə 5: 29–30.
+- **Ədədi (25):** bölmə 3: 59–74, bölmə 4: 31–32, bölmə 5: 31–37.
+- **Uyğunlaşdırma (4):** bölmə 1: 98–100, bölmə 3: 75.
+- Açar formatı: `CLAUDE.md` → "Açıq sual tipləri". Şəkillər əl ilə kəsilib, `--recrop` bunları pozar.
 
 ## Yeni bölmə əlavə etmək
 Ətraflı: `CLAUDE.md` → "Skan edilmiş test kitabları".

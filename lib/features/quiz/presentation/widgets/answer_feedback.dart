@@ -24,7 +24,7 @@ class AnswerFeedback extends StatelessWidget {
         ? AppStrings.writtenPending
         : result.isCorrect
         ? AppStrings.correct
-        : AppStrings.wrong(question.correctAnswer);
+        : AppStrings.wrong(question.rightAnswerText);
 
     final accent = pending
         ? scheme.outline

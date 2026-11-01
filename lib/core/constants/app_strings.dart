@@ -467,6 +467,16 @@ abstract final class AppStrings {
       _t('Növbəti sual', 'Следующий вопрос', 'Next question');
   static String get toResult => _t('Nəticəyə bax', 'Посмотреть результат', 'See results');
   static String get yourAnswerField => _t('Cavabınız', 'Ваш ответ', 'Your answer');
+  static String get multiAnswerHint => _t(
+    'Doğru bəndlərin nömrələrini yaz, məsələn: 135',
+    'Напиши номера верных пунктов, например: 135',
+    'Type the numbers of the correct items, e.g. 135',
+  );
+  static String get matchingHint => _t(
+    'Hər sətir üçün uyğun hərfləri seç',
+    'Выбери подходящие буквы для каждой строки',
+    'Pick the matching letters for each row',
+  );
   static String get noQuestionsLeft => _t(
     'Bu gün üçün yeni sual qalmadı. Əla iş!\nSəhv etdiyin suallar təkrar vaxtı çatanda burada görünəcək.',
     'На сегодня новых вопросов нет. Отличная работа!\nВопросы с ошибками появятся здесь, когда придёт время повтора.',

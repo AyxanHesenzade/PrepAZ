@@ -1,5 +1,5 @@
 {
- "_comment": "Kimya test toplusu I (DIM, 2025), bolme 3 'Kimyevi formullar uzre hesablamalar'. Yalniz 1-53 (herf cavabli); 54-60 coxsecimli, 61-75 eded cavabli - yuklenmir.",
+ "_comment": "Kimya test toplusu I (DIM, 2025), bolme 3 'Kimyevi formullar uzre hesablamalar'. 54-58 coxlu secim, 59-74 eded, 75 uygunlashdirma. Format: herf = qapali; '1,3' = coxlu secim (vergul); 'c; b, e' = uygunlashdirma (; setir, , herf); eded = aciq (onluq noqte ile: 12.5).",
  "answers": {
   "1": "A",
   "2": "C",
@@ -53,6 +53,28 @@
   "50": "B",
   "51": "E",
   "52": "D",
-  "53": "B"
+  "53": "B",
+  "54": "1,4",
+  "55": "2,3,5",
+  "56": "1,4,6",
+  "57": "3,6",
+  "58": "1,5",
+  "59": "80",
+  "60": "64",
+  "61": "12.5",
+  "62": "37.5",
+  "63": "11.5",
+  "64": "12",
+  "65": "12",
+  "66": "2",
+  "67": "31",
+  "68": "3",
+  "69": "20",
+  "70": "128",
+  "71": "32",
+  "72": "50",
+  "73": "50",
+  "74": "16",
+  "75": "b, e; c; d"
  }
 }

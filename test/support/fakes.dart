@@ -58,6 +58,32 @@ Question numericQuestion({String id = 'n1', String correct = '9,2'}) => Question
       solution: null,
     );
 
+Question multiChoiceQuestion({String id = 'm1', String correct = '135'}) => Question(
+      id: id,
+      code: 'KT1-S03-$id',
+      topicId: 1,
+      type: QuestionType.coxluSecim,
+      body: 'Hansılar doğrudur?',
+      imagePath: null,
+      options: const {},
+      correctAnswer: correct,
+      difficulty: 3,
+      solution: null,
+    );
+
+Question matchingQuestion({String id = 'u1', String correct = 'E;A;BC'}) => Question(
+      id: id,
+      code: 'KT1-S01-$id',
+      topicId: 1,
+      type: QuestionType.uygunlasdirma,
+      body: 'Uyğunluğu müəyyən edin',
+      imagePath: null,
+      options: const {'1': 'ABCDE', '2': 'ABCDE', '3': 'ABCDE'},
+      correctAnswer: correct,
+      difficulty: 3,
+      solution: null,
+    );
+
 /// Serverin yoxlamasını təqlid edir: düzgün cavab = `correctAnswer` (böyük/kiçik hərfə həssas deyil).
 class FakeQuizRepository implements QuizRepository {
   FakeQuizRepository(this.questions);

@@ -112,8 +112,8 @@ class _WrongAnswerCard extends StatelessWidget {
             AppSpacing.gapS,
             Text(
               AppStrings.yourVsRight(
-                result.given ?? '-',
-                question.correctAnswer,
+                question.formatAnswer(result.given),
+                question.rightAnswerText,
               ),
               style: Theme.of(context).textTheme.labelLarge?.copyWith(
                 color: Theme.of(context).colorScheme.onSurfaceVariant,
