@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_spacing.dart';
+import '../../../offline/presentation/offline_providers.dart';
 import '../quiz_providers.dart';
 
 /// Sualın şəkli. Yüklənərkən yer tutucu, alınmasa "Şəkil yüklənmədi" göstərir, sual yenə həll oluna bilir.
@@ -18,13 +21,37 @@ class QuestionImage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // Şəkil telefonda yüklənibsə, internetsiz fayldan açılır; yoxsa imzalı link ilə serverdən.
+    final local = ref.watch(localImagePathProvider(path));
+    return local.when(
+      loading: () =>
+          const _Placeholder(child: CircularProgressIndicator(strokeWidth: 2)),
+      error: (_, _) => _fromServer(context, ref),
+      data: (file) =>
+          file == null ? _fromServer(context, ref) : _fromPhone(context, file),
+    );
+  }
+
+  Widget _fromPhone(BuildContext context, String file) {
+    return GestureDetector(
+      onTap: () => _zoom(context, _FileImage(file)),
+      child: ConstrainedBox(
+        constraints: BoxConstraints(
+          maxHeight: compact ? _compactMaxHeight : double.infinity,
+        ),
+        child: _Frame(child: _FileImage(file, width: double.infinity)),
+      ),
+    );
+  }
+
+  Widget _fromServer(BuildContext context, WidgetRef ref) {
     final url = ref.watch(questionImageUrlProvider(path));
     return url.when(
       loading: () =>
           const _Placeholder(child: CircularProgressIndicator(strokeWidth: 2)),
       error: (_, _) => const _Placeholder(child: _FailedLabel()),
       data: (link) => GestureDetector(
-        onTap: () => _zoom(context, link),
+        onTap: () => _zoom(context, _NetworkImage(link)),
         child: ConstrainedBox(
           constraints: BoxConstraints(
             maxHeight: compact ? _compactMaxHeight : double.infinity,
@@ -35,7 +62,7 @@ class QuestionImage extends ConsumerWidget {
     );
   }
 
-  void _zoom(BuildContext context, String link) {
+  void _zoom(BuildContext context, Widget image) {
     showDialog<void>(
       context: context,
       builder: (_) => Dialog.fullscreen(
@@ -45,7 +72,7 @@ class QuestionImage extends ConsumerWidget {
               child: InteractiveViewer(
                 minScale: 1,
                 maxScale: 5,
-                child: Center(child: _Frame(child: _NetworkImage(link))),
+                child: Center(child: _Frame(child: image)),
               ),
             ),
             Positioned(
@@ -72,6 +99,26 @@ class _Frame extends StatelessWidget {
   @override
   Widget build(BuildContext context) =>
       ColoredBox(color: Colors.white, child: child);
+}
+
+class _FileImage extends StatelessWidget {
+  const _FileImage(this.file, {this.width});
+
+  final String file;
+  final double? width;
+
+  @override
+  Widget build(BuildContext context) {
+    return Image.file(
+      File(file),
+      width: width,
+      fit: BoxFit.contain,
+      errorBuilder: (_, _, _) => const SizedBox(
+        height: QuestionImage._placeholderHeight,
+        child: Center(child: _FailedLabel()),
+      ),
+    );
+  }
 }
 
 class _NetworkImage extends StatelessWidget {

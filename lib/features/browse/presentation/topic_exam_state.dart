@@ -13,6 +13,7 @@ class TopicExamState {
     this.results = const {},
     this.isSending = false,
     this.finished = false,
+    this.savedOffline = false,
     this.error,
   });
 
@@ -30,6 +31,9 @@ class TopicExamState {
   final Map<String, AnswerResult> results;
   final bool isSending;
   final bool finished;
+
+  /// Nəticə telefonda hesablanıb, cavablar internet gələndə göndəriləcək.
+  final bool savedOffline;
   final String? error;
 
   /// Mövzudakı bütün testlər həll edilib.
@@ -61,6 +65,7 @@ class TopicExamState {
     Map<String, AnswerResult>? results,
     bool? isSending,
     bool? finished,
+    bool? savedOffline,
     String? error,
   }) => TopicExamState(
     all: all,
@@ -72,6 +77,7 @@ class TopicExamState {
     results: results ?? this.results,
     isSending: isSending ?? this.isSending,
     finished: finished ?? this.finished,
+    savedOffline: savedOffline ?? this.savedOffline,
     error: error,
   );
 }

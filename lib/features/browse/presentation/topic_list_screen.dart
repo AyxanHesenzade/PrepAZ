@@ -7,6 +7,10 @@ import '../../../core/widgets/async_value_view.dart';
 import '../../home/domain/subject.dart';
 import '../../home/domain/topic_mastery.dart';
 import '../../home/presentation/home_providers.dart';
+import '../../offline/presentation/download_screen.dart';
+import '../../offline/presentation/offline_providers.dart';
+import '../../offline/presentation/widgets/offline_hint_card.dart';
+import '../../offline/presentation/widgets/topic_download_chip.dart';
 import '../domain/browse_topic.dart';
 import '../domain/search_fold.dart';
 import 'browse_providers.dart';
@@ -52,8 +56,24 @@ class _TopicListScreenState extends ConsumerState<TopicListScreen> {
           in ref.watch(masteryProvider(subject.id)).asData?.value ?? const <TopicMastery>[])
         m.topicId: m,
     };
+    // Heç nə yüklənməyibsə və yükləmə mümkündürsə (kataloq alınıb), internetsiz həll etməyi təklif edirik.
+    final stored = ref.watch(storedTopicsProvider(subject.id)).asData?.value;
+    final catalog = ref.watch(downloadCatalogProvider(subject.id)).asData?.value;
+    final offersOffline = stored != null && stored.isEmpty && catalog != null && catalog.isNotEmpty;
+    void openDownloads() => Navigator.of(context).push(
+      MaterialPageRoute<void>(builder: (_) => DownloadScreen(subject: subject)),
+    );
     return Scaffold(
-      appBar: AppBar(title: Text(AppStrings.topicsTitle)),
+      appBar: AppBar(
+        title: Text(AppStrings.topicsTitle),
+        actions: [
+          IconButton(
+            tooltip: AppStrings.offlineTitle,
+            icon: const Icon(Icons.download_for_offline_outlined),
+            onPressed: openDownloads,
+          ),
+        ],
+      ),
       body: SafeArea(
         child: AsyncValueView<List<BrowseTopic>>(
           value: ref.watch(provider),
@@ -104,6 +124,7 @@ class _TopicListScreenState extends ConsumerState<TopicListScreen> {
                   child: ListView(
                     padding: AppSpacing.pagePadding,
                     children: [
+                      if (offersOffline) OfflineHintCard(subject: subject, onOpen: openDownloads),
                       Text(
                         AppStrings.topicsHint,
                         style: Theme.of(context).textTheme.bodyMedium
@@ -122,9 +143,12 @@ class _TopicListScreenState extends ConsumerState<TopicListScreen> {
                             subtitle: Text(
                               _subtitle(topic, progress[topic.id]),
                             ),
-                            trailing: Icon(
-                              Icons.chevron_right_rounded,
-                              color: scheme.outline,
+                            trailing: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                TopicDownloadChip(subject: subject, topicId: topic.id),
+                                Icon(Icons.chevron_right_rounded, color: scheme.outline),
+                              ],
                             ),
                             onTap: () => Navigator.of(context).push(
                               MaterialPageRoute<void>(

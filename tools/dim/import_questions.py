@@ -17,6 +17,7 @@ from pathlib import Path
 from openpyxl import load_workbook
 
 from build_xlsx import COLUMNS
+from compress_images import web_name
 from subjects import SUBJECTS
 
 HERE = Path(__file__).parent
@@ -59,7 +60,7 @@ def select_rows(rows):
     return chosen, skipped
 
 
-def validate(chosen, images_dir, prefix="KIM"):
+def validate(chosen, images_dir, prefix="KIM", webp_dir=None):
     errors, seen, section_of = [], {}, {}
     for i, r in chosen:
         def err(msg):
@@ -103,6 +104,8 @@ def validate(chosen, images_dir, prefix="KIM"):
         for col in ("şəkil", "izah şəkli"):
             if r[col] and not (images_dir / r[col]).exists():
                 err(f"{col} faylı yoxdur: {r[col]}")
+            elif r[col] and webp_dir is not None and not (webp_dir / web_name(r[col])).exists():
+                err(f"{col}: WebP yoxdur ({web_name(r[col])}), əvvəl python compress_images.py işlədin")
     if errors:
         raise ImportErrors(errors)
 
@@ -122,8 +125,8 @@ def build_sql(chosen, slug="kimya", subject_name="kimya", section_order=()):
         q_rows.append(
             "  (" + ", ".join([
                 lit(r["kod"]), lit(r["bölmə"]), lit(r["mövzu"]), lit(r["tip"]), lit(r["sual mətni"]),
-                lit(r["şəkil"]), lit(options), lit(r["düzgün cavab"]), lit(r["çətinlik"]), lit(r["həll"]),
-                lit(groups), lit(r["il"]), lit(r["mənbədə yeri"]), lit(r["izah şəkli"]),
+                lit(web_name(r["şəkil"])), lit(options), lit(r["düzgün cavab"]), lit(r["çətinlik"]), lit(r["həll"]),
+                lit(groups), lit(r["il"]), lit(r["mənbədə yeri"]), lit(web_name(r["izah şəkli"])),
             ]) + ")"
         )
     codes = ", ".join(lit(r["kod"]) for _i, r in chosen)
@@ -235,7 +238,7 @@ def main(argv=None):
     for reason, n in skipped.most_common():
         print(f"  buraxıldı: {n} × {reason}")
     try:
-        validate(chosen, HERE / "images", cfg["prefix"])
+        validate(chosen, HERE / "images", cfg["prefix"], HERE / "out" / "webp")
     except ImportErrors as e:
         print(f"\nXƏTA: {len(e.args[0])} problem tapıldı, heç nə yazılmadı:")
         for line in e.args[0]:

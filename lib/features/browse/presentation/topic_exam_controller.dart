@@ -2,6 +2,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/error/app_exception.dart';
 import '../../home/presentation/home_providers.dart';
+import '../../../core/utils/client_id.dart';
+import '../../offline/domain/answer_outbox.dart';
+import '../../offline/presentation/offline_providers.dart';
+import '../../offline/presentation/offline_sync.dart';
+import '../../quiz/domain/answer_checker.dart';
 import '../../quiz/domain/answer_result.dart';
 import '../../quiz/domain/question.dart';
 import '../../quiz/domain/quiz_repository.dart';
@@ -22,6 +27,9 @@ class TopicExamController extends AsyncNotifier<TopicExamState> {
 
   final TopicExamKey key;
   String? _sessionId;
+
+  /// Hər cavabın serverdə təkrarsız nömrəsi: yolda itən cavab təkrar göndəriləndə ikiqat yazılmır.
+  final _clientIds = <String, String>{};
 
   QuizRepository get _quiz => ref.read(quizRepositoryProvider);
   TopicDraftRepository get _drafts => ref.read(topicDraftRepositoryProvider);
@@ -106,6 +114,11 @@ class TopicExamController extends AsyncNotifier<TopicExamState> {
         if (sent.contains(null)) throw const AppException('');
       }
     } on AppException catch (e) {
+      // Yüklənmiş mövzuda internet yoxdursa, nəticə telefonda hesablanır, cavablar növbəyə yazılır.
+      if (await _isDownloaded()) {
+        await _finishOffline(s, results);
+        return;
+      }
       state = AsyncData(_current.copyWith(results: results, isSending: false, error: e.message));
       return;
     }
@@ -117,6 +130,40 @@ class TopicExamController extends AsyncNotifier<TopicExamState> {
     await _clearDraft();
     ref.invalidate(masteryProvider(key.subjectId));
     state = AsyncData(_current.copyWith(results: results, isSending: false, finished: true));
+    // İnternet işləyir: əvvəlki oflayn cavablar da getsin.
+    flushOfflineAnswers(ref);
+  }
+
+  Future<bool> _isDownloaded() async {
+    final topic = await ref.read(offlineStoreProvider).getTopic(key.topicId);
+    return topic != null && topic.isComplete;
+  }
+
+  /// Göndərilməyən cavabları telefonda yoxlayır (serverin qaydası ilə eyni: `AnswerChecker`) və növbəyə yazır.
+  Future<void> _finishOffline(TopicExamState s, Map<String, AnswerResult> results) async {
+    final outbox = ref.read(answerOutboxProvider);
+    final done = {...results};
+    for (final q in s.questions) {
+      final given = s.given[q.id];
+      if (given == null || done.containsKey(q.id)) continue;
+      final isCorrect = AnswerChecker.isCorrect(q, given);
+      await outbox.add(
+        OutboxEntry(
+          clientId: _clientIds.putIfAbsent(q.id, newClientId),
+          questionId: q.id,
+          topicId: key.topicId,
+          subjectId: key.subjectId,
+          given: given,
+          isCorrect: isCorrect,
+          answeredAt: DateTime.now().toUtc(),
+        ),
+      );
+      done[q.id] = AnswerResult(question: q, given: given, isCorrect: isCorrect);
+    }
+    await _clearDraft();
+    state = AsyncData(
+      _current.copyWith(results: done, isSending: false, finished: true, savedOffline: true),
+    );
   }
 
   /// Nəticə ekranından növbəti testlərə keçid.
@@ -129,6 +176,7 @@ class TopicExamController extends AsyncNotifier<TopicExamState> {
         sessionId: _sessionId!,
         given: given,
         timeMs: 0,
+        clientId: _clientIds.putIfAbsent(q.id, newClientId),
       );
       return AnswerResult(question: q, given: given, isCorrect: isCorrect);
     } on AppException {

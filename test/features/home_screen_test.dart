@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/misc.dart' show Override;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:prep_az/core/constants/app_strings.dart';
 import 'package:prep_az/core/error/app_exception.dart';
@@ -36,6 +37,7 @@ Widget buildHome({
   required SubjectRepository subjects,
   required ProfileRepository profile,
   List<TopicMastery> mastery = const [],
+  List<Override> extraOverrides = const [],
 }) {
   return ProviderScope(
     retry: (_, _) => null,
@@ -49,6 +51,7 @@ Widget buildHome({
       goalRepositoryProvider.overrideWithValue(
         FakeGoalRepository(goal: const UserGoal(periodId: 1)),
       ),
+      ...extraOverrides,
     ],
     child: const MaterialApp(home: HomeScreen()),
   );

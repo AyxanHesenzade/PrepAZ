@@ -138,9 +138,9 @@ def main():
               db.execute("select count(*) from questions where source = 'DİM' and source_ref like '%variantı%' "
                          "and exam_levels = '{qebul}' and groups <> '{}' and is_active").fetchone()[0] == n_q)
         check("image_path stored for the image question",
-              db.execute("select image_path from questions where code = %s", (image,)).fetchone()[0] == f"{image}.png")
+              db.execute("select image_path from questions where code = %s", (image,)).fetchone()[0] == f"{image}.webp")
         check("every question has its explanation image path stored",
-              db.execute("select count(*) from questions where solution_image_path like 'KIM-%_izah.png'").fetchone()[0] == n_q)
+              db.execute("select count(*) from questions where solution_image_path like 'KIM-%_izah.webp'").fetchone()[0] == n_q)
         check("aciq_eded has no options, qapali has A-E",
               db.execute("select options is null from questions where code = %s", (numeric,)).fetchone()[0]
               and db.execute("select count(*) from jsonb_object_keys((select options from questions where code = %s))",

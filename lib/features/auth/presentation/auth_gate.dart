@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../home/presentation/home_screen.dart';
+import '../../offline/presentation/offline_sync.dart';
 import 'auth_providers.dart';
 import 'auth_screen.dart';
 
@@ -14,7 +15,7 @@ class AuthGate extends ConsumerWidget {
     final signedIn = ref.watch(isSignedInProvider);
     return signedIn.when(
       data: (isSignedIn) =>
-          isSignedIn ? const HomeScreen() : const AuthScreen(),
+          isSignedIn ? const AnswerSyncGate(child: HomeScreen()) : const AuthScreen(),
       loading: () =>
           const Scaffold(body: Center(child: CircularProgressIndicator())),
       error: (_, _) => const AuthScreen(),

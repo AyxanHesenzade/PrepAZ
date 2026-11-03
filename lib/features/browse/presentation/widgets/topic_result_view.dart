@@ -5,6 +5,7 @@ import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_spacing.dart';
 import '../../../../core/widgets/app_button.dart';
 import '../../../../core/widgets/math_text.dart';
+import '../../../../core/widgets/message_banner.dart';
 import '../../../quiz/domain/answer_result.dart';
 import '../../../quiz/presentation/widgets/question_image.dart';
 import '../topic_exam_state.dart';
@@ -43,6 +44,10 @@ class TopicResultView extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: text.titleMedium,
                 ),
+                if (state.savedOffline) ...[
+                  AppSpacing.gapM,
+                  MessageBanner(AppStrings.resultSavedOffline),
+                ],
               ],
             ),
           );

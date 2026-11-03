@@ -11,6 +11,13 @@ abstract final class AppStrings {
     AppLanguage.en => en,
   };
 
+  static List<String> _tl(List<String> az, List<String> ru, List<String> en) =>
+      switch (language) {
+        AppLanguage.az => az,
+        AppLanguage.ru => ru,
+        AppLanguage.en => en,
+      };
+
   static const appName = 'PrepAZ';
 
   // Ümumi
@@ -310,6 +317,180 @@ abstract final class AppStrings {
   static String get previousQuestion => _t('Əvvəlki', 'Назад', 'Previous');
   static String get finishAction => _t('Bitir', 'Завершить', 'Finish');
   static String get continueSolving => _t('Davam et', 'Продолжить', 'Continue');
+  static String get offlineTitle =>
+      _t('İnternetsiz həll et', 'Решай без интернета', 'Solve offline');
+  static String get offlineIntro => _t(
+    'Mövzunu bir dəfə yüklə, sonra avtobusda və metroda internet olmadan həll et. Yükləməni Wi-Fi ilə etmək məsləhətdir.',
+    'Загрузи тему один раз и решай без интернета в автобусе и метро. Лучше загружать по Wi-Fi.',
+    'Download a topic once, then solve it on the bus or metro with no internet. Wi-Fi is recommended.',
+  );
+  static String get offlineHintBody => _t(
+    'Mövzunu bir dəfə yüklə: yolda internet lazım olmayacaq.',
+    'Загрузи тему один раз: в дороге интернет не понадобится.',
+    'Download a topic once: you will not need internet on the way.',
+  );
+  static String get offlineHintAction =>
+      _t('Mövzuları yüklə', 'Загрузить темы', 'Download topics');
+  static String get onPhoneLabel => _t('Telefonda', 'На телефоне', 'On phone');
+  static String get offlineStatsEmpty => _t(
+    'Hələ heç nə yüklənməyib',
+    'Пока ничего не загружено',
+    'Nothing downloaded yet',
+  );
+  static String offlineStats(int topics, String size) => _t(
+    'Telefonda: $topics mövzu · $size',
+    'На телефоне: тем $topics · $size',
+    'On your phone: $topics topics · $size',
+  );
+  static String get offlineNoInternet => _t(
+    'İnternet yoxdur: yalnız yüklənmiş mövzular göstərilir.',
+    'Нет интернета: показаны только загруженные темы.',
+    'No internet: only downloaded topics are shown.',
+  );
+  static String get offlineNeedInternetToDownload => _t(
+    'Mövzu yükləmək üçün internetə qoşul. Yükləndikdən sonra internetsiz işləyəcək.',
+    'Подключись к интернету, чтобы загрузить темы. После загрузки они работают без интернета.',
+    'Connect to the internet to download topics. Once downloaded they work without it.',
+  );
+  static String get homeOfflineTitle => _t(
+    'Hazırda oflayn rejimdəsən',
+    'Сейчас ты в офлайн-режиме',
+    'You are offline right now',
+  );
+  static String get homeOfflineBodyWithDownloads => _t(
+    'İnternet yoxdur, amma yüklədiyin suallar işləyir.',
+    'Интернета нет, но загруженные вопросы работают.',
+    'There is no internet, but the questions you downloaded work.',
+  );
+  static String get homeOfflineBodyEmpty => _t(
+    'İnternet yoxdur. Hələ mövzu yükləməmisən: internet olanda mövzuları yüklə.',
+    'Интернета нет. Ты ещё не загружал темы: загрузи их, когда будет интернет.',
+    'There is no internet and you have not downloaded any topics yet: download them when you are online.',
+  );
+  static String get homeOfflineRetry => _t(
+    'İnterneti yenidən yoxla',
+    'Проверить интернет снова',
+    'Check the internet again',
+  );
+  static String get homeOfflineStill => _t(
+    'Hələ də internet yoxdur.',
+    'Интернета всё ещё нет.',
+    'Still no internet.',
+  );
+  static String get homeOfflineGo =>
+      _t('Yüklədiyin suallara keç', 'Перейти к загруженным', 'Go to downloaded questions');
+  static String get downloadedTitle =>
+      _t('Yüklədiyin suallar', 'Загруженные вопросы', 'Downloaded questions');
+  static String get downloadedPickSubject => _t(
+    'Fənni seç, yüklədiyin mövzular açılacaq.',
+    'Выбери предмет: откроются загруженные темы.',
+    'Pick a subject to open the topics you downloaded.',
+  );
+  static String get downloadedEmpty => _t(
+    'Hələ heç nə yüklənməyib. İnternet olanda Mövzular bölməsindən mövzu yüklə.',
+    'Пока ничего не загружено. Когда будет интернет, загрузи тему в разделе «Темы».',
+    'Nothing is downloaded yet. When you are online, download a topic from the Topics section.',
+  );
+  static String downloadedSubjectLine(int topics, String size) => _t(
+    '$topics mövzu · $size',
+    'Тем: $topics · $size',
+    '$topics topics · $size',
+  );
+  // Köməkçinin məşqdə dediyi sözlər. `{n}` ardıcıl düz sayı ilə əvəz olunur.
+  static List<String> get cheerThree => _tl(
+    ['Əla gedirsən! Ardıcıl {n} düz 🔥', '{n} düz ardıcıl! Beyin qızdı 😎', 'Hə, bax belə! {n} düz ardıcıl 👏'],
+    ['Отлично! {n} правильных подряд 🔥', '{n} подряд! Мозг разогрелся 😎', 'Вот так! {n} правильных подряд 👏'],
+    ['Nice! {n} correct in a row 🔥', '{n} in a row! Your brain is warmed up 😎', 'Yes, like that! {n} correct in a row 👏'],
+  );
+  static List<String> get cheerFive => _tl(
+    ['{n} düz ardıcıl! Sən məşqi yeyirsən 😄', 'Dayan, dayan... {n} düz?! Müəllimlər sənə baxır 👀'],
+    ['{n} подряд! Ты съедаешь эту тренировку 😄', 'Стоп-стоп... {n} правильных?! Учителя смотрят на тебя 👀'],
+    ['{n} in a row! You are eating this practice for breakfast 😄', 'Wait, wait... {n} correct?! The teachers are watching you 👀'],
+  );
+  static List<String> get cheerBig => _tl(
+    ['{n} düz ardıcıl! Sən artıq robotsan 🤖', '{n} ardıcıl düz! Bu nə rekorddur belə 🏆', 'Nəfəs al! {n} düz ardıcıl, sən yanırsan 🚀'],
+    ['{n} подряд! Ты уже робот 🤖', '{n} правильных подряд! Что это за рекорд 🏆', 'Выдохни! {n} подряд, ты в огне 🚀'],
+    ['{n} in a row! You are basically a robot 🤖', '{n} correct in a row! What a record 🏆', 'Breathe! {n} in a row, you are on fire 🚀'],
+  );
+  static List<String> get cheerLegend => _tl(
+    ['{n} düz ardıcıl! Əfsanə sənsən 👑'],
+    ['{n} подряд! Легенда это ты 👑'],
+    ['{n} in a row! You are a legend 👑'],
+  );
+  static List<String> get cheerComeback => _tl(
+    ['{n} düz yazmışdın, bir səhv nədir ki! Davam 💪', 'Hər kəs yanılır. Əsas odur ki, davam edirsən 😉', 'Eybi yox, növbəti sualda qaytarırsan! 🎯'],
+    ['Ты ответил правильно {n} раз подряд, одна ошибка не беда! Дальше 💪', 'Все ошибаются. Главное, что ты продолжаешь 😉', 'Ничего, на следующем вопросе отыграешься! 🎯'],
+    ['You had {n} right, one mistake is nothing! Keep going 💪', 'Everyone slips. What matters is that you keep going 😉', 'No worries, you will win it back on the next one! 🎯'],
+  );
+  static List<String> get cheerKimya => _tl(
+    ['Reaksiya başladı! Ardıcıl {n} düz ⚗️', 'Mendeleyev səninlə fəxr edərdi 🧪'],
+    ['Реакция пошла! {n} правильных подряд ⚗️', 'Менделеев гордился бы тобой 🧪'],
+    ['The reaction has started! {n} correct in a row ⚗️', 'Mendeleev would be proud of you 🧪'],
+  );
+  static List<String> get cheerKimyaComeback => _tl(
+    ['Kimya hərdən çətin gəlir. Menyudan tövsiyə olunan müəllimlərə də bax 😉'],
+    ['Химия иногда сложная. Загляни в меню «Рекомендуемые учителя» 😉'],
+    ['Chemistry can be tough. Check the recommended teachers in the menu 😉'],
+  );
+  static List<String> get cheerBiologiya => _tl(
+    ['Hüceyrələrin də alqışlayır! {n} düz ardıcıl 🧬', 'Təkamül səndən yan keçmir: {n} düz ardıcıl 🌱'],
+    ['Даже клетки аплодируют! {n} правильных подряд 🧬', 'Эволюция от тебя не отстаёт: {n} подряд 🌱'],
+    ['Even your cells are applauding! {n} correct in a row 🧬', 'Evolution cannot keep up with you: {n} in a row 🌱'],
+  );
+
+  static String get offlineNothing => _t(
+    'Yükləmək üçün mövzu yoxdur.',
+    'Нет тем для загрузки.',
+    'No topics to download.',
+  );
+  static String get downloadAction => _t('Yüklə', 'Загрузить', 'Download');
+  static String get downloadResume => _t('Davam et', 'Продолжить', 'Resume');
+  static String get downloadUpdate => _t('Yenilə', 'Обновить', 'Update');
+  static String get downloadedLabel => _t('Yükləndi', 'Загружено', 'Downloaded');
+  static String get downloadStop => _t('Dayandır', 'Остановить', 'Stop');
+  static String get downloadDelete => _t('Telefondan sil', 'Удалить с телефона', 'Remove from phone');
+  static String get downloadUpdateAvailable =>
+      _t('Yenilənmə var', 'Есть обновление', 'Update available');
+  static String get downloadIncomplete =>
+      _t('Yarımçıq yüklənib', 'Загружено не полностью', 'Partly downloaded');
+  static String downloadDeleteTitle(String name) => _t(
+    '"$name" telefondan silinsin?',
+    'Удалить «$name» с телефона?',
+    'Remove "$name" from your phone?',
+  );
+  static String get downloadDeleteBody => _t(
+    'İstəsən, sonra yenidən yükləyə bilərsən. Cavabların itmir.',
+    'Потом можно загрузить снова. Твои ответы не пропадут.',
+    'You can download it again later. Your answers are not lost.',
+  );
+  static String get downloadDeleteConfirm => _t('Sil', 'Удалить', 'Remove');
+  static String downloadAll(String size) => _t(
+    'Hamısını yüklə ($size)',
+    'Загрузить всё ($size)',
+    'Download all ($size)',
+  );
+  static String downloadAllTitle(int count, String size) => _t(
+    '$count mövzu yüklənsin? ($size)',
+    'Загрузить тем: $count? ($size)',
+    'Download $count topics? ($size)',
+  );
+  static String get downloadAllBody => _t(
+    'Wi-Fi-a qoşulmağın məsləhətdir, yoxsa mobil internet xərclənəcək.',
+    'Лучше подключиться к Wi-Fi, иначе потратится мобильный интернет.',
+    'Connect to Wi-Fi if you can, otherwise mobile data will be used.',
+  );
+  static String downloadingPercent(int percent) =>
+      _t('Yüklənir $percent%', 'Загрузка $percent%', 'Downloading $percent%');
+  static String topicSizeLine(int questions, String size) => _t(
+    '$questions test · $size',
+    'Тестов: $questions · $size',
+    '$questions questions · $size',
+  );
+  static String get resultSavedOffline => _t(
+    'İnternet yoxdur: nəticə telefonda hesablandı. Cavablarınız saxlanıldı və internet olanda avtomatik göndəriləcək.',
+    'Нет интернета: результат посчитан на телефоне. Ответы сохранены и отправятся автоматически, когда появится интернет.',
+    'No internet: the result was calculated on your phone. Your answers are saved and will be sent automatically once you are online.',
+  );
   static String get backToTopics => _t('Mövzulara qayıt', 'К темам', 'Back to topics');
   static String get restartTopic => _t('Yenidən başla', 'Начать заново', 'Start again');
   static String get topicDone => _t('Tamamlandı', 'Завершено', 'Completed');

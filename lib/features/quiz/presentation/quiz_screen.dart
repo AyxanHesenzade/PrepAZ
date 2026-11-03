@@ -1,7 +1,10 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/constants/app_strings.dart';
+import '../../../core/providers.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/widgets/app_button.dart';
 import '../../../core/widgets/async_value_view.dart';
@@ -9,12 +12,17 @@ import '../../../core/widgets/math_text.dart';
 import '../../../core/widgets/soft_progress_bar.dart';
 import '../../../core/widgets/message_banner.dart';
 import '../../home/domain/subject.dart';
+import '../domain/answer_result.dart';
+import '../domain/cheer_policy.dart';
 import '../domain/question.dart';
 import '../domain/quiz_request.dart';
+import 'cheer_text.dart';
 import 'quiz_controller.dart';
+import 'quiz_providers.dart';
 import 'quiz_state.dart';
 import 'result_view.dart';
 import 'widgets/answer_feedback.dart';
+import 'widgets/cheer_overlay.dart';
 import 'widgets/letter_options.dart';
 import 'widgets/open_answer_input.dart';
 import 'widgets/option_tile.dart';
@@ -77,6 +85,10 @@ class QuizScreen extends ConsumerWidget {
             return _QuestionBody(
               state: state,
               controller: ref.read(provider.notifier),
+              // Köməkçinin sözləri hələlik yalnız "Bugünkü məşq"-dədir
+              cheerFor: kind == QuizKind.daily ? subject.slug : null,
+              cheerRandom: ref.read(cheerRandomProvider),
+              animateMascot: ref.watch(mascotMotionProvider),
             );
           },
         ),
@@ -86,10 +98,21 @@ class QuizScreen extends ConsumerWidget {
 }
 
 class _QuestionBody extends StatefulWidget {
-  const _QuestionBody({required this.state, required this.controller});
+  const _QuestionBody({
+    required this.state,
+    required this.controller,
+    required this.cheerFor,
+    required this.cheerRandom,
+    required this.animateMascot,
+  });
 
   final QuizState state;
   final QuizController controller;
+
+  /// Fənn kodu (kimya, biologiya...). null = bu məşqdə köməkçi danışmır.
+  final String? cheerFor;
+  final Random cheerRandom;
+  final bool animateMascot;
 
   @override
   State<_QuestionBody> createState() => _QuestionBodyState();
@@ -97,6 +120,8 @@ class _QuestionBody extends StatefulWidget {
 
 class _QuestionBodyState extends State<_QuestionBody> {
   final _feedbackKey = GlobalKey();
+  String? _cheerMessage;
+  int _cheerToken = 0;
 
   QuizState get state => widget.state;
   QuizController get controller => widget.controller;
@@ -106,6 +131,7 @@ class _QuestionBodyState extends State<_QuestionBody> {
   void didUpdateWidget(_QuestionBody old) {
     super.didUpdateWidget(old);
     if (!old.state.isAnswered && state.isAnswered) {
+      _cheerAfterAnswer();
       WidgetsBinding.instance.addPostFrameCallback((_) {
         final feedback = _feedbackKey.currentContext;
         if (feedback != null && feedback.mounted) {
@@ -119,12 +145,41 @@ class _QuestionBodyState extends State<_QuestionBody> {
     }
   }
 
+  /// Cavabdan sonra köməkçi nə deyəcək: ardıcıl düzlərə görə (bax `CheerPolicy`). Ardıcıl səhvlərə heç nə.
+  void _cheerAfterAnswer() {
+    final slug = widget.cheerFor;
+    if (slug == null) return;
+    final cheer = CheerPolicy.after([for (final r in state.results) r.isCorrect]);
+    if (cheer == null) return;
+    _cheerMessage = cheerText(cheer, subjectSlug: slug, random: widget.cheerRandom);
+    _cheerToken++;
+  }
+
   @override
   Widget build(BuildContext context) {
     final question = state.current;
     final result = state.currentResult;
     final answered = result != null;
 
+    return Stack(
+      fit: StackFit.expand,
+      children: [
+        _buildBody(context, question, result, answered),
+        Positioned(
+          top: AppSpacing.s,
+          left: 0,
+          right: 0,
+          child: CheerOverlay(
+            message: _cheerMessage,
+            token: _cheerToken,
+            animateMascot: widget.animateMascot,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildBody(BuildContext context, Question question, AnswerResult? result, bool answered) {
     return Column(
       children: [
         Padding(

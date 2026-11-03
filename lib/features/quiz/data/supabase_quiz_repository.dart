@@ -81,23 +81,38 @@ class SupabaseQuizRepository implements QuizRepository {
   @override
   Future<bool> submitAnswer({
     required String questionId,
-    required String sessionId,
+    required String? sessionId,
     required String? given,
     required int timeMs,
+    String? clientId,
+    DateTime? answeredAt,
   }) {
     return guard(() async {
-      final row = await _db
-          .from('answers')
-          .insert({
-            'user_id': _userId,
-            'question_id': questionId,
-            'session_id': sessionId,
-            'given_answer': given,
-            'time_ms': timeMs,
-          })
-          .select('is_correct')
-          .single();
-      return row['is_correct'] as bool;
+      try {
+        final row = await _db
+            .from('answers')
+            .insert({
+              'user_id': _userId,
+              'question_id': questionId,
+              'session_id': ?sessionId,
+              'given_answer': given,
+              'time_ms': timeMs,
+              'client_id': ?clientId,
+              'answered_at': ?answeredAt?.toUtc().toIso8601String(),
+            })
+            .select('is_correct')
+            .single();
+        return row['is_correct'] as bool;
+      } on PostgrestException catch (e) {
+        // Bu cavab əvvəl yazılıb (cavab yolda itmişdi): təkrar yazılmır, mövcud nəticə qaytarılır.
+        if (e.code != '23505' || clientId == null) rethrow;
+        final row = await _db
+            .from('answers')
+            .select('is_correct')
+            .eq('client_id', clientId)
+            .single();
+        return row['is_correct'] as bool;
+      }
     });
   }
 }

@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/config/app_features.dart';
@@ -11,6 +13,9 @@ import '../domain/quiz_repository.dart';
 final imagesEnabledProvider = Provider<bool>(
   (ref) => AppFeatures.questionImages,
 );
+
+/// Köməkçinin söz seçimi. Testlərdə sabit `Random` verilir.
+final cheerRandomProvider = Provider<Random>((ref) => Random());
 
 final quizRepositoryProvider = Provider<QuizRepository>(
   (ref) => SupabaseQuizRepository(ref.watch(supabaseClientProvider)),

@@ -7,6 +7,9 @@ import '../../../core/theme/app_spacing.dart';
 import '../../../core/widgets/async_value_view.dart';
 import '../../../core/widgets/fade_slide_in.dart';
 import '../../browse/presentation/topic_list_screen.dart';
+import '../../offline/presentation/download_screen.dart';
+import '../../offline/presentation/offline_providers.dart';
+import '../../offline/presentation/widgets/offline_home_banner.dart';
 import '../../goal/domain/exam_goal.dart';
 import '../../goal/presentation/goal_providers.dart';
 import '../../goal/presentation/goal_screen.dart';
@@ -96,6 +99,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                     child: RefreshIndicator(
                       onRefresh: _refresh,
                       child: ListView(
+                        // qısa qalanda da (məs. internetsiz yalnız zolaq var) çəkib yeniləmək işləsin
+                        physics: const AlwaysScrollableScrollPhysics(),
                         padding: const EdgeInsets.fromLTRB(
                           AppSpacing.m + 4,
                           AppSpacing.m,
@@ -103,6 +108,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                           AppSpacing.l,
                         ),
                         children: [
+                          const OfflineHomeBanner(),
                           const FadeSlideIn(child: _StreakSection()),
                           AppSpacing.gapM,
                           const FadeSlideIn(index: 1, child: _GoalSection()),
@@ -153,8 +159,11 @@ class _StreakSection extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final days = ref.watch(streakDaysProvider);
+    // seriya köməkçi məlumatdır: oxunmasa (məs. internet yoxdur) xəta bloku göstərilmir, ana ekranı pozmur
+    if (days.hasError) return const SizedBox.shrink();
     return AsyncValueView(
-      value: ref.watch(streakDaysProvider),
+      value: days,
       onRetry: () => ref.invalidate(streakDaysProvider),
       builder: (days) => StreakCard(days: days),
     );
@@ -221,10 +230,13 @@ class _SubjectsSection extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // İnternet olmayanda fənn kartları göstərilmir (düymələri işləmir): yalnız "Hazırda oflayn rejimdəsən" yeri qalır.
+    final offline = ref.watch(offlineModeProvider);
     return AsyncValueView(
       value: ref.watch(subjectsProvider),
       onRetry: () => ref.invalidate(subjectsProvider),
       builder: (subjects) {
+        if (offline) return const SizedBox.shrink();
         if (subjects.isEmpty) return Text(AppStrings.noSubjects);
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -292,6 +304,7 @@ class _SubjectItem extends ConsumerWidget {
           _open(context, ref, WeakTopicsScreen(subject: subject)),
       onMistakes: () => _open(context, ref, MistakesScreen(subject: subject)),
       onTopics: () => _open(context, ref, TopicListScreen(subject: subject)),
+      onOffline: () => _open(context, ref, DownloadScreen(subject: subject)),
     );
   }
 }

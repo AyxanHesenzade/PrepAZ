@@ -23,6 +23,15 @@ class Handler(http.server.BaseHTTPRequestHandler):
         STORE[name] = True
         self._reply(200, b'{"Key":"ok"}')
 
+    def do_DELETE(self):
+        import json as _json
+        SEEN_HEADERS.append(self.headers)
+        names = _json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))))["prefixes"]
+        if self.headers.get("Authorization") != "Bearer test-key":
+            return self._reply(401, b'{"error":"Unauthorized"}')
+        gone = [n for n in names if STORE.pop(n, None)]
+        self._reply(200, _json.dumps([{"name": n} for n in gone]).encode())
+
     def _reply(self, code, body):
         self.send_response(code)
         self.send_header("Content-Length", str(len(body)))
@@ -53,6 +62,18 @@ def main():
         check("wrong key raises", False)
     except RuntimeError as e:
         check("wrong key raises without leaking the key", "401" in str(e) and "wrong-key" not in str(e))
+    check("webp is sent with its own content type",
+          upload_images.upload_one(base, "test-key", "KIM-0001.webp", b"x") == "uploaded"
+          and SEEN_HEADERS[-1].get("Content-Type") == "image/webp")
+    check("png keeps image/png", SEEN_HEADERS[0].get("Content-Type") == "image/png")
+    check("delete removes only existing objects",
+          upload_images.delete_many(base, "test-key", ["KIM-0001.png", "NOPE.png"]) == 1 and "KIM-0001.png" not in STORE)
+    check("the .webp was not deleted with the .png", "KIM-0001.webp" in STORE)
+    try:
+        upload_images.delete_many(base, "wrong-key", ["KIM-0001.webp"])
+        check("delete with wrong key raises", False)
+    except RuntimeError as e:
+        check("delete with wrong key raises without leaking the key", "401" in str(e) and "wrong-key" not in str(e))
     server.shutdown()
     print("ALL PASSED" if not failures else "FAILED: " + ", ".join(failures))
     return 1 if failures else 0

@@ -42,7 +42,7 @@ def main():
         check(f"{n} questions loaded once (second run changed nothing)", n == expected and n > 0)
         if SQL.stem.endswith("_aciq"):
             check("every open question has an empty text, its image and no closed type", db.execute(
-                "select count(*) from questions where code like %s and (body <> '' or image_path <> code || '.png' or type = 'qapali')",
+                "select count(*) from questions where code like %s and (body <> '' or image_path not in (code || '.png', code || '.webp') or type = 'qapali')",
                 (prefix + "-Q%",)).fetchone()[0] == 0)
             check("matching questions have one option per row", db.execute(
                 "select count(*) from questions where code like %s and type = 'uygunlasdirma' "
@@ -54,7 +54,7 @@ def main():
             sys.exit(1 if failures else 0)
         row = db.execute("select body, image_path, options, correct_answer, type::text, difficulty, is_active, source, source_ref, "
                          "year, groups from questions where code = %s", (first,)).fetchone()
-        check(f"{first} has empty text and its own image", row[0] == "" and row[1] == f"{first}.png")
+        check(f"{first} has empty text and its own image", row[0] == "" and row[1] in (f"{first}.png", f"{first}.webp"))
         check("options are just the five letters", row[2] == {k: k for k in "ABCDE"})
         check("answer is a letter, type qapali, active", row[3] in list("ABCDE") and row[4] == "qapali" and row[6] is True)
         check("source DIM with the book and question number", row[7] == "DİM" and row[8].endswith(f"sual {int(first[-3:])}"))
@@ -62,7 +62,7 @@ def main():
         check("all answers are A-E", db.execute("select count(*) from questions where code like '" + prefix + "-Q%' "
                                                 "and correct_answer not in ('A','B','C','D','E')").fetchone()[0] == 0)
         check("every question has its image", db.execute("select count(*) from questions where code like '" + prefix + "-Q%' "
-                                                         "and (image_path is null or image_path <> code || '.png')").fetchone()[0] == 0)
+                                                         "and (image_path is null or image_path not in (code || '.png', code || '.webp'))").fetchone()[0] == 0)
         check("one topic used", db.execute("select count(distinct topic_id) from questions where code like '" + prefix + "-Q%'").fetchone()[0] == 1)
         check("sections are not duplicated", db.execute("select count(*) from topics where parent_id is null").fetchone()[0] == 1)
         print(f"\n{len(failures)} failures")

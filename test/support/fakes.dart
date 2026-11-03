@@ -89,7 +89,7 @@ class FakeQuizRepository implements QuizRepository {
   FakeQuizRepository(this.questions);
 
   final List<Question> questions;
-  final submitted = <({String questionId, String? given, int timeMs})>[];
+  final submitted = <({String questionId, String? given, int timeMs, String? clientId})>[];
   int sessionsStarted = 0;
   int sessionsFinished = 0;
   bool failSubmit = false;
@@ -132,12 +132,14 @@ class FakeQuizRepository implements QuizRepository {
   @override
   Future<bool> submitAnswer({
     required String questionId,
-    required String sessionId,
+    required String? sessionId,
     required String? given,
     required int timeMs,
+    String? clientId,
+    DateTime? answeredAt,
   }) async {
     if (failSubmit) throw AppException(AppStrings.unknownError);
-    submitted.add((questionId: questionId, given: given, timeMs: timeMs));
+    submitted.add((questionId: questionId, given: given, timeMs: timeMs, clientId: clientId));
     final question = questions.firstWhere((q) => q.id == questionId);
     return given != null && given.toUpperCase() == question.correctAnswer.toUpperCase();
   }

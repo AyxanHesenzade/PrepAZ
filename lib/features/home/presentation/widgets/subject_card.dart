@@ -4,6 +4,7 @@ import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_spacing.dart';
 import '../../../../core/widgets/pressable.dart';
+import '../../../offline/presentation/widgets/offline_entry_tile.dart';
 import '../../domain/subject.dart';
 import '../../domain/topic_mastery.dart';
 import 'mastery_row.dart';
@@ -18,6 +19,7 @@ class SubjectCard extends StatelessWidget {
     required this.onWeakPlaces,
     required this.onMistakes,
     required this.onTopics,
+    this.onOffline,
     this.startKey,
     this.weakPlacesKey,
     this.mistakesKey,
@@ -34,6 +36,9 @@ class SubjectCard extends StatelessWidget {
   final VoidCallback onWeakPlaces;
   final VoidCallback onMistakes;
   final VoidCallback onTopics;
+
+  /// Doludursa, kartın altında "İnternetsiz həll et" sətri göstərilir.
+  final VoidCallback? onOffline;
 
   /// Öyrədici tur düymələri bu açarlarla tapır (yalnız birinci kartda verilir).
   final Key? startKey;
@@ -188,6 +193,10 @@ class SubjectCard extends StatelessWidget {
             color: accent,
             onTap: onTopics,
           ),
+          if (onOffline != null) ...[
+            AppSpacing.gapS,
+            OfflineEntryTile(subject: subject, onTap: onOffline!),
+          ],
         ],
       ),
     );

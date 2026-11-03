@@ -18,10 +18,16 @@ abstract interface class QuizRepository {
   Future<void> finishSession(String sessionId);
 
   /// Cavabı göndərir, serverin qərarını (düz/səhv) qaytarır. [given] null = "Bilmirəm".
+  ///
+  /// [clientId] verilibsə, eyni cavab ikinci dəfə göndərildikdə ikiqat yazılmır: mövcud nəticə qaytarılır.
+  /// [answeredAt] oflayn verilmiş cavabın əsl vaxtıdır (gündəlik hədəf cavabın verildiyi günə yazılsın).
+  /// Sessiyasız cavab (oflayn növbədən) üçün [sessionId] null olur.
   Future<bool> submitAnswer({
     required String questionId,
-    required String sessionId,
+    required String? sessionId,
     required String? given,
     required int timeMs,
+    String? clientId,
+    DateTime? answeredAt,
   });
 }
