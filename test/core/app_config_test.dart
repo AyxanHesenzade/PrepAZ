@@ -12,11 +12,17 @@ void main() {
     expect(AppConfig.supabaseKey, DebugDefaults.supabaseKey);
   });
 
-  test('debug defaults are exactly env/test.json (they must not drift apart)', () {
-    final json = jsonDecode(File('env/test.json').readAsStringSync()) as Map<String, dynamic>;
-    expect(DebugDefaults.supabaseUrl, json['SUPABASE_URL']);
-    expect(DebugDefaults.supabaseKey, json['SUPABASE_KEY']);
-  });
+  test(
+    'debug defaults are exactly env/test.json (they must not drift apart)',
+    () {
+      final json = jsonDecode(
+        File('env/test.json').readAsStringSync(),
+      ) as Map<String, dynamic>;
+      expect(DebugDefaults.supabaseUrl, json['SUPABASE_URL']);
+      expect(DebugDefaults.supabaseKey, json['SUPABASE_KEY']);
+      expect(DebugDefaults.googleWebClientId, json['GOOGLE_WEB_CLIENT_ID']);
+    },
+  );
 
   test('only the public publishable key is embedded, never a service_role/secret key', () {
     expect(DebugDefaults.supabaseKey, startsWith('sb_publishable_'));

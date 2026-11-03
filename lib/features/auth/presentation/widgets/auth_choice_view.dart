@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_spacing.dart';
 import '../../../../core/widgets/fade_slide_in.dart';
+import '../../../../core/widgets/message_banner.dart';
 import '../../../../core/widgets/pressable.dart';
+import '../../../legal/presentation/widgets/google_consent_note.dart';
 
 /// İlk ekran: istifadəçi formanı görməzdən əvvəl yeni olub-olmadığını seçir.
 class AuthChoiceView extends StatelessWidget {
@@ -11,10 +13,16 @@ class AuthChoiceView extends StatelessWidget {
     super.key,
     required this.onNewUser,
     required this.onExistingUser,
+    required this.onGoogle,
+    this.isBusy = false,
+    this.error,
   });
 
   final VoidCallback onNewUser;
   final VoidCallback onExistingUser;
+  final VoidCallback onGoogle;
+  final bool isBusy;
+  final String? error;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +51,63 @@ class AuthChoiceView extends StatelessWidget {
             highlighted: false,
             onTap: onExistingUser,
           ),
+          AppSpacing.gapL,
+          _OrDivider(),
+          AppSpacing.gapL,
+          OutlinedButton.icon(
+            onPressed: isBusy ? null : onGoogle,
+            style: OutlinedButton.styleFrom(
+              minimumSize: const Size.fromHeight(64),
+              textStyle: Theme.of(context).textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            icon: isBusy
+                ? const SizedBox(
+                    height: 26,
+                    width: 26,
+                    child: CircularProgressIndicator(strokeWidth: 3),
+                  )
+                : const _GoogleMark(),
+            label: Text(AppStrings.googleContinue),
+          ),
+          AppSpacing.gapS,
+          const GoogleConsentNote(),
+          if (error != null) ...[AppSpacing.gapM, MessageBanner.error(error!)],
         ],
+      ),
+    );
+  }
+}
+
+class _OrDivider extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        const Expanded(child: Divider()),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: AppSpacing.m),
+          child: Text(AppStrings.orDivider),
+        ),
+        const Expanded(child: Divider()),
+      ],
+    );
+  }
+}
+
+/// Rəsmi loqo faylı əlavə etməmək üçün sadə "G" işarəsi.
+class _GoogleMark extends StatelessWidget {
+  const _GoogleMark();
+
+  @override
+  Widget build(BuildContext context) {
+    return const Text(
+      'G',
+      style: TextStyle(
+        fontSize: 28,
+        fontWeight: FontWeight.w800,
+        color: Color(0xFF4285F4),
       ),
     );
   }

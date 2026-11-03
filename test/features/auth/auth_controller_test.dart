@@ -12,12 +12,15 @@ void main() {
   late FakeAuthRepository repo;
   late ProviderContainer container;
 
-  AuthController controller() => container.read(authControllerProvider.notifier);
+  AuthController controller() =>
+      container.read(authControllerProvider.notifier);
   AuthFormState state() => container.read(authControllerProvider);
 
   setUp(() {
     repo = FakeAuthRepository();
-    container = ProviderContainer(overrides: [authRepositoryProvider.overrideWithValue(repo)]);
+    container = ProviderContainer(
+      overrides: [authRepositoryProvider.overrideWithValue(repo)],
+    );
     // autoDispose provider-in sınaq boyu yaşaması üçün dinləyirik.
     container.listen(authControllerProvider, (_, _) {});
     addTearDown(container.dispose);
@@ -28,6 +31,32 @@ void main() {
     repo.signUpOutcome = SignUpOutcome.confirmationRequired;
     await controller().submit(email: 'a@b.az', password: '123456');
   }
+
+  test('google sign in success leaves the form idle', () async {
+    await controller().signInWithGoogle();
+
+    expect(repo.googleCalls, 1);
+    expect(state().isBusy, isFalse);
+    expect(state().error, isNull);
+  });
+
+  test('google sign in cancelled by the user shows no error', () async {
+    repo.googleCancelled = true;
+
+    await controller().signInWithGoogle();
+
+    expect(state().isBusy, isFalse);
+    expect(state().error, isNull);
+  });
+
+  test('google sign in failure exposes the error message', () async {
+    repo.googleError = AppException(AppStrings.googleSignInFailed);
+
+    await controller().signInWithGoogle();
+
+    expect(state().error, AppStrings.googleSignInFailed);
+    expect(state().isBusy, isFalse);
+  });
 
   test('sign in success leaves form idle without error', () async {
     await controller().submit(email: 'a@b.az', password: '123456');
@@ -62,15 +91,18 @@ void main() {
     expect(state().error, isNull);
   });
 
-  test('sign up with an existing account moves to sign in with the message', () async {
-    controller().setMode(AuthMode.signUp);
-    repo.signUpError = AccountExistsException();
+  test(
+    'sign up with an existing account moves to sign in with the message',
+    () async {
+      controller().setMode(AuthMode.signUp);
+      repo.signUpError = AccountExistsException();
 
-    await controller().submit(email: 'a@b.az', password: '123456');
+      await controller().submit(email: 'a@b.az', password: '123456');
 
-    expect(state().isSignUp, isFalse);
-    expect(state().error, AppStrings.userAlreadyExists);
-  });
+      expect(state().isSignUp, isFalse);
+      expect(state().error, AppStrings.userAlreadyExists);
+    },
+  );
 
   test('checkConfirmed signs in with the remembered password', () async {
     await signUpPending();
@@ -122,16 +154,19 @@ void main() {
     expect(state().pendingEmail, 'a@b.az');
   });
 
-  test('cancelConfirmation returns to the form and forgets the password', () async {
-    await signUpPending();
+  test(
+    'cancelConfirmation returns to the form and forgets the password',
+    () async {
+      await signUpPending();
 
-    controller().cancelConfirmation();
-    await controller().checkConfirmed();
+      controller().cancelConfirmation();
+      await controller().checkConfirmed();
 
-    expect(state().awaitingConfirmation, isFalse);
-    expect(state().isSignUp, isTrue);
-    expect(repo.signInCalls, 0);
-  });
+      expect(state().awaitingConfirmation, isFalse);
+      expect(state().isSignUp, isTrue);
+      expect(repo.signInCalls, 0);
+    },
+  );
 
   test('starts on the choice between a new and an existing account', () {
     expect(state().isChoosing, isTrue);

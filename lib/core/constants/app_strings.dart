@@ -57,6 +57,23 @@ abstract final class AppStrings {
     'Войти по почте и паролю',
     'Sign in with my email and password',
   );
+  static String get googleContinue => _t(
+    'Google ilə davam et',
+    'Продолжить через Google',
+    'Continue with Google',
+  );
+  static String get orDivider => _t('və ya', 'или', 'or');
+  static String get googleSignInFailed => _t(
+    'Google ilə giriş alınmadı. Yenidən cəhd edin.',
+    'Не удалось войти через Google. Попробуйте ещё раз.',
+    "Couldn't sign in with Google. Please try again.",
+  );
+  static String get googleConsentStart => _t(
+    'Google ilə davam etməklə ',
+    'Продолжая через Google, вы принимаете ',
+    'By continuing with Google you accept the ',
+  );
+  static String get googleConsentEnd => _t(' qəbul edirsiniz.', '.', '.');
   static String get switchToSignIn => _t(
     'Hesabınız var? Daxil olun',
     'Уже есть аккаунт? Войдите',

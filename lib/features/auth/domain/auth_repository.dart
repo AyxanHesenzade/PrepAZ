@@ -25,6 +25,9 @@ abstract interface class AuthRepository {
     required String password,
   });
 
+  /// Google hesabı ilə giriş (e-poçt təsdiqi lazım deyil). İstifadəçi pəncərəni bağlasa, `false`.
+  Future<bool> signInWithGoogle();
+
   Future<void> resendConfirmation({required String email});
 
   Future<void> signOut();

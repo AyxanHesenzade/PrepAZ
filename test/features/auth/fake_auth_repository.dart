@@ -11,6 +11,16 @@ class FakeAuthRepository implements AuthRepository {
   final resentTo = <String>[];
   Object? deleteError;
   int deleteCalls = 0;
+  Object? googleError;
+  bool googleCancelled = false;
+  int googleCalls = 0;
+
+  @override
+  Future<bool> signInWithGoogle() async {
+    googleCalls++;
+    if (googleError != null) throw googleError!;
+    return !googleCancelled;
+  }
 
   @override
   Future<void> signIn({required String email, required String password}) async {
@@ -21,7 +31,10 @@ class FakeAuthRepository implements AuthRepository {
   }
 
   @override
-  Future<SignUpOutcome> signUp({required String email, required String password}) async {
+  Future<SignUpOutcome> signUp({
+    required String email,
+    required String password,
+  }) async {
     if (signUpError != null) throw signUpError!;
     return signUpOutcome;
   }

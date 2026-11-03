@@ -224,6 +224,20 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - Təsdiqli e-poçtla təkrar qeydiyyatda Supabase xəta vermir, boş `identities` qaytarır: bu, `AccountExistsException` olur və ekran girişə keçir.
 - Parol bərpası hələ yoxdur.
 
+## Google ilə giriş
+- Tətbiqdə: `AuthRepository.signInWithGoogle()` (`google_sign_in` 7.x: `GoogleSignIn.instance.initialize(serverClientId)` bir dəfə, `authenticate()`, sonra `Supabase.auth.signInWithIdToken(provider: google, idToken)`). İstifadəçi pəncərəni bağlasa `false`, xəta olsa `AppException(googleSignInFailed)`. Çıxışda və hesab silinəndə Google hesabı da çıxarılır.
+- Düymə `AuthChoiceView`-dadır ("və ya" xəttindən sonra, böyük). E-poçt təsdiqi və parol lazım deyil. Razılıq qutusu yoxdur: düymənin altında "davam etməklə şərtləri qəbul edirsiniz" qeydi (`GoogleConsentNote`), basanda `acceptLegal` yazılır.
+- Google Cloud layihəsi `PrepAZ` (Firebase vasitəsilə yaradılıb, kart istənmədi; Firebase özü istifadə olunmur). OAuth clientlər:
+  - **Web** `PrepAZ Supabase`: redirect URI `https://ehaqunuwkccwosaorvgy.supabase.co/auth/v1/callback`. Client ID açıqdır: `AppConfig.googleWebClientId` (`GOOGLE_WEB_CLIENT_ID`, debug defoltu `DebugDefaults`, `env/test.json`). **Client secret yalnız Supabase-dədir**, repoya və koda düşməz.
+  - **Android** `PrepAZ Android debug`: paket `az.prepaz`, debug SHA-1 `3E:FE:05:F1:75:59:4D:C8:6B:18:D1:EB:C3:4E:B7:16:7F:79:11:AC`.
+- Supabase (test) → Authentication → Providers → Google: Web ID + secret, Client IDs xanasında `webID,androidID` (vergüllə, boşluqsuz). "Skip nonce checks" söndürülüb.
+- Hələ edilməyib:
+  - **Release Android client**: release açarının SHA-1-i ilə ayrıca client lazımdır (açar başqa kompüterdədir: `keytool -list -v -keystore android/app/prepaz-release.jks -alias prepaz`) və onun ID-si Supabase Client IDs-ə əlavə olunur. Onsuz release APK-da Google girişi işləmir.
+  - Consent screen "Testing" rejimindədir: yalnız Audience → Test users siyahısındakılar girə bilir. Buraxılışdan əvvəl **Publish app**.
+  - Web client secret söhbətdə göründüyü üçün yenilənməlidir (Clients → Add secret, Supabase-də dəyiş, köhnəni sil).
+  - Real (prod) Supabase qurulanda Google provider orada da ayrıca aktivləşdirilir.
+- Windows-da plugin-li layihəni build etmək üçün Developer Mode açıq olmalıdır (symlink).
+
 ## Öyrədici tur
 - `lib/features/tour`: hədəf seçimi bağlanan kimi (hədəf artıq varsa və ya oxunmursa, ana ekran açılanda) bir dəfə başlayır. Bayraq telefonda: `AppSettings.tourSeen` (`settings.tour_seen`, SharedPreferences), yalnız son addımda true olur; yarıda bağlansa, yenidən başlayır.
 - Ardıcıllıq (`TourStep`): salam → menyu düyməsinə basmaq (burada "Anladım" yoxdur, işıqlı düyməyə basılır) → Dil, Görünüş, Müəllimlər, Xəta bildir, Şərtlər və məxfilik, Hesabı sil, Çıxış → yan menyu bağlanır → birinci fənn kartı: Bugünkü məşq, Zəif yerlərim, Səhvlər dəftəri, Mövzular → son. Fənn yoxdursa, kart addımları atlanır. Tur atlanmır (sahibin istədiyi kimi yalnız "Anladım").

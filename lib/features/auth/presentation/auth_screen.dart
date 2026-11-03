@@ -44,11 +44,20 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
     if (signUp && !_agreed) return;
     if (!_formKey.currentState!.validate()) return;
     if (signUp) {
-      ref.read(settingsControllerProvider.notifier).acceptLegal(currentLegalVersion);
+      ref
+          .read(settingsControllerProvider.notifier)
+          .acceptLegal(currentLegalVersion);
     }
     ref
         .read(authControllerProvider.notifier)
         .submit(email: _email.text.trim(), password: _password.text);
+  }
+
+  void _signInWithGoogle() {
+    ref
+        .read(settingsControllerProvider.notifier)
+        .acceptLegal(currentLegalVersion);
+    _controller.signInWithGoogle();
   }
 
   AuthController get _controller => ref.read(authControllerProvider.notifier);
@@ -106,6 +115,9 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
       return AuthChoiceView(
         onNewUser: () => _controller.setMode(AuthMode.signUp),
         onExistingUser: () => _controller.setMode(AuthMode.signIn),
+        onGoogle: _signInWithGoogle,
+        isBusy: form.isBusy,
+        error: form.error,
       );
     }
     return _buildForm(form);
@@ -151,7 +163,9 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
               controller: _password,
               label: AppStrings.password,
               helperText: form.isSignUp
-                  ? AppStrings.passwordSignUpHelper(Validators.minPasswordLength)
+                  ? AppStrings.passwordSignUpHelper(
+                      Validators.minPasswordLength,
+                    )
                   : AppStrings.passwordSignInHelper,
               obscureText: !_showPassword,
               suffixIcon: IconButton(
@@ -163,8 +177,7 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
                       ? Icons.visibility_off_outlined
                       : Icons.visibility_outlined,
                 ),
-                onPressed: () =>
-                    setState(() => _showPassword = !_showPassword),
+                onPressed: () => setState(() => _showPassword = !_showPassword),
               ),
               autofillHints: [
                 form.isSignUp
@@ -247,10 +260,7 @@ class _AuthGuide extends StatelessWidget {
           NumberedSteps(steps: steps),
           if (note != null) ...[
             AppSpacing.gapM,
-            Text(
-              note!,
-              style: const TextStyle(fontWeight: FontWeight.w600),
-            ),
+            Text(note!, style: const TextStyle(fontWeight: FontWeight.w600)),
           ],
         ],
       ),

@@ -12,6 +12,7 @@ import 'debug_defaults.dart';
 abstract final class AppConfig {
   static const _urlFromEnv = String.fromEnvironment('SUPABASE_URL');
   static const _keyFromEnv = String.fromEnvironment('SUPABASE_KEY');
+  static const _googleFromEnv = String.fromEnvironment('GOOGLE_WEB_CLIENT_ID');
 
   static String get supabaseUrl => _urlFromEnv.isNotEmpty
       ? _urlFromEnv
@@ -20,6 +21,11 @@ abstract final class AppConfig {
   static String get supabaseKey => _keyFromEnv.isNotEmpty
       ? _keyFromEnv
       : (kDebugMode ? DebugDefaults.supabaseKey : '');
+
+  /// Google Cloud-dakı "Web application" client ID-si (açıqdır, secret deyil).
+  static String get googleWebClientId => _googleFromEnv.isNotEmpty
+      ? _googleFromEnv
+      : (kDebugMode ? DebugDefaults.googleWebClientId : '');
 
   static bool get isConfigured =>
       supabaseUrl.isNotEmpty && supabaseKey.isNotEmpty;

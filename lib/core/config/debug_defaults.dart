@@ -8,4 +8,6 @@
 abstract final class DebugDefaults {
   static const supabaseUrl = 'https://ehaqunuwkccwosaorvgy.supabase.co';
   static const supabaseKey = 'sb_publishable__y6-m0NS2qXkFn_LOCld-g_SBFkFzIV';
+  static const googleWebClientId =
+      '825498466904-1dhrup3mprvp07rhe7r63befe81djsen.apps.googleusercontent.com';
 }

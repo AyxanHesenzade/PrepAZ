@@ -77,6 +77,18 @@ class AuthController extends Notifier<AuthFormState> {
     }
   }
 
+  /// Uğurda AuthGate özü yönləndirir; pəncərə bağlansa, heç nə dəyişmir.
+  Future<void> signInWithGoogle() async {
+    if (state.isBusy) return;
+    state = state.busy();
+    try {
+      await _repo.signInWithGoogle();
+      if (ref.mounted) state = state.idle();
+    } on AppException catch (e) {
+      if (ref.mounted) state = state.failed(e.message);
+    }
+  }
+
   void _awaitConfirmation(String email, String password) {
     _pendingPassword = password;
     state = AuthFormState(mode: state.mode, pendingEmail: email);
