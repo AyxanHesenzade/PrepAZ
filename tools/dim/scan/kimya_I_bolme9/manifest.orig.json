@@ -1,0 +1,570 @@
+[
+ {
+  "number": 1,
+  "page": 35,
+  "column": 1,
+  "box": [
+   547,
+   511,
+   1080,
+   581
+  ],
+  "file": "q001.png",
+  "gutter": 544,
+  "draft_text": "1.2mol ZnS-don neco litr(ns) SO almaqolar? A)22,4 B)11,2C)112 D)44,8E)89,6 E)89,6"
+ },
+ {
+  "number": 2,
+  "page": 35,
+  "column": 1,
+  "box": [
+   547,
+   569,
+   1080,
+   637
+  ],
+  "file": "q002.png",
+  "gutter": 544,
+  "draft_text": "2.2mol NH-dan neca litr (n.s.) NO almaqolar? B)44,8 C)33,6 A)22,4 D)56 E)67,2"
+ },
+ {
+  "number": 3,
+  "page": 35,
+  "column": 1,
+  "box": [
+   547,
+   625,
+   1080,
+   776
+  ],
+  "file": "q003.png",
+  "gutter": 544,
+  "draft_text": "3.Damirlokukurdunreaksiyasindan 132q FeS alinmissa,reaksiyaya daxil olan damir atomlarinin sayini hesablayin.M,(FeS)=88 A) 1,806.1024 B) 6,02.1023 C)1,204.1024 D) 1,204.1023 E) 9,03.1023"
+ },
+ {
+  "number": 4,
+  "page": 35,
+  "column": 1,
+  "box": [
+   547,
+   764,
+   1080,
+   889
+  ],
+  "file": "q004.png",
+  "gutter": 544,
+  "draft_text": "4.1molFeO-3mol karbon-monooksidla tasir etdikdaneco damir atomureduksiya olunur? A) 1,806.1024 B) 6,02.1023 C) 6,02.10²2 D) 3,01.1023 E) 1,204.1024"
+ },
+ {
+  "number": 5,
+  "page": 35,
+  "column": 1,
+  "box": [
+   547,
+   877,
+   1080,
+   998
+  ],
+  "file": "q005.png",
+  "gutter": 544,
+  "draft_text": "5.1,505.1023 saydahidrogenmolekulu ila17,75qram xlorun qarsilql tasirindon neco litr hidrogen-xlorid (n.s.)malagolar7A,（Cl）=35,5 A)5,6B)22,4 E)20,4 C)33,6 D)11,2"
+ },
+ {
+  "number": 6,
+  "page": 35,
+  "column": 1,
+  "box": [
+   547,
+   986,
+   1080,
+   1198
+  ],
+  "file": "q006.png",
+  "gutter": 544,
+  "draft_text": "6. Hansi halda reaksiyaya daxil olan maddalorin hacm (n.s.)nisbati 1:3 kimidir? A)CH+3H2—→CH2 B)2AI+3S—→Al2S C)3Mg+N2—→Mg3N2 D)2SO2+O2—→2SO E)N2+3H—→2NH"
+ },
+ {
+  "number": 7,
+  "page": 35,
+  "column": 1,
+  "box": [
+   547,
+   1186,
+   1080,
+   1283
+  ],
+  "file": "q007.png",
+  "gutter": 544,
+  "draft_text": "7.0,5mol karbondan maksimum neco litr (n.s) CO2 almaq olar? A)22,4 B)11,2 E)2,24 C)5,6 D)4,48"
+ },
+ {
+  "number": 8,
+  "page": 35,
+  "column": 1,
+  "box": [
+   547,
+   1271,
+   1080,
+   1495
+  ],
+  "file": "q008.png",
+  "gutter": 544,
+  "draft_text": "8. Kukurdlo reaksiyaya 96 q oksigen daxil olmussa, nccmol SO2mlgalor?A,(O)=16 A)1,5 B)2,5 C)1 D)3 E)4 A,(H）=1 A)16 B)14 C)10 E)12 D)8"
+ },
+ {
+  "number": 10,
+  "page": 36,
+  "column": 0,
+  "box": [
+   0,
+   99,
+   517,
+   219
+  ],
+  "file": "q010.png",
+  "gutter": 520,
+  "draft_text": "10.N+3H2NH Reaksiyadamshsulun qixim 50% olarsa,4mol azotdan neca mol ammonyak almaq olar? C)1 B)4 D)3 E)6 A)2"
+ },
+ {
+  "number": 11,
+  "page": 36,
+  "column": 0,
+  "box": [
+   0,
+   207,
+   517,
+   466
+  ],
+  "file": "q011.png",
+  "gutter": 520,
+  "draft_text": "11.N+3H2NH Reaksiyadamhsulunixu50%olarsa,9mol hidrogendon neco mol ammonyak almaq olar? C)18 D)9 E)6 B)5 A)3 b molekullarnsaym hesablayn. B)6,02.1023 A) 1.806.1024 C)1,204.1024 D)1.204.1023 E)2,408-1023"
+ },
+ {
+  "number": 13,
+  "page": 36,
+  "column": 0,
+  "box": [
+   0,
+   454,
+   517,
+   558
+  ],
+  "file": "q013.png",
+  "gutter": 520,
+  "draft_text": "13.126q MgCO; parcalandqda neco mol MgO alinar? M(MgCO)=84 C)1,5 D)2 B)0,5 E)3 A)1"
+ },
+ {
+  "number": 14,
+  "page": 36,
+  "column": 0,
+  "box": [
+   0,
+   546,
+   517,
+   648
+  ],
+  "file": "q014.png",
+  "gutter": 520,
+  "draft_text": "14.200 q CaCO;parcalandiqda neca mol CaO alinar? M(CaCO)=100 C)1,5 D)0,5 B)1 E)3 A)2"
+ },
+ {
+  "number": 15,
+  "page": 36,
+  "column": 0,
+  "box": [
+   0,
+   636,
+   517,
+   740
+  ],
+  "file": "q015.png",
+  "gutter": 520,
+  "draft_text": "15.16q kakurd tam yandiqda neco litr (n.s.)SOalinar? A,(S)=32 B)22,4 D)11,2E)44,8 A)5,6 C)33,6"
+ },
+ {
+  "number": 16,
+  "page": 36,
+  "column": 0,
+  "box": [
+   0,
+   728,
+   517,
+   987
+  ],
+  "file": "q016.png",
+  "gutter": 520,
+  "draft_text": "16.6/C0va3/Oqazlarininqarsihiqlitasirindan41 COalinmissa,nec litr COva Oreaksiyaya daxil olmamsdir? O2 CO 1 A) 2 1,5 B) 3 C) 2 4 D) 3 1 0,5 E) 2"
+ },
+ {
+  "number": 17,
+  "page": 36,
+  "column": 0,
+  "box": [
+   0,
+   975,
+   517,
+   1127
+  ],
+  "file": "q017.png",
+  "gutter": 520,
+  "draft_text": "17.MeCOduzunun10 qraminin termiki parcalanmasindan2,24/（n.s.) COayrilmissa, metalin nisbi atomkutlasinimuayyan edin. A,（C)=12,A,（O)=16 D)56 E)55 C)52 A)24 B)40"
+ },
+ {
+  "number": 18,
+  "page": 36,
+  "column": 0,
+  "box": [
+   0,
+   1115,
+   517,
+   1258
+  ],
+  "file": "q018.png",
+  "gutter": 520,
+  "draft_text": "18.Ikivalentli metalinkarbonat duzunun9,85 qraminin termiki parcalanmasindan 1,12/ karbon-dioksid (n.s.) alinmissa,metalin nisbi atom kutlosini muayyanlasdirin.A,（C)=12,A,（O)=16 A)40 C)65D)137 E)201 D)137 B)197"
+ },
+ {
+  "number": 19,
+  "page": 36,
+  "column": 0,
+  "box": [
+   0,
+   1246,
+   517,
+   1368
+  ],
+  "file": "q019.png",
+  "gutter": 520,
+  "draft_text": "19.78,8q MeCO; tam parcalandqda 61,2 q metal oksidi smalo golmisdirBu zaman ayrilan qazn (n.s）hacmini muayyan edin.M,(CO）)=44 A)2.24 2C)8,96D)4,48E)3.36 B)11,2"
+ },
+ {
+  "number": 20,
+  "page": 36,
+  "column": 0,
+  "box": [
+   0,
+   1356,
+   517,
+   1477
+  ],
+  "file": "q020.png",
+  "gutter": 520,
+  "draft_text": "20. 10 q uzvi maddo yandrildiqda 11,2 / CO (n.s.) alnmissa,bu birlsmadskarbonun katla payin (%) musyyan edin.A,（C)=12 A)60 B)40 E)65 D)70 C)50"
+ },
+ {
+  "number": 21,
+  "page": 36,
+  "column": 0,
+  "box": [
+   0,
+   1465,
+   517,
+   1554
+  ],
+  "file": "q021.png",
+  "gutter": 520,
+  "draft_text": "21.80/Yv20/Xqazlari qarisdrr.Buqazlar asagidakikimi reaksiyaya daxil olur:",
+  "continued_from": {
+   "page": 36,
+   "column": 1,
+   "rows": [
+    82,
+    283
+   ]
+  }
+ },
+ {
+  "number": 22,
+  "page": 36,
+  "column": 1,
+  "box": [
+   523,
+   283,
+   1080,
+   529
+  ],
+  "file": "q022.png",
+  "gutter": 520,
+  "draft_text": "22.80/Yv20/Xqazlariqarisdirilr.Buqazlar asagidakikimi reaksiyaya daxil olur: x（q）+3Y（q）-→2Z（q) Hanst ifada dogru deyi? A)Y tamamiloreaksiyaya daxil olur B)60/Yreaksiyaya daxil olur C)20/Yartiqqalur D)Umumilikda80/qazreaksiyayadaxilolur E)401Zmlaglir"
+ },
+ {
+  "number": 23,
+  "page": 36,
+  "column": 1,
+  "box": [
+   523,
+   517,
+   1080,
+   768
+  ],
+  "file": "q023.png",
+  "gutter": 520,
+  "draft_text": "23.1hocmXilo3hacmY,qazlari tamamil reaksiyaya daxil olaraq 2hacmXY;qaziamala gatirir.mva n-inqiymatlarini muoyyan edin m n A) 2 1 B) 3 4 C) 4 2 D) 2 2 E) 2 4"
+ },
+ {
+  "number": 24,
+  "page": 36,
+  "column": 1,
+  "box": [
+   523,
+   756,
+   1080,
+   1002
+  ],
+  "file": "q024.png",
+  "gutter": 520,
+  "draft_text": "24.2hacmXmila6hacmYqazi tamamilreaksiyaya daxil olaraq4hacmXY;qazimalagatirir mvan-in qiymatlarinimuayyan edin 71 n A) 6 1 B) 2 2 C) 6 2 D) 4 2 E) 4 6"
+ },
+ {
+  "number": 25,
+  "page": 36,
+  "column": 1,
+  "box": [
+   523,
+   990,
+   1080,
+   1281
+  ],
+  "file": "q025.png",
+  "gutter": 520,
+  "draft_text": "25.XY3（qaz)0,5X2（qaz)+1,5Y2（qaz).Qapali qabda1 mol XY;qazi yuxandaki tonlik uzr parcalanir.XYy-uin 10%-nin parcalandigi an ucun hansi ifada dogrudur? A)0,9mol XYparcalanmamisdur B) Qabdaki tazyiq azalmsdir psueusiep biaze D) Qabdaki qaz qarisiginin mol miqdari npsueustAep E)0,1molXmlglmisdir"
+ },
+ {
+  "number": 26,
+  "page": 36,
+  "column": 1,
+  "box": [
+   523,
+   1269,
+   1080,
+   1591
+  ],
+  "file": "q026.png",
+  "gutter": 520,
+  "draft_text": "26.XY（qaz)0,5X（qaz)+1,5Y（qaz）.Qapal qabda1 mol XY;qaziyuxaridakitonlikuzr parcalanur.XY-un20%-nin parcalandigi an ucun hansi ifado dogrudur? A)0,2mol Xmlaglmisdir B)Qabdaki tozyiq azalmusdur C)Tazyiq dayismamisdir D) Qabdaki qaz qarisigininmol miqdari E)0,8molXYparcalanmamisdr 7-"
+ },
+ {
+  "number": 27,
+  "page": 37,
+  "column": 0,
+  "box": [
+   0,
+   53,
+   609,
+   332
+  ],
+  "file": "q027.png",
+  "gutter": 612,
+  "draft_text": "27.2XY+Y2—→2XY3（qaz).Eyni hacmd goturalmusXYvaY2qazlari arasinda reaksiyada maddalardonbiri tamsorfolunur.Reaksiyadan sonra qabda olanmaddalarin molmiqdarlan hansi halda dogrudur? B)v(xY3)>v(Y2) A)v(xY3)=v(XY2) D)v(xY2)>vCX2) C)v(x2)>v(xY3) E)v(XY2)=v(XY)"
+ },
+ {
+  "number": 28,
+  "page": 37,
+  "column": 0,
+  "box": [
+   0,
+   320,
+   609,
+   583
+  ],
+  "file": "q028.png",
+  "gutter": 612,
+  "draft_text": "28.X+3Y2-→2XY（qaz) Eyni hacmdagoturalmusXvaY2qazlari arasimda reaksiyada maddalardanbiri tamsarfolunur. Reaksiyadan sonra qabda qalanmaddalarinmol miqdarlari hansi halda dogrudur? A)v（xY3）=v(X2) B)v(xY3)>v(Y2) C)v(xY3)>v(Y2) D)v(xY3)<v(x2) E)v(xY)>v(X2)"
+ },
+ {
+  "number": 29,
+  "page": 37,
+  "column": 0,
+  "box": [
+   0,
+   571,
+   609,
+   725
+  ],
+  "file": "q029.png",
+  "gutter": 612,
+  "draft_text": "29.10,8q Ucvalentli Xmetalinin HClila reaksiyasindan XCl;duzu va13,441hidrogen (n.s)alinmisdir.Metalin nisbi atom kutlasini muayyan edin. A)52 B)11 C)27 D)56 E)70"
+ },
+ {
+  "number": 30,
+  "page": 37,
+  "column": 0,
+  "box": [
+   0,
+   713,
+   609,
+   969
+  ],
+  "file": "q030.png",
+  "gutter": 612,
+  "draft_text": "30.Eynikutladagoturalmus COva O2qazlari reaksiyayagirdikdaqazlardanbirindan12qram artuq qalarsa,hansi ifadalar dogrudur? M(CO)=28;M.（O2）=32 1.Artiq qalan domqazidur I1.1mol cOmlgolir IIl.Oksigenin baslangic kutlasi 28 qramdir A)I,II B) I,IⅢI C)ILIII D) yalniz II E) yalniz III"
+ },
+ {
+  "number": 31,
+  "page": 37,
+  "column": 0,
+  "box": [
+   0,
+   957,
+   609,
+   1217
+  ],
+  "file": "q031.png",
+  "gutter": 612,
+  "draft_text": "31.EynikatladgoturulmusCOvaOqazlar reaksiyaya girdikdaqazlardanbirindan12qram artiq qalarsa,hansi ifadalar dogru deyi? M,（C0)=28,M,(02）=32 1.Artiq qalanmaddoksigendir 11.0,5mol CO2malaglir IIl.Oksigenin baslangickutlasi 28qramdir A) yalniz III C)yalniz II D)I,II E)III"
+ },
+ {
+  "number": 32,
+  "page": 37,
+  "column": 0,
+  "box": [
+   0,
+   1205,
+   609,
+   1529
+  ],
+  "file": "q032.png",
+  "gutter": 612,
+  "draft_text": "32.28q C4Hgyanarkan CO2vaH2Omalagalir.Bu reaksiya ucun hansi qrafiklar dogrudur? M,(CH)=56;M,(HO)=18 CO-nin HO-nun molmiqdari kitlasi (q) I. I1.36 2,0 zaman zaman"
+ },
+ {
+  "number": 34,
+  "page": 37,
+  "column": 1,
+  "box": [
+   615,
+   839,
+   1080,
+   1503
+  ],
+  "file": "q034.png",
+  "gutter": 612,
+  "draft_text": "34.1.1mol Xbasit maddasi ila3mol Hbirlasork 2mol Ymlgatirir. I1.2molY-la1,5mol O2reaksiyaya daxil olduqda 1mol N2va3mol Zmlgalirs,YvZin formullaninimtoyyonedin. Y Z A)H2O2 NH3 B) H2O2 H2O C)NH4 H2O2 D)NH H2O2 E) NH3 H2O 1mol Ymlgatirir. formullarini muayyanedin. Y Z A) SO2 H2O2 B) H2O H2S C) HS H2O D) H2O SO2 E) HS H2O2"
+ },
+ {
+  "number": 36,
+  "page": 38,
+  "column": 0,
+  "box": [
+   0,
+   116,
+   510,
+   498
+  ],
+  "file": "q036.png",
+  "gutter": 513,
+  "draft_text": "36. Tam yanmasindan alinan maddalarin mol sayi Mol sayi Madda CO2 H2O 1 C4Hx 9 10 1 C,H12 x va y-i hesablayin. Y 6 10 A) 5 10 B) 6 8 C) 5 8 D) 9 6 E)"
+ },
+ {
+  "number": 37,
+  "page": 38,
+  "column": 0,
+  "box": [
+   0,
+   486,
+   510,
+   863
+  ],
+  "file": "q037.png",
+  "gutter": 513,
+  "draft_text": "37. Tam yanmasindan alinan Mol maddalarin mol sayl Madda sayi CO2 H2O CHg 1 10 6 一 C3Hy x va y-i hesablayin. Y 6 A) 3 4 B) 7 6 C) 7 4 D) 3 8 E) 5"
+ },
+ {
+  "number": 38,
+  "page": 38,
+  "column": 0,
+  "box": [
+   0,
+   851,
+   510,
+   1237
+  ],
+  "file": "q038.png",
+  "gutter": 513,
+  "draft_text": "38. Alinmis qaz Reaksiya daxil qarisiginin olan maddalorin Qapali qabda orta molyar ilkin mol gedan reaksiya miqdarlarl b kutlasi, O2 mol NO 40 b 2NO+O-→2NO2 a NO tam sarf olunarsa,b:anisbatini muyyan edin A(N）=14,A（O）=16 E)1,5 D)0,75 C)0,5 B)1,25 A)0,25 oksigen sarf olunur?"
+ },
+ {
+  "number": 40,
+  "page": 38,
+  "column": 0,
+  "box": [
+   0,
+   1225,
+   510,
+   1381
+  ],
+  "file": "q040.png",
+  "gutter": 513,
+  "draft_text": "40.MeCO duzunun 19,7 qraminin termiki parcalanmasindan 2,24 1 (n.s.) CO2 alinmissa, metalin nisbi atomkutlasini muayyan edin. A,(C)=12,A,(O)=16"
+ },
+ {
+  "number": 41,
+  "page": 38,
+  "column": 0,
+  "box": [
+   0,
+   1369,
+   510,
+   1565
+  ],
+  "file": "q041.png",
+  "gutter": 513,
+  "draft_text": "41.40mlH2 02 qaz 40 ml 02 Reaksiyadanvlkiqazqarsndaoksigeninmol payini(%-la) muayyanedin."
+ },
+ {
+  "number": 42,
+  "page": 38,
+  "column": 1,
+  "box": [
+   516,
+   121,
+   1080,
+   525
+  ],
+  "file": "q042.png",
+  "gutter": 513,
+  "draft_text": "42. 12- X 10- Y 8- 6 Z 4- T 2 >Zaman Reaksiyanin qrafikina asason9mol Ymaddasi alindiqda neca mol Z maddasi sarf olundugunu hesablayin."
+ },
+ {
+  "number": 43,
+  "page": 38,
+  "column": 1,
+  "box": [
+   516,
+   513,
+   1080,
+   735
+  ],
+  "file": "q043.png",
+  "gutter": 513,
+  "draft_text": "43. Reaksiyadan XY3-un Reaksiya ilkin sonraqaz qarisiginin hacmi,l hacmi,I (n.s.) (n.s.) 112 80 2XY（q)—→X（q)+3Y（q) Neca faizXY3 parcalanmisdir?"
+ },
+ {
+  "number": 44,
+  "page": 38,
+  "column": 1,
+  "box": [
+   516,
+   723,
+   1080,
+   972
+  ],
+  "file": "q044.png",
+  "gutter": 513,
+  "draft_text": "44. Reaksiyadan XY3-un Reaksiya sonraqaz ilkin qarisiginin hacmi,l. hacmi, I (n.s.) (n.s.) 90 60 2XY3（q)—→X2(q)+3Y2(q) Neca faizXY3 parcalanmisdir? Tamyanma"
+ },
+ {
+  "number": 45,
+  "page": 38,
+  "column": 1,
+  "box": [
+   516,
+   960,
+   1080,
+   1620
+  ],
+  "file": "q045.png",
+  "gutter": 513,
+  "draft_text": "45. mohsulu CO CO2 CO2 COvaCO-donibarat qarisigin tamyanmasi naticasindaqarisiqdakioksigen atomlarinin sayi 1,6dofa artarsa,ilkin qarsiqda CO-ninmol payini (%ila)hesablayin.Yanmazamanioksigen tamsarf olunmusdur. Otrafliyazlcavab tolobolunan tapsiriqlar 1. Qaz qarisiginin tarkibi Qazlarinkutlasi,q SO2 D CHA D Qaz qarisiginin orta molyar kutlasini (q/mol) (1)v qaz qarisigindametanin mol payin(%-l) (2)hesablayin.M,(SO2)=64,M,(CH4)=16 2.4molammonyakin qizdirilmasizamani onun20%-i parcalanmsdir.Alinan qazqarisiginin umumimol sayim (l)va alinan azotun katlsini (q-la)(2) hesablayin.A,(N)=14"
+ }
+]
