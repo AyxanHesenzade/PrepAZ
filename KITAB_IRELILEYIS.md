@@ -1,14 +1,15 @@
 # Test kitabları: harada dayanmışıq
 
 Hər bölmə bitəndən sonra bu fayl yenilənir. Yeni işə başlamazdan əvvəl buradan bax.
-Son yenilənmə: 2026-11-02
+Son yenilənmə: 2026-11-05 (bölmə 7)
 
 ## Qısa vəziyyət
 - **Kitab 1:** "Kimya test toplusu I" (DİM, 2025, 359 səhifə)
 - **Fayl:** `tools/dim/Kimya test toplusu I 2025 _250822_103034.pdf`
-- **Hazır bölmələr:** 1, 2, 3, 4, 5
-- **Bazada:** 253 şəkil-sual (206 qapalı, 47 açıq)
-- **Növbəti:** pdf səhifə 19-da, sol sütunda "Ətraflı yazılı cavab tələb olunan tapşırıqlar" başlayır (pdf səhifə 20-nin sonuna qədər, 18 tapşırıq). Bunlar test deyil, ayrıca qərar lazımdır. Sonrakı test bölməsi pdf səhifə 21-dən yoxlanmalıdır.
+- **Hazır bölmələr:** 1, 2, 3, 4, 5, 6 (bölmə 6 yükləndi, 2026-11-05); bölmə 7 yükləndi, 2026-11-05; bölmə 8 yükləndi, 2026-11-05; bölmə 9 kəsilib, SQL və şəkillər hazırdır, sahib yükləməlidir
+- **Bazada:** 253 şəkil-sual (206 qapalı, 47 açıq). Bölmə 6 ilə +55 (46 qapalı, 9 açıq) = 308; bölmə 7 ilə +97 (77 qapalı, 20 açıq) = 405; bölmə 8 ilə +82 (51 qapalı, 31 açıq) = 487; bölmə 9 yüklənəndə +45 (38 qapalı, 7 açıq) = 532
+- **Növbəti:** yazılı tapşırıqlar haqqında qərar (bölmə 9-un sonunda pdf səhifə 38 sağ sütundan, həmçinin əvvəlki pdf 19–20). Sonrakı test bölməsi pdf səhifə 39-dan yoxlanmalıdır.
+  pdf səhifə 19-da, sol sütunda "Ətraflı yazılı cavab tələb olunan tapşırıqlar" başlayır (pdf səhifə 20-nin sonuna qədər, 18 tapşırıq). Bunlar test deyil, ayrıca qərar lazımdır. Sonrakı test bölməsi pdf səhifə 21-dən yoxlanmalıdır.
 - **Səhifə qeydi:** kitabda çap olunmuş səhifə nömrəsi = pdf səhifəsi + 1 (pdf 15 = kitabda 16).
 
 ## Bölmələr
@@ -20,8 +21,39 @@ Son yenilənmə: 2026-11-02
 | 3 | Kimyəvi formullar üzrə hesablamalar | 10–14 | 75 | 53 (1–53) + 22 açıq (54–75) | yoxdur | `KT1-S03-Qnnn` | `scan/kimya_I_bolme3_cavablar.json` |
 | 4 | Fiziki və kimyəvi hadisələr, kimyəvi tənliklər | 14 (sağ sütun)–17 | 32 | 22 (1–22) + 10 açıq (23–32) | yoxdur | `KT1-S04-Qnnn` | `scan/kimya_I_bolme4_cavablar.json` |
 | 5 | Kimyəvi tənliklər üzrə hesablamalar | 17–19 | 37 | 28 (1–28) + 9 açıq (29–37) | yoxdur | `KT1-S05-Qnnn` | `scan/kimya_I_bolme5_cavablar.json` |
+| 6 | Maddə miqdarı. Avoqadro qanunu | 21–24 (sol sütun, 55-ci sual) | 55 | 55 = 46 qapalı + 9 açıq (yüklənib) | yoxdur | `KT1-S06-Qnnn` | `scan/kimya_I_bolme6_cavablar.json` |
+| 7 | Qazların sıxlığı. Nisbi sıxlıq. Qaz qarışıqlarına aid hesablamalar | 24 (sol sütun, 55-dən sonra)–30 (sağ sütun, 97) | 97 | 97 = 77 qapalı + 20 açıq (yüklənib) | yoxdur | `KT1-S07-Qnnn` | `scan/kimya_I_bolme7_cavablar.json` |
+| 8 | Kimyəvi formullar üzrə hesablamalar (2-ci hissə, ayrı mövzu "(2)") | 30 (sağ sütun, 97-dən sonra)–35 (sağ sütun, 82) | 82 | 82 = 51 qapalı + 31 açıq (yüklənib) | yoxdur | `KT1-S08-Qnnn` | `scan/kimya_I_bolme8_cavablar.json` |
+| 9 | Kimyəvi tənliklər üzrə hesablamalar (2) (bölmə 5 "(1)" olur) | 35 (sağ sütun, 82-dən sonra)–38 | 45 | gözləyir: `out/import_kt1_s09.sql` (45 = 38 qapalı + 7 açıq) | yoxdur | `KT1-S09-Qnnn` | `scan/kimya_I_bolme9_cavablar.json` |
 
-Cavablar kitabda səhifə 331-dən başlayır.
+Cavablar kitabda səhifə 331-dən başlayır. Bölmə 6-nın açarı sahib tərəfindən şəkil kimi verildi (kitab səhifə 22–25 = pdf 21–24).
+
+## Bölmə 6 (2026-11-05)
+- Açıq suallar 9: çoxseçimli 47–50, ədədi 51–53, uyğunlaşdırma 54–55. Qalan 46 qapalıdır.
+- OCR 12, 13, 25, 47, 53-ü tapmadı; bu suallar əl ilə ölçülüb (`manifest.json`-da `draft_text: manual`), 11, 24, 25, 31, 32, 38, 46, 52, 54, 55-in sərhədləri düzəldilib. `--recrop` işlətmək olar (manifest düzəlişləri saxlanır), amma əvvəl `manifest.orig.json` kimi nüsxə saxla.
+- Qeyd: bu bölmədən `scan_segment.py`-nin `drop_cut_lines`-ı təkmilləşdirildi (şaquli xətt sətir analizini pozurdu, kəsik sətir həddi 0,7 → 0,85). Köhnə bölmələrin şəkilləri dəyişmir, amma onları `--recrop` etsən nəticə fərqlənə bilər.
+- Yükləmə: `out/import_kt1_s06.sql` SQL Editor-da, `out/upload_kitab/` (55 `.webp`) Storage-ə. "ok"-dan sonra şəkillər `out/images_kitab/`-a köçürülür.
+- `test_import_scans.py out/import_kt1_s06.sql` yeganə "FAIL" verir ("bütün cavablar A–E"): fayla açıq suallar da daxildir, gözlənilən haldır. `_aciq.sql` testi 0 xəta.
+
+## Bölmə 7 (2026-11-05)
+- Açıq suallar 20: çoxseçimli 78–80, ədədi 81–96, uyğunlaşdırma 97. Qalan 77 qapalıdır. Açarda 93 və 94 şəkildə çevrilmiş "8" kimi görünürdü (∞ kimi), sualları hesablayıb təsdiqlədim (hər ikisi 8).
+- OCR 1, 5, 31, 32, 33, 39–43-ü tapmadı və 38-in variantındakı "44,8"-i 44-cü sual sandı: 38–44 əl ilə ölçülüb (`draft_text: manual`). Əvvəlki manifest `manifest.orig.json`-dadır.
+- **Əyri səhifə:** səhifə 25 sol sütunu (20–30) −6°-dən +4°-yə qədər əyridir, `best_angle` (±2,5°) çatmır. `scan_segment.py`-yə `shear_crop` əlavə edildi: manifestdə `"tilt": X` (nömrələrin x-i) olan suallarda `box` sol kənardakı sətirlərə görə verilir, hər sual öz bucağı ilə düzəldilib kəsilir (`tilt_angle_fixed` bucağı əl ilə verir). `--recrop` bunu avtomatik tətbiq edir. 31–33-də (əyri sağ kənar) bucaq əl ilə 3,0/3,0/2,5 qoyuldu, altda növbəti sualın yarım sətri qalır, oxunmağa mane olmur.
+- `cont_top` (manifestdə, sual üzrə): sütun davamının başlanğıc sətri. 80-nin qrafiki 81-in üstündən birləşdirilir, oxun yazısı üçün 81-də `cont_top: 64`.
+- 97-ci sualın altında bölmə 8-in başlığı və suallar var: 97 əl ilə kəsilib (y1=272).
+- Yükləmə: `out/import_kt1_s07.sql` SQL Editor-da, `out/upload_kitab/` (97 `.webp`) Storage-ə. "ok"-dan sonra şəkillər `out/images_kitab/`-a köçürülür.
+
+## Bölmə 8 (2026-11-05)
+- Kitabda "Kimyəvi formullar üzrə hesablamalar" mövzusunun ikinci hissəsi (fərqli suallar, eyni ad). Sahibin istəyi: ayrı mövzu, siyahıda 1 və 2 kimi görünsün. Bazada eyni bölmədə eyni ad olmur (unikal), ona görə yeni mövzu "Kimyəvi formullar üzrə hesablamalar (2)", köhnəsi (bölmə 3) "... (1)" olur (`import_kt1_s08.sql`-in əvvəlində `update topics` sətri; `import_scans.py` yenidən işləsə o sətir yenidən əlavə olunmalıdır). DİQQƏT: `import_kt1_s03.sql` bundan sonra işlədilməsin, köhnə adla ikinci mövzu yaradar.
+- Açıq suallar 31: çoxseçimli 52–54, ədədi 55–77, uyğunlaşdırma 78–82. Qalan 51 qapalıdır. Açarın 1, 31, 61-ci xanaları şəkildə görünmürdü, sahib verdi (D, C, 3). Açıq cavabları (55–82) özüm yoxlayıb hesabladım, hamısı uyğun gəldi.
+- OCR 21, 30, 46, 47, 63-ü tapmadı, əl ilə ölçüldü. 21–22 əyri (`tilt`). 82-nin altında bölmə 9-un başlığı var, kəsildi (y1=462). Əvvəlki manifest `manifest.orig.json`-dadır.
+- Yükləmə: `out/import_kt1_s08.sql` SQL Editor-da, `out/upload_kitab/` (82 `.webp`) Storage-ə. "ok"-dan sonra `out/images_kitab/`-a köçürülür.
+
+## Bölmə 9 (2026-11-05)
+- Mövzu adı bölmə 5-lə eynidir: sahibin istəyi ilə yeni mövzu "Kimyəvi tənliklər üzrə hesablamalar (2)", köhnəsi (bölmə 5) "... (1)" olur (`import_kt1_s09.sql`-in əvvəlində `update topics`; `import_scans.py` yenidən işləsə o sətir yenidən əlavə olunmalıdır). DİQQƏT: `import_kt1_s05.sql` bundan sonra işlədilməsin.
+- Açıq suallar 7: 39–45 ədədi (çoxseçimli/uyğunlaşdırma yoxdur). 1–38 qapalıdır. Açarda 1 (D) və 31 (C) şəkildə görünmürdü, sahib verdi ("11 C" yazmışdı, 11 şəkildə A görünür: ikinci cərgənin kəsik ilk xanası 31 olduğu üçün C = 31 qəbul edildi). 39–44-ü suallardan hesablayıb yoxladım.
+- OCR 9, 12, 33, 35, 39-u tapmadı (əl ilə). 21 (iki sütuna bölünüb) və 32 (səhifə üstünə keçir) davamla birləşdirildi. `cont_top` manifestdə davamın BAŞLADIĞI sütunun ilk sualındadır (22-də, 21-də yox).
+- 45-in altında "Ətraflı yazılı cavab" başlığı kəsildi (y1=1180).
 
 ## Yarımçıq qalan suallar
 - **Bölmə 1:** 7 sual yoxdur (OCR tapmayıb). Dəqiq siyahı `scan/kimya_I_test/manifest.json`-da.

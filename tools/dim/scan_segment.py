@@ -136,6 +136,9 @@ def drop_cut_lines(crop):
     """Removes a partly visible text line at the very top/bottom (the end of the neighbouring question).
     A line is 'cut' when it touches the crop edge and is clearly shorter than the typical line."""
     a = np.array(crop) < 150
+    rule = a.mean(axis=0) > 0.3                 # a vertical rule (column separator, page border) is not text; it may be slightly tilted
+    rule = np.convolve(rule, np.ones(7), mode="same") > 0
+    a[:, rule] = False
     rows = a.sum(axis=1) >= 2
     runs, start = [], None
     for y, v in enumerate(rows):
@@ -158,9 +161,9 @@ def drop_cut_lines(crop):
     heights = sorted(r[1] - r[0] for r in merged)
     typical = heights[len(heights) // 2]
     top, bottom = 0, crop.height
-    if merged[0][0] <= 3 and merged[0][1] - merged[0][0] < 0.7 * typical:
+    if merged[0][0] <= 3 and merged[0][1] - merged[0][0] < 0.85 * typical:
         top = merged[1][0] - 3
-    if merged[-1][1] >= crop.height - 3 and merged[-1][1] - merged[-1][0] < 0.7 * typical:
+    if merged[-1][1] >= crop.height - 3 and merged[-1][1] - merged[-1][0] < 0.85 * typical:
         bottom = merged[-2][1] + 3
     return crop.crop((0, max(0, top), crop.width, min(crop.height, bottom)))
 
@@ -238,14 +241,15 @@ def stitch_continuations(doc, items, out_dir):
         first_in_column = (prev["page"], prev["column"]) != (q["page"], q["column"])
         if not first_in_column or q["number"] != prev["number"] + 1:
             continue
+        cont_top = q.get("cont_top", CONT_TOP)      # per question: a page whose running header is short can start lower
         y_top = q["box"][1]
-        if y_top - CONT_TOP < CONT_MIN:
+        if y_top - cont_top < CONT_MIN:
             continue
         if q["page"] not in pages:
             pages[q["page"]] = page_image(doc, q["page"])
         img = pages[q["page"]]
         gutter = q.get("gutter") or find_gutter(img)
-        box = (0, CONT_TOP, gutter + 14, y_top) if q["column"] == 0 else (gutter - 9, CONT_TOP, img.width, y_top)
+        box = (0, cont_top, gutter + 14, y_top) if q["column"] == 0 else (gutter - 9, cont_top, img.width, y_top)
         extra = clean_crop(img, box).convert("L")
         if extra.height < 40:
             continue
@@ -257,6 +261,32 @@ def stitch_continuations(doc, items, out_dir):
         prev["continued_from"] = {"page": q["page"], "column": q["column"], "rows": [CONT_TOP, y_top]}
         touched.append(prev["number"])
     return touched
+
+
+def shear_crop(img, box, xref, angle=None):
+    """Cuts a question from a strongly tilted column (the book page is curved: up to 6 degrees, more than best_angle can fix).
+    box = (x0, y0, x1, y1) where y0/y1 are measured at the column x = xref (the left edge: where the question numbers stand).
+    The strip is sheared (every column of pixels is shifted vertically) so the text lines become horizontal and the rows y0..y1
+    at xref stay where they are, then cut. The angle is estimated from the ink unless given (degrees, as best_angle)."""
+    x0, y0, x1, y1 = box
+    if angle is None:
+        probe = img.crop((x0, max(0, y0 - 10), x1, min(img.height, y1 + 10)))
+        ink = (np.array(probe) < 150).astype(np.uint8) * 255
+        base = Image.fromarray(ink)
+        best, best_score = 0.0, -1.0
+        for ang in np.arange(-8.0, 8.01, 0.25):
+            rows = np.array(base.rotate(float(ang), resample=Image.BILINEAR, fillcolor=0)).sum(axis=1).astype(np.float64)
+            if rows.var() > best_score:
+                best, best_score = float(ang), rows.var()
+        angle = best
+    k = float(np.tan(np.radians(angle)))
+    w, h = x1 - x0, y1 - y0
+    pad = int(abs(k) * w) + 30
+    top, bottom = max(0, y0 - pad), min(img.height, y1 + pad)
+    big = Image.new("L", (w, h + 2 * pad), 255)
+    big.paste(img.crop((x0, top, x1, bottom)).convert("L"), (0, top - (y0 - pad)))
+    out = big.transform(big.size, Image.AFFINE, (1, 0, 0, k, 1, -k * (xref - x0)), resample=Image.BICUBIC, fillcolor=255)
+    return out.crop((0, pad, w, pad + h)), angle
 
 
 def recrop(args):
@@ -271,6 +301,11 @@ def recrop(args):
             pages[q["page"]] = (img, q.get("gutter") or find_gutter(img))
         img, gutter = pages[q["page"]]
         w, h = img.size
+        if q.get("tilt"):                 # strongly tilted column: y0/y1 are the rows at the numbers' x (q["tilt"] = that x)
+            bx0, by0, bx1, by1 = q["box"]
+            crop, q["tilt_angle"] = shear_crop(img, (bx0, by0, bx1, by1), q["tilt"], q.get("tilt_angle_fixed"))
+            clean_crop(crop, (0, 0, crop.width, crop.height)).save(args.out / q["file"], optimize=True)
+            continue
         _x0, y0, _x1, y1 = q["box"]       # the manifest keeps the question's own rows; the margin is added only for cutting
         top, bottom = y0, min(h, y1 + V_BOTTOM)
         box = (0, top, gutter + 14, bottom) if q["column"] == 0 else (gutter - 9, top, w, bottom)   # a little past the middle: the OCR gutter is only an estimate
