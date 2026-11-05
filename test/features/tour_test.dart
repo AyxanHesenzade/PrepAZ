@@ -81,6 +81,7 @@ void main() {
       AppStrings.tourLanguage,
       AppStrings.tourAppearance,
       AppStrings.tourTeachers,
+      AppStrings.tourShareApp,
       AppStrings.tourReport,
       AppStrings.tourLegal,
       AppStrings.tourDeleteAccount,
@@ -187,7 +188,8 @@ void main() {
 
     await gotIt(tester);
     await tapMenu(tester);
-    for (var i = 0; i < 7; i++) {
+    final drawerSteps = TourStep.values.where((s) => s.inDrawer).length;
+    for (var i = 0; i < drawerSteps; i++) {
       await gotIt(tester);
     }
 

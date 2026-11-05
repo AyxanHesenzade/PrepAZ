@@ -155,6 +155,7 @@ class _Coach extends StatelessWidget {
     TourStep.language => AppStrings.tourLanguage,
     TourStep.appearance => AppStrings.tourAppearance,
     TourStep.teachers => AppStrings.tourTeachers,
+    TourStep.shareApp => AppStrings.tourShareApp,
     TourStep.report => AppStrings.tourReport,
     TourStep.legal => AppStrings.tourLegal,
     TourStep.deleteAccount => AppStrings.tourDeleteAccount,

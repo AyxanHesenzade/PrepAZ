@@ -16,7 +16,7 @@ class SupabaseGoalRepository implements GoalRepository {
           .from('exam_periods')
           .select('id, code, name, exam_date')
           .eq('is_active', true)
-          .order('sort_order');
+          .order('sort_order', ascending: true);
       return [for (final r in rows) periodFromRow(r)];
     });
   }

@@ -1,0 +1,2167 @@
+[
+ {
+  "number": 1,
+  "page": 72,
+  "column": 0,
+  "box": [
+   0,
+   954,
+   530,
+   1133
+  ],
+  "file": "q001.png",
+  "gutter": 516,
+  "draft_text": "1. Propin molekulunda - rabitalar hansi orbitallarin Ortulmosihesabina omala galir? A) hibridlasmamis p- orbitallarin B)sphibrid orbitallarin C) sp hibrid va s- orbitallarin D) hibridlasmamis p- ve sp hibrid orbitallarin E) hibridlasmomis p- ve s- orbitallarin"
+ },
+ {
+  "number": 2,
+  "page": 72,
+  "column": 0,
+  "box": [
+   0,
+   1133,
+   530,
+   1386
+  ],
+  "file": "q002.png",
+  "gutter": 516,
+  "draft_text": "2. Hanst birlesmoda iki o- (siqma) rabito sp’ hibrid orbitallarin s- orbitallarla ortulmosi hesabima yaranr? A) CH-CH,-CH, B) CH,- C=CH, CH, C) CH,-C= CH D)CH,-CH=C-CH, CH, E) CH,-CH-CH, CH"
+ },
+ {
+  "number": 3,
+  "page": 72,
+  "column": 0,
+  "box": [
+   0,
+   1386,
+   530,
+   1477
+  ],
+  "file": "q003.png",
+  "gutter": 516,
+  "draft_text": "3. Molekulunda comi 13 siqma rabitasi olan alkanda nega o- (sp - sp) rabitosi var? E)3 D) 1 A) 5 C) 4 B) 2"
+ },
+ {
+  "number": 4,
+  "page": 72,
+  "column": 1,
+  "box": [
+   507,
+   70,
+   1080,
+   160
+  ],
+  "file": "q004.png",
+  "gutter": 516,
+  "draft_text": "4. Molekulunda comi 13 siqma rabitasi olan alkan molekulunda neco o- (sp -s) rabitosi var? A) 10 B)8 C)6 D) 3 E) 12"
+ },
+ {
+  "number": 5,
+  "page": 72,
+  "column": 1,
+  "box": [
+   507,
+   160,
+   1080,
+   541
+  ],
+  "file": "q005.png",
+  "gutter": 516,
+  "draft_text": "5.1.H-0.. H-0...H-0 LHH 2.H-O-H-O...H-0 CHSHCH, \"CH 3.H-OH-0.H-0 CHs CHsCHs Etil spirtinin suda mohlulunda molekullar arasinda hidrogen rabitasinin yaranmasihansihalda dogrudur? A) yalniz 2, 3 C) yalniz 1 B) 1,2,3 D) yalniz 2 E) yalniz 1, 2"
+ },
+ {
+  "number": 6,
+  "page": 72,
+  "column": 1,
+  "box": [
+   507,
+   541,
+   1080,
+   911
+  ],
+  "file": "q006.png",
+  "gutter": 516,
+  "draft_text": "6.1.H-0...H-0... H-0 2.H-0 .. H-O... H-0 H.CH3 CH3 CH3 3.H-0-.H-0-H-0 CH, CH,CH3 Metil spirtinin suda mahlulunda molekullar arasinda hidrogen rabitasinin yaranmasi hanst halda dogrudur? A) yalniz 2, 3 B) 1,2, 3 C) yalniz 1 D) yalniz 2 E) yalniz 1, 2"
+ },
+ {
+  "number": 7,
+  "page": 72,
+  "column": 1,
+  "box": [
+   507,
+   911,
+   1080,
+   1021
+  ],
+  "file": "q007.png",
+  "gutter": 516,
+  "draft_text": "7. Hans birlosma xatti qurulusa malikdir? A) H,O C) CO2 B) H2S D) C2H6 E) C,H6 234"
+ },
+ {
+  "number": 8,
+  "page": 72,
+  "column": 1,
+  "box": [
+   507,
+   1021,
+   1080,
+   1258
+  ],
+  "file": "q008.png",
+  "gutter": 516,
+  "draft_text": "8.H,C=CH-C=CH Molekulda 2-ci vs 3-cu karbon atomlarinn hibrid Veziyyotinimuayyon edin. SP sp E)"
+ },
+ {
+  "number": 9,
+  "page": 72,
+  "column": 1,
+  "box": [
+   507,
+   1258,
+   1080,
+   1510
+  ],
+  "file": "q009.png",
+  "gutter": 516,
+  "draft_text": "9.Hansi orbitallarin ortulmasi etandakr C-H rabitosina aiddir? B)( A) C D) C 73-"
+ },
+ {
+  "number": 10,
+  "page": 73,
+  "column": 0,
+  "box": [
+   0,
+   60,
+   579,
+   300
+  ],
+  "file": "q010.png",
+  "gutter": 565,
+  "draft_text": "10. Hans orbitallarin ortalmosi etandaki C-C rabitasine aiddir? A) O B)( D)X C)"
+ },
+ {
+  "number": 11,
+  "page": 73,
+  "column": 0,
+  "box": [
+   0,
+   300,
+   579,
+   388
+  ],
+  "file": "q011.png",
+  "gutter": 565,
+  "draft_text": "11.Propan molekulunda kimyovirabitolarin yaranmasinda neg sp hibrid orbitali istirak edir? E) 16 C) 12D) 20 A)8 B)4"
+ },
+ {
+  "number": 12,
+  "page": 73,
+  "column": 0,
+  "box": [
+   0,
+   388,
+   579,
+   477
+  ],
+  "file": "q012.png",
+  "gutter": 565,
+  "draft_text": "12. Etan molekulunda kimyovi rabitalorin yaranmasinda neco sp hibrid orbital istirak edir? E) 12 D) 8 C) 4 A)6 B) 2"
+ },
+ {
+  "number": 13,
+  "page": 73,
+  "column": 0,
+  "box": [
+   0,
+   477,
+   579,
+   588
+  ],
+  "file": "q013.png",
+  "gutter": 565,
+  "draft_text": "13.Toluol molekulundakimyovirabitolorin yaranmasinda comi nego sp hibrid orbital istirak edir? B)6 D) 18 A) 3 E) 24 C) 12"
+ },
+ {
+  "number": 14,
+  "page": 73,
+  "column": 0,
+  "box": [
+   0,
+   588,
+   579,
+   700
+  ],
+  "file": "q014.png",
+  "gutter": 565,
+  "draft_text": "14.Benzolmolekulunda kimyovi rabitolarin yaranmasinda comi nega sp hibrid orbital istirak edir? A) 12 B) 6 C) 18 D) 21 E) 24"
+ },
+ {
+  "number": 15,
+  "page": 73,
+  "column": 0,
+  "box": [
+   0,
+   700,
+   579,
+   840
+  ],
+  "file": "q015.png",
+  "gutter": 565,
+  "draft_text": "15.Propan molekulundakarbon atomlan arasinda g-(siqma)rabitolorhansi orbitallarin Ortulmosi hesabina omala golir? B) sp’-sp? A) sp'-p D) sp-sp E) sp2-s"
+ },
+ {
+  "number": 16,
+  "page": 73,
+  "column": 0,
+  "box": [
+   0,
+   840,
+   579,
+   1052
+  ],
+  "file": "q016.png",
+  "gutter": 565,
+  "draft_text": "16. Sirka aldehidi molekulunda neca g- Vo neco K-rabitasi var? A) B) C) D) E)"
+ },
+ {
+  "number": 17,
+  "page": 73,
+  "column": 0,
+  "box": [
+   0,
+   1052,
+   579,
+   1144
+  ],
+  "file": "q017.png",
+  "gutter": 565,
+  "draft_text": "17. Hansi birlosmalorin molekullan xotti qurulusludur? A) NH3, H20 B) BC3, SO2 C) CH4, H20 D) BeCl2, CO2 E) NH3, C2H2"
+ },
+ {
+  "number": 18,
+  "page": 73,
+  "column": 0,
+  "box": [
+   0,
+   1144,
+   579,
+   1238
+  ],
+  "file": "q018.png",
+  "gutter": 565,
+  "draft_text": "18.Hansi birlasmalorda sp hibridlasmosi movcuddur? A) C2H4, BF3 B) C2H, BCl3C) CH4, CCl4 D) C2H2, BeCl2E) CH4, C2H6"
+ },
+ {
+  "number": 19,
+  "page": 73,
+  "column": 0,
+  "box": [
+   0,
+   1238,
+   579,
+   1328
+  ],
+  "file": "q019.png",
+  "gutter": 565,
+  "draft_text": "19.Hansi orbitallarin ortalmasi x-rabito yarada bilor? A) sp-p B) sp=-sp2 C) sp\"-p D) p-p E) sp -s"
+ },
+ {
+  "number": 20,
+  "page": 73,
+  "column": 0,
+  "box": [
+   0,
+   1328,
+   579,
+   1461
+  ],
+  "file": "q020.png",
+  "gutter": 565,
+  "draft_text": "20. Hansi orbitallarin ortulmosi qeyri-poly ar kovalent rabitayaradabilor? B) sp'-p A) sp-s C) sp-p D) sp-p E) sp*sp?"
+ },
+ {
+  "number": 21,
+  "page": 73,
+  "column": 1,
+  "box": [
+   556,
+   45,
+   1080,
+   208
+  ],
+  "file": "q021.png",
+  "gutter": 565,
+  "draft_text": "manual"
+ },
+ {
+  "number": 22,
+  "page": 73,
+  "column": 1,
+  "box": [
+   556,
+   208,
+   1080,
+   394
+  ],
+  "file": "q022.png",
+  "gutter": 565,
+  "draft_text": "22. 2CH -3H2 Karbon atomlarinin hibridlasma voziyyati neca dayisir? B) sp→>sp*→sp A) sp+sp->sp D) sp->sp->sp C) sp*→>sp->sp E) sp>sp->sp"
+ },
+ {
+  "number": 23,
+  "page": 73,
+  "column": 1,
+  "box": [
+   556,
+   394,
+   1080,
+   564
+  ],
+  "file": "q023.png",
+  "gutter": 565,
+  "draft_text": "23. Hansi elektron formullar dogru deyit? I. :C..C: I H:C:O:H H:O: AI,  B) yalniz I C)I, II D) I, II E) yalniz II"
+ },
+ {
+  "number": 24,
+  "page": 73,
+  "column": 1,
+  "box": [
+   556,
+   564,
+   1080,
+   708
+  ],
+  "file": "q024.png",
+  "gutter": 565,
+  "draft_text": "24.Hansi elektron formullani dogrudur? II. H:Be:H I. H:C..C:H. III. :NN: A)I,II B) yalniz III C) II, II D)I, 1II E) yalniz I"
+ },
+ {
+  "number": 25,
+  "page": 73,
+  "column": 1,
+  "box": [
+   556,
+   708,
+   1080,
+   934
+  ],
+  "file": "q025.png",
+  "gutter": 565,
+  "draft_text": "25. Hansi hallarda kovalent rabita donor-akseptor mexanizmi tizrs amala galir? IH+H→+H2 II. CH,-NH2 + HCI-→[CH,-NH:]'CI II. NH, +H-→NH4 IV. C + 2H2tCH A) I, II B) I, IV D) yalniz II E) III,IV"
+ },
+ {
+  "number": 26,
+  "page": 73,
+  "column": 1,
+  "box": [
+   556,
+   934,
+   1080,
+   1156
+  ],
+  "file": "q026.png",
+  "gutter": 565,
+  "draft_text": "26. Hanst hallarda kovalent rabita donor-akseptor mexanizmi uzra omala galmir? IH+H→H2 II. C,Hs-NH2 + HCI→[C.Hs-NH] CI III NH3 +H→NH IV. Hz + Cl2→2HCI A) yalniz II B) I, II D)I, IV E) III,IV"
+ },
+ {
+  "number": 27,
+  "page": 73,
+  "column": 1,
+  "box": [
+   556,
+   1156,
+   1080,
+   1444
+  ],
+  "file": "q027.png",
+  "gutter": 565,
+  "draft_text": "27. Bir molekulunda rabitolorin omala galmasinda istirak edon hibrid orbitallarin sayi H20 NH3 CH a, b vo c-ni muqayisa edin. A) a<c<b B)csa-b ns0-9(0 D)c<b<a E)a<bc"
+ },
+ {
+  "number": 28,
+  "page": 74,
+  "column": 0,
+  "box": [
+   0,
+   68,
+   520,
+   278
+  ],
+  "file": "q028.png",
+  "gutter": 506,
+  "draft_text": "manual"
+ },
+ {
+  "number": 29,
+  "page": 74,
+  "column": 0,
+  "box": [
+   0,
+   278,
+   520,
+   390
+  ],
+  "file": "q029.png",
+  "gutter": 506,
+  "draft_text": "manual"
+ },
+ {
+  "number": 30,
+  "page": 74,
+  "column": 0,
+  "box": [
+   0,
+   390,
+   520,
+   524
+  ],
+  "file": "q030.png",
+  "gutter": 506,
+  "draft_text": "30. Hanst sura azrs karbon atomunun hibrid orbitallar arasndak bucaq kicilir? I sp? 3. sp 2. sp B) 2, 1, 3 C) 3, 1,2 A) 1, 3. 2 E) 2, 3, 1 D) 3, 2, 1"
+ },
+ {
+  "number": 31,
+  "page": 74,
+  "column": 0,
+  "box": [
+   0,
+   524,
+   520,
+   665
+  ],
+  "file": "q031.png",
+  "gutter": 506,
+  "draft_text": "31. Hansi sira uzra karbon atomlan arasindaki rabitanin uzunlugu artir? 3. C2H2 2. C2H6 1. CH4 C) 1, 2, 3 B) 3, 1, 2 A) 2. 1, 3 E) 1,3, 2 D) 3, 2, 1"
+ },
+ {
+  "number": 32,
+  "page": 74,
+  "column": 0,
+  "box": [
+   0,
+   665,
+   520,
+   752
+  ],
+  "file": "q032.png",
+  "gutter": 506,
+  "draft_text": "32.1mol NazSO4-da olan polyarkovalent rabitalarin mol sayimi muayyon edin. D)6 E)8 C) 2 B) 3 A)4"
+ },
+ {
+  "number": 33,
+  "page": 74,
+  "column": 0,
+  "box": [
+   0,
+   752,
+   520,
+   836
+  ],
+  "file": "q033.png",
+  "gutter": 506,
+  "draft_text": "33.1molK,POg-daolanpolyarkovalentrabitalorin mol sayini muayyan edin. E) 6 E)6 D)8 C) 2 A)5 B) 3"
+ },
+ {
+  "number": 34,
+  "page": 74,
+  "column": 0,
+  "box": [
+   0,
+   836,
+   520,
+   968
+  ],
+  "file": "q034.png",
+  "gutter": 506,
+  "draft_text": "34.Alkan molekulundakimyavi rabitalarin omala galmasindakarbonun 8 hibrid orbitali istirak edirso, birlasmani muayyen edin. C) CsH12 B) C4Hro A) CH4 E) C2H6 D) C,H8"
+ },
+ {
+  "number": 35,
+  "page": 74,
+  "column": 0,
+  "box": [
+   0,
+   968,
+   520,
+   1112
+  ],
+  "file": "q035.png",
+  "gutter": 506,
+  "draft_text": "35.Alkan molekulunda kimyovi rabitolarin amala golmosindakarbonun 12 hibrid orbitali istirak edirso birlasmonin formulunu muayyen edin. C) C2H6 A) CHio B) CH4 E) CHmeml D) CsH12"
+ },
+ {
+  "number": 36,
+  "page": 74,
+  "column": 0,
+  "box": [
+   0,
+   1112,
+   520,
+   1279
+  ],
+  "file": "q036.png",
+  "gutter": 506,
+  "draft_text": "36.Hansi ifadalar dogrudur? I. CO molekulunda donor oksigendir. II. NH ionunda akseptor azotdur. II. Hgot ionunda akseptor hidrogendir. C) I, II AI, III B) I,I D)yalnizIII E) yalniz I"
+ },
+ {
+  "number": 37,
+  "page": 74,
+  "column": 0,
+  "box": [
+   0,
+   1279,
+   520,
+   1455
+  ],
+  "file": "q037.png",
+  "gutter": 506,
+  "draft_text": "37.Hanst ifadalor dogrudur? I, CO molekulunda karbon donordur. II. NH ionunda hidrogen akseptordur. I.Ho' ionunda hidrogen akseptordur. C)I,  A), II B)I,II D) yalniz II E) yalniz I"
+ },
+ {
+  "number": 38,
+  "page": 74,
+  "column": 1,
+  "box": [
+   497,
+   88,
+   1080,
+   175
+  ],
+  "file": "q038.png",
+  "gutter": 506,
+  "draft_text": "38. 24 hidrogen atomu olan alkan molekulunda karbon atomlari arasinda neco siqma rabita var? E)8 A)9B) 11 D) 10 C) 12"
+ },
+ {
+  "number": 39,
+  "page": 74,
+  "column": 1,
+  "box": [
+   497,
+   175,
+   1080,
+   262
+  ],
+  "file": "q039.png",
+  "gutter": 506,
+  "draft_text": "39.32 hidrogen atomu olan alkan molekulundakarbon atomlari arasinda neco siqma rabita var? C) 16 E) 12 D) 13 B)14 A)15"
+ },
+ {
+  "number": 40,
+  "page": 74,
+  "column": 1,
+  "box": [
+   497,
+   262,
+   1080,
+   931
+  ],
+  "file": "q040.png",
+  "gutter": 506,
+  "draft_text": "40.CH,-CH-CH-CH,molekulunda 2-ci va 3-ca CH3 karbon atomlarinda orbitallarin hibridlosmasini dogru aks etdiron sxemlori muayyon edin. 88 b. C)2-a, 3-c B) 2-a; 3 -b A)2-b,3-a E) 2-b, 3- c D) 2 -c, 3 - a"
+ },
+ {
+  "number": 41,
+  "page": 74,
+  "column": 1,
+  "box": [
+   497,
+   931,
+   1080,
+   1195
+  ],
+  "file": "q041.png",
+  "gutter": 506,
+  "draft_text": "41. CH,-CH -CH=CH, birlesmosinda 1, 2 vo 3-cu CH3 karbon atomlani hansi hibridlasma veziyyotindodir? SP SP sp B) D) SP Sp E) SP"
+ },
+ {
+  "number": 42,
+  "page": 74,
+  "column": 1,
+  "box": [
+   497,
+   1195,
+   1080,
+   1515
+  ],
+  "file": "q042.png",
+  "gutter": 506,
+  "draft_text": "42.CH,-C=CHbirlosmosinda1,2vo3-cukarbon CH3 atomlar hanst hibrid voziyyotindodir? A) SP B) SP sp C) SP D) SP SP SP E) 75-"
+ },
+ {
+  "number": 43,
+  "page": 75,
+  "column": 0,
+  "box": [
+   0,
+   46,
+   594,
+   164
+  ],
+  "file": "q043.png",
+  "gutter": 580,
+  "draft_text": "43. Propen molekulunda neca a-rabite sp* hibrid va s- orbitallarinn ortulmesi ila yaranir? E)5 2B)4C)3 D)7 A) 2 "
+ },
+ {
+  "number": 44,
+  "page": 75,
+  "column": 0,
+  "box": [
+   0,
+   164,
+   594,
+   310
+  ],
+  "file": "q044.png",
+  "gutter": 580,
+  "draft_text": "44. Benzol molekulunda karbon atomlari hansi hibrid halndadr? A) sp2 B) sps C) sp D) sp ve sp? E) sp* ve sp"
+ },
+ {
+  "number": 45,
+  "page": 75,
+  "column": 0,
+  "box": [
+   0,
+   310,
+   594,
+   416
+  ],
+  "file": "q045.png",
+  "gutter": 580,
+  "draft_text": "45. Azot molekulunda nece α- ve r- rabita var? B) 20, 1元 A) 20, 2元 C) 10, 2元 D) 3g E) 10, 3元"
+ },
+ {
+  "number": 46,
+  "page": 75,
+  "column": 0,
+  "box": [
+   0,
+   416,
+   594,
+   577
+  ],
+  "file": "q046.png",
+  "gutter": 580,
+  "draft_text": "46. Hansi orbitallarin ortulmosi H-Cl rabitesine aiddir? B)C D) E0"
+ },
+ {
+  "number": 47,
+  "page": 75,
+  "column": 0,
+  "box": [
+   0,
+   577,
+   594,
+   738
+  ],
+  "file": "q047.png",
+  "gutter": 580,
+  "draft_text": "47. Hanst orbitallarin ortulmasi Cl-Cl rabitasina aiddir? A) ( BOD D) 0"
+ },
+ {
+  "number": 48,
+  "page": 75,
+  "column": 0,
+  "box": [
+   0,
+   738,
+   594,
+   883
+  ],
+  "file": "q048.png",
+  "gutter": 580,
+  "draft_text": "48.Hansi maddalarin har ikisinda kovalent rabite donor-akseptor mexanizmi ila yaranmisdir? A) NaCl, CusO4-5H,0 B) CO2, NH4Br C) NH3, CO D) NH4CI, H20 E) CO, (NH4)2SO4"
+ },
+ {
+  "number": 49,
+  "page": 75,
+  "column": 0,
+  "box": [
+   0,
+   883,
+   594,
+   1085
+  ],
+  "file": "q049.png",
+  "gutter": 580,
+  "draft_text": "49. Hans1 maddalarin har ikisinda donor-akseptor mexanizmi izra amala galan kimyavi rabita var? A) CO, CaO4 B) CH,COONa, CH,COONH4 C) (NH4)2CO3, KMnO4 D) HBr, KNO3 E) NHCI, NH.NO3"
+ },
+ {
+  "number": 50,
+  "page": 75,
+  "column": 0,
+  "box": [
+   0,
+   1085,
+   594,
+   1269
+  ],
+  "file": "q050.png",
+  "gutter": 580,
+  "draft_text": "50. Asetilen molekulunda neca α- ve it- rabita var? B) D)"
+ },
+ {
+  "number": 51,
+  "page": 75,
+  "column": 0,
+  "box": [
+   0,
+   1269,
+   594,
+   1483
+  ],
+  "file": "q051.png",
+  "gutter": 580,
+  "draft_text": "51. Propilen molekulunda karbon atomlan arasinda nego G- Ve neco -rabite var? A) B) D) E)"
+ },
+ {
+  "number": 52,
+  "page": 75,
+  "column": 0,
+  "box": [
+   0,
+   1483,
+   594,
+   1607
+  ],
+  "file": "q052.png",
+  "gutter": 580,
+  "draft_text": "52. Molekulunda siqma rabitalorin umumi say1 11 olan alkeni muayyon edin. A) C2H4 C) C3H6 B) C4Hg D) CsHio E) CeH12 -76"
+ },
+ {
+  "number": 53,
+  "page": 75,
+  "column": 1,
+  "box": [
+   571,
+   58,
+   1080,
+   196
+  ],
+  "file": "q053.png",
+  "gutter": 580,
+  "draft_text": "manual"
+ },
+ {
+  "number": 54,
+  "page": 75,
+  "column": 1,
+  "box": [
+   571,
+   206,
+   1080,
+   360
+  ],
+  "file": "q054.png",
+  "gutter": 580,
+  "draft_text": "manual"
+ },
+ {
+  "number": 55,
+  "page": 75,
+  "column": 1,
+  "box": [
+   571,
+   360,
+   1080,
+   508
+  ],
+  "file": "q055.png",
+  "gutter": 580,
+  "draft_text": "manual"
+ },
+ {
+  "number": 56,
+  "page": 75,
+  "column": 1,
+  "box": [
+   571,
+   508,
+   1080,
+   655
+  ],
+  "file": "q056.png",
+  "gutter": 580,
+  "draft_text": "manual"
+ },
+ {
+  "number": 57,
+  "page": 75,
+  "column": 1,
+  "box": [
+   571,
+   655,
+   1080,
+   787
+  ],
+  "file": "q057.png",
+  "gutter": 580,
+  "draft_text": "57. Karbon atomlarinin say1 n olan alkan molekulunda comi nece g- (siqma) rabita var? A) n-1 B) 3n C) 3n+1 D) 2n+2 E) 3n+2"
+ },
+ {
+  "number": 58,
+  "page": 75,
+  "column": 1,
+  "box": [
+   571,
+   787,
+   1080,
+   1186
+  ],
+  "file": "q058.png",
+  "gutter": 580,
+  "draft_text": "58. Oksigen ve kukurd dovri sistemin eyni qrupunda yerlasdiyi halda, na uicun oksigenin hidrogenli birlasmasi olan su maye, kukurdun hidrogenli birlesmosi olan hidrogen-sulfid isa qaz halindadir? A) oksigen atomunun radiusu kukird atomunun radiusundan kicik oldugundan B) su molekulunda polyar kovalent rabite, hidrogen-  sulfid molekulunda isa ion rabitosi oldugundan C) hidrogen-sulfid molekulundan forqli olaraq su molekullari arasinda hidrogen rabitasi omala galdiyindan D) su molekuly ar tipli kristal qofas amala gatirdiyindan IVv VI valentlilik gostardiyindon hibrid orbitallarinin ortulmasi ila omols golir? A) CH,-C=CH B) CH,-CH,-CH, 3 C) CH,-C =CH2 D) CH,-CH=CH2 CH3 E) CH,-CH -CH3 CH3 adad o-va -rabito var? A) B) C) D) E)"
+ },
+ {
+  "number": 59,
+  "page": 75,
+  "column": 1,
+  "box": [
+   571,
+   1196,
+   1080,
+   1428
+  ],
+  "file": "q059.png",
+  "gutter": 580,
+  "draft_text": "manual"
+ },
+ {
+  "number": 60,
+  "page": 75,
+  "column": 1,
+  "box": [
+   571,
+   1428,
+   1080,
+   1605
+  ],
+  "file": "q060.png",
+  "gutter": 580,
+  "draft_text": "manual"
+ },
+ {
+  "number": 61,
+  "page": 76,
+  "column": 0,
+  "box": [
+   0,
+   88,
+   524,
+   212
+  ],
+  "file": "q061.png",
+  "gutter": 510,
+  "draft_text": "61. Hansi maddalarin amale galmasinda sp hibrid orbitallar istirak edir? 4. BeF2 3.CHe 2. CH2 1. BCl3 yaranmis kovalent rabitalor movcuddur? 2.Karbon-monooksid 1.Ammonyak 4.Fenilammonium-xlorid 3.Metilamin C) 1;3D)3; 4/E)2;3 A) 2: 4B) 1: 2"
+ },
+ {
+  "number": 62,
+  "page": 76,
+  "column": 0,
+  "box": [
+   0,
+   212,
+   524,
+   331
+  ],
+  "file": "q062.png",
+  "gutter": 510,
+  "draft_text": "manual"
+ },
+ {
+  "number": 63,
+  "page": 76,
+  "column": 0,
+  "box": [
+   0,
+   331,
+   524,
+   452
+  ],
+  "file": "q063.png",
+  "gutter": 510,
+  "draft_text": "63. Buten-1 molekulunda sp’-sp'vo sp*s orbitllarn Ortulmosinden yaranan o-rabitolorin amumi sayim muayyan edin. D)8 E)5 C)6 B) 4 A) 2"
+ },
+ {
+  "number": 64,
+  "page": 76,
+  "column": 0,
+  "box": [
+   0,
+   452,
+   524,
+   614
+  ],
+  "file": "q064.png",
+  "gutter": 510,
+  "draft_text": "64. Hanst reaksiya mohsulunda donor-akseptor mexanizmi ile amale galmis kovalent rabita yoxdur? B) H2 + O2 + A) CO, +C t, C) NHs + HNO3 → D) H2O + NH E) HCOOH HSO(qat)t"
+ },
+ {
+  "number": 65,
+  "page": 76,
+  "column": 0,
+  "box": [
+   0,
+   614,
+   524,
+   829
+  ],
+  "file": "q065.png",
+  "gutter": 510,
+  "draft_text": "65. CH,= CH,+ Cl -→CH,CI-CH,CI reaksiyas1 ucun hansi ifada dogru deyil? A)doymus maddaamalagalir B)o-rabitalarinsay1artir C) karbon atomlarn sp\" hibrid vaziyyatindan sp hibridvaziyyatinakecir D) xatti quruluslu birlasma amale golir E)oksidlasma-reduksiya reaksiyasidir"
+ },
+ {
+  "number": 66,
+  "page": 76,
+  "column": 0,
+  "box": [
+   0,
+   829,
+   524,
+   1094
+  ],
+  "file": "q066.png",
+  "gutter": 510,
+  "draft_text": "66. CH,= CH,+ H, Ikat CH,-CH, reaksiyas ucun hansi ifada dogru deyil? A) oksidlasma-reduksiya reaksiyasidir B)g-rabitalarin sayiartir C)karbon atomlan sp’hibrid voziyyatindon sp hibridvoziyyotinakecir D) karbohidrogen molekulunun faza qurulusu oldugukimiqalr E) reaksiyada istirak edan butun maddaler havada yanir"
+ },
+ {
+  "number": 67,
+  "page": 76,
+  "column": 0,
+  "box": [
+   0,
+   1094,
+   524,
+   1350
+  ],
+  "file": "q067.png",
+  "gutter": 510,
+  "draft_text": "67.Birlasmade hibrid orbitallarinin ortalmosi ilo yaranan g-rabitolarin say1 hans halda dogrudur? YCH2-CH sp A) B) C) D) E) g-rabita var? A) CH-CH=CH-CH3 B)CH3-CH2-C=CH CH3"
+ },
+ {
+  "number": 68,
+  "page": 76,
+  "column": 0,
+  "box": [
+   0,
+   1350,
+   524,
+   1505
+  ],
+  "file": "q068.png",
+  "gutter": 510,
+  "draft_text": "manual",
+  "continued_from": {
+   "page": 76,
+   "column": 1,
+   "rows": [
+    82,
+    228
+   ]
+  }
+ },
+ {
+  "number": 69,
+  "page": 76,
+  "column": 1,
+  "box": [
+   501,
+   228,
+   1080,
+   336
+  ],
+  "file": "q069.png",
+  "gutter": 510,
+  "draft_text": "manual",
+  "cont_top": 92
+ },
+ {
+  "number": 70,
+  "page": 76,
+  "column": 1,
+  "box": [
+   501,
+   336,
+   1080,
+   426
+  ],
+  "file": "q070.png",
+  "gutter": 510,
+  "draft_text": "70. 3-metilbuten-1 molekulunda neco o-rabita sp-- s orbitallarin ortmosiilayaranir? A) 7B) 10C) 13 E) 14 B) 10 C)13 D) 8"
+ },
+ {
+  "number": 71,
+  "page": 76,
+  "column": 1,
+  "box": [
+   501,
+   426,
+   1080,
+   513
+  ],
+  "file": "q071.png",
+  "gutter": 510,
+  "draft_text": "71. 2-metilpropan molekulunda nece g-rabita sp hibrid orbitallarinin bir-birini ortmasi hesabina yaranir? C)6D) 4 E)9 D) 4 B) 5 A) 3."
+ },
+ {
+  "number": 72,
+  "page": 76,
+  "column": 1,
+  "box": [
+   501,
+   513,
+   1080,
+   627
+  ],
+  "file": "q072.png",
+  "gutter": 510,
+  "draft_text": "72. Butan molekulunda nego - rabita sp hibrid orbitallarinin s-orbitallarla ortalmasihesabina yaranr? E)6 D) 12  A) 10(B) 14  C)8"
+ },
+ {
+  "number": 73,
+  "page": 76,
+  "column": 1,
+  "box": [
+   501,
+   627,
+   1080,
+   1015
+  ],
+  "file": "q073.png",
+  "gutter": 510,
+  "draft_text": "73.Asetilen molekulunda karbon atomlari arasindaki G- va π- rabitalor neca yaranir? A)-rabitap-elektron buludunun,元-rabitalarisa sp hibrid elektron buludlarinin bir-birini ortmasi B) α-rabita iki sp hibrid elektron buludunun, t- rabitalar iso p- elektron buludlarinin bir-birini ortmosiila C) α-rabito sp hibrid va p- elektron buludlarinin, 元-rabitalarisap-elektron buludlarinin bir-binini ortmesiile D) hom o- rabita, ham da.-rabitalar sp hibrid va p- elektron buludlarinin bir-birini ortmasi ilo E) -rabita iki sp hibrid, 元-rabita iso sp hibrid va p- elektron buludlarinin bir-birini ortmasi ile"
+ },
+ {
+  "number": 74,
+  "page": 76,
+  "column": 1,
+  "box": [
+   501,
+   1015,
+   1080,
+   1423
+  ],
+  "file": "q074.png",
+  "gutter": 510,
+  "draft_text": "74.Etilen molekulundakarbon atomlanarasindak g-va -rabitalar neco yaranir? A) g-rabita sp hibrid vo p- elektron buludlarinin, -rabitoiso ikip-elektronbuludunun bir-birini ortmosiila B)g-rabito ikip-elektron buludunun, r-rabitoiso iki sp hibrid elektron buludunun bir-birini ortmasiil C) α- rabita iki sp hibrid elektron buludunun, -rabitaiso iki p-elektron buludunun bir-birini elltsetmg D) o- rabita iki sp hibrid elektron buludunun, 元-rabita isa sp hibrid vo p-elektron buludlarin bir-birini ortmasiils E) ham a-, hom da t-rabita sphibrid vo p-elektron buludlarinin bir-birimi ortmosiilo"
+ },
+ {
+  "number": 75,
+  "page": 77,
+  "column": 0,
+  "box": [
+   0,
+   62,
+   581,
+   247
+  ],
+  "file": "q075.png",
+  "gutter": 567,
+  "draft_text": "75.Hans reaksivalardan alman birlosmolordo donor- akseptormexanizmiiloomnalogolmiskovalent rabitelor var? . NH,+ O, LNH: +H.O- IV CH,-NH, +O,- ICH-NH,+HO C) 1, 111 Bm E) yaln1z 1 D)1, I1"
+ },
+ {
+  "number": 76,
+  "page": 77,
+  "column": 0,
+  "box": [
+   0,
+   247,
+   581,
+   446
+  ],
+  "file": "q076.png",
+  "gutter": 567,
+  "draft_text": "76.Hanstreaksyalardan alnan birlosmolordodonor aksoptormexanizmiiloomolbgolmiskovalent rabitolor var? N+H m.NH,+oL IV. NH, +HCI  B) I, III c) II, IV ALN E) II, IV"
+ },
+ {
+  "number": 77,
+  "page": 77,
+  "column": 0,
+  "box": [
+   0,
+   446,
+   581,
+   578
+  ],
+  "file": "q077.png",
+  "gutter": 567,
+  "draft_text": "77. Hanst birlasmanin molekulunda sp’ hibrid vaziyatinda olan karbon atomlarinn sayi daha Coxdur? B) benzol A)vinilbenzol C) toluol D) kumol E) o-ksilol"
+ },
+ {
+  "number": 78,
+  "page": 77,
+  "column": 0,
+  "box": [
+   0,
+   578,
+   581,
+   799
+  ],
+  "file": "q078.png",
+  "gutter": 567,
+  "draft_text": "78.Hanstreaksiyada karbon atomlarinimn hibridlosma waziyyatisp-dan sp-yakecir? A) CH2 + 2H, _t, kat t, kat B) CH,CH,CI + KOH Su 1500° C)CH4- 550° kat D) CH4- E) CH4 +H2-t kat"
+ },
+ {
+  "number": 79,
+  "page": 77,
+  "column": 0,
+  "box": [
+   0,
+   799,
+   581,
+   964
+  ],
+  "file": "q079.png",
+  "gutter": 567,
+  "draft_text": "79. Hansi reaksiyada sphibrid orbitallan sp hibrid orbitallara cevrilir? L, kat A) CH4+H2 B) CaC2 + H2O - D) CH, 1500°℃ Hg 2 C) CH2 +H20 E) CHe+ CI2 → SLE"
+ },
+ {
+  "number": 80,
+  "page": 77,
+  "column": 0,
+  "box": [
+   0,
+   964,
+   581,
+   1236
+  ],
+  "file": "q080.png",
+  "gutter": 567,
+  "draft_text": "80. Hans reaksiyada sp- hibrid orbitallari sp hibrid orbitallara cevrilir? A) CH-, B) CH =CH +2H, tkat t, AIC, D) CH,-CH2-CH2-CH, E) 2CH=CH kal"
+ },
+ {
+  "number": 81,
+  "page": 77,
+  "column": 0,
+  "box": [
+   0,
+   1236,
+   581,
+   1320
+  ],
+  "file": "q081.png",
+  "gutter": 567,
+  "draft_text": "81,2-metilpropan molekulunda neco rabita sp-s ortulmasihesabmayaranir? A)10B) 13 C)3 D) 12E) 9 E)9"
+ },
+ {
+  "number": 82,
+  "page": 77,
+  "column": 0,
+  "box": [
+   0,
+   1320,
+   581,
+   1427
+  ],
+  "file": "q082.png",
+  "gutter": 567,
+  "draft_text": "82. 2-metilpropen molekulunda nego g- rabito sp* va sp hibrid orbitallarin bir-birini ortmasi ilo yaranir? A)7 B)8 C) 1 D) 3 E) 2"
+ },
+ {
+  "number": 83,
+  "page": 77,
+  "column": 1,
+  "box": [
+   558,
+   62,
+   1080,
+   243
+  ],
+  "file": "q083.png",
+  "gutter": 567,
+  "draft_text": "manual"
+ },
+ {
+  "number": 84,
+  "page": 77,
+  "column": 1,
+  "box": [
+   558,
+   243,
+   1080,
+   450
+  ],
+  "file": "q084.png",
+  "gutter": 567,
+  "draft_text": "84. Metakril tursusunun molekulunda nego o- va K-rabita var? A) 12 B) 11 C) D) 12 E) 11"
+ },
+ {
+  "number": 85,
+  "page": 77,
+  "column": 1,
+  "box": [
+   558,
+   450,
+   1080,
+   538
+  ],
+  "file": "q085.png",
+  "gutter": 567,
+  "draft_text": "85. Divinil molekulunda rabitalarin amale galmasinda comi neco hibridlasmamis orbital istirak edir? C)8D) 12/E) 10 B)6 A) 9"
+ },
+ {
+  "number": 86,
+  "page": 77,
+  "column": 1,
+  "box": [
+   558,
+   538,
+   1080,
+   631
+  ],
+  "file": "q086.png",
+  "gutter": 567,
+  "draft_text": "86. Penten-1 molekulunda rabitalarin amala galmasinds comi nega hibridlasmamis orbital istirak edir? D) 14E) 12 A) 16 B) 11 C)8"
+ },
+ {
+  "number": 87,
+  "page": 77,
+  "column": 1,
+  "box": [
+   558,
+   631,
+   1080,
+   819
+  ],
+  "file": "q087.png",
+  "gutter": 567,
+  "draft_text": "87. I. C2H4 va N2 II. CO2 vo N2 III.CHvo CH2 Hansi molekul cutlarinda r- rabitalarin say1 barabordir? A) yalniz I B) yalniz II C) I ve II D)II va III E)I vo III"
+ },
+ {
+  "number": 88,
+  "page": 77,
+  "column": 1,
+  "box": [
+   558,
+   819,
+   1080,
+   960
+  ],
+  "file": "q088.png",
+  "gutter": 567,
+  "draft_text": "88. n sayda karbon atomu olan alkin molekulunda rabitalarinamalagalmasindacominegaorbital istirak edir? A) 4n+2 B) 6n C) 4n-4 D) 4n -2 E) 6n-2"
+ },
+ {
+  "number": 89,
+  "page": 77,
+  "column": 1,
+  "box": [
+   558,
+   960,
+   1080,
+   1099
+  ],
+  "file": "q089.png",
+  "gutter": 567,
+  "draft_text": "89.n sayda karbon atomu olan alkan molekulunda rabitalarin amalagalmosind comi neco orbital istirak edir? A) 4n+2 B) 6n C) 6n+2 D) 4n-2 E) 4n"
+ },
+ {
+  "number": 90,
+  "page": 77,
+  "column": 1,
+  "box": [
+   558,
+   1099,
+   1080,
+   1270
+  ],
+  "file": "q090.png",
+  "gutter": 567,
+  "draft_text": "90. Kimyovirabitalorinsayi sp-s sp-sp 12 Tsikloalkan molekulu tin x-i muayyon edin. A) 6 E)5 B) 8 C) 4 D) 3"
+ },
+ {
+  "number": 91,
+  "page": 77,
+  "column": 1,
+  "box": [
+   558,
+   1270,
+   1080,
+   1451
+  ],
+  "file": "q091.png",
+  "gutter": 567,
+  "draft_text": "91. Kimyovirabitalarinsayi sp-s sp-sp Tsikloalkan molekulu ucan x-i muayon edin. E) 10 A) 12 B) 8 C) 16 D) 14"
+ },
+ {
+  "number": 92,
+  "page": 78,
+  "column": 0,
+  "box": [
+   0,
+   96,
+   515,
+   174
+  ],
+  "file": "q092.png",
+  "gutter": 501,
+  "draft_text": "manual"
+ },
+ {
+  "number": 93,
+  "page": 78,
+  "column": 0,
+  "box": [
+   0,
+   174,
+   515,
+   259
+  ],
+  "file": "q093.png",
+  "gutter": 501,
+  "draft_text": "93. 1zopren molekulunda kimyovi rabitolorin yaranmasnda comi neco orbital istirak edir? E)30 D) 22 A)28B)20 C)16"
+ },
+ {
+  "number": 94,
+  "page": 78,
+  "column": 0,
+  "box": [
+   0,
+   259,
+   515,
+   368
+  ],
+  "file": "q094.png",
+  "gutter": 501,
+  "draft_text": "94. Stirol molekulunda kimyovi rabitolorin yaranmasinda comi negohibridlasmamiy orbital isturak edir? D) 16 C) 14 E) 24 A)18B) 12"
+ },
+ {
+  "number": 95,
+  "page": 78,
+  "column": 0,
+  "box": [
+   0,
+   368,
+   515,
+   481
+  ],
+  "file": "q095.png",
+  "gutter": 501,
+  "draft_text": "95.Benzol molekulunda kimyovi rabitolarin yaranmasinda comi nego hibridlaymamis orbital isirak edir? A) 24B) 6 3 3D)12 C) 18 2E)4 B)6"
+ },
+ {
+  "number": 96,
+  "page": 78,
+  "column": 0,
+  "box": [
+   0,
+   481,
+   515,
+   621
+  ],
+  "file": "q096.png",
+  "gutter": 501,
+  "draft_text": "96. Hanst sirada verilmis molekullarda soldan saga valent bucagi artur? B) HO, CH4, NH A) HO, NHs, CH4 C) CH, NH,HO D) CH4, H20, NH3 E)NH,CH4,H"
+ },
+ {
+  "number": 97,
+  "page": 78,
+  "column": 0,
+  "box": [
+   0,
+   621,
+   515,
+   764
+  ],
+  "file": "q097.png",
+  "gutter": 501,
+  "draft_text": "97. Hansi sirada verilmis molekullarda soldan saga valent bucagi artir? A) CH6, CH4, CH2 B) C2H6, C2H2, CH4 C) CH2,C2H4, CH6 D)C2H2,C2H,C2H4 E)CH4,C2HeCH2"
+ },
+ {
+  "number": 98,
+  "page": 78,
+  "column": 0,
+  "box": [
+   0,
+   764,
+   515,
+   1120
+  ],
+  "file": "q098.png",
+  "gutter": 501,
+  "draft_text": "98. Siqma rabitelarin sayi Madda 3n-6 3n+1 3n-1 XYvaZbirlasmalarinin sinfini muayyan edin. alken A)benzolunhomologu alkan B)benzolunhomoloqu alken alkan C) alkan alken benzolun homoloqu D) alken alkan alkadien E)alkadien benzolun alken homoloqu"
+ },
+ {
+  "number": 99,
+  "page": 78,
+  "column": 0,
+  "box": [
+   0,
+   1120,
+   515,
+   1430
+  ],
+  "file": "q099.png",
+  "gutter": 501,
+  "draft_text": "99. Madds Siqmarabitalorin sayi 3n-3 3n 3n-1 X,Yva Zbirlosmalorinin sinfini muayyon edin A)benzolunhomoloqu alkan tsikloalkan B) alkin alken tsikloalkan C) alkin alken tsikloalkan D) alkadien alkan alken E) alkadien tsikloalkan alkan"
+ },
+ {
+  "number": 100,
+  "page": 78,
+  "column": 1,
+  "box": [
+   492,
+   96,
+   1080,
+   181
+  ],
+  "file": "q100.png",
+  "gutter": 501,
+  "draft_text": "100.12 hidrogen atomu olan alkadien-13molekulunda nec karbon atomu sp hibrid voziyyatindadir? A) 7 B) 4 C)5 D) 2 E)3"
+ },
+ {
+  "number": 101,
+  "page": 78,
+  "column": 1,
+  "box": [
+   492,
+   181,
+   1080,
+   269
+  ],
+  "file": "q101.png",
+  "gutter": 501,
+  "draft_text": "101.8 hidrogen atomu olan alkin molekulunda ncca karbon atomu sp hibrid vaziyyatindodir? A) 2 B) 4 C)5 D) 3 E)6"
+ },
+ {
+  "number": 102,
+  "page": 78,
+  "column": 1,
+  "box": [
+   492,
+   269,
+   1080,
+   358
+  ],
+  "file": "q102.png",
+  "gutter": 501,
+  "draft_text": "102.20 hidrogen atomu olan alken molekulunda neca karbon atomu sp hibrid vaziyyotindadir? A) 7 B)9 C) 10 E)6 E)6"
+ },
+ {
+  "number": 103,
+  "page": 78,
+  "column": 1,
+  "box": [
+   492,
+   358,
+   1080,
+   521
+  ],
+  "file": "q103.png",
+  "gutter": 501,
+  "draft_text": "103.Molekulunda n sayda karbon atomu olan alkinlardkimyavirabitalarinamolagalmasinda istirak cdon hibridlasmamis orbitallarin amumi sayimimlayyenedin. C) 2n+1 A) 2n B) 2n+2 D) 2n+4 E) 2n-2"
+ },
+ {
+  "number": 104,
+  "page": 78,
+  "column": 1,
+  "box": [
+   492,
+   521,
+   1080,
+   680
+  ],
+  "file": "q104.png",
+  "gutter": 501,
+  "draft_text": "104. Molekulunda n sayda karbon atomu olan alkenlarda rabitalorin omolagolmasinda istirak edan hibridlasmamis orbitallarin Umumi sayimi muoyyon edin. C) 2n-2 A) 2n -1 B) 2n D) 2n +2 E) 2n+1"
+ },
+ {
+  "number": 105,
+  "page": 78,
+  "column": 1,
+  "box": [
+   492,
+   680,
+   1080,
+   790
+  ],
+  "file": "q105.png",
+  "gutter": 501,
+  "draft_text": "105. Karbon atomlarinin sayl n olan doymus biratomlu spirt molekulunda cami nego g-rabito var? A)3n+1 B) 3n C) 3n+3 D) 3n + 2 E) 3n+4"
+ },
+ {
+  "number": 106,
+  "page": 78,
+  "column": 1,
+  "box": [
+   492,
+   790,
+   1080,
+   918
+  ],
+  "file": "q106.png",
+  "gutter": 501,
+  "draft_text": "106. n sayda karbon atomu olan doymus ikiatomlu spirt molekulunda comi nega α- rabita var? A) 3n + 4 B) 3n+2 C) 3n D) 3n +1 E) 3n+3"
+ },
+ {
+  "number": 107,
+  "page": 78,
+  "column": 1,
+  "box": [
+   492,
+   918,
+   1080,
+   1172
+  ],
+  "file": "q107.png",
+  "gutter": 501,
+  "draft_text": "107.1. Vinilasetilen molekulunda olan rabitolorin sayihansi halda dogrudur? A) B) C) D) E)"
+ },
+ {
+  "number": 108,
+  "page": 78,
+  "column": 1,
+  "box": [
+   492,
+   1172,
+   1080,
+   1494
+  ],
+  "file": "q108.png",
+  "gutter": 501,
+  "draft_text": "108. 1. I. II Xlorpren molekulunda olan rabitalorin say hansi haldadogrudur? A) B) D) E) 79 -"
+ },
+ {
+  "number": 109,
+  "page": 79,
+  "column": 0,
+  "box": [
+   0,
+   16,
+   579,
+   346
+  ],
+  "file": "q109.png",
+  "gutter": 565,
+  "draft_text": "109.Alifatik 0 (H), % karbohidrogenlorin homoloji sirasmda n>3olarsa.onlarm molekulunda hansihibrid voziyyotindkarbon atomlan ola biler? n(C) 1. sp2. sp3. sp 1,3 2.3 B) 12 12,3 13 1.2 D) 12 1,2, 3 13 1. 2 2,3"
+ },
+ {
+  "number": 110,
+  "page": 79,
+  "column": 0,
+  "box": [
+   0,
+   346,
+   579,
+   529
+  ],
+  "file": "q110.png",
+  "gutter": 565,
+  "draft_text": "110.Benzol molekulunda karbon atomlan arasinda hansi rabitelarmoveuddur? A)60-2r-rabit5 B)6a-ve 6elektronluumumi-rabita C)3a-v3元-rabita D)6g-ve6n-rabita E)126-va6elektronlutumumi-rabita"
+ },
+ {
+  "number": 111,
+  "page": 79,
+  "column": 0,
+  "box": [
+   0,
+   529,
+   579,
+   740
+  ],
+  "file": "q111.png",
+  "gutter": 565,
+  "draft_text": "111. Propin molekulunda nege α- (siqma) va -rabita var? B) C) D)"
+ },
+ {
+  "number": 112,
+  "page": 79,
+  "column": 0,
+  "box": [
+   0,
+   740,
+   579,
+   960
+  ],
+  "file": "q112.png",
+  "gutter": 565,
+  "draft_text": "112. Izopren molekulunda nega sp* va sp’ hibridlosmis vaziyyatda olan karbon atomlari var? B) C) D) E)"
+ },
+ {
+  "number": 113,
+  "page": 79,
+  "column": 0,
+  "box": [
+   0,
+   960,
+   579,
+   1186
+  ],
+  "file": "q113.png",
+  "gutter": 565,
+  "draft_text": "113.Hansi halda almaz va metanda karbon atomlarinin hibridlasmavaziyyatidogrudur? almaz metan"
+ },
+ {
+  "number": 114,
+  "page": 79,
+  "column": 0,
+  "box": [
+   0,
+   1186,
+   579,
+   1291
+  ],
+  "file": "q114.png",
+  "gutter": 565,
+  "draft_text": "114. Hans halda etilen va asetilenda karbon atomlarinin hibridlosma voziyyoti dogrudur? etilen asetilen"
+ },
+ {
+  "number": 115,
+  "page": 79,
+  "column": 1,
+  "box": [
+   556,
+   22,
+   1080,
+   88
+  ],
+  "file": "q115.png",
+  "gutter": 565,
+  "draft_text": "manual"
+ },
+ {
+  "number": 116,
+  "page": 79,
+  "column": 1,
+  "box": [
+   556,
+   88,
+   1080,
+   190
+  ],
+  "file": "q116.png",
+  "gutter": 565,
+  "draft_text": "manual"
+ },
+ {
+  "number": 117,
+  "page": 79,
+  "column": 1,
+  "box": [
+   556,
+   190,
+   1080,
+   400
+  ],
+  "file": "q117.png",
+  "gutter": 565,
+  "draft_text": "manual"
+ },
+ {
+  "number": 118,
+  "page": 79,
+  "column": 1,
+  "box": [
+   556,
+   400,
+   1080,
+   640
+  ],
+  "file": "q118.png",
+  "gutter": 565,
+  "draft_text": "118. Alkan X vea Y-daki g-rabitolorin nisboti 5:8 M(Y)-72 olarsa, X alkaninin formulunu maayan edin. A(C)=12, A.(H)=1 A) C2H6 B) C,H8 C) CHio D) C,H12 E) C6H14"
+ },
+ {
+  "number": 119,
+  "page": 79,
+  "column": 1,
+  "box": [
+   556,
+   640,
+   1080,
+   765
+  ],
+  "file": "q119.png",
+  "gutter": 565,
+  "draft_text": "+H,O 550℃ 119.AL,C3 +H2, t, kat -AI(OH) Z molekulunda sp-sp ortalmosi hesabina yaranan rabitalarinin sayini muoyyon edin. A)3 B) 2 C) 1 D) 4 E)5"
+ },
+ {
+  "number": 120,
+  "page": 79,
+  "column": 1,
+  "box": [
+   556,
+   765,
+   1080,
+   1061
+  ],
+  "file": "q120.png",
+  "gutter": 565,
+  "draft_text": "120. Hidrogenin Madda Hibrid kutlosi,g orbitallarin sayi Ammonyak Etan n2 Metan ni,n2 ve ng arasinda dogru mtinasibati muayyon edin. A) n2>n>n3 B) ni=n3>n2 C) n2>n>m D) ni=n2>n3 E) n>n3>n2"
+ },
+ {
+  "number": 121,
+  "page": 79,
+  "column": 1,
+  "box": [
+   556,
+   1061,
+   1080,
+   1202
+  ],
+  "file": "q121.png",
+  "gutter": 565,
+  "draft_text": "N(Csp) 121. N(c) 121. =3 olarsa, alkin molekulunda neco adad N(csp) qeyri-polyarkovalent rabita var? A) 14 B)9 C)18 D) 16 E)7"
+ },
+ {
+  "number": 122,
+  "page": 79,
+  "column": 1,
+  "box": [
+   556,
+   1202,
+   1080,
+   1464
+  ],
+  "file": "q122.png",
+  "gutter": 565,
+  "draft_text": "122. Hansi reaksiyada karbon atomunun hibridlasmo Voziyyati dayismir? A) C2H,OHD140℃,H,SO4), B) CH,-CH, kat, C)C,H;OH 425C,Al,O,ZnQ D) CH,CI + Na  E) CH,CH,CI + KOH (spirt) ,"
+ },
+ {
+  "number": 123,
+  "page": 80,
+  "column": 0,
+  "box": [
+   0,
+   116,
+   536,
+   268
+  ],
+  "file": "q123.png",
+  "gutter": 522,
+  "draft_text": "manual"
+ },
+ {
+  "number": 124,
+  "page": 80,
+  "column": 0,
+  "box": [
+   0,
+   279,
+   536,
+   505
+  ],
+  "file": "q124.png",
+  "gutter": 522,
+  "draft_text": "manual"
+ },
+ {
+  "number": 125,
+  "page": 80,
+  "column": 0,
+  "box": [
+   0,
+   515,
+   536,
+   762
+  ],
+  "file": "q125.png",
+  "gutter": 522,
+  "draft_text": "manual"
+ },
+ {
+  "number": 126,
+  "page": 80,
+  "column": 0,
+  "box": [
+   0,
+   762,
+   536,
+   1128
+  ],
+  "file": "q126.png",
+  "gutter": 522,
+  "draft_text": "126. Molekulunda hibrid orbitallarin karbon Madda say1 atomlarinin sayi n4 n-2 X Y va Zhans sinif birlosmalara aiddir? alkan alken alkin B) alkin alken alkan C) alkin alken alkan D) alkin alkan alken alkan E) alkin alken"
+ },
+ {
+  "number": 127,
+  "page": 80,
+  "column": 0,
+  "box": [
+   0,
+   1128,
+   536,
+   1493
+  ],
+  "file": "q127.png",
+  "gutter": 522,
+  "draft_text": "127. Molekulunda Madda hibrid orbitallarin karbon sayi atomlarinn sayi n-2 n4 X, Y veZ hansi sinif birlosmoloro aiddir? alkadien A) alken alkan B) alkan alkadien alken C) alkadien alken alkan D) alken alkadien alkin E) alken alkan alkadien"
+ },
+ {
+  "number": 128,
+  "page": 80,
+  "column": 1,
+  "box": [
+   513,
+   100,
+   1080,
+   369
+  ],
+  "file": "q128.png",
+  "gutter": 522,
+  "draft_text": "128. Alkinin su ile Alkin molekulunda reaksiyasindan alinan qeyri-polyarkovalent maddoninmolekulunda rabitalarin sayi qeyri-polyar kovalent rabitolorin say x-imtayyonedin B) a+2 A) a+3 C)a-1 D) a-2 E) α-3"
+ },
+ {
+  "number": 129,
+  "page": 80,
+  "column": 1,
+  "box": [
+   513,
+   369,
+   1080,
+   644
+  ],
+  "file": "q129.png",
+  "gutter": 522,
+  "draft_text": "129. Alkinin suilo Alkin molekulunda reaksiyasindanalinan polyar kovalent maddaninmolekulunda polyar kovalent rabitolarin sayi rabitalorin sayi x-i maayyan edin. C) a+1 B) α-2 A) α+5 E) α+4 D) α+3"
+ },
+ {
+  "number": 130,
+  "page": 80,
+  "column": 1,
+  "box": [
+   513,
+   644,
+   1080,
+   1042
+  ],
+  "file": "q130.png",
+  "gutter": 522,
+  "draft_text": "130.Ammonyakin sintezi reaksiyasinda qirilan vs amalagalanrabitalarimaayyanedin. I. V. Qurilan rabita Omalagalanrabita II,IV, V A) II, IV B) I, I, V II, V C) II, III D) E) II,II IV, V"
+ },
+ {
+  "number": 131,
+  "page": 80,
+  "column": 1,
+  "box": [
+   513,
+   1042,
+   1080,
+   1459
+  ],
+  "file": "q131.png",
+  "gutter": 522,
+  "draft_text": "131.Ammonyakin parcalanmasi reaksiyasindaqinlan vaamalagolonrabitalarimuayyonedin 1. X I. Omalagolan rabitalar Orrlan rabita A) II, IV III.IV,V B) I, I IIV C) D) II, IV I, III, IV"
+ },
+ {
+  "number": 132,
+  "page": 81,
+  "column": 0,
+  "box": [
+   0,
+   78,
+   568,
+   578
+  ],
+  "file": "q132.png",
+  "gutter": 554,
+  "draft_text": "132. Molekulunda Molekulundaki movcud olan karbon Karbohidrogenlar rabitolor atomlanmn say Alkan Alken Alkadien 83 rp-hansirabitaler olabilar? II, II, I B) M, IV I, II C) II, I D) II, , IV I,, IV I, I,  t kat"
+ },
+ {
+  "number": 133,
+  "page": 81,
+  "column": 0,
+  "box": [
+   0,
+   578,
+   568,
+   996
+  ],
+  "file": "q133.png",
+  "gutter": 554,
+  "draft_text": "133. X -H2 , kat t kat 4H2 -3H2 X, Y va Z karbohidrogenlarinin har birinin molekulunda 7karbon atomu olarsa, hamin molekullardaki - (sp  s) rabitolarinin sayini mtavyanedin. 16 14 B) 14 16 16 14 D) 14 16 14 16"
+ },
+ {
+  "number": 134,
+  "page": 81,
+  "column": 0,
+  "box": [
+   0,
+   996,
+   568,
+   1354
+  ],
+  "file": "q134.png",
+  "gutter": 554,
+  "draft_text": "134. Rabitelorin ejere Alifatik Hidrogen golmasinda karbohid- atomlarinin istirak edon rabitolarin rogen say1 qeyri-hibrid say1 orbitallarin sayi c-nimuayyanedin, (q-n) A) (b-a) B) b~a C) D) a-b E) 2(μ-b)"
+ },
+ {
+  "number": 135,
+  "page": 81,
+  "column": 0,
+  "box": [
+   0,
+   1354,
+   568,
+   1464
+  ],
+  "file": "q135.png",
+  "gutter": 554,
+  "draft_text": "135.Hansi maddalarin molekulunda iki nt-rabito var? 1.Asetilen 2. Etilen 3. Propin 4, Propilen"
+ },
+ {
+  "number": 136,
+  "page": 81,
+  "column": 1,
+  "box": [
+   545,
+   68,
+   1080,
+   160
+  ],
+  "file": "q136.png",
+  "gutter": 554,
+  "draft_text": "manual"
+ },
+ {
+  "number": 137,
+  "page": 81,
+  "column": 1,
+  "box": [
+   545,
+   160,
+   1080,
+   380
+  ],
+  "file": "q137.png",
+  "gutter": 554,
+  "draft_text": "137.Dogru olanlar: Markazi atomun hibridlasma hali Madda 1. H20 sp 2. CH4 SP SP 3NH3 SP 4. CO2 sp 5. C2H4"
+ },
+ {
+  "number": 138,
+  "page": 81,
+  "column": 1,
+  "box": [
+   545,
+   380,
+   1080,
+   638
+  ],
+  "file": "q138.png",
+  "gutter": 554,
+  "draft_text": "138. Molekulunda rabitalarin yaranmasinda hibrid Madd orbitallarin istirak edanhibrid orbitallarin sayi say1 NH3 H20 Hansi munasibetlar dogrudur? 1. a=c 2. b=d 5. d>b 3. a>c4. b>d P09"
+ },
+ {
+  "number": 139,
+  "page": 81,
+  "column": 1,
+  "box": [
+   545,
+   638,
+   1080,
+   773
+  ],
+  "file": "q139.png",
+  "gutter": 554,
+  "draft_text": "139. Hans birlasmolarda eyni sayda sp’ hibrid orbitallari var? 1. Propan 2. Propen 3.Propin 4. Izopren"
+ },
+ {
+  "number": 140,
+  "page": 81,
+  "column": 1,
+  "box": [
+   545,
+   773,
+   1080,
+   899
+  ],
+  "file": "q140.png",
+  "gutter": 554,
+  "draft_text": "140.Hansi birlasmolarda eyni sayda hibrid orbitallan Var? 1. Propan 2. Tsiklopropan 3. Propen 4. Divinil"
+ },
+ {
+  "number": 141,
+  "page": 81,
+  "column": 1,
+  "box": [
+   545,
+   899,
+   1080,
+   1223
+  ],
+  "file": "q141.png",
+  "gutter": 554,
+  "draft_text": "141. Molekulundaolanrabitalarin orbitallarn Madda ortulmasindanomalagolmasiniaksetdiron sxem 88 X hansi maddalar ola bilar? 1. Heksan 2.Etin 3. Buten-1 4. Divinil 5.Xlormetan 6.Butan"
+ },
+ {
+  "number": 142,
+  "page": 81,
+  "column": 1,
+  "box": [
+   545,
+   1223,
+   1080,
+   1304
+  ],
+  "file": "q142.png",
+  "gutter": 554,
+  "draft_text": "142. Asetilen molekulunda kimyovi rabitalorin omala golmasinda comi nego hibrid orbital istirak edir?"
+ },
+ {
+  "number": 143,
+  "page": 81,
+  "column": 1,
+  "box": [
+   545,
+   1304,
+   1080,
+   1383
+  ],
+  "file": "q143.png",
+  "gutter": 554,
+  "draft_text": "143.o-ksilol molekulunda karbon atomlarinin comi neco hibrid orbital var?"
+ },
+ {
+  "number": 144,
+  "page": 81,
+  "column": 1,
+  "box": [
+   545,
+   1383,
+   1080,
+   1455
+  ],
+  "file": "q144.png",
+  "gutter": 554,
+  "draft_text": "144.Xlorpren molekulunda karbon atomlarinin comi necahibrid orbitali var?"
+ },
+ {
+  "number": 145,
+  "page": 82,
+  "column": 0,
+  "box": [
+   0,
+   122,
+   524,
+   374
+  ],
+  "file": "q145.png",
+  "gutter": 510,
+  "draft_text": "145. kkal Rabito enerjisi, Rabito Alkin mol 100 C-H 85 C-C CaHe 200 CEC kkal )hesablaym mol"
+ },
+ {
+  "number": 146,
+  "page": 82,
+  "column": 0,
+  "box": [
+   0,
+   374,
+   524,
+   633
+  ],
+  "file": "q146.png",
+  "gutter": 510,
+  "draft_text": "146. kkal Rabite enerjisi, Rabito Alken mol CH 100 85 CC CaHs 150 C-C Birlosmonin Imolunun umumi rabito enerjisini kkal )hesablaym mol"
+ },
+ {
+  "number": 147,
+  "page": 82,
+  "column": 0,
+  "box": [
+   0,
+   633,
+   524,
+   872
+  ],
+  "file": "q147.png",
+  "gutter": 510,
+  "draft_text": "147. kkal Rabite enerjisi, Rabito Madda mol C-H 100 CH2 200 C=C Birlasmanin I molunun mumirabita enerjisini kkal )hesablayin mol"
+ },
+ {
+  "number": 148,
+  "page": 82,
+  "column": 0,
+  "box": [
+   0,
+   872,
+   524,
+   1120
+  ],
+  "file": "q148.png",
+  "gutter": 510,
+  "draft_text": "148. Molekulundahibrid Molekulunda orbitallarinn Madda karbonatomlarinin amumisayi sayi Alkin Alkan sayini hesablayin,"
+ },
+ {
+  "number": 149,
+  "page": 82,
+  "column": 0,
+  "box": [
+   0,
+   1120,
+   524,
+   1372
+  ],
+  "file": "q149.png",
+  "gutter": 510,
+  "draft_text": "149. Molekulunda Molekulunda Madds hibridorbitallarin karbonatomlarinin imumi sayi sayi Alkin Alkan sayin hesablaym. $- orbitallarn say1 t- rabitolorin yaranmasinda istirak edan p-orbitallann sayindan2dofocoxolan kumula olunmus alkadien molekulunda sp"
+ },
+ {
+  "number": 150,
+  "page": 82,
+  "column": 0,
+  "box": [
+   0,
+   1372,
+   524,
+   1495
+  ],
+  "file": "q150.png",
+  "gutter": 510,
+  "draft_text": "manual"
+ },
+ {
+  "number": 151,
+  "page": 82,
+  "column": 1,
+  "box": [
+   501,
+   106,
+   1080,
+   248
+  ],
+  "file": "q151.png",
+  "gutter": 510,
+  "draft_text": "151.Kimyovirabitolorinyaranmasindaistirakedon s-orbitallarin sayir-rabitalarinyaranmasinda istirak cdon p-orbitallarin sayindan 2 dafa cox olan qosulmus alkadien molekulunda sp hibridlasma voziyyotinda nego karbon atomu olar?"
+ },
+ {
+  "number": 152,
+  "page": 82,
+  "column": 1,
+  "box": [
+   501,
+   248,
+   1080,
+   518
+  ],
+  "file": "q152.png",
+  "gutter": 510,
+  "draft_text": "152. Uygunlugu maayyan edin. Karbon atomlart arasinda o- (sp-sp)rabitalarin sayt 1.2 2.7 Maddalar a. yag tursusu b. akril tursusu c.metakril tursusu d. benzoy tursusu"
+ },
+ {
+  "number": 153,
+  "page": 82,
+  "column": 1,
+  "box": [
+   501,
+   518,
+   1080,
+   800
+  ],
+  "file": "q153.png",
+  "gutter": 510,
+  "draft_text": "153.Uygunlugu mtayyan edin Birmolekuldakimyavi Birlasma: rabitanin yaranmasinda istirak edan hibrid orbitallarin sayt: a CH b. NH3 1. 4 c. CO2 2.3 3.2 d.HO e. BF3"
+ },
+ {
+  "number": 154,
+  "page": 82,
+  "column": 1,
+  "box": [
+   501,
+   800,
+   1080,
+   868
+  ],
+  "file": "q154.png",
+  "gutter": 510,
+  "draft_text": "154.Maddelardakikovalent rabitalarin polyarhiginin artma sirasinigostarin. 3.HI 4. HBr 2. HF 1 HCI Kristal qafaslarin tiplari 1.Kalium-sulfiddakimyovirabitonin novunu muayyon edin. B)ion A) polyar-kovalent D) metal C) qeyri-polyar kovalent E) hidrogen 2. Spirtlar bark halda hansi kristal qofosa malikdir? C) ion A) metal B) atom D) molekul E) qeyri-molekulyar 3.Doymus karbohidrogenlar bark halda hansi kristal C) ion B) molekul A)atom D) metal E)qeyri-molekulyar 4. Hans maddonin kristal qafasinin duyunlorindo ionlar yerlosir? C) CO2 B) SiO2 A) KCI E) HCI D) HsPO4 5.Hansibirlasmo atom tipli kristal qofoso malikdir?"
+ }
+]

@@ -9,6 +9,7 @@ class TourTargets {
   final language = GlobalKey();
   final appearance = GlobalKey();
   final teachers = GlobalKey();
+  final shareApp = GlobalKey();
   final report = GlobalKey();
   final legal = GlobalKey();
   final deleteAccount = GlobalKey();
@@ -24,6 +25,7 @@ class TourTargets {
     TourStep.language => language,
     TourStep.appearance => appearance,
     TourStep.teachers => teachers,
+    TourStep.shareApp => shareApp,
     TourStep.report => report,
     TourStep.legal => legal,
     TourStep.deleteAccount => deleteAccount,

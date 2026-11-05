@@ -56,6 +56,7 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - State: **Riverpod** (`flutter_riverpod`). UI yalnız `domain` interfeysini tanıyır, testdə `overrideWithValue(fake)`.
 - Ekranlarda sətir yazılmır → `AppStrings`; boşluq/rəng → `AppSpacing`/`Theme`. Təkrarlanan UI → `core/widgets`.
 - Data qatındakı hər çağırış `guard(...)` ilə sarınır; UI yalnız `AppException` görür.
+- `.order()`-də `ascending:` həmişə açıq yazılır (postgrest defoltu azalandır). Qoruyucu test: `test/core/order_direction_test.dart`.
 - Yeni feature: `domain` interfeys → `data` implementasiya → provider → ekran → test.
 
 ## Bazanın məntiqi (tətbiq bunları təkrar yazmamalıdır)
@@ -138,8 +139,8 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - Dərsliklər (məktəb kitabları) üçün razılıq YOXDUR: mövzu izahlarında yalnız mənbə/plan kimi, mətn öz sözlərimizlə yazılır, köçürülmür.
 
 ## Versiya
-- Cari versiya: **1.4.0**, build **10**. Mənbə: `assets/app.json`; `pubspec.yaml` → `version: 1.4.0+10` ilə eyni olmalıdır (`test/core/app_version_test.dart` uyğunsuzluğu tutur).
-- Yeni buraxılışda hər ikisini birlikdə dəyiş. Ana ekranın altında "Versiya 1.4.0 (10)" göstərilir.
+- Cari versiya: **1.5.0**, build **11**. Mənbə: `assets/app.json`; `pubspec.yaml` → `version: 1.5.0+11` ilə eyni olmalıdır (`test/core/app_version_test.dart` uyğunsuzluğu tutur).
+- Yeni buraxılışda hər ikisini birlikdə dəyiş. Ana ekranın altında "Versiya 1.5.0 (11)" göstərilir.
 
 ## Test Supabase-in cari vəziyyəti (2026-11-02)
 - Migration 014 işlənib, kitab 1-dən 253 şəkil-sual yüklənib (206 qapalı, 47 açıq).
@@ -157,6 +158,7 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
   simvol düymələri (→ ⇌ ↑ ↓ Δ ° · × ≥ ≤ indeks kəsr kök), "Yapışdır və böl" (A–E variantlarını ayırır), oxşar sual xəbərdarlığı.
 
 ## Skan edilmiş test kitabları (şəkil-sual)
+- **Az token qaydası: `tools/dim/SUAL_ELAVE_AZ_TOKEN.md` (köməkçi: `tools/dim/scan_tool.py`). Kitab işinə başlamazdan əvvəl MÜTLƏQ oxu:** OCR-ın tapdığı suallara baxılmır, yalnız əl ilə kəsilənlər kiçik vərəqdə bir dəfə yoxlanır, kiçik qüsur düzəldilmir.
 - **Kitabda harada dayandığımız `KITAB_IRELILEYIS.md`-dədir.** Kitab işinə başlamazdan əvvəl onu oxu, hər bölmə bitəndə mütləq yenilə (bölmə cədvəli, "Qısa vəziyyət", tarix).
 - Mənbə: sahibin əlindəki nəşriyyat/DİM test topluları (şəkil PDF). Yalnız sahibin verdiyi fayllar; internetdən qeyri-rəsmi PDF çəkilmir.
 - `tools/dim/scan_segment.py KITAB.pdf --first N --last M --start 1 --stop 100 --out scan/<ad>`: RapidOCR yalnız sual nömrələrinin yerini tapır
@@ -196,7 +198,9 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - Tətbiq interfeys dili: AZ / RU / EN (sualların dili bundan asılı deyil). `AppStrings` getter-dir (`const` deyil!): hər mətn `_t(az, ru, en)` ilə yazılır,
   yeni mətn əlavə edəndə üç dili də yaz. Dil `AppStrings.language`-dədir, ayarlar onu dəyişir; `PrepAzApp` dil dəyişəndə ağacı təzədən qurur.
 - Ayarlar (dil + gündüz/gecə/sistem): `features/settings`, SharedPreferences-də saxlanır (`main.dart` override edir; testdə `InMemorySettingsRepository`).
-- Ana səhifədə yan menyu (`features/menu/app_drawer.dart`): Dil, Görünüş (basanda açılır), Tövsiyə olunan müəllimlər, Çıxış. Versiya yazısı ekranın altında sabitdir.
+- Ana səhifədə yan menyu (`features/menu/presentation/app_drawer.dart`): Dil, Görünüş (basanda açılır), Tövsiyə olunan müəllimlər, Dostunla paylaş, Xəta bildir, Şərtlər və məxfilik, Hesabı sil, Çıxış. Versiya yazısı ekranın altında sabitdir.
+- **Dostunla paylaş** (`lib/features/share`): Android-in öz paylaşma pəncərəsi (`share_plus`), UI onu birbaşa çağırmır: `ShareService` interfeysi (`SystemShareService`, testdə fake) + `ShareAppAction`. Link koda yazılmır, hər basışda bazadakı `app_config.update_url`-dan oxunur (`appConfigRepositoryProvider`). Oxunmasa/boşdursa pəncərə açılmır, SnackBar `shareAppNoLink`. Mətn `AppStrings.shareAppMessage(link)` (üç dildə). Turda `TourStep.shareApp` (müəllimlərdən sonra).
+  `update_url` həm yeniləmə, həm də dostlar üçün yükləmə linkidir: hamıya açıq işlək APK linki olmalıdır (Play Store-dan sonra mağaza linki).
 - Tövsiyə olunan müəllimlər: məlumat YALNIZ `lib/features/teachers/data/teachers_data.dart`-da yazılır (ad, fənn, telefon, tanıtım, hazırlıq təklifi).
   Faylda hazırda NÜMUNƏ sətir var: real məlumatla əvəz et. Zəng/WhatsApp `url_launcher` ilə açılır.
 
@@ -209,7 +213,7 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 
 ## Məcburi yeniləmə
 - `db/migrations/008_app_config.sql`: tək sətirli `app_config` (`min_version`, `latest_version`, `update_url`); anon də oxuya bilər (giriş əvvəli yoxlanır), yalnız admin dəyişir. Lokal test: `tools/dim/test_migration_008.py`.
-- Tətbiq: `lib/features/update` (`UpdateGate` `app.dart`-da `AuthGate`-i sarıyır). Versiya `assets/app.json`-dan (`1.4.0+10`) bazadakı ilə müqayisə olunur:
+- Tətbiq: `lib/features/update` (`UpdateGate` `app.dart`-da `AuthGate`-i sarıyır). Versiya `assets/app.json`-dan (`1.5.0+11`) bazadakı ilə müqayisə olunur:
   `min_version`-dan aşağı → bağlanmayan `ForceUpdateScreen`; `latest_version`-dan aşağı → bir dəfə "Sonra" düyməli xəbərdarlıq. Oxunmasa (internet yox / cədvəl yox) heç nə bloklanmır.
 - Admin panel: "Tənzimləmələr" tabı. Yeni buraxılışda ƏVVƏL APK/mağaza yüklənir və link yazılır, SONRA `latest_version` (və lazımsa `min_version`) qaldırılır.
 

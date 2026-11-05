@@ -5,6 +5,7 @@ enum TourStep {
   language,
   appearance,
   teachers,
+  shareApp,
   report,
   legal,
   deleteAccount,

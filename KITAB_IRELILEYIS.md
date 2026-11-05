@@ -1,15 +1,15 @@
 # Test kitabları: harada dayanmışıq
 
 Hər bölmə bitəndən sonra bu fayl yenilənir. Yeni işə başlamazdan əvvəl buradan bax.
-Son yenilənmə: 2026-11-05 (bölmə 7)
+Son yenilənmə: 2026-11-05 (bölmə 16–17 kəsildi)
 
 ## Qısa vəziyyət
 - **Kitab 1:** "Kimya test toplusu I" (DİM, 2025, 359 səhifə)
 - **Fayl:** `tools/dim/Kimya test toplusu I 2025 _250822_103034.pdf`
-- **Hazır bölmələr:** 1, 2, 3, 4, 5, 6 (bölmə 6 yükləndi, 2026-11-05); bölmə 7 yükləndi, 2026-11-05; bölmə 8 yükləndi, 2026-11-05; bölmə 9 kəsilib, SQL və şəkillər hazırdır, sahib yükləməlidir
-- **Bazada:** 253 şəkil-sual (206 qapalı, 47 açıq). Bölmə 6 ilə +55 (46 qapalı, 9 açıq) = 308; bölmə 7 ilə +97 (77 qapalı, 20 açıq) = 405; bölmə 8 ilə +82 (51 qapalı, 31 açıq) = 487; bölmə 9 yüklənəndə +45 (38 qapalı, 7 açıq) = 532
-- **Növbəti:** yazılı tapşırıqlar haqqında qərar (bölmə 9-un sonunda pdf səhifə 38 sağ sütundan, həmçinin əvvəlki pdf 19–20). Sonrakı test bölməsi pdf səhifə 39-dan yoxlanmalıdır.
-  pdf səhifə 19-da, sol sütunda "Ətraflı yazılı cavab tələb olunan tapşırıqlar" başlayır (pdf səhifə 20-nin sonuna qədər, 18 tapşırıq). Bunlar test deyil, ayrıca qərar lazımdır. Sonrakı test bölməsi pdf səhifə 21-dən yoxlanmalıdır.
+- **Hazır bölmələr:** 1, 2, 3, 4, 5, 6 (bölmə 6 yükləndi, 2026-11-05); bölmə 7 yükləndi, 2026-11-05; bölmə 8 yükləndi, 2026-11-05; bölmə 9 yükləndi, 2026-11-05; bölmə 10 yükləndi, 2026-11-05; bölmə 11 yükləndi, 2026-11-05; bölmə 12 yükləndi, 2026-11-05; bölmə 13 yükləndi, 2026-11-05; bölmə 14 yükləndi, 2026-11-05; bölmə 15 yükləndi, 2026-11-05; **bölmə 16 və 17 kəsilib, SQL və şəkillər hazırdır, sahib yükləməlidir**
+- **Bazada:** 253 şəkil-sual (206 qapalı, 47 açıq). Bölmə 6 ilə +55 (46 qapalı, 9 açıq) = 308; bölmə 7 ilə +97 (77 qapalı, 20 açıq) = 405; bölmə 8 ilə +82 (51 qapalı, 31 açıq) = 487; bölmə 9 ilə +45 (38 qapalı, 7 açıq) = 532; bölmə 10 ilə +82 (79 qapalı, 3 çoxseçimli) = 614; bölmə 11 ilə +55 (54 qapalı, 1 ədədi) = 669; bölmə 12 ilə +126 (104 qapalı, 11 çoxseçimli, 5 ədədi, 6 uyğunlaşdırma) = 795; bölmə 13 ilə +100 (78 qapalı, 22 ədədi) = 895; bölmə 14 ilə +68 (55 qapalı, 6 çoxseçimli, 2 ədədi, 5 uyğunlaşdırma) = 963; bölmə 15 ilə +153 = **1116**; bölmə 16 (+19) və 17 (+83) yüklənəndə = 1218
+- **Növbəti:** pdf 89-dan "Ətraflı yazılı cavab" (ATLANIR), sonra fəsil "Kimyəvi reaksiyaların təsnifatı və istilik effekti" (açar pdf 335 aşağıda).
+- **Yazılı tapşırıqlar ATLANIR** (sahibin qərarı, 2026-11-05): "Ətraflı yazılı cavab tələb olunan tapşırıqlar" bölmələri tətbiqə əlavə olunmur, soruşulmur. Atlananlar: pdf 19–20, pdf 38 (sağ) – 40, pdf 65 (sol, 100-dən sonra) – 66.
 - **Səhifə qeydi:** kitabda çap olunmuş səhifə nömrəsi = pdf səhifəsi + 1 (pdf 15 = kitabda 16).
 
 ## Bölmələr
@@ -24,7 +24,15 @@ Son yenilənmə: 2026-11-05 (bölmə 7)
 | 6 | Maddə miqdarı. Avoqadro qanunu | 21–24 (sol sütun, 55-ci sual) | 55 | 55 = 46 qapalı + 9 açıq (yüklənib) | yoxdur | `KT1-S06-Qnnn` | `scan/kimya_I_bolme6_cavablar.json` |
 | 7 | Qazların sıxlığı. Nisbi sıxlıq. Qaz qarışıqlarına aid hesablamalar | 24 (sol sütun, 55-dən sonra)–30 (sağ sütun, 97) | 97 | 97 = 77 qapalı + 20 açıq (yüklənib) | yoxdur | `KT1-S07-Qnnn` | `scan/kimya_I_bolme7_cavablar.json` |
 | 8 | Kimyəvi formullar üzrə hesablamalar (2-ci hissə, ayrı mövzu "(2)") | 30 (sağ sütun, 97-dən sonra)–35 (sağ sütun, 82) | 82 | 82 = 51 qapalı + 31 açıq (yüklənib) | yoxdur | `KT1-S08-Qnnn` | `scan/kimya_I_bolme8_cavablar.json` |
-| 9 | Kimyəvi tənliklər üzrə hesablamalar (2) (bölmə 5 "(1)" olur) | 35 (sağ sütun, 82-dən sonra)–38 | 45 | gözləyir: `out/import_kt1_s09.sql` (45 = 38 qapalı + 7 açıq) | yoxdur | `KT1-S09-Qnnn` | `scan/kimya_I_bolme9_cavablar.json` |
+| 9 | Kimyəvi tənliklər üzrə hesablamalar (2) (bölmə 5 "(1)" olur) | 35 (sağ sütun, 82-dən sonra)–38 | 45 | 45 = 38 qapalı + 7 açıq (yüklənib) | yoxdur | `KT1-S09-Qnnn` | `scan/kimya_I_bolme9_cavablar.json` |
+| 10 | Dövri qanun və dövri sistem (fəsil "Dövri qanun və dövri sistem. Atomun quruluşu") | 41–46 (sağ sütun, 82) | 82 | 82 = 79 qapalı + 3 çoxseçimli (yüklənib) | yoxdur | `KT1-S10-Qnnn` | `scan/kimya_I_bolme10_cavablar.json` |
+| 11 | Atomun tərkibi | 46 (sağ sütun, başlıqdan sonra)–51 (sol sütun, 55) | 55 | 55 = 54 qapalı + 1 ədədi (yüklənib) | yoxdur | `KT1-S11-Qnnn` | `scan/kimya_I_bolme11_cavablar.json` |
+| 12 | Atomun elektron formulu | 51 (sol sütun, başlıqdan sonra)–59 (sol sütun, 126) | 126 | 126 = 104 qapalı + 22 açıq (yüklənib) | yoxdur | `KT1-S12-Qnnn` | `scan/kimya_I_bolme12_cavablar.json` |
+| 13 | Atomun quruluşuna aid hesablamalar | 59 (sol sütun, başlıqdan sonra)–65 (sol sütun, 100) | 100 | 100 = 78 qapalı + 22 ədədi (yüklənib) | yoxdur | `KT1-S13-Qnnn` | `scan/kimya_I_bolme13_cavablar.json` |
+| 14 | Elektromənfilik. Kimyəvi rabitənin tipləri. Kovalent rabitənin növləri | 67–72 (sol sütun, 68) | 68 | 68 = 55 qapalı + 13 açıq (yüklənib) | yoxdur | `KT1-S14-Qnnn` | `scan/kimya_I_bolme14_cavablar.json` |
+| 15 | Kovalent rabitənin xassələri. Orbitalların hibridləşməsi | 72 (sol, 68-dən sonra)–82 (sağ, 154) | 154 | 153 (yüklənib) | 154 (sıralama sualı, tip yoxdur) | `KT1-S15-Qnnn` | `scan/kimya_I_bolme15_cavablar.json` |
+| 16 | Kristal qəfəslərin tipləri | 82 (sağ)–83 (sağ, 19) | 19 | gözləyir: `out/import_kt1_s16.sql` (17 qapalı + 1 ədədi + 1 uyğunlaşdırma) | yoxdur | `KT1-S16-Qnnn` | `scan/kimya_I_bolme16_cavablar.json` |
+| 17 | Elementlərin valentlik imkanları. Oksidləşmə dərəcəsi | 83 (sağ)–88 | 83 | gözləyir: `out/import_kt1_s17.sql` (76 qapalı + 2 çoxseçimli + 5 uyğunlaşdırma) | yoxdur | `KT1-S17-Qnnn` | `scan/kimya_I_bolme17_cavablar.json` |
 
 Cavablar kitabda səhifə 331-dən başlayır. Bölmə 6-nın açarı sahib tərəfindən şəkil kimi verildi (kitab səhifə 22–25 = pdf 21–24).
 
@@ -54,6 +62,44 @@ Cavablar kitabda səhifə 331-dən başlayır. Bölmə 6-nın açarı sahib tər
 - Açıq suallar 7: 39–45 ədədi (çoxseçimli/uyğunlaşdırma yoxdur). 1–38 qapalıdır. Açarda 1 (D) və 31 (C) şəkildə görünmürdü, sahib verdi ("11 C" yazmışdı, 11 şəkildə A görünür: ikinci cərgənin kəsik ilk xanası 31 olduğu üçün C = 31 qəbul edildi). 39–44-ü suallardan hesablayıb yoxladım.
 - OCR 9, 12, 33, 35, 39-u tapmadı (əl ilə). 21 (iki sütuna bölünüb) və 32 (səhifə üstünə keçir) davamla birləşdirildi. `cont_top` manifestdə davamın BAŞLADIĞI sütunun ilk sualındadır (22-də, 21-də yox).
 - 45-in altında "Ətraflı yazılı cavab" başlığı kəsildi (y1=1180).
+
+## Bölmə 10 (2026-11-05)
+- Mövzu "Dövri qanun və dövri sistem" (bölmə "Ümumi kimya"). DİM suallarının "Atomun quruluşu və dövri sistem" mövzusundan ayrıdır (kitab bölmələri kimi).
+- Açıq suallar 3: çoxseçimli 80 (`1,2,3`), 81 (`1,3,4`), 82 (`1,4,6`). Qalan 79 qapalıdır. Açar pdf 332-nin aşağısındadır, hamısı oxunaqlı idi.
+- OCR 8–11, 21, 22, 55, 56, 60, 70-i tapmadı, əl ilə ölçüldü (`draft_text: manual`). 45–49 əyri və sıx sətirlidir (`tilt: 115`), 8 (`tilt`, bucaq 0) sol sütunun izini atmaq üçün. 50 və 70 növbəti sütunda davam edir (`cont_top`: 51-də 98, 71-də 32). 82-nin altında "Atomun tərkibi" başlığı kəsildi (y1=933). Əvvəlki manifest `manifest.orig.json`-dadır.
+- `test_import_scans.py` bu Mac-də işləmədi (Python 3.14 üçün `pgserver` yoxdur). SQL əl ilə yoxlandı: 82 sətir, 79 `qapali` + 3 `coxlu_secim` (`123`, `134`, `146`).
+- Yükləmə: `out/import_kt1_s10.sql` SQL Editor-da, `out/upload_kitab/` (82 `.webp`) Storage-ə. "ok"-dan sonra `out/images_kitab/`-a köçürülür.
+
+## Bölmə 11 (2026-11-05)
+- Mövzu "Atomun tərkibi" (bölmə "Ümumi kimya"). 55-ci sual ədədidir (`46`, MgCl₂-də elektron sayı, yoxlandı). Qalan 54 qapalıdır. Açar pdf 333-ün yuxarısındadır.
+- Əmr: `--first 46 --last 51 --start 1 --stop 55 --skip-above 46:0:9999 --skip-above 46:1:975`.
+- OCR 14–23, 28, 40, 43-ü tapmadı və səhifə 47-də "24 proton" sətrini 24-cü sual sandı (silindi). Hamısı əl ilə ölçüldü. 16, 40, 49 növbəti sütunda davam edir (`cont_top`: 17-də 58, 41-də 50, 50-də 97). 55-in altında "Atomun elektron formulu" başlığı kəsildi (y1=660). Əvvəlki manifest `manifest.orig.json`-dadır.
+- Qeyd: əl ilə ölçəndə sual nömrəsinin üst sərhədi təxminən 10–15 piksel yuxarıdan götürülməlidir, yoxsa `drop_cut_lines` kəsik ilk sətri silir.
+- Yükləmə: `out/import_kt1_s11.sql` SQL Editor-da, `out/upload_kitab/` (55 `.webp`) Storage-ə. "ok"-dan sonra `out/images_kitab/`-a köçürülür.
+
+## Bölmə 12 (2026-11-05)
+- Mövzu "Atomun elektron formulu". Açıq suallar 22: çoxseçimli 105–115, ədədi 116–120 (33, 16, 6, 1, 18; yoxlandı), uyğunlaşdırma 121–126 (hamısı 3 sətir × a–e). Qalan 104 qapalıdır.
+- Əmr: `--first 51 --last 59 --start 1 --stop 126 --skip-above 51:0:700`.
+- OCR 6, 8, 9, 25, 42, 77, 79, 84–89, 109-u tapmadı, əl ilə ölçüldü. **Səhifə 53 əyridir:** 36–52 `tilt` ilə kəsilib (sol 36–41: `tilt: 90`, bucaq 2,0; sağ 42–52: `tilt: 565`, bucaq 1,5), sərhədlər əyilmiş şəkildə ölçülüb. 76–77 də `tilt` (90). 126-nın altında bölmə 13-ün başlığı kəsildi (y1=1240). Əvvəlki manifest `manifest.orig.json`-dadır.
+- Yükləmə: `out/import_kt1_s12.sql` SQL Editor-da, `out/upload_kitab/` (126 `.webp`) Storage-ə. "ok"-dan sonra `out/images_kitab/`-a köçürülür.
+
+## Bölmə 13 (2026-11-05)
+- Mövzu "Atomun quruluşuna aid hesablamalar". 1–78 qapalı, 79–100 ədədi (83 = 37,5). 79, 80, 84, 86, 90 suallardan hesablanıb yoxlandı.
+- Əmr: `--first 59 --last 66 --start 1 --stop 100 --skip-above 59:0:1300` (recrop üçün `--last 65`).
+- OCR 2–5, 10, 11, 30, 43, 45, 46, 49–51, 72, 76-nı tapmadı, əl ilə ölçüldü. Əyri sütunlar `tilt` ilə: səhifə 59 sağ (2–12), 60 sağ (29–30), 61 sağ (43–51, x0=582/566), 63 sol (64–71, `tilt: 25`), 63 sağ (75–76). 100-ün altında "Ətraflı yazılı cavab" başlığı kəsildi (y1=1203). Əvvəlki manifest `manifest.orig.json`-dadır.
+- Yükləmə: `out/import_kt1_s13.sql` SQL Editor-da, `out/upload_kitab/` (100 `.webp`) Storage-ə. "ok"-dan sonra `out/images_kitab/`-a köçürülür.
+
+## Bölmə 14 (2026-11-05)
+- Fəsil "Kimyəvi rabitə və oksidləşmə dərəcəsi" başlayır. Mövzu "Elektromənfilik. Kimyəvi rabitənin tipləri. Kovalent rabitənin növləri". 1–55 qapalı, 56–61 çoxseçimli, 62–63 ədədi (75, 25: NH₄⁺-da 3/4 və 1/4), 64–68 uyğunlaşdırma.
+- Əmr: `--first 67 --last 73 --start 1 --stop 68 --skip-above 67:0:250` (recrop üçün `--last 72`).
+- OCR 1, 7–9, 14, 36, 37-ni tapmadı, əl ilə ölçüldü. Səhifə 67 sağ sütun (7–14) `tilt: 595`. 68-in altında bölmə 15-in başlığı kəsildi (y1=852). Əvvəlki manifest `manifest.orig.json`-dadır.
+- Yükləmə: `out/import_kt1_s14.sql` SQL Editor-da, `out/upload_kitab/` (68 `.webp`) Storage-ə. "ok"-dan sonra `out/images_kitab/`-a köçürülür.
+
+## Bölmə 15 (2026-11-05)
+- 1–134 qapalı, 135–141 çoxseçimli, 142–151 ədədi, 152–153 uyğunlaşdırma (152: 2 sətir). **154 buraxıldı:** sıralama sualıdır (`3, 4, 1, 2`), tətbiqdə bu tip yoxdur.
+- Əmr: `--first 72 --last 82 --start 1 --stop 154 --skip-above 72:0:960`.
+- OCR 22 sualı tapmadı (21, 28, 29, 53–56, 59, 60, 62, 68, 69, 83, 92, 115–117, 123–125, 136, 150), əl ilə ölçüldü. 68 sağ sütunda davam edir (`cont_top` 69-da 92). Yeni qayda ilə yalnız əl ilə kəsilənlər yoxlanıb.
+- Yükləmə: `out/import_kt1_s15.sql` SQL Editor-da, `out/upload_kitab/` (153 `.webp`) Storage-ə.
 
 ## Yarımçıq qalan suallar
 - **Bölmə 1:** 7 sual yoxdur (OCR tapmayıb). Dəqiq siyahı `scan/kimya_I_test/manifest.json`-da.

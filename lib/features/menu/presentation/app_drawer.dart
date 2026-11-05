@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/constants/app_language.dart';
 import '../../../core/constants/app_strings.dart';
+import '../../../core/error/app_exception.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/widgets/app_logo.dart';
@@ -13,10 +14,11 @@ import '../../legal/presentation/legal_screen.dart';
 import '../../settings/domain/app_settings.dart';
 import '../../settings/presentation/settings_providers.dart';
 import '../../reports/presentation/report_sheet.dart';
+import '../../share/presentation/share_app.dart';
 import '../../teachers/presentation/teachers_screen.dart';
 import '../../tour/presentation/tour_targets.dart';
 
-/// Yan menyu: dil, görünüş (gündüz/gecə), tövsiyə olunan müəllimlər və çıxış.
+/// Yan menyu: dil, görünüş (gündüz/gecə), tövsiyə olunan müəllimlər, dostunla paylaş və çıxış.
 /// Dil və görünüş bölmələrinə basanda açılır.
 class AppDrawer extends ConsumerWidget {
   const AppDrawer({super.key});
@@ -86,6 +88,18 @@ class AppDrawer extends ConsumerWidget {
                   },
                 ),
                 _NavTile(
+                  key: tour?.shareApp,
+                  icon: Icons.share_rounded,
+                  title: AppStrings.shareAppTitle,
+                  onTap: () {
+                    final navigator = Navigator.of(context);
+                    final messenger = ScaffoldMessenger.of(context);
+                    final action = ref.read(shareAppActionProvider);
+                    navigator.pop();
+                    _shareApp(action, messenger);
+                  },
+                ),
+                _NavTile(
                   key: tour?.report,
                   icon: Icons.bug_report_outlined,
                   title: AppStrings.reportAppTitle,
@@ -140,6 +154,22 @@ class AppDrawer extends ConsumerWidget {
       ),
     );
   }
+}
+
+/// Link yoxdursa və ya pəncərə açılmırsa SnackBar göstərir (yan menyu artıq bağlıdır).
+Future<void> _shareApp(ShareAppAction action, ScaffoldMessengerState messenger) async {
+  String? message;
+  try {
+    if (await action.run() == ShareAppResult.noLink) {
+      message = AppStrings.shareAppNoLink;
+    }
+  } catch (error) {
+    message = errorMessage(error);
+  }
+  if (message == null) return;
+  messenger
+    ..hideCurrentSnackBar()
+    ..showSnackBar(SnackBar(content: Text(message)));
 }
 
 class _DrawerHeader extends StatelessWidget {

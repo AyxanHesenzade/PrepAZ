@@ -757,6 +757,11 @@ abstract final class AppStrings {
     'Рекомендуемые учителя: список учителей для подготовки. С ними можно связаться напрямую.',
     'Recommended teachers: a list of teachers for exam prep. You can contact them directly.',
   );
+  static String get tourShareApp => _t(
+    'Dostunla paylaş: tətbiqin linkini dostuna göndər, birlikdə hazırlaşın.',
+    'Поделиться с другом: отправь другу ссылку на приложение и готовьтесь вместе.',
+    'Share with a friend: send the app link to a friend and prepare together.',
+  );
   static String get tourReport => _t(
     'Tətbiqdə xəta bildir: nəsə işləmirsə, buradan bizə yaz.',
     'Сообщить об ошибке: если что-то не работает, напиши нам отсюда.',
@@ -810,6 +815,19 @@ abstract final class AppStrings {
   static String get themeLight => _t('Gündüz', 'День', 'Light');
   static String get themeDark => _t('Gecə', 'Ночь', 'Dark');
   static String get themeSystem => _t('Sistem', 'Системная', 'System');
+
+  // Dostunla paylaş
+  static String get shareAppTitle => _t('Dostunla paylaş', 'Поделиться с другом', 'Share with a friend');
+  static String shareAppMessage(String link) => _t(
+    'PrepAZ ilə buraxılış/qəbul imtahanına hazırlaşıram: DİM testləri, səhvlərimi izləyir, internetsiz də işləyir. Sən də yoxla: {link}',
+    'Готовлюсь к выпускным/вступительным экзаменам с PrepAZ: тесты ГЭЦ, отслеживает мои ошибки, работает без интернета. Попробуй и ты: {link}',
+    "I'm preparing for my school-leaving/university entrance exams with PrepAZ: official DIM tests, it tracks my mistakes and works offline. Check it out: {link}",
+  ).replaceAll('{link}', link);
+  static String get shareAppNoLink => _t(
+    'Link hələ alınmadı. İnterneti yoxlayıb yenidən cəhd et.',
+    'Не удалось получить ссылку. Проверь интернет и попробуй снова.',
+    "Couldn't get the link yet. Check your internet connection and try again.",
+  );
 
   // Tövsiyə olunan müəllimlər
   static String get teachersTitle => _t(

@@ -28,7 +28,7 @@ class SupabaseBrowseRepository implements BrowseRepository {
             .select('topic_id, topics!inner(subject_id)')
             .eq('topics.subject_id', subjectId)
             .eq('is_active', true)
-            .order('id')
+            .order('id', ascending: true)
             .range(from, from + _page - 1);
         for (final row in rows) {
           final id = (row['topic_id'] as num).toInt();
@@ -67,7 +67,7 @@ class SupabaseBrowseRepository implements BrowseRepository {
           .select()
           .eq('topic_id', topicId)
           .eq('is_active', true)
-          .order('code')
+          .order('code', ascending: true)
           .limit(_page);
       return rows.map(questionFromRow).toList();
     });
@@ -83,8 +83,8 @@ class SupabaseBrowseRepository implements BrowseRepository {
             .select('question_id, is_correct, questions!inner(topic_id)')
             .eq('user_id', _db.auth.currentUser!.id)
             .eq('questions.topic_id', topicId)
-            .order('answered_at')
-            .order('id')
+            .order('answered_at', ascending: true)
+            .order('id', ascending: true)
             .range(from, from + _page - 1);
         for (final row in rows) {
           latest[row['question_id'] as String] = row['is_correct'] as bool;

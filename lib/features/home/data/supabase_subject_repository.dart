@@ -15,7 +15,7 @@ class SupabaseSubjectRepository implements SubjectRepository {
       final rows = await _db
           .from('subjects')
           .select('id, slug, name')
-          .order('sort_order');
+          .order('sort_order', ascending: true);
       return rows.map(_toSubject).toList();
     });
   }

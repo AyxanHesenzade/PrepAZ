@@ -51,7 +51,7 @@ class SupabaseQuizRepository implements QuizRepository {
           .eq('user_id', _userId)
           .eq('questions.topics.subject_id', subjectId)
           .eq('questions.is_active', true)
-          .order('due_at');
+          .order('due_at', ascending: true);
       return rows.map(mistakeFromRow).toList();
     });
   }

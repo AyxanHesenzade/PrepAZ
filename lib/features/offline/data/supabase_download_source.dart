@@ -41,8 +41,8 @@ class SupabaseDownloadSource implements RemoteDownloadSource {
             .select()
             .eq('topic_id', topicId)
             .eq('is_active', true)
-            .order('code')
-            .order('id')
+            .order('code', ascending: true)
+            .order('id', ascending: true)
             .range(from, from + _page - 1);
         questions.addAll(rows.map(questionFromRow));
         if (rows.length < _page) return questions;

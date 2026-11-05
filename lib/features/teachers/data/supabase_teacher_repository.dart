@@ -15,7 +15,11 @@ class SupabaseTeacherRepository implements TeacherRepository {
   Future<List<Teacher>> getTeachers() {
     return guard(() async {
       // RLS yalnız aktiv və razılığı olan müəllimləri qaytarır
-      final rows = await _db.from('teachers').select().order('sort_order').order('full_name');
+      final rows = await _db
+          .from('teachers')
+          .select()
+          .order('sort_order', ascending: true)
+          .order('full_name', ascending: true);
       return rows.map((row) => teacherFromRow(row, photoUrl: (path) => _db.storage.from(photoBucket).getPublicUrl(path))).toList();
     });
   }
