@@ -6,9 +6,9 @@ Son yenilənmə: 2026-11-05 (bölmə 7)
 ## Qısa vəziyyət
 - **Kitab 1:** "Kimya test toplusu I" (DİM, 2025, 359 səhifə)
 - **Fayl:** `tools/dim/Kimya test toplusu I 2025 _250822_103034.pdf`
-- **Hazır bölmələr:** 1, 2, 3, 4, 5, 6 (bölmə 6 yükləndi, 2026-11-05); bölmə 7 yükləndi, 2026-11-05
-- **Bazada:** 253 şəkil-sual (206 qapalı, 47 açıq). Bölmə 6 ilə +55 (46 qapalı, 9 açıq) = 308; bölmə 7 ilə +97 (77 qapalı, 20 açıq) = 405
-- **Növbəti:** bölmə 8 "Kimyəvi formullar üzrə hesablamalar": pdf səhifə 30, sağ sütunda 97-ci sualdan sonra başlayır (kitab səhifəsi 31). Yazılı tapşırıqlar (aşağıda) hələ həll olunmayıb:
+- **Hazır bölmələr:** 1, 2, 3, 4, 5, 6 (bölmə 6 yükləndi, 2026-11-05); bölmə 7 yükləndi, 2026-11-05; bölmə 8 yükləndi, 2026-11-05
+- **Bazada:** 253 şəkil-sual (206 qapalı, 47 açıq). Bölmə 6 ilə +55 (46 qapalı, 9 açıq) = 308; bölmə 7 ilə +97 (77 qapalı, 20 açıq) = 405; bölmə 8 ilə +82 (51 qapalı, 31 açıq) = 487
+- **Növbəti:** bölmə 9 "Kimyəvi tənliklər üzrə hesablamalar": pdf səhifə 35, sağ sütunda 82-ci sualdan sonra başlayır (kitab səhifəsi 36). Yazılı tapşırıqlar (aşağıda) hələ həll olunmayıb:
   pdf səhifə 19-da, sol sütunda "Ətraflı yazılı cavab tələb olunan tapşırıqlar" başlayır (pdf səhifə 20-nin sonuna qədər, 18 tapşırıq). Bunlar test deyil, ayrıca qərar lazımdır. Sonrakı test bölməsi pdf səhifə 21-dən yoxlanmalıdır.
 - **Səhifə qeydi:** kitabda çap olunmuş səhifə nömrəsi = pdf səhifəsi + 1 (pdf 15 = kitabda 16).
 
@@ -23,6 +23,7 @@ Son yenilənmə: 2026-11-05 (bölmə 7)
 | 5 | Kimyəvi tənliklər üzrə hesablamalar | 17–19 | 37 | 28 (1–28) + 9 açıq (29–37) | yoxdur | `KT1-S05-Qnnn` | `scan/kimya_I_bolme5_cavablar.json` |
 | 6 | Maddə miqdarı. Avoqadro qanunu | 21–24 (sol sütun, 55-ci sual) | 55 | 55 = 46 qapalı + 9 açıq (yüklənib) | yoxdur | `KT1-S06-Qnnn` | `scan/kimya_I_bolme6_cavablar.json` |
 | 7 | Qazların sıxlığı. Nisbi sıxlıq. Qaz qarışıqlarına aid hesablamalar | 24 (sol sütun, 55-dən sonra)–30 (sağ sütun, 97) | 97 | 97 = 77 qapalı + 20 açıq (yüklənib) | yoxdur | `KT1-S07-Qnnn` | `scan/kimya_I_bolme7_cavablar.json` |
+| 8 | Kimyəvi formullar üzrə hesablamalar (2-ci hissə, ayrı mövzu "(2)") | 30 (sağ sütun, 97-dən sonra)–35 (sağ sütun, 82) | 82 | 82 = 51 qapalı + 31 açıq (yüklənib) | yoxdur | `KT1-S08-Qnnn` | `scan/kimya_I_bolme8_cavablar.json` |
 
 Cavablar kitabda səhifə 331-dən başlayır. Bölmə 6-nın açarı sahib tərəfindən şəkil kimi verildi (kitab səhifə 22–25 = pdf 21–24).
 
@@ -40,6 +41,12 @@ Cavablar kitabda səhifə 331-dən başlayır. Bölmə 6-nın açarı sahib tər
 - `cont_top` (manifestdə, sual üzrə): sütun davamının başlanğıc sətri. 80-nin qrafiki 81-in üstündən birləşdirilir, oxun yazısı üçün 81-də `cont_top: 64`.
 - 97-ci sualın altında bölmə 8-in başlığı və suallar var: 97 əl ilə kəsilib (y1=272).
 - Yükləmə: `out/import_kt1_s07.sql` SQL Editor-da, `out/upload_kitab/` (97 `.webp`) Storage-ə. "ok"-dan sonra şəkillər `out/images_kitab/`-a köçürülür.
+
+## Bölmə 8 (2026-11-05)
+- Kitabda "Kimyəvi formullar üzrə hesablamalar" mövzusunun ikinci hissəsi (fərqli suallar, eyni ad). Sahibin istəyi: ayrı mövzu, siyahıda 1 və 2 kimi görünsün. Bazada eyni bölmədə eyni ad olmur (unikal), ona görə yeni mövzu "Kimyəvi formullar üzrə hesablamalar (2)", köhnəsi (bölmə 3) "... (1)" olur (`import_kt1_s08.sql`-in əvvəlində `update topics` sətri; `import_scans.py` yenidən işləsə o sətir yenidən əlavə olunmalıdır). DİQQƏT: `import_kt1_s03.sql` bundan sonra işlədilməsin, köhnə adla ikinci mövzu yaradar.
+- Açıq suallar 31: çoxseçimli 52–54, ədədi 55–77, uyğunlaşdırma 78–82. Qalan 51 qapalıdır. Açarın 1, 31, 61-ci xanaları şəkildə görünmürdü, sahib verdi (D, C, 3). Açıq cavabları (55–82) özüm yoxlayıb hesabladım, hamısı uyğun gəldi.
+- OCR 21, 30, 46, 47, 63-ü tapmadı, əl ilə ölçüldü. 21–22 əyri (`tilt`). 82-nin altında bölmə 9-un başlığı var, kəsildi (y1=462). Əvvəlki manifest `manifest.orig.json`-dadır.
+- Yükləmə: `out/import_kt1_s08.sql` SQL Editor-da, `out/upload_kitab/` (82 `.webp`) Storage-ə. "ok"-dan sonra `out/images_kitab/`-a köçürülür.
 
 ## Yarımçıq qalan suallar
 - **Bölmə 1:** 7 sual yoxdur (OCR tapmayıb). Dəqiq siyahı `scan/kimya_I_test/manifest.json`-da.
