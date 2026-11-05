@@ -1,0 +1,772 @@
+[
+ {
+  "number": 1,
+  "page": 21,
+  "column": 0,
+  "box": [
+   0,
+   191,
+   578,
+   318
+  ],
+  "file": "q001.png",
+  "gutter": 564,
+  "draft_text": "1.Hansi maddonin 100 qraminormal soraitda daha cox hacmtutur7M,(NH）=17,M,（SO2)=64,M,（CO)=28 M(CO2)=44,M,（CH0）)=58 E)CH B)SOC)COD)CO2 A)NHB)SOC)COD)CO2 A)NH"
+ },
+ {
+  "number": 2,
+  "page": 21,
+  "column": 0,
+  "box": [
+   0,
+   306,
+   578,
+   426
+  ],
+  "file": "q002.png",
+  "gutter": 564,
+  "draft_text": "2.Muayyon hacm metaninkutlasi 80 q-dir.Hamin hac azotunkatlasineca qram olar? M,（CH）=16,M,(N）=28 E)140 D)160 C)70 B)80 A)120"
+ },
+ {
+  "number": 3,
+  "page": 21,
+  "column": 0,
+  "box": [
+   0,
+   414,
+   578,
+   534
+  ],
+  "file": "q003.png",
+  "gutter": 564,
+  "draft_text": "3.Eyni soraitda6/propanda olanmolekullarin sayi3/ asetilenda olan molekullarin sayindan neca dof xos D)1,5 E)0,2 B)2 C)0,6 A)1,7"
+ },
+ {
+  "number": 4,
+  "page": 21,
+  "column": 0,
+  "box": [
+   0,
+   522,
+   578,
+   643
+  ],
+  "file": "q004.png",
+  "gutter": 564,
+  "draft_text": "4.Eyni saraitda5/etilendolan molekullarin say12,51 asetilendoolan molekullarin sayindannecadof coxdur? C)2 A)3 D)1,5 B)2,5 E)4"
+ },
+ {
+  "number": 5,
+  "page": 21,
+  "column": 0,
+  "box": [
+   0,
+   631,
+   578,
+   804
+  ],
+  "file": "q005.png",
+  "gutter": 564,
+  "draft_text": "5.Eyni soraitda barabar sayda Nv Omolekullar goturulub. Qazlarn katlolari arasindamunasibot necadir?M,(N）=28,M,（O2)=32 A)m（O2)=m(N) B)m(N2)>m(O2) C)m（O2)>m(N2) D)2m（O2）=m（N2) E)m(O2)=2m（N2)"
+ },
+ {
+  "number": 6,
+  "page": 21,
+  "column": 0,
+  "box": [
+   0,
+   792,
+   578,
+   965
+  ],
+  "file": "q006.png",
+  "gutter": 564,
+  "draft_text": "6.Eyni soraitda barabar katloli Nva Oqazlan goturalub. Qazlarin hocmlori arasinda munasibat necadir7M,(N）=28,M,（O2）=32 A)2V(O)=V(N2) B)V(O2)>V(N2) C)V(O2)=V(N2) D)V(N)>V(O2) E)V(O2)=2V(N2)"
+ },
+ {
+  "number": 7,
+  "page": 21,
+  "column": 0,
+  "box": [
+   0,
+   953,
+   578,
+   1054
+  ],
+  "file": "q007.png",
+  "gutter": 564,
+  "draft_text": "7.5mol HS-daneco molekul var? A)3,01.1024 B) 6,02.1024 C) 3,01.1023 D) 6,02-102²3 E) 6,02.1025"
+ },
+ {
+  "number": 8,
+  "page": 21,
+  "column": 0,
+  "box": [
+   0,
+   1042,
+   578,
+   1141
+  ],
+  "file": "q008.png",
+  "gutter": 564,
+  "draft_text": "8.224/ CO-da(n.s.)necamolekul var? A)6,02-1023 B)3,01.1023 C)3,01.1024 D) 6,02.1024 E)3,01.1025"
+ },
+ {
+  "number": 9,
+  "page": 21,
+  "column": 0,
+  "box": [
+   0,
+   1129,
+   578,
+   1252
+  ],
+  "file": "q009.png",
+  "gutter": 564,
+  "draft_text": "9.15,8q NaSO-da olan Satomlarinin sayini gostarin M,(Na2S2O3)=158 A) 6,02.1023 B)1,204.1023 C)3,01.1023 D)6,02.1022 E)9,03.1023"
+ },
+ {
+  "number": 10,
+  "page": 21,
+  "column": 0,
+  "box": [
+   0,
+   1240,
+   578,
+   1338
+  ],
+  "file": "q010.png",
+  "gutter": 564,
+  "draft_text": "10.0,01 mol XBr-un kutlosi 2,67 qramdir.X-innisbi atom kotlasini hesablayin.A,(Br)=80 A)12 B)27 C)52 D)31 E)56"
+ },
+ {
+  "number": 11,
+  "page": 21,
+  "column": 0,
+  "box": [
+   0,
+   1326,
+   578,
+   1446
+  ],
+  "file": "q011.png",
+  "gutter": 564,
+  "draft_text": "11.Muayyon hacm propanin katlasi 8,8q-dir.Homin hacm karbon-monooksidin kotlosi neca qram olar? M,（CO)=28,M,（CHg）=44 A)11,2 B)5,6 C)2,8 D)8,8 E)7,4"
+ },
+ {
+  "number": 12,
+  "page": 21,
+  "column": 1,
+  "box": [
+   555,
+   50,
+   1080,
+   175
+  ],
+  "file": "q012.png",
+  "gutter": 564,
+  "draft_text": "manual"
+ },
+ {
+  "number": 13,
+  "page": 21,
+  "column": 1,
+  "box": [
+   555,
+   176,
+   1080,
+   250
+  ],
+  "file": "q013.png",
+  "gutter": 564,
+  "draft_text": "manual"
+ },
+ {
+  "number": 14,
+  "page": 21,
+  "column": 1,
+  "box": [
+   555,
+   247,
+   1080,
+   357
+  ],
+  "file": "q014.png",
+  "gutter": 564,
+  "draft_text": "14.9,0310 saydaksigenmolekuluec qramd A,(0)=16 B)96 C)64 D)32 A)80 E)48"
+ },
+ {
+  "number": 15,
+  "page": 21,
+  "column": 1,
+  "box": [
+   555,
+   345,
+   1080,
+   445
+  ],
+  "file": "q015.png",
+  "gutter": 564,
+  "draft_text": "15.1.5mol HCl-da cami nec atom var? A)1,806-1022 B) 6,02.1023 C)18,06.1023 D) 3,612.1024 E)36,12.1022"
+ },
+ {
+  "number": 16,
+  "page": 21,
+  "column": 1,
+  "box": [
+   555,
+   433,
+   1080,
+   508
+  ],
+  "file": "q016.png",
+  "gutter": 564,
+  "draft_text": "16.4,48 litr（n.s.) CH4neca qramdir?M,（CH)=16 A)4,4 C) 1,6 B)2,8 D)3,2 E)4,8"
+ },
+ {
+  "number": 17,
+  "page": 21,
+  "column": 1,
+  "box": [
+   555,
+   496,
+   1080,
+   566
+  ],
+  "file": "q017.png",
+  "gutter": 564,
+  "draft_text": "17.112litr（ns.)CO2necaqramdir?M,(CO2)=44 B)440 C)220 D)550 A)110 E)330"
+ },
+ {
+  "number": 18,
+  "page": 21,
+  "column": 1,
+  "box": [
+   555,
+   554,
+   1080,
+   635
+  ],
+  "file": "q018.png",
+  "gutter": 564,
+  "draft_text": "18.1,505.10 sayda xlor molekulu necmoldur? A)25 B)5 D)30 C)20 E)15"
+ },
+ {
+  "number": 19,
+  "page": 21,
+  "column": 1,
+  "box": [
+   555,
+   623,
+   1080,
+   694
+  ],
+  "file": "q019.png",
+  "gutter": 564,
+  "draft_text": "19.5,6qKOHnecmoldur7M(KOH)=56 A) 0,05 B)0,1 C)0,15 D)0,2 E)0,25"
+ },
+ {
+  "number": 20,
+  "page": 21,
+  "column": 1,
+  "box": [
+   555,
+   682,
+   1080,
+   921
+  ],
+  "file": "q020.png",
+  "gutter": 564,
+  "draft_text": "20. Maddo Maddamiqdari,mol Hacm,/ (n.s) CO2 D V CO V2 a SO2 a V3 V,Vva Vucun dogru mtnasiboti gostarin. A)V>V2>V3 B)V>V=V2 << =²=（ E)V>V2>V"
+ },
+ {
+  "number": 21,
+  "page": 21,
+  "column": 1,
+  "box": [
+   555,
+   909,
+   1080,
+   1012
+  ],
+  "file": "q021.png",
+  "gutter": 564,
+  "draft_text": "21.5,4 qram suda necmolekul var?M,(HO)=18 A) 6,02-1023 B) 1,204.1024 C) 3,01.1023 D)1,806.1024 E) 1,806.10²3"
+ },
+ {
+  "number": 22,
+  "page": 21,
+  "column": 1,
+  "box": [
+   555,
+   1000,
+   1080,
+   1127
+  ],
+  "file": "q022.png",
+  "gutter": 564,
+  "draft_text": "22.13,8qKCO-daolankalium atomlarinin sayin hesablayin.M,(KCO)=138 A) 6,02.1022 B) 6,02.1023 C) 1,204.1023 D) 1,505.1023 E) 12,04.1023"
+ },
+ {
+  "number": 23,
+  "page": 21,
+  "column": 1,
+  "box": [
+   555,
+   1115,
+   1080,
+   1263
+  ],
+  "file": "q023.png",
+  "gutter": 564,
+  "draft_text": "23.Normal soraitda eyni sayda molekullani olan XY4 vXYsqazlari ucunno farqlidir? 1.Mol sayi IL.Atom sayi III.Katla A)I,II B)yalnizII ' D) I,II,III E)III"
+ },
+ {
+  "number": 24,
+  "page": 21,
+  "column": 1,
+  "box": [
+   555,
+   1251,
+   1080,
+   1365
+  ],
+  "file": "q024.png",
+  "gutter": 564,
+  "draft_text": "24.Normal soraitdo eyni sayda molekullan olan XY6 vaXYsqazlan Qcun no farqlidir? I.Kutlo I1.Hacm III.Mol sayi A)IIII B)III C)yalnzID）yalnzII E）I,l 5.Mol saylani borabar olan karbon va kukarddon ibarat qarisigin kutlasi 8,8 qramdir.Bu qarisiqda karbonun katlasini (q）hcsablayin.A（C)=12,A,（S）=32 A)6.4 B)1,2 C)3.2 D)2,4 E)4,8"
+ },
+ {
+  "number": 25,
+  "page": 21,
+  "column": 1,
+  "box": [
+   555,
+   1370,
+   1080,
+   1486
+  ],
+  "file": "q025.png",
+  "gutter": 564,
+  "draft_text": "manual"
+ },
+ {
+  "number": 26,
+  "page": 22,
+  "column": 0,
+  "box": [
+   0,
+   105,
+   545,
+   178
+  ],
+  "file": "q026.png",
+  "gutter": 531,
+  "draft_text": "26.324 qram sink-oksid ncco moldur7M(ZnO）=81 B)2 C)5 D)3 A)6 E)4"
+ },
+ {
+  "number": 27,
+  "page": 22,
+  "column": 0,
+  "box": [
+   0,
+   166,
+   545,
+   269
+  ],
+  "file": "q027.png",
+  "gutter": 531,
+  "draft_text": "27.0,2mol NaSO10HO birlasmasindonecomol atomvar? B)7,4 C)37 A)74 D)3,7 E)14,8"
+ },
+ {
+  "number": 28,
+  "page": 22,
+  "column": 0,
+  "box": [
+   0,
+   257,
+   545,
+   357
+  ],
+  "file": "q028.png",
+  "gutter": 531,
+  "draft_text": "28.0.2mol MgSO47HObirlasmasindanecomol atom var? B)54 C)27 A)2,7 D)5,4 E)13,5"
+ },
+ {
+  "number": 29,
+  "page": 22,
+  "column": 0,
+  "box": [
+   0,
+   345,
+   545,
+   659
+  ],
+  "file": "q029.png",
+  "gutter": 531,
+  "draft_text": "29. Katlasi (q) Birlasma Mol miqdar 90 C2H6 x 56 CH4 y xv y-imuayyan edin.M,(CH)=30,M,(CH)=28 y x 1 A) 1,5 2 B) 3 3 C) 2 D) 2 1 1,5 E) 3"
+ },
+ {
+  "number": 30,
+  "page": 22,
+  "column": 0,
+  "box": [
+   0,
+   647,
+   545,
+   984
+  ],
+  "file": "q030.png",
+  "gutter": 531,
+  "draft_text": "30. Mol miqdari Birlasma hocmi① 33,6 C2H6 x 44,8 C2H4 y xv y-i muayyan edin. y x A) 1,5 2 B) 2 3 C) 1,5 2 D) 1,5 3 E) 1 2"
+ },
+ {
+  "number": 31,
+  "page": 22,
+  "column": 0,
+  "box": [
+   0,
+   972,
+   545,
+   1214
+  ],
+  "file": "q031.png",
+  "gutter": 531,
+  "draft_text": "31. Hidrogenin Birlosmalar Mol sayi kutlosi,q CH4 a n1 C2H2 D n2 C3H6 a n3 Hansi munasibat dogrudur? C)n<n<m2 A)n<n2<n3 B)n<n<n2 D)n2<n<n1 E)n<n2<n1"
+ },
+ {
+  "number": 32,
+  "page": 22,
+  "column": 0,
+  "box": [
+   0,
+   1222,
+   545,
+   1466
+  ],
+  "file": "q032.png",
+  "gutter": 531,
+  "draft_text": "32. Hidrogenin Mol Madda katlasi,q sayi CH6 a n1 HS D m2 a NH13 n3 Hansi mQnasibat dogrudur? C)n2<ng<n1 A)n<n<n3 B)n<1n<n2 D)n2<n<n3 E)n<n<m2 -23-"
+ },
+ {
+  "number": 33,
+  "page": 22,
+  "column": 1,
+  "box": [
+   522,
+   107,
+   1080,
+   413
+  ],
+  "file": "q033.png",
+  "gutter": 531,
+  "draft_text": "33. Hocmi,/ Kutlasi,q Mol sayi Maddo (n.s.) 8 H2 x y xvy-i hesablayin.A,(H)=1 y x A) 67,2 3 B) 179,2 4 C) 89,6 2 22,4 D) 1 E) 89,6 4"
+ },
+ {
+  "number": 34,
+  "page": 22,
+  "column": 1,
+  "box": [
+   522,
+   401,
+   1080,
+   703
+  ],
+  "file": "q034.png",
+  "gutter": 531,
+  "draft_text": "34. Hacmi,/ Katlosi,q Mol sayi Madda (n.s.) 42 N2 x y xvy-ihesablayin.A,(N)=14 x y 33,6 A) 1,5 B) 33,6 4 C) 2 44,8 D) 112 5 E)1,5 67,2"
+ },
+ {
+  "number": 35,
+  "page": 22,
+  "column": 1,
+  "box": [
+   522,
+   691,
+   1080,
+   1005
+  ],
+  "file": "q035.png",
+  "gutter": 531,
+  "draft_text": "35. ewue Qaynama Madda temperaturu temperaturu (C) (C) X -20 60 Y 104 +18 -80 -10 Z Hansimaddanin1molunormalsaraitda22,4/hcm tutur? C)yalnizX B)yalnzY A)Y,Z E)yalnizZ D)X,Y"
+ },
+ {
+  "number": 36,
+  "page": 22,
+  "column": 1,
+  "box": [
+   522,
+   993,
+   1080,
+   1222
+  ],
+  "file": "q036.png",
+  "gutter": 531,
+  "draft_text": "36.Insaat muhandisi qapali idman zalindaventilyasiya sisteminin samarliliyiniyoxlamaqmoqsadiilazalin havasininkimyavi tarkibini arasdirr.Yoxlayir ki, zalinicarisindakihava hacmca78%N,21%Ova 1%CO2qazlarindanibaratdir.Zalin hocmi 400m olarsa,havada olan oksigen qazinin hacmini (m,n.s.)hesablayin. E)216 D)100 C)84 B)312 A)4"
+ },
+ {
+  "number": 37,
+  "page": 22,
+  "column": 1,
+  "box": [
+   522,
+   1210,
+   1080,
+   1517
+  ],
+  "file": "q037.png",
+  "gutter": 531,
+  "draft_text": "37.Kimyamahandisi muxtolif qazlarla doldurulmus havasarlanininyerdon qalxma qabiliyyatini va sixligini mdqayis etmak ucunbir san Heqazi, digorini isakarbon qazi ila doldurur.Hor iki sarin hacmi eynidirvaicorisindaki qazlarin temperaturlan borabardir.Helium vakarbon qazi ildoldurulmus sarlarin sixliqlan arasinda dogru munasibati muoyynedin.A,（C）=12:A，(O)=16:A,（He)=4 B)p(CO2)>p(Hc) A)p(CO2)<p(He) D)2p(CO)=p(He) C)p(CO2)=p(Hc) E)p（CO)=2p（He)"
+ },
+ {
+  "number": 38,
+  "page": 23,
+  "column": 0,
+  "box": [
+   0,
+   55,
+   607,
+   441
+  ],
+  "file": "q038.png",
+  "gutter": 593,
+  "draft_text": "38.Kimyaci muxtalif qazlarla doldurulmus sarlardan istifada etmokla havadamoxtolifqazlarin paylanmasina aid tacrobo aparir.O,sarlardan birini helium qazi,digrini azot qazi,obirini iso oksigen qazi ilo doldurur.Daha sonra sarlar havaya buraxilur Tacrubo zamanimalum olurki,Xqazi ila dolu olan saryuxari qalxmir,Yqaziildolu olansar surtl yuxari qalxir,Z qazi ilo dolu olan sar iso azca yuxan qalxib dayanir.X,Yva Z qazlarini muayyan edin. A,（He)=4;A,(N)=14;A，(O)=16 Z Y X N2 O2 He A) O2 N2 B) He He 02 C) N2 N2 02 He D) 02 N2 He E)"
+ },
+ {
+  "number": 39,
+  "page": 23,
+  "column": 0,
+  "box": [
+   0,
+   445,
+   607,
+   779
+  ],
+  "file": "q039.png",
+  "gutter": 593,
+  "draft_text": "39.Karbon qazinin verilmis hacmlarina(n.s.)uygun olanlari muayyanedin.M,(CO2)=44 1.2,408-1023 molekul 1.4,48/ 2.1,204.10²molekul molekul II.8,961 3.3,01·1023 III.11,2/ molekul 4.8,8q 5.17,6q ⅡI Ⅲ A) 1,5 2,4 3 B) 3 2,4 1,5 C) 2,4 3 1,5 D) 3 1,5 2,4 E) 2,4 1,5 3"
+ },
+ {
+  "number": 40,
+  "page": 23,
+  "column": 0,
+  "box": [
+   0,
+   767,
+   607,
+   864
+  ],
+  "file": "q040.png",
+  "gutter": 593,
+  "draft_text": "40.0,2mol CuSO45HO birlasmasindnecamolatom var? A)4,2 B)1,8 C)3,6 D)2,1 E)8,4"
+ },
+ {
+  "number": 41,
+  "page": 23,
+  "column": 0,
+  "box": [
+   0,
+   852,
+   607,
+   954
+  ],
+  "file": "q041.png",
+  "gutter": 593,
+  "draft_text": "41.6,02-1023 sayda atomu olan XY4birlosmosi nec moldur? A)0,5 B)2 C)1 D) 0,2 E)0,25"
+ },
+ {
+  "number": 42,
+  "page": 23,
+  "column": 0,
+  "box": [
+   0,
+   942,
+   607,
+   1039
+  ],
+  "file": "q042.png",
+  "gutter": 593,
+  "draft_text": "42.6,02-1023 sayda atomu olanXY;birlasmasi nec moldur? A)0,25 B)1 C)0,5 D)0,2 E)2"
+ },
+ {
+  "number": 43,
+  "page": 23,
+  "column": 0,
+  "box": [
+   0,
+   1027,
+   607,
+   1156
+  ],
+  "file": "q043.png",
+  "gutter": 593,
+  "draft_text": "43.AB4birlasmosinin0,25molunda comi neca atom var? A) 9,03.1023 B)3,01·1024 C) 6,02·1023 D) 9,03·1022 E) 6,02.1022"
+ },
+ {
+  "number": 44,
+  "page": 23,
+  "column": 0,
+  "box": [
+   0,
+   1144,
+   607,
+   1273
+  ],
+  "file": "q044.png",
+  "gutter": 593,
+  "draft_text": "44.ABbirlasmasinin0,25molunda cominecoatom var? A) 6,02-1023 B) 1,505.1022 C) 1,505.1023 D) 3,01-1023 E) 6,02·1022"
+ },
+ {
+  "number": 45,
+  "page": 23,
+  "column": 0,
+  "box": [
+   0,
+   1261,
+   607,
+   1380
+  ],
+  "file": "q045.png",
+  "gutter": 593,
+  "draft_text": "45.0,05molXObirlasmasininkatlasi 5,1 qramdir X-in nisbi atom katlasini hesablayin.A,(O)=16 A)14 B)31 C)40 D)56 E)27"
+ },
+ {
+  "number": 46,
+  "page": 23,
+  "column": 1,
+  "box": [
+   584,
+   51,
+   1080,
+   323
+  ],
+  "file": "q046.png",
+  "gutter": 593,
+  "draft_text": "46. Mol sayi Qazlar Atom sayi XH3 a n1 X'X a n2 XY2 a n3 Qazlarda atomlarin umumi saylan arasindaki munasibati gostarin. B)m=n2=n3 A）>n=n2 C)m>m=m3 D）n>m2=n3 E）m2>m>n3 atomvar? 2.C2H4 1.C2H6 4.N2O4 3.NO2 5.CH4"
+ },
+ {
+  "number": 47,
+  "page": 23,
+  "column": 1,
+  "box": [
+   584,
+   340,
+   1080,
+   444
+  ],
+  "file": "q047.png",
+  "gutter": 593,
+  "draft_text": "manual"
+ },
+ {
+  "number": 48,
+  "page": 23,
+  "column": 1,
+  "box": [
+   584,
+   456,
+   1080,
+   556
+  ],
+  "file": "q048.png",
+  "gutter": 593,
+  "draft_text": "48.Hansimaddalarin 0,5molu 11,2 litrhacm tutur (n.s.)? 2.Clz 1.Br2 3.I2 4.02 5.03"
+ },
+ {
+  "number": 49,
+  "page": 23,
+  "column": 1,
+  "box": [
+   584,
+   544,
+   1080,
+   615
+  ],
+  "file": "q049.png",
+  "gutter": 593,
+  "draft_text": "49.Hansi maddolorin 1 molunda eyni sayda atom var? 1.Oksigen 2.Su 3.Azot 4.Arqon"
+ },
+ {
+  "number": 50,
+  "page": 23,
+  "column": 1,
+  "box": [
+   584,
+   603,
+   1080,
+   777
+  ],
+  "file": "q050.png",
+  "gutter": 593,
+  "draft_text": "50. Madda Hacmi, I (n.s.) Atomlarin sayi 22,4 CO b b NH3 x 2 x-imuiayyon edin."
+ },
+ {
+  "number": 51,
+  "page": 23,
+  "column": 1,
+  "box": [
+   584,
+   765,
+   1080,
+   914
+  ],
+  "file": "q051.png",
+  "gutter": 593,
+  "draft_text": "51. Madda Hocmi,I (n.s) Atomlarin say1 NO 2a x C2H2 11,2 a x-i muoyyanedin."
+ },
+ {
+  "number": 52,
+  "page": 23,
+  "column": 1,
+  "box": [
+   584,
+   902,
+   1080,
+   1186
+  ],
+  "file": "q052.png",
+  "gutter": 593,
+  "draft_text": "52.Bos halda I va II qablarn kutlasi eynidirs,m-i (qramla) hesablayin.A,(C)=12,A,（O)=16,A,(H)=1 ooQnooo 1 ⅡI qab qab 山 CO2 1 0.5 mol mol 3. Qazlarin Qaz Molekulunda C Qarisigin dmumimol atomlarinin sayi kutlasi,q miqdan CH4 a CH4 178 D 7 C4Hx a x-imuoyyancdin.A,(C)=12,A,（H)=1"
+ },
+ {
+  "number": 53,
+  "page": 23,
+  "column": 1,
+  "box": [
+   584,
+   1200,
+   1080,
+   1448
+  ],
+  "file": "q053.png",
+  "gutter": 593,
+  "draft_text": "manual"
+ },
+ {
+  "number": 54,
+  "page": 24,
+  "column": 0,
+  "box": [
+   0,
+   93,
+   538,
+   300
+  ],
+  "file": "q054.png",
+  "gutter": 524,
+  "draft_text": "54.Uygunlugu muayyan edin A,(N）=14;A,（C)=12;A,O)=16 Maddanin kutlosi Molekullarin say1 a.1,204.1023 1.5,6qN2 b.3,01-1023 2.2,2qCO2 c.1,505.1022 3.2,8qCO d.6,02.102 e.3,01.1022"
+ },
+ {
+  "number": 55,
+  "page": 24,
+  "column": 0,
+  "box": [
+   0,
+   312,
+   538,
+   493
+  ],
+  "file": "q055.png",
+  "gutter": 524,
+  "draft_text": "55.Uygunlugu muayyan edin,M,(CO2)=44; M,（SO2)=64;M,（O2）=32 1. 6,02.1022 molekul a.6,72/H2(n.s.) 2. 1,806.10² molekul b.33,6/N2(n.s.) 3. 9,03.1023 molekul c.66qCO2 d.9,6qSO2 e.3,2q02 Qazlarin sixligi.Nisbi sixliq. Qazqarisiqlarinaaidhesablamalar 1.Hansi qazhidrogendan 14 dafaagirdir? A,（C)=12,A,（O)=16;A,（S)=32;A,（H)=1,A,(N）=14 C)NOD)CO2 B)N2O D)CO2 A)SO2 E)CO 2.Hansiqaz oksigendon16dafayunguldur? A(N）=14;A（C)=12:A(O)=16;A,(H)=1 C)H2 2D）N2 B)CH4 E)CO A)NO2 3.Hidrogengoronisbisixligi14 olan qazinnisbi molekul kutlasini muayyn edin.A,(H)=1 C)26 D)44 A)17 B)30 E)28 4.0,5mol cO2v 11,2 /SO-don（n.s.）ibarat qarisiqda necaoksigen atomu var? A) 3,01.1024 B) 6,02.1023 C) 1,204.1024 E) 6,02.1024 D)1,204.1023 1 barabordir.Xelementinin nisbi atom kutlasini hesablayin.A,(H)=1 E)12 D)31 C)40 A)56 B)14 6.Normal soraitd3,36/heliumv 4,48/neondan ibarat qaz qarsigininkutlasineca qramdir? A,(He)=4,A,(Ne)=20 D)5,6 E)3,8 C)4,6 A)24 B)12 7. CO2-dan v 0,75 mol N-don ibarat qaz qarisiginin katlssi 25 qramdir. Qarsiqda neca qram CO2 var? M,(N2)=28 A)6 E)11 D) 4 C)8 B)2 8.10 mmetan 2 mhidrogendon neca dofa agirdr (n.s.)7M(CH）=16,M,(H2)=2 E)80 D)32 A)S B)40 C)16 9Normalrat56lirininkts,qlanqa hidrogena gor sixligini hesablayin.M(H)=2 E)28 D)23 A)30 C)15 B)46"
+ }
+]
