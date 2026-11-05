@@ -17,6 +17,7 @@ gündəlik planı özü qurur.
 |---|---|---|
 | Ad | **PrepAZ** (paket: `prepaz`, bundle/applicationId: `az.prepaz`)
 | Mobil | Flutter (Dart) | Bir kod → Android + iOS; riyazi düsturları nativ göstərir; ucuz telefonlarda axıcı |
+| Platforma | **Uzun müddət yalnız Android** (2026-11-03) | iPhone versiyası planlaşdırılmır; Android-ə xas həllər (məs. Nearby Connections) seçilə bilər |
 | Backend | Supabase (PostgreSQL 15+) | Hazır auth, API, storage; ayrıca server yazmağa ehtiyac yoxdur |
 | Region | Frankfurt (eu-central-1) | Azərbaycana ən yaxın |
 | Oflayn | SQLite (drift) telefonda | Avtobusda/metroda internetsiz həll |
@@ -86,6 +87,7 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - [ ] Mərhələ 5: taymerli sınaq imtahanı, bal hesablanması
 - [~] Mərhələ 6: veb admin panel. v1 hazırdır (`PrepAzAdmin`), migration 005 işlədilməli. Növbəti: mövzu idarəsi
 - [ ] Mərhələ 7: Play Store-a çıxış
+- Gələcək fikirlər (sual bazası bitəndən sonra): `FIKIRLER.md` (məs. müəllim-şagird qrupları, ev tapşırığı, canlı nəticə).
 
 
 ## Sual Bazası
@@ -136,8 +138,8 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - Dərsliklər (məktəb kitabları) üçün razılıq YOXDUR: mövzu izahlarında yalnız mənbə/plan kimi, mətn öz sözlərimizlə yazılır, köçürülmür.
 
 ## Versiya
-- Cari versiya: **1.3.0**, build **9**. Mənbə: `assets/app.json`; `pubspec.yaml` → `version: 1.3.0+9` ilə eyni olmalıdır (`test/core/app_version_test.dart` uyğunsuzluğu tutur).
-- Yeni buraxılışda hər ikisini birlikdə dəyiş. Ana ekranın altında "Versiya 1.3.0 (9)" göstərilir.
+- Cari versiya: **1.4.0**, build **10**. Mənbə: `assets/app.json`; `pubspec.yaml` → `version: 1.4.0+10` ilə eyni olmalıdır (`test/core/app_version_test.dart` uyğunsuzluğu tutur).
+- Yeni buraxılışda hər ikisini birlikdə dəyiş. Ana ekranın altında "Versiya 1.4.0 (10)" göstərilir.
 
 ## Test Supabase-in cari vəziyyəti (2026-11-02)
 - Migration 014 işlənib, kitab 1-dən 253 şəkil-sual yüklənib (206 qapalı, 47 açıq).
@@ -207,7 +209,7 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 
 ## Məcburi yeniləmə
 - `db/migrations/008_app_config.sql`: tək sətirli `app_config` (`min_version`, `latest_version`, `update_url`); anon də oxuya bilər (giriş əvvəli yoxlanır), yalnız admin dəyişir. Lokal test: `tools/dim/test_migration_008.py`.
-- Tətbiq: `lib/features/update` (`UpdateGate` `app.dart`-da `AuthGate`-i sarıyır). Versiya `assets/app.json`-dan (`1.3.0+9`) bazadakı ilə müqayisə olunur:
+- Tətbiq: `lib/features/update` (`UpdateGate` `app.dart`-da `AuthGate`-i sarıyır). Versiya `assets/app.json`-dan (`1.4.0+10`) bazadakı ilə müqayisə olunur:
   `min_version`-dan aşağı → bağlanmayan `ForceUpdateScreen`; `latest_version`-dan aşağı → bir dəfə "Sonra" düyməli xəbərdarlıq. Oxunmasa (internet yox / cədvəl yox) heç nə bloklanmır.
 - Admin panel: "Tənzimləmələr" tabı. Yeni buraxılışda ƏVVƏL APK/mağaza yüklənir və link yazılır, SONRA `latest_version` (və lazımsa `min_version`) qaldırılır.
 
@@ -236,10 +238,11 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - Google Cloud layihəsi `PrepAZ` (Firebase vasitəsilə yaradılıb, kart istənmədi; Firebase özü istifadə olunmur). OAuth clientlər:
   - **Web** `PrepAZ Supabase`: redirect URI `https://ehaqunuwkccwosaorvgy.supabase.co/auth/v1/callback`. Client ID açıqdır: `AppConfig.googleWebClientId` (`GOOGLE_WEB_CLIENT_ID`, debug defoltu `DebugDefaults`, `env/test.json`). **Client secret yalnız Supabase-dədir**, repoya və koda düşməz.
   - **Android** `PrepAZ Android debug`: paket `az.prepaz`, debug SHA-1 `3E:FE:05:F1:75:59:4D:C8:6B:18:D1:EB:C3:4E:B7:16:7F:79:11:AC`.
-- Supabase (test) → Authentication → Providers → Google: Web ID + secret, Client IDs xanasında `webID,androidID` (vergüllə, boşluqsuz). "Skip nonce checks" söndürülüb.
+  - **Android** `PrepAZ Android release`: paket `az.prepaz`, release SHA-1 `B5:31:09:76:32:18:08:89:E3:4B:AD:A4:CF:4C:30:0F:7C:E6:C9:14`. ID-si Supabase Client IDs-dədir (`web,debug,release`). 2026-11-03: release APK 1.4.0 (10) ilə bazada olmayan hesab Google ilə qeydiyyatdan keçdi, Testing rejimində də (Test users boş).
+- Supabase (test) → Authentication → Providers → Google: Web ID + secret, Client IDs xanasında `webID,debugID,releaseID` (vergüllə, boşluqsuz). "Skip nonce checks" söndürülüb.
 - Hələ edilməyib:
-  - **Release Android client**: release açarının SHA-1-i ilə ayrıca client lazımdır (açar başqa kompüterdədir: `keytool -list -v -keystore android/app/prepaz-release.jks -alias prepaz`) və onun ID-si Supabase Client IDs-ə əlavə olunur. Onsuz release APK-da Google girişi işləmir.
-  - Consent screen "Testing" rejimindədir: yalnız Audience → Test users siyahısındakılar girə bilir. Buraxılışdan əvvəl **Publish app**.
+  - Play Store-da Play App Signing olsa, Play Console-dakı "App signing key" SHA-1-i üçün də ayrıca Android client lazımdır (yoxdursa Google girişi Supabase-ə çatmır: Auth loglarında `/auth/v1/token` görünmür).
+  - Consent screen "Testing" rejimindədir. Yalnız əsas scope-larla (Android Credential Manager) Test users siyahısında olmayan hesab da girə bildi, amma ehtiyat üçün buraxılışdan əvvəl **Publish app** (əvvəl Branding səhifəsi doldurulmalıdır, çox güman ki məxfilik siyasəti linki lazımdır).
   - Web client secret söhbətdə göründüyü üçün yenilənməlidir (Clients → Add secret, Supabase-də dəyiş, köhnəni sil).
   - Real (prod) Supabase qurulanda Google provider orada da ayrıca aktivləşdirilir.
 - Windows-da plugin-li layihəni build etmək üçün Developer Mode açıq olmalıdır (symlink).
