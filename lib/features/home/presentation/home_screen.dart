@@ -17,6 +17,7 @@ import '../../goal/presentation/widgets/goal_card.dart';
 import '../../menu/presentation/app_drawer.dart';
 import '../../mistakes/presentation/mistakes_screen.dart';
 import '../../quiz/presentation/quiz_screen.dart';
+import '../../update/presentation/update_banner.dart';
 import '../../tour/presentation/tour_controller.dart';
 import '../../tour/presentation/tour_targets.dart';
 import '../../tour/presentation/widgets/tour_overlay.dart';
@@ -108,6 +109,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                           AppSpacing.l,
                         ),
                         children: [
+                          const UpdateBanner(),
                           const OfflineHomeBanner(),
                           const FadeSlideIn(child: _StreakSection()),
                           AppSpacing.gapM,

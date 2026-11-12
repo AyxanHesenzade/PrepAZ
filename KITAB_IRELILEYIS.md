@@ -1,14 +1,14 @@
 # Test kitabları: harada dayanmışıq
 
 Hər bölmə bitəndən sonra bu fayl yenilənir. Yeni işə başlamazdan əvvəl buradan bax.
-Son yenilənmə: 2026-11-05 (bölmə 16–17 kəsildi)
+Son yenilənmə: 2026-11-06 (bölmə 25–26 kəsildi)
 
 ## Qısa vəziyyət
 - **Kitab 1:** "Kimya test toplusu I" (DİM, 2025, 359 səhifə)
 - **Fayl:** `tools/dim/Kimya test toplusu I 2025 _250822_103034.pdf`
-- **Hazır bölmələr:** 1, 2, 3, 4, 5, 6 (bölmə 6 yükləndi, 2026-11-05); bölmə 7 yükləndi, 2026-11-05; bölmə 8 yükləndi, 2026-11-05; bölmə 9 yükləndi, 2026-11-05; bölmə 10 yükləndi, 2026-11-05; bölmə 11 yükləndi, 2026-11-05; bölmə 12 yükləndi, 2026-11-05; bölmə 13 yükləndi, 2026-11-05; bölmə 14 yükləndi, 2026-11-05; bölmə 15 yükləndi, 2026-11-05; **bölmə 16 və 17 kəsilib, SQL və şəkillər hazırdır, sahib yükləməlidir**
-- **Bazada:** 253 şəkil-sual (206 qapalı, 47 açıq). Bölmə 6 ilə +55 (46 qapalı, 9 açıq) = 308; bölmə 7 ilə +97 (77 qapalı, 20 açıq) = 405; bölmə 8 ilə +82 (51 qapalı, 31 açıq) = 487; bölmə 9 ilə +45 (38 qapalı, 7 açıq) = 532; bölmə 10 ilə +82 (79 qapalı, 3 çoxseçimli) = 614; bölmə 11 ilə +55 (54 qapalı, 1 ədədi) = 669; bölmə 12 ilə +126 (104 qapalı, 11 çoxseçimli, 5 ədədi, 6 uyğunlaşdırma) = 795; bölmə 13 ilə +100 (78 qapalı, 22 ədədi) = 895; bölmə 14 ilə +68 (55 qapalı, 6 çoxseçimli, 2 ədədi, 5 uyğunlaşdırma) = 963; bölmə 15 ilə +153 = **1116**; bölmə 16 (+19) və 17 (+83) yüklənəndə = 1218
-- **Növbəti:** pdf 89-dan "Ətraflı yazılı cavab" (ATLANIR), sonra fəsil "Kimyəvi reaksiyaların təsnifatı və istilik effekti" (açar pdf 335 aşağıda).
+- **Hazır bölmələr:** 1, 2, 3, 4, 5, 6 (bölmə 6 yükləndi, 2026-11-05); bölmə 7 yükləndi, 2026-11-05; bölmə 8 yükləndi, 2026-11-05; bölmə 9 yükləndi, 2026-11-05; bölmə 10 yükləndi, 2026-11-05; bölmə 11 yükləndi, 2026-11-05; bölmə 12 yükləndi, 2026-11-05; bölmə 13 yükləndi, 2026-11-05; bölmə 14 yükləndi, 2026-11-05; bölmə 15 yükləndi, 2026-11-05; bölmə 16–24 yükləndi (2026-11-06, şəkillər `images_kitab`-a köçürüldü); **bölmə 25 və 26 kəsilib, SQL və şəkillər hazırdır, sahib yükləməlidir**
+- **Bazada:** 253 şəkil-sual (206 qapalı, 47 açıq). Bölmə 6 ilə +55 (46 qapalı, 9 açıq) = 308; bölmə 7 ilə +97 (77 qapalı, 20 açıq) = 405; bölmə 8 ilə +82 (51 qapalı, 31 açıq) = 487; bölmə 9 ilə +45 (38 qapalı, 7 açıq) = 532; bölmə 10 ilə +82 (79 qapalı, 3 çoxseçimli) = 614; bölmə 11 ilə +55 (54 qapalı, 1 ədədi) = 669; bölmə 12 ilə +126 (104 qapalı, 11 çoxseçimli, 5 ədədi, 6 uyğunlaşdırma) = 795; bölmə 13 ilə +100 (78 qapalı, 22 ədədi) = 895; bölmə 14 ilə +68 (55 qapalı, 6 çoxseçimli, 2 ədədi, 5 uyğunlaşdırma) = 963; bölmə 15 ilə +153 = **1116**; bölmə 16 (+19), 17 (+83), 18 (+50), 19 (+38) = **1306**; bölmə 20 (+86) = **1392**; bölmə 21 (+69) = **1461**; bölmə 22 (+58) = **1519**; bölmə 23 (+83) = **1602**; bölmə 24 (+13) = **1615**; bölmə 25 (+55), 26 (+55) yüklənəndə = 1725
+- **Növbəti:** fəsil "Kimyəvi tarazlıq": bölmə "Kimyəvi tarazlıq və ona təsir edən amillər" pdf 129 (sağ sütun, başlıq y~100-dən aşağı)-dan başlayır; açar pdf 338-in aşağısında / pdf 339-da (yenidən oxu). Sonra ətraflı yazılı cavab bölməsi ATLANIR.
 - **Yazılı tapşırıqlar ATLANIR** (sahibin qərarı, 2026-11-05): "Ətraflı yazılı cavab tələb olunan tapşırıqlar" bölmələri tətbiqə əlavə olunmur, soruşulmur. Atlananlar: pdf 19–20, pdf 38 (sağ) – 40, pdf 65 (sol, 100-dən sonra) – 66.
 - **Səhifə qeydi:** kitabda çap olunmuş səhifə nömrəsi = pdf səhifəsi + 1 (pdf 15 = kitabda 16).
 
@@ -31,8 +31,17 @@ Son yenilənmə: 2026-11-05 (bölmə 16–17 kəsildi)
 | 13 | Atomun quruluşuna aid hesablamalar | 59 (sol sütun, başlıqdan sonra)–65 (sol sütun, 100) | 100 | 100 = 78 qapalı + 22 ədədi (yüklənib) | yoxdur | `KT1-S13-Qnnn` | `scan/kimya_I_bolme13_cavablar.json` |
 | 14 | Elektromənfilik. Kimyəvi rabitənin tipləri. Kovalent rabitənin növləri | 67–72 (sol sütun, 68) | 68 | 68 = 55 qapalı + 13 açıq (yüklənib) | yoxdur | `KT1-S14-Qnnn` | `scan/kimya_I_bolme14_cavablar.json` |
 | 15 | Kovalent rabitənin xassələri. Orbitalların hibridləşməsi | 72 (sol, 68-dən sonra)–82 (sağ, 154) | 154 | 153 (yüklənib) | 154 (sıralama sualı, tip yoxdur) | `KT1-S15-Qnnn` | `scan/kimya_I_bolme15_cavablar.json` |
-| 16 | Kristal qəfəslərin tipləri | 82 (sağ)–83 (sağ, 19) | 19 | gözləyir: `out/import_kt1_s16.sql` (17 qapalı + 1 ədədi + 1 uyğunlaşdırma) | yoxdur | `KT1-S16-Qnnn` | `scan/kimya_I_bolme16_cavablar.json` |
-| 17 | Elementlərin valentlik imkanları. Oksidləşmə dərəcəsi | 83 (sağ)–88 | 83 | gözləyir: `out/import_kt1_s17.sql` (76 qapalı + 2 çoxseçimli + 5 uyğunlaşdırma) | yoxdur | `KT1-S17-Qnnn` | `scan/kimya_I_bolme17_cavablar.json` |
+| 16 | Kristal qəfəslərin tipləri | 82 (sağ)–83 (sağ, 19) | 19 | yükləndi: `out/import_kt1_s16.sql` (17 qapalı + 1 ədədi + 1 uyğunlaşdırma) | yoxdur | `KT1-S16-Qnnn` | `scan/kimya_I_bolme16_cavablar.json` |
+| 17 | Elementlərin valentlik imkanları. Oksidləşmə dərəcəsi | 83 (sağ)–88 | 83 | yükləndi: `out/import_kt1_s17.sql` (76 qapalı + 2 çoxseçimli + 5 uyğunlaşdırma) | yoxdur | `KT1-S17-Qnnn` | `scan/kimya_I_bolme17_cavablar.json` |
+| 18 | Kimyəvi reaksiyaların təsnifatı | 91–93 | 50 | yükləndi: `out/import_kt1_s18.sql` (45 qapalı + 4 çoxseçimli + 1 uyğunlaşdırma) | yoxdur | `KT1-S18-Qnnn` | `scan/kimya_I_bolme18_cavablar.json` |
+| 19 | Reaksiyanın istilik effekti. Əməlgəlmə və yanma istilikləri | 94–96 (sağ, 38) | 38 | yükləndi: `out/import_kt1_s19.sql` (26 qapalı + 4 çoxseçimli + 4 ədədi + 4 uyğunlaşdırma) | yoxdur | `KT1-S19-Qnnn` | `scan/kimya_I_bolme19_cavablar.json` |
+| 20 | Termokimyəvi tənliklər üzrə hesablamalar | 96 (sağ, Q38-dən sonra)–102 | 86 | yükləndi: `out/import_kt1_s20.sql` (65 qapalı + 4 çoxseçimli + 17 ədədi) | yoxdur | `KT1-S20-Qnnn` | `scan/kimya_I_bolme20_cavablar.json` |
+| 21 | Oksidləşmə-reduksiya prosesləri (fəsil "Oksidləşmə-reduksiya reaksiyaları") | 105–109 (sol, 69) | 69 | yükləndi: `out/import_kt1_s21.sql` (59 qapalı + 6 çoxseçimli + 3 ədədi + 1 uyğunlaşdırma) | yoxdur | `KT1-S21-Qnnn` | `scan/kimya_I_bolme21_cavablar.json` |
+| 22 | Oksidləşmə-reduksiya reaksiyalarının tənlikləri | 109 (sol, başlıqdan sonra)–113 (sol, 58) | 58 | yükləndi: `out/import_kt1_s22.sql` (41 qapalı + 6 çoxseçimli + 8 ədədi + 3 uyğunlaşdırma) | yoxdur | `KT1-S22-Qnnn` | `scan/kimya_I_bolme22_cavablar.json` |
+| 23 | Oksidləşmə-reduksiya reaksiyalarının tənliklərinin əmsallaşdırılması | 113 (sol, başlıqdan sonra)–117 (sol, 83) | 83 | yükləndi: `out/import_kt1_s23.sql` (67 qapalı + 4 çoxseçimli + 10 ədədi + 2 uyğunlaşdırma) | yoxdur | `KT1-S23-Qnnn` | `scan/kimya_I_bolme23_cavablar.json` |
+| 24 | Oksidləşmə-reduksiya reaksiyalarının növləri | 117 (sol, başlıqdan sonra)–118 (sol, 13) | 13 | yükləndi: `out/import_kt1_s24.sql` (9 qapalı + 1 çoxseçimli + 3 uyğunlaşdırma) | yoxdur | `KT1-S24-Qnnn` | `scan/kimya_I_bolme24_cavablar.json` |
+| 25 | Kimyəvi reaksiyaların sürəti və ona aid hesablamalar (fəsil "Kimyəvi reaksiyaların sürəti. Kimyəvi tarazlıq") | 120 (sol, başlıqdan sonra)–124 | 55 | gözləyir: `out/import_kt1_s25.sql` (41 qapalı + 2 çoxseçimli + 11 ədədi + 1 uyğunlaşdırma) | yoxdur | `KT1-S25-Qnnn` | `scan/kimya_I_bolme25_cavablar.json` |
+| 26 | Kimyəvi reaksiyaların sürətinə təsir edən amillər | 125–129 (sol, 55) | 55 | gözləyir: `out/import_kt1_s26.sql` (37 qapalı + 2 çoxseçimli + 10 ədədi + 6 uyğunlaşdırma) | yoxdur | `KT1-S26-Qnnn` | `scan/kimya_I_bolme26_cavablar.json` |
 
 Cavablar kitabda səhifə 331-dən başlayır. Bölmə 6-nın açarı sahib tərəfindən şəkil kimi verildi (kitab səhifə 22–25 = pdf 21–24).
 
@@ -100,6 +109,42 @@ Cavablar kitabda səhifə 331-dən başlayır. Bölmə 6-nın açarı sahib tər
 - Əmr: `--first 72 --last 82 --start 1 --stop 154 --skip-above 72:0:960`.
 - OCR 22 sualı tapmadı (21, 28, 29, 53–56, 59, 60, 62, 68, 69, 83, 92, 115–117, 123–125, 136, 150), əl ilə ölçüldü. 68 sağ sütunda davam edir (`cont_top` 69-da 92). Yeni qayda ilə yalnız əl ilə kəsilənlər yoxlanıb.
 - Yükləmə: `out/import_kt1_s15.sql` SQL Editor-da, `out/upload_kitab/` (153 `.webp`) Storage-ə.
+
+## Bölmə 18–19 (2026-11-06)
+- Bölmə 18: əmr `--first 91 --last 93 --start 1 --stop 50 --skip-above 91:0:300` (Q1 başlığın altında idi, əl ilə). 46–49 çoxseçimli, 50 uyğunlaşdırma. OCR 1, 17, 26, 27-ni tapmadı.
+- Bölmə 19: əmr `--first 94 --last 96 --start 1 --stop 38 --skip-above 94:0:260` (Q1 əl ilə). 27–30 çoxseçimli, 31–34 ədədi (134.4, 4, 5, 635), 35–38 uyğunlaşdırma. OCR 1–3, 7, 8, 21, 26, 31–33-ü tapmadı. Səhifələr əyridir: əl ilə top = nömrənin ~35 px yuxarısı. Q38-in altında növbəti başlıq: end=1290. Q35–38 açarı fırlanmış yazı idi, oxunuşu sahib yoxlasın.
+- Yükləmə: `out/import_kt1_s18.sql`, `out/import_kt1_s19.sql`, `out/upload_kitab/` (190 `.webp`, bölmə 16–19).
+
+## Bölmə 20 (2026-11-06)
+- Əmr: `--first 96 --last 102 --start 1 --stop 86 --skip-above 96:0:9999 --skip-above 96:1:1360` (Q1 başlığın altında idi, əl ilə). 66–69 çoxseçimli (66: `1,3`, 67: `1,2`, 68: `1,3`, 69: `1,2,5`), 70–86 ədədi (açar pdf 336-da fırlanmış yazı idi: sahib 80 = 635 və 85/86 = 260/260-ı yoxlasın).
+- OCR 15 sual tapmadı (1, 12–18, 26, 27, 47–50, 54), əl ilə ölçüldü. 19 səhv sütuna düşmüşdü (sağ sütundur). 54 sağ sütunun başında davam edir (`cont_top: 100`, 55-də). Səhifələr əyri: əl ilə top = nömrənin ~15 px yuxarısı.
+- Yükləmə: `out/import_kt1_s20.sql` + `out/upload_kitab/` (86 `.webp`, yalnız bölmə 20).
+
+## Bölmə 21 (2026-11-06)
+- Əmr: `--first 105 --last 108 --start 1 --stop 69 --skip-above 105:0:420` (recrop üçün `--last 109`: 68–69 pdf 109 sol sütunun başındadır). 60–65 çoxseçimli, 66–68 ədədi (25, 75, 21), 69 uyğunlaşdırma (`b; c; e`).
+- OCR 15 sual tapmadı (1, 2, 17–20, 25, 51–56, 68, 69), əl ilə ölçüldü. 25 24-ün qutusunun içində idi. **Səhifə 108 sol sütunun yuxarısı çox əyridir (9°-yə qədər):** 51–56 `tilt: 15` + `tilt_angle_fixed` (-9.5, -8.5, -8, -6.5, -4.5, -3.5) ilə kəsilib; `tilt` rejimində box-un x0/x1 də manifestdə olmalıdır (`add` yazmır, əl ilə `box[0]=0, box[2]=gutter+14`), və top ~40 px nömrədən yuxarı, bottom növbəti topdan ~15 px aşağı olmalıdır.
+- Yükləmə: `out/import_kt1_s21.sql` + `out/upload_kitab/` (69 `.webp`).
+
+## Bölmə 22 (2026-11-06)
+- Əmr: `--first 109 --last 112 --start 1 --stop 58 --skip-above 109:0:670` (recrop üçün `--last 113`: 57–58 pdf 113 sol sütundadır; scan yavaşdır, ~2 dəq, arxa fonda işlət). 42–47 çoxseçimli (44 = `4`), 48–55 ədədi, 56–58 uyğunlaşdırma (56: `a, e; c; b`).
+- OCR 12 sual tapmadı (7, 13–15, 19, 27, 38–41, 57, 58), əl ilə ölçüldü. Əyri səhifələr (110 yuxarı, 112 yuxarı: ~2.5°): top nömrədən ~30–45 px yuxarı. Əl ilə kəsilən 113 səhifəsi üçün `--gutter 560`.
+- Yükləmə: `out/import_kt1_s22.sql` + `out/upload_kitab/` (58 `.webp`).
+
+## Bölmə 23 (2026-11-06)
+- Əmr: `--first 113 --last 117 --start 1 --stop 83 --skip-above 113:0:575` (scan ~2 dəq, arxa fonda). 68–71 çoxseçimli, 72–81 ədədi, 82–83 uyğunlaşdırma.
+- OCR 9 sual tapmadı (10, 12, 13, 18–21, 54, 55), əl ilə ölçüldü. Səhifə yuxarıları bir az əyridir: ilk sətir yarı kəsilirsə top ~20 px yuxarı. 83-ün altında növbəti fəslin başlığı var: `--end '{"83":272}'`.
+- Qeyd (bölmə 22): `import_scans.py` tək rəqəmli cavabı (məs. `4`) ədədi tip sayır; çoxseçimli sualın cavabı tək rəqəm olanda əl ilə düzəldilməlidir (`out/fix_kt1_s22_q044.sql`).
+- Yükləmə: `out/import_kt1_s23.sql` + `out/upload_kitab/` (83 `.webp`).
+
+## Bölmə 24 (2026-11-06)
+- Kiçik bölmə (13 sual). Əmr: `--first 117 --last 118 --start 1 --stop 13 --skip-above 117:0:375`. 10 çoxseçimli (`1,5`), 11–13 uyğunlaşdırma (13: `c; a; b, e`). OCR yalnız 10-u tapmadı (118 yuxarı, əl ilə). 13-ün altında "Ətraflı yazılı" başlığı: `--end '{"13":1135}'` (13-ü `[118,0,890]` ilə yenidən verdim).
+- Yükləmə: `out/import_kt1_s24.sql` + `out/upload_kitab/` (13 `.webp`).
+
+## Bölmə 25–26 (2026-11-06)
+- Bölmə 25: əmr `--first 120 --last 124 --start 1 --stop 55 --skip-above 120:0:480` (**DİQQƏT:** 120-də Q1 və Q2 başlığın altındadır, amma səhifə əyridir, skip-above 480 Q1-i kəsdi: Q1 `[120,0,212]` ilə əl ilə verildi). 42–43 çoxseçimli, 44–54 ədədi (44 = `1`, 48 = `2.8`, 52 = `17.6`, 54 = `0.5`), 55 uyğunlaşdırma. OCR 13 sual tapmadı (1, 2, 6, 21–29, 44) və 30-u səhv yerdə (121 sol, "30 saniyə" mətni) tapdı: `add` ilə düzgün yerə (`[122,0,1312]`) köçürüldü. Səhifə 120 sol sütun və 121 sağ sütun əyridir.
+- Bölmə 26: əmr `--first 125 --last 129 --start 1 --stop 55 --skip-above 125:0:250` (**DİQQƏT:** başlıq 125-in yuxarısında dardır, Q1 y~190-dadır: skip-above 250 Q1-i kəsdi, `[125,0,170]` ilə əl ilə verildi; OCR 20-ni də "20°C" mətnində səhv tapdı). 38–39 çoxseçimli, 40–49 ədədi, 50–55 uyğunlaşdırma (`b, c; a; d, e` kimi). OCR 19 sual tapmadı (1, 8–19, 21, 27, 33), əl ilə ölçüldü. Əyri səhifələrdə (127 sağ yuxarı) top nömrədən ~100 px yuxarı lazım oldu (33).
+- **Dərs:** `scan_segment.py`-nin ilk ekran qiymətini götürmək əvəzinə, `--skip-above` verməzdən əvvəl səhifənin yuxarısına (`grid p:0:540:0:600`) bir dəfə baxmaq daha ucuzdur: iki bölmədə Q1 itirildi.
+- Yükləmə: `out/import_kt1_s25.sql`, `out/import_kt1_s26.sql` + `out/upload_kitab/` (110 `.webp`).
 
 ## Yarımçıq qalan suallar
 - **Bölmə 1:** 7 sual yoxdur (OCR tapmayıb). Dəqiq siyahı `scan/kimya_I_test/manifest.json`-da.

@@ -5,6 +5,7 @@ import 'package:prep_az/core/config/app_version.dart';
 import 'package:prep_az/core/constants/app_strings.dart';
 import 'package:prep_az/features/update/domain/app_config.dart';
 import 'package:prep_az/features/update/domain/app_config_repository.dart';
+import 'package:prep_az/features/update/presentation/update_banner.dart';
 import 'package:prep_az/features/update/presentation/update_gate.dart';
 import 'package:prep_az/features/update/presentation/update_providers.dart';
 
@@ -22,7 +23,9 @@ Widget _app(AppConfig? config) => ProviderScope(
         appVersionProvider.overrideWith((ref) async => const AppVersion(version: '0.0.1', build: 2)),
         appConfigRepositoryProvider.overrideWithValue(_FakeConfig(config)),
       ],
-      child: const MaterialApp(home: UpdateGate(child: Scaffold(body: Text('HOME')))),
+      child: const MaterialApp(
+        home: UpdateGate(child: Scaffold(body: Column(children: [Text('HOME'), UpdateBanner()]))),
+      ),
     );
 
 void main() {
@@ -76,15 +79,20 @@ void main() {
     expect(find.text(AppStrings.updateNow), findsNothing);
   });
 
-  testWidgets('optional: the app opens and a dismissible notice appears once', (tester) async {
+  testWidgets('optional: the app opens with no dialog; the banner shows the update button', (tester) async {
     await tester.pumpWidget(_app(const AppConfig(minVersion: '0.0.1', latestVersion: '0.0.2', updateUrl: 'https://example.com/app.apk')));
     await tester.pumpAndSettle();
     expect(find.text('HOME'), findsOneWidget);
+    expect(find.byType(AlertDialog), findsNothing);
     expect(find.text(AppStrings.updateAvailableTitle), findsOneWidget);
-    await tester.tap(find.text(AppStrings.updateLater));
+    expect(find.text(AppStrings.updateNow), findsOneWidget);
+  });
+
+  testWidgets('optional without a link: banner without a button', (tester) async {
+    await tester.pumpWidget(_app(const AppConfig(minVersion: '0.0.1', latestVersion: '0.0.2')));
     await tester.pumpAndSettle();
-    expect(find.text(AppStrings.updateAvailableTitle), findsNothing);
-    expect(find.text('HOME'), findsOneWidget);
+    expect(find.text(AppStrings.updateAvailableTitle), findsOneWidget);
+    expect(find.text(AppStrings.updateNow), findsNothing);
   });
 
   testWidgets('up to date or config unreadable: just the app', (tester) async {

@@ -1,0 +1,1164 @@
+[
+ {
+  "number": 1,
+  "page": 113,
+  "column": 0,
+  "box": [
+   0,
+   590,
+   574,
+   723
+  ],
+  "file": "q001.png",
+  "gutter": 560,
+  "draft_text": "1.Cr2O+A1A1O+Cr Reaksiyanin tonliyinda sol tarafdaki maddalarin omsallarcamini muayyan edin. E)5 D)3 C)2 B)6 A)4"
+ },
+ {
+  "number": 2,
+  "page": 113,
+  "column": 0,
+  "box": [
+   0,
+   711,
+   574,
+   810
+  ],
+  "file": "q002.png",
+  "gutter": 560,
+  "draft_text": "2.SiO+CSi+COreaksiyasinda reduksiyaedicinin amsalini muayyan edin D)2 E)5 C)3 A)4 B)1"
+ },
+ {
+  "number": 3,
+  "page": 113,
+  "column": 0,
+  "box": [
+   0,
+   798,
+   574,
+   905
+  ],
+  "file": "q003.png",
+  "gutter": 560,
+  "draft_text": "3.KCIO, kaKCl+Oreaksiyasinda oksigenin omsalini mdayyan edin. A)2 B)3 C)4 D)S E) 7"
+ },
+ {
+  "number": 4,
+  "page": 113,
+  "column": 0,
+  "box": [
+   0,
+   893,
+   574,
+   992
+  ],
+  "file": "q004.png",
+  "gutter": 560,
+  "draft_text": "4.Fe+O-FeO4reaksiyasinda oksidlasdiricinin amsalini mdayyan edin. A)S B)3 C)2 D)7 E)8"
+ },
+ {
+  "number": 5,
+  "page": 113,
+  "column": 0,
+  "box": [
+   0,
+   980,
+   574,
+   1080
+  ],
+  "file": "q005.png",
+  "gutter": 560,
+  "draft_text": "5.HCI+KCIO→Cl+KCI+H2Oreaksiya tonliyindaoksidlosdiricininamsalinimuayyan edin A)1 B)4 C)2 D)6 E)3"
+ },
+ {
+  "number": 6,
+  "page": 113,
+  "column": 0,
+  "box": [
+   0,
+   1068,
+   574,
+   1194
+  ],
+  "file": "q006.png",
+  "gutter": 560,
+  "draft_text": "6.MnO2+KCIO+KOH→KMnO4+KCI+HO reaksiyasindareduksiyaedicininmsalini muayyan edin. A)8 B) 1 C)4 D)3 E)6"
+ },
+ {
+  "number": 7,
+  "page": 113,
+  "column": 0,
+  "box": [
+   0,
+   1182,
+   574,
+   1318
+  ],
+  "file": "q007.png",
+  "gutter": 560,
+  "draft_text": "7.CuO+NH→Cu+N+HO Reaksiya tonliyinda oksidlasdinicinin amsalini muayyan edin. A)6 B) 1 C)2 D)4 E)3"
+ },
+ {
+  "number": 8,
+  "page": 113,
+  "column": 0,
+  "box": [
+   0,
+   1306,
+   574,
+   1458
+  ],
+  "file": "q008.png",
+  "gutter": 560,
+  "draft_text": "8.HSO+Pb→Pb(HSO4)+SO2+HO Reaksiya tonliyindo oksidlasdiricinin omsalini muayyon edin. A)5 B) 4 C)3 D)6 E)8"
+ },
+ {
+  "number": 9,
+  "page": 113,
+  "column": 0,
+  "box": [
+   0,
+   1446,
+   574,
+   1606
+  ],
+  "file": "q009.png",
+  "gutter": 560,
+  "draft_text": "9.Ca+HNO-Ca(NO3)+N2O+H2O Reaksiya tonliyinda reduksiyaedicinin amsalini muayyan edin. A)4 B) 6 C)10 D)2 E)12"
+ },
+ {
+  "number": 10,
+  "page": 113,
+  "column": 1,
+  "box": [
+   551,
+   33,
+   1080,
+   153
+  ],
+  "file": "q010.png",
+  "gutter": 560,
+  "draft_text": "manual"
+ },
+ {
+  "number": 11,
+  "page": 113,
+  "column": 1,
+  "box": [
+   551,
+   153,
+   1080,
+   308
+  ],
+  "file": "q011.png",
+  "gutter": 560,
+  "draft_text": "11.CrO3+A1→Cr+A1O butan msallarin cmini muayyanedin. D) 4 C) 6 B) 9 E)3 A)7 amsalinimuayyan edin. D)4 C)3 E)S B) 1 A)2 va suyun smsallan camini hesablayin. C)14 D)5 B)10 E)8 A)6"
+ },
+ {
+  "number": 12,
+  "page": 113,
+  "column": 1,
+  "box": [
+   551,
+   308,
+   1080,
+   413
+  ],
+  "file": "q012.png",
+  "gutter": 560,
+  "draft_text": "manual"
+ },
+ {
+  "number": 13,
+  "page": 113,
+  "column": 1,
+  "box": [
+   551,
+   413,
+   1080,
+   553
+  ],
+  "file": "q013.png",
+  "gutter": 560,
+  "draft_text": "manual"
+ },
+ {
+  "number": 14,
+  "page": 113,
+  "column": 1,
+  "box": [
+   551,
+   553,
+   1080,
+   695
+  ],
+  "file": "q014.png",
+  "gutter": 560,
+  "draft_text": "14.MnSO4+PbO2+HNO→ →Pb(NO)+PbSO4+HMnO4+H2O Reaksiya tonliyindanitrat tursusunun msalin muayyn edin C) 5 D)8 B)2 E)3 A)6"
+ },
+ {
+  "number": 15,
+  "page": 113,
+  "column": 1,
+  "box": [
+   551,
+   683,
+   1080,
+   799
+  ],
+  "file": "q015.png",
+  "gutter": 560,
+  "draft_text": "15.KMnO4+HSO4—→K2SO4+MnSO4+O+H0 Reaksiya tanliyindaozonunmsalinimuayyanedimn D)9 C)6 B)3 E)5 A)12"
+ },
+ {
+  "number": 16,
+  "page": 113,
+  "column": 1,
+  "box": [
+   551,
+   787,
+   1080,
+   920
+  ],
+  "file": "q016.png",
+  "gutter": 560,
+  "draft_text": "16.KS+NaCIO+H2SO4—→S+NaC1+KSO+H0 Reaksiya tanliyindreduksiyaedicininamsalin muayyan edin. A)2 B)1 E)S C)3 D) 4"
+ },
+ {
+  "number": 17,
+  "page": 113,
+  "column": 1,
+  "box": [
+   551,
+   908,
+   1080,
+   1033
+  ],
+  "file": "q017.png",
+  "gutter": 560,
+  "draft_text": "17.FeSO4+KMnO4+H2SO4 →Fe2(SO4)3+MnSO4+KSO4+H2O Reaksiya tonliyinda oksidlasdiricinin omsalni muayyanedin. A)5 B)1 E)2 D) 4 C)3 A)3 E)10 B)6 C)1 D)8 (IV) oksidin smsalin muiayyon edin. A)8 E)10 B) 6 C)5 D) 4 edin. A)2 B) 6 E)3 C)7 D)5 A)15 E）20 B)10 C)11 D)16"
+ },
+ {
+  "number": 18,
+  "page": 113,
+  "column": 1,
+  "box": [
+   551,
+   1033,
+   1080,
+   1160
+  ],
+  "file": "q018.png",
+  "gutter": 560,
+  "draft_text": "manual"
+ },
+ {
+  "number": 19,
+  "page": 113,
+  "column": 1,
+  "box": [
+   551,
+   1160,
+   1080,
+   1288
+  ],
+  "file": "q019.png",
+  "gutter": 560,
+  "draft_text": "manual"
+ },
+ {
+  "number": 20,
+  "page": 113,
+  "column": 1,
+  "box": [
+   551,
+   1288,
+   1080,
+   1414
+  ],
+  "file": "q020.png",
+  "gutter": 560,
+  "draft_text": "manual"
+ },
+ {
+  "number": 21,
+  "page": 113,
+  "column": 1,
+  "box": [
+   551,
+   1414,
+   1080,
+   1565
+  ],
+  "file": "q021.png",
+  "gutter": 560,
+  "draft_text": "manual"
+ },
+ {
+  "number": 22,
+  "page": 114,
+  "column": 0,
+  "box": [
+   0,
+   75,
+   506,
+   188
+  ],
+  "file": "q022.png",
+  "gutter": 492,
+  "draft_text": "22.HCI+KCIO→KC1 +CI+HO amsallan forqinimuoyyon edin. E)5 B)2 D)4 A)1 C)3"
+ },
+ {
+  "number": 23,
+  "page": 114,
+  "column": 0,
+  "box": [
+   0,
+   176,
+   506,
+   289
+  ],
+  "file": "q023.png",
+  "gutter": 492,
+  "draft_text": "23.HO+KMnO+HNO,→ →Mn(NO)+O+KNO+H,O Reaksiya tonliyinda oksidlasdiricininmsalm muoyyon edin. B)1 C)4 A)6 E)8 D)2"
+ },
+ {
+  "number": 24,
+  "page": 114,
+  "column": 0,
+  "box": [
+   0,
+   277,
+   506,
+   391
+  ],
+  "file": "q024.png",
+  "gutter": 492,
+  "draft_text": "24.MnSO+KCIO,+KOH→ →KMnO+KCI+K,SO+HOReaksiya tonliyindooksidlosdiricinin smsalm muoyyon edin. B)1 A)2 C)3 D)4 E)6"
+ },
+ {
+  "number": 25,
+  "page": 114,
+  "column": 0,
+  "box": [
+   0,
+   379,
+   506,
+   498
+  ],
+  "file": "q025.png",
+  "gutter": 492,
+  "draft_text": "25.CrO+KNO+KOH→KCrO+KNO+HO Reaksiya tonliyinds oksidlasdiricinin smsalin mueyyan edin. B)2 A)1 C)3 D)4 E)S"
+ },
+ {
+  "number": 26,
+  "page": 114,
+  "column": 0,
+  "box": [
+   0,
+   486,
+   506,
+   602
+  ],
+  "file": "q026.png",
+  "gutter": 492,
+  "draft_text": "26.HS+KCrO+HSO →S+Cr（SO4）+KSO4+HOreaksiyasinda reduksiyaedicinin msalini muayyan edin. B)3 A)1 C)2 D)5 E)4"
+ },
+ {
+  "number": 27,
+  "page": 114,
+  "column": 0,
+  "box": [
+   0,
+   590,
+   506,
+   712
+  ],
+  "file": "q027.png",
+  "gutter": 492,
+  "draft_text": "27.KCrO+HCI-→KCI+CrCl+Cl+HO Reaksiya tanliyinda reduksiyaedicinin smsalini muayyan edin. A)2 B)14 C)3 D)5 E)12"
+ },
+ {
+  "number": 28,
+  "page": 114,
+  "column": 0,
+  "box": [
+   0,
+   700,
+   506,
+   847
+  ],
+  "file": "q028.png",
+  "gutter": 492,
+  "draft_text": "28.NaSO+KCrO+HSO— →NaSO4+Cr2（SO4）+KSO4+H2O Reaksiya tanliyindaoksidlasdiricininmsalini mayyonedin. A)4 B)2 C)3 D)1 E)5"
+ },
+ {
+  "number": 29,
+  "page": 114,
+  "column": 0,
+  "box": [
+   0,
+   835,
+   506,
+   956
+  ],
+  "file": "q029.png",
+  "gutter": 492,
+  "draft_text": "29.CHNO+HS-→CHNH+S+HO Reaksiya tonliyinda reduksiyaedicinin omsalini mlayyan edin. A)6 D)12 C)9 B)3 E)16"
+ },
+ {
+  "number": 30,
+  "page": 114,
+  "column": 0,
+  "box": [
+   0,
+   944,
+   506,
+   1093
+  ],
+  "file": "q030.png",
+  "gutter": 492,
+  "draft_text": "30.CH+KMnO4+HSO4 →HCO+KSO4+MnSO4+HO Reaksiya tonliyind oksidlosdiricininmsalini muoyyan edin. E)5 A)8 C)4 D)13 B)1"
+ },
+ {
+  "number": 31,
+  "page": 114,
+  "column": 0,
+  "box": [
+   0,
+   1081,
+   506,
+   1212
+  ],
+  "file": "q031.png",
+  "gutter": 492,
+  "draft_text": "31.HCOOH+Cu(OH)→Cu2O+CO+HO Reaksiya tonliyinds reduksiyaedicinin omsalin muoyyonedin. E)S A)2 D)4 C)3 B)1"
+ },
+ {
+  "number": 32,
+  "page": 114,
+  "column": 0,
+  "box": [
+   0,
+   1200,
+   506,
+   1328
+  ],
+  "file": "q032.png",
+  "gutter": 492,
+  "draft_text": "32.Si+NaOH+HO-NaSiO+ Reaksiya tonliyini tamamlayin vmahsullarn smsallari comini muoyyan edin. E)7 A)3 D) 6 C)S B)4"
+ },
+ {
+  "number": 33,
+  "page": 114,
+  "column": 0,
+  "box": [
+   0,
+   1316,
+   506,
+   1445
+  ],
+  "file": "q033.png",
+  "gutter": 492,
+  "draft_text": "33.Si+NaOH+HONaSiO+ Reaksiya tonliyini tamamlayin va baslangic maddolorin omsallari comini muoyyon edin E)7 D)6 C)4 B)3 A)S"
+ },
+ {
+  "number": 34,
+  "page": 114,
+  "column": 1,
+  "box": [
+   483,
+   24,
+   1080,
+   314
+  ],
+  "file": "q034.png",
+  "gutter": 492,
+  "draft_text": "34.FeSO4+NaCIO+NaOH+HO- →NaC1+Fe(OH)+NaSO4 Reaksiya tonliyindsNaOHvaFeSO-unmsallarint muoyyan edin FeSOa HOEN 6 A) 2 2 B) 2 4 C) 4 D) 4 4 E) 2"
+ },
+ {
+  "number": 35,
+  "page": 114,
+  "column": 1,
+  "box": [
+   483,
+   302,
+   1080,
+   561
+  ],
+  "file": "q035.png",
+  "gutter": 492,
+  "draft_text": "35.Zn+HNOZn（NO）+NHNO+HO Reaksiya tanliyindHNO-unvreduksiyaedicinin msallarini mQayyan edin. Reduksiyaedici HNO; 6 A)10 2 B) 4 3 C) 6 4 D) 10 4 E) 6"
+ },
+ {
+  "number": 36,
+  "page": 114,
+  "column": 1,
+  "box": [
+   483,
+   549,
+   1080,
+   668
+  ],
+  "file": "q036.png",
+  "gutter": 492,
+  "draft_text": "36.CuO+NHCu+N+H2O Reaksiya tanliyindoreduksiyaedicinin msalini muoyyan edin. E)6 C)3 D)2 A)4 B)1"
+ },
+ {
+  "number": 37,
+  "page": 114,
+  "column": 1,
+  "box": [
+   483,
+   656,
+   1080,
+   781
+  ],
+  "file": "q037.png",
+  "gutter": 492,
+  "draft_text": "37.Ag+HNO3（qat)→AgNO+X+HO Xmaddosini va suyun msalini muayyon edin. A)NO2.1 B)NO,5 C)NO.1 D) NO2,4 E)NO,7"
+ },
+ {
+  "number": 38,
+  "page": 114,
+  "column": 1,
+  "box": [
+   483,
+   769,
+   1080,
+   888
+  ],
+  "file": "q038.png",
+  "gutter": 492,
+  "draft_text": "38.Ag+HNO（duru)—→AgNO+X+HO Xmaddasini v suyun amsalini muayyan edin A) NO2, 2 B)NO2,1 C) NO,10 D)NO,2 E)NO,7"
+ },
+ {
+  "number": 39,
+  "page": 114,
+  "column": 1,
+  "box": [
+   483,
+   876,
+   1080,
+   1002
+  ],
+  "file": "q039.png",
+  "gutter": 492,
+  "draft_text": "39.aA1+bHNO→aAI(NO)+cX↑+dHO reaksiyasinda oksidlosdirici atomun3molu24 mol elektron qobul etmisso,X maddsinimuoyyonedin A)N2 B)NO C)NOD)NHE)NO"
+ },
+ {
+  "number": 40,
+  "page": 114,
+  "column": 1,
+  "box": [
+   483,
+   990,
+   1080,
+   1120
+  ],
+  "file": "q040.png",
+  "gutter": 492,
+  "draft_text": "40.aAI+bHNO;→→aAI(NO)+aX↑+cHO reaksiyasinda oksidlosdirici atomun4molu12mol elcktron qobul etmiss,Xmaddosinimuoyyn edin B)NOC)ND)NH A)N2O E)NO2"
+ },
+ {
+  "number": 41,
+  "page": 114,
+  "column": 1,
+  "box": [
+   483,
+   1108,
+   1080,
+   1208
+  ],
+  "file": "q041.png",
+  "gutter": 492,
+  "draft_text": "41.NHLOH+Br-→NHBr+HO+N Reaksiya tonliyinds suyunsmsalini muayyon edin A)6 B)2 C)5 D)3 E)8"
+ },
+ {
+  "number": 42,
+  "page": 114,
+  "column": 1,
+  "box": [
+   483,
+   1196,
+   1080,
+   1299
+  ],
+  "file": "q042.png",
+  "gutter": 492,
+  "draft_text": "42.NH+SO-→N+S+HO Reaksiya tonliyinds suyun smsalm muoyyan edin C)6 A)3 B)2 D)4 E)12"
+ },
+ {
+  "number": 43,
+  "page": 114,
+  "column": 1,
+  "box": [
+   483,
+   1287,
+   1080,
+   1464
+  ],
+  "file": "q043.png",
+  "gutter": 492,
+  "draft_text": "43.Si+HNO+HF→SiF+NO+HO tanliyind suyun omsalm muoyyn cdin. C)3 D)11 E)8 B)4 A)6 115-"
+ },
+ {
+  "number": 44,
+  "page": 115,
+  "column": 0,
+  "box": [
+   0,
+   70,
+   581,
+   213
+  ],
+  "file": "q044.png",
+  "gutter": 567,
+  "draft_text": "44.NaBr+NaBrO+HSO4Br2+Na2SO4+H2O Reaksiya tanliyinda oksidlasdiricinin amsalini muayyan edin. E)5 D) 4 C)3 B)1 A)2"
+ },
+ {
+  "number": 45,
+  "page": 115,
+  "column": 0,
+  "box": [
+   0,
+   201,
+   581,
+   369
+  ],
+  "file": "q045.png",
+  "gutter": 567,
+  "draft_text": "45.Cu+HNO（duru)→Cu(NO3)2+X+H2O tanliyindoXmaddasini va oksidlasdiricininmsalini muayyan edin C) NO,10 B) NO, 8 A)NO,2 E)NHNO3,10 D) NO2,8"
+ },
+ {
+  "number": 46,
+  "page": 115,
+  "column": 0,
+  "box": [
+   0,
+   357,
+   581,
+   523
+  ],
+  "file": "q046.png",
+  "gutter": 567,
+  "draft_text": "46.Hg+HNO（qat)→Hg(NO3)+X+H2O Xmaddosiniva reduksiyaedicinin amsalini muayyan edin. C) NO,1 B)NO,5 A)NO2,4 E)NO,7 D)NO2,1"
+ },
+ {
+  "number": 47,
+  "page": 115,
+  "column": 0,
+  "box": [
+   0,
+   511,
+   581,
+   750
+  ],
+  "file": "q047.png",
+  "gutter": 567,
+  "draft_text": "47.aCu+bHNO3—→cCu(NO3)+dNO+eH2O Reaksiya tanliyini amsallasdirin va hesablayin: X=a+b+c+d+e（e/X)100 20 30 A) 15 25 B) 20 10 C) 10 D) 20 20 E) 20"
+ },
+ {
+  "number": 48,
+  "page": 115,
+  "column": 0,
+  "box": [
+   0,
+   738,
+   581,
+   848
+  ],
+  "file": "q048.png",
+  "gutter": 567,
+  "draft_text": "48.KCr2O+H2SO4-→Cr2(SO4)+KSO4+O2+H2O Oksidin amsalini muayyanedin. E)4 D)16 110 B)3 A)8"
+ },
+ {
+  "number": 49,
+  "page": 115,
+  "column": 0,
+  "box": [
+   0,
+   836,
+   581,
+   996
+  ],
+  "file": "q049.png",
+  "gutter": 567,
+  "draft_text": "49.CH2O+KMnO4+H2SO4 →CO2+KSO4+MnSO+H2O Oksidlasma-reduksiyareaksiyasinda CO2va MnSO4-0namsallan caminimuayynedin A)54 B)34 C)38 D)64 E)44"
+ },
+ {
+  "number": 50,
+  "page": 115,
+  "column": 0,
+  "box": [
+   0,
+   984,
+   581,
+   1120
+  ],
+  "file": "q050.png",
+  "gutter": 567,
+  "draft_text": "50.KMnO4+HSO4(qati) KSO4+MnSO+O2+HO Reaksiya tonliyind suyun msalini muoyyan edin. B)4 C)9 D)11 A)6 E)7"
+ },
+ {
+  "number": 51,
+  "page": 115,
+  "column": 0,
+  "box": [
+   0,
+   1108,
+   581,
+   1358
+  ],
+  "file": "q051.png",
+  "gutter": 567,
+  "draft_text": "51.NaBr+NaBrO+HSO4-→NaSO4+Br2+H2O Reaksiya tonliyinda oksidlasdirici,reduksiyaedici va suyunamsallarini muayyan edin. oksidlasdirici reduksiyaedici su A) 1 5 4 B) 5 1 3 C) 3 5 6 D) 1 3 4 E) 1 5 3"
+ },
+ {
+  "number": 52,
+  "page": 115,
+  "column": 0,
+  "box": [
+   0,
+   1346,
+   581,
+   1452
+  ],
+  "file": "q052.png",
+  "gutter": 567,
+  "draft_text": "52.As2Ss+HNO→HAsO4+HSO+NO+HO Reaksiya tanliyinda suyun amsalini muayyan edin. A)12 B)18 C)2 D)5 E)40"
+ },
+ {
+  "number": 53,
+  "page": 115,
+  "column": 0,
+  "box": [
+   0,
+   1440,
+   581,
+   1579
+  ],
+  "file": "q053.png",
+  "gutter": 567,
+  "draft_text": "53.KCrO+HCI-→CrCl+KCI+Cl+HO Reaksiyani amsallasdirin vaoksidlosmoymoruz qalan HCI molekullarinin sayini muoyyan edin. B)2 A)10 C)3 D)6 E)12"
+ },
+ {
+  "number": 54,
+  "page": 115,
+  "column": 1,
+  "box": [
+   558,
+   40,
+   1080,
+   145
+  ],
+  "file": "q054.png",
+  "gutter": 567,
+  "draft_text": "manual"
+ },
+ {
+  "number": 55,
+  "page": 115,
+  "column": 1,
+  "box": [
+   558,
+   145,
+   1080,
+   243
+  ],
+  "file": "q055.png",
+  "gutter": 567,
+  "draft_text": "manual"
+ },
+ {
+  "number": 56,
+  "page": 115,
+  "column": 1,
+  "box": [
+   558,
+   243,
+   1080,
+   368
+  ],
+  "file": "q056.png",
+  "gutter": 567,
+  "draft_text": "manual"
+ },
+ {
+  "number": 57,
+  "page": 115,
+  "column": 1,
+  "box": [
+   558,
+   368,
+   1080,
+   545
+  ],
+  "file": "q057.png",
+  "gutter": 567,
+  "draft_text": "57.FeSO4+NaCIO+NaOH+H2O NaCI +Fe(OH)+NaSO4 Reaksiya tonliyinda uygun olaraq NaOH va Fe(OH)-un amsallarini muayyan edin. C)2;3D)1;2E)4;2 B)2,4 A)4;4B)2,4"
+ },
+ {
+  "number": 58,
+  "page": 115,
+  "column": 1,
+  "box": [
+   558,
+   533,
+   1080,
+   831
+  ],
+  "file": "q058.png",
+  "gutter": 567,
+  "draft_text": "58.CH=CH,+KMnO+H,O→CH-CH+MnO+KOH HO HO reaksiyasinda oksidlosdirici ila reduksiyaedicinin msallarin muayyanedin reduksiyaedici oksidlasdirici 2 A) 3 3 2 B) 4 2 C) 3 D) 4 5 E) 3"
+ },
+ {
+  "number": 59,
+  "page": 115,
+  "column": 1,
+  "box": [
+   558,
+   819,
+   1080,
+   1086
+  ],
+  "file": "q059.png",
+  "gutter": 567,
+  "draft_text": "59.FeCl+KCIO+HCI-→FeCl+KCI+H0 Reaksiya tanliyindaoksidlasdirici va reduksiyaedicinin msalinimuayyan edin. reduksiyaedici oksidlasdirici 3 A) 1 B) 6 1 C) 6 3 D) 4 3 E) 5 6"
+ },
+ {
+  "number": 60,
+  "page": 115,
+  "column": 1,
+  "box": [
+   558,
+   1074,
+   1080,
+   1351
+  ],
+  "file": "q060.png",
+  "gutter": 567,
+  "draft_text": "60.CHOH+KCrO+HSO4 →HCOOH+Cr2(SO4)+KSO4+HO Reaksiya tanliyindo oksidlosdirici ila oksidlasdirici reduksiyaedici A) 2 8 B) 3 2 C) 8 3 D) 2 3 E) 3 8"
+ },
+ {
+  "number": 61,
+  "page": 115,
+  "column": 1,
+  "box": [
+   558,
+   1339,
+   1080,
+   1467
+  ],
+  "file": "q061.png",
+  "gutter": 567,
+  "draft_text": "61.FeSO4+KMnO4+HSO> E)11 A)14 B)5 D)2 C)8"
+ },
+ {
+  "number": 62,
+  "page": 115,
+  "column": 1,
+  "box": [
+   558,
+   1455,
+   1080,
+   1615
+  ],
+  "file": "q062.png",
+  "gutter": 567,
+  "draft_text": "62.KCrO+FeSO4+HSO4- E)3 A)7 B)14 D) 6 C)8 116-"
+ },
+ {
+  "number": 63,
+  "page": 116,
+  "column": 0,
+  "box": [
+   0,
+   94,
+   519,
+   191
+  ],
+  "file": "q063.png",
+  "gutter": 505,
+  "draft_text": "63.Na2SO+KIO+HSO4→I+NaSO4+KSO4+HO Reaksiya tanliyindo suyun msalni muayyan edin B)1 A)8 C)10 D)12 E)15"
+ },
+ {
+  "number": 64,
+  "page": 116,
+  "column": 0,
+  "box": [
+   0,
+   179,
+   519,
+   298
+  ],
+  "file": "q064.png",
+  "gutter": 505,
+  "draft_text": "64.PH+KMnO4+HSO4→ →→HPO4+K2SO4+MnSO4+HO Reaksiya tonliyindo suyun amsalini muayyon edin. A)3 B)7 C)15 D)9 E)12"
+ },
+ {
+  "number": 65,
+  "page": 116,
+  "column": 0,
+  "box": [
+   0,
+   286,
+   519,
+   409
+  ],
+  "file": "q065.png",
+  "gutter": 505,
+  "draft_text": "65.CHOH+KMnO+HSO→ →HCOOH+KSO+MnSO4+HO Reaksiya tanliyinda suyun amsalini muayyan edin B)9 A)15 C)11 D)4 E)7"
+ },
+ {
+  "number": 66,
+  "page": 116,
+  "column": 0,
+  "box": [
+   0,
+   397,
+   519,
+   542
+  ],
+  "file": "q066.png",
+  "gutter": 505,
+  "draft_text": "66.CHOH+CrO+HSO4-→ →Cr（SO4)+CHCOOH+H2O Reaksiya tanliyinda oksidlosdiricinin msalini muoyyan edin. A)6 B)3 C)4 D)12 E)15"
+ },
+ {
+  "number": 67,
+  "page": 116,
+  "column": 0,
+  "box": [
+   0,
+   530,
+   519,
+   756
+  ],
+  "file": "q067.png",
+  "gutter": 505,
+  "draft_text": "67.Cu+HNO-→Cu(NO3)+NO+HO Oksidlasdiricinin Reduksiyaedicinin reduksiya olunan verdiyi elektronlarin say1 miqdari (mol) 9NA x x-i muoyyan edin.(Na-Avoqadro adadidir) A)3 B)2 C)6 D)4 E)5"
+ },
+ {
+  "number": 68,
+  "page": 116,
+  "column": 0,
+  "box": [
+   0,
+   744,
+   519,
+   876
+  ],
+  "file": "q068.png",
+  "gutter": 505,
+  "draft_text": "68.Ca(OH)+Cl-Ca（CIO)+CaCl+HO 1 2 3 4 5 Oksidlasma-reduksiyareaksiyasinda msali 6olan maddolori muayyan edin."
+ },
+ {
+  "number": 69,
+  "page": 116,
+  "column": 0,
+  "box": [
+   0,
+   864,
+   519,
+   1045
+  ],
+  "file": "q069.png",
+  "gutter": 505,
+  "draft_text": "69.aHCIO+bHS—→cHCI+dHSO4 Dogru olanlari muayyan edin. 1.Oksidlasdiricinin msali 4-dur 2.Reduksiyaedicinin msali 4-dur 3.Oz-ozuna oksidlasma-reduksiya reaksiyasidur 4.a+b=c+d"
+ },
+ {
+  "number": 70,
+  "page": 116,
+  "column": 0,
+  "box": [
+   0,
+   1033,
+   519,
+   1303
+  ],
+  "file": "q070.png",
+  "gutter": 505,
+  "draft_text": "70.KCrO+HCI—→KC1+CrCl+Cl+HO reaksiyasi ucun dogru ifadalari muayyan edin. 1.Oksidlasdiricinin msali 1-dir 2.Reduksiyaedicinin msal 14-dur 3.Oksidlosdiricinin msal 3-dur 4.1 molKCrO7reaksiyaya tam daxil olduqda, 6mol HCl oksidlasir 5.1 mol KCrO7 reaksiyaya tam daxil olduqda, 14molHCloksidlasir"
+ },
+ {
+  "number": 71,
+  "page": 116,
+  "column": 0,
+  "box": [
+   0,
+   1291,
+   519,
+   1508
+  ],
+  "file": "q071.png",
+  "gutter": 505,
+  "draft_text": "71.Cu2O + Cu2S reaksiyasi ucun na dogrudur? 1.CuzOreduksiyaedicidir 2.Reaksiya mohsullarindan biri SO-dir 3.Reaksiya mshsullarinin msallari comi 6-dir 4.Reduksiya mshsulu misdir 5.CuS-in amsal 1-dir 6.Oksidlosmo mshsulu SO-dur"
+ },
+ {
+  "number": 72,
+  "page": 116,
+  "column": 1,
+  "box": [
+   496,
+   107,
+   1080,
+   207
+  ],
+  "file": "q072.png",
+  "gutter": 505,
+  "draft_text": "72.Ammonyakin oksigendayanma reaksiyasl tnliyindmahsullarinamsallarinin camini hesablayin."
+ },
+ {
+  "number": 73,
+  "page": 116,
+  "column": 1,
+  "box": [
+   496,
+   195,
+   1080,
+   297
+  ],
+  "file": "q073.png",
+  "gutter": 505,
+  "draft_text": "73.Ammonyakin oksigenlakatalitik oksidlosmasi reaksiyasi tonliyindsmahsullarinmsallarinin camini hesablayin."
+ },
+ {
+  "number": 74,
+  "page": 116,
+  "column": 1,
+  "box": [
+   496,
+   285,
+   1080,
+   385
+  ],
+  "file": "q074.png",
+  "gutter": 505,
+  "draft_text": "74.KC1O-→KC1O4+KC1 Reduksiya olunan xlor atomlari xlor atomlarinin umumi sayinin neca faizini taskil edir?"
+ },
+ {
+  "number": 75,
+  "page": 116,
+  "column": 1,
+  "box": [
+   496,
+   373,
+   1080,
+   470
+  ],
+  "file": "q075.png",
+  "gutter": 505,
+  "draft_text": "75.NaBr+NaBrO+H2SO4-→Br+Na2SO4+HO Reaksiya tanliyinda sulfat tursusunun msalini muoyyan edin."
+ },
+ {
+  "number": 76,
+  "page": 116,
+  "column": 1,
+  "box": [
+   496,
+   458,
+   1080,
+   540
+  ],
+  "file": "q076.png",
+  "gutter": 505,
+  "draft_text": "76.P+HNO+HOH;PO+NOreaksiya tnliyindaNO-nun amsalini muayyan edin."
+ },
+ {
+  "number": 77,
+  "page": 116,
+  "column": 1,
+  "box": [
+   496,
+   528,
+   1080,
+   714
+  ],
+  "file": "q077.png",
+  "gutter": 505,
+  "draft_text": "77. Tam reaksiyaya daxil olan Mol sayi Oksidlasdirici 12 Reduksiyaedici x Fe +O→FeO4 reaksiyasi ucun x-i hesablayin."
+ },
+ {
+  "number": 78,
+  "page": 116,
+  "column": 1,
+  "box": [
+   496,
+   702,
+   1080,
+   882
+  ],
+  "file": "q078.png",
+  "gutter": 505,
+  "draft_text": "78.Fe+HSO(qat)→Fe(SO4)+SO+HO Reaksiya mohsullannin Oksidlosdiricinin smsal x y .100%-i hesablayin x"
+ },
+ {
+  "number": 79,
+  "page": 116,
+  "column": 1,
+  "box": [
+   496,
+   870,
+   1080,
+   1082
+  ],
+  "file": "q079.png",
+  "gutter": 505,
+  "draft_text": "79.Fe+H,SO4（qat)Fe(SO4)+SO+HO Reaksiya Reduksiyaedicinin mahsullarinin mol cami tesme x y .100% -i hesablayin. X"
+ },
+ {
+  "number": 80,
+  "page": 116,
+  "column": 1,
+  "box": [
+   496,
+   1070,
+   1080,
+   1204
+  ],
+  "file": "q080.png",
+  "gutter": 505,
+  "draft_text": "80.MnSO4+PbO+HNO →Pb(NO)+PbSO4+HMnO4+H2O reaksiyasinda reduksiyaedicinin vo reduksiya mshsullarninamsallar comini muayyan edin."
+ },
+ {
+  "number": 81,
+  "page": 116,
+  "column": 1,
+  "box": [
+   496,
+   1192,
+   1080,
+   1325
+  ],
+  "file": "q081.png",
+  "gutter": 505,
+  "draft_text": "81.MnSO4+PbO2+HNO→ →Pb(NO3)+PbSO4+HMnO4+H2O reaksiyasinda oksidlosdiricininva oksidlosma mahsulunun msallar camini muoyyan edin."
+ },
+ {
+  "number": 82,
+  "page": 116,
+  "column": 1,
+  "box": [
+   496,
+   1313,
+   1080,
+   1540
+  ],
+  "file": "q082.png",
+  "gutter": 505,
+  "draft_text": "82.Na+HSO4→Na2SO4+HS+HO Reaksiya acun uygunlugu muoyyan edin 1.Oksidlosdiricinin amsali a.8 2.Reduksiyacdicinin omsalt b.10 3.Suyun msali C.S d.4 0.2 17-"
+ },
+ {
+  "number": 83,
+  "page": 117,
+  "column": 0,
+  "box": [
+   0,
+   50,
+   601,
+   272
+  ],
+  "file": "q083.png",
+  "gutter": 587,
+  "draft_text": "83.Ca+HNO3→Ca(NO3)+NO+HO Reaksiya ucun uy gunlugu muayyan edin. 1.Oksidlosdiricinin omsali a.5 2.Reduksiyaedicinin amsal b.10 3.Suyun amsali C.6 d.1 e.4 Oksidlasma-reduksiya reaksiyalarinin meiaou 1.Hansi reaksiya naticasinda basit maddo alina bilar? A) neytrallasma B)izomerlasmo D)oksidlasmo-reduksiya C) efirlasma +HO +TeN 33 2.1 Cl2 +KOH HBr 4 2← Oksidlosma-reduksiya reaksiyalarinun tiplorini muayyan edin. Molekaullararasi Disproporsiya A) 3,4 1,2 B) 1,2 3,4 C) 1,3 2,4 D) 2,3 1,4 E) 2,4 1,3 + Ca(OH）2→3 Sb+ 3.1 Cl2 H2O+ +KBr 2 Oksidlasma-reduksiyareaksiyalarinin tiplarini mdayyanedin Disproporsiya Molekullararasi A)1,4 2,3 B) 1,2 3,4 C) 1,3 2,4 D) 3,4 1,2 E) 2.3 1,4 +KMnO+HO 4.Etan etilen ctilenqlikol 1 2 Oksidlasms-reduksiya reaksiyalarinin tiplarini uefenu 2 A)molekullararas! molckullararasi B)molckuldaxili disproporsiya C)molckullararasi molekuldaxili D)molekuldaxili molekullararasi E) konmutasiya molekuldaxili"
+ }
+]

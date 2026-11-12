@@ -613,7 +613,6 @@ abstract final class AppStrings {
     'A new version of PrepAZ is out. We recommend updating.',
   );
   static String get updateNow => _t('Yenilə', 'Обновить', 'Update');
-  static String get updateLater => _t('Sonra', 'Позже', 'Later');
 
   // Problem bildirişi
   static String get reportButton => _t('Xəta bildir', 'Сообщить об ошибке', 'Report a problem');

@@ -1,0 +1,550 @@
+[
+ {
+  "number": 1,
+  "page": 94,
+  "column": 0,
+  "box": [
+   0,
+   180,
+   519,
+   377
+  ],
+  "file": "q001.png",
+  "gutter": 505,
+  "draft_text": "manual"
+ },
+ {
+  "number": 2,
+  "page": 94,
+  "column": 0,
+  "box": [
+   0,
+   377,
+   519,
+   518
+  ],
+  "file": "q002.png",
+  "gutter": 505,
+  "draft_text": "manual"
+ },
+ {
+  "number": 3,
+  "page": 94,
+  "column": 0,
+  "box": [
+   0,
+   518,
+   519,
+   664
+  ],
+  "file": "q003.png",
+  "gutter": 505,
+  "draft_text": "manual"
+ },
+ {
+  "number": 4,
+  "page": 94,
+  "column": 0,
+  "box": [
+   0,
+   664,
+   519,
+   806
+  ],
+  "file": "q004.png",
+  "gutter": 505,
+  "draft_text": "4.Damirin yanma istiliyi Q kC/mol-dur.FeO4-un amalogolma istiliyini (kC/mol ila) hesablayin. E)2Q D) C) B)3Q A)Q 3 2"
+ },
+ {
+  "number": 5,
+  "page": 94,
+  "column": 0,
+  "box": [
+   0,
+   794,
+   519,
+   983
+  ],
+  "file": "q005.png",
+  "gutter": 505,
+  "draft_text": "5.2Ca(b)+O（q)=2CaO(b)+Q Qucun na dogrudur? 1.Reaksiyanin istilikeffektidir 2.Kalsiumun yanma istiliyidir 3.CaO-nun amalogalm istiliyidir C)1,2 B)2,3 A)yalniz3 E)yalniz 1 D) yalniz2"
+ },
+ {
+  "number": 6,
+  "page": 94,
+  "column": 0,
+  "box": [
+   0,
+   971,
+   519,
+   1146
+  ],
+  "file": "q006.png",
+  "gutter": 505,
+  "draft_text": "6.2H+O2→2HO+572kCreaksiyasi ucun hans1 ifadalar dogrudur? I.Birlasma reaksiyasidir IL Istilik aynlir II.Bositmadda alinir A),ⅢII,ICIID)I,E)yaln reaksiyani gostorin. A)C+O-→CO+Q B)2C+O22CO+Q c)cO2+CaO→CaCO+Q E)CO+C2CO+Q gostorin."
+ },
+ {
+  "number": 7,
+  "page": 94,
+  "column": 0,
+  "box": [
+   0,
+   1146,
+   519,
+   1381
+  ],
+  "file": "q007.png",
+  "gutter": 505,
+  "draft_text": "manual"
+ },
+ {
+  "number": 8,
+  "page": 94,
+  "column": 0,
+  "box": [
+   0,
+   1381,
+   519,
+   1620
+  ],
+  "file": "q008.png",
+  "gutter": 505,
+  "draft_text": "manual",
+  "continued_from": {
+   "page": 94,
+   "column": 1,
+   "rows": [
+    82,
+    148
+   ]
+  }
+ },
+ {
+  "number": 9,
+  "page": 94,
+  "column": 1,
+  "box": [
+   496,
+   148,
+   1080,
+   269
+  ],
+  "file": "q009.png",
+  "gutter": 505,
+  "draft_text": "9.1mol hidrogenin tamyanmasizamani 242kCistilik aynlur.1210kCistilik almaq ucunnecamol hidrogen lazimdir? E)10 D) 4 C)12,5 B)5 A)2,5"
+ },
+ {
+  "number": 10,
+  "page": 94,
+  "column": 1,
+  "box": [
+   496,
+   257,
+   1080,
+   388
+  ],
+  "file": "q010.png",
+  "gutter": 505,
+  "draft_text": "10.5mol hidrogeninyanmasizamani1210kCistilik ayrilir.1 mol hidrogeninyanmasi zamani nec kC istilik ayrilar? E)242 D)342 A)603B)484 C)572 2.2Ca+02-→2CaO"
+ },
+ {
+  "number": 11,
+  "page": 94,
+  "column": 1,
+  "box": [
+   496,
+   376,
+   1080,
+   676
+  ],
+  "file": "q011.png",
+  "gutter": 505,
+  "draft_text": "2.2Ca+02-→2CaO 11.1.2HgO—→2Hg+O2 24.S+O2—→SO2 3.CaCO—→CaO+CO2 6.N2+O2→2NO 5.N2+3H2-→2NH Ekzotermikva endotermikreaksiyalarimuayyan edin. Q<O Q>0 1,3,5 A)2,4,6 2,4,5 B)1,3,6 1,3,6 C)2,4,5 2,3,6 D)1,4,5 1,4,5 E)2,3,6"
+ },
+ {
+  "number": 12,
+  "page": 94,
+  "column": 1,
+  "box": [
+   496,
+   664,
+   1080,
+   1040
+  ],
+  "file": "q012.png",
+  "gutter": 505,
+  "draft_text": "12. 1.N2+O2→2NO 2.2NO→N+O2 3.MgCOMgO+CO2 4.MgO+CO2-MgCO 5.2H2O—→2H2+O2 6.2H+O2—2H2O Ekzotermikva endotermikreaksiyalarmuayyan edin. O<0 1,4,5 A)2,3,6 2,4,5 B)1,3,6 1,3,6 C)2,4,5 2,3,6 1,4,5 D) 1,3,5 E)2,4,6"
+ },
+ {
+  "number": 13,
+  "page": 94,
+  "column": 1,
+  "box": [
+   496,
+   1028,
+   1080,
+   1190
+  ],
+  "file": "q013.png",
+  "gutter": 505,
+  "draft_text": "13.Hansi reaksiya ekzotermikdir? B) 2H0-→2H+O2 A)2NH-→N+3H2 D) CaCO-→→CaO+CO2 C) 2HgO-→2Hg+O2 E) C+O-→CO2"
+ },
+ {
+  "number": 14,
+  "page": 94,
+  "column": 1,
+  "box": [
+   496,
+   1178,
+   1080,
+   1325
+  ],
+  "file": "q014.png",
+  "gutter": 505,
+  "draft_text": "14.Hansi reaksiya endotermikdir? B) 2H2+O2→2H20 A) C+O2-→→CO2 D) 2HgO 2Hg+02 C) S+O→SO2 E)4P+502-→2P20s"
+ },
+ {
+  "number": 15,
+  "page": 94,
+  "column": 1,
+  "box": [
+   496,
+   1313,
+   1080,
+   1519
+  ],
+  "file": "q015.png",
+  "gutter": 505,
+  "draft_text": "15.C2H+3O2-→2CO+2HO+1412kC termokimyavi tonliyinoasason CH-an yanma kC hcsablayin. istiliyini mol D)2824E)4236 C)1412 B)706 A)353"
+ },
+ {
+  "number": 16,
+  "page": 95,
+  "column": 0,
+  "box": [
+   0,
+   121,
+   542,
+   337
+  ],
+  "file": "q016.png",
+  "gutter": 528,
+  "draft_text": "16.Hansireaksiyada istilik effektiyanma istiliyin A)2Na+O2-→Na2O2+500kC B)2Ca+O—2CaO+1280kC C)4A1+30→2A10+3200kC D)CH+5O→3CO2+4HO+1200kC E)2CH+50→4CO+2H0+2600kC"
+ },
+ {
+  "number": 17,
+  "page": 95,
+  "column": 0,
+  "box": [
+   0,
+   325,
+   542,
+   555
+  ],
+  "file": "q017.png",
+  "gutter": 528,
+  "draft_text": "17.Hansi reaksiyada istilik effekti yanma istiliyin borabor deyit? A)2CH+70-→4CO+6HO+Q B)CH+3O2→2CO+2HO+Q C)CH+402—→3CO2+2H0+Q D)CH+2O-→CO+2HO+Q E)CH+6O2-→4CO2+4H2O+Q"
+ },
+ {
+  "number": 18,
+  "page": 95,
+  "column": 0,
+  "box": [
+   0,
+   543,
+   542,
+   739
+  ],
+  "file": "q018.png",
+  "gutter": 528,
+  "draft_text": "18.Hansi ifadalar dogrudur? I.Reaksiyaninistilikeffektihomisoyanmaistiliyin barabar olur IL.Ekzotermikreaksiyalarda istilik ayrilur Il.Butun metallar oksigendyanir C) II, III B)yalnizII A)I,II E)yalnizI D)I,II,III"
+ },
+ {
+  "number": 19,
+  "page": 95,
+  "column": 0,
+  "box": [
+   0,
+   727,
+   542,
+   1187
+  ],
+  "file": "q019.png",
+  "gutter": 528,
+  "draft_text": "19.Reaksiya ila basit maddonin yanma istiliyi arasindaki uygunlugu muayyan edin. 1.20 I.3Fe+202-→FeO4+2Q 2.Q II.4Li+O2-→2Li2O+Q 30 III.2Na+O2-→Na2O2+3Q 3. 2 IV.Si+O2-→SiO2+Q 2Q 3 5. 4 I Ⅲ IV AB 4 5 3 2 5 2 3 4 C) 1 2 4 3 D) 4 3 5 2 E) 4 5 3 1"
+ },
+ {
+  "number": 20,
+  "page": 95,
+  "column": 0,
+  "box": [
+   0,
+   1175,
+   542,
+   1643
+  ],
+  "file": "q020.png",
+  "gutter": 528,
+  "draft_text": "20.Reaksiya ilabasit maddaninyanma istiliyi arasindaki uygunlugu muayyan edin I.4A1+302-→2Al2O+3Q 1.20 I1.4Li+O2-→2Li2O+4Q 2.Q III.2Na+O2—→Na2O2+Q IV.C+O2→CO+2Q 3. 2 4. 4 3 5.30 4 1 ⅡI Ⅲ IV A) 2 3 5 1 B) 5 2 3 4 C) 1 2 4 3 D) 5 2 3 1 E) 5 1 4 3"
+ },
+ {
+  "number": 21,
+  "page": 95,
+  "column": 1,
+  "box": [
+   519,
+   85,
+   1080,
+   349
+  ],
+  "file": "q021.png",
+  "gutter": 528,
+  "draft_text": "manual"
+ },
+ {
+  "number": 22,
+  "page": 95,
+  "column": 1,
+  "box": [
+   519,
+   349,
+   1080,
+   896
+  ],
+  "file": "q022.png",
+  "gutter": 528,
+  "draft_text": "22.Eyler-Venn diaqramina uygun bandlori muayyon edin. N2+O2 H+O2- Ⅱ Ⅲ I 1.Ekzotermikreaksiyadir 2.Endotermikreaksiyadir 3.Birlasmareaksiyasidir 4.Oksidlasma-reduksiya reaksiyasidir III ⅡI I 3,4 1 A) 2 1,4 3 B) 2 2,4 C) 3 1 1 3 D) 2,4 4 2 1,3 E)"
+ },
+ {
+  "number": 23,
+  "page": 95,
+  "column": 1,
+  "box": [
+   519,
+   884,
+   1080,
+   1434
+  ],
+  "file": "q023.png",
+  "gutter": 528,
+  "draft_text": "23.Eyler-Venn diaqramina uygunolanlari muayyan edin. Yanma istiliyi= Omologolma istiliyi= Q/2kC/mol Q/2kC/mol Ⅱ IⅢ I 1.4P+5022P20s+Q 2. 2H+O22H2O+Q 3.2NO+O2—→2NO2+Q 1 IⅢI ⅡI A) 3 2 1 BO 1 2 3 C) 1 3 2 D) 3 1 2 E) 2 1 3"
+ },
+ {
+  "number": 24,
+  "page": 95,
+  "column": 1,
+  "box": [
+   519,
+   1422,
+   1080,
+   1611
+  ],
+  "file": "q024.png",
+  "gutter": 528,
+  "draft_text": "24.Suyun malogalma istiliyi 286 olarsa, mol hidrogenin yanma istiliyini (）hesablayn. kC mol A)286 B)143 C)572 E)412 D)362",
+  "continued_from": {
+   "page": 96,
+   "column": 0,
+   "rows": [
+    82,
+    132
+   ]
+  }
+ },
+ {
+  "number": 25,
+  "page": 96,
+  "column": 0,
+  "box": [
+   0,
+   132,
+   521,
+   358
+  ],
+  "file": "q025.png",
+  "gutter": 507,
+  "draft_text": "Istilik effekti 25. Proses HO(maye)—→HO(buxar) HO(buxar)H,O(maye) Q2 HO（maye)→H,O(bark) Q3 Hansi munasibatlar dogrudur? 3.Q3-Q>0 2.Q1-Q2>0 1.01-02<0 C)1,3 B)2,3 A)yalniz1 E)yalniz3 D) yalnz2 Na dogrudur? 1.Reaksiya endotermikdir 2.Qlukozanin tam yanma reaksiyasinin istilik effekti +2840kC-dur 3.Qlukozanin tam yanma reaksiyasinin istilikeffekti -2840kC-dur 4.Reaksiya hacmin artmasi ilgedir A)2,4B)1,2C)1,3,4D)2,3E E)3,4"
+ },
+ {
+  "number": 26,
+  "page": 96,
+  "column": 0,
+  "box": [
+   0,
+   358,
+   521,
+   605
+  ],
+  "file": "q026.png",
+  "gutter": 507,
+  "draft_text": "manual"
+ },
+ {
+  "number": 27,
+  "page": 96,
+  "column": 0,
+  "box": [
+   0,
+   605,
+   521,
+   726
+  ],
+  "file": "q027.png",
+  "gutter": 507,
+  "draft_text": "27.Hansi sxem Uzra istilik udulur? 2. C+O 1.N+O2 4.H+Clhy 3.CaCO"
+ },
+ {
+  "number": 28,
+  "page": 96,
+  "column": 0,
+  "box": [
+   0,
+   714,
+   521,
+   873
+  ],
+  "file": "q028.png",
+  "gutter": 507,
+  "draft_text": "28.Hansi reaksiyalar zaman istilik ayrilir? 1.Azot-monooksidinparcalanmasi 2.Azotla hidrogeninreaksiyasi 3.Azotla oksigenin reaksiyas1 4.Dhangdasinin parcalanmasi"
+ },
+ {
+  "number": 29,
+  "page": 96,
+  "column": 0,
+  "box": [
+   0,
+   861,
+   521,
+   1169
+  ],
+  "file": "q029.png",
+  "gutter": 507,
+  "draft_text": "29.Dogru munasibati muayyan edin. om.galma 1.C+O=CO+Q 2.2H+O2=2HO+Q 3.S+O=SO+Q 4.N+3H=2NH+Q elektroliz H2 +H2"
+ },
+ {
+  "number": 30,
+  "page": 96,
+  "column": 0,
+  "box": [
+   0,
+   1157,
+   521,
+   1233
+  ],
+  "file": "q030.png",
+  "gutter": 507,
+  "draft_text": "+02.1 H2O 02-3 30.N21 4 NO Hans marhalolord ekzotermik reaksiya bas verir? 2 istilik aynlar? yandirilmalidir? yandirilmalidir? -97-"
+ },
+ {
+  "number": 31,
+  "page": 96,
+  "column": 0,
+  "box": [
+   0,
+   1233,
+   521,
+   1348
+  ],
+  "file": "q031.png",
+  "gutter": 507,
+  "draft_text": "manual"
+ },
+ {
+  "number": 32,
+  "page": 96,
+  "column": 0,
+  "box": [
+   0,
+   1348,
+   521,
+   1435
+  ],
+  "file": "q032.png",
+  "gutter": 507,
+  "draft_text": "manual"
+ },
+ {
+  "number": 33,
+  "page": 96,
+  "column": 0,
+  "box": [
+   0,
+   1435,
+   521,
+   1520
+  ],
+  "file": "q033.png",
+  "gutter": 507,
+  "draft_text": "manual"
+ },
+ {
+  "number": 34,
+  "page": 96,
+  "column": 1,
+  "box": [
+   498,
+   93,
+   1080,
+   354
+  ],
+  "file": "q034.png",
+  "gutter": 507,
+  "draft_text": "34. CaO-unamala Ayrilan Reaksiyaya golma istiliyi, Katlasi,q istilik, daxil olan kC kC rereppeu mol Ca 8 127 x artiq O2 miqdarda x-i hesablayin.A,Ca)=40"
+ },
+ {
+  "number": 35,
+  "page": 96,
+  "column": 1,
+  "box": [
+   498,
+   342,
+   1080,
+   566
+  ],
+  "file": "q035.png",
+  "gutter": 507,
+  "draft_text": "35.Uygunlugu muayyan edin. (Q-reaksiyaninistilikeffektidir) Reaksiya: Yanma istiliyi: a.4P+5O2-→2P2Os 1.0 b.2Ca+O2-→2CaO 2.Q/2 3.Q/4 c.C+O2-→CO2 d.2H+O2-→2H20 e.4Li+O2-→2Li2O"
+ },
+ {
+  "number": 36,
+  "page": 96,
+  "column": 1,
+  "box": [
+   498,
+   554,
+   1080,
+   890
+  ],
+  "file": "q036.png",
+  "gutter": 507,
+  "draft_text": "36.Uygunlugu muayyan edin Murakkab maddonin Termokimyavitanliklar eweserewe kC istiliyi mol a.4Al6)+3O2（q)=2Al2O3(6)+3200kC 1.650 b. 2Ca(b)+O2(q)= 2CaO()+1300 kC 2.1500 c.4P()+5O2()=2P20s(b)+3000kC 3.1600 d. S()+O2(q) = SO2(q)+288 kC e. C(b)+O2（q)=CO2（q)+400kC"
+ },
+ {
+  "number": 37,
+  "page": 96,
+  "column": 1,
+  "box": [
+   498,
+   878,
+   1080,
+   1090
+  ],
+  "file": "q037.png",
+  "gutter": 507,
+  "draft_text": "37. Tamyanmasi zamani Katlasi, ayrilan istiliyin miqdar,kC Madda b n 31 P Uygunlugu muayyan edin.A,(P)=31 1.Reaksiyannistilik effekti,kC 2.Fosforunyanma istiliyi,kC/mol 3.P2Os-inmalogalm istiliyi,kC/mol e.n/4 d.n/2 c.2n b.4n a.n"
+ },
+ {
+  "number": 38,
+  "page": 96,
+  "column": 1,
+  "box": [
+   498,
+   1090,
+   1080,
+   1290
+  ],
+  "file": "q038.png",
+  "gutter": 507,
+  "draft_text": "manual"
+ }
+]

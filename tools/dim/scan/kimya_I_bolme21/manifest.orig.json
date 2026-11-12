@@ -1,0 +1,758 @@
+[
+ {
+  "number": 3,
+  "page": 105,
+  "column": 0,
+  "box": [
+   0,
+   483,
+   569,
+   625
+  ],
+  "file": "q003.png",
+  "gutter": 572,
+  "draft_text": "3.Hansi birlasmonin termiki parcalanmasi oksidlasma- reduksiya reaksiyasi deyit? A) Cu(NO3)2 B)KMnO4 C) NaHCO; D)KCIO3 E)NHNO3 +7 -1"
+ },
+ {
+  "number": 4,
+  "page": 105,
+  "column": 0,
+  "box": [
+   0,
+   613,
+   569,
+   690
+  ],
+  "file": "q004.png",
+  "gutter": 572,
+  "draft_text": "4.Cl—→Ci sxeminda neco elektron qobul edilmisdir? A)5 B)8 C)7 D)4 E)6"
+ },
+ {
+  "number": 5,
+  "page": 105,
+  "column": 0,
+  "box": [
+   0,
+   678,
+   569,
+   824
+  ],
+  "file": "q005.png",
+  "gutter": 572,
+  "draft_text": "5.Hansi sxem dogru deyil? A)Fe-3e→Fe+3 B)Fe°+2e→Fe+2 C)Fe+2-1→Fe+3 D)Fe3 +3eFe° E)Fe+2+2→Fe°"
+ },
+ {
+  "number": 6,
+  "page": 105,
+  "column": 0,
+  "box": [
+   0,
+   812,
+   569,
+   927
+  ],
+  "file": "q006.png",
+  "gutter": 572,
+  "draft_text": "6.Oksidlasma-reduksiya reaksiyas1 deyil: A)NH B) NHCI C)NO D) HNO E)NHNO"
+ },
+ {
+  "number": 7,
+  "page": 105,
+  "column": 0,
+  "box": [
+   0,
+   915,
+   569,
+   1077
+  ],
+  "file": "q007.png",
+  "gutter": 572,
+  "draft_text": "7.Hansi reaksiya oksidlasma-reduksiya reaksiyasl deyir? A)NO+O2-→ O+HN( C)CuO+NH D)(NH)CO E)NO2+H2O"
+ },
+ {
+  "number": 8,
+  "page": 105,
+  "column": 0,
+  "box": [
+   0,
+   1065,
+   569,
+   1143
+  ],
+  "file": "q008.png",
+  "gutter": 572,
+  "draft_text": "8.Hansi ion yalniz reduksiyaedici xassa gostarir? A)Br B)Na C)Mn2+ D)A13+ E)Fe3+"
+ },
+ {
+  "number": 9,
+  "page": 105,
+  "column": 0,
+  "box": [
+   0,
+   1131,
+   569,
+   1327
+  ],
+  "file": "q009.png",
+  "gutter": 572,
+  "draft_text": "9.Hansi reaksiyada hidrogen oksidlasdiricidir? A)H2+2Na→2NaH B)H+CuO→Cu+HO C)H+Clh2HCI D)3H+Np.kat2NH3 E)2H2+O2→2H20"
+ },
+ {
+  "number": 10,
+  "page": 105,
+  "column": 0,
+  "box": [
+   0,
+   1315,
+   569,
+   1425
+  ],
+  "file": "q010.png",
+  "gutter": 572,
+  "draft_text": "10. s- ne s*4 sxeminda n-in qiymotini muoyyan edin. A)7 B)6 C)4 D)8 E)S"
+ },
+ {
+  "number": 11,
+  "page": 105,
+  "column": 0,
+  "box": [
+   0,
+   1413,
+   569,
+   1546
+  ],
+  "file": "q011.png",
+  "gutter": 572,
+  "draft_text": "11. C4-nec+2 sxemindan-inqiymatini muoyyon edin. A)2 B)6 C)4 D)5 E)8"
+ },
+ {
+  "number": 12,
+  "page": 105,
+  "column": 1,
+  "box": [
+   575,
+   91,
+   1080,
+   412
+  ],
+  "file": "q012.png",
+  "gutter": 572,
+  "draft_text": "12. Elektron alib Prosesda Atomvaya gostordiyi xasso ion vaya vermasi alr X D Y verir b avab-ni muoyyanedin. b D reduksiyaedici A) reduksiyaedici B) reduksiyaedici oksidlosdirici oksidlasdirici oksidlasdirici C D) oksidlasdirici reduksiyaedici oksidlasir E) reduksiya olunur"
+ },
+ {
+  "number": 13,
+  "page": 105,
+  "column": 1,
+  "box": [
+   575,
+   400,
+   1080,
+   558
+  ],
+  "file": "q013.png",
+  "gutter": 572,
+  "draft_text": "13.Hansi prosesd hidrogenin oksidlosma daracasi artir? 1.H°-1e→→2.H+1e→→3.H+1e²-> 3.H+1e- 2.H°+1e-→ A)2,3 B)1,3 C)yalniz1 D)yalniz2 E)yalniz3"
+ },
+ {
+  "number": 14,
+  "page": 105,
+  "column": 1,
+  "box": [
+   575,
+   546,
+   1080,
+   702
+  ],
+  "file": "q014.png",
+  "gutter": 572,
+  "draft_text": "14.Hansiprosesd hidrogeninoksidlosma doracasi azalur? 1.H°-1e→2.H°+1e→3.H-1e²→→ 2.H°+1e→3.H-1e→ A)yalniz2 B)1,3 C)2,3 D)yalniz1 E)yalniz3"
+ },
+ {
+  "number": 15,
+  "page": 105,
+  "column": 1,
+  "box": [
+   575,
+   690,
+   1080,
+   1119
+  ],
+  "file": "q015.png",
+  "gutter": 572,
+  "draft_text": "15. Oksidlosma-reduksiya Hissacik reaksiyalarinda gostardiyixassa S-2 X 人 XvaY-imuyyan edin.(i6S) A)X-yalnizreduksiyaedici; Y-hom oksidlasdirici,hm dareduksiyaedici B)X-yalniz oksidlasdirici, Y-hom oksidlasdirici,hom dreduksiyaedici C)X-hom oksidlasdirici,ham d reduksiyaedici; Y-yalniz reduksiyaedici D)X-yalniz reduksiyaedici; Y-yalniz oksidlosdirici E)X-yalniz oksidlosdirici; Y-yalnizreduksiyaedici"
+ },
+ {
+  "number": 16,
+  "page": 105,
+  "column": 1,
+  "box": [
+   575,
+   1107,
+   1080,
+   1573
+  ],
+  "file": "q016.png",
+  "gutter": 572,
+  "draft_text": "16. Oksidlasma-reduksiya Hissacik reaksiyalarinda gostardiyi xassa S+6 X s0 人 Xva Y-i muayyan edin.(16S) A)X-yalnizoksidlasdirici; B)X-yalniz reduksiyaedici; Y-yalnizreduksiyaedici D)X-yalnizreduksiyacdici; Y-yalnizoksidlosdirici E)X-yalniz oksidlosdirici; Y-yalniz.reduksiyacdici"
+ },
+ {
+  "number": 21,
+  "page": 106,
+  "column": 0,
+  "box": [
+   0,
+   635,
+   502,
+   789
+  ],
+  "file": "q021.png",
+  "gutter": 505,
+  "draft_text": "21.Hansi tip reaksiyalar oksidlosma daracasinin hom dayismasi,hom dadayismomasi ilageda bilar? I1.Neytrallasma III.Parcalanma 1.Birlasma C) yalniz II A)I,II B)yalniz I D)1, E)ILIII"
+ },
+ {
+  "number": 22,
+  "page": 106,
+  "column": 0,
+  "box": [
+   0,
+   777,
+   502,
+   960
+  ],
+  "file": "q022.png",
+  "gutter": 505,
+  "draft_text": "22.Hansi tipreaksiyalaryalniz oksidlasm daracasinin dayismasi ila gedir? II.Birlosm 1Yanma II.Neytrallasma A)I,II B) II,II C) yalniz III E)yalniz I D)I,I +2e Sm -2e"
+ },
+ {
+  "number": 23,
+  "page": 106,
+  "column": 0,
+  "box": [
+   0,
+   948,
+   502,
+   1086
+  ],
+  "file": "q023.png",
+  "gutter": 505,
+  "draft_text": "S\" 23.s° -be Sa -Ae sb m+n+a+b camini hesablayin. A)-6 E)-10 B)+8 C)+6 D)+10"
+ },
+ {
+  "number": 24,
+  "page": 106,
+  "column": 0,
+  "box": [
+   0,
+   1074,
+   502,
+   1448
+  ],
+  "file": "q024.png",
+  "gutter": 505,
+  "draft_text": "24.Hans cevrilm6 elektron qobul edilmsi ilbas verir? A)SO²→S B) MnO2-→ Mn2+ C) NO→NO2 D) CI0→Cr- E) CIO→CIO- verir? A)MnO→→Mn2+ B) CIO→CI C) NO→NO2 D) so²2-→ s²- E) MnO²Mn2+"
+ },
+ {
+  "number": 26,
+  "page": 106,
+  "column": 1,
+  "box": [
+   508,
+   71,
+   1080,
+   205
+  ],
+  "file": "q026.png",
+  "gutter": 505,
+  "draft_text": "26.Hansi sxem sahvdir? A)N+$+1c--→N4 B)N++3e→→N+2 C)N+2-3c→N+s D) N+3+2e-→N*s E)N²-6e-→N+3"
+ },
+ {
+  "number": 27,
+  "page": 106,
+  "column": 1,
+  "box": [
+   508,
+   193,
+   1080,
+   334
+  ],
+  "file": "q027.png",
+  "gutter": 505,
+  "draft_text": "27.Hansi sxem sahvdir? A) ci*±2e→CI B)CI±→Cf 3 D)cI*s2ec+7"
+ },
+ {
+  "number": 28,
+  "page": 106,
+  "column": 1,
+  "box": [
+   508,
+   322,
+   1080,
+   542
+  ],
+  "file": "q028.png",
+  "gutter": 505,
+  "draft_text": "28.Hansi reaksiya oksidlasma-reduksiya tipli deyit? A)2FeCl+Cl-2FeCl B)Ca(OCI)+4HC1-→CaCl+Cl+2HO C)2Ca(OH)+4NO →Ca(NO)+Ca(NO2)+2HO D)2Mg+SiO2→Si +2MgO E)CaC2+2HO-→Ca(OH)+C2H2"
+ },
+ {
+  "number": 29,
+  "page": 106,
+  "column": 1,
+  "box": [
+   508,
+   530,
+   1080,
+   708
+  ],
+  "file": "q029.png",
+  "gutter": 505,
+  "draft_text": "29.2KNO+S+3C→KS+3CO2+N2 reaksiyasinda hansi elementlorin atomlari reduksiya olunur? A) yalniz karbon B)kukurd,azot C) yalnz kukurd D)yalniz azot E)azot,karbon"
+ },
+ {
+  "number": 30,
+  "page": 106,
+  "column": 1,
+  "box": [
+   508,
+   696,
+   1080,
+   826
+  ],
+  "file": "q030.png",
+  "gutter": 505,
+  "draft_text": "30.Hansi maddonin CO ila reaksiyasi oksidlasma- reduksiya tiplidir? C)Na2O2 B)KOH A) CaO E) Ba(OH)2 D) MgO"
+ },
+ {
+  "number": 31,
+  "page": 106,
+  "column": 1,
+  "box": [
+   508,
+   814,
+   1080,
+   940
+  ],
+  "file": "q031.png",
+  "gutter": 505,
+  "draft_text": "31.HansI maddonin SOila reaksiyasi oksidlasma- reduksiya tiplidir? C) Ca(OH)2 B)Na2O A)HS E)NaOH D) CaO"
+ },
+ {
+  "number": 32,
+  "page": 106,
+  "column": 1,
+  "box": [
+   508,
+   928,
+   1080,
+   1058
+  ],
+  "file": "q032.png",
+  "gutter": 505,
+  "draft_text": "32.Hansi ionlar hom oksidlosdirici,hm d reduksiyaedici ola bilor? B)Fe²+,s²- A)Zn²，Br C) Cut,Fe²+ E)AI²+,Cu²+ D)CI,F"
+ },
+ {
+  "number": 33,
+  "page": 106,
+  "column": 1,
+  "box": [
+   508,
+   1046,
+   1080,
+   1199
+  ],
+  "file": "q033.png",
+  "gutter": 505,
+  "draft_text": "33.Hansi haldamuvafiq olaraq ionlardan biriyalniz oksidlasdirici,digari isoyalnizreduksiyaedici xassaya malikdir? B)Cr²+,s²- A) Zn²,Br C) Fe²+,Na D)Fe²+,s²- E) Cr²t,Cr"
+ },
+ {
+  "number": 34,
+  "page": 106,
+  "column": 1,
+  "box": [
+   508,
+   1187,
+   1080,
+   1518
+  ],
+  "file": "q034.png",
+  "gutter": 505,
+  "draft_text": "34.Oksidlosma-reduksiya reaksiyalari ucun hansi paves ereper! 1.Oksidlasdiricielektronverir,reduksiyaedici is elektron alr. 2.Oksidlasdirici elektron alr,reduksiyaediciis elektron verir. 3.Verilonvaqobul edilonelektronlarn sayibarabor olur. C)2,3 B)1.3 A)yalniz1 E)yalniz3 D)yalniz2 7-"
+ },
+ {
+  "number": 35,
+  "page": 107,
+  "column": 0,
+  "box": [
+   0,
+   91,
+   569,
+   239
+  ],
+  "file": "q035.png",
+  "gutter": 572,
+  "draft_text": "35.Hansi maddalor yalniz oksidlosdirici xassoy malikdir? I.F2 ILN2 III.S IV.C A)I,II C) yalniz IV B) I,IV D)yalnizI E) IL,IV"
+ },
+ {
+  "number": 36,
+  "page": 107,
+  "column": 0,
+  "box": [
+   0,
+   227,
+   569,
+   327
+  ],
+  "file": "q036.png",
+  "gutter": 572,
+  "draft_text": "36.Kukurd hansi madda il qarsilql tasirda olduqda reduksiya olunur? A)HNOB)NaC)O2D)F2E)HSO4 C)O2 E)H2SO4 D)F2"
+ },
+ {
+  "number": 37,
+  "page": 107,
+  "column": 0,
+  "box": [
+   0,
+   315,
+   569,
+   469
+  ],
+  "file": "q037.png",
+  "gutter": 572,
+  "draft_text": "37.Hansi reaksiyalarda su oksidlosdiricidir? 1.CaC+H2O→→ II.C+H2O III.K+HO- IV.CaO +H2O- A)II,IV B) I, II C)II,III D)I,IV E)III,IV"
+ },
+ {
+  "number": 38,
+  "page": 107,
+  "column": 0,
+  "box": [
+   0,
+   457,
+   569,
+   632
+  ],
+  "file": "q038.png",
+  "gutter": 572,
+  "draft_text": "38.Oksidlosma-reduksiya proseslarini gostarin I.Elektrolitikdissosiasiya II.Duzlarin elektrolizi II.Metallarin korroziyasi A)yalnizII B)yalnizI C) II,III D) yalniz III E)I,II"
+ },
+ {
+  "number": 39,
+  "page": 107,
+  "column": 0,
+  "box": [
+   0,
+   620,
+   569,
+   798
+  ],
+  "file": "q039.png",
+  "gutter": 572,
+  "draft_text": "39.Oksidlasma-reduksiya proseslorini gostarin INaCl-in suda mahlulunun elektrolizi II.CuCl-in hidrolizi Il.Muvaqqoti codlugun aradan qaldinlmasi A) yalniz III B) yalniz II C) yalniz I D)I,ⅢI E) IIIII"
+ },
+ {
+  "number": 40,
+  "page": 107,
+  "column": 0,
+  "box": [
+   0,
+   786,
+   569,
+   939
+  ],
+  "file": "q040.png",
+  "gutter": 572,
+  "draft_text": "40.Nitrat tursusunun metallarla reaksiyasinda hansi elementlarinoksidlasma doracasi dayismir? 1.Hidrogenin II.Azotun IIl.Metalin A)I,II B)yalnizI C)I,III D)II,II E) yalniz II"
+ },
+ {
+  "number": 41,
+  "page": 107,
+  "column": 0,
+  "box": [
+   0,
+   927,
+   569,
+   1080
+  ],
+  "file": "q041.png",
+  "gutter": 572,
+  "draft_text": "41.Nitrat tursusununmetallarla reaksiyasinda hansi elementlarin oksidlosma daracasi dayisir? 1. Hidrogenin II.Azotun III.Metalin A)II,II B)I,II D) yalniz II E)yalnizI"
+ },
+ {
+  "number": 42,
+  "page": 107,
+  "column": 0,
+  "box": [
+   0,
+   1068,
+   569,
+   1206
+  ],
+  "file": "q042.png",
+  "gutter": 572,
+  "draft_text": "42.Hansi maddalarla reaksiyada kukurd reduksiya olunur? A)F2,P B) O2,Cl2 D) HNO(qati), K C)AI,O2 E)K,Fe"
+ },
+ {
+  "number": 43,
+  "page": 107,
+  "column": 0,
+  "box": [
+   0,
+   1194,
+   569,
+   1373
+  ],
+  "file": "q043.png",
+  "gutter": 572,
+  "draft_text": "43.Hansi reaksiyada uc elementin oksidlosm daracosi deyisir? A)NH+OPLt B) ZnS+O2 C) KMnO D)Pb(NO3) E)FeS2+O2"
+ },
+ {
+  "number": 44,
+  "page": 107,
+  "column": 0,
+  "box": [
+   0,
+   1361,
+   569,
+   1557
+  ],
+  "file": "q044.png",
+  "gutter": 572,
+  "draft_text": "44.Hansi reaksiyada Uc elementin oksidlosmo daracasi doyisir? A)Hg(NO3) B)NH+O2 C) Cu(NO3) D) KCIO;+P-→ E) KCIO,MnO2,"
+ },
+ {
+  "number": 45,
+  "page": 107,
+  "column": 1,
+  "box": [
+   575,
+   97,
+   1080,
+   295
+  ],
+  "file": "q045.png",
+  "gutter": 572,
+  "draft_text": "45.X+YCl-→XCl2+Y Hansi ifadalorsahvdir? I.Xoksidlosdiricidir I1.Xreduksiya olunur II.Yreduksiya mohsuludur A)III B)I,III C)II,I D) yalniz III E) yalniz I"
+ },
+ {
+  "number": 46,
+  "page": 107,
+  "column": 1,
+  "box": [
+   575,
+   283,
+   1080,
+   639
+  ],
+  "file": "q046.png",
+  "gutter": 572,
+  "draft_text": "46. Yalnz oupseipisyo we Yalniz oksidlasdirici ham reduksiyaedic reduksiyaedici X Y Z X,Yva Z-i muyyn edin X Y Z 0 Na A) Ca S° 0 O2 Mg B) 2+ K Ca2+ Ca C) S S° K° 0 D) Ca 2+ E) Ca F 0 +H2,t"
+ },
+ {
+  "number": 47,
+  "page": 107,
+  "column": 1,
+  "box": [
+   575,
+   627,
+   1080,
+   773
+  ],
+  "file": "q047.png",
+  "gutter": 572,
+  "draft_text": "1500° 47.C Caktt X Z I II IⅢ Hansi marhalalar oksidlosma-reduksiya tiplidir? A)I,ⅡI B) II,III C)yalnizI D)I,IⅡI E)yalnizI"
+ },
+ {
+  "number": 48,
+  "page": 107,
+  "column": 1,
+  "box": [
+   575,
+   761,
+   1080,
+   911
+  ],
+  "file": "q048.png",
+  "gutter": 572,
+  "draft_text": "48. Cu+4H++2NO3→→Cu2++2NO2+2H2Oqisa ion tanliyinda hansi element reduksiya olunur? A) oksigen B) azot va oksigen C)mis D)hidrogen E)azot"
+ },
+ {
+  "number": 49,
+  "page": 107,
+  "column": 1,
+  "box": [
+   575,
+   899,
+   1080,
+   1045
+  ],
+  "file": "q049.png",
+  "gutter": 572,
+  "draft_text": "49.Cu°+4H++2NO→Cu2++2NO2+2H0 qisa ion tonliyinda hansi element oksidlosir? A)oksigen B) hidrogen C)azot D)mis E) azot va oksigen"
+ },
+ {
+  "number": 50,
+  "page": 107,
+  "column": 1,
+  "box": [
+   575,
+   1033,
+   1080,
+   1559
+  ],
+  "file": "q050.png",
+  "gutter": 572,
+  "draft_text": "50. Kukurdun birlasmalarda mumkunoksidlasma daracosina uy gun elektron formulu X ..2p6 人 .3s2 Z ...3p uy gun xassalari muayyan edin.(16S) 1.Yalniz reduksiyaedici 2. Ham oksidlosdirici, hm reduksiyaedici 3.Yalniz oksidlasdirici 文 Y Z A) 3 1 2 B) 2 3 1 C) 1 2 D) 3 3 2 1 E) 1 3 2"
+ },
+ {
+  "number": 57,
+  "page": 108,
+  "column": 0,
+  "box": [
+   0,
+   767,
+   431,
+   1099
+  ],
+  "file": "q057.png",
+  "gutter": 434,
+  "draft_text": "57。 Oksidlasmo-reduksiya Reaksiyann reaksiyasinda hidrogen sxemi atomunun gostardiyi xassa X 一Z+D H+Cl-→ Y H+Na-→ Z XYvaZimuayyan edin. 又 Z Y A)reduksiyaedici reduksiyaedici oksidlasdirici B)okesidlasdirici reduksiyaedici reduksiyaedici C)oksidlasdirici reduksiyaedici oksidlosdirici D)reduksiyaedici oksidlasdirici oksidlosdirici E)oksidlasdirici oksidlosdirici reduksiyaedici"
+ },
+ {
+  "number": 58,
+  "page": 108,
+  "column": 0,
+  "box": [
+   0,
+   1087,
+   431,
+   1475
+  ],
+  "file": "q058.png",
+  "gutter": 434,
+  "draft_text": "58. Reaksiyanin Oksidlasma-reduksiya sxerni reaksiyasinda hidrogen alomunun gostordiyi xasso HCI+Fe-→ H+0-→ X H+Ca→ Y X,YvZ-i muayyan edin. Z A)oksidlasdirici Y Z B)oksidlasdirici oksidlosdirici reduksiyaedici C)reduksiyaedici reduksiyaedici D)reduksayaedici reduksiyaedici reduksiyaedici E)oksidlasdirici oksidlosdirici oksidlosdirici oksidlosdirici reduksiyaedici oksidlosdirici"
+ },
+ {
+  "number": 59,
+  "page": 108,
+  "column": 1,
+  "box": [
+   437,
+   112,
+   1080,
+   336
+  ],
+  "file": "q059.png",
+  "gutter": 434,
+  "draft_text": "CHOH 59.1I- H Ⅱ 1 III H H +CHOHH' HO →H-C IV HO Hansi morhslolordokarbonun oksidlasma darcasi dayismir? A) yalnz Il B)1IIII C)I,III D) yalniz IV E)I,IV"
+ },
+ {
+  "number": 60,
+  "page": 108,
+  "column": 1,
+  "box": [
+   437,
+   324,
+   1080,
+   425
+  ],
+  "file": "q060.png",
+  "gutter": 434,
+  "draft_text": "60.Hansi maddolor ham oksidlosdirici,hom d reduksiyaedici xassoyo malikdir? 22.Cl3.S4.Mg 3.S4.Mg 1.F2"
+ },
+ {
+  "number": 61,
+  "page": 108,
+  "column": 1,
+  "box": [
+   437,
+   413,
+   1080,
+   514
+  ],
+  "file": "q061.png",
+  "gutter": 434,
+  "draft_text": "61.Hansimaddlorhom oksidlasdirici,hom d reduksiyaedici xassoya malikdir? 1.F2 2.P 3.Si 4.Na"
+ },
+ {
+  "number": 62,
+  "page": 108,
+  "column": 1,
+  "box": [
+   437,
+   502,
+   1080,
+   635
+  ],
+  "file": "q062.png",
+  "gutter": 434,
+  "draft_text": "62.Hansi maddolorin termiki parcalanmasi oksidlasma- reduksiya reaksiyasidir? 1.CaCO 3.KCIO3 2.NaNO3 4.KMnO4 5.NaHCO3"
+ },
+ {
+  "number": 63,
+  "page": 108,
+  "column": 1,
+  "box": [
+   437,
+   623,
+   1080,
+   763
+  ],
+  "file": "q063.png",
+  "gutter": 434,
+  "draft_text": "63.Hansireaksiyalarda oksigen yalniz oksidlosdiricidir? 2.KCIO, MnO,t 1.HOMnO MnO2 4.NH+O2 3.Na+O2-"
+ },
+ {
+  "number": 64,
+  "page": 108,
+  "column": 1,
+  "box": [
+   437,
+   751,
+   1080,
+   860
+  ],
+  "file": "q064.png",
+  "gutter": 434,
+  "draft_text": "2.Na°+e 64.1.Na°-e-→ 3.F°-e- 4.F°+e--> Hansi sxemlar uzra kimyavi reaksiya mumkundur?"
+ },
+ {
+  "number": 65,
+  "page": 108,
+  "column": 1,
+  "box": [
+   437,
+   848,
+   1080,
+   1202
+  ],
+  "file": "q065.png",
+  "gutter": 434,
+  "draft_text": "65.Hansi proseslor oksidlosmo-reduksiya reaksiyalaridir? Krekinq Korroziya 2 Hidroliz Proseslar 3 5 4 Distillo Elektroliz"
+ },
+ {
+  "number": 66,
+  "page": 108,
+  "column": 1,
+  "box": [
+   437,
+   1190,
+   1080,
+   1320
+  ],
+  "file": "q066.png",
+  "gutter": 434,
+  "draft_text": "66.N+3H-→2NH Oksidlasdiricininmolekullarireaksiyaya daxil olan maddamolekullarinin dmumi sayinn neco faizini toskil edir?"
+ },
+ {
+  "number": 67,
+  "page": 108,
+  "column": 1,
+  "box": [
+   437,
+   1308,
+   1080,
+   1511
+  ],
+  "file": "q067.png",
+  "gutter": 434,
+  "draft_text": "67.N+3H→2NH Reduksiyaedicinin molekullarimin sayi reaksiyaya daxil olanmaddomolekullarinin umumi saynn neco faizini toskil edir? 09-"
+ }
+]
