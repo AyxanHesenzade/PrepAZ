@@ -10,6 +10,20 @@ abstract final class Validators {
     return _emailPattern.hasMatch(v) ? null : AppStrings.invalidEmail;
   }
 
+  /// `leaderboard_players.nickname` yoxlaması ilə eynidir (db/migrations/017_leaderboard.sql).
+  static final _nicknamePattern = RegExp(r'^[A-Za-z0-9_.ƏəÜüÖöĞğİıŞşÇç]{3,20}$');
+
+  static String? nickname(String? value) {
+    return _nicknamePattern.hasMatch(value?.trim() ?? '')
+        ? null
+        : AppStrings.nicknameInvalid;
+  }
+
+  static String? personName(String? value) {
+    final length = value?.trim().length ?? 0;
+    return length >= 2 && length <= 40 ? null : AppStrings.personNameInvalid;
+  }
+
   static String? password(String? value) {
     return (value ?? '').length >= minPasswordLength
         ? null

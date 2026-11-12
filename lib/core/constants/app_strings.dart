@@ -882,4 +882,105 @@ abstract final class AppStrings {
     'Не удалось открыть. Номер скопирован.',
     "Couldn't open. The number was copied.",
   );
+
+  // Alt menyu
+  static String get navHome => _t('Ana səhifə', 'Главная', 'Home');
+  static String get navCompete => _t('Yarış', 'Соревнование', 'Compete');
+
+  // Yarış (xal cədvəli)
+  static String get competeTitle => _t('Yarış', 'Соревнование', 'Leaderboard');
+  static String get joinTitle => _t(
+    'Yarışa qoşul!',
+    'Присоединяйся к соревнованию!',
+    'Join the competition!',
+  );
+  static String get joinText => _t(
+    'Hər fənn üzrə kim ən çox test həll edir, burada görünür. Cədvəldə yalnız nik-adın görünəcək, adın və soyadın heç kimə göstərilmir.',
+    'Здесь видно, кто решает больше всех тестов по каждому предмету. В таблице будет виден только твой ник, имя и фамилия никому не показываются.',
+    'See who solves the most questions in each subject. Only your nickname is shown on the board; your first and last name stay private.',
+  );
+  static String get nicknameLabel => _t('Nik-ad', 'Ник', 'Nickname');
+  static String get nicknameHelper => _t(
+    '3-20 simvol: hərf, rəqəm, _ və .',
+    '3-20 символов: буквы, цифры, _ и .',
+    '3-20 characters: letters, digits, _ and .',
+  );
+  static String get nicknameInvalid => _t(
+    'Nik-ad 3-20 simvol olmalıdır: yalnız hərf, rəqəm, _ və . (boşluqsuz).',
+    'Ник: 3-20 символов, только буквы, цифры, _ и . (без пробелов).',
+    'Nickname must be 3-20 characters: letters, digits, _ and . only (no spaces).',
+  );
+  static String get nicknameTaken => _t(
+    'Bu nik-ad artıq tutulub. Başqasını yaz.',
+    'Этот ник уже занят. Выбери другой.',
+    'This nickname is taken. Try another one.',
+  );
+  static String get firstNameLabel => _t('Ad', 'Имя', 'First name');
+  static String get lastNameLabel => _t('Soyad', 'Фамилия', 'Last name');
+  static String get personNameInvalid => _t(
+    '2-40 simvol olmalıdır.',
+    'Должно быть 2-40 символов.',
+    'Must be 2-40 characters.',
+  );
+  static String get joinAction => _t('Yarışa qoşul', 'Присоединиться', 'Join');
+  static String get saveAction => _t('Yadda saxla', 'Сохранить', 'Save');
+  static String get editPlayerTitle =>
+      _t('Məlumatlarım', 'Мои данные', 'My details');
+  static String get leaderboardEmpty => _t(
+    'Hələ heç kim xal toplamayıb. Birinci sən ol!',
+    'Пока никто не набрал очков. Стань первым!',
+    'Nobody has scored yet. Be the first!',
+  );
+  static String get leaderboardAllHint => _t(
+    'Xal = düz həll etdiyin fərqli testlər. Eyni testi təkrar həll etmək xal vermir.',
+    'Очко = разные тесты, решённые верно. Повторное решение очков не даёт.',
+    'A point = each different question you solved correctly. Repeats give no points.',
+  );
+  static String get subjectLabel => _t('Fənn', 'Предмет', 'Subject');
+  static String get chooseSubject => _t('Fənn seç', 'Выбери предмет', 'Choose a subject');
+  static String get youLabel => _t('Sən', 'Ты', 'You');
+  static String points(int n) => _t('$n xal', '$n очк.', '$n pts');
+  static String myRank(int rank, int score) => _t(
+    'Sən: $rank-ci yer · $score xal',
+    'Ты: $rank-е место · $score очк.',
+    'You: #$rank · $score pts',
+  );
+  static String get myRankNone => _t(
+    'Sən hələ xal toplamamısan. Bir test həll et, cədvələ düş!',
+    'У тебя пока нет очков. Реши тест и попади в таблицу!',
+    "You haven't scored yet. Solve a question to get on the board!",
+  );
+
+  // Axşam xatırlatması (bildiriş). Siyahılar: eyni mətn hər gün təkrarlanmasın.
+  static String get reminderChannel =>
+      _t('Gündəlik xatırlatma', 'Ежедневное напоминание', 'Daily reminder');
+  static String reminderTitleStreak(int n) => _t(
+    'Seriyan $n gündür 🔥',
+    'Твоя серия $n дн. 🔥',
+    'Your streak is $n days 🔥',
+  );
+  static String get reminderTitleStart =>
+      _t('Bu günün testi 💪', 'Тест на сегодня 💪', "Today's practice 💪");
+  static String get reminderTitleComeBack =>
+      _t('Səni gözləyirik! 🚀', 'Мы тебя ждём! 🚀', 'We miss you! 🚀');
+  static List<String> reminderAtRisk(int n) => _tl(
+    ['Bu gün bir test həll et, seriyan qırılmasın!', 'Cəmi 5 dəqiqə: seriyanı ${n + 1} günə çatdır!'],
+    ['Реши сегодня один тест, чтобы серия не прервалась!', 'Всего 5 минут: доведи серию до ${n + 1} дн.!'],
+    ['Solve one question today so your streak survives!', 'Just 5 minutes: make it ${n + 1} days!'],
+  );
+  static List<String> reminderKeepGoing(int n) => _tl(
+    ['Bu gün də davam et, ${n + 1} olsun!', 'Əla gedirsən! Bu gün də bir neçə test həll et.'],
+    ['Продолжай и сегодня, пусть будет ${n + 1}!', 'Отлично идёшь! Реши сегодня ещё пару тестов.'],
+    ['Keep going today and make it ${n + 1}!', "You're doing great! Solve a few more today."],
+  );
+  static List<String> get reminderStart => _tl(
+    ['Bu gün hələ test həll etməmisən. 5 dəqiqə ayır, seriyaya başla!', 'Bir neçə test həll et, ilk alovunu yandır 🔥'],
+    ['Сегодня ты ещё не решал тесты. Удели 5 минут и начни серию!', 'Реши пару тестов и зажги первый огонёк 🔥'],
+    ["You haven't practised today. Take 5 minutes and start a streak!", 'Solve a few questions and light your first flame 🔥'],
+  );
+  static List<String> get reminderComeBack => _tl(
+    ['Bir neçə test həll et, yeni seriyaya başla.', 'İmtahan yaxınlaşır: bu gün 5 dəqiqə ayır!'],
+    ['Реши пару тестов и начни новую серию.', 'Экзамен всё ближе: удели сегодня 5 минут!'],
+    ['Solve a few questions and start a new streak.', 'The exam is getting closer: take 5 minutes today!'],
+  );
 }

@@ -9,6 +9,11 @@ abstract final class AppColors {
   /// Seriya (alov) vurğusu.
   static const streak = Color(0xFFFFB020);
 
+  /// Xal cədvəlində ilk üç yer.
+  static const gold = Color(0xFFF5B400);
+  static const silver = Color(0xFF9AA5B1);
+  static const bronze = Color(0xFFCD7F32);
+
   /// Marka gradienti (seriya kartı, giriş ekranı).
   static const brandStart = Color(0xFF2F6FED);
   static const brandEnd = Color(0xFF1B3A8C);

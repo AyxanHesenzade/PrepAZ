@@ -194,7 +194,8 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 
 ## Dizayn, dil və menyu (tətbiq)
 - Tema: `lib/core/theme` (böyük yumru künclər `AppRadius`, pill düymələr, Plus Jakarta Sans şrifti `assets/fonts`, fənn rəngləri `AppColors.subjectAccent`).
-  Ortaq animasiyalı elementlər: `Pressable`, `FadeSlideIn`, `SoftProgressBar` (`lib/core/widgets`). Sonsuz animasiya yazılmır (testlər `pumpAndSettle` işlədir).
+  Ortaq animasiyalı elementlər: `Pressable`, `FadeSlideIn`, `SoftProgressBar` (`lib/core/widgets`).
+  Sahibin zövqü: iOS "liquid glass" üslubu (2026-11-12). Alt menyu `GlassNavBar` (üzən şüşə panel, blur, sürüşən seçim fonu); seçim üçün dropdown yox, aşağıdan açılan panel (bottom sheet); başlıqlar fənn rəngində gradient kart. Sonsuz animasiya yazılmır (testlər `pumpAndSettle` işlədir).
 - Tətbiq interfeys dili: AZ / RU / EN (sualların dili bundan asılı deyil). `AppStrings` getter-dir (`const` deyil!): hər mətn `_t(az, ru, en)` ilə yazılır,
   yeni mətn əlavə edəndə üç dili də yaz. Dil `AppStrings.language`-dədir, ayarlar onu dəyişir; `PrepAzApp` dil dəyişəndə ağacı təzədən qurur.
 - Ayarlar (dil + gündüz/gecə/sistem): `features/settings`, SharedPreferences-də saxlanır (`main.dart` override edir; testdə `InMemorySettingsRepository`).
@@ -303,3 +304,26 @@ Sahibin qərarları: şagirdlər əsasən YOLDA (avtobus/metro) istifadə edir; 
 - Şagirdin son cavabları yüklənmiş mövzuda telefonda keşlənir (`LocalLatestAnswers`), göndərilməmiş cavablar üstünə qoyulur: həll edilmiş test oflayn yenidən "həll edilməmiş" görünmür.
 - Real bazada `answers.client_id` sütunu və adi istifadəçi üçün `answered_at` insert icazəsi olmalıdır (yeni tətbiq hər cavabda `client_id` göndərir: yoxdursa BÜTÜN cavablar yazılmır). Buraxılışdan əvvəl yoxlanmalıdır.
 - Şəkillər telefonda `getApplicationSupportDirectory()/offline_images` qovluğundadır (cache yox). Əvvəl `compress_images.py` ilə WebP (aşağıda "Şəkillər WebP-dir").
+
+## Yarış (xal cədvəli) və alt menyu
+- Daxil olandan sonra `MainShell` (`lib/features/shell`) açılır: aşağıda `NavigationBar` (Ana səhifə, Yarış). Tablar `IndexedStack`-dədir; "Yarış" ilk basılana qədər qurulmur. Öyrədici tur gedərkən alt menyu gizlənir. Turda "Yarış" addımı HƏLƏ yoxdur.
+- Baza: `db/migrations/017_leaderboard.sql` (lokal test: `tools/dim/test_migration_017.py`, bu Mac-də pgserver Python 3.14-də qurulmadığı üçün HƏLƏ İŞLƏDİLMƏYİB). Test və real Supabase-də SQL Editor-da işlədilməlidir.
+  - `leaderboard_players`: nik-ad (3-20: hərf, rəqəm, `_`, `.`; böyük/kiçik hərf fərq etmir, unikal), ad, soyad (2-40). Şagird yalnız özününkünü görür/yazır, admin hamısını görür və nik-adı dəyişə bilər. Silinmir, hesabla birlikdə gedir.
+  - `get_leaderboard(subject, 'all', limit)` (security definer): ilk 50 + şagirdin öz sətri. Başqalarına YALNIZ nik-ad gedir, ad/soyad heç vaxt.
+  - Xal = ən azı bir dəfə düz həll edilmiş fərqli aktiv test (təkrar xal vermir). Bərabər xalda o xala birinci çatan yuxarıdadır.
+  - **Yalnız ümumi reytinq** (sahibin qərarı, 2026-11-12): həftəlik cədvəl çıxarıldı. Tətbiq həmişə `p_period = 'all'` göndərir; SQL-dəki `'week'` qolu qalır, istifadə olunmur.
+  - Fənn açılan siyahı (dropdown) ilə seçilir.
+- Sahibin qərarı: nik-ad/ad/soyad girişdə SORUŞULMUR (giriş sadə qalır), yalnız şagird "Yarış"a ilk dəfə basanda forma çıxır.
+- Tətbiq: `lib/features/leaderboard` (`LeaderboardRepository`, `PlayerForm`, `LeaderboardTab`, `Podium`). Nik-ad qaydası `Validators.nickname` = SQL `check` (dəyişəndə ikisi birlikdə).
+- Sorğu hər açılışda `answers` üzərində hesablanır: istifadəçi çoxalanda materialized view/cədvələ keçmək lazım olacaq.
+- Məxfilik mətnində ad/soyad toplanması və nik-adın açıq görünməsi hələ yazılmayıb.
+
+## Axşam xatırlatması (bildiriş)
+- `lib/features/reminders`: telefonun yerli bildirişi (`flutter_local_notifications` **22.3.x**, 23-cü versiya compileSdk 37 istəyir, layihə 36-dadır; `timezone`, `flutter_timezone`). Server/FCM yoxdur, internetsiz də gəlir.
+- Vaxt 20:00 (dəqiq alarm icazəsi istənmir: `inexactAllowWhileIdle`, bir neçə dəqiqə gec gələ bilər). Plan `planReminders` (domain, testli: `test/features/reminder_planner_test.dart`):
+  bu gün həll edilməyibsə bu axşam (`atRisk` "Seriyan N gündür 🔥" və ya `start`), sabah (`keepGoing` və ya `comeBack`), sonra 2 gün `comeBack`. Hər açılışda, arxa fondan qayıdanda və seriya yenilənəndə (`streakDaysProvider`) plan yenidən qurulur (`ReminderSync`, `MainShell`-i sarıyır).
+- Seriya `profiles.streak_days` + `last_active`-dən hesablanır: server seriya qırılanda sayı növbəti cavaba qədər sıfırlamır, ona görə `currentStreak` son aktiv gün bu gün/dünən deyilsə 0 sayır. "Bu gün həll edib" = telefonun gece yarısından cavab sayı.
+- İcazə (Android 13+) bir dəfə, öyrədici tur bitəndən sonra istənir (`reminders.permission_asked`, SharedPreferences). Çıxışda bildirişlər silinir (`AuthGate`).
+- Testlərdə `reminderSchedulerProvider` defoltu `NoReminderScheduler`-dir; `main.dart` `LocalReminderScheduler` qoyur.
+- Android: desugaring (`desugar_jdk_libs`), manifestdə `POST_NOTIFICATIONS`, `RECEIVE_BOOT_COMPLETED` və plaginin iki receiver-i.
+- Hələ yoxdur: ayarlarda söndürmə/saat seçimi (indi yalnız Android-in öz bildiriş ayarı ilə söndürülür). Bildiriş ikonu tətbiq ikonudur (`@mipmap/ic_launcher`): bəzi telefonlarda ağ kvadrat görünə bilər, ayrıca ağ-şəffaf ikon lazımdır.

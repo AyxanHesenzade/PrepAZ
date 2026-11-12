@@ -7,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'app.dart';
+import 'core/constants/app_strings.dart';
 import 'core/config/app_config.dart';
 import 'core/providers.dart';
 import 'features/browse/data/prefs_topic_draft_repository.dart';
@@ -14,6 +15,8 @@ import 'features/browse/presentation/browse_providers.dart';
 import 'features/offline/data/file_image_store.dart';
 import 'features/offline/data/local_database.dart';
 import 'features/offline/presentation/offline_providers.dart';
+import 'features/reminders/data/local_reminder_scheduler.dart';
+import 'features/reminders/presentation/reminder_providers.dart';
 import 'features/settings/data/prefs_settings_repository.dart';
 import 'features/settings/presentation/settings_providers.dart';
 
@@ -43,6 +46,9 @@ Future<void> main() async {
           PrefsTopicDraftRepository(prefs, () => Supabase.instance.client.auth.currentUser?.id),
         ),
         mascotMotionProvider.overrideWithValue(true),
+        reminderSchedulerProvider.overrideWithValue(
+          LocalReminderScheduler(prefs, channelName: AppStrings.reminderChannel),
+        ),
         localDatabaseProvider.overrideWithValue(LocalDatabase.open()),
         imageStoreProvider.overrideWithValue(
           FileImageStore(Directory('${support.path}${Platform.pathSeparator}offline_images')),
