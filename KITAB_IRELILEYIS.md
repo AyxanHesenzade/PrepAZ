@@ -1,14 +1,14 @@
 # Test kitabları: harada dayanmışıq
 
 Hər bölmə bitəndən sonra bu fayl yenilənir. Yeni işə başlamazdan əvvəl buradan bax.
-Son yenilənmə: 2026-11-06 (bölmə 25–26 kəsildi)
+Son yenilənmə: 2026-11-12 (bölmə 31 yükləndi)
 
 ## Qısa vəziyyət
 - **Kitab 1:** "Kimya test toplusu I" (DİM, 2025, 359 səhifə)
 - **Fayl:** `tools/dim/Kimya test toplusu I 2025 _250822_103034.pdf`
-- **Hazır bölmələr:** 1, 2, 3, 4, 5, 6 (bölmə 6 yükləndi, 2026-11-05); bölmə 7 yükləndi, 2026-11-05; bölmə 8 yükləndi, 2026-11-05; bölmə 9 yükləndi, 2026-11-05; bölmə 10 yükləndi, 2026-11-05; bölmə 11 yükləndi, 2026-11-05; bölmə 12 yükləndi, 2026-11-05; bölmə 13 yükləndi, 2026-11-05; bölmə 14 yükləndi, 2026-11-05; bölmə 15 yükləndi, 2026-11-05; bölmə 16–24 yükləndi (2026-11-06, şəkillər `images_kitab`-a köçürüldü); **bölmə 25 və 26 kəsilib, SQL və şəkillər hazırdır, sahib yükləməlidir**
-- **Bazada:** 253 şəkil-sual (206 qapalı, 47 açıq). Bölmə 6 ilə +55 (46 qapalı, 9 açıq) = 308; bölmə 7 ilə +97 (77 qapalı, 20 açıq) = 405; bölmə 8 ilə +82 (51 qapalı, 31 açıq) = 487; bölmə 9 ilə +45 (38 qapalı, 7 açıq) = 532; bölmə 10 ilə +82 (79 qapalı, 3 çoxseçimli) = 614; bölmə 11 ilə +55 (54 qapalı, 1 ədədi) = 669; bölmə 12 ilə +126 (104 qapalı, 11 çoxseçimli, 5 ədədi, 6 uyğunlaşdırma) = 795; bölmə 13 ilə +100 (78 qapalı, 22 ədədi) = 895; bölmə 14 ilə +68 (55 qapalı, 6 çoxseçimli, 2 ədədi, 5 uyğunlaşdırma) = 963; bölmə 15 ilə +153 = **1116**; bölmə 16 (+19), 17 (+83), 18 (+50), 19 (+38) = **1306**; bölmə 20 (+86) = **1392**; bölmə 21 (+69) = **1461**; bölmə 22 (+58) = **1519**; bölmə 23 (+83) = **1602**; bölmə 24 (+13) = **1615**; bölmə 25 (+55), 26 (+55) yüklənəndə = 1725
-- **Növbəti:** fəsil "Kimyəvi tarazlıq": bölmə "Kimyəvi tarazlıq və ona təsir edən amillər" pdf 129 (sağ sütun, başlıq y~100-dən aşağı)-dan başlayır; açar pdf 338-in aşağısında / pdf 339-da (yenidən oxu). Sonra ətraflı yazılı cavab bölməsi ATLANIR.
+- **Hazır bölmələr:** 1, 2, 3, 4, 5, 6 (bölmə 6 yükləndi, 2026-11-05); bölmə 7 yükləndi, 2026-11-05; bölmə 8 yükləndi, 2026-11-05; bölmə 9 yükləndi, 2026-11-05; bölmə 10 yükləndi, 2026-11-05; bölmə 11 yükləndi, 2026-11-05; bölmə 12 yükləndi, 2026-11-05; bölmə 13 yükləndi, 2026-11-05; bölmə 14 yükləndi, 2026-11-05; bölmə 15 yükləndi, 2026-11-05; bölmə 16–24 yükləndi (2026-11-06, şəkillər `images_kitab`-a köçürüldü); bölmə 25–26 yükləndi (2026-11-12, şəkillər `images_kitab`-a köçürüldü); bölmə 27 yükləndi (2026-11-12); bölmə 28 yükləndi (2026-11-12); bölmə 29 yükləndi (2026-11-12); bölmə 30 yükləndi (2026-11-12); bölmə 31 yükləndi (2026-11-12)
+- **Bazada:** 253 şəkil-sual (206 qapalı, 47 açıq). Bölmə 6 ilə +55 (46 qapalı, 9 açıq) = 308; bölmə 7 ilə +97 (77 qapalı, 20 açıq) = 405; bölmə 8 ilə +82 (51 qapalı, 31 açıq) = 487; bölmə 9 ilə +45 (38 qapalı, 7 açıq) = 532; bölmə 10 ilə +82 (79 qapalı, 3 çoxseçimli) = 614; bölmə 11 ilə +55 (54 qapalı, 1 ədədi) = 669; bölmə 12 ilə +126 (104 qapalı, 11 çoxseçimli, 5 ədədi, 6 uyğunlaşdırma) = 795; bölmə 13 ilə +100 (78 qapalı, 22 ədədi) = 895; bölmə 14 ilə +68 (55 qapalı, 6 çoxseçimli, 2 ədədi, 5 uyğunlaşdırma) = 963; bölmə 15 ilə +153 = **1116**; bölmə 16 (+19), 17 (+83), 18 (+50), 19 (+38) = **1306**; bölmə 20 (+86) = **1392**; bölmə 21 (+69) = **1461**; bölmə 22 (+58) = **1519**; bölmə 23 (+83) = **1602**; bölmə 24 (+13) = **1615**; bölmə 25 (+55), 26 (+55) = **1725**; bölmə 27 (+82) = **1807**; bölmə 28 (+44) = **1851**; bölmə 29 (+72) = **1923**; bölmə 30 (+154) = **2077**; bölmə 31 (+52) = **2129**
+- **Növbəti:** pdf 162 sağ sütun (y~1020-dən) və sonrakı səhifələr "Ətraflı yazılı cavab" ATLANIR. Növbəti test bölməsinin yerini `strip 164 167` ilə tap; açar pdf 340-ın sonu / 341.
 - **Yazılı tapşırıqlar ATLANIR** (sahibin qərarı, 2026-11-05): "Ətraflı yazılı cavab tələb olunan tapşırıqlar" bölmələri tətbiqə əlavə olunmur, soruşulmur. Atlananlar: pdf 19–20, pdf 38 (sağ) – 40, pdf 65 (sol, 100-dən sonra) – 66.
 - **Səhifə qeydi:** kitabda çap olunmuş səhifə nömrəsi = pdf səhifəsi + 1 (pdf 15 = kitabda 16).
 
@@ -40,8 +40,13 @@ Son yenilənmə: 2026-11-06 (bölmə 25–26 kəsildi)
 | 22 | Oksidləşmə-reduksiya reaksiyalarının tənlikləri | 109 (sol, başlıqdan sonra)–113 (sol, 58) | 58 | yükləndi: `out/import_kt1_s22.sql` (41 qapalı + 6 çoxseçimli + 8 ədədi + 3 uyğunlaşdırma) | yoxdur | `KT1-S22-Qnnn` | `scan/kimya_I_bolme22_cavablar.json` |
 | 23 | Oksidləşmə-reduksiya reaksiyalarının tənliklərinin əmsallaşdırılması | 113 (sol, başlıqdan sonra)–117 (sol, 83) | 83 | yükləndi: `out/import_kt1_s23.sql` (67 qapalı + 4 çoxseçimli + 10 ədədi + 2 uyğunlaşdırma) | yoxdur | `KT1-S23-Qnnn` | `scan/kimya_I_bolme23_cavablar.json` |
 | 24 | Oksidləşmə-reduksiya reaksiyalarının növləri | 117 (sol, başlıqdan sonra)–118 (sol, 13) | 13 | yükləndi: `out/import_kt1_s24.sql` (9 qapalı + 1 çoxseçimli + 3 uyğunlaşdırma) | yoxdur | `KT1-S24-Qnnn` | `scan/kimya_I_bolme24_cavablar.json` |
-| 25 | Kimyəvi reaksiyaların sürəti və ona aid hesablamalar (fəsil "Kimyəvi reaksiyaların sürəti. Kimyəvi tarazlıq") | 120 (sol, başlıqdan sonra)–124 | 55 | gözləyir: `out/import_kt1_s25.sql` (41 qapalı + 2 çoxseçimli + 11 ədədi + 1 uyğunlaşdırma) | yoxdur | `KT1-S25-Qnnn` | `scan/kimya_I_bolme25_cavablar.json` |
-| 26 | Kimyəvi reaksiyaların sürətinə təsir edən amillər | 125–129 (sol, 55) | 55 | gözləyir: `out/import_kt1_s26.sql` (37 qapalı + 2 çoxseçimli + 10 ədədi + 6 uyğunlaşdırma) | yoxdur | `KT1-S26-Qnnn` | `scan/kimya_I_bolme26_cavablar.json` |
+| 25 | Kimyəvi reaksiyaların sürəti və ona aid hesablamalar (fəsil "Kimyəvi reaksiyaların sürəti. Kimyəvi tarazlıq") | 120 (sol, başlıqdan sonra)–124 | 55 | yükləndi: `out/import_kt1_s25.sql` (41 qapalı + 2 çoxseçimli + 11 ədədi + 1 uyğunlaşdırma) | yoxdur | `KT1-S25-Qnnn` | `scan/kimya_I_bolme25_cavablar.json` |
+| 26 | Kimyəvi reaksiyaların sürətinə təsir edən amillər | 125–129 (sol, 55) | 55 | yükləndi: `out/import_kt1_s26.sql` (37 qapalı + 2 çoxseçimli + 10 ədədi + 6 uyğunlaşdırma) | yoxdur | `KT1-S26-Qnnn` | `scan/kimya_I_bolme26_cavablar.json` |
+| 27 | Kimyəvi tarazlıq və ona təsir edən amillər | 129 (sağ)–137 (sol, 82) | 82 | yükləndi: `out/import_kt1_s27.sql` (63 qapalı + 14 çoxseçimli + 3 ədədi + 2 uyğunlaşdırma) | yoxdur | `KT1-S27-Qnnn` | `scan/kimya_I_bolme27_cavablar.json` |
+| 28 | Kimyəvi tarazlığa aid hesablamalar | 137 (sol, y~600)–140 (sağ, 44) | 44 | yükləndi: `out/import_kt1_s28.sql` (25 qapalı + 3 çoxseçimli + 14 ədədi + 2 uyğunlaşdırma) | yoxdur | `KT1-S28-Qnnn` | `scan/kimya_I_bolme28_cavablar.json` |
+| 29 | Məhlullar. Həllolma əmsalı (fəsil "Məhlullar") | 143–148 | 72 | yükləndi: `out/import_kt1_s29.sql` (47 qapalı + 4 çoxseçimli + 17 ədədi + 4 uyğunlaşdırma) | yoxdur | `KT1-S29-Qnnn` | `scan/kimya_I_bolme29_cavablar.json` |
+| 30 | Həll olan maddənin kütlə payı | 149–159 (sol, 154) | 154 | yükləndi: `out/import_kt1_s30.sql` (111 qapalı + 7 çoxseçimli + 30 ədədi + 6 uyğunlaşdırma) | yoxdur | `KT1-S30-Qnnn` | `scan/kimya_I_bolme30_cavablar.json` |
+| 31 | Molyar qatılıq | 159 (sol, y~880)–162 (sağ, 52) | 52 | yükləndi: `out/import_kt1_s31.sql` (24 qapalı + 6 çoxseçimli + 22 ədədi) | yoxdur | `KT1-S31-Qnnn` | `scan/kimya_I_bolme31_cavablar.json` |
 
 Cavablar kitabda səhifə 331-dən başlayır. Bölmə 6-nın açarı sahib tərəfindən şəkil kimi verildi (kitab səhifə 22–25 = pdf 21–24).
 
@@ -175,3 +180,29 @@ Cavablar kitabda səhifə 331-dən başlayır. Bölmə 6-nın açarı sahib tər
 - **Avtomatik təmizləmədən sonra hər şəklə bax:** bölmə 5-də qonşu izlərini silən skript 17-ci sualın D və E variantlarını, maska isə 15-ci sualın "43,8" rəqəmini silmişdi. İkisi də gözlə yoxlamada tutuldu.
 - **Əyri səhifə:** bölmə 5-in 15, 17, 18, 19 və 27-ci şəkilləri əl ilə düzəldilib, `--recrop` onları pozar.
 - **`--recrop` tələsi:** manifestin `box` sütununda `y1` sualın aşağı sərhədi deyil, ilk kəsimdə ona 12 piksel pay artıq əlavə olunub. `--recrop` bir də 12 əlavə edir. Yenidən kəsməzdən əvvəl toxunmadığın suallarda `y1`-dən 12 çıx, əl ilə ölçdüyün suallarda isə `y1 = real sərhəd - 12` yaz.
+
+## Bölmə 27 (2026-11-12)
+- Əmr: `--first 129 --last 137 --start 1 --stop 82 --skip-above 129:0:9999 --skip-above 129:1:80`. 1–63 qapalı, 64–77 çoxseçimli, 78–80 ədədi (1, 7, 15), 81–82 uyğunlaşdırma (3 sətir). Açar pdf 338-in aşağısında (kitab səh. 339), oxunaqlı.
+- OCR 13 sual tapmadı (1, 7, 8, 12, 13, 27, 34, 35, 39, 52, 55, 65, 71), əl ilə ölçüldü. 13, 39, 75 növbəti sütunda davam edir. 82-nin altında bölmə 28-in başlığı kəsildi (y1=575). 27-nin yuxarısında başqa sualdan 2 sətir qalıb (kiçik qüsur, saxlanıb). Əvvəlki manifest `manifest.orig.json`-dadır.
+- Yükləmə: `out/import_kt1_s27.sql` SQL Editor-da, `out/upload_kitab/` (82 `.webp`) Storage-ə.
+
+## Bölmə 28 (2026-11-12)
+- Əmr: `--first 137 --last 140 --start 1 --stop 44 --skip-above 137:0:610`. 1–25 qapalı, 26–28 çoxseçimli, 29–42 ədədi, 43–44 uyğunlaşdırma. Açar pdf 338-in yuxarısında (kitab 339). 35–37 hesablanıb yoxlandı.
+- OCR 17 sual tapmadı (2, 5, 10, 14–21, 29, 33, 35–37, 42) və 3, 4-ü variantlardakı "3,5" / "1,5" ədədlərində səhv tapdı: hamısı əl ilə. **Səhifə 138-də OCR sütun sərhədini 403 tapdı (səhv), manifestdə 515 qoyuldu** (`--recrop`-dan əvvəl yenidən yazılmalıdır, `add` onu dəyişmir). 15 və 42 növbəti sütunda davam edir (`cont_top`: 16-da 65, 43-də 85). 44-ün altında "Ətraflı yazılı cavab" başlığı kəsildi (y1=1085).
+- Yükləmə: `out/import_kt1_s28.sql` SQL Editor-da, `out/upload_kitab/` (44 `.webp`) Storage-ə.
+
+## Bölmə 29 (2026-11-12)
+- Fəsil "Məhlullar" başlayır (pdf 141 sağ – 142 "Ətraflı yazılı cavab" atlandı). Əmr: `--first 143 --last 148 --start 1 --stop 72 --skip-above 143:0:150`. 1–47 qapalı, 48–51 çoxseçimli, 52–68 ədədi (62 = 12,5), 69–72 uyğunlaşdırma (69: 2 sətir). Açar pdf 339-un aşağısında (kitab 340). 16–19 hesablanıb yoxlandı.
+- OCR 20 sual tapmadı (14–19, 39–49, 53, 61, 62) və 20, 50-ni səhv yerdə tapdı: hamısı əl ilə. Səhifə 146 demək olar ki, tamamilə əl ilədir. 35 və 67 növbəti sütunda davam edir. Əvvəlki manifest `manifest.orig.json`-dadır.
+- Yükləmə: `out/import_kt1_s29.sql` SQL Editor-da, `out/upload_kitab/` (72 `.webp`) Storage-ə.
+
+## Bölmə 30 (2026-11-12)
+- Əmr: `--first 149 --last 159 --start 1 --stop 154 --skip-above 149:0:130`. 1–111 qapalı, 112–114 və 116–119 çoxseçimli, 115 və 120–148 ədədi (115 = 200: m₁+m₂, yoxlandı), 149–154 uyğunlaşdırma. Açar pdf 340 (kitab 341). 12, 13, 15 yoxlandı.
+- **`scan_segment.py` təkmilləşdirildi:** (1) `NOT_NUMBER`: sətrin əvvəlindəki düstur/vahid parçaları ("100x", "54ml", "18qX", "20°C", "100+x") artıq sual nömrəsi sayılmır (əvvəl "100x" 100-cü sual sayılır, sonrakı bütün nömrələr atılırdı); (2) sağ sütunun OCR-ı sərhəddən 25 px solda başlayır (nömrə sərhədə çıxanda "89." "9." oxunurdu). Nəticə: 98 → 112 / 154 tapıldı. Köhnə bölmələrə təsir etmir (yalnız yeni OCR-da).
+- Qalan 42 sual əl ilə ölçüldü (siyahı `scan/kimya_I_bolme30/manual_add.json`, sonlar `manual_end.json`). 40 və 114 növbəti sütunda davam edir. 154-ün altında "Molyar qatılıq" başlığı kəsildi (y1=850).
+- Yükləmə: `out/import_kt1_s30.sql` SQL Editor-da, `out/upload_kitab/` (154 `.webp`) Storage-ə.
+
+## Bölmə 31 (2026-11-12)
+- Əmr: `--first 159 --last 162 --start 1 --stop 52 --skip-above 159:0:880` (recrop-da Q1 top=878). 1–24 qapalı, 25–30 çoxseçimli, 31–52 ədədi (31 = `1,0`: tətbiq `1` ilə eyni sayır). 32–35 yoxlandı.
+- OCR 14 sual tapmadı (7, 8, 10, 11, 32, 34, 35, 39–45), əl ilə. Səhifə 162 sol sütun əyridir (40–45), `tilt` lazım olmadı. 52-nin altında "Ətraflı yazılı cavab" başlığı kəsildi (y1=1015). Q1-in yuxarısında başlığın qırığı qalıb (kiçik qüsur).
+- Yükləmə: `out/import_kt1_s31.sql` SQL Editor-da, `out/upload_kitab/` (52 `.webp`) Storage-ə.

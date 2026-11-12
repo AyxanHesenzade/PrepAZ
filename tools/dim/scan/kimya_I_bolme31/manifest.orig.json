@@ -1,0 +1,534 @@
+[
+ {
+  "number": 1,
+  "page": 159,
+  "column": 0,
+  "box": [
+   0,
+   920,
+   607,
+   1086
+  ],
+  "file": "q001.png",
+  "gutter": 610,
+  "draft_text": "1. Mohlulun molyar qathig hans formulla ifada olunur? B) C  C) m=Vp D) C= E) C="
+ },
+ {
+  "number": 2,
+  "page": 159,
+  "column": 0,
+  "box": [
+   0,
+   1074,
+   607,
+   1265
+  ],
+  "file": "q002.png",
+  "gutter": 610,
+  "draft_text": "2.Mohlulun molyar qatilig hansi formulla ifade oluna bilor? B) C= A) m=V-p AW D) C=- E) C"
+ },
+ {
+  "number": 3,
+  "page": 159,
+  "column": 0,
+  "box": [
+   0,
+   1253,
+   607,
+   1356
+  ],
+  "file": "q003.png",
+  "gutter": 610,
+  "draft_text": "3.0,5 mol/l gatiliqli 400 ml mahlulda nege mol hall olan madda var? C)0,2D)0,6E)0,15 A) 0,5B) 0,25"
+ },
+ {
+  "number": 4,
+  "page": 159,
+  "column": 0,
+  "box": [
+   0,
+   1344,
+   607,
+   1442
+  ],
+  "file": "q004.png",
+  "gutter": 610,
+  "draft_text": "4. 0,4 mol/l qatiliqli mohlulun 2 litrinda neca mol holl olan madda var? D) 0,2 A) 0,8B) 0,6 C) 0,4 E)16"
+ },
+ {
+  "number": 5,
+  "page": 159,
+  "column": 0,
+  "box": [
+   0,
+   1430,
+   607,
+   1628
+  ],
+  "file": "q005.png",
+  "gutter": 610,
+  "draft_text": "5.Qatilig: 0,4 mol/l olan 0,5 / NaOH mohlulundaki NaOH-nkatlasiniqramla hesablayinM,(NaOH)-40 C)8 D) 10 B)4 E) 2 A)6 -160"
+ },
+ {
+  "number": 6,
+  "page": 159,
+  "column": 1,
+  "box": [
+   613,
+   66,
+   1080,
+   984
+  ],
+  "file": "q006.png",
+  "gutter": 610,
+  "draft_text": "6. Molyar qatiligin vahidini gostarin. B) mol A) mol mol E) D) q-ml ml Mahlulun moly Mahlulun Mahlulda hacmi, ml qatilgi, mol/l 100 0,2mol KCl C-nimuayyanedin (mol/l) D) 0,5 C)2 B) 1 E)2,5 A) 1,5 qrafikinigostorin. C (mol/l) C(mol/) B) A) C (mol/) C(mol/) D) V() c (mol/l) E)"
+ },
+ {
+  "number": 9,
+  "page": 159,
+  "column": 1,
+  "box": [
+   613,
+   972,
+   1080,
+   1626
+  ],
+  "file": "q009.png",
+  "gutter": 610,
+  "draft_text": "9. Halledicinin hacmi sabit olduqda mahlulun molyar qatiliginin hall olan maddanin kutlasindon asihilhg qrafikini gosterin. C (mo/) C(mol/l) A) B) m(g) m (@) C (mol/) C(mol/D) C) D) m(@ (b)  C (mol/l) E) 50-"
+ },
+ {
+  "number": 12,
+  "page": 160,
+  "column": 0,
+  "box": [
+   0,
+   423,
+   494,
+   604
+  ],
+  "file": "q012.png",
+  "gutter": 497,
+  "draft_text": "12.Hecmlarivomolyarqatliqlan barabor olan mehlullarda CH:OH (m) ve C,H,OH (m2) spirnlorinin kitlolorini miqayiso edin. Ar(H)-1; A.(C)=12; A.(O)=16 B) m)>m2 A)m=3m2 C) m1=m2 D)m=2m2 E)m<m2"
+ },
+ {
+  "number": 13,
+  "page": 160,
+  "column": 0,
+  "box": [
+   0,
+   592,
+   494,
+   752
+  ],
+  "file": "q013.png",
+  "gutter": 497,
+  "draft_text": "13.Molyar qatihg nadir? A)1litrmahluldahallolanmaddaninmolmiqdan B)1 litr suda hall olan maddonin mol miqdari C)1 litrmahluldahall olanmaddaninkutlasi D)100 g mahlulda hall olanmaddanin mol miqdani E)100q sudahall olanmaddoninmol miqdan"
+ },
+ {
+  "number": 14,
+  "page": 160,
+  "column": 0,
+  "box": [
+   0,
+   740,
+   494,
+   892
+  ],
+  "file": "q014.png",
+  "gutter": 497,
+  "draft_text": "14.NaOH mohlulunun 40millilitrinda8qNaOH var.Bu mol mahlulun molyar qatiligin ( )hesablayin M.(NaOH)=40 A)6 B)8 C)4 D)5 E)3"
+ },
+ {
+  "number": 15,
+  "page": 160,
+  "column": 0,
+  "box": [
+   0,
+   880,
+   494,
+   1007
+  ],
+  "file": "q015.png",
+  "gutter": 497,
+  "draft_text": "15.250mlmahlulda20gNaOHvar.Bumohlulun mol molyar qatiligini ( hesablayin.M.(NaOH)-=40 A)3 E B) 4 D)2E)0,5 C) 1"
+ },
+ {
+  "number": 16,
+  "page": 160,
+  "column": 0,
+  "box": [
+   0,
+   995,
+   494,
+   1160
+  ],
+  "file": "q016.png",
+  "gutter": 497,
+  "draft_text": "16.NaOHmahlulunun 50millilitrinda 4q natrium- hidroksid var, Bu mohlulun molyar qatligim () mol hesablayin.M,(NaOH)=40 A) 1,5 B) 2,5 D) 3 E) 2 C) 1"
+ },
+ {
+  "number": 17,
+  "page": 160,
+  "column": 0,
+  "box": [
+   0,
+   1148,
+   494,
+   1258
+  ],
+  "file": "q017.png",
+  "gutter": 497,
+  "draft_text": "mol 17.Molyar qatilig1 2 olan 2 litr kalium-hidroksid mahlulunda nece qram KOH var? M,(KOH)=56 A) 112B) 168 C)250 D)500 E) 224"
+ },
+ {
+  "number": 18,
+  "page": 160,
+  "column": 0,
+  "box": [
+   0,
+   1246,
+   494,
+   1465
+  ],
+  "file": "q018.png",
+  "gutter": 497,
+  "draft_text": "18.Su buxarlandirildiqdan sonra 100mlH.0 mohlulda natrium-hidroksidin mol) molyar qauiligin 500ml mol 0,2 qatihgh hesablayn. NaOH-m suda mohlulu A) 0,5 B)0,15 C) 0,3 D)0,25 E)0,45"
+ },
+ {
+  "number": 19,
+  "page": 160,
+  "column": 1,
+  "box": [
+   500,
+   87,
+   1080,
+   362
+  ],
+  "file": "q019.png",
+  "gutter": 497,
+  "draft_text": "19.Qrafikdo sudaholl edilmis V,mol duzunmaxtalif hocmli (Vi,V2,V)mohlullarinda maddo miqdar il (v) mohlullarn molyar qatiliqlari mol (C) arasinda asililig verilmisdir. Mohlullarin hocmlori arasindaki asihhgi mtoyyon cdin. B) Vi=V2=V3 A) Vi>V2>V3 C) Vi<V2<V3 D) V/>V>V2 E) Vi<V3<V2"
+ },
+ {
+  "number": 20,
+  "page": 160,
+  "column": 1,
+  "box": [
+   500,
+   350,
+   1080,
+   550
+  ],
+  "file": "q020.png",
+  "gutter": 497,
+  "draft_text": "20.1.200q10%-li NaOHmohlulu II.200ml0,5MNaOHmohlulu II. Sixligi 1,2 q/ml olan 200 ml NaOH mohlulu Mahlullarin hansinda hall olmus NaOH-in mol sayl hesablana bilor? C) yalniz I A) yalnuz III B) I, III D) yalniz II E) I, I"
+ },
+ {
+  "number": 21,
+  "page": 160,
+  "column": 1,
+  "box": [
+   500,
+   538,
+   1080,
+   727
+  ],
+  "file": "q021.png",
+  "gutter": 497,
+  "draft_text": "21. I. 300 q 20%-li Na0H mohlulu II. 400 ml 0,5M NaOH mohlulu III. Sixligi 1,2 q/ml olan 300 ml NaOH mohlulu Mahlullann hansinda hall olmus NaOH-inmol sayi hesablana bilar? A)yalniz II B), I C) yalniz I D)I, II E) yalnz III"
+ },
+ {
+  "number": 22,
+  "page": 160,
+  "column": 1,
+  "box": [
+   500,
+   715,
+   1080,
+   1062
+  ],
+  "file": "q022.png",
+  "gutter": 497,
+  "draft_text": "22. X duzunun Bu sixligi, molyar hololma amsal, Temperatur, qatuliq, Kh, 9 mol ml 500 125 1250 1,5 C2 Xduzunun mixtaliftemperaturlardahazirlanmis doymus mohlullarinin molyar qatiliqlan icin hansi minasibat dogrudur? A) 1,5C=C2 B) Ci=1,5C2 C) Cr=2C2 D) C=C2 E) 2Ci=C2"
+ },
+ {
+  "number": 23,
+  "page": 160,
+  "column": 1,
+  "box": [
+   500,
+   1050,
+   1080,
+   1190
+  ],
+  "file": "q023.png",
+  "gutter": 497,
+  "draft_text": "23. X tursusunun 90%-li mohlulunmn sixhgi p () olarsa, bu mohlulun I litrindo neco mol tursu var? 900p 100p W006 100 A) B) C) E) 10pM D) pM"
+ },
+ {
+  "number": 24,
+  "page": 160,
+  "column": 1,
+  "box": [
+   500,
+   1178,
+   1080,
+   1502
+  ],
+  "file": "q024.png",
+  "gutter": 497,
+  "draft_text": "24. Molyar kitlsi M( )0lanXtursusunun80%-li mol mohluhumun sixigi p()olarsa, bu mohluun 1 litrinda neco mol su var? M(H,O)-18 800p 800M 200p B) C) 18 18 200 D) E)20pM PM 161-"
+ },
+ {
+  "number": 25,
+  "page": 161,
+  "column": 0,
+  "box": [
+   0,
+   116,
+   555,
+   464
+  ],
+  "file": "q025.png",
+  "gutter": 558,
+  "draft_text": "25. C,mol/1 0,8 0,4 mahlulun heemi, litr 0.5 Dogru ifadaleri miyyon edin. 1. Mohlula su olava edilir 2. Mahlula hall olan madda olava edilir 3. Mohlulda hallolan maddanin miqdan dayismir 4. Mohlulun molyar qatubgi doyismir"
+ },
+ {
+  "number": 26,
+  "page": 161,
+  "column": 0,
+  "box": [
+   0,
+   452,
+   555,
+   660
+  ],
+  "file": "q026.png",
+  "gutter": 558,
+  "draft_text": "26. No dogrudur? 1. Tazyiq artdiqda qazlarin suda holl olmasi azalir 2. Temperatur artdiqda aksor bark maddalorin suda hallolmasiartur 3.Hall olan maddonin kutla payi olcusuz komiyyotdi mol 4. Molyar qatligin vahidi"
+ },
+ {
+  "number": 27,
+  "page": 161,
+  "column": 0,
+  "box": [
+   0,
+   648,
+   555,
+   858
+  ],
+  "file": "q027.png",
+  "gutter": 558,
+  "draft_text": "27. Na dogru deyin? 1. Temperatur artdiqda qazlarin suda holl olmasi artiy 2. Temperatur artdiqda oksor bark maddolerin hall olmastartir 3.Holl olan maddanin kutle payi olcisuzkamiyyotdi 4. Molyar qatilgin vahidi -dr"
+ },
+ {
+  "number": 28,
+  "page": 161,
+  "column": 0,
+  "box": [
+   0,
+   846,
+   555,
+   1142
+  ],
+  "file": "q028.png",
+  "gutter": 558,
+  "draft_text": "28. Mohluldaki Mohlulun Mohlulun KCl-un molyar qatilig! hecmi, ml migdan, mol 200 0,1 C2 100 0,2 Cfve Ca-ni mugayisa edin. 2. C<C2 1. C>C2 4. CG,=4C2 3. 4C(=C2"
+ },
+ {
+  "number": 29,
+  "page": 161,
+  "column": 0,
+  "box": [
+   0,
+   1130,
+   555,
+   1306
+  ],
+  "file": "q029.png",
+  "gutter": 558,
+  "draft_text": "29. 100ml4M 250ml4M 50ml8M 300ml2M NaOH NaOH NaOH HOEN mohlulu mohlulu mohlulu mahlulu Hansi gablarda hall olan maddanin kutlalari barabardir?M.(NaOH)=40"
+ },
+ {
+  "number": 30,
+  "page": 161,
+  "column": 0,
+  "box": [
+   0,
+   1294,
+   555,
+   1468
+  ],
+  "file": "q030.png",
+  "gutter": 558,
+  "draft_text": "200ml2M 30. 400 ml 1M 300ml1,5M 500ml2M HON HO'N HOUN NaOH mahlulu mshluiu mohlulu mohlulu Hansi gablarda hall olan maddoninktitloleri borabordir?M(NaOH)=40"
+ },
+ {
+  "number": 31,
+  "page": 161,
+  "column": 0,
+  "box": [
+   0,
+   1456,
+   555,
+   1575
+  ],
+  "file": "q031.png",
+  "gutter": 558,
+  "draft_text": "31. 11,2 q kalium-hidroksidi suda hall etmokla 200 ml mohlul hazirlanib, Bu mohlulun molyar qatligim (mol) hesablayin.M,(KOH)=56"
+ },
+ {
+  "number": 33,
+  "page": 161,
+  "column": 1,
+  "box": [
+   561,
+   282,
+   1080,
+   640
+  ],
+  "file": "q033.png",
+  "gutter": 558,
+  "draft_text": "33. kitlosini (qramla) hesablayin. M(H2SO4)-98 mol hesablayn fdir mo )hesablaym."
+ },
+ {
+  "number": 36,
+  "page": 161,
+  "column": 1,
+  "box": [
+   561,
+   628,
+   1080,
+   729
+  ],
+  "file": "q036.png",
+  "gutter": 558,
+  "draft_text": "36. Qatiligi 0,2 mol/l olan 500 ml sulfat tursusu mehlulunda neco qram tursu var? M.(H2SO4)-98"
+ },
+ {
+  "number": 37,
+  "page": 161,
+  "column": 1,
+  "box": [
+   561,
+   717,
+   1080,
+   813
+  ],
+  "file": "q037.png",
+  "gutter": 558,
+  "draft_text": "37.Qatilig1 0,1 mo/l olan 250 ml natrium-hidroksid dir mohlulunda neca qram galavivar? M(NaOH)-40"
+ },
+ {
+  "number": 38,
+  "page": 161,
+  "column": 1,
+  "box": [
+   561,
+   801,
+   1080,
+   1648
+  ],
+  "file": "q038.png",
+  "gutter": 558,
+  "draft_text": "38.Gindolik hayatda istifada etdiyimiz bir sira mohlllar mixtolif mogsedlor tictin hazirlanir.Masalan, duzlu su mahlulu tibbimeqsodlarlo,xisusan da yaralann tomizlenmesi va soyuqdayme zamam bunun tixamqhigim aradan qaldirmag ticin istifada edilir Duzhu su mohlulu natrium-xloridin su ile qarnsigidir. Duzlu suyun hazrlanmasi ictin miayyon miqdarda duz suya alave olunaraq tam hall edilir. Bu zaman su molekullanmin tesirindon mehlulda Na v C ionlari omolo golir.Hacmi 300 ml olan duz 0,8 mol NaCl var. Bu mahlula 200 mehlulunda ml su alava edilmisdir. Alinan mohlulda Na ionlarinn molyar qathiginm (mol/) hesablayn (Duzun dissosiasiya daracosi 75%-dir). zoror vura bilar. Bir sira hallarda maddolorin miqdarnm azaltmaq ucin kimyovi maddalerle duz tamamilo cokintuya cevrilsin? M.[Ca(HCO3)2]=162 162"
+ },
+ {
+  "number": 46,
+  "page": 162,
+  "column": 0,
+  "box": [
+   0,
+   977,
+   490,
+   1221
+  ],
+  "file": "q046.png",
+  "gutter": 493,
+  "draft_text": "46.50 qX mayesi va (b)  100 smYmayesi qansdarildiqda alinan 75 mohlulun sixhigim 25 hesablayin 50 V (sm²)"
+ },
+ {
+  "number": 47,
+  "page": 162,
+  "column": 0,
+  "box": [
+   0,
+   1209,
+   490,
+   1462
+  ],
+  "file": "q047.png",
+  "gutter": 493,
+  "draft_text": "47.80 gXmayesi va 100 sm Y mayesi m (q qansdirildiqda alinan 80 mohlulun sixhigini 40 hesablayin 50 V(sm) barabordir)"
+ },
+ {
+  "number": 48,
+  "page": 162,
+  "column": 1,
+  "box": [
+   496,
+   114,
+   1080,
+   295
+  ],
+  "file": "q048.png",
+  "gutter": 493,
+  "draft_text": "48. Sixligi 1,2 1 olan0,5/2,5Mduzmahluluna neco m! qram su alava etmak lazimdir ki, 20%-li mahlul M(duz)-160-9 alinsn? mol"
+ },
+ {
+  "number": 49,
+  "page": 162,
+  "column": 1,
+  "box": [
+   496,
+   283,
+   1080,
+   430
+  ],
+  "file": "q049.png",
+  "gutter": 493,
+  "draft_text": "49. Sixig1 1,2 , olan 0,5 / 2 M duz mahluluna neca m/ qram su alava etmak lazimdir ki, 10%-li mahlul alinsn? M(duz)=120- mol"
+ },
+ {
+  "number": 50,
+  "page": 162,
+  "column": 1,
+  "box": [
+   496,
+   418,
+   1080,
+   668
+  ],
+  "file": "q050.png",
+  "gutter": 493,
+  "draft_text": "50. 100 ml 200 ml xmol/IHCI 02mo/INaOH mahulu mohlulu Qablardaki sulu mahlullara artiqlamasi ila Zn metali alava etdikda hor iki qabdan eyni hacmda (n.s.)H2 qazi ayrilir.x-i hesablayin."
+ },
+ {
+  "number": 51,
+  "page": 162,
+  "column": 1,
+  "box": [
+   496,
+   656,
+   1080,
+   885
+  ],
+  "file": "q051.png",
+  "gutter": 493,
+  "draft_text": "51. 100ml 200ml xmol/IHCI 0,3mo/NaOH mahlulu mahlulu Qablardaki sulu mohlullara artiqlamasi ila Zn metali olava etdikdo har iki qabdan eyni hocmda (n.s.)H2 qazi aynlr.x-i hesablayin."
+ },
+ {
+  "number": 52,
+  "page": 162,
+  "column": 1,
+  "box": [
+   496,
+   873,
+   1080,
+   1540
+  ],
+  "file": "q052.png",
+  "gutter": 493,
+  "draft_text": "52.1.200 ml 2M H,SO4mohluluna x qram ZnO alava olunduqda normal duz almtr. 2.200ml 0,5M NaOH mahluluna y qram SO2alava olundugdaiso turs duz alinir. x+ty comini (qramla) hesablayin. M(ZnO)=81, M(SO2)=64 Otraflt yazil cavab talab olunan tapsiriqlar 1. 200 q 10,6%-li natrium-karbonat mahlulu ila 400 g 8,2%-li kalsium-nitrat mahlulu qarnisdinlmisdir. Reaksiya axira qadar gedarsa, alnan mahlulun kitlasini (1) va mohlulda olan duzun katlasini (q-la) (2) hesablaym. A,(Na)=23, A(C)-12, A(O)=16, A.(Ca)=40, A,(N)=14 2. Sixhig 1,2 q/ml olan 40%-li duz mohlulunun 200ml-nasu alavo edilmakla30%-limahlul hazirlanmisdir. lava edilen suyun kotlasini (q-la) (1) vea mahlulda duzun kutlasini (q-la) (2) hesablayin 3.Maayyon soraitdo hallolma amsali 500 q/l olan doymus mohlul hazirlamaq acan 600q suda maksiumum nega qram duz holl etmok lazimdir (1)? Mehlula 100 q su lava edildikdon sonra duzun katlo payimi (%) hesablayin (2)."
+ }
+]

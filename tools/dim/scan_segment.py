@@ -20,6 +20,8 @@ from rapidocr_onnxruntime import RapidOCR
 
 # the character after the number must not be a dash: the page number "-15-" reads as "15-"
 NUMBER = re.compile(r"^\s*(\d{1,3})(?!\d)\s*[.,)]?\s*[^\s\-–—]")
+# formula / unit fragments that start a line and look like a number: "100x", "54ml", "18qX", "20°C", "100+x"
+NOT_NUMBER = re.compile(r"^\s*\d{1,4}\s*(?:[A-Za-z]{1,3}(?![A-Za-z])|°|[+\-−=·×/])")
 SCALE = 1.5          # OCR works on an enlarged copy of each column
 PAD = 6
 MAX_JUMP = 30
@@ -92,7 +94,8 @@ def page_candidates(engine, img):
     sep = gutter_from_lines(full, w) or find_separator(img)
     cols = []
     for a, b in ((0, sep - 3), (sep + 3, w)):
-        lines = ocr_column(engine, img, a, b)
+        # right column: start a little left of the gutter, numbers often stick out into it ("89." read as "9.")
+        lines = ocr_column(engine, img, a if a == 0 else max(0, a - 25), b)
         for ln in full:  # lines the column pass did not see (same place = overlapping box)
             cx = (ln[0] + ln[2]) / 2
             if a <= cx < b and not any(abs(ln[1] - m[1]) < 12 and abs(ln[0] - m[0]) < 40 for m in lines):
@@ -104,7 +107,7 @@ def page_candidates(engine, img):
         cands = []
         for x0, y0, x1, y1, text in sorted(lines, key=lambda l: l[1]):
             m = NUMBER.match(text)
-            if m and x0 <= left_edge + LEFT_TOLERANCE * w:
+            if m and not NOT_NUMBER.match(text) and x0 <= left_edge + LEFT_TOLERANCE * w:
                 cands.append((int(m.group(1)), y0, x0, text))
         bottom = max(l[3] for l in lines if l[1] < h * 0.96)
         cols.append((cands, a, b, bottom, lines))
