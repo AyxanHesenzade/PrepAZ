@@ -14,9 +14,15 @@ enum TourStep {
   weakPlaces,
   mistakes,
   topics,
+  offline,
+  progress,
+  compete,
   done;
 
   bool get inDrawer => index >= language.index && index <= signOut.index;
 
-  bool get onSubjectCard => index >= practice.index && index <= topics.index;
+  bool get onSubjectCard => index >= practice.index && index <= offline.index;
+
+  /// Alt menyunun düymələri (yalnız `MainShell`-də var).
+  bool get onBottomNav => this == progress || this == compete;
 }

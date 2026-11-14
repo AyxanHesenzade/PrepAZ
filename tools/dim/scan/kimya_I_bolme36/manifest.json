@@ -1,0 +1,1264 @@
+[
+ {
+  "number": 1,
+  "page": 184,
+  "column": 0,
+  "box": [
+   0,
+   1212,
+   520,
+   1298
+  ],
+  "file": "q001.png",
+  "gutter": 506,
+  "draft_text": "manual"
+ },
+ {
+  "number": 2,
+  "page": 184,
+  "column": 0,
+  "box": [
+   0,
+   1298,
+   520,
+   1331
+  ],
+  "file": "q002.png",
+  "gutter": 506,
+  "draft_text": "manual"
+ },
+ {
+  "number": 3,
+  "page": 184,
+  "column": 0,
+  "box": [
+   0,
+   1343,
+   520,
+   1433
+  ],
+  "file": "q003.png",
+  "gutter": 506,
+  "draft_text": "manual"
+ },
+ {
+  "number": 4,
+  "page": 184,
+  "column": 1,
+  "box": [
+   497,
+   60,
+   1080,
+   196
+  ],
+  "file": "q004.png",
+  "gutter": 506,
+  "draft_text": "manual"
+ },
+ {
+  "number": 5,
+  "page": 184,
+  "column": 1,
+  "box": [
+   497,
+   208,
+   1080,
+   322
+  ],
+  "file": "q005.png",
+  "gutter": 506,
+  "draft_text": "5. NaCl-un suda mahlulunun elektrolizi zamani elektrodlarda hansi maddalar ayrilar? A) Cl2 va O2 B) Na Va Cl2 C) Na ve H2 D) H2 vs 02 E) H2 va Cl2"
+ },
+ {
+  "number": 6,
+  "page": 184,
+  "column": 1,
+  "box": [
+   497,
+   322,
+   1080,
+   435
+  ],
+  "file": "q006.png",
+  "gutter": 506,
+  "draft_text": "6. CaClz duzunun mahlulunun elektrolizi zamani mahlulda hansi madda alinir? A) Ca B) Ca(OHD2 C) Cao D) HCI E) CaC2"
+ },
+ {
+  "number": 7,
+  "page": 184,
+  "column": 1,
+  "box": [
+   497,
+   435,
+   1080,
+   526
+  ],
+  "file": "q007.png",
+  "gutter": 506,
+  "draft_text": "7. Hanst ionun mehlulda elektrolizi zamant oksidlosma qabiliyyoti yuksokdir? AB B) FC) OH D)T E)CT"
+ },
+ {
+  "number": 8,
+  "page": 184,
+  "column": 1,
+  "box": [
+   497,
+   526,
+   1080,
+   620
+  ],
+  "file": "q008.png",
+  "gutter": 506,
+  "draft_text": "8. Hansi kation elektroliz prosesinda daha asan reduksiya olunur? A) NatB)K*C)HgtD)Zn2+ D) Zn2+ E) Fe2+"
+ },
+ {
+  "number": 9,
+  "page": 184,
+  "column": 1,
+  "box": [
+   497,
+   620,
+   1080,
+   735
+  ],
+  "file": "q009.png",
+  "gutter": 506,
+  "draft_text": "9.KNO, duzunun suda mohlulunun elektrolizi zamani elektrodlarda hansi maddalar aynilar? A) H2 va NO2 B) K va 02 C) Hz vs N20 D) H2 Va O2 E) K ve NO2"
+ },
+ {
+  "number": 10,
+  "page": 184,
+  "column": 1,
+  "box": [
+   497,
+   735,
+   1080,
+   853
+  ],
+  "file": "q010.png",
+  "gutter": 506,
+  "draft_text": "10.CuSO.-an suda mahlulunun elektrolizi zamanmi elektrodlarda hansi maddolar aynlar? A) Cu v 02 B) H2 vo O2 C) H2 va Cu D) H2 va SO3 E) Cu vo SO2"
+ },
+ {
+  "number": 11,
+  "page": 184,
+  "column": 1,
+  "box": [
+   497,
+   853,
+   1080,
+   990
+  ],
+  "file": "q011.png",
+  "gutter": 506,
+  "draft_text": "11.Hans duzlarn suda mohlullarinin elektrolizi zamani mohlulda tursu alinar? I Na2SO4II. AgNO3 LCuSO4IV.CuCl2 A) I, IV C)I, II D) III, IV E)I,m"
+ },
+ {
+  "number": 12,
+  "page": 184,
+  "column": 1,
+  "box": [
+   497,
+   990,
+   1080,
+   1204
+  ],
+  "file": "q012.png",
+  "gutter": 506,
+  "draft_text": "12. Na2SO4 duzunun suda mahlulunun elektrolizi zamani elektrodlarda hansi maddalar alinar? katodda anodda A) H2 02 B) H2 Na SO2 vo H2 C) Na. D) H2 vo Na SO2 vo 02 H2 H2S ve O2 E)"
+ },
+ {
+  "number": 13,
+  "page": 184,
+  "column": 1,
+  "box": [
+   497,
+   1204,
+   1080,
+   1343
+  ],
+  "file": "q013.png",
+  "gutter": 506,
+  "draft_text": "13. Hansi surada olan har iki duzun suda mohlulunun elektrolizi zamanu katodda yalniz hidrogen aynlar? A) AgNO3, CaCl2 B) NaNO3, CuCl2 D) Na2S, Ca(NO3)2 C) K2SO4, Hg(NO3)2 E)CuSO4,Al(NO3"
+ },
+ {
+  "number": 14,
+  "page": 184,
+  "column": 1,
+  "box": [
+   497,
+   1343,
+   1080,
+   1521
+  ],
+  "file": "q014.png",
+  "gutter": 506,
+  "draft_text": "14. AgNO3, Pb(NO3)2 va Cu(NO3)2-nin birgo mahlullarinin elektrolizi zaman katodda metallar aun hansi ardicilliqla aynlar? A) Ag, Pb, CuB) Pb, Cu, Ag C) Cu, Pb, Ag Mg D) Pb, Ag, CuE) Ag, Cu, Pb )gCu -185-"
+ },
+ {
+  "number": 15,
+  "page": 185,
+  "column": 0,
+  "box": [
+   0,
+   96,
+   557,
+   230
+  ],
+  "file": "q015.png",
+  "gutter": 543,
+  "draft_text": "15. Natrium-sulfidin suda mehlulunun elektrolizi zamani elektrodlarda hanst maddalar alnar? C) H2 ve SO2 B) S v H2 A) O2 Va H2 E) H2S va Na D) SO2 ve H2"
+ },
+ {
+  "number": 16,
+  "page": 185,
+  "column": 0,
+  "box": [
+   0,
+   230,
+   557,
+   357
+  ],
+  "file": "q016.png",
+  "gutter": 543,
+  "draft_text": "16. Mg(NO3)2 mahlulunun elektrolizi zaman) elektrodlarda hansi maddalar alinar? C) H2 va 02 B) H2 ve SO2 A) H2 vo Na E) 02 va SO2 D) Na va 02"
+ },
+ {
+  "number": 17,
+  "page": 185,
+  "column": 0,
+  "box": [
+   0,
+   357,
+   557,
+   476
+  ],
+  "file": "q017.png",
+  "gutter": 543,
+  "draft_text": "17. Hansi prosesin komoyi ilo sonayedo Na va Cl2 alnr? C) krekinqle B) korroziya ila A) hidrolizle E)pirolizlo D) elektrolizla"
+ },
+ {
+  "number": 18,
+  "page": 185,
+  "column": 0,
+  "box": [
+   0,
+   476,
+   557,
+   598
+  ],
+  "file": "q018.png",
+  "gutter": 543,
+  "draft_text": "18. Hansi prosesin komayi ila sonayeda qolavi metallar alinir? C) krekinqla B) korroziya ila A) hidrolizla E)pirolizla D) elektrolizla"
+ },
+ {
+  "number": 19,
+  "page": 185,
+  "column": 0,
+  "box": [
+   0,
+   598,
+   557,
+   768
+  ],
+  "file": "q019.png",
+  "gutter": 543,
+  "draft_text": "19. Hanst halda anionlarin reduksiyaedicilik qabiliyyati azalur? B) OH, CI, Br A)I, CF, OH D) I, Br, s?- C) BI,I, OH E) SO Cr, Br"
+ },
+ {
+  "number": 20,
+  "page": 185,
+  "column": 0,
+  "box": [
+   0,
+   768,
+   557,
+   922
+  ],
+  "file": "q020.png",
+  "gutter": 543,
+  "draft_text": "20.Hans halda kationlarin oksidlasdiricilik qabiliyyoti artr? B) A13t, Pb2t, Fe2* A) Zn*, Cu2, Ag. C) Pb2t, A'+, Fe2+ D) Pb2t, Fe2t, A13+ E) Fe2t, Al't, Pb2"
+ },
+ {
+  "number": 21,
+  "page": 185,
+  "column": 0,
+  "box": [
+   0,
+   922,
+   557,
+   1042
+  ],
+  "file": "q021.png",
+  "gutter": 543,
+  "draft_text": "21.Hansi duzun suda mehlulunun elektrolizi zaman1 katodda su reduksiya olunur? A) Hg(NO3)2 B) CuCl2 C) KNO3 D) AgNO, E) CuBr2"
+ },
+ {
+  "number": 22,
+  "page": 185,
+  "column": 0,
+  "box": [
+   0,
+   1042,
+   557,
+   1154
+  ],
+  "file": "q022.png",
+  "gutter": 543,
+  "draft_text": "22. Hansi duzun suda mahlulunun elektrolizi zamami anodda yalniz su oksidlasir? A) Na2SO4 B) NaBr C) NazS D) NaCI E) Nal"
+ },
+ {
+  "number": 23,
+  "page": 185,
+  "column": 0,
+  "box": [
+   0,
+   1154,
+   557,
+   1278
+  ],
+  "file": "q023.png",
+  "gutter": 543,
+  "draft_text": "23. H,0+CusO, elektroliz, Cu+0,+X X maddasini muayyan edin. A) Cu(HSO3)2 B) H2S C) HSO3 D) H2SO4 E) Cu(HS)2 X maddasini muayyon edin. A)H2O2B) O,C) H2D) SO E) 02"
+ },
+ {
+  "number": 24,
+  "page": 185,
+  "column": 0,
+  "box": [
+   0,
+   1290,
+   557,
+   1365
+  ],
+  "file": "q024.png",
+  "gutter": 543,
+  "draft_text": "manual"
+ },
+ {
+  "number": 25,
+  "page": 185,
+  "column": 0,
+  "box": [
+   0,
+   1377,
+   557,
+   1532
+  ],
+  "file": "q025.png",
+  "gutter": 543,
+  "draft_text": "25.Hansi sirada metal ionlan oksidlasdiricilik xassasinin artmasi ile dazulmasdar? A) Ca't, Ag, Fe.* B) Ca?t, Fe2t, Cu* C) Fet. Cu, Ca D) Mg**,Fe2t,Ca2+ E) Curt, Pe't, Ca"
+ },
+ {
+  "number": 26,
+  "page": 185,
+  "column": 1,
+  "box": [
+   534,
+   88,
+   1080,
+   156
+  ],
+  "file": "q026.png",
+  "gutter": 543,
+  "draft_text": "manual"
+ },
+ {
+  "number": 27,
+  "page": 185,
+  "column": 1,
+  "box": [
+   534,
+   168,
+   1080,
+   331
+  ],
+  "file": "q027.png",
+  "gutter": 543,
+  "draft_text": "manual"
+ },
+ {
+  "number": 28,
+  "page": 185,
+  "column": 1,
+  "box": [
+   534,
+   343,
+   1080,
+   510
+  ],
+  "file": "q028.png",
+  "gutter": 543,
+  "draft_text": "28. NazSO4 ve KNO, duzlan qarisiginin suda maddoler alinar? C) H2, O2 B) Na, K, H2 A) SOz, Na, K E) Na, O2, SO2 D) H2, NO2 elektrolizi zamani elektrodlarda ilk anda hansi maddalar ayrilar? B) H2, O2C) H, NO2, S0, C) H2, NO2, SO2 A) H2, Cl2 E) Na, K, Cl2, O2 D) H2, O2, Cl2"
+ },
+ {
+  "number": 29,
+  "page": 185,
+  "column": 1,
+  "box": [
+   534,
+   522,
+   1080,
+   641
+  ],
+  "file": "q029.png",
+  "gutter": 543,
+  "draft_text": "manual"
+ },
+ {
+  "number": 30,
+  "page": 185,
+  "column": 1,
+  "box": [
+   534,
+   653,
+   1080,
+   878
+  ],
+  "file": "q030.png",
+  "gutter": 543,
+  "draft_text": "30. Hansi sirada anionlar mohlulda elektroliz zamanr reduksiyaedicilik xasselarinin azalmas ile duizulmusdur? A) I, SO?, OH B) I, OH, SO? D) SO,OH, C) OH,SO?, I E) OH,I, So"
+ },
+ {
+  "number": 31,
+  "page": 185,
+  "column": 1,
+  "box": [
+   534,
+   878,
+   1080,
+   1020
+  ],
+  "file": "q031.png",
+  "gutter": 543,
+  "draft_text": "31. Hansi duzlarin suda mehlullarinin elektrolizi zaman! mahlulda esas alinar? III CusO,IV.CaCh I Na2SO4II KCI C) I, II A) III, IV B) I, II D) II, IV"
+ },
+ {
+  "number": 32,
+  "page": 185,
+  "column": 1,
+  "box": [
+   534,
+   1020,
+   1080,
+   1204
+  ],
+  "file": "q032.png",
+  "gutter": 543,
+  "draft_text": "32. Terkibinds Fe2, Ag' ve Pb2* ionlan olan mahlulun elektrolizi zaman ionlar hanst ardiclliqla reduksiya olunur? B) Fe*t, Ag , Pb** A) Fe*, Pb?t, Ag* D) Ag , Pbt, Fe* C) Pb2t, Fe*t, Ag. E) Ag , Fe’t, Pb2+"
+ },
+ {
+  "number": 33,
+  "page": 185,
+  "column": 1,
+  "box": [
+   534,
+   1204,
+   1080,
+   1393
+  ],
+  "file": "q033.png",
+  "gutter": 543,
+  "draft_text": "33. Torkibinde Zn2t, Au* ve Cu2 ionlan olan reduksiya olunur? B) Au', Cu*t, Zn* A) Cu2f, Au't, Zn2+ D) Au't, Zn2, Cu\" C) Zn*t, Cu2t, Au3 E) Zn't, Au't, Cu2* tursu alinir? C) NaC! A) K2S04 B) CuCl2 D) NaNO3 E) CuSO4 tursu alinir? C) KCI A) Na2SO4 B) CuCl2 D) KNO3 E) Cu(NO3)2 186-"
+ },
+ {
+  "number": 34,
+  "page": 185,
+  "column": 1,
+  "box": [
+   534,
+   1395,
+   1080,
+   1502
+  ],
+  "file": "q034.png",
+  "gutter": 543,
+  "draft_text": "manual"
+ },
+ {
+  "number": 35,
+  "page": 185,
+  "column": 1,
+  "box": [
+   534,
+   1502,
+   1080,
+   1643
+  ],
+  "file": "q035.png",
+  "gutter": 543,
+  "draft_text": "manual"
+ },
+ {
+  "number": 36,
+  "page": 186,
+  "column": 0,
+  "box": [
+   0,
+   96,
+   508,
+   320
+  ],
+  "file": "q036.png",
+  "gutter": 494,
+  "draft_text": "manual"
+ },
+ {
+  "number": 37,
+  "page": 186,
+  "column": 0,
+  "box": [
+   0,
+   322,
+   508,
+   500
+  ],
+  "file": "q037.png",
+  "gutter": 494,
+  "draft_text": "manual"
+ },
+ {
+  "number": 38,
+  "page": 186,
+  "column": 0,
+  "box": [
+   0,
+   512,
+   508,
+   632
+  ],
+  "file": "q038.png",
+  "gutter": 494,
+  "draft_text": "38. 2H,0 → 2H2 + O, reaksiyas hansi maddanin suda mahlulunun elektrolizini ifada edir? C) Hg(NO3)2 B) CuSO4 A) Cu(NO3)2 E) Ca(NO3)2 D) AgNO3"
+ },
+ {
+  "number": 39,
+  "page": 186,
+  "column": 0,
+  "box": [
+   0,
+   632,
+   508,
+   751
+  ],
+  "file": "q039.png",
+  "gutter": 494,
+  "draft_text": "39. 2H,0→2H2 +O2 reaksiyasi hans1 maddonin suda mohlulunun elektrolizini ifada edir? C) AgNO3 B) Ba(NO3)2 A)CusO4 E) CaCl2 D) Cu(NO3)2"
+ },
+ {
+  "number": 40,
+  "page": 186,
+  "column": 0,
+  "box": [
+   0,
+   751,
+   508,
+   892
+  ],
+  "file": "q040.png",
+  "gutter": 494,
+  "draft_text": "40.Kationlarin oksidlesdiricilik xassosinin azalma B) Zn2, Fe2t, Cu2 sirast A) Ag , Fe't, Zn* D) Agt, Zn2, Fe2t C)Znt, Cut, Fe E) Pet, Cu't, Zn"
+ },
+ {
+  "number": 41,
+  "page": 186,
+  "column": 0,
+  "box": [
+   0,
+   892,
+   508,
+   1220
+  ],
+  "file": "q041.png",
+  "gutter": 494,
+  "draft_text": "41. Qablardaka X vaY maddalarini mtayyon edin. C,HsOH Nacl KNO3 B) CeH1206 CH16 C) CHs-O-CHs KOH D) CaCl2 NaBr E) C,H14 Iovhosi daxil edilmisdir? E) Ag A)FeB) Cu D) Mg C)Zn"
+ },
+ {
+  "number": 42,
+  "page": 186,
+  "column": 0,
+  "box": [
+   0,
+   1232,
+   508,
+   1423
+  ],
+  "file": "q042.png",
+  "gutter": 494,
+  "draft_text": "manual"
+ },
+ {
+  "number": 43,
+  "page": 186,
+  "column": 1,
+  "box": [
+   485,
+   118,
+   1080,
+   381
+  ],
+  "file": "q043.png",
+  "gutter": 494,
+  "draft_text": "43. Na2S +H,0(elektroliz)_Y+ NaOH + H2 X vo Y maddalarini maayyon edin. H2S H2S NaHS B) 02  NaHS C) 02 H2S D) 02 E) +H,O(hidroliz), X + HNO3 X +HNO3"
+ },
+ {
+  "number": 44,
+  "page": 186,
+  "column": 1,
+  "box": [
+   485,
+   381,
+   1080,
+   607
+  ],
+  "file": "q044.png",
+  "gutter": 494,
+  "draft_text": "44. Cu(NO3)2 +H,O(elektroliz) Y+ HNO+02 X va Y maddalorini muayyan edin. Cu CuOH A) Cu(OHD)2 Cu(OH)2 B) Cu Cu(OH)NO3 C) Cu(OH)2 Cu(OH)NO) D) Cu(OH)NO3 Cu(OH)NO3 E)"
+ },
+ {
+  "number": 45,
+  "page": 186,
+  "column": 1,
+  "box": [
+   485,
+   607,
+   1080,
+   741
+  ],
+  "file": "q045.png",
+  "gutter": 494,
+  "draft_text": "45. Fe(NO3)2, Zn(NO3)2 vo Cu(NO3)h qaris1gin suda mahlulunun elektrolizi zamani katodda metallar hansi ardicilliqla ayrilar? C) Cu, Zn, Fe B) Fe, Zn, Cu A) Zn, Fe, Cu D) Cu, Fe, ZnE) Fe, Cu, Zn"
+ },
+ {
+  "number": 46,
+  "page": 186,
+  "column": 1,
+  "box": [
+   485,
+   741,
+   1080,
+   882
+  ],
+  "file": "q046.png",
+  "gutter": 494,
+  "draft_text": "46. Na2SO4, KI va CuSO4 qarisigin suda mahlulunun elektrolizi zamani anodda maddalar hansi ardicilliqla aynlar? C) I2, O2 B) O2, I2 A) 12, SO2 E) SO2, I2 D) 02, SO2"
+ },
+ {
+  "number": 47,
+  "page": 186,
+  "column": 1,
+  "box": [
+   485,
+   882,
+   1080,
+   1022
+  ],
+  "file": "q047.png",
+  "gutter": 494,
+  "draft_text": "47. CuSO4, Na2SO4, KNO3 vo Cu(NO3)2 qarisiginn suda mahlulunun elektrolizi zamani oksigen qazi hansl maddanin parcalanmasmdan alinir? C) Na2S04 B) H20 A) CuS04 E) Cu(NO3)2 D) KNO3"
+ },
+ {
+  "number": 48,
+  "page": 186,
+  "column": 1,
+  "box": [
+   485,
+   1022,
+   1080,
+   1152
+  ],
+  "file": "q048.png",
+  "gutter": 494,
+  "draft_text": "48. NaOH, KOH, KNO va NaBr qanisigini suda mahlulda elektroliz etdikda hidrogen qazi hanst maddenin parcalanmasindan alinir? C) H20 B) NaOH A) KNO3 E) KOH D) NaBr"
+ },
+ {
+  "number": 49,
+  "page": 186,
+  "column": 1,
+  "box": [
+   485,
+   1152,
+   1080,
+   1286
+  ],
+  "file": "q049.png",
+  "gutter": 494,
+  "draft_text": "49. Hansi duzlarin mahlulunun elektrolizi zamani duzun kutlosi dayismir? I. Na2SO4 II. Cu(NO3)2 L KI C)I, II B) I, II, III all A) yalniz II E) yalniz I D) yalniz III"
+ },
+ {
+  "number": 50,
+  "page": 186,
+  "column": 1,
+  "box": [
+   485,
+   1286,
+   1080,
+   1448
+  ],
+  "file": "q050.png",
+  "gutter": 494,
+  "draft_text": "50. Hansi duzlarin mohlulunun elektrolizi zaman duzun katlasi dayismir? III. AgNO, II. KNO I NaCI C) yalniz II B) I, II, III A), II E) yalniz I D) yalniz III"
+ },
+ {
+  "number": 51,
+  "page": 187,
+  "column": 0,
+  "box": [
+   0,
+   85,
+   584,
+   462
+  ],
+  "file": "q051.png",
+  "gutter": 570,
+  "draft_text": "51. Mahlulunun elektrolizi zamani Duzlar elektrodlarda geden proseslar katodda su reduksiya olunur anodda su oksidlasir Xva Ymaddalarini muayyon edin. I. NaCI II. AgNO3 II. KI IV.CuSO4 I, IV B) I, II I,IV C) II, I D) II, IV E) I,IV I,I"
+ },
+ {
+  "number": 52,
+  "page": 187,
+  "column": 0,
+  "box": [
+   0,
+   462,
+   584,
+   578
+  ],
+  "file": "q052.png",
+  "gutter": 570,
+  "draft_text": "52. Hansi duzun suda mahlulunun elektrolizi zamam cokuntu omala golir? A) MgCl2 C) AI(NO3)3 B) Mg(NO3)2 D) NaCI E) K,S04"
+ },
+ {
+  "number": 53,
+  "page": 187,
+  "column": 0,
+  "box": [
+   0,
+   578,
+   584,
+   690
+  ],
+  "file": "q053.png",
+  "gutter": 570,
+  "draft_text": "53. Hans duzun suda mehlulunun elektrolizi naticosinda coklintu omale golor? C) KCI A) Al2(SO4)3 B) MgSO4 E) A1Cl3 D) Na2S04"
+ },
+ {
+  "number": 54,
+  "page": 187,
+  "column": 0,
+  "box": [
+   0,
+   690,
+   584,
+   1030
+  ],
+  "file": "q054.png",
+  "gutter": 570,
+  "draft_text": "54. Sudamohlulunun elektrolizizamani Duzlar elektrodlarda bas veren proseslar Anodda su oksidlasir Katodda su reduksiya olunur X va Y-imtayyan edin. I.KCl..II. CusO4.III. CaBr2IV.AgNO3 A) I,IV B) I,I C) D) I, I E) III, I"
+ },
+ {
+  "number": 55,
+  "page": 187,
+  "column": 0,
+  "box": [
+   0,
+   1030,
+   584,
+   1386
+  ],
+  "file": "q055.png",
+  "gutter": 570,
+  "draft_text": "55. Suda mehlulun elektrolizmehsullan Maddaler tursu asas X, Yva Zmaddalarinimuayyan edin Cus04 NaCI K2S04 A) CuS04 B) NaCI K2S04 KCI C) CuS04 K2S04 K,S04 CuS04 D) NaCl CuS04 KCI  NaCI"
+ },
+ {
+  "number": 56,
+  "page": 187,
+  "column": 0,
+  "box": [
+   0,
+   1386,
+   584,
+   1594
+  ],
+  "file": "q056.png",
+  "gutter": 570,
+  "draft_text": "56. Sudamahlulunun elektrolizmahsullan Duzlar katodda anodda 02 Metal H2 halogen H2 02 X, Yvo Z-imuayyon edin",
+  "continued_from": {
+   "page": 187,
+   "column": 1,
+   "rows": [
+    82,
+    292
+   ]
+  }
+ },
+ {
+  "number": 57,
+  "page": 187,
+  "column": 1,
+  "box": [
+   561,
+   292,
+   1080,
+   652
+  ],
+  "file": "q057.png",
+  "gutter": 570,
+  "draft_text": "57. Duzlar katodda anodda halogen H2 Metal 02 H2 02 X, Yva Z-imuoyyan edin AgNO3 NaF CuSO4 CuCl2 KF B) AgNO3 C) NaC1 CuS04 K,S04 CuS04 KI NaCl D) E)CuCl2 AgNO3 NaCI"
+ },
+ {
+  "number": 58,
+  "page": 187,
+  "column": 1,
+  "box": [
+   561,
+   652,
+   1080,
+   868
+  ],
+  "file": "q058.png",
+  "gutter": 570,
+  "draft_text": "58. Oksigenli tursularin normal duzlarinn suda mahlullarinin elektroliz mohsullan tgin na dogrudur? 1. Anodda homisa O2 aynlir 2.O2 sudan alinir 3. O2 tursu qaligindan alinir 4.Homisemohluldatursu alinir A) 1,3B)2, 4C)1,2 D)1, 4 E) 3,4"
+ },
+ {
+  "number": 59,
+  "page": 187,
+  "column": 1,
+  "box": [
+   561,
+   868,
+   1080,
+   1201
+  ],
+  "file": "q059.png",
+  "gutter": 570,
+  "draft_text": "59.Z duzunun suda mohlulunun elektrolizina aid sekla asason X, Y ve Z maddalorinimuayyon edin N2 02 NaNO3 H2 02 Na2SO4 02 H2 K2S04 H2 02 NaCI H2 02 Na2CO3 mahsullara gore Eyler-Venn diaqramina uygun duzlarl muayyon edin Metal Hidrogen qazi A卧 K2C03 CuCl2 Na2S04 FeCl2 K2s NaNO; C) Hg(NO3)2 NaF Zn(NO3)2 D) AgNO: NaCI FeSO4 E) Cu(NO:)2 FesO4 ZnC12"
+ },
+ {
+  "number": 60,
+  "page": 187,
+  "column": 1,
+  "box": [
+   561,
+   1213,
+   1080,
+   1588
+  ],
+  "file": "q060.png",
+  "gutter": 570,
+  "draft_text": "manual"
+ },
+ {
+  "number": 61,
+  "page": 188,
+  "column": 0,
+  "box": [
+   0,
+   58,
+   526,
+   266
+  ],
+  "file": "q061.png",
+  "gutter": 512,
+  "draft_text": "manual"
+ },
+ {
+  "number": 62,
+  "page": 188,
+  "column": 0,
+  "box": [
+   0,
+   268,
+   526,
+   482
+  ],
+  "file": "q062.png",
+  "gutter": 512,
+  "draft_text": "manual"
+ },
+ {
+  "number": 63,
+  "page": 188,
+  "column": 0,
+  "box": [
+   0,
+   486,
+   526,
+   682
+  ],
+  "file": "q063.png",
+  "gutter": 512,
+  "draft_text": "63. Gumus () nitratin suda mahlulunun elektrolizi zaman1 anodda hansi proseslar gedir? 1. 2H20- 4e → 4H +O2 II. 2NO3 → 2NO2 + O2 IV. 2H*+2e H2 A)I, II B) yalniz I C) II, II D) yalniz IV E)I, III a, X va Y-i muoyyon edin. H2 AgNO2 Ag HNO3 B) HN Ag HNO3 D) Ag AgNO2 H2"
+ },
+ {
+  "number": 64,
+  "page": 188,
+  "column": 0,
+  "box": [
+   0,
+   684,
+   526,
+   900
+  ],
+  "file": "q064.png",
+  "gutter": 512,
+  "draft_text": "manual"
+ },
+ {
+  "number": 65,
+  "page": 188,
+  "column": 0,
+  "box": [
+   0,
+   912,
+   526,
+   1121
+  ],
+  "file": "q065.png",
+  "gutter": 512,
+  "draft_text": "65, Cu + H2SO4(qat) -→X + SO2 + H20 X maddesi ugun hanst ifadalar dogru deyil? I. Suda mahlulunun elektrolizi zamani anodda oksigen aynilur II Qalavi mahlulu ile reaksiyaya daxil olmur III Suda mahlulu qolavi muhit yaradir A) yalniz III B) I, II, III D) yalniz I E)I, I"
+ },
+ {
+  "number": 66,
+  "page": 188,
+  "column": 0,
+  "box": [
+   0,
+   1121,
+   526,
+   1346
+  ],
+  "file": "q066.png",
+  "gutter": 512,
+  "draft_text": "66. Suda mahlullarinin elektroliz mahsullar Duzlar anodda katodda CuS04 CaCh Hanst reaksiyalar getmir? II. Y+Tt, y+zt TA+XI A) yalniz II C) yalniz I B) II, III D)I, I E) yalniz III G7. Suda mahlullarinin elektroliz mahsullari Duzlar anodda katodda CuSO4 KCI Hansi reaksiyalar gedar?"
+ },
+ {
+  "number": 67,
+  "page": 188,
+  "column": 0,
+  "box": [
+   0,
+   1348,
+   526,
+   1560
+  ],
+  "file": "q067.png",
+  "gutter": 512,
+  "draft_text": "manual",
+  "continued_from": {
+   "page": 188,
+   "column": 1,
+   "rows": [
+    82,
+    185
+   ]
+  }
+ },
+ {
+  "number": 68,
+  "page": 188,
+  "column": 1,
+  "box": [
+   503,
+   185,
+   1080,
+   537
+  ],
+  "file": "q068.png",
+  "gutter": 512,
+  "draft_text": "68. Suda mahlulunun Hidrolizinin birinci Duzlar elektrolizi zamani marhalesinda alinan mahlulda alinan madda Osas Turs duz Osasi duz Tursu X va Y maddalarini muayyan edin. CuS04 A) NaCI CuCl2 B) Na2CO3 C) Na2S04 AgNO3 D) CuS04 Na2S Ca(NO3)2 E) NaBr"
+ },
+ {
+  "number": 69,
+  "page": 188,
+  "column": 1,
+  "box": [
+   503,
+   537,
+   1080,
+   888
+  ],
+  "file": "q069.png",
+  "gutter": 512,
+  "draft_text": "69. Suda mohlulunun Hidrolizininbirinci elektrolizi zaman Duzlar mahlulda alinan madda madd? Osas Turs duz Tursu Osasi duz X va Y maddalarini muayyan edin. Cu(NO3)2 A) K2S B) CuC12 K2S03 CuS04 KN03 C) CuB12 K2S04 D) Ca(NO3)2 E) MgC12"
+ },
+ {
+  "number": 70,
+  "page": 188,
+  "column": 1,
+  "box": [
+   503,
+   888,
+   1080,
+   1167
+  ],
+  "file": "q070.png",
+  "gutter": 512,
+  "draft_text": "Mol say1 70. Cu(NO3)2 mohlulunun elektrolizindon alinan mahsullarin mol sayinin zamandan asililig qrafikine Linpnrdop eu uesese I. X - qazdir II. Y - tursudur III. Z - metaldir zaman C)I, I B) yalniz III A) II, I E) yalniz I D) I, II"
+ },
+ {
+  "number": 71,
+  "page": 188,
+  "column": 1,
+  "box": [
+   503,
+   1167,
+   1080,
+   1506
+  ],
+  "file": "q071.png",
+  "gutter": 512,
+  "draft_text": "71. Protonlarin sayi fonlar X2 I+p a-3 y2t ionunun elektronlarinin say1 arqonun elektronlarinin sayindan 9 vahid coxdursa, ionlarin oksidlasdiricilik qabiliyyati ugan dogru munasibati muayyan edin. (18Ar, 29Cu, 30Zn, 26Fe) B) Z2*<y2t<X2* A) z2*<x2t<y2* D) x2*<2*t<y2* C) x2t<y2t<22+ +2>+2X>+4 (日"
+ },
+ {
+  "number": 72,
+  "page": 189,
+  "column": 0,
+  "box": [
+   0,
+   78,
+   574,
+   170
+  ],
+  "file": "q072.png",
+  "gutter": 560,
+  "draft_text": "72. Hansi duzlarin mahlullarinin elektrolizinda anodda su oksidlasir? 4. AgNO3 1.KC)2. CusO43.NaBr"
+ },
+ {
+  "number": 73,
+  "page": 189,
+  "column": 0,
+  "box": [
+   0,
+   170,
+   574,
+   262
+  ],
+  "file": "q073.png",
+  "gutter": 560,
+  "draft_text": "73. Hanst duzlarin suda mohlullarndan sabit elektrik caroyan kegirdikda anodda su oksidlesir? 3. NazS4. NazSO4 1. KBr/2. Cu(NO3)2"
+ },
+ {
+  "number": 74,
+  "page": 189,
+  "column": 0,
+  "box": [
+   0,
+   262,
+   574,
+   457
+  ],
+  "file": "q074.png",
+  "gutter": 560,
+  "draft_text": "74. Etiketlari pozulmus maxtolif feaktiv qablarinda NHCl NHBrNaCl voNaBr duzlariVar. Laboratoriya dorsinda muallim sagirde hansi qabda hansi duzun oldugunu mtoyyenlasdirmak tapsinigi verir, Sagird asagidaki hansi reaktivlardan istifado etmokla tapsinigt icra eda bilor? 1. NaOH2. AgNO,3. Na2SO4"
+ },
+ {
+  "number": 75,
+  "page": 189,
+  "column": 0,
+  "box": [
+   0,
+   457,
+   574,
+   703
+  ],
+  "file": "q075.png",
+  "gutter": 560,
+  "draft_text": "75. Laboratoriya dorsinda sagirdlardan biri kolbada olan NH.CI duzunun yeni hazirlanimis mohluluna NaOH mahlulu lava edir vakolbanin crxisna islanmis lakmus kagizi tutur. Sagird na misahida edir? 1.Rangli qazin aynlmasini 2.Koskiniyli qazin aynlmasimi 3.Lakmuskagizinin qizarmasini 4. Lakmus kagizinin goyormosini"
+ },
+ {
+  "number": 76,
+  "page": 189,
+  "column": 0,
+  "box": [
+   0,
+   703,
+   574,
+   935
+  ],
+  "file": "q076.png",
+  "gutter": 560,
+  "draft_text": "76. Duzun suda mehlulunun Duz elektrolizindan alnan maddaler katodda anodda metal 02 X hansi duzlar ola biler? 1. AgNO3 2. KNO3 3. CuSO4 4.K2SO4"
+ },
+ {
+  "number": 77,
+  "page": 189,
+  "column": 0,
+  "box": [
+   0,
+   935,
+   574,
+   1164
+  ],
+  "file": "q077.png",
+  "gutter": 560,
+  "draft_text": "77. Duzun suda mahlulunun Duz elektrolizinden alinan maddalor katodda anodda H2 Cl2 X hansi duzlar ola bilar? 1. CuCl2 2. NacI 3. AICl3 4. CaCl2"
+ },
+ {
+  "number": 78,
+  "page": 189,
+  "column": 0,
+  "box": [
+   0,
+   1164,
+   574,
+   1289
+  ],
+  "file": "q078.png",
+  "gutter": 560,
+  "draft_text": "78. Hanst maddalarin suda mohlulunun elektrolizi zamami elektrodlarda eyni mohsullar alinar? 1I. NaOH 2. Ba(NO3)2 3. AgNO3 4. Na2SO4 5. CuCl2"
+ },
+ {
+  "number": 79,
+  "page": 189,
+  "column": 0,
+  "box": [
+   0,
+   1289,
+   574,
+   1501
+  ],
+  "file": "q079.png",
+  "gutter": 560,
+  "draft_text": "79. NazCO3-in suda mohlulu ucan na dogrudur? 1. n(OHD>n(H ) 2. n(OH)<n(H ) 3.Hidroliz mohsullarindan bini osasi duzdur 4. Hidroliz mohsullarindan biri turs duzdur S.Elektrolizzamani qalavialinir 6.Elektroliz zaman su parcalanir"
+ },
+ {
+  "number": 80,
+  "page": 189,
+  "column": 1,
+  "box": [
+   551,
+   62,
+   1080,
+   260
+  ],
+  "file": "q080.png",
+  "gutter": 560,
+  "draft_text": "manual"
+ },
+ {
+  "number": 81,
+  "page": 189,
+  "column": 1,
+  "box": [
+   551,
+   272,
+   1080,
+   398
+  ],
+  "file": "q081.png",
+  "gutter": 560,
+  "draft_text": "manual"
+ },
+ {
+  "number": 82,
+  "page": 189,
+  "column": 1,
+  "box": [
+   551,
+   410,
+   1080,
+   563
+  ],
+  "file": "q082.png",
+  "gutter": 560,
+  "draft_text": "manual"
+ },
+ {
+  "number": 83,
+  "page": 189,
+  "column": 1,
+  "box": [
+   551,
+   575,
+   1080,
+   996
+  ],
+  "file": "q083.png",
+  "gutter": 560,
+  "draft_text": "m ( 83.Qrafikdanatrium- xlorid mohlulunun elektroliz mahsullarinin kutlosinin Zamandan asililigi verilmisdir. Hansi ifadalor dogrudur? zaman A.(Na)=23; A.(CI)=35,5; A.(O)-16, A(H)-1 1. X va Y-in qarsiliqli fasirindon HCl alnir 2. Y vo Z qarsihiqli tosirda olmur 3. X va Z adi seraitda qarsiiqli tasirda olur 4. Y va Z-in qarsiliqli tasirindan iki duz almir 5. X Al ila qarsiliqli tasirda olmur"
+ },
+ {
+  "number": 84,
+  "page": 189,
+  "column": 1,
+  "box": [
+   551,
+   996,
+   1080,
+   1368
+  ],
+  "file": "q084.png",
+  "gutter": 560,
+  "draft_text": "84.Qrafikdekalium- (b) xlorid mahlulunun elektroliz mahsullarinm kutlesinin zamandan asiiligi verilmisdir. Hansiifadalor dogrudur? zaman A(K)=39, A.(CI)=35,5; A.(O)=16, A(H)=1 4. Y O2 ila qarsiliqli tasirda olmur 5. Y va Z qarsiliqlh tasirda olmur alinar? M.(H20)=18"
+ },
+ {
+  "number": 85,
+  "page": 189,
+  "column": 1,
+  "box": [
+   551,
+   1378,
+   1080,
+   1468
+  ],
+  "file": "q085.png",
+  "gutter": 560,
+  "draft_text": "manual"
+ },
+ {
+  "number": 86,
+  "page": 190,
+  "column": 0,
+  "box": [
+   0,
+   128,
+   518,
+   400
+  ],
+  "file": "q086.png",
+  "gutter": 504,
+  "draft_text": "manual"
+ },
+ {
+  "number": 87,
+  "page": 190,
+  "column": 0,
+  "box": [
+   0,
+   402,
+   518,
+   566
+  ],
+  "file": "q087.png",
+  "gutter": 504,
+  "draft_text": "manual"
+ },
+ {
+  "number": 88,
+  "page": 190,
+  "column": 0,
+  "box": [
+   0,
+   560,
+   518,
+   867
+  ],
+  "file": "q088.png",
+  "gutter": 504,
+  "draft_text": "88. Bazi su tomizlayici qurgularda ovvolce elektroliz prosesi ila suyun hidrogen ve oksigen qazlarina gevrilmosi heyata keqirilir! 2H20 elcktroliz 2H2 + 02 Daha sonra alinan oksigen qazinin suya vurulmasi zamani orada bas vereon oksidlesma-reduksiya reaksiyasi vo mikroorganizmlarin parcalanmast suratlanir, naticado suyun keyfiyyati yaxsilasir, Bu prosese suyun aerasiyasi deyilir. Bir elektroliz oihazindan gundalik olaraq 4 mol hidrogen va 2 mol oksigen qazlari amala galarso, nega qram su parcalanar? A(H)=1, A,(O)=16"
+ },
+ {
+  "number": 89,
+  "page": 190,
+  "column": 0,
+  "box": [
+   0,
+   867,
+   518,
+   1028
+  ],
+  "file": "q089.png",
+  "gutter": 504,
+  "draft_text": "89, Uygunlugu mtayyan edin. znp+O+ XYm+H,o elektroliz 1. H2 + Y2 + qalavi 2. X + O2 + tursu 3. Duzlar a AgNO, b. KBr c. Na2SO4 d. CuCl2 e. NaF Elektroliza aid hesablamalar A(Cu)= 64, M(CuSO4)-160 E) 22 D) 35 E) 71 A) 25 B) 80 E) 50 D) 100 B) 80 C)150 -19"
+ }
+]

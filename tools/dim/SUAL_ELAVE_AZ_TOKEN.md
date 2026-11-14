@@ -36,5 +36,5 @@ python import_scans.py --dir scan/kimya_I_bolmeK --answers scan/kimya_I_bolmeK_c
 ```
 - Son sualın altında növbəti başlıq varsa: `--end '{"N": y}'` ilə kəs.
 - Sütunda davam edən sual: növbəti sütunun ilk sualına `cont_top` (davamın başladığı y).
-- Sahib "ok" deyəndə: `python scan_tool.py done K` (şəkilləri `upload_kitab` → `images_kitab`), sonra `KITAB_IRELILEYIS.md`-i yenilə.
+- Sahib "ok" deyəndə: `python scan_tool.py done K` (şəkilləri `upload_kitab` → `images_kitab`, bölmənin `q*.png` kəsiklərini silir; `manifest.json` qalır, lazım olsa `--recrop` yenidən kəsir), sonra `KITAB_IRELILEYIS.md`-i yenilə.
 - `test_import_scans.py` Mac-də işləmir (Python 3.14 üçün `pgserver` yoxdur): SQL-də sətir sayını və tipləri `grep` ilə yoxla.

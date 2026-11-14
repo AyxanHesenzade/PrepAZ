@@ -10,6 +10,8 @@ import 'package:prep_az/features/home/domain/subject.dart';
 import 'package:prep_az/features/home/presentation/home_providers.dart';
 import 'package:prep_az/features/home/presentation/home_screen.dart';
 import 'package:prep_az/features/home/presentation/widgets/header_mascot.dart';
+import 'package:prep_az/core/widgets/glass_nav_bar.dart';
+import 'package:prep_az/features/shell/presentation/main_shell.dart';
 import 'package:prep_az/features/settings/data/in_memory_settings_repository.dart';
 import 'package:prep_az/features/settings/domain/app_settings.dart';
 import 'package:prep_az/features/settings/presentation/settings_providers.dart';
@@ -27,17 +29,27 @@ void main() {
 
   setUp(() => settings = InMemorySettingsRepository(const AppSettings()));
 
-  Widget app({UserGoal? goal, List<Subject> subjects = const [_subject]}) {
+  Widget app({
+    UserGoal? goal,
+    List<Subject> subjects = const [_subject],
+    Widget home = const HomeScreen(),
+  }) {
     return ProviderScope(
       retry: (_, _) => null,
       overrides: [
         settingsRepositoryProvider.overrideWithValue(settings),
-        subjectRepositoryProvider.overrideWithValue(FakeSubjects(() async => subjects)),
+        subjectRepositoryProvider.overrideWithValue(
+          FakeSubjects(() async => subjects),
+        ),
         profileRepositoryProvider.overrideWithValue(FakeProfile(0)),
-        progressRepositoryProvider.overrideWithValue(FakeProgressRepository(const [])),
-        goalRepositoryProvider.overrideWithValue(FakeGoalRepository(goal: goal)),
+        progressRepositoryProvider.overrideWithValue(
+          FakeProgressRepository(const []),
+        ),
+        goalRepositoryProvider.overrideWithValue(
+          FakeGoalRepository(goal: goal),
+        ),
       ],
-      child: const MaterialApp(home: HomeScreen()),
+      child: MaterialApp(home: home),
     );
   }
 
@@ -66,53 +78,119 @@ void main() {
     await settle(tester);
   }
 
-  testWidgets('walks through the menu and the subject card, then remembers it', (tester) async {
-    await pumpHome(tester, app(goal: const UserGoal(periodId: 1)));
-    expect(find.text(AppStrings.tourWelcome), findsOneWidget);
+  testWidgets(
+    'walks through the menu and the subject card, then remembers it',
+    (tester) async {
+      await pumpHome(tester, app(goal: const UserGoal(periodId: 1)));
+      expect(find.text(AppStrings.tourWelcome), findsOneWidget);
 
-    await gotIt(tester);
-    expect(find.text(AppStrings.tourOpenMenu), findsOneWidget);
-    expect(find.text(AppStrings.tourGotIt), findsNothing, reason: 'here the student must tap the menu');
-
-    await tapMenu(tester);
-    expect(find.byType(Drawer), findsOneWidget);
-
-    for (final message in [
-      AppStrings.tourLanguage,
-      AppStrings.tourAppearance,
-      AppStrings.tourTeachers,
-      AppStrings.tourShareApp,
-      AppStrings.tourReport,
-      AppStrings.tourLegal,
-      AppStrings.tourDeleteAccount,
-      AppStrings.tourSignOut,
-    ]) {
-      expect(find.text(message), findsOneWidget);
       await gotIt(tester);
-    }
+      expect(find.text(AppStrings.tourOpenMenu), findsOneWidget);
+      expect(
+        find.text(AppStrings.tourGotIt),
+        findsNothing,
+        reason: 'here the student must tap the menu',
+      );
 
-    expect(find.byType(Drawer), findsNothing, reason: 'the drawer closes before the subject card');
-    for (final message in [
-      AppStrings.tourPractice,
-      AppStrings.tourWeakPlaces,
-      AppStrings.tourMistakes,
-      AppStrings.tourTopics,
-    ]) {
-      expect(find.text(message), findsOneWidget);
+      await tapMenu(tester);
+      expect(find.byType(Drawer), findsOneWidget);
+
+      for (final message in [
+        AppStrings.tourLanguage,
+        AppStrings.tourAppearance,
+        AppStrings.tourTeachers,
+        AppStrings.tourShareApp,
+        AppStrings.tourReport,
+        AppStrings.tourLegal,
+        AppStrings.tourDeleteAccount,
+        AppStrings.tourSignOut,
+      ]) {
+        expect(find.text(message), findsOneWidget);
+        await gotIt(tester);
+      }
+
+      expect(
+        find.byType(Drawer),
+        findsNothing,
+        reason: 'the drawer closes before the subject card',
+      );
+      for (final message in [
+        AppStrings.tourPractice,
+        AppStrings.tourWeakPlaces,
+        AppStrings.tourMistakes,
+        AppStrings.tourTopics,
+        AppStrings.tourOffline,
+      ]) {
+        expect(find.text(message), findsOneWidget);
+        await gotIt(tester);
+      }
+
+      // ana ekran tək açılıb: alt menyu yoxdur, onun addımları atlanır
+      expect(find.text(AppStrings.tourProgress), findsNothing);
+      expect(find.text(AppStrings.tourCompete), findsNothing);
+      expect(find.text(AppStrings.tourDone), findsOneWidget);
+      expect(settings.current.tourSeen, isFalse);
+
+      await tester.tap(find.text(AppStrings.tourFinish));
+      await tester.pumpAndSettle();
+
+      expect(find.text(AppStrings.tourDone), findsNothing);
+      expect(settings.current.tourSeen, isTrue);
+    },
+  );
+
+  testWidgets(
+    'in the main shell the tour ends on the progress and compete tabs',
+    (tester) async {
+      await pumpHome(
+        tester,
+        app(goal: const UserGoal(periodId: 1), home: const MainShell()),
+      );
+      expect(
+        find.byType(GlassNavBar),
+        findsNothing,
+        reason: 'the bottom menu hides during the tour',
+      );
+
       await gotIt(tester);
-    }
+      await tapMenu(tester);
+      final steps = TourStep.values
+          .where((s) => s.inDrawer || s.onSubjectCard)
+          .length;
+      for (var i = 0; i < steps; i++) {
+        await gotIt(tester);
+      }
 
-    expect(find.text(AppStrings.tourDone), findsOneWidget);
-    expect(settings.current.tourSeen, isFalse);
+      expect(find.text(AppStrings.tourProgress), findsOneWidget);
+      expect(find.byType(GlassNavBar), findsOneWidget);
+      await gotIt(tester);
 
-    await tester.tap(find.text(AppStrings.tourFinish));
-    await tester.pumpAndSettle();
+      expect(find.text(AppStrings.tourCompete), findsOneWidget);
+      expect(
+        find.byType(GlassNavBar),
+        findsOneWidget,
+        reason: 'shown so the compete tab can be highlighted',
+      );
 
-    expect(find.text(AppStrings.tourDone), findsNothing);
-    expect(settings.current.tourSeen, isTrue);
-  });
+      // örtük basılmağa qoymur: "Yarış" tabı açılmır
+      await tester.tapAt(tester.getCenter(find.text(AppStrings.navCompete)));
+      await settle(tester);
+      expect(find.text(AppStrings.tourCompete), findsOneWidget);
 
-  testWidgets('a student who already saw it never gets it again', (tester) async {
+      await gotIt(tester);
+      expect(find.text(AppStrings.tourDone), findsOneWidget);
+      expect(find.byType(GlassNavBar), findsNothing);
+
+      await tester.tap(find.text(AppStrings.tourFinish));
+      await settle(tester);
+      expect(find.byType(GlassNavBar), findsOneWidget);
+      expect(settings.current.tourSeen, isTrue);
+    },
+  );
+
+  testWidgets('a student who already saw it never gets it again', (
+    tester,
+  ) async {
     settings = InMemorySettingsRepository(const AppSettings(tourSeen: true));
 
     await tester.pumpWidget(app(goal: const UserGoal(periodId: 1)));
@@ -122,54 +200,73 @@ void main() {
   });
 
   // PrepAzApp dil dəyişəndə MaterialApp-ı açarla yenidən qurur: köhnə ekran yeni ağaca köçməməlidir
-  testWidgets('changing the language closes the drawer and the app stays usable', (tester) async {
-    settings = InMemorySettingsRepository(const AppSettings(tourSeen: true));
-    addTearDown(() => AppStrings.language = AppLanguage.az);
-    await pumpHome(
-      tester,
-      ProviderScope(
-        retry: (_, _) => null,
-        overrides: [
-          settingsRepositoryProvider.overrideWithValue(settings),
-          subjectRepositoryProvider.overrideWithValue(FakeSubjects(() async => const [_subject])),
-          profileRepositoryProvider.overrideWithValue(FakeProfile(0)),
-          progressRepositoryProvider.overrideWithValue(FakeProgressRepository(const [])),
-          goalRepositoryProvider.overrideWithValue(FakeGoalRepository(goal: const UserGoal(periodId: 1))),
-        ],
-        child: Consumer(
-          builder: (context, ref, _) {
-            final language = ref.watch(settingsControllerProvider).language;
-            return MaterialApp(key: ValueKey(language), home: const HomeScreen());
-          },
+  testWidgets(
+    'changing the language closes the drawer and the app stays usable',
+    (tester) async {
+      settings = InMemorySettingsRepository(const AppSettings(tourSeen: true));
+      addTearDown(() => AppStrings.language = AppLanguage.az);
+      await pumpHome(
+        tester,
+        ProviderScope(
+          retry: (_, _) => null,
+          overrides: [
+            settingsRepositoryProvider.overrideWithValue(settings),
+            subjectRepositoryProvider.overrideWithValue(
+              FakeSubjects(() async => const [_subject]),
+            ),
+            profileRepositoryProvider.overrideWithValue(FakeProfile(0)),
+            progressRepositoryProvider.overrideWithValue(
+              FakeProgressRepository(const []),
+            ),
+            goalRepositoryProvider.overrideWithValue(
+              FakeGoalRepository(goal: const UserGoal(periodId: 1)),
+            ),
+          ],
+          child: Consumer(
+            builder: (context, ref, _) {
+              final language = ref.watch(settingsControllerProvider).language;
+              return MaterialApp(
+                key: ValueKey(language),
+                home: const HomeScreen(),
+              );
+            },
+          ),
         ),
-      ),
-    );
+      );
 
-    await tester.tap(find.byTooltip(AppStrings.menu));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text(AppStrings.languageTitle));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text('Русский'));
-    await tester.pumpAndSettle();
+      await tester.tap(find.byTooltip(AppStrings.menu));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text(AppStrings.languageTitle));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Русский'));
+      await tester.pumpAndSettle();
 
-    expect(find.byType(Drawer), findsNothing);
-    expect(tester.takeException(), isNull);
+      expect(find.byType(Drawer), findsNothing);
+      expect(tester.takeException(), isNull);
 
-    await tester.tap(find.byTooltip(AppStrings.menu));
-    await tester.pumpAndSettle();
-    expect(find.byType(Drawer), findsOneWidget, reason: 'the home screen must still react to taps');
-  });
+      await tester.tap(find.byTooltip(AppStrings.menu));
+      await tester.pumpAndSettle();
+      expect(
+        find.byType(Drawer),
+        findsOneWidget,
+        reason: 'the home screen must still react to taps',
+      );
+    },
+  );
 
-  testWidgets('tapping the header mascot replays the tour for someone who saw it', (tester) async {
-    settings = InMemorySettingsRepository(const AppSettings(tourSeen: true));
-    await pumpHome(tester, app(goal: const UserGoal(periodId: 1)));
-    expect(find.text(AppStrings.tourWelcome), findsNothing);
+  testWidgets(
+    'tapping the header mascot replays the tour for someone who saw it',
+    (tester) async {
+      settings = InMemorySettingsRepository(const AppSettings(tourSeen: true));
+      await pumpHome(tester, app(goal: const UserGoal(periodId: 1)));
+      expect(find.text(AppStrings.tourWelcome), findsNothing);
 
-    await tester.tap(find.byType(HeaderMascot));
-    await settle(tester);
+      await tester.tap(find.byType(HeaderMascot));
+      await settle(tester);
 
-    expect(find.text(AppStrings.tourWelcome), findsOneWidget);
-  });
+      expect(find.text(AppStrings.tourWelcome), findsOneWidget);
+    },
+  );
 
   testWidgets('starts right after the exam date screen closes', (tester) async {
     await pumpHome(tester, app());
@@ -184,7 +281,10 @@ void main() {
   });
 
   testWidgets('without subjects the card steps are skipped', (tester) async {
-    await pumpHome(tester, app(goal: const UserGoal(periodId: 1), subjects: const []));
+    await pumpHome(
+      tester,
+      app(goal: const UserGoal(periodId: 1), subjects: const []),
+    );
 
     await gotIt(tester);
     await tapMenu(tester);
@@ -196,21 +296,24 @@ void main() {
     expect(find.text(AppStrings.tourDone), findsOneWidget);
   });
 
-  test('advance finishes after the last step and start does nothing once seen', () {
-    final container = ProviderContainer(
-      overrides: [settingsRepositoryProvider.overrideWithValue(settings)],
-    );
-    addTearDown(container.dispose);
-    final tour = container.read(tourControllerProvider.notifier);
+  test(
+    'advance finishes after the last step and start does nothing once seen',
+    () {
+      final container = ProviderContainer(
+        overrides: [settingsRepositoryProvider.overrideWithValue(settings)],
+      );
+      addTearDown(container.dispose);
+      final tour = container.read(tourControllerProvider.notifier);
 
-    tour.start();
-    expect(container.read(tourControllerProvider), TourStep.welcome);
-    for (var i = 0; i < TourStep.values.length; i++) {
-      tour.advance((_) => true);
-    }
+      tour.start();
+      expect(container.read(tourControllerProvider), TourStep.welcome);
+      for (var i = 0; i < TourStep.values.length; i++) {
+        tour.advance((_) => true);
+      }
 
-    expect(container.read(tourControllerProvider), isNull);
-    tour.start();
-    expect(container.read(tourControllerProvider), isNull);
-  });
+      expect(container.read(tourControllerProvider), isNull);
+      tour.start();
+      expect(container.read(tourControllerProvider), isNull);
+    },
+  );
 }

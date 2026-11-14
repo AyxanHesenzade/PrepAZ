@@ -5,13 +5,7 @@ import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_spacing.dart';
 import '../../../../core/widgets/pressable.dart';
 import '../../../home/domain/subject.dart';
-
-/// Fənnin simvolu (seçim panelində və başlıqda).
-IconData subjectIcon(String slug) => switch (slug) {
-  'kimya' => Icons.science_rounded,
-  'biologiya' => Icons.eco_rounded,
-  _ => Icons.menu_book_rounded,
-};
+import '../../../home/presentation/widgets/subject_sheet.dart';
 
 /// "Yarış" ekranının başlığı: fənnin rəngində gradient kart, nik-ad düyməsi və fənn seçimi.
 /// Fənn dəyişəndə rəng yumşaq keçir.
@@ -32,14 +26,10 @@ class BoardHeader extends StatelessWidget {
   final VoidCallback onEditPlayer;
 
   Future<void> _pickSubject(BuildContext context) async {
-    final id = await showModalBottomSheet<int>(
-      context: context,
-      showDragHandle: true,
-      useSafeArea: true,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(AppRadius.xl)),
-      ),
-      builder: (_) => _SubjectSheet(subjects: subjects, selectedId: selected.id),
+    final id = await showSubjectSheet(
+      context,
+      subjects: subjects,
+      selectedId: selected.id,
     );
     if (id != null && id != selected.id) onSubjectChanged(id);
   }
@@ -90,7 +80,11 @@ class BoardHeader extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    const Icon(Icons.emoji_events_rounded, color: AppColors.gold, size: 28),
+                    const Icon(
+                      Icons.emoji_events_rounded,
+                      color: AppColors.gold,
+                      size: 28,
+                    ),
                     AppSpacing.gapS,
                     Expanded(
                       child: Text(
@@ -106,14 +100,20 @@ class BoardHeader extends StatelessWidget {
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          const Icon(Icons.person_rounded, size: 16, color: Colors.white),
+                          const Icon(
+                            Icons.person_rounded,
+                            size: 16,
+                            color: Colors.white,
+                          ),
                           const SizedBox(width: 4),
                           ConstrainedBox(
                             constraints: const BoxConstraints(maxWidth: 110),
                             child: Text(
                               '@$nickname',
                               overflow: TextOverflow.ellipsis,
-                              style: text.labelLarge?.copyWith(color: Colors.white),
+                              style: text.labelLarge?.copyWith(
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ],
@@ -134,7 +134,11 @@ class BoardHeader extends StatelessWidget {
                           color: Colors.white,
                           shape: BoxShape.circle,
                         ),
-                        child: Icon(subjectIcon(selected.slug), size: 20, color: accent),
+                        child: Icon(
+                          subjectIcon(selected.slug),
+                          size: 20,
+                          color: accent,
+                        ),
                       ),
                       AppSpacing.gapS,
                       Expanded(
@@ -160,7 +164,10 @@ class BoardHeader extends StatelessWidget {
                         ),
                       ),
                       if (subjects.length > 1)
-                        const Icon(Icons.unfold_more_rounded, color: Colors.white),
+                        const Icon(
+                          Icons.unfold_more_rounded,
+                          color: Colors.white,
+                        ),
                     ],
                   ),
                 ),
@@ -183,7 +190,11 @@ class BoardHeader extends StatelessWidget {
 
 /// Gradient üstündə yarımşəffaf "şüşə" düymə.
 class _GlassPill extends StatelessWidget {
-  const _GlassPill({required this.child, required this.onTap, this.big = false});
+  const _GlassPill({
+    required this.child,
+    required this.onTap,
+    this.big = false,
+  });
 
   final Widget child;
   final VoidCallback onTap;
@@ -204,85 +215,6 @@ class _GlassPill extends StatelessWidget {
         ),
         child: child,
       ),
-    );
-  }
-}
-
-class _SubjectSheet extends StatelessWidget {
-  const _SubjectSheet({required this.subjects, required this.selectedId});
-
-  final List<Subject> subjects;
-  final int selectedId;
-
-  @override
-  Widget build(BuildContext context) {
-    final text = Theme.of(context).textTheme;
-    final scheme = Theme.of(context).colorScheme;
-    return ListView(
-      shrinkWrap: true,
-      padding: const EdgeInsets.fromLTRB(
-        AppSpacing.m + 4,
-        0,
-        AppSpacing.m + 4,
-        AppSpacing.l,
-      ),
-      children: [
-        Text(AppStrings.chooseSubject, style: text.titleLarge),
-        AppSpacing.gapM,
-        for (final s in subjects)
-          Padding(
-            padding: const EdgeInsets.only(bottom: AppSpacing.s),
-            child: Builder(
-              builder: (context) {
-                final accent = AppColors.subjectAccent(s.slug, s.id);
-                final selected = s.id == selectedId;
-                return Pressable(
-                  onTap: () => Navigator.of(context).pop(s.id),
-                  child: AnimatedContainer(
-                    duration: const Duration(milliseconds: 200),
-                    padding: const EdgeInsets.all(AppSpacing.s + 4),
-                    decoration: BoxDecoration(
-                      color: selected
-                          ? accent.withValues(alpha: 0.12)
-                          : scheme.surfaceContainerLowest,
-                      borderRadius: BorderRadius.circular(AppRadius.m),
-                      border: Border.all(
-                        color: selected ? accent : scheme.outlineVariant,
-                        width: selected ? 1.5 : 1,
-                      ),
-                    ),
-                    child: Row(
-                      children: [
-                        Container(
-                          width: 44,
-                          height: 44,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            gradient: LinearGradient(
-                              colors: [
-                                accent,
-                                Color.lerp(accent, AppColors.brandEnd, 0.5)!,
-                              ],
-                            ),
-                          ),
-                          child: Icon(subjectIcon(s.slug), color: Colors.white),
-                        ),
-                        AppSpacing.gapM,
-                        Expanded(
-                          child: Text(
-                            s.name,
-                            style: text.titleMedium?.copyWith(fontWeight: FontWeight.w700),
-                          ),
-                        ),
-                        if (selected) Icon(Icons.check_circle_rounded, color: accent),
-                      ],
-                    ),
-                  ),
-                );
-              },
-            ),
-          ),
-      ],
     );
   }
 }

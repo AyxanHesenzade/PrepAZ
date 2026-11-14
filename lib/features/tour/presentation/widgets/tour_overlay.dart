@@ -11,7 +11,7 @@ import '../../domain/tour_step.dart';
 import '../tour_controller.dart';
 import '../tour_targets.dart';
 
-/// Ana ekranın (yan menyu daxil) üstünü örtür: ekran qaralır, izah olunan element
+/// Ana ekranın (yan menyu və alt menyu daxil) üstünü örtür: ekran qaralır, izah olunan element
 /// işıqlı qalır, köməkçi balonda izah edir. Tur gedərkən altdakı heç nə basılmır.
 class TourOverlay extends ConsumerWidget {
   const TourOverlay({super.key});
@@ -49,6 +49,8 @@ class _TourLayerState extends ConsumerState<_TourLayer>
   }
 
   bool _isAvailable(TourStep step) {
+    // alt menyu tur zamanı gizlidir və yalnız öz addımlarında görünür: açarı əvvəlcədən yoxlamaq olmur
+    if (step.onBottomNav) return _targets.hasBottomNav;
     if (!step.onSubjectCard) return true;
     return _targets.keyFor(step)?.currentContext != null;
   }
@@ -164,6 +166,9 @@ class _Coach extends StatelessWidget {
     TourStep.weakPlaces => AppStrings.tourWeakPlaces,
     TourStep.mistakes => AppStrings.tourMistakes,
     TourStep.topics => AppStrings.tourTopics,
+    TourStep.offline => AppStrings.tourOffline,
+    TourStep.progress => AppStrings.tourProgress,
+    TourStep.compete => AppStrings.tourCompete,
     TourStep.done => AppStrings.tourDone,
   };
 
@@ -265,11 +270,7 @@ class _SpotlightPainter extends CustomPainter {
     }
     final window = RRect.fromRectAndRadius(target, _radius);
     canvas.drawPath(
-      Path.combine(
-        PathOperation.difference,
-        screen,
-        Path()..addRRect(window),
-      ),
+      Path.combine(PathOperation.difference, screen, Path()..addRRect(window)),
       shade,
     );
     // saniyədə bir dəfə döyünür (controller 6 saniyəlikdir)

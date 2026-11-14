@@ -6,9 +6,9 @@ Son yenilənmə: 2026-11-12 (bölmə 31 yükləndi)
 ## Qısa vəziyyət
 - **Kitab 1:** "Kimya test toplusu I" (DİM, 2025, 359 səhifə)
 - **Fayl:** `tools/dim/Kimya test toplusu I 2025 _250822_103034.pdf`
-- **Hazır bölmələr:** 1, 2, 3, 4, 5, 6 (bölmə 6 yükləndi, 2026-11-05); bölmə 7 yükləndi, 2026-11-05; bölmə 8 yükləndi, 2026-11-05; bölmə 9 yükləndi, 2026-11-05; bölmə 10 yükləndi, 2026-11-05; bölmə 11 yükləndi, 2026-11-05; bölmə 12 yükləndi, 2026-11-05; bölmə 13 yükləndi, 2026-11-05; bölmə 14 yükləndi, 2026-11-05; bölmə 15 yükləndi, 2026-11-05; bölmə 16–24 yükləndi (2026-11-06, şəkillər `images_kitab`-a köçürüldü); bölmə 25–26 yükləndi (2026-11-12, şəkillər `images_kitab`-a köçürüldü); bölmə 27 yükləndi (2026-11-12); bölmə 28 yükləndi (2026-11-12); bölmə 29 yükləndi (2026-11-12); bölmə 30 yükləndi (2026-11-12); bölmə 31 yükləndi (2026-11-12)
-- **Bazada:** 253 şəkil-sual (206 qapalı, 47 açıq). Bölmə 6 ilə +55 (46 qapalı, 9 açıq) = 308; bölmə 7 ilə +97 (77 qapalı, 20 açıq) = 405; bölmə 8 ilə +82 (51 qapalı, 31 açıq) = 487; bölmə 9 ilə +45 (38 qapalı, 7 açıq) = 532; bölmə 10 ilə +82 (79 qapalı, 3 çoxseçimli) = 614; bölmə 11 ilə +55 (54 qapalı, 1 ədədi) = 669; bölmə 12 ilə +126 (104 qapalı, 11 çoxseçimli, 5 ədədi, 6 uyğunlaşdırma) = 795; bölmə 13 ilə +100 (78 qapalı, 22 ədədi) = 895; bölmə 14 ilə +68 (55 qapalı, 6 çoxseçimli, 2 ədədi, 5 uyğunlaşdırma) = 963; bölmə 15 ilə +153 = **1116**; bölmə 16 (+19), 17 (+83), 18 (+50), 19 (+38) = **1306**; bölmə 20 (+86) = **1392**; bölmə 21 (+69) = **1461**; bölmə 22 (+58) = **1519**; bölmə 23 (+83) = **1602**; bölmə 24 (+13) = **1615**; bölmə 25 (+55), 26 (+55) = **1725**; bölmə 27 (+82) = **1807**; bölmə 28 (+44) = **1851**; bölmə 29 (+72) = **1923**; bölmə 30 (+154) = **2077**; bölmə 31 (+52) = **2129**
-- **Növbəti:** pdf 162 sağ sütun (y~1020-dən) və sonrakı səhifələr "Ətraflı yazılı cavab" ATLANIR. Növbəti test bölməsinin yerini `strip 164 167` ilə tap; açar pdf 340-ın sonu / 341.
+- **Hazır bölmələr:** 1, 2, 3, 4, 5, 6 (bölmə 6 yükləndi, 2026-11-05); bölmə 7 yükləndi, 2026-11-05; bölmə 8 yükləndi, 2026-11-05; bölmə 9 yükləndi, 2026-11-05; bölmə 10 yükləndi, 2026-11-05; bölmə 11 yükləndi, 2026-11-05; bölmə 12 yükləndi, 2026-11-05; bölmə 13 yükləndi, 2026-11-05; bölmə 14 yükləndi, 2026-11-05; bölmə 15 yükləndi, 2026-11-05; bölmə 16–24 yükləndi (2026-11-06, şəkillər `images_kitab`-a köçürüldü); bölmə 25–26 yükləndi (2026-11-12, şəkillər `images_kitab`-a köçürüldü); bölmə 27 yükləndi (2026-11-12); bölmə 28 yükləndi (2026-11-12); bölmə 29 yükləndi (2026-11-12); bölmə 30 yükləndi (2026-11-12); bölmə 31 yükləndi (2026-11-12); bölmə 32 yükləndi (2026-11-14); bölmə 33 yükləndi (2026-11-14); bölmə 34 yükləndi (2026-11-14); bölmə 35 yükləndi (2026-11-14); bölmə 36 yükləndi (2026-11-14); bölmə 37 yükləndi (2026-11-14)
+- **Bazada:** 253 şəkil-sual (206 qapalı, 47 açıq). Bölmə 6 ilə +55 (46 qapalı, 9 açıq) = 308; bölmə 7 ilə +97 (77 qapalı, 20 açıq) = 405; bölmə 8 ilə +82 (51 qapalı, 31 açıq) = 487; bölmə 9 ilə +45 (38 qapalı, 7 açıq) = 532; bölmə 10 ilə +82 (79 qapalı, 3 çoxseçimli) = 614; bölmə 11 ilə +55 (54 qapalı, 1 ədədi) = 669; bölmə 12 ilə +126 (104 qapalı, 11 çoxseçimli, 5 ədədi, 6 uyğunlaşdırma) = 795; bölmə 13 ilə +100 (78 qapalı, 22 ədədi) = 895; bölmə 14 ilə +68 (55 qapalı, 6 çoxseçimli, 2 ədədi, 5 uyğunlaşdırma) = 963; bölmə 15 ilə +153 = **1116**; bölmə 16 (+19), 17 (+83), 18 (+50), 19 (+38) = **1306**; bölmə 20 (+86) = **1392**; bölmə 21 (+69) = **1461**; bölmə 22 (+58) = **1519**; bölmə 23 (+83) = **1602**; bölmə 24 (+13) = **1615**; bölmə 25 (+55), 26 (+55) = **1725**; bölmə 27 (+82) = **1807**; bölmə 28 (+44) = **1851**; bölmə 29 (+72) = **1923**; bölmə 30 (+154) = **2077**; bölmə 31 (+52) = **2129**; bölmə 32 (+49) = **2178**; bölmə 33 (+53) = **2231**; bölmə 34 (+105) = **2336**; bölmə 35 (+68) = **2404**; bölmə 36 (+89) = **2493**; bölmə 37 (+24) = **2517**
+- **Növbəti:** pdf 191 sağ sütun (y~1270-dən) "Ətraflı yazılı cavab" ATLANIR. Növbəti test bölməsinin (yeni fəsil) yerini `strip 192 196` ilə tap; açar pdf 343 (yazılı açardan sonra) / 344.
 - **Yazılı tapşırıqlar ATLANIR** (sahibin qərarı, 2026-11-05): "Ətraflı yazılı cavab tələb olunan tapşırıqlar" bölmələri tətbiqə əlavə olunmur, soruşulmur. Atlananlar: pdf 19–20, pdf 38 (sağ) – 40, pdf 65 (sol, 100-dən sonra) – 66.
 - **Səhifə qeydi:** kitabda çap olunmuş səhifə nömrəsi = pdf səhifəsi + 1 (pdf 15 = kitabda 16).
 
@@ -47,6 +47,12 @@ Son yenilənmə: 2026-11-12 (bölmə 31 yükləndi)
 | 29 | Məhlullar. Həllolma əmsalı (fəsil "Məhlullar") | 143–148 | 72 | yükləndi: `out/import_kt1_s29.sql` (47 qapalı + 4 çoxseçimli + 17 ədədi + 4 uyğunlaşdırma) | yoxdur | `KT1-S29-Qnnn` | `scan/kimya_I_bolme29_cavablar.json` |
 | 30 | Həll olan maddənin kütlə payı | 149–159 (sol, 154) | 154 | yükləndi: `out/import_kt1_s30.sql` (111 qapalı + 7 çoxseçimli + 30 ədədi + 6 uyğunlaşdırma) | yoxdur | `KT1-S30-Qnnn` | `scan/kimya_I_bolme30_cavablar.json` |
 | 31 | Molyar qatılıq | 159 (sol, y~880)–162 (sağ, 52) | 52 | yükləndi: `out/import_kt1_s31.sql` (24 qapalı + 6 çoxseçimli + 22 ədədi) | yoxdur | `KT1-S31-Qnnn` | `scan/kimya_I_bolme31_cavablar.json` |
+| 32 | Elektrolitik dissosiasiya (fəsil "Elektrolitik dissosiasiya. İon mübadiləsi reaksiyaları. Duzların hidrolizi. Elektroliz") | 165–168 (sol, y~410) | 49 | yükləndi: `out/import_kt1_s32.sql` (47 qapalı + 1 ədədi + 1 uyğunlaşdırma) | yoxdur | `KT1-S32-Qnnn` | `scan/kimya_I_bolme32_cavablar.json` |
+| 33 | Elektrolitik dissosiasiyaya aid hesablamalar | 168 (sol, y~420)–171 (sol, 53) | 53 | yükləndi: `out/import_kt1_s33.sql` (33 qapalı + 2 çoxseçimli + 18 ədədi) | yoxdur | `KT1-S33-Qnnn` | `scan/kimya_I_bolme33_cavablar.json` |
+| 34 | İon mübadiləsi reaksiyaları (açarda "... və onlara aid hesablamalar") | 171 (sağ)–179 (sol, 105) | 105 | yükləndi: `out/import_kt1_s34.sql` (96 qapalı + 6 çoxseçimli + 2 ədədi + 1 uyğunlaşdırma) | yoxdur | `KT1-S34-Qnnn` | `scan/kimya_I_bolme34_cavablar.json` |
+| 35 | Duzların hidrolizi | 179 (sol, y~775)–184 (sol, 68) | 68 | yükləndi: `out/import_kt1_s35.sql` (62 qapalı + 2 çoxseçimli + 4 uyğunlaşdırma) | yoxdur | `KT1-S35-Qnnn` | `scan/kimya_I_bolme35_cavablar.json` |
+| 36 | Elektroliz | 184 (sol, y~1194)–190 (sol, 89) | 89 | yükləndi: `out/import_kt1_s36.sql` (71 qapalı + 13 çoxseçimli + 4 ədədi + 1 uyğunlaşdırma) | yoxdur | `KT1-S36-Qnnn` | `scan/kimya_I_bolme36_cavablar.json` |
+| 37 | Elektrolizə aid hesablamalar | 190 (sol, y~1050)–191 (sağ, 24) | 24 | yükləndi: `out/import_kt1_s37.sql` (17 qapalı + 2 çoxseçimli + 5 ədədi) | yoxdur | `KT1-S37-Qnnn` | `scan/kimya_I_bolme37_cavablar.json` |
 
 Cavablar kitabda səhifə 331-dən başlayır. Bölmə 6-nın açarı sahib tərəfindən şəkil kimi verildi (kitab səhifə 22–25 = pdf 21–24).
 
@@ -206,3 +212,29 @@ Cavablar kitabda səhifə 331-dən başlayır. Bölmə 6-nın açarı sahib tər
 - Əmr: `--first 159 --last 162 --start 1 --stop 52 --skip-above 159:0:880` (recrop-da Q1 top=878). 1–24 qapalı, 25–30 çoxseçimli, 31–52 ədədi (31 = `1,0`: tətbiq `1` ilə eyni sayır). 32–35 yoxlandı.
 - OCR 14 sual tapmadı (7, 8, 10, 11, 32, 34, 35, 39–45), əl ilə. Səhifə 162 sol sütun əyridir (40–45), `tilt` lazım olmadı. 52-nin altında "Ətraflı yazılı cavab" başlığı kəsildi (y1=1015). Q1-in yuxarısında başlığın qırığı qalıb (kiçik qüsur).
 - Yükləmə: `out/import_kt1_s31.sql` SQL Editor-da, `out/upload_kitab/` (52 `.webp`) Storage-ə.
+
+## Bölmə 32 (2026-11-14)
+- Yeni fəsil (pdf 162 sağ – 164 "Ətraflı yazılı cavab" atlandı). Əmr: `--first 165 --last 168 --start 1 --stop 80 --skip-above 165:0:290`. 1–47 qapalı, 48 ədədi (0,6), 49 uyğunlaşdırma (3 sətir, `c; a; d`). Açar pdf 341 aşağı.
+- OCR 19 sual tapmadı (17–23, 26, 29–38, 49), əl ilə. **Sütun sərhədi səhv tapıldı: p166 = 455, p168 = 480** (manifestdə düzəldilib). Pdf 166/168 yuxarı sol künc güclü əyridir: 21, 22, 49 düzbucaqlı kəsilib, üstdə başlıq qırığı qalır (kiçik qüsur). Sağ sütun sərhədləri mürəkkəb sətir profilindən (ink rows) ölçüldü: grid oxunuşu ~15 px yanılırdı.
+
+## Bölmə 33 (2026-11-14)
+- Əmr: `--first 168 --last 171 --start 1 --stop 80 --skip-above 168:0:470`. 1–33 qapalı, 34–35 çoxseçimli, 36–53 ədədi. Açar pdf 341 aşağı.
+- OCR 9 sual tapmadı (1–3, 7, 17, 26, 32, 37, 38), 39/40-ı səhv yerdə tapdı: hamısı əl ilə (sətir yerləri ink profili ilə ölçüldü). 26-nın üstündə başlıq qırığı qalıb.
+
+## Bölmə 34 (2026-11-14)
+- Əmr: `--first 171 --last 179 --start 1 --stop 105 --skip-above 171:0:9999 --skip-above 171:1:150`. 1–96 qapalı, 97–102 çoxseçimli, 103–104 ədədi (əmsalların cəmi), 105 uyğunlaşdırma (3 sətir, a–d). Açar pdf 342 yuxarı.
+- OCR 20 sual tapmadı, əl ilə. **Üsul:** tapılmayan bölgələrdə RapidOCR-ı kiçik kəsiklərdə birbaşa işlətmək (sətir `^\d+\.` ilə başlayır) grid-dən daha dəqiq və ucuzdur. Əyri sol künclərdə (pdf 172, 174) yalnız grid işlədi. 69, 74 növbəti sütunda davam edir.
+
+## Bölmə 35 (2026-11-14)
+- Əmr: `--first 179 --last 185 --start 1 --stop 68 --skip-above 179:0:775`. 1–62 qapalı, 63–64 çoxseçimli, 65–68 uyğunlaşdırma. Açar pdf 342 orta.
+- OCR 14 sual tapmadı, əl ilə. 23 və 58 növbəti sütunda davam edir. 68-in altında "Elektroliz" başlığı kəsildi (y1=1168). Variant sətirlərinin yeri `A)`–`E)` OCR-ı ilə tapıldı (sonu dəqiq).
+
+## Bölmə 36 (2026-11-14)
+- Əmr: `--first 184 --last 191 --start 1 --stop 89 --skip-above 184:0:1200`. 1–71 qapalı, 72–84 çoxseçimli, 85–88 ədədi, 89 uyğunlaşdırma. Açar pdf 342 aşağı.
+- OCR 24 sual tapmadı, əl ilə (grid; anker = OCR-ın tapdığı qonşu sualın y-i, grid etiketlərini oxumaq ~20–40 px yanılır). 56 və 67 növbəti sütunda davam edir. 89-un altında növbəti başlıq kəsildi (y1=1028).
+
+## Bölmə 37 (2026-11-14)
+- Əmr: `--first 190 --last 193 --start 1 --stop 24 --skip-above 190:0:1045`. 1–17 qapalı, 18 ədədi (12), 19–20 çoxseçimli, 21–24 ədədi (5,6; 5,6; 56; 11,2). Açar pdf 343 yuxarı.
+- OCR 1–3-ü tapmadı (əyri sol kənar), əl ilə; nömrələr azca kəsik qalıb. 24-ün altında "Ətraflı yazılı cavab" başlığı kəsildi (y1=1250).
+- **Təmizlik (2026-11-14):** bölmə 1–36-nın `scan/*/q*.png` kəsikləri silindi (~185 MB; `manifest.json` qalır, `--recrop` yenidən kəsir). `scan_tool.py done` bundan sonra kəsikləri özü silir.
+

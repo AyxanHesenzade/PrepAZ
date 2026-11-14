@@ -10,8 +10,11 @@ class GlassNavItem {
     required this.icon,
     required this.selectedIcon,
     required this.label,
+    this.key,
   });
 
+  /// Düymənin özünə taxılır (məs. öyrədici tur onu tapsın).
+  final Key? key;
   final IconData icon;
   final IconData selectedIcon;
   final String label;
@@ -101,8 +104,7 @@ class GlassNavBar extends StatelessWidget {
                         width: itemWidth,
                         child: Container(
                           decoration: BoxDecoration(
-                            borderRadius:
-                                BorderRadius.circular(AppRadius.pill),
+                            borderRadius: BorderRadius.circular(AppRadius.pill),
                             gradient: LinearGradient(
                               begin: Alignment.topCenter,
                               end: Alignment.bottomCenter,
@@ -122,6 +124,7 @@ class GlassNavBar extends StatelessWidget {
                           for (final (i, item) in items.indexed)
                             Expanded(
                               child: _Item(
+                                key: item.key,
                                 item: item,
                                 selected: i == selectedIndex,
                                 onTap: () {
@@ -147,6 +150,7 @@ class GlassNavBar extends StatelessWidget {
 
 class _Item extends StatelessWidget {
   const _Item({
+    super.key,
     required this.item,
     required this.selected,
     required this.onTap,
@@ -159,7 +163,9 @@ class _Item extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    final color = selected ? scheme.primary : scheme.onSurface.withValues(alpha: 0.6);
+    final color = selected
+        ? scheme.primary
+        : scheme.onSurface.withValues(alpha: 0.6);
     return Semantics(
       button: true,
       selected: selected,
@@ -188,7 +194,11 @@ class _Item extends StatelessWidget {
                 color: color,
                 fontWeight: selected ? FontWeight.w800 : FontWeight.w600,
               ),
-              child: Text(item.label, maxLines: 1, overflow: TextOverflow.ellipsis),
+              child: Text(
+                item.label,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
           ],
         ),

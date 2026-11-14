@@ -3,15 +3,20 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/constants/app_strings.dart';
 import '../../../core/widgets/glass_nav_bar.dart';
+import '../../home/presentation/home_providers.dart';
 import '../../home/presentation/home_screen.dart';
 import '../../leaderboard/presentation/leaderboard_providers.dart';
 import '../../leaderboard/presentation/leaderboard_tab.dart';
 import '../../reminders/presentation/reminder_sync.dart';
+import '../../stats/presentation/stats_providers.dart';
+import '../../stats/presentation/stats_tab.dart';
 import '../../tour/presentation/tour_controller.dart';
+import '../../tour/presentation/tour_targets.dart';
+import '../../tour/presentation/widgets/tour_overlay.dart';
 
-/// Daxil olandan sonrakı əsas ekran: aşağıda menyu (Ana səhifə, Yarış).
+/// Daxil olandan sonrakı əsas ekran: aşağıda menyu (Ana səhifə, İrəliləyiş, Yarış).
 /// Tablar `IndexedStack`-dədir: keçəndə ana səhifənin vəziyyəti itmir.
-/// "Yarış" ilk dəfə basılana qədər qurulmur (lazımsız sorğu getməsin).
+/// "İrəliləyiş" və "Yarış" ilk dəfə basılana qədər qurulmur (lazımsız sorğu getməsin).
 class MainShell extends ConsumerStatefulWidget {
   const MainShell({super.key});
 
@@ -20,13 +25,24 @@ class MainShell extends ConsumerStatefulWidget {
 }
 
 class _MainShellState extends ConsumerState<MainShell> {
-  int _index = 0;
-  final _opened = <int>{0};
+  static const _home = 0;
+  static const _progress = 1;
+  static const _compete = 2;
+
+  int _index = _home;
+  final _opened = <int>{_home};
+
+  /// Turun açarları burada yaşayır (qlobal yox, bax `TourScope`): tur alt menyunu da göstərir.
+  final _tour = TourTargets(hasBottomNav: true);
 
   void _select(int index) {
-    if (index == 1 && _opened.contains(1)) {
-      // geri qayıdanda cədvəl təzə olsun (ana səhifədə test həll edilmiş ola bilər)
-      ref.invalidate(leaderboardProvider);
+    // geri qayıdanda rəqəmlər təzə olsun (ana səhifədə test həll edilmiş ola bilər)
+    if (_opened.contains(index)) {
+      if (index == _progress) {
+        ref.invalidate(subjectStatsProvider);
+        ref.invalidate(masteryProvider);
+      }
+      if (index == _compete) ref.invalidate(leaderboardProvider);
     }
     setState(() {
       _index = index;
@@ -36,39 +52,61 @@ class _MainShellState extends ConsumerState<MainShell> {
 
   @override
   Widget build(BuildContext context) {
-    // öyrədici tur ana səhifədədir: tur gedərkən alt menyu gizlənir
-    final touring = ref.watch(tourControllerProvider) != null;
+    // tur gedərkən alt menyu gizlənir (yan menyunun alt düymələrini örtməsin),
+    // yalnız alt menyunun öz addımlarında görünür
+    final step = ref.watch(tourControllerProvider);
+    final showNav = step == null || step.onBottomNav;
     return ReminderSync(
-      child: Scaffold(
-        body: IndexedStack(
-          index: _index,
+      child: TourScope(
+        targets: _tour,
+        child: Stack(
+          fit: StackFit.expand,
           children: [
-            const HomeScreen(),
-            _opened.contains(1)
-                ? const LeaderboardTab()
-                : const SizedBox.shrink(),
-          ],
-        ),
-        // panel üzür: arxasında ekranın fonu bulanıq görünür
-        extendBody: true,
-        bottomNavigationBar: touring
-            ? null
-            : GlassNavBar(
-                selectedIndex: _index,
-                onSelected: _select,
-                items: [
-                  GlassNavItem(
-                    icon: Icons.home_outlined,
-                    selectedIcon: Icons.home_rounded,
-                    label: AppStrings.navHome,
-                  ),
-                  GlassNavItem(
-                    icon: Icons.emoji_events_outlined,
-                    selectedIcon: Icons.emoji_events_rounded,
-                    label: AppStrings.navCompete,
-                  ),
+            Scaffold(
+              body: IndexedStack(
+                index: _index,
+                children: [
+                  const HomeScreen(),
+                  _opened.contains(_progress)
+                      ? const StatsTab()
+                      : const SizedBox.shrink(),
+                  _opened.contains(_compete)
+                      ? const LeaderboardTab()
+                      : const SizedBox.shrink(),
                 ],
               ),
+              // panel üzür: arxasında ekranın fonu bulanıq görünür
+              extendBody: true,
+              bottomNavigationBar: !showNav
+                  ? null
+                  : GlassNavBar(
+                      selectedIndex: _index,
+                      onSelected: _select,
+                      items: [
+                        GlassNavItem(
+                          icon: Icons.home_outlined,
+                          selectedIcon: Icons.home_rounded,
+                          label: AppStrings.navHome,
+                        ),
+                        GlassNavItem(
+                          key: _tour.progress,
+                          icon: Icons.insights_outlined,
+                          selectedIcon: Icons.insights_rounded,
+                          label: AppStrings.navProgress,
+                        ),
+                        GlassNavItem(
+                          key: _tour.compete,
+                          icon: Icons.emoji_events_outlined,
+                          selectedIcon: Icons.emoji_events_rounded,
+                          label: AppStrings.navCompete,
+                        ),
+                      ],
+                    ),
+            ),
+            // yan menyunun və alt menyunun da üstündə qalsın
+            const TourOverlay(),
+          ],
+        ),
       ),
     );
   }

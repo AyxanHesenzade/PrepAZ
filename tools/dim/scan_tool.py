@@ -114,7 +114,14 @@ def done(a):
     for s in a.sections:
         for f in up.glob(f"KT1-S{s:02d}-Q*.webp"):
             shutil.move(str(f), dst / f.name); moved += 1
-    print(f"moved {moved}; upload_kitab left: {len(list(up.iterdir()))}; images_kitab: {len(list(dst.iterdir()))}")
+    # the section's PNG crops are only an intermediate step (the uploaded .webp is in images_kitab);
+    # manifest.json stays, so `scan_segment.py --recrop` can cut them again
+    removed = 0
+    for s in a.sections:
+        for f in (HERE / "scan").glob(f"kimya_I_bolme{s}/q*.png"):
+            f.unlink(); removed += 1
+    print(f"moved {moved}; removed {removed} png crops; upload_kitab left: {len(list(up.iterdir()))}; "
+          f"images_kitab: {len(list(dst.iterdir()))}")
 
 
 def _path(a, name):

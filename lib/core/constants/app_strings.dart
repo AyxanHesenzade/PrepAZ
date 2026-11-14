@@ -27,8 +27,11 @@ abstract final class AppStrings {
     'Произошла ошибка. Проверьте интернет и попробуйте снова.',
     'Something went wrong. Check your internet connection and try again.',
   );
-  static String get loadFailed =>
-      _t('Məlumat yüklənmədi.', 'Не удалось загрузить данные.', "Couldn't load data.");
+  static String get loadFailed => _t(
+    'Məlumat yüklənmədi.',
+    'Не удалось загрузить данные.',
+    "Couldn't load data.",
+  );
 
   /// Yalnız proqramçı üçündür (env faylı yoxdur), tərcümə olunmur.
   static const configMissing =
@@ -36,12 +39,19 @@ abstract final class AppStrings {
       'Belə işə salın:\nflutter run --dart-define-from-file=env/test.json';
 
   // Auth
-  static String get signInTitle =>
-      _t('Hesabınıza daxil olun', 'Войдите в свой аккаунт', 'Sign in to your account');
-  static String get signUpTitle =>
-      _t('Yeni hesab yaradın', 'Создайте новый аккаунт', 'Create a new account');
+  static String get signInTitle => _t(
+    'Hesabınıza daxil olun',
+    'Войдите в свой аккаунт',
+    'Sign in to your account',
+  );
+  static String get signUpTitle => _t(
+    'Yeni hesab yaradın',
+    'Создайте новый аккаунт',
+    'Create a new account',
+  );
   static String get signInAction => _t('Daxil ol', 'Войти', 'Sign in');
-  static String get signUpAction => _t('Hesab yarat', 'Создать аккаунт', 'Create account');
+  static String get signUpAction =>
+      _t('Hesab yarat', 'Создать аккаунт', 'Create account');
   static String get back => _t('Geri', 'Назад', 'Back');
   static String get choiceTitle =>
       _t('Xoş gəlmisiniz!', 'Добро пожаловать!', 'Welcome!');
@@ -94,7 +104,8 @@ abstract final class AppStrings {
   static String get email => _t('E-poçt', 'Эл. почта', 'Email');
   static String get password => _t('Parol', 'Пароль', 'Password');
   static String get signOut => _t('Çıxış', 'Выйти', 'Sign out');
-  static String get deleteAccount => _t('Hesabı sil', 'Удалить аккаунт', 'Delete account');
+  static String get deleteAccount =>
+      _t('Hesabı sil', 'Удалить аккаунт', 'Delete account');
   static String get deleteAccountQuestion =>
       _t('Hesab silinsin?', 'Удалить аккаунт?', 'Delete your account?');
   static String get deleteAccountWarning => _t(
@@ -102,7 +113,8 @@ abstract final class AppStrings {
     'Ваш аккаунт, ответы, ошибки и серия будут удалены навсегда. Это нельзя отменить.',
     'Your account, answers, mistakes and streak will be permanently deleted. This cannot be undone.',
   );
-  static String get deleteAccountConfirm => _t('Bəli, sil', 'Да, удалить', 'Yes, delete');
+  static String get deleteAccountConfirm =>
+      _t('Bəli, sil', 'Да, удалить', 'Yes, delete');
   static String get deleteAccountAdmin => _t(
     'Admin hesabı tətbiqdən silinmir.',
     'Аккаунт администратора нельзя удалить из приложения.',
@@ -120,11 +132,8 @@ abstract final class AppStrings {
     'Введите почту и пароль, который вы создали для PrepAZ.',
     'Enter your email and the password you created for PrepAZ.',
   );
-  static String get signInGuideTap => _t(
-    '"Daxil ol" düyməsinə basın.',
-    'Нажмите «Войти».',
-    'Tap "Sign in".',
-  );
+  static String get signInGuideTap =>
+      _t('"Daxil ol" düyməsinə basın.', 'Нажмите «Войти».', 'Tap "Sign in".');
   static String get signInGuideNewUser => _t(
     'Yeni qeydiyyatdan keçmisiniz? Əvvəl e-poçtunuza gələn məktubdakı linkə basın, sonra bura qayıdıb daxil olun.',
     'Только что зарегистрировались? Сначала нажмите на ссылку в письме, затем вернитесь сюда и войдите.',
@@ -178,11 +187,8 @@ abstract final class AppStrings {
     'Последний шаг: подтвердите почту',
     'Last step: confirm your email',
   );
-  static String get confirmHeadline => _t(
-    'Az qaldı!',
-    'Почти готово!',
-    'Almost there!',
-  );
+  static String get confirmHeadline =>
+      _t('Az qaldı!', 'Почти готово!', 'Almost there!');
   static String get confirmSentTo => _t(
     'Təsdiq məktubunu bu ünvana göndərdik:',
     'Мы отправили письмо с подтверждением на адрес:',
@@ -203,12 +209,21 @@ abstract final class AppStrings {
     'Вернитесь в PrepAZ: вход выполнится сам. Если нет, нажмите кнопку ниже.',
     "Come back to PrepAZ and you'll be signed in. If not, tap the button below.",
   );
-  static String get confirmCheckAction =>
-      _t('Təsdiqlədim, davam et', 'Я подтвердил(а), продолжить', "I've confirmed, continue");
-  static String get confirmResendAction =>
-      _t('Məktub gəlmədi? Yenidən göndər', 'Письмо не пришло? Отправить снова', "Didn't get it? Send again");
-  static String get confirmBackAction =>
-      _t('Geri qayıt və e-poçtu dəyiş', 'Назад: изменить адрес', 'Go back and change email');
+  static String get confirmCheckAction => _t(
+    'Təsdiqlədim, davam et',
+    'Я подтвердил(а), продолжить',
+    "I've confirmed, continue",
+  );
+  static String get confirmResendAction => _t(
+    'Məktub gəlmədi? Yenidən göndər',
+    'Письмо не пришло? Отправить снова',
+    "Didn't get it? Send again",
+  );
+  static String get confirmBackAction => _t(
+    'Geri qayıt və e-poçtu dəyiş',
+    'Назад: изменить адрес',
+    'Go back and change email',
+  );
   static String get confirmationResent => _t(
     'Məktubu yenidən göndərdik. Gələnlər və Spam qovluğuna baxın.',
     'Письмо отправлено снова. Проверьте «Входящие» и «Спам».',
@@ -226,14 +241,16 @@ abstract final class AppStrings {
   );
 
   // Validasiya
-  static String get invalidEmail =>
-      _t(
-        'E-poçtu tam yazın, məsələn: ad@gmail.com',
-        'Введите полный адрес, например: ad@gmail.com',
-        'Enter your full email, for example: ad@gmail.com',
-      );
-  static String shortPassword(int min) =>
-      _t('Ən azı $min simvol', 'Не менее $min символов', 'At least $min characters');
+  static String get invalidEmail => _t(
+    'E-poçtu tam yazın, məsələn: ad@gmail.com',
+    'Введите полный адрес, например: ad@gmail.com',
+    'Enter your full email, for example: ad@gmail.com',
+  );
+  static String shortPassword(int min) => _t(
+    'Ən azı $min simvol',
+    'Не менее $min символов',
+    'At least $min characters',
+  );
 
   // Auth xətaları
   static String get invalidCredentials => _t(
@@ -251,8 +268,11 @@ abstract final class AppStrings {
     'Почта ещё не подтверждена. Перейдите по ссылке из письма.',
     "Email isn't confirmed yet. Tap the link in the email we sent.",
   );
-  static String get weakPassword =>
-      _t('Parol çox zəifdir.', 'Слишком слабый пароль.', 'The password is too weak.');
+  static String get weakPassword => _t(
+    'Parol çox zəifdir.',
+    'Слишком слабый пароль.',
+    'The password is too weak.',
+  );
 
   // Ana səhifə
   static String get homeTitle => _t('Salam!', 'Привет!', 'Hi there!');
@@ -267,8 +287,11 @@ abstract final class AppStrings {
     'Серия: $days дн. подряд',
     'Streak: $days ${days == 1 ? 'day' : 'days'} in a row',
   );
-  static String get noSubjects =>
-      _t('Hələ fənn əlavə olunmayıb.', 'Предметы пока не добавлены.', 'No subjects yet.');
+  static String get noSubjects => _t(
+    'Hələ fənn əlavə olunmayıb.',
+    'Предметы пока не добавлены.',
+    'No subjects yet.',
+  );
 
   // Zəif mövzular
   static String get noMasteryYet => _t(
@@ -276,9 +299,13 @@ abstract final class AppStrings {
     'Ответов пока нет. По мере практики здесь появятся слабые и хорошо известные темы.',
     'No answers yet. Your weak and strong topics will appear here as you practice.',
   );
-  static String get weakTopics => _t('Zəif mövzular', 'Слабые темы', 'Weak topics');
-  static String get strongTopics =>
-      _t('Yaxşı bildiyin mövzular', 'Темы, которые ты знаешь хорошо', 'Topics you know well');
+  static String get weakTopics =>
+      _t('Zəif mövzular', 'Слабые темы', 'Weak topics');
+  static String get strongTopics => _t(
+    'Yaxşı bildiyin mövzular',
+    'Темы, которые ты знаешь хорошо',
+    'Topics you know well',
+  );
   static String get inProgressTopics =>
       _t('Davam edən mövzular', 'Темы в процессе', 'Topics in progress');
 
@@ -308,10 +335,15 @@ abstract final class AppStrings {
     'Открой тему и решай тесты с того места, где остановился. Верно или нет, увидишь после «Завершить».',
     'Open a topic and carry on where you left off. You will see what was right after you tap "Finish".',
   );
-  static String get searchTopics => _t('Mövzu axtar', 'Поиск темы', 'Search topics');
-  static String get noTopicsFound =>
-      _t('Belə mövzu tapılmadı.', 'Такой темы не найдено.', 'No such topic found.');
-  static String questionCount(int n) => _t('$n sual', '$n вопр.', '$n questions');
+  static String get searchTopics =>
+      _t('Mövzu axtar', 'Поиск темы', 'Search topics');
+  static String get noTopicsFound => _t(
+    'Belə mövzu tapılmadı.',
+    'Такой темы не найдено.',
+    'No such topic found.',
+  );
+  static String questionCount(int n) =>
+      _t('$n sual', '$n вопр.', '$n questions');
   static String get jumpToQuestion =>
       _t('Suala keç', 'Перейти к вопросу', 'Jump to question');
   static String get previousQuestion => _t('Əvvəlki', 'Назад', 'Previous');
@@ -377,8 +409,11 @@ abstract final class AppStrings {
     'Интернета всё ещё нет.',
     'Still no internet.',
   );
-  static String get homeOfflineGo =>
-      _t('Yüklədiyin suallara keç', 'Перейти к загруженным', 'Go to downloaded questions');
+  static String get homeOfflineGo => _t(
+    'Yüklədiyin suallara keç',
+    'Перейти к загруженным',
+    'Go to downloaded questions',
+  );
   static String get downloadedTitle =>
       _t('Yüklədiyin suallar', 'Загруженные вопросы', 'Downloaded questions');
   static String get downloadedPickSubject => _t(
@@ -398,19 +433,52 @@ abstract final class AppStrings {
   );
   // Köməkçinin məşqdə dediyi sözlər. `{n}` ardıcıl düz sayı ilə əvəz olunur.
   static List<String> get cheerThree => _tl(
-    ['Əla gedirsən! Ardıcıl {n} düz 🔥', '{n} düz ardıcıl! Beyin qızdı 😎', 'Hə, bax belə! {n} düz ardıcıl 👏'],
-    ['Отлично! {n} правильных подряд 🔥', '{n} подряд! Мозг разогрелся 😎', 'Вот так! {n} правильных подряд 👏'],
-    ['Nice! {n} correct in a row 🔥', '{n} in a row! Your brain is warmed up 😎', 'Yes, like that! {n} correct in a row 👏'],
+    [
+      'Əla gedirsən! Ardıcıl {n} düz 🔥',
+      '{n} düz ardıcıl! Beyin qızdı 😎',
+      'Hə, bax belə! {n} düz ardıcıl 👏',
+    ],
+    [
+      'Отлично! {n} правильных подряд 🔥',
+      '{n} подряд! Мозг разогрелся 😎',
+      'Вот так! {n} правильных подряд 👏',
+    ],
+    [
+      'Nice! {n} correct in a row 🔥',
+      '{n} in a row! Your brain is warmed up 😎',
+      'Yes, like that! {n} correct in a row 👏',
+    ],
   );
   static List<String> get cheerFive => _tl(
-    ['{n} düz ardıcıl! Sən məşqi yeyirsən 😄', 'Dayan, dayan... {n} düz?! Müəllimlər sənə baxır 👀'],
-    ['{n} подряд! Ты съедаешь эту тренировку 😄', 'Стоп-стоп... {n} правильных?! Учителя смотрят на тебя 👀'],
-    ['{n} in a row! You are eating this practice for breakfast 😄', 'Wait, wait... {n} correct?! The teachers are watching you 👀'],
+    [
+      '{n} düz ardıcıl! Sən məşqi yeyirsən 😄',
+      'Dayan, dayan... {n} düz?! Müəllimlər sənə baxır 👀',
+    ],
+    [
+      '{n} подряд! Ты съедаешь эту тренировку 😄',
+      'Стоп-стоп... {n} правильных?! Учителя смотрят на тебя 👀',
+    ],
+    [
+      '{n} in a row! You are eating this practice for breakfast 😄',
+      'Wait, wait... {n} correct?! The teachers are watching you 👀',
+    ],
   );
   static List<String> get cheerBig => _tl(
-    ['{n} düz ardıcıl! Sən artıq robotsan 🤖', '{n} ardıcıl düz! Bu nə rekorddur belə 🏆', 'Nəfəs al! {n} düz ardıcıl, sən yanırsan 🚀'],
-    ['{n} подряд! Ты уже робот 🤖', '{n} правильных подряд! Что это за рекорд 🏆', 'Выдохни! {n} подряд, ты в огне 🚀'],
-    ['{n} in a row! You are basically a robot 🤖', '{n} correct in a row! What a record 🏆', 'Breathe! {n} in a row, you are on fire 🚀'],
+    [
+      '{n} düz ardıcıl! Sən artıq robotsan 🤖',
+      '{n} ardıcıl düz! Bu nə rekorddur belə 🏆',
+      'Nəfəs al! {n} düz ardıcıl, sən yanırsan 🚀',
+    ],
+    [
+      '{n} подряд! Ты уже робот 🤖',
+      '{n} правильных подряд! Что это за рекорд 🏆',
+      'Выдохни! {n} подряд, ты в огне 🚀',
+    ],
+    [
+      '{n} in a row! You are basically a robot 🤖',
+      '{n} correct in a row! What a record 🏆',
+      'Breathe! {n} in a row, you are on fire 🚀',
+    ],
   );
   static List<String> get cheerLegend => _tl(
     ['{n} düz ardıcıl! Əfsanə sənsən 👑'],
@@ -418,14 +486,35 @@ abstract final class AppStrings {
     ['{n} in a row! You are a legend 👑'],
   );
   static List<String> get cheerComeback => _tl(
-    ['{n} düz yazmışdın, bir səhv nədir ki! Davam 💪', 'Hər kəs yanılır. Əsas odur ki, davam edirsən 😉', 'Eybi yox, növbəti sualda qaytarırsan! 🎯'],
-    ['Ты ответил правильно {n} раз подряд, одна ошибка не беда! Дальше 💪', 'Все ошибаются. Главное, что ты продолжаешь 😉', 'Ничего, на следующем вопросе отыграешься! 🎯'],
-    ['You had {n} right, one mistake is nothing! Keep going 💪', 'Everyone slips. What matters is that you keep going 😉', 'No worries, you will win it back on the next one! 🎯'],
+    [
+      '{n} düz yazmışdın, bir səhv nədir ki! Davam 💪',
+      'Hər kəs yanılır. Əsas odur ki, davam edirsən 😉',
+      'Eybi yox, növbəti sualda qaytarırsan! 🎯',
+    ],
+    [
+      'Ты ответил правильно {n} раз подряд, одна ошибка не беда! Дальше 💪',
+      'Все ошибаются. Главное, что ты продолжаешь 😉',
+      'Ничего, на следующем вопросе отыграешься! 🎯',
+    ],
+    [
+      'You had {n} right, one mistake is nothing! Keep going 💪',
+      'Everyone slips. What matters is that you keep going 😉',
+      'No worries, you will win it back on the next one! 🎯',
+    ],
   );
   static List<String> get cheerKimya => _tl(
-    ['Reaksiya başladı! Ardıcıl {n} düz ⚗️', 'Mendeleyev səninlə fəxr edərdi 🧪'],
-    ['Реакция пошла! {n} правильных подряд ⚗️', 'Менделеев гордился бы тобой 🧪'],
-    ['The reaction has started! {n} correct in a row ⚗️', 'Mendeleev would be proud of you 🧪'],
+    [
+      'Reaksiya başladı! Ardıcıl {n} düz ⚗️',
+      'Mendeleyev səninlə fəxr edərdi 🧪',
+    ],
+    [
+      'Реакция пошла! {n} правильных подряд ⚗️',
+      'Менделеев гордился бы тобой 🧪',
+    ],
+    [
+      'The reaction has started! {n} correct in a row ⚗️',
+      'Mendeleev would be proud of you 🧪',
+    ],
   );
   static List<String> get cheerKimyaComeback => _tl(
     ['Kimya hərdən çətin gəlir. Menyudan tövsiyə olunan müəllimlərə də bax 😉'],
@@ -433,9 +522,18 @@ abstract final class AppStrings {
     ['Chemistry can be tough. Check the recommended teachers in the menu 😉'],
   );
   static List<String> get cheerBiologiya => _tl(
-    ['Hüceyrələrin də alqışlayır! {n} düz ardıcıl 🧬', 'Təkamül səndən yan keçmir: {n} düz ardıcıl 🌱'],
-    ['Даже клетки аплодируют! {n} правильных подряд 🧬', 'Эволюция от тебя не отстаёт: {n} подряд 🌱'],
-    ['Even your cells are applauding! {n} correct in a row 🧬', 'Evolution cannot keep up with you: {n} in a row 🌱'],
+    [
+      'Hüceyrələrin də alqışlayır! {n} düz ardıcıl 🧬',
+      'Təkamül səndən yan keçmir: {n} düz ardıcıl 🌱',
+    ],
+    [
+      'Даже клетки аплодируют! {n} правильных подряд 🧬',
+      'Эволюция от тебя не отстаёт: {n} подряд 🌱',
+    ],
+    [
+      'Even your cells are applauding! {n} correct in a row 🧬',
+      'Evolution cannot keep up with you: {n} in a row 🌱',
+    ],
   );
 
   static String get offlineNothing => _t(
@@ -446,9 +544,11 @@ abstract final class AppStrings {
   static String get downloadAction => _t('Yüklə', 'Загрузить', 'Download');
   static String get downloadResume => _t('Davam et', 'Продолжить', 'Resume');
   static String get downloadUpdate => _t('Yenilə', 'Обновить', 'Update');
-  static String get downloadedLabel => _t('Yükləndi', 'Загружено', 'Downloaded');
+  static String get downloadedLabel =>
+      _t('Yükləndi', 'Загружено', 'Downloaded');
   static String get downloadStop => _t('Dayandır', 'Остановить', 'Stop');
-  static String get downloadDelete => _t('Telefondan sil', 'Удалить с телефона', 'Remove from phone');
+  static String get downloadDelete =>
+      _t('Telefondan sil', 'Удалить с телефона', 'Remove from phone');
   static String get downloadUpdateAvailable =>
       _t('Yenilənmə var', 'Есть обновление', 'Update available');
   static String get downloadIncomplete =>
@@ -491,11 +591,16 @@ abstract final class AppStrings {
     'Нет интернета: результат посчитан на телефоне. Ответы сохранены и отправятся автоматически, когда появится интернет.',
     'No internet: the result was calculated on your phone. Your answers are saved and will be sent automatically once you are online.',
   );
-  static String get backToTopics => _t('Mövzulara qayıt', 'К темам', 'Back to topics');
-  static String get restartTopic => _t('Yenidən başla', 'Начать заново', 'Start again');
+  static String get backToTopics =>
+      _t('Mövzulara qayıt', 'К темам', 'Back to topics');
+  static String get restartTopic =>
+      _t('Yenidən başla', 'Начать заново', 'Start again');
   static String get topicDone => _t('Tamamlandı', 'Завершено', 'Completed');
-  static String get sendingAnswers =>
-      _t('Cavablar yoxlanılır...', 'Проверяем ответы...', 'Checking your answers...');
+  static String get sendingAnswers => _t(
+    'Cavablar yoxlanılır...',
+    'Проверяем ответы...',
+    'Checking your answers...',
+  );
   static String get answersNotSent => _t(
     'Cavablar göndərilmədi, amma itməyib. İnterneti yoxlayıb yenidən "Bitir" bas.',
     'Ответы не отправлены, но не потеряны. Проверь интернет и снова нажми «Завершить».',
@@ -537,11 +642,18 @@ abstract final class AppStrings {
   );
   static String get repeatMistakes =>
       _t('Səhvləri təkrar et', 'Повторить ошибки', 'Repeat mistakes');
-  static String get dueToday => _t('Bu gün təkrar', 'Повтор сегодня', 'Review today');
-  static String dueInDays(int days) =>
-      _t('$days gün sonra təkrar', 'Повтор через $days дн.', 'Review in $days days');
-  static String rightAnswer(String right) =>
-      _t('Düzgün cavab: $right', 'Правильный ответ: $right', 'Correct answer: $right');
+  static String get dueToday =>
+      _t('Bu gün təkrar', 'Повтор сегодня', 'Review today');
+  static String dueInDays(int days) => _t(
+    '$days gün sonra təkrar',
+    'Повтор через $days дн.',
+    'Review in $days days',
+  );
+  static String rightAnswer(String right) => _t(
+    'Düzgün cavab: $right',
+    'Правильный ответ: $right',
+    'Correct answer: $right',
+  );
   static String get noMistakes => _t(
     'Səhvlər dəftərin boşdur.',
     'Твоя тетрадь ошибок пуста.',
@@ -549,9 +661,13 @@ abstract final class AppStrings {
   );
 
   // İmtahan hədəfi
-  static String get goalTitle => _t('İmtahan hədəfi', 'Цель экзамена', 'Exam goal');
-  static String get goalPromptTitle =>
-      _t('İmtahanına nə qədər qalıb?', 'Сколько осталось до экзамена?', 'How long until your exam?');
+  static String get goalTitle =>
+      _t('İmtahan hədəfi', 'Цель экзамена', 'Exam goal');
+  static String get goalPromptTitle => _t(
+    'İmtahanına nə qədər qalıb?',
+    'Сколько осталось до экзамена?',
+    'How long until your exam?',
+  );
   static String get goalPromptText => _t(
     'İmtahan dövrünü seç, gündəlik hədəfini qur.',
     'Выбери период экзамена и поставь дневную цель.',
@@ -562,7 +678,8 @@ abstract final class AppStrings {
     'Осталось $days дн.',
     '$days ${days == 1 ? 'day' : 'days'} left',
   );
-  static String get goalExamToday => _t('İmtahan bu gündür!', 'Экзамен сегодня!', 'The exam is today!');
+  static String get goalExamToday =>
+      _t('İmtahan bu gündür!', 'Экзамен сегодня!', 'The exam is today!');
   static String get goalDateUnknown => _t(
     'İmtahan tarixi seçilməyib',
     'Дата экзамена не выбрана',
@@ -578,13 +695,22 @@ abstract final class AppStrings {
     'Дневная цель выполнена!',
     'Daily goal reached!',
   );
-  static String get goalPeriod => _t('İmtahan dövrü', 'Период экзамена', 'Exam period');
-  static String get goalCustomDate => _t('Öz tarixim', 'Своя дата', 'My own date');
-  static String get goalDaily => _t('Gündəlik hədəf (sual)', 'Дневная цель (вопросов)', 'Daily goal (questions)');
+  static String get goalPeriod =>
+      _t('İmtahan dövrü', 'Период экзамена', 'Exam period');
+  static String get goalCustomDate =>
+      _t('Öz tarixim', 'Своя дата', 'My own date');
+  static String get goalDaily => _t(
+    'Gündəlik hədəf (sual)',
+    'Дневная цель (вопросов)',
+    'Daily goal (questions)',
+  );
   static String get goalSave => _t('Yadda saxla', 'Сохранить', 'Save');
   static String get goalLater => _t('Sonra', 'Позже', 'Later');
-  static String get goalSaveFailed =>
-      _t('Hədəf saxlanmadı.', 'Не удалось сохранить цель.', "Couldn't save the goal.");
+  static String get goalSaveFailed => _t(
+    'Hədəf saxlanmadı.',
+    'Не удалось сохранить цель.',
+    "Couldn't save the goal.",
+  );
 
   /// Dövrün adı: tanınan kod üçün tərcümə, yoxsa bazadakı ad.
   static String periodName(String code, String fallback) => switch (code) {
@@ -594,8 +720,11 @@ abstract final class AppStrings {
   };
 
   // Versiya
-  static String appVersion(String version, int build) =>
-      _t('Versiya $version ($build)', 'Версия $version ($build)', 'Version $version ($build)');
+  static String appVersion(String version, int build) => _t(
+    'Versiya $version ($build)',
+    'Версия $version ($build)',
+    'Version $version ($build)',
+  );
 
   // Yeniləmə
   static String get updateRequiredTitle =>
@@ -605,8 +734,11 @@ abstract final class AppStrings {
     'Эта версия больше не поддерживается. Чтобы продолжить, установите новую версию приложения.',
     'This version is no longer supported. Please install the new version of the app to continue.',
   );
-  static String get updateAvailableTitle =>
-      _t('Yeni versiya var', 'Доступна новая версия', 'A new version is available');
+  static String get updateAvailableTitle => _t(
+    'Yeni versiya var',
+    'Доступна новая версия',
+    'A new version is available',
+  );
   static String get updateAvailableText => _t(
     'PrepAZ-ın yeni versiyası çıxıb. Yeniləməyi məsləhət görürük.',
     'Вышла новая версия PrepAZ. Рекомендуем обновить приложение.',
@@ -615,11 +747,18 @@ abstract final class AppStrings {
   static String get updateNow => _t('Yenilə', 'Обновить', 'Update');
 
   // Problem bildirişi
-  static String get reportButton => _t('Xəta bildir', 'Сообщить об ошибке', 'Report a problem');
-  static String get reportQuestionTitle =>
-      _t('Sualda xəta var?', 'Ошибка в вопросе?', 'Problem with this question?');
-  static String get reportAppTitle =>
-      _t('Tətbiqdə xəta bildir', 'Сообщить об ошибке в приложении', 'Report an app problem');
+  static String get reportButton =>
+      _t('Xəta bildir', 'Сообщить об ошибке', 'Report a problem');
+  static String get reportQuestionTitle => _t(
+    'Sualda xəta var?',
+    'Ошибка в вопросе?',
+    'Problem with this question?',
+  );
+  static String get reportAppTitle => _t(
+    'Tətbiqdə xəta bildir',
+    'Сообщить об ошибке в приложении',
+    'Report an app problem',
+  );
   static String get reportAppHint => _t(
     'Nə baş verdi? Harada və nə vaxt? Nə qədər ətraflı yazsan, o qədər tez düzəldərik.',
     'Что произошло? Где и когда? Чем подробнее, тем быстрее мы исправим.',
@@ -630,15 +769,19 @@ abstract final class AppStrings {
     'Код вопроса ($code) будет отправлен автоматически. Опишите ошибку: неверный ответ, обрезано изображение, нет варианта и т.д.',
     'The question code ($code) is sent automatically. Describe the problem: wrong answer, cut-off image, missing option, etc.',
   );
-  static String get reportDescription => _t('Açıqlama', 'Описание', 'Description');
+  static String get reportDescription =>
+      _t('Açıqlama', 'Описание', 'Description');
   static String reportMinHint(int n) => _t(
     'Ən azı $n simvol yaz',
     'Напишите не менее $n символов',
     'Write at least $n characters',
   );
   static String get reportSend => _t('Göndər', 'Отправить', 'Send');
-  static String get reportSent =>
-      _t('Təşəkkür edirik! Bildiriş göndərildi.', 'Спасибо! Сообщение отправлено.', 'Thank you! Your report was sent.');
+  static String get reportSent => _t(
+    'Təşəkkür edirik! Bildiriş göndərildi.',
+    'Спасибо! Сообщение отправлено.',
+    'Thank you! Your report was sent.',
+  );
   static String get reportTooMany => _t(
     'Çox bildiriş göndərdin. Bir az sonra yenidən cəhd et.',
     'Слишком много сообщений. Попробуйте чуть позже.',
@@ -648,7 +791,8 @@ abstract final class AppStrings {
   // Sual kodu
   static String questionCode(String code) =>
       _t('Sual kodu: $code', 'Код вопроса: $code', 'Question code: $code');
-  static String get codeCopied => _t('Kod kopyalandı', 'Код скопирован', 'Code copied');
+  static String get codeCopied =>
+      _t('Kod kopyalandı', 'Код скопирован', 'Code copied');
 
   // Məşq
   static String get startQuiz => _t(
@@ -662,8 +806,10 @@ abstract final class AppStrings {
   static String get dontKnow => _t('Bilmirəm', 'Не знаю', "I don't know");
   static String get nextQuestion =>
       _t('Növbəti sual', 'Следующий вопрос', 'Next question');
-  static String get toResult => _t('Nəticəyə bax', 'Посмотреть результат', 'See results');
-  static String get yourAnswerField => _t('Cavabınız', 'Ваш ответ', 'Your answer');
+  static String get toResult =>
+      _t('Nəticəyə bax', 'Посмотреть результат', 'See results');
+  static String get yourAnswerField =>
+      _t('Cavabınız', 'Ваш ответ', 'Your answer');
   static String get multiAnswerHint => _t(
     'Doğru bəndlərin nömrələrini yaz, məsələn: 135',
     'Напиши номера верных пунктов, например: 135',
@@ -696,8 +842,11 @@ abstract final class AppStrings {
     'Вопрос сохранён для повторения: завтра ты увидишь его снова.',
     "Saved for review: you'll see this question again tomorrow.",
   );
-  static String get imageFailed =>
-      _t('Şəkil yüklənmədi', 'Не удалось загрузить изображение', 'Image failed to load');
+  static String get imageFailed => _t(
+    'Şəkil yüklənmədi',
+    'Не удалось загрузить изображение',
+    'Image failed to load',
+  );
 
   // Nəticə
   static String resultTitle(String subject) =>
@@ -724,7 +873,8 @@ abstract final class AppStrings {
     'Твой ответ: $given  ·  Верно: $right',
     'Your answer: $given  ·  Correct: $right',
   );
-  static String get backHome => _t('Ana səhifəyə qayıt', 'На главную', 'Back to home');
+  static String get backHome =>
+      _t('Ana səhifəyə qayıt', 'На главную', 'Back to home');
 
   // Öyrədici tur
   static String get tourGotIt => _t('Anladım', 'Понятно', 'Got it');
@@ -801,6 +951,21 @@ abstract final class AppStrings {
     'Темы: все темы предмета. Выбери тему, реши все тесты и в конце увидишь результат.',
     "Topics: all of the subject's topics. Pick one, solve every test and see your result at the end.",
   );
+  static String get tourOffline => _t(
+    'İnternetsiz həll et: mövzunu əvvəlcədən telefona yüklə, sonra avtobusda, metroda internetsiz həll et. Cavabların internet gələndə özü göndərilir.',
+    'Решать без интернета: заранее скачай тему на телефон и решай её в автобусе или метро без интернета. Ответы отправятся сами, когда появится интернет.',
+    'Solve offline: download a topic to your phone in advance, then solve it on the bus or metro without internet. Your answers are sent automatically once you are back online.',
+  );
+  static String get tourCompete => _t(
+    'Yarış: düz həll etdiyin hər yeni test sənə xal qazandırır. Burada başqa şagirdlərlə yarışırsan, cədvəldə yalnız nik-adın görünür.',
+    'Соревнование: каждый новый правильно решённый тест приносит тебе очко. Здесь ты соревнуешься с другими учениками, в таблице виден только твой ник.',
+    'Compete: every new test you solve correctly earns you a point. Here you compete with other students, and only your nickname is shown in the table.',
+  );
+  static String get tourProgress => _t(
+    'İrəliləyiş: hər gün neçə test həll etdiyini, düz cavab faizini və mövzular üzrə vəziyyətini burada görürsən.',
+    'Прогресс: здесь видно, сколько тестов ты решаешь каждый день, процент верных ответов и положение по темам.',
+    'Progress: see how many tests you solve each day, your share of correct answers and how you stand in each topic.',
+  );
   static String get tourDone => _t(
     'Hazırsan! İndi ilk məşqinə başla. Uğurlar!',
     'Готово! Теперь начни первую тренировку. Удачи!',
@@ -816,7 +981,8 @@ abstract final class AppStrings {
   static String get themeSystem => _t('Sistem', 'Системная', 'System');
 
   // Dostunla paylaş
-  static String get shareAppTitle => _t('Dostunla paylaş', 'Поделиться с другом', 'Share with a friend');
+  static String get shareAppTitle =>
+      _t('Dostunla paylaş', 'Поделиться с другом', 'Share with a friend');
   static String shareAppMessage(String link) => _t(
     'PrepAZ ilə buraxılış/qəbul imtahanına hazırlaşıram: DİM testləri, səhvlərimi izləyir, internetsiz də işləyir. Sən də yoxla: {link}',
     'Готовлюсь к выпускным/вступительным экзаменам с PrepAZ: тесты ГЭЦ, отслеживает мои ошибки, работает без интернета. Попробуй и ты: {link}',
@@ -855,8 +1021,11 @@ abstract final class AppStrings {
   static const whatsappAction = 'WhatsApp';
 
   // Şərtlər və məxfilik
-  static String get legalMenuTitle =>
-      _t('Şərtlər və məxfilik', 'Условия и конфиденциальность', 'Terms and privacy');
+  static String get legalMenuTitle => _t(
+    'Şərtlər və məxfilik',
+    'Условия и конфиденциальность',
+    'Terms and privacy',
+  );
   static String get legalTermsTitle =>
       _t('İstifadə şərtləri', 'Условия использования', 'Terms of Use');
   static String get legalPrivacyTitle =>
@@ -865,8 +1034,11 @@ abstract final class AppStrings {
   static String get legalConsentTerms =>
       _t('İstifadə şərtlərini', 'Условия использования', 'Terms of Use');
   static String get legalConsentJoin => _t(' və ', ' и ', ' and ');
-  static String get legalConsentPrivacy =>
-      _t('Məxfilik siyasətini', 'Политику конфиденциальности', 'Privacy Policy');
+  static String get legalConsentPrivacy => _t(
+    'Məxfilik siyasətini',
+    'Политику конфиденциальности',
+    'Privacy Policy',
+  );
   static String get legalConsentEnd => _t(
     ' qəbul edirəm. 18 yaşdan kiçikəmsə, valideynimin razılığı var.',
     '. Если мне нет 18 лет, у меня есть согласие родителя.',
@@ -886,6 +1058,79 @@ abstract final class AppStrings {
   // Alt menyu
   static String get navHome => _t('Ana səhifə', 'Главная', 'Home');
   static String get navCompete => _t('Yarış', 'Соревнование', 'Compete');
+  static String get navProgress => _t('İrəliləyiş', 'Прогресс', 'Progress');
+
+  // İrəliləyiş (statistika)
+  static String get progressTitle => _t('İrəliləyiş', 'Прогресс', 'Progress');
+  static String statsSolvedOf(int solved, int total) => _t(
+    '$solved / $total test həll edilib',
+    'Решено тестов: $solved / $total',
+    'Tests solved: $solved / $total',
+  );
+  static String statsCoverage(int pct) =>
+      _t('Fənn üzrə: $pct%', 'По предмету: $pct%', 'Of the subject: $pct%');
+  static String get statsAccuracy => _t('Düz cavab', 'Верных', 'Correct');
+  static String get statsAnswered => _t('Cavab', 'Ответов', 'Answers');
+  static String get statsBestStreak =>
+      _t('Ən uzun seriya', 'Лучшая серия', 'Best streak');
+  static String statsDays(int n) =>
+      _t('$n gün', '$n дн.', n == 1 ? '1 day' : '$n days');
+  static String get statsWeekTitle =>
+      _t('Son 7 gün', 'Последние 7 дней', 'Last 7 days');
+  static String statsWeekTotal(int n) =>
+      _t('Bu həftə: $n test', 'За неделю: $n', 'This week: $n');
+  static String statsWeekDelta(int delta) {
+    if (delta > 0) {
+      return _t(
+        'Keçən həftədən $delta test çox 📈',
+        'На $delta больше, чем на прошлой неделе 📈',
+        '$delta more than last week 📈',
+      );
+    }
+    if (delta < 0) {
+      return _t(
+        'Keçən həftədən ${-delta} test az',
+        'На ${-delta} меньше, чем на прошлой неделе',
+        '${-delta} fewer than last week',
+      );
+    }
+    return _t(
+      'Keçən həftə qədər',
+      'Как на прошлой неделе',
+      'Same as last week',
+    );
+  }
+
+  static String get statsLegendCorrect => _t('Düz', 'Верно', 'Correct');
+  static String get statsLegendWrong => _t('Səhv', 'Неверно', 'Wrong');
+  static String statsWeekday(int weekday) => [
+    _t('B.e', 'Пн', 'Mo'),
+    _t('Ç.a', 'Вт', 'Tu'),
+    _t('Ç', 'Ср', 'We'),
+    _t('C.a', 'Чт', 'Th'),
+    _t('C', 'Пт', 'Fr'),
+    _t('Ş', 'Сб', 'Sa'),
+    _t('B', 'Вс', 'Su'),
+  ][(weekday - 1) % 7];
+  static String get statsTopicsTitle =>
+      _t('Mövzular üzrə', 'По темам', 'By topic');
+  static String statsTopicsStarted(int started, int total) => _t(
+    '$started / $total mövzuya başlamısan',
+    'Начато тем: $started из $total',
+    'Started $started of $total topics',
+  );
+  static String get statsTopicsHint => _t(
+    'Mövzuya bas, testləri davam etdir.',
+    'Нажми на тему, чтобы продолжить тесты.',
+    'Tap a topic to keep solving.',
+  );
+  static String get statsEmptyTitle =>
+      _t('Hələ nəticə yoxdur', 'Пока нет результатов', 'No results yet');
+  static String get statsEmptyText => _t(
+    'İlk testləri həll et, irəliləyişin burada görünəcək: hər gün neçə test, neçəsi düz və hansı mövzular yaxşıdır.',
+    'Реши первые тесты, и здесь появится твой прогресс: сколько тестов в день, сколько верных и какие темы получаются.',
+    'Solve your first tests and your progress will show up here: tests per day, how many were right and which topics you know well.',
+  );
 
   // Yarış (xal cədvəli)
   static String get competeTitle => _t('Yarış', 'Соревнование', 'Leaderboard');
@@ -937,7 +1182,8 @@ abstract final class AppStrings {
     'A point = each different question you solved correctly. Repeats give no points.',
   );
   static String get subjectLabel => _t('Fənn', 'Предмет', 'Subject');
-  static String get chooseSubject => _t('Fənn seç', 'Выбери предмет', 'Choose a subject');
+  static String get chooseSubject =>
+      _t('Fənn seç', 'Выбери предмет', 'Choose a subject');
   static String get youLabel => _t('Sən', 'Ты', 'You');
   static String points(int n) => _t('$n xal', '$n очк.', '$n pts');
   static String myRank(int rank, int score) => _t(
@@ -964,23 +1210,59 @@ abstract final class AppStrings {
   static String get reminderTitleComeBack =>
       _t('Səni gözləyirik! 🚀', 'Мы тебя ждём! 🚀', 'We miss you! 🚀');
   static List<String> reminderAtRisk(int n) => _tl(
-    ['Bu gün bir test həll et, seriyan qırılmasın!', 'Cəmi 5 dəqiqə: seriyanı ${n + 1} günə çatdır!'],
-    ['Реши сегодня один тест, чтобы серия не прервалась!', 'Всего 5 минут: доведи серию до ${n + 1} дн.!'],
-    ['Solve one question today so your streak survives!', 'Just 5 minutes: make it ${n + 1} days!'],
+    [
+      'Bu gün bir test həll et, seriyan qırılmasın!',
+      'Cəmi 5 dəqiqə: seriyanı ${n + 1} günə çatdır!',
+    ],
+    [
+      'Реши сегодня один тест, чтобы серия не прервалась!',
+      'Всего 5 минут: доведи серию до ${n + 1} дн.!',
+    ],
+    [
+      'Solve one question today so your streak survives!',
+      'Just 5 minutes: make it ${n + 1} days!',
+    ],
   );
   static List<String> reminderKeepGoing(int n) => _tl(
-    ['Bu gün də davam et, ${n + 1} olsun!', 'Əla gedirsən! Bu gün də bir neçə test həll et.'],
-    ['Продолжай и сегодня, пусть будет ${n + 1}!', 'Отлично идёшь! Реши сегодня ещё пару тестов.'],
-    ['Keep going today and make it ${n + 1}!', "You're doing great! Solve a few more today."],
+    [
+      'Bu gün də davam et, ${n + 1} olsun!',
+      'Əla gedirsən! Bu gün də bir neçə test həll et.',
+    ],
+    [
+      'Продолжай и сегодня, пусть будет ${n + 1}!',
+      'Отлично идёшь! Реши сегодня ещё пару тестов.',
+    ],
+    [
+      'Keep going today and make it ${n + 1}!',
+      "You're doing great! Solve a few more today.",
+    ],
   );
   static List<String> get reminderStart => _tl(
-    ['Bu gün hələ test həll etməmisən. 5 dəqiqə ayır, seriyaya başla!', 'Bir neçə test həll et, ilk alovunu yandır 🔥'],
-    ['Сегодня ты ещё не решал тесты. Удели 5 минут и начни серию!', 'Реши пару тестов и зажги первый огонёк 🔥'],
-    ["You haven't practised today. Take 5 minutes and start a streak!", 'Solve a few questions and light your first flame 🔥'],
+    [
+      'Bu gün hələ test həll etməmisən. 5 dəqiqə ayır, seriyaya başla!',
+      'Bir neçə test həll et, ilk alovunu yandır 🔥',
+    ],
+    [
+      'Сегодня ты ещё не решал тесты. Удели 5 минут и начни серию!',
+      'Реши пару тестов и зажги первый огонёк 🔥',
+    ],
+    [
+      "You haven't practised today. Take 5 minutes and start a streak!",
+      'Solve a few questions and light your first flame 🔥',
+    ],
   );
   static List<String> get reminderComeBack => _tl(
-    ['Bir neçə test həll et, yeni seriyaya başla.', 'İmtahan yaxınlaşır: bu gün 5 dəqiqə ayır!'],
-    ['Реши пару тестов и начни новую серию.', 'Экзамен всё ближе: удели сегодня 5 минут!'],
-    ['Solve a few questions and start a new streak.', 'The exam is getting closer: take 5 minutes today!'],
+    [
+      'Bir neçə test həll et, yeni seriyaya başla.',
+      'İmtahan yaxınlaşır: bu gün 5 dəqiqə ayır!',
+    ],
+    [
+      'Реши пару тестов и начни новую серию.',
+      'Экзамен всё ближе: удели сегодня 5 минут!',
+    ],
+    [
+      'Solve a few questions and start a new streak.',
+      'The exam is getting closer: take 5 minutes today!',
+    ],
   );
 }

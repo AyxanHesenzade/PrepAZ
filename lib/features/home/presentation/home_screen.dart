@@ -37,7 +37,9 @@ class HomeScreen extends ConsumerStatefulWidget {
 }
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
-  final _tour = TourTargets();
+  /// Yalnız ana ekran tək açılanda (məs. testlərdə) işlənir. `MainShell` öz açarlarını və tur qatını verir:
+  /// tur alt menyunun da üstündə olmalıdır.
+  final _ownTour = TourTargets();
 
   Future<void> _refresh() async {
     await Future.wait([
@@ -51,80 +53,84 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-    return TourScope(
-      targets: _tour,
-      child: Stack(
-        fit: StackFit.expand,
-        children: [
-          Scaffold(
-            key: _tour.scaffold,
-            drawer: const AppDrawer(),
-            body: SafeArea(
-              child: Column(
+    final shared = TourScope.maybeOf(context);
+    final tour = shared ?? _ownTour;
+    final screen = Scaffold(
+      key: tour.scaffold,
+      drawer: const AppDrawer(),
+      body: SafeArea(
+        child: Column(
+          children: [
+            // başlıq sabitdir: siyahı sürüşəndə yerində qalır
+            Padding(
+              padding: const EdgeInsets.fromLTRB(
+                AppSpacing.m + 4,
+                AppSpacing.m,
+                AppSpacing.m + 4,
+                AppSpacing.s,
+              ),
+              child: Row(
                 children: [
-                  // başlıq sabitdir: siyahı sürüşəndə yerində qalır
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(
-                      AppSpacing.m + 4,
-                      AppSpacing.m,
-                      AppSpacing.m + 4,
-                      AppSpacing.s,
-                    ),
-                    child: Row(
-                      children: [
-                        Builder(
-                          builder: (context) => IconButton.filledTonal(
-                            key: _tour.menuButton,
-                            tooltip: AppStrings.menu,
-                            style: IconButton.styleFrom(
-                              backgroundColor: scheme.surfaceContainerLowest,
-                              foregroundColor: scheme.onSurface,
-                              fixedSize: const Size(48, 48),
-                            ),
-                            icon: const Icon(Icons.menu_rounded),
-                            onPressed: () => Scaffold.of(context).openDrawer(),
-                          ),
-                        ),
-                        AppSpacing.gapM,
-                        Expanded(
-                          child: Text(
-                            AppStrings.homeTitle,
-                            style: Theme.of(context).textTheme.headlineMedium,
-                          ),
-                        ),
-                        const HeaderMascot(),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    child: RefreshIndicator(
-                      onRefresh: _refresh,
-                      child: ListView(
-                        // qısa qalanda da (məs. internetsiz yalnız zolaq var) çəkib yeniləmək işləsin
-                        physics: const AlwaysScrollableScrollPhysics(),
-                        padding: const EdgeInsets.fromLTRB(
-                          AppSpacing.m + 4,
-                          AppSpacing.m,
-                          AppSpacing.m + 4,
-                          AppSpacing.l,
-                        ),
-                        children: [
-                          const UpdateBanner(),
-                          const OfflineHomeBanner(),
-                          const FadeSlideIn(child: _StreakSection()),
-                          AppSpacing.gapM,
-                          const FadeSlideIn(index: 1, child: _GoalSection()),
-                          AppSpacing.gapXl,
-                          const _SubjectsSection(),
-                        ],
+                  Builder(
+                    builder: (context) => IconButton.filledTonal(
+                      key: tour.menuButton,
+                      tooltip: AppStrings.menu,
+                      style: IconButton.styleFrom(
+                        backgroundColor: scheme.surfaceContainerLowest,
+                        foregroundColor: scheme.onSurface,
+                        fixedSize: const Size(48, 48),
                       ),
+                      icon: const Icon(Icons.menu_rounded),
+                      onPressed: () => Scaffold.of(context).openDrawer(),
                     ),
                   ),
-                  const _VersionFooter(),
+                  AppSpacing.gapM,
+                  Expanded(
+                    child: Text(
+                      AppStrings.homeTitle,
+                      style: Theme.of(context).textTheme.headlineMedium,
+                    ),
+                  ),
+                  const HeaderMascot(),
                 ],
               ),
             ),
-          ),
+            Expanded(
+              child: RefreshIndicator(
+                onRefresh: _refresh,
+                child: ListView(
+                  // qısa qalanda da (məs. internetsiz yalnız zolaq var) çəkib yeniləmək işləsin
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  padding: const EdgeInsets.fromLTRB(
+                    AppSpacing.m + 4,
+                    AppSpacing.m,
+                    AppSpacing.m + 4,
+                    AppSpacing.l,
+                  ),
+                  children: [
+                    const UpdateBanner(),
+                    const OfflineHomeBanner(),
+                    const FadeSlideIn(child: _StreakSection()),
+                    AppSpacing.gapM,
+                    const FadeSlideIn(index: 1, child: _GoalSection()),
+                    AppSpacing.gapXl,
+                    const _SubjectsSection(),
+                  ],
+                ),
+              ),
+            ),
+            const _VersionFooter(),
+          ],
+        ),
+      ),
+    );
+    if (shared != null) return screen;
+    return TourScope(
+      targets: tour,
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          screen,
           // yan menyunun da üstündə qalsın deyə Scaffold-un xaricindədir
           const TourOverlay(),
         ],
@@ -301,6 +307,7 @@ class _SubjectItem extends ConsumerWidget {
       weakPlacesKey: tour?.weakPlaces,
       mistakesKey: tour?.mistakes,
       topicsKey: tour?.topics,
+      offlineKey: tour?.offline,
       onStart: () => _start(context, ref),
       onWeakPlaces: () =>
           _open(context, ref, WeakTopicsScreen(subject: subject)),

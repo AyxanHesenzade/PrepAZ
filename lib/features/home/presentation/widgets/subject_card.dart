@@ -24,12 +24,14 @@ class SubjectCard extends StatelessWidget {
     this.weakPlacesKey,
     this.mistakesKey,
     this.topicsKey,
+    this.offlineKey,
   });
 
   static const maxWeakShown = 3;
   static const maxStrongShown = 2;
 
   final Subject subject;
+
   /// Ən zəifdən başlayaraq, artıq sıralanmış.
   final List<TopicMastery> topics;
   final VoidCallback onStart;
@@ -45,6 +47,7 @@ class SubjectCard extends StatelessWidget {
   final Key? weakPlacesKey;
   final Key? mistakesKey;
   final Key? topicsKey;
+  final Key? offlineKey;
 
   static IconData iconFor(String slug) => switch (slug) {
     'kimya' => Icons.science_rounded,
@@ -63,8 +66,13 @@ class SubjectCard extends StatelessWidget {
       scheme.surfaceContainerLowest,
     );
     final weak = topics.where((t) => t.isWeak).take(maxWeakShown).toList();
-    final strong = topics.reversed.where((t) => t.isStrong).take(maxStrongShown).toList();
-    final message = topics.isEmpty ? AppStrings.noMasteryYet : AppStrings.needMoreAnswers;
+    final strong = topics.reversed
+        .where((t) => t.isStrong)
+        .take(maxStrongShown)
+        .toList();
+    final message = topics.isEmpty
+        ? AppStrings.noMasteryYet
+        : AppStrings.needMoreAnswers;
 
     return Container(
       margin: const EdgeInsets.only(bottom: AppSpacing.m),
@@ -122,10 +130,16 @@ class SubjectCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       if (weak.isNotEmpty)
-                        MasteryGroup(title: AppStrings.weakTopics, topics: weak),
+                        MasteryGroup(
+                          title: AppStrings.weakTopics,
+                          topics: weak,
+                        ),
                       if (weak.isNotEmpty && strong.isNotEmpty) AppSpacing.gapS,
                       if (strong.isNotEmpty)
-                        MasteryGroup(title: AppStrings.strongTopics, topics: strong),
+                        MasteryGroup(
+                          title: AppStrings.strongTopics,
+                          topics: strong,
+                        ),
                     ],
                   ),
           ),
@@ -195,7 +209,11 @@ class SubjectCard extends StatelessWidget {
           ),
           if (onOffline != null) ...[
             AppSpacing.gapS,
-            OfflineEntryTile(subject: subject, onTap: onOffline!),
+            OfflineEntryTile(
+              key: offlineKey,
+              subject: subject,
+              onTap: onOffline!,
+            ),
           ],
         ],
       ),

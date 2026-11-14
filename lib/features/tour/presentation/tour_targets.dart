@@ -4,6 +4,11 @@ import '../domain/tour_step.dart';
 
 /// Turun göstərdiyi elementlərin açarları. Ekranlar bunları öz widget-lərinə taxır.
 class TourTargets {
+  TourTargets({this.hasBottomNav = false});
+
+  /// Alt menyu yalnız `MainShell`-də var; ana ekran tək açılanda onun addımları atlanır.
+  final bool hasBottomNav;
+
   final scaffold = GlobalKey<ScaffoldState>();
   final menuButton = GlobalKey();
   final language = GlobalKey();
@@ -18,6 +23,9 @@ class TourTargets {
   final weakPlaces = GlobalKey();
   final mistakes = GlobalKey();
   final topics = GlobalKey();
+  final offline = GlobalKey();
+  final progress = GlobalKey();
+  final compete = GlobalKey();
 
   GlobalKey? keyFor(TourStep step) => switch (step) {
     TourStep.welcome || TourStep.done => null,
@@ -34,10 +42,14 @@ class TourTargets {
     TourStep.weakPlaces => weakPlaces,
     TourStep.mistakes => mistakes,
     TourStep.topics => topics,
+    TourStep.offline => offline,
+    TourStep.progress => progress,
+    TourStep.compete => compete,
   };
 }
 
-/// Açarları ana ekranın altındakı widget-lərə çatdırır. Açarlar ana ekranın State-indədir, qlobal
+/// Açarları ana ekranın və alt menyunun widget-lərinə çatdırır. Açarlar `MainShell`-in (ana ekran tək
+/// açılanda `HomeScreen`-in) State-indədir, qlobal
 /// saxlanmamalıdır: dil dəyişəndə MaterialApp yenidən qurulur və qlobal GlobalKey köhnə ekranı
 /// (açıq yan menyu ilə) yeni ağaca köçürür, tətbiq donur.
 class TourScope extends InheritedWidget {
@@ -46,6 +58,7 @@ class TourScope extends InheritedWidget {
   final TourTargets targets;
 
   /// Ana ekrandan kənarda (məs. testdə tək yan menyu) null-dur.
+  /// Asılılıq yaratmır: açarlar State yaşadıqca dəyişmir.
   static TourTargets? maybeOf(BuildContext context) =>
       context.getInheritedWidgetOfExactType<TourScope>()?.targets;
 

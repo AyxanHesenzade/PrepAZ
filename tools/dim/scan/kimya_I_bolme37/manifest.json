@@ -1,0 +1,338 @@
+[
+ {
+  "number": 1,
+  "page": 190,
+  "column": 0,
+  "box": [
+   0,
+   1076,
+   518,
+   1202
+  ],
+  "file": "q001.png",
+  "gutter": 504,
+  "draft_text": "manual"
+ },
+ {
+  "number": 2,
+  "page": 190,
+  "column": 0,
+  "box": [
+   0,
+   1196,
+   518,
+   1326
+  ],
+  "file": "q002.png",
+  "gutter": 504,
+  "draft_text": "manual"
+ },
+ {
+  "number": 3,
+  "page": 190,
+  "column": 0,
+  "box": [
+   0,
+   1322,
+   518,
+   1458
+  ],
+  "file": "q003.png",
+  "gutter": 504,
+  "draft_text": "manual"
+ },
+ {
+  "number": 4,
+  "page": 190,
+  "column": 1,
+  "box": [
+   495,
+   78,
+   1080,
+   215
+  ],
+  "file": "q004.png",
+  "gutter": 504,
+  "draft_text": "4. Mis (ID) nitrat mohlulunun elektrolizi zaman katodda 16 q metal aynlmissa, anodda hansi qaz va nea litr (n.s.) ayrilar? A.(Cu)-64 C) 67,2 / NO2 B) 4,48 / N2 A) 22,4 /H2 E) 5,6 1 02 D) 2,8 / 02"
+ },
+ {
+  "number": 5,
+  "page": 190,
+  "column": 1,
+  "box": [
+   495,
+   215,
+   1080,
+   316
+  ],
+  "file": "q005.png",
+  "gutter": 504,
+  "draft_text": "5. AgNO3-in suda mahlulunun elektrolizi zaman katodda 21,6 q metal alinmissa, anodda nege litr qaz ayrilmisdur (n.s.)7 A(Ag)=108 E) 4,8 D) 3,0 A) 1,12B) 0,6C) 2,4"
+ },
+ {
+  "number": 6,
+  "page": 190,
+  "column": 1,
+  "box": [
+   495,
+   316,
+   1080,
+   419
+  ],
+  "file": "q006.png",
+  "gutter": 504,
+  "draft_text": "6. Gamus () nitrat mohlulunun elektrolizindon 5,6 / oksigen (n.s) ayrlmissa, nega qram metal alinar? A.(Ag)-108 E) 54 C)73D) 112 A) 108B)216 B)216"
+ },
+ {
+  "number": 7,
+  "page": 190,
+  "column": 1,
+  "box": [
+   495,
+   419,
+   1080,
+   528
+  ],
+  "file": "q007.png",
+  "gutter": 504,
+  "draft_text": "7. NaOH-n suda mahlulunun elektrolizi zamani anodda 30 ml (n.s.) qaz ayrilib. Katodda nepe ml qaz ayrlar? E) 50 D) 40 C)60 B) 15 A) 30"
+ },
+ {
+  "number": 8,
+  "page": 190,
+  "column": 1,
+  "box": [
+   495,
+   528,
+   1080,
+   630
+  ],
+  "file": "q008.png",
+  "gutter": 504,
+  "draft_text": "8. K,SO.-un suda mehlulunun elektrolizi zamanl katodda 15 ml (ns.) qaz aynlib. Anodda nece ml qaz ayrilar? E) 60 D) 30 C) 15 B)7,5 A) 10"
+ },
+ {
+  "number": 9,
+  "page": 190,
+  "column": 1,
+  "box": [
+   495,
+   630,
+   1080,
+   736
+  ],
+  "file": "q009.png",
+  "gutter": 504,
+  "draft_text": "9.400 20%-li CuSO4mahlulunun tam elektrolizi zaman katodda neca qram mis ayrilar? M(CuSO4)=160, A(Cu)-64 E) 61,4 A) 16B)32C) 44D) 50"
+ },
+ {
+  "number": 10,
+  "page": 190,
+  "column": 1,
+  "box": [
+   495,
+   736,
+   1080,
+   862
+  ],
+  "file": "q010.png",
+  "gutter": 504,
+  "draft_text": "10.NaCl mahlulunun elektrolizindan alinmis xlorun hamisi 5,6 q domirla reaksiyaya daxil olur. Elektroliz zamani nega qram NaOH alinmisdur? A.(Fe)-56, M.(Na0H)=40 E) 18 D) 12 C)6 B)8 A) 4"
+ },
+ {
+  "number": 11,
+  "page": 190,
+  "column": 1,
+  "box": [
+   495,
+   862,
+   1080,
+   990
+  ],
+  "file": "q011.png",
+  "gutter": 504,
+  "draft_text": "11.Kalsium-xlorid duzu orintisinin tam elektrolizi naticosinda alinan xlorun hamis 112 q domirle reaksiyaya serf olunmusdur. Elektroliz zarnani nega qram kalsium alnmisdr? A.(Ca)-40, A,(Fe)-56 A) 120B) 12C)40D)80E)24"
+ },
+ {
+  "number": 12,
+  "page": 190,
+  "column": 1,
+  "box": [
+   495,
+   990,
+   1080,
+   1144
+  ],
+  "file": "q012.png",
+  "gutter": 504,
+  "draft_text": "12. Mis (II) xlorid mahlulunun elektrolizi zamami anodda 0,56 / (n.s.) qaz ayrilib. Katodda hansi madda va nega qram alinar? A(Cu)-64, A.(H)=l, A.(CI)=35,5 C) 1,6 q Cu B) 1,6 q H2 A) 3,2 q Cu E) 3,5 q Cl2 D) 2,5 q H2"
+ },
+ {
+  "number": 13,
+  "page": 190,
+  "column": 1,
+  "box": [
+   495,
+   1144,
+   1080,
+   1274
+  ],
+  "file": "q013.png",
+  "gutter": 504,
+  "draft_text": "13. Kalsium-xloridin suda mohlulunun elektrolizindon anodda 33,6 / Cl2 qazt (n-s.) ayrilmisdir. Katodda aynlan maddani va onun katlasini muayyon edin. C) 40 q Ca B) 3 q H2 A) 2 q H2 E) 80 q Ca D) 60 q Ca"
+ },
+ {
+  "number": 14,
+  "page": 190,
+  "column": 1,
+  "box": [
+   495,
+   1274,
+   1080,
+   1431
+  ],
+  "file": "q014.png",
+  "gutter": 504,
+  "draft_text": "14. Kalium-xloridin mohlulunun elektrolizi zamani katodda 5,6 / hidrogen aynhb. Anodda hans! qaz V hansi hacmda aynilar (n.s.)? C) 5,6 / 02 B) 2,8 / Cl2 A) 5,6 / C12 E) 5,6/HCI D) 11,2 / Cl2"
+ },
+ {
+  "number": 15,
+  "page": 191,
+  "column": 0,
+  "box": [
+   0,
+   106,
+   581,
+   230
+  ],
+  "file": "q015.png",
+  "gutter": 567,
+  "draft_text": "15. Natrium-sulfat mahlulunun elektrolizi zamant 560  oksigen (n.s.) alinib. Bu zaman neco qram su parcalanib?M,(H20)=18 D) 900E) 740 A)450B) 90C)360"
+ },
+ {
+  "number": 16,
+  "page": 191,
+  "column": 0,
+  "box": [
+   0,
+   230,
+   581,
+   379
+  ],
+  "file": "q016.png",
+  "gutter": 567,
+  "draft_text": "16.Kalium-xloridin suda mohlulunun elektrolizi zaman I1,2 kq kalium-hidroksid omala galdi, Aynlan qazlarin amumi hacmini (m ila) hesablayin (n.s.). M.(KOH)=56 3 [E)1,12 A) 22,4B) 11,2C) 2,24D) 4,48"
+ },
+ {
+  "number": 17,
+  "page": 191,
+  "column": 0,
+  "box": [
+   0,
+   379,
+   581,
+   828
+  ],
+  "file": "q017.png",
+  "gutter": 567,
+  "draft_text": "17.360 q 45%-li KNO, mohlulunun elektrolizina aid qrafikin hansinoqtalorindadoymusmahlul moveud olar? Elektrolizin aparildigi temperaturda duzun hallolmaomsaliKh=1500q/l-dir. A.(H)=1, A(O)=16 Vh, (ns), 112 89,6 56 28 Zaman A) yalniz T B) yalniz X C)Z, T D) Y,Z, T E) yalniz Z"
+ },
+ {
+  "number": 18,
+  "page": 191,
+  "column": 0,
+  "box": [
+   0,
+   828,
+   581,
+   918
+  ],
+  "file": "q018.png",
+  "gutter": 567,
+  "draft_text": "18.NazSOg-un suda mohlulunun elektrolizindan anodda 4mol gaz aynlmisdir,Elektrolizzamani elektrodlarda cami neca mol qaz alinar?"
+ },
+ {
+  "number": 19,
+  "page": 191,
+  "column": 0,
+  "box": [
+   0,
+   918,
+   581,
+   1276
+  ],
+  "file": "q019.png",
+  "gutter": 567,
+  "draft_text": "19.Gumts()nitratin mq suda mahlulunun elektroliz mahsullarinin katlesinin zamandan asilihq qrafikina dogrudur? A(Ag)=108; A.(N)=14; A.(O)=16; A(H)=1 1, X- oksigendir 2. Y - gumusdur 3.Z-gumusdur 4.Y-nitrat tursusudur 5. Z -oksigendir"
+ },
+ {
+  "number": 20,
+  "page": 191,
+  "column": 0,
+  "box": [
+   0,
+   1276,
+   581,
+   1619
+  ],
+  "file": "q020.png",
+  "gutter": 567,
+  "draft_text": "20.Mis(ID)sulfatin m,gt suda mohlulunun elektroliz mohsullarnin katlasinin zamandan asilliq qrafikina osasonhansiifadalor dogrudur? A.(Cu)=64; A(S)=32;, A.(O)=16;, A.(H)=1 1, X -misdir 2. Y -- oksigendir 3.Z-sulfat tursusudur 4.Xoksigendir 5. Y--misdir"
+ },
+ {
+  "number": 21,
+  "page": 191,
+  "column": 1,
+  "box": [
+   558,
+   103,
+   1080,
+   415
+  ],
+  "file": "q021.png",
+  "gutter": 567,
+  "draft_text": "21. mahsullar Anodda aynlan Katodda Mehlulda qazin hacmi (ns) I mol Yalnizmetal ionu birosasli reduksiya olunur tursu alnir x-ihesablayin"
+ },
+ {
+  "number": 22,
+  "page": 191,
+  "column": 1,
+  "box": [
+   558,
+   415,
+   1080,
+   730
+  ],
+  "file": "q022.png",
+  "gutter": 567,
+  "draft_text": "22. mohsullar Anodda aynlan Katodda Mehlulda qazin hacmi (n.s),1 0,5mol Yalniz metal ionu ikiosashi tursu reduksiya olunur almr x-ihesablayin."
+ },
+ {
+  "number": 23,
+  "page": 191,
+  "column": 1,
+  "box": [
+   558,
+   730,
+   1080,
+   994
+  ],
+  "file": "q023.png",
+  "gutter": 567,
+  "draft_text": "23. NaNO,mahlulunun kutlasi,q qatiligt, % hallolma amsal, 200 15 375 Duzun suda mahlulunun elektrolizi zamani minimum nega litr (n.s.)oksigen qaz alindiqda mahlul doymus olar? A,(H)=1, A.(O)=16"
+ },
+ {
+  "number": 24,
+  "page": 191,
+  "column": 1,
+  "box": [
+   558,
+   994,
+   1080,
+   1250
+  ],
+  "file": "q024.png",
+  "gutter": 567,
+  "draft_text": "24. MeX, duzunun suda mohlulunun elektrolizindan alinan mehsullar (Metal ikivalentlidir) Anodda aynlan Elektrolit Katodda qazin hacmi mohlulunda (, n.s) 0,5molasas yalniz qaz aynlir alinir x-i hesablayin. traflh yazalt cavab talab olunan tapsirnqlar A(Ag)=108, M(AgNO3)=170"
+ }
+]

@@ -1,0 +1,430 @@
+[
+ {
+  "number": 1,
+  "page": 165,
+  "column": 0,
+  "box": [
+   0,
+   298,
+   564,
+   430
+  ],
+  "file": "q001.png",
+  "gutter": 567,
+  "draft_text": "1. Hanst halda har iki madda elektrolitdir? A) H2SO4, CH4 B) NaOH, Fe(NO3)2 C) CH:OH, Ba(OH)2 D) CuSO4, .C2H,OH E) NaCl, C2HsOH"
+ },
+ {
+  "number": 2,
+  "page": 165,
+  "column": 0,
+  "box": [
+   0,
+   418,
+   564,
+   630
+  ],
+  "file": "q002.png",
+  "gutter": 567,
+  "draft_text": "2. Yalniz quvvatli elektrolitlardon ibarat olan siran1 gostorin. A) CH,COOH, H2O, KOH B) H2SO4, NaOH, CaC12 C) CH,OH, NaCI, BaSO4 D) KCI, NH4OH, AgCl E) HCOOH, HO, BaCO3"
+ },
+ {
+  "number": 3,
+  "page": 165,
+  "column": 0,
+  "box": [
+   0,
+   618,
+   564,
+   804
+  ],
+  "file": "q003.png",
+  "gutter": 567,
+  "draft_text": "3. Yalniz zaif elektrolitlarden ibarat olan sirani gostarin A) CH,COOH, H,SiO3, H2SO4 B) H2CO3, HNO3, H2SO4 C) H2CO3, CH,COOH, H2S D) NH4OH, CH,COOH, HCl E) HNO3, H2SO3, H,PO4"
+ },
+ {
+  "number": 4,
+  "page": 165,
+  "column": 0,
+  "box": [
+   0,
+   792,
+   564,
+   924
+  ],
+  "file": "q004.png",
+  "gutter": 567,
+  "draft_text": "4. Hans maddalar cutu qeyri-elektrolitlordir? A) C,H12O6, C2H,OH B) HCl, CH,COONa C) CH,COOH, KCI D) H2SO4, CH,OH E) NaOH, N2"
+ },
+ {
+  "number": 5,
+  "page": 165,
+  "column": 0,
+  "box": [
+   0,
+   912,
+   564,
+   1099
+  ],
+  "file": "q005.png",
+  "gutter": 567,
+  "draft_text": "5. Hans sirada yalniz elektrolitlar verilmisdir? A) CuSO4, H2SO4, O2 B) NaHSO4, Ba(OH)CI, KI C) NaOH, NaH,PO4, N2 D) CeH1206, KNO3, BaCl2 E) C2HsOH, PbCl2, Al2(SO4)3"
+ },
+ {
+  "number": 6,
+  "page": 165,
+  "column": 0,
+  "box": [
+   0,
+   1087,
+   564,
+   1216
+  ],
+  "file": "q006.png",
+  "gutter": 567,
+  "draft_text": "6. Hanst elektrolit dissosiasiya zamanl xlorid ionu (CI) umes ejeue A) FeCl3 B) KCIO3 D) NaCI C) CaC12 E) BaCl2"
+ },
+ {
+  "number": 7,
+  "page": 165,
+  "column": 0,
+  "box": [
+   0,
+   1204,
+   564,
+   1341
+  ],
+  "file": "q007.png",
+  "gutter": 567,
+  "draft_text": "7. Hanst madda dissosiasiya zamani Mn2 ionu amala gotirir? A) MnO2 B) KMnO4 D) Mn(NO3)2 C) K2MnO4 E) Mn(OH)2"
+ },
+ {
+  "number": 8,
+  "page": 165,
+  "column": 0,
+  "box": [
+   0,
+   1329,
+   564,
+   1539
+  ],
+  "file": "q008.png",
+  "gutter": 567,
+  "draft_text": "8. Elektrik corayanini kecirir: I. NaCl arintisi II. NaCl-in suda mehlulu III. NaCl bark halda A) yalniz II B)I, II D) yalniz II C) II, III E)I, II"
+ },
+ {
+  "number": 9,
+  "page": 165,
+  "column": 1,
+  "box": [
+   570,
+   109,
+   1080,
+   391
+  ],
+  "file": "q009.png",
+  "gutter": 567,
+  "draft_text": "9. Cihazda hans1 maddalor on olduqda lampanin kozermasi bas vermaz? I KOH orintisi iz IHI. KOH mshlulu III. KOH berk halda A) I, III B) yalniz I C) yalniz II D) yalniz III E) II, III"
+ },
+ {
+  "number": 10,
+  "page": 165,
+  "column": 1,
+  "box": [
+   570,
+   379,
+   1080,
+   514
+  ],
+  "file": "q010.png",
+  "gutter": 567,
+  "draft_text": "10. Ortofosfat ionunu gostarin. A) SO2- B) POF C) POF D) CO3- E) P204"
+ },
+ {
+  "number": 11,
+  "page": 165,
+  "column": 1,
+  "box": [
+   570,
+   502,
+   1080,
+   596
+  ],
+  "file": "q011.png",
+  "gutter": 567,
+  "draft_text": "11. Ammonium ionunu gosterin."
+ },
+ {
+  "number": 12,
+  "page": 165,
+  "column": 1,
+  "box": [
+   570,
+   584,
+   1080,
+   713
+  ],
+  "file": "q012.png",
+  "gutter": 567,
+  "draft_text": "12. Sulfat ionunu gostorin. A) s2- B) SO2- C) SOF in. D) SO2 E) NO3"
+ },
+ {
+  "number": 13,
+  "page": 165,
+  "column": 1,
+  "box": [
+   570,
+   701,
+   1080,
+   832
+  ],
+  "file": "q013.png",
+  "gutter": 567,
+  "draft_text": "13. Karbonat ionunu gostarin. A) CO3- B) CO C) HCO3 D) PO3 E) PO%"
+ },
+ {
+  "number": 14,
+  "page": 165,
+  "column": 1,
+  "box": [
+   570,
+   820,
+   1080,
+   926
+  ],
+  "file": "q014.png",
+  "gutter": 567,
+  "draft_text": "14. Hansi halda NaCl-daki ionlarin yuku dogrudur? A) Nat, CI?- B) Nat, C1* C) Na, cr D) Na, CIt E) Nat, CI"
+ },
+ {
+  "number": 15,
+  "page": 165,
+  "column": 1,
+  "box": [
+   570,
+   914,
+   1080,
+   1019
+  ],
+  "file": "q015.png",
+  "gutter": 567,
+  "draft_text": "15. Hansi halda CaCl2-daki ionlarin yuku dogrudur? A) Ca?, cr B) Ca?-, CIt C) Cat, cr D) cat, cr E) Ca-, c12-"
+ },
+ {
+  "number": 16,
+  "page": 165,
+  "column": 1,
+  "box": [
+   570,
+   1007,
+   1080,
+   1631
+  ],
+  "file": "q016.png",
+  "gutter": 567,
+  "draft_text": "16. Yalniz kationlardan ibarat olan Siran1 gosterin. A) Mg*t, Ca2t, s2- B) Ht, Ni?, Br C) OH, SO2 , A13+ D) I, Br, s? E) Cu2*, Hg*, Ag* A) Alt, Mg?*, OH B) Na', Kt, Ca** C) Zn2t, Fe't, Cu2+ D) I, Br, CI E) CI, Br , Kt A) NaCl ≥ Na° + CIo C) NaCl  Na +Cr D) Naci = Na + cl E) NaCI  Na*+ CI A)HCI  H +CI B) HCI  H+C C) HCI  H++ CI* D) HCI  H++CI E) HCI ≥ H°+cI°"
+ },
+ {
+  "number": 24,
+  "page": 166,
+  "column": 0,
+  "box": [
+   0,
+   836,
+   529,
+   940
+  ],
+  "file": "q024.png",
+  "gutter": 532,
+  "draft_text": "24.Mahiulda hanst ionun tosiri ilo lakmus kagizi qzarar? A) NH, 35.H"
+ },
+ {
+  "number": 25,
+  "page": 166,
+  "column": 0,
+  "box": [
+   0,
+   928,
+   529,
+   1101
+  ],
+  "file": "q025.png",
+  "gutter": 532,
+  "draft_text": "35.H 25.Mahlulda hanst ionun tasirni ila lakmus kagizi goyarar? A)OHB)HC) NOD)K*E)Br 36.H A) CaCh2 B) Na2SO3 C) Mg(NO3)2 D)KCO3 E)K2S"
+ },
+ {
+  "number": 27,
+  "page": 166,
+  "column": 0,
+  "box": [
+   0,
+   1089,
+   529,
+   1193
+  ],
+  "file": "q027.png",
+  "gutter": 532,
+  "draft_text": "27.Monf yuklu onlan gostorin LDihidroortofosfat  Sulfat II.Ammonium D) L,I C)yalniz1"
+ },
+ {
+  "number": 28,
+  "page": 166,
+  "column": 0,
+  "box": [
+   0,
+   1181,
+   529,
+   1481
+  ],
+  "file": "q028.png",
+  "gutter": 532,
+  "draft_text": "E)yalniz I 28Msbt ykonagosr 37.H LAmmonium ILHidroksonium IIL.Hidroortofosfat 38.A A)H,POA B) HPO?- D) HPO C) PO E) H2P203"
+ },
+ {
+  "number": 39,
+  "page": 167,
+  "column": 0,
+  "box": [
+   0,
+   108,
+   597,
+   234
+  ],
+  "file": "q039.png",
+  "gutter": 600,
+  "draft_text": "39. OH ionu ila hansi kationlan tayin etmak olmaz? IV. Ar*+ III Ba2* II. Cu2* I k* C)I, II B) II, IV A) IL, III E) I, IV D) I, II"
+ },
+ {
+  "number": 40,
+  "page": 167,
+  "column": 0,
+  "box": [
+   0,
+   222,
+   597,
+   700
+  ],
+  "file": "q040.png",
+  "gutter": 600,
+  "draft_text": "40. AgNO; va NasPOa mahlullan arasinda gedan reaksiyanin tam ion tonliyi hanst halda dogrudur? A) 3Ag* +3NO# + 3Na +PO → Ag:PO4 + 3Na++ 3NO3 B) 3AgNO3 + 3Na* + PO - → Ag3PO4 + 3Na*+ 3NO3 C) 3Ag + 3NO; + NasPO4— → Ag3PO4 + 3Na*+ 3NO3 D) 3AgNO, + 3Na*+ PO → → 3Ag + PO# + 3Na+ 3NO3 E) 3Ag + 3NOg + 3Na* + PO → →3Ag + PO + 3NaNO3"
+ },
+ {
+  "number": 41,
+  "page": 167,
+  "column": 0,
+  "box": [
+   0,
+   688,
+   597,
+   1114
+  ],
+  "file": "q041.png",
+  "gutter": 600,
+  "draft_text": "41. Na2CO vo CaClz mehlullari arasinda gedon reaksiyanin tam ion tonliyi hansi halda dogrudur? A) 2Nat +CO3-+ CaCl2 → →CaCO; +2Na*+ 2C1 B) NazCO, + Ca2+ 2Cr  → CaCO, +2Na++ 2Cr C) 2Na* +CO3-+ Ca2*+ 2CI- - → CaCO, + 2Na*+ 2C D) NazCO + Ca2+ + 2CI → →Ca*+ CO2-+ 2Na* +CI E) 2Na +CO3-+ Ca2* + 2CI-→ CaCO + 2NaCl"
+ },
+ {
+  "number": 42,
+  "page": 167,
+  "column": 0,
+  "box": [
+   0,
+   1102,
+   597,
+   1358
+  ],
+  "file": "q042.png",
+  "gutter": 600,
+  "draft_text": "42. Kation Anion BaCl2 I. C Ba Cu(OH)2 I. OH Cu FeS04 III. SO. Fe Hansi birlasmalarin formullan dogru deyit? C) 1, I B) I, II A) II, III E) yalniz I D) yalniz III"
+ },
+ {
+  "number": 43,
+  "page": 167,
+  "column": 0,
+  "box": [
+   0,
+   1346,
+   597,
+   1597
+  ],
+  "file": "q043.png",
+  "gutter": 600,
+  "draft_text": "43. Anion Kation I. SO?- Na Na2SO4 NHBr II. Br III.POM FePO4 -168",
+  "continued_from": {
+   "page": 167,
+   "column": 1,
+   "rows": [
+    82,
+    172
+   ]
+  }
+ },
+ {
+  "number": 44,
+  "page": 167,
+  "column": 1,
+  "box": [
+   603,
+   172,
+   1080,
+   437
+  ],
+  "file": "q044.png",
+  "gutter": 600,
+  "draft_text": "44. fonlar Formulu I. x2+; MnO4 XMn04 II. X; Mn04 X2MnO4 II. x3t; MnO?- X,MnO4 fonlara asason hansi formullar dogru deyih? C)yalniz IL, m B) yalniz I, II A, I, I E) yalniz I D) yalniz I, III"
+ },
+ {
+  "number": 45,
+  "page": 167,
+  "column": 1,
+  "box": [
+   603,
+   425,
+   1080,
+   691
+  ],
+  "file": "q045.png",
+  "gutter": 600,
+  "draft_text": "45. Formulu fonlar I. X; Cr20%- XCr207 II. Y2*; Cr2O- Y2Cr207 . z3+; C203- Z,CrO1 lonlara asason hansi formullar dogru deyir? C)I,I, I B) yalniz I, II A) yalmz I, II E) yalniz I D) yalniz IL, III"
+ },
+ {
+  "number": 46,
+  "page": 167,
+  "column": 1,
+  "box": [
+   603,
+   679,
+   1080,
+   1038
+  ],
+  "file": "q046.png",
+  "gutter": 600,
+  "draft_text": "46. Adi soraitda Sudamohlulunun Madda aqreqat hali elektrikkeciriciliyi bark yaxs! bork kecirmir maye kecirmir X, Y va Z hansi maddalor ola bilar? NaOH CeH1206 C2HsOH NaOH C2HsOH CeH1206 B) CH,OH NaOH CeH1206 C) CeH1206 C2H,OH NaOH D) C2HsOH CH1206 NaOH E)"
+ },
+ {
+  "number": 47,
+  "page": 167,
+  "column": 1,
+  "box": [
+   603,
+   1026,
+   1080,
+   1400
+  ],
+  "file": "q047.png",
+  "gutter": 600,
+  "draft_text": "47. Adi soraitda Suda mehlulunun Madda aqreqat halh elektrik keciriciliyi bark yaxsi bark kecirmir maye zoif X, Y va Z hansi maddelar ola bilar? Na2CO3 CH,COOH C12H22011 A) C12H22011 Na2CO3 CHCOOH CH,COOH C12H22011 Na2CO3 C) CH,COOH Na2CO3 C12H22011 D) C12H22O11 CH,COOH E) Na2CO3"
+ },
+ {
+  "number": 48,
+  "page": 167,
+  "column": 1,
+  "box": [
+   603,
+   1388,
+   1080,
+   1597
+  ],
+  "file": "q048.png",
+  "gutter": 600,
+  "draft_text": "48. Dissosiasiya Mahlulda duzun %1seociep Mohlul miqdan, mol 60 0,5 K,S04 68 --"
+ }
+]
