@@ -1,0 +1,520 @@
+[
+ {
+  "number": 1,
+  "page": 199,
+  "column": 0,
+  "box": [
+   0,
+   372,
+   574,
+   490
+  ],
+  "file": "q001.png",
+  "gutter": 560,
+  "draft_text": "manual"
+ },
+ {
+  "number": 2,
+  "page": 199,
+  "column": 0,
+  "box": [
+   0,
+   502,
+   574,
+   600
+  ],
+  "file": "q002.png",
+  "gutter": 560,
+  "draft_text": "2. Al(OH); -H20 + X reaksiyasinda X maddasini maayyan edin. A) AlOB) Al2O,C) AlO,D) AlE) Al,O"
+ },
+ {
+  "number": 3,
+  "page": 199,
+  "column": 0,
+  "box": [
+   0,
+   600,
+   574,
+   716
+  ],
+  "file": "q003.png",
+  "gutter": 560,
+  "draft_text": "3.Maqnezium-hidroksidi sink-hidroksid qarisigindan hansi maddanin mohlulu vasitasila ayirmaq olar? A) NaNO B) H2SO4 C) P205 D) HCI HON白"
+ },
+ {
+  "number": 4,
+  "page": 199,
+  "column": 0,
+  "box": [
+   0,
+   716,
+   574,
+   886
+  ],
+  "file": "q004.png",
+  "gutter": 560,
+  "draft_text": "4. Hansi reaksiyalarda X qolavidir? I SO3 +X+H,O +Na2SO4 II. SO, + X - Na2SO4 II CusO, +X→ Cu(OH)2 +NaSO4 A) II, I B) yalniz II C) I, II D) I,  E) yalniz III"
+ },
+ {
+  "number": 5,
+  "page": 199,
+  "column": 0,
+  "box": [
+   0,
+   886,
+   574,
+   1006
+  ],
+  "file": "q005.png",
+  "gutter": 560,
+  "draft_text": "5. Hansi birlosmanin termiki pargalanmasindan yalniz murokkab maddalar alinir? A) HNO3 B) Al(OH)3 C) NaNO3 D) H202 E) AgNO3"
+ },
+ {
+  "number": 6,
+  "page": 199,
+  "column": 0,
+  "box": [
+   0,
+   1006,
+   574,
+   1172
+  ],
+  "file": "q006.png",
+  "gutter": 560,
+  "draft_text": "6. NaOH va Fe(OH), uctin hansi ifada umumi deyil) A) xlorid tursusu ila reaksiyaya daxil olur B)asasdur C) qizdnldiqda parcalanr D)bark haldadur E) ammonyakla reaksiyaya daxil olmur"
+ },
+ {
+  "number": 7,
+  "page": 199,
+  "column": 0,
+  "box": [
+   0,
+   1172,
+   574,
+   1343
+  ],
+  "file": "q007.png",
+  "gutter": 560,
+  "draft_text": "7.Hansi halda birlasmolar dogru adlandinlmisdir? I1. Fe(OHD2 domir (II) hidroksid II. Cr(OHD3 xrom-hidroksid III SO, kakard (VI) oksid A)I, II c) II, III D) yalniz I E) yalniz II"
+ },
+ {
+  "number": 8,
+  "page": 199,
+  "column": 0,
+  "box": [
+   0,
+   1343,
+   574,
+   1539
+  ],
+  "file": "q008.png",
+  "gutter": 560,
+  "draft_text": "8. Hansi siradaki asaslarin hamisi suda yaxsi hall olur? A) Ca(OHD2. Ba(OH)2, Zn(OH)2 B) NaOH, Ba(OH)2, KOH C) NaOH, Ca(OH)2, Fe(OH)3 D) KOH, NaOH, Zn(OH)z E) Ca(OH)z, KOH, Cu(OH)2"
+ },
+ {
+  "number": 9,
+  "page": 199,
+  "column": 1,
+  "box": [
+   551,
+   88,
+   1080,
+   180
+  ],
+  "file": "q009.png",
+  "gutter": 560,
+  "draft_text": "manual"
+ },
+ {
+  "number": 10,
+  "page": 199,
+  "column": 1,
+  "box": [
+   551,
+   186,
+   1080,
+   386
+  ],
+  "file": "q010.png",
+  "gutter": 560,
+  "draft_text": "10. Hansi reaksiya dogru deyit? A) 2A1(OH);→Al2O + 3H20 B) Cu(OH2→CuO + H2O C) 2Fe(OH); Fe203 + 3H20 D) 2CuOH -Cu20 + H20 E) 2NaOH -Na20 + H20 I Fe(OHD domir (II) hidroksid II. Cu(OH2 mis (I) hidroksid III.CrOxrom(IID)oksid A II B) yalniz I C) yalniz II D) I, I E)yalniz.I"
+ },
+ {
+  "number": 11,
+  "page": 199,
+  "column": 1,
+  "box": [
+   551,
+   398,
+   1080,
+   566
+  ],
+  "file": "q011.png",
+  "gutter": 560,
+  "draft_text": "manual"
+ },
+ {
+  "number": 12,
+  "page": 199,
+  "column": 1,
+  "box": [
+   551,
+   564,
+   1080,
+   758
+  ],
+  "file": "q012.png",
+  "gutter": 560,
+  "draft_text": "12. Hansi halda maddalar dogru adlandinlmisdir? Cu20 Cr(OH2 mis (II) oksid xrom (VD) hidroksid B) mis-oksid xrom-hidroksid C) mis (I) oksid xrom (111)hidroksid D) mis oksid xrom(V)hidroksid mis () oksid xrom (I) hidroksid"
+ },
+ {
+  "number": 13,
+  "page": 199,
+  "column": 1,
+  "box": [
+   551,
+   758,
+   1080,
+   941
+  ],
+  "file": "q013.png",
+  "gutter": 560,
+  "draft_text": "13.Hansi ifadalar dogrudur? IButun osaslar sudayaxsi hall olur II. Suda holl olan asaslar qolavilar adlanir II. Suda hall olan esaslar lakmusun rangini dayisir IV.Butun asaslar qizdirildiqda pargalanir A) I, II B) II, II C) yalniz IV D) yalniz II E) II, IV"
+ },
+ {
+  "number": 14,
+  "page": 199,
+  "column": 1,
+  "box": [
+   551,
+   941,
+   1080,
+   1085
+  ],
+  "file": "q014.png",
+  "gutter": 560,
+  "draft_text": "14. fkivalentli metalin 5,6 q oksidinin su ilo reaksiyasindan 7,4 q osas almtr. Bu metali muayyan edin. Ar(HD)=1, A(O)=16 A) 40Ca B) °Be C) \"Mg D) 137Ba E)6Z"
+ },
+ {
+  "number": 15,
+  "page": 199,
+  "column": 1,
+  "box": [
+   551,
+   1085,
+   1080,
+   1250
+  ],
+  "file": "q015.png",
+  "gutter": 560,
+  "draft_text": "15. Hansi osaslar ham HNO, ham da NaOH ile reaksiyaya daxil olur? I. Fe(OH)2 II. Cr(OH)3 II. Zn(OH)2 IV. Ca(OH)2 A)I, II B) yalniz III C) yalniz IV D) II, IV E),"
+ },
+ {
+  "number": 16,
+  "page": 199,
+  "column": 1,
+  "box": [
+   551,
+   1250,
+   1080,
+   1335
+  ],
+  "file": "q016.png",
+  "gutter": 560,
+  "draft_text": "16. Hansi qalavi daha zaif asasi xassalidir? A) NaOH B) CsOH C) LiOH D) KOH E) RbOH"
+ },
+ {
+  "number": 17,
+  "page": 199,
+  "column": 1,
+  "box": [
+   551,
+   1335,
+   1080,
+   1454
+  ],
+  "file": "q017.png",
+  "gutter": 560,
+  "draft_text": "17. Hanst maddalar amfoter xasso gostorir? A) Mg(OH)2, Al203 B) KOH, Fe2O C) ZnO, Be(OH)2 D) Ca(OH)2, Pbo E) CrO, Be(OHz"
+ },
+ {
+  "number": 18,
+  "page": 199,
+  "column": 1,
+  "box": [
+   551,
+   1454,
+   1080,
+   1563
+  ],
+  "file": "q018.png",
+  "gutter": 560,
+  "draft_text": "18. Hansi reaksiyadan sas altnir? A) A1O,+H,O → B) FcO +H,O - C) ZnO + H,O  D) Cao + H,O  E) MnO,+,O - 200-"
+ },
+ {
+  "number": 19,
+  "page": 200,
+  "column": 0,
+  "box": [
+   0,
+   52,
+   519,
+   202
+  ],
+  "file": "q019.png",
+  "gutter": 505,
+  "draft_text": "manual"
+ },
+ {
+  "number": 20,
+  "page": 200,
+  "column": 0,
+  "box": [
+   0,
+   203,
+   519,
+   382
+  ],
+  "file": "q020.png",
+  "gutter": 505,
+  "draft_text": "manual"
+ },
+ {
+  "number": 21,
+  "page": 200,
+  "column": 0,
+  "box": [
+   0,
+   384,
+   519,
+   556
+  ],
+  "file": "q021.png",
+  "gutter": 505,
+  "draft_text": "21. Hanst reaksiyalardan qlovi alinur? 1. K,0 + H20 - 2 Ca + H,O → 3. Fe + H,O, B) 2,3 C) 1, 3 A)1,2 E) yalniz 1 D) yalniz 2"
+ },
+ {
+  "number": 22,
+  "page": 200,
+  "column": 0,
+  "box": [
+   0,
+   556,
+   519,
+   664
+  ],
+  "file": "q022.png",
+  "gutter": 505,
+  "draft_text": "22. Hanst metallar su ile qarsiliqli tosirde olduqda qolovi almr? B) Mg, Al, Fe A) Ca, Ba, Li C) Be, Zn, Al D) Fe, Na, Ca E) Pb, Al Na"
+ },
+ {
+  "number": 23,
+  "page": 200,
+  "column": 0,
+  "box": [
+   0,
+   664,
+   519,
+   782
+  ],
+  "file": "q023.png",
+  "gutter": 505,
+  "draft_text": "23.Ymaddasini muayyan edin X*OH+ +02 Ca- A) hidrogen B) tursu C) oksid D) kalsium E)qolavi"
+ },
+ {
+  "number": 24,
+  "page": 200,
+  "column": 0,
+  "box": [
+   0,
+   782,
+   519,
+   911
+  ],
+  "file": "q024.png",
+  "gutter": 505,
+  "draft_text": "24. CHa, Cl2 va CO2-dan ibarat qaz qarisigindan metani ayumag ucan qarisigi hansi maddonin mehlulundan kecirmaklazimdir? A) NaNO3 B) H2SO4 C) KHSO4 D) Ca(OH)2 E) KCI"
+ },
+ {
+  "number": 25,
+  "page": 200,
+  "column": 0,
+  "box": [
+   0,
+   911,
+   519,
+   1034
+  ],
+  "file": "q025.png",
+  "gutter": 505,
+  "draft_text": "25. Hansi halda kalium-hidroksid amole galmir? A) KCI + H2O el-liz. B) K+H2O C) K20 + H20 - D)KI +Cu(OH2 E) KI +H2O cl-liz."
+ },
+ {
+  "number": 26,
+  "page": 200,
+  "column": 0,
+  "box": [
+   0,
+   1034,
+   519,
+   1189
+  ],
+  "file": "q026.png",
+  "gutter": 505,
+  "draft_text": "26. Hanst halda asasi duz alinmur? A) 2 mol Mg(OH)2 + 2 mol HNO3 B) 1 mol Al(OH)2CI + 1 mol HCI C) 1 mol Fe(OH)s + 2 mol HCI D) 1 mol Fe(OH)2+ I mol H2S04 E) 3 mol Ca(OH)2+ 3 mol HNO3"
+ },
+ {
+  "number": 27,
+  "page": 200,
+  "column": 0,
+  "box": [
+   0,
+   1189,
+   519,
+   1452
+  ],
+  "file": "q027.png",
+  "gutter": 505,
+  "draft_text": "27. SO: +X→ H2O + Na2S04 SO3 + Y  Na2SO4 CuSO4 + Z - Cu(OH)2 + K2SO4 Qalavilari muayyon edin. A)yz B) X, Y D) yalniz. X C)X,Z E) yalniz Z -20"
+ },
+ {
+  "number": 28,
+  "page": 200,
+  "column": 1,
+  "box": [
+   496,
+   63,
+   1080,
+   228
+  ],
+  "file": "q028.png",
+  "gutter": 505,
+  "draft_text": "28. Amfoter hidroksidlori maayyon edin A) Cr(OH)3, Fe(OHDs, Zn(OH)2 B) Al(OH)3, Zn(OH)z, Ca(OH)2 C) Mg(OH)2, Cu(OH)2, Ca(OH)2 D) Cr(OH)z, Cr(OH)3, Zn(OH)2 E) Al(OH)3, Cu(OH)2, KOH"
+ },
+ {
+  "number": 29,
+  "page": 200,
+  "column": 1,
+  "box": [
+   496,
+   228,
+   1080,
+   682
+  ],
+  "file": "q029.png",
+  "gutter": 505,
+  "draft_text": "29. NaOH HNO3 Maddalorin suda mohlullarina aid ifadolorin Eyler-Venn diaqramina uygunlugunu muayyon edin. 1. Lakmusu qizardir 2.Amfoter oksidlerla reaksiyasndan duz alnir 3. Suda mahlulu quvvotli elektrolitdir 4. Tursularla reaksiyaya daxil olub duz omala gatirir 5. Qizdirildiqda pargalanir A) 2, 3 1,5 B) 3.4 2, 5 C) 1.2 3, 4 D) 2,5 1, 3 E) 3,5 1, 4"
+ },
+ {
+  "number": 30,
+  "page": 200,
+  "column": 1,
+  "box": [
+   496,
+   682,
+   1080,
+   848
+  ],
+  "file": "q030.png",
+  "gutter": 505,
+  "draft_text": "30. CaH2 + 2H20 → X + 2H2 Al,C3 + 12H20+ 4Y + 3CH4 2Z + Zn,NazZnO2+Hz Hansi maddelar qolavidir? B)X, Y,Z A)yalniz X C) Y,Z D)X,Z E)X, Y"
+ },
+ {
+  "number": 31,
+  "page": 200,
+  "column": 1,
+  "box": [
+   496,
+   848,
+   1080,
+   1451
+  ],
+  "file": "q031.png",
+  "gutter": 505,
+  "draft_text": "31. AiCl; mahluluna NaOH alava etdikda Al(OHD3-tin mol saynm NaOH-in katiasindan asililiq qrafikini gostarin. v[AI(QH)] V[AI(OH)] A) B) m(NaOH) m(NaOH) v[AI(OH):] v[AI(OH)] C) D) m(NaOH) m(NaOH) V[AI(OH)) E) m(NaOH) 201 -"
+ },
+ {
+  "number": 32,
+  "page": 201,
+  "column": 0,
+  "box": [
+   0,
+   54,
+   574,
+   157
+  ],
+  "file": "q032.png",
+  "gutter": 560,
+  "draft_text": "32. Hansi osaslar qolavi deyit? 2. Ca(OH)2 1. Fe(OHD2 4. Ba(OH)2 3. Cu(OH)2"
+ },
+ {
+  "number": 33,
+  "page": 201,
+  "column": 0,
+  "box": [
+   0,
+   157,
+   574,
+   268
+  ],
+  "file": "q033.png",
+  "gutter": 560,
+  "draft_text": "33. 0,2 mol asasin tam neytrallasmasina 25,2 q HNO3 sarf olunursa, asasin tursulugunu hesablayin. M,(HNO3)=63"
+ },
+ {
+  "number": 34,
+  "page": 201,
+  "column": 0,
+  "box": [
+   0,
+   268,
+   574,
+   372
+  ],
+  "file": "q034.png",
+  "gutter": 560,
+  "draft_text": "34. 7,4 g X(OH)2 ile artiq miqdar xlorid tursusunun qarsiliqli tasirindan XClz vo 3,6 q su alinir. X-in nisbi atom kutlasini hesablayin, A.(H)-1, A.(O)-16"
+ },
+ {
+  "number": 35,
+  "page": 201,
+  "column": 0,
+  "box": [
+   0,
+   372,
+   574,
+   509
+  ],
+  "file": "q035.png",
+  "gutter": 560,
+  "draft_text": "35. Natrium-hidridi suda hall etdikda mahluldan 4 q qaz ayrilarsa, alinan qolavi mahlulu ila nece asashi tursunun 1 molunu tam neytrallasdirmaq olar? A.(H)=1"
+ },
+ {
+  "number": 36,
+  "page": 201,
+  "column": 0,
+  "box": [
+   0,
+   509,
+   574,
+   796
+  ],
+  "file": "q036.png",
+  "gutter": 560,
+  "draft_text": "36. Uygunlugu muayyon edin 1.Suda hall olan asasdir, barkdir 2.Suda hall olmayan asasdir, amfoterdir 3.Nasatir spirti adlanir a.KOH HO'HN'q c. AI(OH)3 d Zn(OH)2 e. Ca(OH2"
+ },
+ {
+  "number": 37,
+  "page": 201,
+  "column": 0,
+  "box": [
+   0,
+   796,
+   574,
+   1090
+  ],
+  "file": "q037.png",
+  "gutter": 560,
+  "draft_text": "37.Uygunlugu muayyon edin. 1molmaddaninartig miqdardaNaOHmahluluila NaOH mahluluila reaksiyasindan alinan reaksiyaya daxil hidrogenin hacmi olan maddalar (n.s, litrla) a. Al 1. 22,4 b. Si 2. 44,8 c. Cl2 3.33,6 d Zn e.S Tursular, tasnifatr, adlandirilmast, alinmasi va xassalari 1. Hansi tursu daha quvvatlidir? A) H,CO3 B) H2SO3 C) H2SiO3 D) H2S04 E) H,PO4 2. Hansi tursu daha zifdir? A) HCI B) H2SO4 C) HNO3 D) H2CO3 E) HsPO4 3. Hansi tursu qaligu ikivalentlidir? A) NO2B) NO3C) SO% D) PO%E) Br 4. Hansi sirada yalniz tursular gostorilib? A) NaOH, KCIB) NH3, H2OC) HCl, HNO3 D) NO2, HNO,E) Na2SO4. KNO3"
+ }
+]
