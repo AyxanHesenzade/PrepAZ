@@ -1,0 +1,522 @@
+[
+ {
+  "number": 1,
+  "page": 297,
+  "column": 1,
+  "box": [
+   555,
+   811,
+   1080,
+   968
+  ],
+  "file": "q001.png",
+  "gutter": 564,
+  "draft_text": "+O2,t,Kat 1.NH Y X -H2O Ymaddasini muayyanedin. B)N2 HN( A)N2O E) NHNO; D)H2O"
+ },
+ {
+  "number": 2,
+  "page": 297,
+  "column": 1,
+  "box": [
+   555,
+   956,
+   1080,
+   1199
+  ],
+  "file": "q002.png",
+  "gutter": 564,
+  "draft_text": "2.Hansi reaksiyadan azot-dioksid alinmur? A) HNO B) Cu +HNO(qat) C)NO + O2→ D)NHNO E) Pb(NO3)2"
+ },
+ {
+  "number": 3,
+  "page": 297,
+  "column": 1,
+  "box": [
+   555,
+   1187,
+   1080,
+   1440
+  ],
+  "file": "q003.png",
+  "gutter": 564,
+  "draft_text": "3.Hansi reaksiyalar dogrudur? I.2NO+O2—→2NO2 I1.2N2+502→→2N20s IV.NHNO→NH+HNO; A) II,III"
+ },
+ {
+  "number": 4,
+  "page": 298,
+  "column": 0,
+  "box": [
+   0,
+   105,
+   444,
+   450
+  ],
+  "file": "q004.png",
+  "gutter": 430,
+  "draft_text": "manual"
+ },
+ {
+  "number": 5,
+  "page": 298,
+  "column": 0,
+  "box": [
+   0,
+   450,
+   444,
+   605
+  ],
+  "file": "q005.png",
+  "gutter": 430,
+  "draft_text": "manual"
+ },
+ {
+  "number": 6,
+  "page": 298,
+  "column": 0,
+  "box": [
+   0,
+   605,
+   444,
+   730
+  ],
+  "file": "q006.png",
+  "gutter": 430,
+  "draft_text": "manual"
+ },
+ {
+  "number": 7,
+  "page": 298,
+  "column": 0,
+  "box": [
+   0,
+   730,
+   444,
+   1050
+  ],
+  "file": "q007.png",
+  "gutter": 430,
+  "draft_text": "manual"
+ },
+ {
+  "number": 8,
+  "page": 298,
+  "column": 0,
+  "box": [
+   0,
+   1050,
+   444,
+   1215
+  ],
+  "file": "q008.png",
+  "gutter": 430,
+  "draft_text": "manual"
+ },
+ {
+  "number": 9,
+  "page": 298,
+  "column": 0,
+  "box": [
+   0,
+   1200,
+   444,
+   1395
+  ],
+  "file": "q009.png",
+  "gutter": 430,
+  "draft_text": "manual"
+ },
+ {
+  "number": 10,
+  "page": 298,
+  "column": 0,
+  "box": [
+   0,
+   1378,
+   444,
+   1595
+  ],
+  "file": "q010.png",
+  "gutter": 430,
+  "draft_text": "manual"
+ },
+ {
+  "number": 11,
+  "page": 298,
+  "column": 1,
+  "box": [
+   421,
+   95,
+   1080,
+   308
+  ],
+  "file": "q011.png",
+  "gutter": 430,
+  "draft_text": "11.Azot-dioksid ucun hanst ifada dogrudur? A)Rongsiz,iysiz qazdur (n.s.) B)Su iloqarslqli tosird olubnitrat tursusumola gatirir C) Havadan yunguldar D) Natrium-karbonat ilareaksiyaya daxil olmur hansi E) Qolavimahlulu ilbirqabda saxlamaq olar"
+ },
+ {
+  "number": 12,
+  "page": 298,
+  "column": 1,
+  "box": [
+   421,
+   296,
+   1080,
+   505
+  ],
+  "file": "q012.png",
+  "gutter": 430,
+  "draft_text": "12.NHLNO→X+Y I.X+Na-→ I1.Y+Cl-→reaksiya getmir Ireaksiyadan hansi maddalar alinar? A)NaOH,H2 B)NasN,O2 C) Na2O,H2 D) NaH,O2 E)NaOH,O2"
+ },
+ {
+  "number": 13,
+  "page": 298,
+  "column": 1,
+  "box": [
+   421,
+   493,
+   1080,
+   739
+  ],
+  "file": "q013.png",
+  "gutter": 430,
+  "draft_text": "13.NHNO→X +Cl2 id +Ca I Ⅱ Ireaksiya getmirsa,Il reaksiyadan hansimaddolr alinar? A)CasN2 B)Ca(OH),H2 C) CaO,H2 D) CaH2,O2 E) Ca(OH)2,O2"
+ },
+ {
+  "number": 14,
+  "page": 298,
+  "column": 1,
+  "box": [
+   421,
+   727,
+   1080,
+   953
+  ],
+  "file": "q014.png",
+  "gutter": 430,
+  "draft_text": "14.Hansi reaksiyalarda NO alinar? I. Cu + HNO3（durn)  II.NO+O2— III.HNO A)I,II C)I,ⅢI D) yalniz II E) yalniz II"
+ },
+ {
+  "number": 15,
+  "page": 298,
+  "column": 1,
+  "box": [
+   421,
+   941,
+   1080,
+   1244
+  ],
+  "file": "q015.png",
+  "gutter": 430,
+  "draft_text": "15.S+6HNO→HSO4+6X+2HO reaksiyasindan alinan X maddasi ucun hanst ifada dogru deyit? A)Suila reaksiyaya daxil olur B)Qonur rangliqazdur (n.s.) t? C)Natriumsorasinin sonayeda alinmasinda istifada olunur D)Misinqatinitrat tursusu ilaqarsiliqh tosirindan alinir E)Natrium-karbonatla reaksiyaya daxil olmur"
+ },
+ {
+  "number": 16,
+  "page": 298,
+  "column": 1,
+  "box": [
+   421,
+   1232,
+   1080,
+   1604
+  ],
+  "file": "q016.png",
+  "gutter": 430,
+  "draft_text": "16.P+5HNO（qat)-→HPO4+SX+H2O reaksiyasindan alinanXmaddasi ucunhansiifad dogru deyil? A)Duzamalagatiranoksiddir B)Havadan agur qazdur (n.s.) C)Natrium sorasinin istehsalinda istifado olunur D) Qat nitrat tursusu ila gumusunqarsihql tasirindan alinir E) Su ilareaksiyaya daxil olmur ur alinir"
+ },
+ {
+  "number": 17,
+  "page": 299,
+  "column": 0,
+  "box": [
+   0,
+   73,
+   567,
+   323
+  ],
+  "file": "q017.png",
+  "gutter": 553,
+  "draft_text": "17. 3P+5HNO3（dun)+ 2HO-→3HPO+ 5X reaksiyasindan alinan Xmaddosi ucun hansi ifada dogrudur? A) Qonur rangli qazdir(n.s.) B) Natrium sorasinin istehsalinda istifado olunur C)Duzamolagatirmoyan oksiddir D) Civaninqat nitrat tursusu ilaqarsiqli tosirinda almaqolar E) Su iloreaksiyaya daxil olur"
+ },
+ {
+  "number": 18,
+  "page": 299,
+  "column": 0,
+  "box": [
+   0,
+   311,
+   567,
+   694
+  ],
+  "file": "q018.png",
+  "gutter": 553,
+  "draft_text": "18. Suyu sixisdirb cixarma Qazlar usuluilatoplanmasl X Y + Z 一 X,YvZ qazlarini muayyan edin Y Z A) NH3 NO2 N2 B) O2 NH3 NO2 C) NO2 CHN N2 D) N2 NO2 NH3 E) NH3 NO2 N2 +X NaNO+Y+HO"
+ },
+ {
+  "number": 19,
+  "page": 299,
+  "column": 0,
+  "box": [
+   0,
+   682,
+   567,
+   999
+  ],
+  "file": "q019.png",
+  "gutter": 553,
+  "draft_text": "19.NO2 +NaCO3,t +Z -CO X,YvZmaddalorinimuayyn edin Y Z A)NaCO3 NaNO2 CO2 B)NaCO CO2 NaNO2 C)NaOH NaNO NaNO2 D)NaOH N2Os NO E)NaOH NaNO2 NaNO3 +NaOH >Y+NaNO+HO"
+ },
+ {
+  "number": 20,
+  "page": 299,
+  "column": 0,
+  "box": [
+   0,
+   987,
+   567,
+   1253
+  ],
+  "file": "q020.png",
+  "gutter": 553,
+  "draft_text": "20.X- +Na,COs,t X,YvZmaddalarini muoyyn edin Y Z A) N2O NaNO2 NaNO, B) NO NaNO2 NaNO3 C) N2Os NaNO3 NaNO2 D) NO2 NaNO2 NaNO3 E) NO2 NaNO3 NaNO2"
+ },
+ {
+  "number": 21,
+  "page": 299,
+  "column": 0,
+  "box": [
+   0,
+   1241,
+   567,
+   1500
+  ],
+  "file": "q021.png",
+  "gutter": 553,
+  "draft_text": "21.1. NO2+H2O II.NO2+NaCO III.NO2+O2+H2O- Reaksiyalar ucun hansi ifado dogrudur? A)Birlasma reaksiyalaridir B) Oksidlosma-reduksiya reaksiyalaridir C)Reaksiyalardan bosit maddo alinir",
+  "continued_from": {
+   "page": 299,
+   "column": 1,
+   "rows": [
+    82,
+    135
+   ]
+  }
+ },
+ {
+  "number": 22,
+  "page": 299,
+  "column": 1,
+  "box": [
+   544,
+   135,
+   1080,
+   300
+  ],
+  "file": "q022.png",
+  "gutter": 553,
+  "draft_text": "manual"
+ },
+ {
+  "number": 23,
+  "page": 299,
+  "column": 1,
+  "box": [
+   544,
+   300,
+   1080,
+   526
+  ],
+  "file": "q023.png",
+  "gutter": 553,
+  "draft_text": "manual"
+ },
+ {
+  "number": 24,
+  "page": 299,
+  "column": 1,
+  "box": [
+   544,
+   526,
+   1080,
+   761
+  ],
+  "file": "q024.png",
+  "gutter": 553,
+  "draft_text": "24.Hansi reaksiyalarda NO alinar? I. Zn+HNO;（qat)— IL.NH+O2Pt IIL.NH+ O2 A)I,II B) I, II C)II,I D)yalniz I E)yalniz II"
+ },
+ {
+  "number": 25,
+  "page": 299,
+  "column": 1,
+  "box": [
+   544,
+   749,
+   1080,
+   1047
+  ],
+  "file": "q025.png",
+  "gutter": 553,
+  "draft_text": "25.NHNO→X+Y-+Li>Z BN+ 今 I I avazetmreaksiyasidursa,Z-imuayyn edin A)LiNO2 B)LiOH C)LiO D)Li2O2 E)LiN +SO"
+ },
+ {
+  "number": 26,
+  "page": 299,
+  "column": 1,
+  "box": [
+   544,
+   1035,
+   1080,
+   1386
+  ],
+  "file": "q026.png",
+  "gutter": 553,
+  "draft_text": "26.NHNO→X+Y →X+Y +Cu,t Ⅱ edin X 人 A) 'N H2O B) H2O H2 C) N2O H2 D) H2 N2O E) H2O N2",
+  "continued_from": {
+   "page": 300,
+   "column": 0,
+   "rows": [
+    82,
+    140
+   ]
+  }
+ },
+ {
+  "number": 27,
+  "page": 300,
+  "column": 0,
+  "box": [
+   0,
+   140,
+   515,
+   397
+  ],
+  "file": "q027.png",
+  "gutter": 501,
+  "draft_text": "27. larkibi X NHLNO3 人 NHNO2 E)3 D)2,4 C)1,6 B)2 A)1,8"
+ },
+ {
+  "number": 28,
+  "page": 300,
+  "column": 0,
+  "box": [
+   0,
+   385,
+   515,
+   571
+  ],
+  "file": "q028.png",
+  "gutter": 501,
+  "draft_text": "28.NHLCI HNO, Azotun kutlasi,q"
+ },
+ {
+  "number": 29,
+  "page": 300,
+  "column": 0,
+  "box": [
+   0,
+   559,
+   515,
+   701
+  ],
+  "file": "q029.png",
+  "gutter": 501,
+  "draft_text": "Kutlasi,q 29. Oksidlar 14 22 NO 14 38 NOy xtycaminihesablayin.A,(N）=14,A,（O)=16"
+ },
+ {
+  "number": 30,
+  "page": 300,
+  "column": 0,
+  "box": [
+   0,
+   689,
+   515,
+   789
+  ],
+  "file": "q030.png",
+  "gutter": 501,
+  "draft_text": "30.4.6qNOneco qram natrium-karbonatla reaksiyaya daxilolar?M,(NO2)=46;M(Na2CO3)=106"
+ },
+ {
+  "number": 31,
+  "page": 300,
+  "column": 0,
+  "box": [
+   0,
+   777,
+   515,
+   890
+  ],
+  "file": "q031.png",
+  "gutter": 501,
+  "draft_text": "31.23qNOneca qram natrium-karbonatla reaksiyaya daxilolar?M,(NO2)=46;M,(Na2CO3）=106 +O,tkat tkat 2NO"
+ },
+ {
+  "number": 32,
+  "page": 300,
+  "column": 0,
+  "box": [
+   0,
+   878,
+   515,
+   1005
+  ],
+  "file": "q032.png",
+  "gutter": 501,
+  "draft_text": "→2NH3 32.N+3H Har iki reaksiyanin praktikiciximi50%olarsa, 3mol azot va 9mol hidrogendan neco mol NO almaq olar? +O,t,kat >2NH →2NO almaq olar?"
+ },
+ {
+  "number": 33,
+  "page": 300,
+  "column": 0,
+  "box": [
+   0,
+   1005,
+   515,
+   1118
+  ],
+  "file": "q033.png",
+  "gutter": 501,
+  "draft_text": "manual"
+ },
+ {
+  "number": 34,
+  "page": 300,
+  "column": 0,
+  "box": [
+   0,
+   1120,
+   515,
+   1230
+  ],
+  "file": "q034.png",
+  "gutter": 501,
+  "draft_text": "34.N+3Hkat +O,tkat 2NO 2NH hesablayin."
+ },
+ {
+  "number": 35,
+  "page": 300,
+  "column": 0,
+  "box": [
+   0,
+   1230,
+   515,
+   1335
+  ],
+  "file": "q035.png",
+  "gutter": 501,
+  "draft_text": "manual"
+ },
+ {
+  "number": 36,
+  "page": 300,
+  "column": 1,
+  "box": [
+   492,
+   70,
+   1080,
+   455
+  ],
+  "file": "q036.png",
+  "gutter": 501,
+  "draft_text": "36.Azot oksidlari m(N).q ucun uygunlugu muayyan edin. A,(N）=14, A,（0)=16 4812m（0）.q 1.X a.Ammonium-nitratin parcalanmasindan 2.Y alinir 3.Z b.Nitrit tursusunun anhidrididir c.Azotun oksigenla bilavasita reaksiyasindan alinir d.Misin duru nitrat tursusu ila qarsiliql tasirindon alinir e.Tursu oksididir Otraflui yazilicavabtalab olunan tapsuriqlar 1.Ammonium- m(bork madda) dixromatin termiki 小 200 parcalanma reaksiyasinin qrafikina asasan,duzun neca 175 faizininparcalandigini (1)va alinan basit zaman maddanin (n.s.) hacmini litrla(2) hesablayin.A,（Cr)=52,A,N）=14,A，H)=1,A,O)=16 2.Qapali qabda eynimol sayda goturulmus azot va hidrogeninqarsiliqh tasirizamaniqabda tazyiq20% azalmisdir.Hidrogenin reaksiyaya daxil olan hacm payini (faizla) (l) hesablayin va reaksiyadan sonra azotunmol sayinin ammonyakinmol sayindanneca dafa cox oldugunu (2) hesablayin. 3.NHmolekulundarabitlarinamalagalmasind istirak edanelektronlarin(l)va hibridorbitallarinin sayini (2) yazin. 4. Qarisigi qati sulfat tursusundankecirondon Mol sonra reaksiyaya daxil Qaz olmayanqazlarinumumi mol miqdar qarisigi miqdan 1,25n N2 n HN Reaksiyadan sonraki qaz qarisiginda N-inmol payin1 (%-la)hesablayin(1),reaksiya zamani alinan duzda azotun valentliyiniyazin(2). 5.42 q litium ila azot arasinda gedan natamam reaksiya zaman bark maddonin kutlasi 1/3-i qodar artmsdr. Buna sasan artiq qalan litiumun kutlasini (l)va onun barkqaligin torkibinda alinan maddonin kutlasino olan nisbatini (2) hesablayin. A,(Li）=7,A,(N）=14"
+ }
+]
