@@ -65,7 +65,7 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - Səhv cavab → `review_queue` (1 → 3 → 7 → 14 gün); 4 ardıcıl düz → növbədən çıxır.
 - `profiles.streak_days` avtomatik; istifadəçi dəyişə bilməz.
 - `topic_mastery` view — mövzu üzrə son 30 cavabın faizi, yalnız `get_daily_set` üçün.
-- `topic_progress` view (`db/migrations/013_topic_progress.sql`, lokal test: `tools/dim/test_migration_013.py`) — ekranda göstərilən nəticə: mövzudakı BÜTÜN aktiv testlərə görə, hər test bir dəfə, son cavab həlledicidir. Tətbiqdə `TopicMastery`: yaxşı = bütün testlərin ≥70%-i düz; zəif = ən azı 5 test həll edilib (kiçik mövzuda hamısı) və həll edilənlərin <70%-i düz; qalanı "davam edən".
+- `topic_progress` view (`db/migrations/013_topic_progress.sql`, lokal test: `tools/dim/common/test_migration_013.py`) — ekranda göstərilən nəticə: mövzudakı BÜTÜN aktiv testlərə görə, hər test bir dəfə, son cavab həlledicidir. Tətbiqdə `TopicMastery`: yaxşı = bütün testlərin ≥70%-i düz; zəif = ən azı 5 test həll edilib (kiçik mövzuda hamısı) və həll edilənlərin <70%-i düz; qalanı "davam edən".
 - `get_daily_set(subject_id, limit)` RPC — əvvəl vaxtı çatmış təkrarlar, sonra zəif mövzular.
 - Cavablar dəyişdirilə/silinə bilməz.
 
@@ -96,13 +96,29 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - Sualların bazası olaraq DİM dən itfadə edirik. və sorcuları qeyd edirik. dimlə razılaşılıb mənbəni qeyd etməklə isfadə etməyə icazə verir amma bizı script ilə çəkməyə icazə verib hanilar ki paylaşılıb onları çəkə bilərik heç bir risk yoxdur
 
 
+## tools/dim qovluq quruluşu (2026-11-16)
+Kod və məlumat fənn üzrə ayrılıb; skriptlər `common/paths.py` və `common/subjects.py` vasitəsilə yolu tapır (yolu əl ilə yazma).
+```
+tools/dim/
+  common/      ORTAQ: DİM PDF parseri (extract_kimya, build_xlsx, chem_text), check, append_new, import_questions, import_scans,
+               scan_segment, compress_images, upload_images, make_teacher_file, download, subjects, paths,
+               DB testləri (test_migration_*, test_check_answer_parity, test_import_*), raw/ (bütün fənlər üçün DİM PDF-ləri)
+  kimya/       images/ (KIM-), out/ (Excel, import_*.sql, webp/, upload_kitab/, images_kitab/), scan/, kitab PDF,
+               topic_map, merge_review, sync_new_columns, scan_tool, scan_numlines, KITAB_IRELILEYIS.md, SUAL_ELAVE_AZ_TOKEN.md
+  biologiya/   images/ (BIO-), out/ (Excel, import_biologiya.sql, webp/), extract_biologiya, build_biologiya, topic_map_biologiya, test_import_biologiya
+```
+- **Komandalar fənn qovluğundan işlədilir**, nisbi yollar (`out/...`, `scan/...`) ora görədir: `cd tools/dim/kimya` → `python ../common/import_scans.py ...`, `python scan_tool.py ...`, `python ../common/compress_images.py --check`.
+  Biologiya: `cd tools/dim/biologiya` → `python extract_biologiya.py`, `python ../common/check.py --subject biologiya`.
+- Yeni fənn: `common/subjects.py`-a bir sətir + `tools/dim/<fənn>/` qovluğu (images/, out/); ortaq kod toxunulmaz qalır.
+- Bəzi ortaq faylların adı hələ `extract_kimya.py` / `build_xlsx.py`-dir (parser kimya üçün yazılıb, biologiya da onu istifadə edir); adı dəyişdirilməyib ki, köhnə qeydlər pozulmasın.
+
 ## DİM kimya sualları (tools/dim, TASK_01)
-- `download.py` → `extract_kimya.py` → `build_xlsx.py` → `check.py`. Nəticə: `tools/dim/out/kimya_dim_yoxlama.xlsx` (+ `images/`).
+- `download.py` → `extract_kimya.py` → `build_xlsx.py` → `check.py`. Nəticə: `tools/dim/kimya/out/kimya_dim_yoxlama.xlsx` (+ `images/`).
 - PDF-lər iki sütunludur; indekslər/yüklər mətndə yox, şrift ölçüsü və baseline ilə saxlanılır (`chem_text.py` bunu LaTeX-ə çevirir).
 - Köhnə `import_questions.py` və `schema.sql` silinib; `check.py` TASK_01 qaydalarını yoxlayır. Bazaya yükləmə yalnız müəllim yoxlamasından sonra.
 
 ## Kimya sualları: yükləmə axını (TASK_02)
-1. Müəllim `tools/dim/out/muellim_1_dest.xlsx`-i doldurur (çətinlik 1-5, aktiv bəli/xeyr, qeyd).
+1. Müəllim `tools/dim/kimya/out/muellim_1_dest.xlsx`-i doldurur (çətinlik 1-5, aktiv bəli/xeyr, qeyd).
 2. `python merge_review.py` → əsas Excel-ə köçürür (ehtiyat nüsxə ilə). `python check.py` yoxlayır.
 3. `python import_questions.py` → `out/import_kimya.sql` (xəta varsa heç nə yazmır). Sahib SQL Editor-da işlədir.
 4. Şəkillər: əvvəl `db/migrations/002_question_images_bucket.sql`, sonra `python upload_images.py --prepare` (panelə sürüklə) və ya `--upload` (SUPABASE_URL + SUPABASE_SERVICE_KEY yalnız mühit dəyişəni kimi).
@@ -110,7 +126,7 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - `build_xlsx.py` mövcud Excel-in üstünə yazmır (KIM-xxxx kodları bazada açardır).
 - Tətbiqdə məşq feature-ı hazırdır: `lib/features/quiz` (LaTeX, şəkil + zoom, izah, nəticə), ana səhifədə zəif mövzular.
 - Baza qeydi: `topic_mastery` view-ı bütün istifadəçilərin sətirlərini saxlayırdı. `db/migrations/004_topic_mastery_security_invoker.sql` onu `security_invoker` edir
-  (lokal test: `tools/dim/test_migration_004.py`). Test və real Supabase-də SQL Editor-da işlədilməlidir; işlədilənə qədər açıqdır.
+  (lokal test: `tools/dim/common/test_migration_004.py`). Test və real Supabase-də SQL Editor-da işlədilməlidir; işlədilənə qədər açıqdır.
 - İzah şəkli: hər sual üçün orijinal izah `images/KIM-xxxx_izah.png` (kəsr/cədvəl mətndə pozulur). Excel sütunu `izah şəkli`, baza sütunu
   `questions.solution_image_path` (db/migrations/003; get_daily_set da yenilənir, çünki `setof questions` qaytarır). Tətbiq şəkli mətn əvəzinə göstərir.
 - Yeni sütun əlavə etmək: `sync_new_columns.py` (təsdiqləri pozmur). Əsas Excel-i heç vaxt `build_xlsx.py --force` ilə yenidən qurma.
@@ -118,7 +134,7 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - Yükləmə ardıcıllığı: 003 migration → 002 migration → `import_kimya.sql` → şəkillər (`upload_images.py --prepare` və ya `--upload`).
 - Şəkillər AÇIQDIR (`lib/core/config/app_features.dart` → `questionImages = true`): biologiya və kimyada şəkil sualın özüdür. Test Supabase-də bucket var, 120 şəkil yüklənib; qalanları təsdiqdən sonra `upload_images.py` ilə. Storage yükü ~17 MB (limit 1 GB); risk aylıq trafikdir (5 GB), lazım olsa cache + sıxma.
 - **Şəkillər WebP-dir** (migration `015_webp_images.sql`, 2026-11-03: test Supabase-də 616 şəkil çevrildi, köhnə PNG-lər silindi; ölçü PNG-nin ~44%-i, gözlə fərq yoxdur). Qayda:
-  - Orijinal PNG-lər (`tools/dim/images`, `out/images_kitab`) qalır, Excel-də `şəkil` / `izah şəkli` PNG adı ilə qalır (kodlar açardır). Bazaya və bucket-ə yalnız `.webp` adı yazılır (`compress_images.web_name`).
+  - Orijinal PNG-lər (`tools/dim/kimya/images`, `out/images_kitab`) qalır, Excel-də `şəkil` / `izah şəkli` PNG adı ilə qalır (kodlar açardır). Bazaya və bucket-ə yalnız `.webp` adı yazılır (`compress_images.web_name`).
   - **DİM sualları:** əvvəl `python compress_images.py` (→ `out/webp/`, `--check` yoxlayır), sonra `import_questions.py` (WebP yoxdursa dayanır), şəkillər `upload_images.py --prepare` / `--upload` ilə `out/webp`-dən yüklənir.
   - **Kitab skanları:** `import_scans.py` şəkli özü WebP-yə çevirib `out/upload_kitab/`-a yazır (`upload_kitab` qaydası dəyişmir, fayllar `.webp`dir; `--folder out/upload_kitab --upload`).
   - Köhnə PNG-ləri silmək: `upload_images.py --folder out/webp --delete-png [--yes]` (service key yalnız mühit dəyişəni; Git Bash-da `export`, PowerShell-də `$env:`).
@@ -126,7 +142,7 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 
 
 ## Fənlər və yeni sual əlavə etmək
-- Fənn parametrləri `tools/dim/subjects.py`-dadır (kod prefiksi, Excel, bölmələr): `kimya` (KIM-), `biologiya` (BIO-).
+- Fənn parametrləri `tools/dim/common/subjects.py`-dadır (kod prefiksi, Excel, bölmələr): `kimya` (KIM-), `biologiya` (BIO-).
 - Biologiya: `extract_biologiya.py` → `build_biologiya.py` → `out/biologiya_dim_yoxlama.xlsx` (119 sual, hamısı müəllim yoxlaması gözləyir).
   `check.py --subject biologiya`, `import_questions.py --subject biologiya`; lokal test: `test_import_biologiya.py`.
   Bazada `subjects` cədvəlinə `biologiya` sətri əl ilə əlavə olunmalıdır (idxal SQL-i onsuz dayanır).
@@ -151,21 +167,21 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 
 ## Admin panel (Mərhələ 6)
 - `db/migrations/005_admin_panel.sql`: `admins` cədvəli, `is_admin()`, adminə bütün sualları görmək/əlavə/yeniləmək, mövzu əlavəsi, `question-images` bucket-inə yükləmə.
-  Sual SİLİNMİR (is_active=false). Lokal test: `tools/dim/test_migration_005.py` (19 yoxlama).
+  Sual SİLİNMİR (is_active=false). Lokal test: `tools/dim/common/test_migration_005.py` (19 yoxlama).
 - Admin əlavə etmək (yalnız SQL Editor-da əl ilə): `insert into admins (user_id) select id from auth.users where email = '...';`
 - Panel yalnız açıq URL + publishable key bilir (`PrepAzAdmin/.env.local`). service_role heç vaxt.
 - Redaktor köməkçiləri (`PrepAzAdmin/src/lib/formula.js`, testli): düstur çevirici (`H2SO4 + 2NaOH -> Na2SO4 + 2H2O` → `$\mathrm{...}$`, ion yükü üçün `Fe^3+`),
   simvol düymələri (→ ⇌ ↑ ↓ Δ ° · × ≥ ≤ indeks kəsr kök), "Yapışdır və böl" (A–E variantlarını ayırır), oxşar sual xəbərdarlığı.
 
 ## Skan edilmiş test kitabları (şəkil-sual)
-- **Az token qaydası: `tools/dim/SUAL_ELAVE_AZ_TOKEN.md` (köməkçi: `tools/dim/scan_tool.py`). Kitab işinə başlamazdan əvvəl MÜTLƏQ oxu:** OCR-ın tapdığı suallara baxılmır, yalnız əl ilə kəsilənlər kiçik vərəqdə bir dəfə yoxlanır, kiçik qüsur düzəldilmir.
-- **Kitabda harada dayandığımız `KITAB_IRELILEYIS.md`-dədir.** Kitab işinə başlamazdan əvvəl onu oxu, hər bölmə bitəndə mütləq yenilə (bölmə cədvəli, "Qısa vəziyyət", tarix).
+- **Az token qaydası: `tools/dim/kimya/SUAL_ELAVE_AZ_TOKEN.md` (köməkçi: `tools/dim/kimya/scan_tool.py`). Kitab işinə başlamazdan əvvəl MÜTLƏQ oxu:** OCR-ın tapdığı suallara baxılmır, yalnız əl ilə kəsilənlər kiçik vərəqdə bir dəfə yoxlanır, kiçik qüsur düzəldilmir.
+- **Kitabda harada dayandığımız `tools/dim/kimya/KITAB_IRELILEYIS.md`-dədir.** Kitab işinə başlamazdan əvvəl onu oxu, hər bölmə bitəndə mütləq yenilə (bölmə cədvəli, "Qısa vəziyyət", tarix).
 - Mənbə: sahibin əlindəki nəşriyyat/DİM test topluları (şəkil PDF). Yalnız sahibin verdiyi fayllar; internetdən qeyri-rəsmi PDF çəkilmir.
-- `tools/dim/scan_segment.py KITAB.pdf --first N --last M --start 1 --stop 100 --out scan/<ad>`: RapidOCR yalnız sual nömrələrinin yerini tapır
+- `tools/dim/common/scan_segment.py KITAB.pdf --first N --last M --start 1 --stop 100 --out scan/<ad>`: RapidOCR yalnız sual nömrələrinin yerini tapır
   (ardıcıl artan nömrə qaydası), hər sual ayrıca təmizlənmiş şəkil kimi kəsilir (haşiyə silinir, ağ kağız, 2x böyütmə). Nümunədə 87/100 tapıldı;
   OCR bəzi sətirləri (səhifə yuxarısı, əyri sətirlər) oxumur. Tapılmayanlar hesabatda "missing" kimi görünür.
 - Cavab açarı kitabın sonundan əl ilə JSON-a yazılır (`scan/kimya_I_bolme1_cavablar.json`). Açarın forması tipi təyin edir ("Açıq sual tipləri" bölməsinə bax).
-- `tools/dim/import_scans.py` → `out/import_kt1_s01.sql` + `out/upload_kitab/` (şəkillər koda görə adlanır). Kod: `KT<kitab>-S<bölmə>-Q<nömrə>`
+- `tools/dim/common/import_scans.py` → `out/import_kt1_s01.sql` + `out/upload_kitab/` (şəkillər koda görə adlanır). Kod: `KT<kitab>-S<bölmə>-Q<nömrə>`
   (məs. `KT1-S01-Q030`): problem bildirişində kod birbaşa kitabda yeri göstərir. Sual mətni BOŞDUR, qapalı sualda variantlar yalnız hərfdir ("A".."E").
 - Tətbiq: `Question.isImageOnly` (mətn boş + şəkil var) → şəkil + A–E hərf düymələri (`LetterOptions`). Admin panel mətn boş ola bilər (şəkil varsa).
 - Kitablar: 1 = "Kimya test toplusu I" (DİM, 2025, 359 səhifə): bölmə 1 = səhifə 3–9 (sual 1–100), cavablar səhifə 331.
@@ -174,15 +190,15 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
   Növbəti bölmə 3 "Kimyəvi formullar üzrə hesablamalar" pdf səhifə 10-dan başlayır. Hər bölmə üçün `scan/kimya_I_bolmeN_cavablar.json` əl ilə yazılır.
 - `scan_segment.py` seçimləri: `--skip-above PAGE:COL:Y` (başlıqdan əvvəlki hissəni at), `--pad` (nömrədən yuxarı pay, valentlik işarələri üçün), `--recrop` (OCR-sız yenidən kəsmə).
   Lokal test: `test_import_scans.py out/import_kt1_sNN.sql`.
-- **Yükləmə qovluqları (qayda):** sahib həmişə TƏK qovluqdan yükləyir: `tools/dim/out/upload_kitab/` = yalnız hələ yüklənməmiş yeni şəkillər.
-  Sahib "ok" deyəndən sonra bu şəkillər `tools/dim/out/images_kitab/` qovluğuna köçürülür (artıq Storage-dədir). Yeni qovluq açılmır.
+- **Yükləmə qovluqları (qayda):** sahib həmişə TƏK qovluqdan yükləyir: `tools/dim/kimya/out/upload_kitab/` = yalnız hələ yüklənməmiş yeni şəkillər.
+  Sahib "ok" deyəndən sonra bu şəkillər `tools/dim/kimya/out/images_kitab/` qovluğuna köçürülür (artıq Storage-dədir). Yeni qovluq açılmır.
   Düzəldilmiş şəkil (eyni ad) yenidən yüklənəndə əvvəl Storage-dəki köhnəsi silinməlidir. `import_scans.py` yeni şəkilləri `upload_kitab`-a yazır.
 - Bölmə 3 "Kimyəvi formullar üzrə hesablamalar": pdf səhifə 10-14, 75 sual kəsilib, yalnız 1-53 (hərf cavablı) yüklənir; 54-60 çoxseçimli, 61-75 ədədi cavablıdır.
   Əmr: `--first 10 --last 15 --start 1 --stop 75 --skip-above 10:0:105` (`--pad` defoltla: böyük pad əvvəlki sualın son sətrini yeyir).
   `scan_segment.py` indi sütunun sonunda davam edən sualları (`stitch_continuations`, `CONT_TOP`) avtomatik birləşdirir. Kəsmənin kənarı əyri sətirdə yanılsa, `manifest.json`-da `box` düzəldilib `--recrop` işlədilir.
 
 ## Açıq sual tipləri
-- `db/migrations/014_open_question_types.sql` (lokal test: `tools/dim/test_migration_014.py`). Yoxlama serverdədir (`check_answer`).
+- `db/migrations/014_open_question_types.sql` (lokal test: `tools/dim/common/test_migration_014.py`). Yoxlama serverdədir (`check_answer`).
 - `aciq_eded`: yazı xanası, `12,5` və `12.5` eyni sayılır. Açar JSON-da onluq NÖQTƏ ilə: `12.5`.
 - `coxlu_secim`: yalnız rəqəm yazılan xana, şagird `135` yazır, ekranda `1,3,5` görünür. Sıra və təkrar fərq etmir. Açarda vergüllə: `1,3,5`; bazada `135`.
 - `uygunlasdirma`: sətir-hərf cədvəli (`MatchingGrid`), bir sətirdə bir neçə hərf seçilə bilər. Açarda kitabdakı kimi `c; b, e`; bazada `C;BE`, `options = {"1": "ABCDE", "2": "ABCDE"}`. Ekranda `1-c, 2-be`.
@@ -206,26 +222,26 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
   Faylda hazırda NÜMUNƏ sətir var: real məlumatla əvəz et. Zəng/WhatsApp `url_launcher` ilə açılır.
 
 ## Tövsiyə olunan müəllimlər (dinamik)
-- Baza: `db/migrations/006_teachers.sql` (`teachers` cədvəli, RLS: istifadəçi yalnız `is_active and consent` olanları görür, admin hamısını; silinmir; public bucket `teacher-photos`). Lokal test: `tools/dim/test_migration_006.py`.
+- Baza: `db/migrations/006_teachers.sql` (`teachers` cədvəli, RLS: istifadəçi yalnız `is_active and consent` olanları görür, admin hamısını; silinmir; public bucket `teacher-photos`). Lokal test: `tools/dim/common/test_migration_006.py`.
 - Nümunə (saxta) məlumat: `db/seed/teachers_demo.sql`, fotolar `tools/teachers/upload/` (`make_demo_photos.py`). Real buraxılışdan əvvəl "Nümunə ..." sətirləri passiv edilməlidir.
 - Tətbiq: `lib/features/teachers` (repository + `teachersProvider` FutureProvider; ekranı dizayn agenti də dəyişə bilər). Admin panel: "Müəllimlər" tabı (`TeachersPage`, `TeacherDrawer`, `lib/teachers.js`).
 - Müəllimdən məlumat toplama forması: ad, fənn, format (əyani/online/hər ikisi), yer, nömrə, haqqında, təklif, foto, razılıq (bəli/xeyr). Razılıq yoxdursa göstərilmir.
 - Növbəti: məcburi yeniləmə ekranı (minimum versiya bazadan oxunur), tətbiqin adi yeniləmə xəbərdarlığı.
 
 ## Məcburi yeniləmə
-- `db/migrations/008_app_config.sql`: tək sətirli `app_config` (`min_version`, `latest_version`, `update_url`); anon də oxuya bilər (giriş əvvəli yoxlanır), yalnız admin dəyişir. Lokal test: `tools/dim/test_migration_008.py`.
+- `db/migrations/008_app_config.sql`: tək sətirli `app_config` (`min_version`, `latest_version`, `update_url`); anon də oxuya bilər (giriş əvvəli yoxlanır), yalnız admin dəyişir. Lokal test: `tools/dim/common/test_migration_008.py`.
 - Tətbiq: `lib/features/update` (`UpdateGate` `app.dart`-da `AuthGate`-i sarıyır). Versiya `assets/app.json`-dan (`1.6.0+12`) bazadakı ilə müqayisə olunur:
   `min_version`-dan aşağı → bağlanmayan `ForceUpdateScreen`; `latest_version`-dan aşağı → bir dəfə "Sonra" düyməli xəbərdarlıq. Oxunmasa (internet yox / cədvəl yox) heç nə bloklanmır.
 - Admin panel: "Tənzimləmələr" tabı. Yeni buraxılışda ƏVVƏL APK/mağaza yüklənir və link yazılır, SONRA `latest_version` (və lazımsa `min_version`) qaldırılır.
 
 ## Problem bildirişləri
 - `db/migrations/009_reports.sql`: `reports` (kind `question`/`app`, `question_id` + `question_code`, açıqlama 10-1000 simvol MƏCBURİ, `app_version`, status new/seen/done, `admin_note`).
-  İstifadəçi yalnız əlavə edir (öz adından), oxuya bilməz; admin oxuyur/dəyişir/silir. Saatda 10 bildiriş limiti (`security definer` trigger: RLS səbəbindən adi istifadəçi sayı görə bilmir). Lokal test: `tools/dim/test_migration_009.py`.
+  İstifadəçi yalnız əlavə edir (öz adından), oxuya bilməz; admin oxuyur/dəyişir/silir. Saatda 10 bildiriş limiti (`security definer` trigger: RLS səbəbindən adi istifadəçi sayı görə bilmir). Lokal test: `tools/dim/common/test_migration_009.py`.
 - Tətbiq: `lib/features/reports` (`showReportSheet`). Sual ekranlarında `QuestionCodeLabel` "Xəta bildir" düyməsi + kod göstərir (quiz, mövzular, səhvlər dəftəri); yan menyuda "Tətbiqdə xəta bildir".
 - Admin panel: "Bildirişlər" tabı (status süzgəci, status dəyişmə, daxili qeyd, silmə). Sual bildirişində kodu kopyalayıb Suallar tabında axtarırıq.
 
 ## İmtahan hədəfi (PLAN faza B)
-- `db/migrations/010_exam_goals.sql`: `exam_periods` (qış 2027-02-15, yay 2027-06-15 = FƏRZ; yalnız admin dəyişir, silinmir) və `user_goals` (şagird yalnız özününkünü oxuyur/yazır, gündəlik hədəf 5-200). Lokal test: `tools/dim/test_migration_010.py`. Test və real Supabase-də SQL Editor-da işlədilməlidir.
+- `db/migrations/010_exam_goals.sql`: `exam_periods` (qış 2027-02-15, yay 2027-06-15 = FƏRZ; yalnız admin dəyişir, silinmir) və `user_goals` (şagird yalnız özününkünü oxuyur/yazır, gündəlik hədəf 5-200). Lokal test: `tools/dim/common/test_migration_010.py`. Test və real Supabase-də SQL Editor-da işlədilməlidir.
 - Tətbiq: `lib/features/goal` (`GoalRepository`, `GoalScreen`, `GoalCard`). Ana ekranda seriya altında kart: "N gün qalıb" + bu günkü cavab sayı/hədəf. Hədəf yoxdursa ilk açılışda seçim ekranı bir dəfə açılır; oxuma xətasında heç nə göstərilmir.
 - Dövr adı `AppStrings.periodName(code, ad)` ilə tərcümə olunur (`winter`/`summer`); yeni kod əlavə olunsa bazadakı ad göstərilir.
 - Admin panel: Tənzimləmələr tabında "İmtahan dövrləri" (tarix + aktiv).
@@ -276,13 +292,13 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 
 ## İstifadə şərtləri və məxfilik
 - `lib/features/legal`: razılıq YALNIZ qeydiyyat formasının altındadır (`SignUpConsent`, qutu işarələnmədən "Hesab yarat" işləmir). Girişdə yoxdur, ayrıca ekran yoxdur (sahibin qərarı). Mətnlər `data/legal_texts.dart`-da üç dildədir; yan menyuda "Şərtlər və məxfilik".
-- Qeydiyyatda versiya telefonda gözləyir (`AppSettings.pendingLegalVersion`), `LegalAcceptanceRecorder` daxil olanda onu `legal_acceptances`-ə yazıb təmizləyir (`db/migrations/011_legal_acceptances.sql`, lokal test: `tools/dim/test_migration_011.py`). Yazılmasa, heç nə bloklanmır, növbəti açılışda təkrarlanır.
+- Qeydiyyatda versiya telefonda gözləyir (`AppSettings.pendingLegalVersion`), `LegalAcceptanceRecorder` daxil olanda onu `legal_acceptances`-ə yazıb təmizləyir (`db/migrations/011_legal_acceptances.sql`, lokal test: `tools/dim/common/test_migration_011.py`). Yazılmasa, heç nə bloklanmır, növbəti açılışda təkrarlanır.
 - Mətn mahiyyətcə dəyişəndə `currentLegalVersion` və `AppStrings.legalLastUpdated` birlikdə dəyişir. Mövcud istifadəçilərdən razılıq soruşulmur.
 - Sahibin qərarları: tətbiq sahibi Ayxan Həsənzadə (fiziki şəxs), ödəniş gələcəkdə ola bilər, şərtlərdə sualların mənbəyi barədə heç nə yazılmır (test bunu yoxlayır). Əlaqə kanalı hələlik "Tətbiqdə xəta bildir"-dir.
 - Mətnə hüquqşünas baxmayıb.
 
 ## Hesabı silmək
-- `db/migrations/012_delete_account.sql`: `delete_my_account()` RPC (`security definer`), istifadəçi məlumatları `auth.users`-dən kaskadla silinir. Admin hesabı rədd olunur (`admin_account`). Lokal test: `tools/dim/test_migration_012.py`.
+- `db/migrations/012_delete_account.sql`: `delete_my_account()` RPC (`security definer`), istifadəçi məlumatları `auth.users`-dən kaskadla silinir. Admin hesabı rədd olunur (`admin_account`). Lokal test: `tools/dim/common/test_migration_012.py`.
 - Tətbiq: yan menyuda "Hesabı sil" → `showDeleteAccountDialog` → `AuthRepository.deleteAccount()`. Play Store veb silmə linki də istəyir, o hələ yoxdur.
 
 ## Mövzular və Tədris
@@ -302,14 +318,14 @@ Sahibin qərarları: şagirdlər əsasən YOLDA (avtobus/metro) istifadə edir; 
 - "Bugünkü məşq" və "Səhvlər dəftəri" oflayn deyil (`review_queue`/`get_daily_set` serverin hesablamasıdır; sonrakı mərhələ).
 - Drift `watch()` istifadə olunmur (widget testlərində widget silinəndə gözləyən Timer qoyur): `DriftOfflineStore.watchTopics` öz dəyişiklik siqnalı ilə işləyir. `AnswerOutbox.watchCount` hələ drift `watch()`-dur: ekranda istifadə olunanda eyni yanaşmaya keçirilməlidir.
 - **Oflayn "Bitir":** yalnız yüklənmiş mövzuda. Əvvəl onlayn cəhd olunur; alınmasa nəticə telefonda hesablanır (`AnswerChecker`), cavablar növbəyə yazılır, nəticə ekranında `resultSavedOffline` qeydi çıxır. Göndərmə: `session_id` YOXDUR (null), `client_id` (UUID) təkrar göndərməni təhlükəsiz edir (23505 → mövcud nəticə), `answered_at` əsl vaxtla (gələcək vaxt kəsilir). Seriya və təkrar növbəsi serverin `current_date`-i ilə, yəni göndərmə gününə yazılır.
-- **`AnswerChecker` (Dart) = `check_answer` (SQL) surəti.** Qayda dəyişəndə HƏR İKİSİ və `test/fixtures/check_answer_cases.json` birlikdə dəyişir. Paritet: `test/features/quiz/answer_checker_test.dart` (Dart) + `tools/dim/test_check_answer_parity.py` (real PostgreSQL trigger, 46 hal). Server həmişə son qərarı verir.
+- **`AnswerChecker` (Dart) = `check_answer` (SQL) surəti.** Qayda dəyişəndə HƏR İKİSİ və `test/fixtures/check_answer_cases.json` birlikdə dəyişir. Paritet: `test/features/quiz/answer_checker_test.dart` (Dart) + `tools/dim/common/test_check_answer_parity.py` (real PostgreSQL trigger, 46 hal). Server həmişə son qərarı verir.
 - Şagirdin son cavabları yüklənmiş mövzuda telefonda keşlənir (`LocalLatestAnswers`), göndərilməmiş cavablar üstünə qoyulur: həll edilmiş test oflayn yenidən "həll edilməmiş" görünmür.
 - Real bazada `answers.client_id` sütunu və adi istifadəçi üçün `answered_at` insert icazəsi olmalıdır (yeni tətbiq hər cavabda `client_id` göndərir: yoxdursa BÜTÜN cavablar yazılmır). Buraxılışdan əvvəl yoxlanmalıdır.
 - Şəkillər telefonda `getApplicationSupportDirectory()/offline_images` qovluğundadır (cache yox). Əvvəl `compress_images.py` ilə WebP (aşağıda "Şəkillər WebP-dir").
 
 ## Yarış (xal cədvəli) və alt menyu
 - Daxil olandan sonra `MainShell` (`lib/features/shell`) açılır: aşağıda `GlassNavBar` (Ana səhifə, İrəliləyiş, Yarış). Tablar `IndexedStack`-dədir; "İrəliləyiş" və "Yarış" ilk basılana qədər qurulmur, sonrakı keçidlərdə rəqəmləri təzələnir. Öyrədici tur gedərkən alt menyu gizlənir, yalnız öz addımlarında (`TourStep.progress`, `TourStep.compete`, sonuncu addımdan əvvəl) görünür.
-- Baza: `db/migrations/017_leaderboard.sql` (lokal test: `tools/dim/test_migration_017.py`, bu Mac-də pgserver Python 3.14-də qurulmadığı üçün HƏLƏ İŞLƏDİLMƏYİB). Test və real Supabase-də SQL Editor-da işlədilməlidir.
+- Baza: `db/migrations/017_leaderboard.sql` (lokal test: `tools/dim/common/test_migration_017.py`, bu Mac-də pgserver Python 3.14-də qurulmadığı üçün HƏLƏ İŞLƏDİLMƏYİB). Test və real Supabase-də SQL Editor-da işlədilməlidir.
   - `leaderboard_players`: nik-ad (3-20: hərf, rəqəm, `_`, `.`; böyük/kiçik hərf fərq etmir, unikal), ad, soyad (2-40). Şagird yalnız özününkünü görür/yazır, admin hamısını görür və nik-adı dəyişə bilər. Silinmir, hesabla birlikdə gedir.
   - `get_leaderboard(subject, 'all', limit)` (security definer): ilk 50 + şagirdin öz sətri. Başqalarına YALNIZ nik-ad gedir, ad/soyad heç vaxt.
   - Xal = ən azı bir dəfə düz həll edilmiş fərqli aktiv test (təkrar xal vermir). Bərabər xalda o xala birinci çatan yuxarıdadır.
@@ -322,7 +338,7 @@ Sahibin qərarları: şagirdlər əsasən YOLDA (avtobus/metro) istifadə edir; 
 
 ## İrəliləyiş (statistika, PLAN faza C)
 - Alt menyunun ortasındakı tab: `lib/features/stats` (`StatsRepository`, `SubjectStats`, `StatsTab`). Yuxarıda fənn rəngində gradient başlıq (fənn seçimi aşağıdan açılan panel ilə, "N / M test həll edilib" + zolaq), 3 kart (düz cavab faizi, cavab sayı, ən uzun seriya), son 7 günün sütun qrafiki (düz/səhv, keçən həftə ilə müqayisə), mövzular (`masteryProvider`, ən zəifi birinci, basanda `TopicQuestionsScreen`). Cavab yoxdursa izahlı boş kart.
-- Server: `db/migrations/018_my_stats.sql` → `get_my_stats(p_subject, p_days=14)` jsonb qaytarır (security invoker, yalnız öz cavabları). Günlər Bakı vaxtı ilə; "həll edilib" = aktiv testin son cavabı düzdür; ən uzun seriya bütün fənlər üzrədir. Lokal test: `tools/dim/test_migration_018.py` (bu Mac-də pgserver olmadığı üçün HƏLƏ İŞLƏDİLMƏYİB). Test və real Supabase-də SQL Editor-da işlədilməlidir; işlədilənə qədər tab xəta göstərir.
+- Server: `db/migrations/018_my_stats.sql` → `get_my_stats(p_subject, p_days=14)` jsonb qaytarır (security invoker, yalnız öz cavabları). Günlər Bakı vaxtı ilə; "həll edilib" = aktiv testin son cavabı düzdür; ən uzun seriya bütün fənlər üzrədir. Lokal test: `tools/dim/common/test_migration_018.py` (bu Mac-də pgserver olmadığı üçün HƏLƏ İŞLƏDİLMƏYİB). Test və real Supabase-də SQL Editor-da işlədilməlidir; işlədilənə qədər tab xəta göstərir.
 - Fənn seçim paneli ortaqdır: `home/presentation/widgets/subject_sheet.dart` (`showSubjectSheet`, `subjectIcon`), Yarış da onu işlədir.
 
 ## Axşam xatırlatması (bildiriş)

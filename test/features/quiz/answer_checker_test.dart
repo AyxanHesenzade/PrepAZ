@@ -30,7 +30,7 @@ void main() {
       (jsonDecode(File('test/fixtures/check_answer_cases.json').readAsStringSync())['cases'] as List)
           .cast<Map<String, dynamic>>();
 
-  // Eyni halları real PostgreSQL trigger-i də yoxlayır: tools/dim/test_check_answer_parity.py
+  // Eyni halları real PostgreSQL trigger-i də yoxlayır: tools/dim/common/test_check_answer_parity.py
   test('the shared fixture has every question type', () {
     expect(cases.map((c) => c['type']).toSet(), _types.keys.toSet());
     expect(cases.length, greaterThan(40));

@@ -5,7 +5,7 @@ import 'question.dart';
 ///
 /// Qayda `db/migrations/014_open_question_types.sql`-dəki `check_answer` ilə EYNİ olmalıdır.
 /// Bunu `test/fixtures/check_answer_cases.json` təmin edir: həm Dart testi, həm real PostgreSQL testi
-/// (`tools/dim/test_check_answer_parity.py`) eyni halları yoxlayır. Qayda dəyişəndə hər üçü birlikdə dəyişir.
+/// (`tools/dim/common/test_check_answer_parity.py`) eyni halları yoxlayır. Qayda dəyişəndə hər üçü birlikdə dəyişir.
 abstract final class AnswerChecker {
   static bool isCorrect(Question question, String? given) {
     final g = _normalize(given ?? '');

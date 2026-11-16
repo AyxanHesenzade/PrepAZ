@@ -1,5 +1,5 @@
 {
-  "_comment": "Shared by test/features/quiz/answer_checker_test.dart (Dart) and tools/dim/test_check_answer_parity.py (real PostgreSQL check_answer trigger). Both must agree, so the offline result on the phone equals the server's decision.",
+  "_comment": "Shared by test/features/quiz/answer_checker_test.dart (Dart) and tools/dim/common/test_check_answer_parity.py (real PostgreSQL check_answer trigger). Both must agree, so the offline result on the phone equals the server's decision.",
   "cases": [
     {"type": "qapali", "right": "B", "given": "B", "correct": true},
     {"type": "qapali", "right": "B", "given": "b", "correct": true},
