@@ -1,0 +1,499 @@
+[
+ {
+  "number": 1,
+  "page": 272,
+  "column": 0,
+  "box": [
+   0,
+   152,
+   503,
+   326
+  ],
+  "file": "q001.png",
+  "gutter": 489,
+  "draft_text": "manual",
+  "tilt": 20,
+  "tilt_angle_fixed": -7.8,
+  "tilt_angle": -7.8
+ },
+ {
+  "number": 2,
+  "page": 272,
+  "column": 0,
+  "box": [
+   0,
+   326,
+   503,
+   468
+  ],
+  "file": "q002.png",
+  "gutter": 489,
+  "draft_text": "manual",
+  "tilt": 20,
+  "tilt_angle_fixed": -7.0,
+  "tilt_angle": -7.0
+ },
+ {
+  "number": 3,
+  "page": 272,
+  "column": 0,
+  "box": [
+   0,
+   468,
+   503,
+   712
+  ],
+  "file": "q003.png",
+  "gutter": 489,
+  "draft_text": "manual",
+  "tilt": 20,
+  "tilt_angle_fixed": -6.7,
+  "tilt_angle": -6.7
+ },
+ {
+  "number": 4,
+  "page": 272,
+  "column": 0,
+  "box": [
+   0,
+   686,
+   503,
+   893
+  ],
+  "file": "q004.png",
+  "gutter": 489,
+  "draft_text": "4.Hansi reaksiya tonliyi kakurd-dioksidin sonayeda alnmasimaksetdirir? A)4FeS+1102→2FeO+8SO2 B)HSO→HO+SO2 C)Cu+2HSO4(qat)→CuSO4+SO2+2HO D)2NaHSO+H2SO4—→Na2SO4+2SO2+2HO E)KSO+2HC1-→2KCI+SO2+HO",
+  "tilt": 20,
+  "cont_top": 0,
+  "tilt_angle": -1.0
+ },
+ {
+  "number": 5,
+  "page": 272,
+  "column": 0,
+  "box": [
+   0,
+   893,
+   503,
+   1088
+  ],
+  "file": "q005.png",
+  "gutter": 489,
+  "draft_text": "5. Hanslifada kukurd-dioksid ucun dogrudur? A)yalnzreduksiyaedici xassogostarir B)suilsulfat tursusu mlgtirir C) kaskin iyli qazdur (n.$.) D)oksidlasmir E)qlavilarlreaksiyaya daxil olmur Aadi saraitdrngsiz qazdir B) kaskin iyli qazdir (n.s.) mrojxep",
+  "tilt": 20,
+  "tilt_angle": 0.0
+ },
+ {
+  "number": 6,
+  "page": 272,
+  "column": 0,
+  "box": [
+   0,
+   1088,
+   503,
+   1316
+  ],
+  "file": "q006.png",
+  "gutter": 489,
+  "draft_text": "manual",
+  "tilt": 20,
+  "tilt_angle_fixed": -3.8,
+  "tilt_angle": -3.8
+ },
+ {
+  "number": 7,
+  "page": 272,
+  "column": 0,
+  "box": [
+   0,
+   1280,
+   503,
+   1462
+  ],
+  "file": "q007.png",
+  "gutter": 489,
+  "draft_text": "manual",
+  "tilt": 20,
+  "tilt_angle_fixed": -3.8,
+  "tilt_angle": -3.8
+ },
+ {
+  "number": 8,
+  "page": 272,
+  "column": 0,
+  "box": [
+   0,
+   1432,
+   503,
+   1620
+  ],
+  "file": "q008.png",
+  "gutter": 489,
+  "draft_text": "manual",
+  "tilt": 20,
+  "tilt_angle_fixed": -3.8,
+  "tilt_angle": -3.8,
+  "continued_from": {
+   "page": 272,
+   "column": 1,
+   "rows": [
+    82,
+    132
+   ]
+  }
+ },
+ {
+  "number": 9,
+  "page": 272,
+  "column": 1,
+  "box": [
+   480,
+   132,
+   1080,
+   280
+  ],
+  "file": "q009.png",
+  "gutter": 489,
+  "draft_text": "manual",
+  "cont_top": 80
+ },
+ {
+  "number": 10,
+  "page": 272,
+  "column": 1,
+  "box": [
+   480,
+   280,
+   1080,
+   598
+  ],
+  "file": "q010.png",
+  "gutter": 489,
+  "draft_text": "manual"
+ },
+ {
+  "number": 11,
+  "page": 272,
+  "column": 1,
+  "box": [
+   480,
+   598,
+   1080,
+   712
+  ],
+  "file": "q011.png",
+  "gutter": 489,
+  "draft_text": "manual"
+ },
+ {
+  "number": 12,
+  "page": 272,
+  "column": 1,
+  "box": [
+   480,
+   712,
+   1080,
+   838
+  ],
+  "file": "q012.png",
+  "gutter": 489,
+  "draft_text": "manual"
+ },
+ {
+  "number": 13,
+  "page": 272,
+  "column": 1,
+  "box": [
+   480,
+   838,
+   1080,
+   965
+  ],
+  "file": "q013.png",
+  "gutter": 489,
+  "draft_text": "manual"
+ },
+ {
+  "number": 14,
+  "page": 272,
+  "column": 1,
+  "box": [
+   480,
+   965,
+   1080,
+   1097
+  ],
+  "file": "q014.png",
+  "gutter": 489,
+  "draft_text": "manual"
+ },
+ {
+  "number": 15,
+  "page": 272,
+  "column": 1,
+  "box": [
+   480,
+   1097,
+   1080,
+   1255
+  ],
+  "file": "q015.png",
+  "gutter": 489,
+  "draft_text": "manual"
+ },
+ {
+  "number": 16,
+  "page": 272,
+  "column": 1,
+  "box": [
+   480,
+   1255,
+   1080,
+   1400
+  ],
+  "file": "q016.png",
+  "gutter": 489,
+  "draft_text": "manual"
+ },
+ {
+  "number": 17,
+  "page": 272,
+  "column": 1,
+  "box": [
+   480,
+   1400,
+   1080,
+   1600
+  ],
+  "file": "q017.png",
+  "gutter": 489,
+  "draft_text": "manual"
+ },
+ {
+  "number": 18,
+  "page": 273,
+  "column": 0,
+  "box": [
+   0,
+   66,
+   616,
+   278
+  ],
+  "file": "q018.png",
+  "gutter": 602,
+  "draft_text": "18.Kakurd-dioksid ucun hans ifado dogru deyil? A,(S)=32:A,（O)=16 A)tursu oksididir B)adi soraitda kaskin iyli qazdur C)KOH iloreaksiyaya daxil olur D)NazO ila reaksiyaya daxil olur E) oksigena gora nisbi sixlgi 4-dar"
+ },
+ {
+  "number": 19,
+  "page": 273,
+  "column": 0,
+  "box": [
+   0,
+   266,
+   616,
+   480
+  ],
+  "file": "q019.png",
+  "gutter": 602,
+  "draft_text": "19.Kukard-dioksid acun hansi ifado dogru deyil? A,(He)=4,A,（S)=32.A,（O)=16 A)heliuma gora nisbi sixligi 4-dur B)KOiloreaksiyaya daxil olur C)adi soraitdakoskin iyliqazdir D) suda hall olaraq HSOmalagatirir E)NaOH-la reaksiyaya daxil.olur"
+ },
+ {
+  "number": 20,
+  "page": 273,
+  "column": 0,
+  "box": [
+   0,
+   468,
+   616,
+   1127
+  ],
+  "file": "q020.png",
+  "gutter": 602,
+  "draft_text": "20.0.8mol SOv0,6mol Oreaksiyaya daxil olub SOmalagatirir.Baslangicmaddalardan biri tamamilareaksiyaya daxil olarsa,qrafiklardan hansl dogrudur? v(mol) v(mol) 0,8 SOy SO2 SO3 0,6 0,6 B)0.4 A)0,4 -SO2 O2 02 0,2 zaman zaman v(mol) v(mol) 0,8 0,8 SO: SO2 0,6- 0,6 D)0,4 C O2 -SO3 0,2 0.2 zaman zaman v(mol) 0,8 0,6 O2 E)0,4 -SO3 0,2 -SO zaman"
+ },
+ {
+  "number": 21,
+  "page": 273,
+  "column": 0,
+  "box": [
+   0,
+   1115,
+   616,
+   1420
+  ],
+  "file": "q021.png",
+  "gutter": 602,
+  "draft_text": "21.0,6mol SOva0,4mol Oreaksiyaya daxilolub SO;omlagatirir.Baslangicmaddalordanbiri tamamilo reaksiyaya daxil olarsa,qrafiklardon hansi dogrudur? v(mol) v(mol) 0,6 0,6 SO SO SO2 A)0.4 B)0.4 SO2 0.1 0,1 O zaman zaman",
+  "continued_from": {
+   "page": 273,
+   "column": 1,
+   "rows": [
+    82,
+    440
+   ]
+  }
+ },
+ {
+  "number": 22,
+  "page": 273,
+  "column": 1,
+  "box": [
+   593,
+   440,
+   1080,
+   614
+  ],
+  "file": "q022.png",
+  "gutter": 602,
+  "draft_text": "manual",
+  "cont_top": 60
+ },
+ {
+  "number": 23,
+  "page": 273,
+  "column": 1,
+  "box": [
+   593,
+   614,
+   1080,
+   866
+  ],
+  "file": "q023.png",
+  "gutter": 602,
+  "draft_text": "23.Artuq miqdar oksigen istirakinda bas veran 2SO+O2SOreaksiyasinda praktikicixim 80% olarsa,hansi ifadalar dogrudur? 1.10mol SO2goturuldukd12,5mol SO;alnir 2.10mol SO2goturuldukda8mol SOalinir 3.10molSOalmaq ucun8mol SO2goturulmalidir 4.10molSOalmaqcun12,5mol SO2 goturulmalidir"
+ },
+ {
+  "number": 24,
+  "page": 273,
+  "column": 1,
+  "box": [
+   593,
+   854,
+   1080,
+   1014
+  ],
+  "file": "q024.png",
+  "gutter": 602,
+  "draft_text": "24.Hansimaddalor cutunun qarsilqh tosirindon kukurd-dioksid alinar? 2.CuSO,NaOH 1.S,O2 4.Hg,HSO4（duru) 3.Cu,HSO4(qati) 5.Mg,HSO4(duru)"
+ },
+ {
+  "number": 25,
+  "page": 273,
+  "column": 1,
+  "box": [
+   593,
+   1002,
+   1080,
+   1150
+  ],
+  "file": "q025.png",
+  "gutter": 602,
+  "draft_text": "25.Hansimaddalarcutanunqarshql tsirindan kukurd-dioksid alinar? 2.ZnSO;KOH 1.FeS2:O2 4.Cu;HSO4(duru) 3.Ag;HSO4（qat1) 5.Ca;HSO4(duru) Mahsuluncixim1100%-dir. Mahsulun cixim1 100%-dir. almaq olar?M,(FeS2)=120"
+ },
+ {
+  "number": 26,
+  "page": 273,
+  "column": 1,
+  "box": [
+   593,
+   1150,
+   1080,
+   1248
+  ],
+  "file": "q026.png",
+  "gutter": 602,
+  "draft_text": "manual"
+ },
+ {
+  "number": 27,
+  "page": 273,
+  "column": 1,
+  "box": [
+   593,
+   1248,
+   1080,
+   1343
+  ],
+  "file": "q027.png",
+  "gutter": 602,
+  "draft_text": "manual"
+ },
+ {
+  "number": 28,
+  "page": 273,
+  "column": 1,
+  "box": [
+   593,
+   1343,
+   1080,
+   1455
+  ],
+  "file": "q028.png",
+  "gutter": 602,
+  "draft_text": "manual",
+  "continued_from": {
+   "page": 274,
+   "column": 0,
+   "rows": [
+    82,
+    150
+   ]
+  }
+ },
+ {
+  "number": 29,
+  "page": 274,
+  "column": 0,
+  "box": [
+   0,
+   150,
+   500,
+   334
+  ],
+  "file": "q029.png",
+  "gutter": 486,
+  "draft_text": "bmolZnS 29. +02—→Xmol SO2 bmolFeS amolZnS +02,kat2SO3 +0>2SO2 II"
+ },
+ {
+  "number": 30,
+  "page": 274,
+  "column": 0,
+  "box": [
+   0,
+   322,
+   500,
+   437
+  ],
+  "file": "q030.png",
+  "gutter": 486,
+  "draft_text": "30.FeS"
+ },
+ {
+  "number": 31,
+  "page": 274,
+  "column": 0,
+  "box": [
+   0,
+   425,
+   500,
+   668
+  ],
+  "file": "q031.png",
+  "gutter": 486,
+  "draft_text": "AV,mol 31. S va ZnS qarisiginin tam yanmasina sorf olunan 3 O-nin va alinan SO2- SO2 1,8 nin mol sayinin zamandan asililq O2 0,6 metal oksidininmol sayini hesablayin."
+ },
+ {
+  "number": 32,
+  "page": 274,
+  "column": 0,
+  "box": [
+   0,
+   656,
+   500,
+   915
+  ],
+  "file": "q032.png",
+  "gutter": 486,
+  "draft_text": "v,mol 32.FeSvaZnS qansiginin qapall 4 qabdatam yandinlmasi 02 2 zamani maddalarin -SO2 1,4 mol sayinin dayisma qrafiki Zaman verilmisdir. Bureaksiyalardan alinan metal oksidlarininmol sayinincominihesablayin. Sulfat tursusu.Alinmasi va xassalori xammali gostarin. A)NaCl C) MgCO; B)KNO3 D)Ca3(PO4)2 E)FeS2 hidrogen qazi ayrilmur? A)Cu,Hg B)Zn,Cu C)Fe,Ag D)Fe,AI E) Mg,Zn 1.Cu2+ IV.Fe2+ IL.Ag* III.Ba2+ A)IL,IV D)L,II C) II,III 1( E)yalnizIII LAI\" I1.Ca2+ IV.Mg2+ A)ILI IIL.Ag* D)IL,IV B)I,IV 11I'1 E)1,II"
+ }
+]
