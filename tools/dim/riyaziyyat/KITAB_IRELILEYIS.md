@@ -1,7 +1,7 @@
 # Riyaziyyat test toplusu I: harada dayanmışıq
 
 Bu faylı yeni sessiyada ƏVVƏL oxu. Hər alt mövzu bitəndə yenilə.
-Son yenilənmə: 2026-11-17 (axşam: fəsil 6 yükləndi)
+Son yenilənmə: 2026-11-17 (gecə: fəsil 7 yükləndi)
 
 ## Qısa vəziyyət
 - **Mənbə:** DİM "Riyaziyyat test toplusu I hissə" (2025), skan. Fayl: `tools/dim/riyaziyyat/riyaziyyat_I_2025.pdf` (235 səhifə).
@@ -11,7 +11,31 @@ Son yenilənmə: 2026-11-17 (axşam: fəsil 6 yükləndi)
 - **Fəsil 4 "Həqiqi ədədlər" YÜKLƏNDİ** (bölmə 13-17, 74 sual).
 - **Fəsil 5 "Tam cəbri ifadələr" YÜKLƏNDİ** (bölmə 18-22, 82 sual).
 - **Fəsil 6 "Çoxhədlinin vuruqlara ayrılması" YÜKLƏNDİ** (bölmə 23-25, 61 sual, 2026-11-17). Qeyd: `RT1-S24-Q010`-un E variantı skanda su nişanı ilə örtülüb.
-- **NÖVBƏTİ: fəsil 7 "Rasional kəsrlər"** (pdf 44 sağ səhifədən/45-dən, çap 47; açar pdf 216 ortası: alt mövzu "Kəsrlərin ixtisarı. DMQ çoxluğu" və s.; bölmə nömrəsi 26-dan). Əvvəl bu faylın "gap_fill.py" bölməsini oxu.
+- **Fəsil 7 "Rasional kəsrlər" YÜKLƏNDİ** (bölmə 26-28, 143 sual, 2026-11-17). Cəmi **769 sual**.
+- **Fəsil 8 "Kvadrat köklər. Həqiqi üstlü qüvvət"**: bölmə 29 YÜKLƏNDİ (cəmi 832 sual). Açar pdf 217: bölmə 30 "n-ci dərəcədən kök. Həqiqi üstlü qüvvət və onun xassələri. Ədədlərin müqayisəsi" (70 sual: 1-50 hərf, 51-60 ədəd, 61-70 uyğunlaşdırma; pdf 56 sağ sütun y~240-dan), bölmə 31 "Kəsrlərin ixtisarı. İfadələrin sadələşdirilməsi və ədədi qiymətinin tapılması" (109 sual).
+- Bölmə 30 YÜKLƏNDİ (cəmi 901 sual).
+- Bölmə 31 YÜKLƏNDİ: fəsil 8 bitdi (cəmi 1005 sual).
+- **Fəsil 9 "Birməchullu tənliklər və məsələlər"**: bölmə 32-33 YÜKLƏNDİ (cəmi 1063 sual). Açar pdf 218: sonra "Viyet teoremi və onun tərsi olan teorem" (79 sual: 1-55 hərf, 56-75 ədəd, 76-79 uyğunlaşdırma; pdf 69 sol sütun, başlıq y~310) və "Rasional tənliklər" (33 sual; Q32 Venn diaqramıdır, buraxılır), fəslin qalanı pdf 219-da.
+- Bölmə 34 YÜKLƏNDİ (cəmi 1142 sual).
+- Bölmə 35 YÜKLƏNDİ (cəmi 1173 sual).
+- Bölmə 36 YÜKLƏNDİ (cəmi 1289 sual).
+- Bölmə 37 YÜKLƏNDİ (cəmi 1338 sual). Fəsil 9 bitdi.
+- **Fəsil 10 "Tənliklər sistemi"**: bölmə 38-39 YÜKLƏNDİ (cəmi 1399 sual). Açar pdf 220: bölmə 40 "Biri birdərəcəli, digəri ikidərəcəli və daha yüksək dərəcəli olan tənliklər sistemi" (55: 1-43 hərf, 44-55 ədəd; pdf 88 sol sütun y~565-dən), 41 "Hər iki tənliyi ikidərəcəli və daha yüksək dərəcəli olan tənliklər sistemi" (31: 1-28 hərf, 29-31 ədəd), 42 "Tənliklər sistemi qurmaqla məsələlər həlli" (34: 1-20 hərf, 21-34 ədəd; "3 m", "1270 manat" kimi vahidlər).
+- Bölmə 40 YÜKLƏNDİ (cəmi 1454 sual).
+- Bölmə 41-42 YÜKLƏNDİ (cəmi 1505 sual). Fəsil 10 bitdi.
+- **Fəsil 11 "Bərabərsizliklər və bərabərsizliklər sistemi"**: bölmə 43-44 YÜKLƏNDİ (cəmi 1572 sual). Açar pdf 221: 45 "İkidərəcəli və yüksək dərəcəli bərabərsizliklər" (62: 1-50 hərf, 51-62 ədəd; pdf 99 sağ sütun), 46 "Rasional bərabərsizliklər" (57; 50-57 arası interval cavablar: burax), 47 "Modul işarəsi daxilində dəyişəni olan bərabərsizliklər" (38; interval cavablar var), fəslin qalanı pdf 222.
+- Bölmə 45 YÜKLƏNDİ (cəmi 1632 sual).
+- Bölmə 46 YÜKLƏNDİ (cəmi 1683 sual).
+- Bölmə 47 YÜKLƏNDİ (cəmi 1711 sual).
+- Bölmə 48 YÜKLƏNDİ (cəmi 1762 sual). Fəsil 11 bitdi.
+- **Fəsil 12 "Ədədi ardıcıllıqlar. Silsilələr"**: bölmə 49 YÜKLƏNDİ (cəmi 1802 sual).
+- Bölmə 50, 1-ci hissə (Q1-79) YÜKLƏNDİ (cəmi 1881 sual).
+- Bölmə 50, 2-ci hissə (Q80-145) YÜKLƏNDİ (cəmi 1947 sual). Q146-153 yazılı. "ok"-dan sonra: `done 50` (şəkilləri köçürür) + `scan/riyaziyyat_I_bolme50b/q*.png` əl ilə sil.
+- Bölmə 51 YÜKLƏNDİ (cəmi 2050 sual).
+- Bölmə 52 YÜKLƏNDİ (cəmi 2098 sual). Fəsil 12 bitdi.
+- **Fəsil 13 "Çoxluqlar"**: bölmə 53 YÜKLƏNDİ (cəmi 2127 sual).
+- Bölmə 54 YÜKLƏNDİ. Fəsil 13 bitdi (cəmi 2174 sual, 2026-11-17 axşam).
+- **NÖVBƏTİ: fəsil 14 "Həndəsənin əsas anlayışları"** (pdf 133-dən; açar pdf 224: 55 "Düz xətt, şüa, parça. Parçaların ölçülməsi" 36 sual ("33 sm" kimi vahidlər), 56 "Bucaq. Bucaqların ölçülməsi. Bucağın tənböləni" 17 (Q17 kəsr 135/7: burax), 57 "Qonşu və qarşılıqlı bucaqlar" 12, 58 "İki paralel düz xəttin üçüncü ilə kəsişməsindən alınan bucaqlar" 46, 59 "Uyğun tərəfləri paralel və perpendikulyar olan bucaqlar" 11 (Q8-9 iki halı: burax)).
 - Riyaziyyat fənni aktivdir (`subjects.is_active = true`). Əvvəlki 2 nümunə sual (RIY-0001, RIY-0003) silinib.
 
 ## Səhifə qaydası
@@ -54,6 +78,35 @@ Son yenilənmə: 2026-11-17 (axşam: fəsil 6 yükləndi)
 | 23 | Çoxhədlinin vuruqlara ayrılması / Müxtəsər vurma düsturlarının köməyi ilə vuruqlara ayırma | 39 | 1-9 (10-11 yazılı) | **YÜKLƏNDİ**: 8 qapalı, 1 ədədi |
 | 24 | Çoxhədlinin vuruqlara ayrılması / Müxtəlif üsulların köməyi ilə vuruqlara ayırma | 39-42 | 1-31 (32-41 yazılı) | **YÜKLƏNDİ**: 17 qapalı, 6 ədədi, 8 uyğunlaşdırma |
 | 25 | Çoxhədlinin vuruqlara ayrılması / Vuruqlara ayırma üsulu ilə ifadələrin ədədi qiymətinin hesablanması | 43-44 | 1-21 (22-29 yazılı) | **YÜKLƏNDİ**: 12 qapalı, 7 ədədi, 2 uyğunlaşdırma |
+| 26 | Rasional kəsrlər / Kəsrlərin ixtisarı. DMQ çoxluğu | 45-47 | 1-35 (36-37 yazılı) | **YÜKLƏNDİ**: 30 qapalı, 5 ədədi |
+| 27 | Rasional kəsrlər / İfadələrin sadələşdirilməsi | 47-49 | 1-41 | **YÜKLƏNDİ**: 38 qapalı, 3 ədədi |
+| 28 | Rasional kəsrlər / İfadələrin ədədi qiymətlərinin tapılması | 50-53 | 1-67 | **YÜKLƏNDİ**: 43 qapalı, 22 ədədi, 2 uyğunlaşdırma |
+| 29 | Kvadrat köklər. Həqiqi üstlü qüvvət / Hesabi kvadrat kök və onun xassələri | 53 sağ-56 | 1-63 | **YÜKLƏNDİ**: 57 qapalı, 6 ədədi. Q20 əl ilə; Q61 variantları su nişanı altındadır (ədədi sual, problem deyil) |
+| 30 | Kvadrat köklər. Həqiqi üstlü qüvvət / n-ci dərəcədən kök. Həqiqi üstlü qüvvət və onun xassələri. Ədədlərin müqayisəsi | 56 sağ-60 | 1-70 (Q55 buraxıldı: cavab √11) | **YÜKLƏNDİ**: 50 qapalı, 8 ədədi, 11 uyğunlaşdırma |
+| 31 | Kvadrat köklər. Həqiqi üstlü qüvvət / Kəsrlərin ixtisarı. İfadələrin sadələşdirilməsi və ədədi qiymətinin tapılması | 60 sağ-65 | 1-104 (105-109 yazılı) | **YÜKLƏNDİ**: 82 qapalı, 22 ədədi. pdf 62 sağ sütunda gap_fill bir sual sürüşdü (Q37-45 əl ilə); Q73 davamında səhifə başlığı var |
+| 32 | Birməchullu tənliklər və məsələlər / Xətti tənliklər | 66 | 1-18 | **YÜKLƏNDİ**: 12 qapalı, 4 ədədi, 2 uyğunlaşdırma. Q12 əl ilə |
+| 33 | Birməchullu tənliklər və məsələlər / Kvadrat tənliklər və onların araşdırılması | 67-69 | 1-40 | **YÜKLƏNDİ**: 28 qapalı, 8 ədədi, 4 uyğunlaşdırma |
+| 34 | Birməchullu tənliklər və məsələlər / Viyet teoremi və onun tərsi olan teorem | 69-73 | 1-79 | **YÜKLƏNDİ**: 55 qapalı, 20 ədədi, 4 uyğunlaşdırma |
+| 35 | Birməchullu tənliklər və məsələlər / Rasional tənliklər | 73-74 | 1-31 (32-33 yazılı) | **YÜKLƏNDİ**: 22 qapalı, 7 ədədi, 2 uyğunlaşdırma. Q20 əl ilə |
+| 36 | Birməchullu tənliklər və məsələlər / Modul işarəsi daxilində dəyişəni olan tənliklər. İrrasional tənliklər | 74 sağ-79 | 1-116 (117-119 yazılı) | **YÜKLƏNDİ**: 89 qapalı, 22 ədədi, 5 uyğunlaşdırma |
+| 37 | Birməchullu tənliklər və məsələlər / Tənlik qurmaqla məsələlər həlli | 79 sağ-82 | 1-49 (50-70 yazılı, açarda cavabları var) | **YÜKLƏNDİ**: 32 qapalı, 17 ədədi |
+| 38 | Tənliklər sistemi / Xətti tənliklər sistemi | 84-85 | 1-26 (27-32 yazılı) | **YÜKLƏNDİ**: 21 qapalı, 5 ədədi |
+| 39 | Tənliklər sistemi / Xətti tənliklər sisteminin həllinin araşdırılması | 86-88 | 1-35 | **YÜKLƏNDİ**: 29 qapalı, 4 ədədi, 2 uyğunlaşdırma |
+| 40 | Tənliklər sistemi / Biri birdərəcəli, digəri ikidərəcəli və daha yüksək dərəcəli olan tənliklər sistemi | 88-91 | 1-55 | **YÜKLƏNDİ**: 44 qapalı, 11 ədədi |
+| 41 | Tənliklər sistemi / Hər iki tənliyi ikidərəcəli və daha yüksək dərəcəli olan tənliklər sistemi | 91-92 | 1-31 | **YÜKLƏNDİ**: 27 qapalı, 4 ədədi. Q7 davamı (cont_top 40) |
+| 42 | Tənliklər sistemi / Tənliklər sistemi qurmaqla məsələlər həlli | 92 sağ-93 | 1-20 (21-34 yazılı) | **YÜKLƏNDİ**: 20 qapalı |
+| 43 | Bərabərsizliklər və bərabərsizliklər sistemi / Ədədi bərabərsizliklər və onların əsas xassələri | 95-96 | 1-23 | **YÜKLƏNDİ**: 19 qapalı, 4 ədədi |
+| 44 | Bərabərsizliklər və bərabərsizliklər sistemi / Birdəyişənli xətti bərabərsizliklər. Birdəyişənli xətti bərabərsizliklər sistemi | 96-98 | 1-44 (45-49 yazılı) | **YÜKLƏNDİ**: 38 qapalı, 4 ədədi, 2 uyğunlaşdırma. Q32 əl ilə |
+| 45 | Bərabərsizliklər və bərabərsizliklər sistemi / İkidərəcəli və yüksək dərəcəli bərabərsizliklər | 99-102 | 1-60 (61-62 yazılı) | **YÜKLƏNDİ**: 49 qapalı, 11 ədədi |
+| 46 | Bərabərsizliklər və bərabərsizliklər sistemi / Rasional bərabərsizliklər | 103-106 | 1-51 (52-57 yazılı) | **YÜKLƏNDİ**: 41 qapalı, 9 ədədi, 1 uyğunlaşdırma. Q30 əl ilə |
+| 47 | Bərabərsizliklər və bərabərsizliklər sistemi / Modul işarəsi daxilində dəyişəni olan bərabərsizliklər | 106-107 | 1-28 (29-38 yazılı) | **YÜKLƏNDİ**: 17 qapalı, 4 ədədi, 7 uyğunlaşdırma |
+| 48 | Bərabərsizliklər və bərabərsizliklər sistemi / Kvadrat bərabərsizliklər sistemi. İrrasional bərabərsizliklər | 108-110 | 1-51 (52-54 yazılı) | **YÜKLƏNDİ**: 43 qapalı, 7 ədədi, 1 uyğunlaşdırma |
+| 49 | Ədədi ardıcıllıqlar. Silsilələr / Ədədi ardıcıllıqlar | 111-112 | 1-40 (41-44 yazılı) | **YÜKLƏNDİ**: 28 qapalı, 9 ədədi, 3 uyğunlaşdırma. pdf 111 sağ: Q13, Q14 əl ilə |
+| 50 | Ədədi ardıcıllıqlar. Silsilələr / Ədədi silsilələr | 113-118 | 1-145 (146-153 yazılı); iki hissə | 1-ci hissə **YÜKLƏNDİ**: 79 qapalı; 2-ci hissə **YÜKLƏNDİ**: 19 qapalı, 43 ədədi, 4 uyğunlaşdırma |
+| 51 | Ədədi ardıcıllıqlar. Silsilələr / Həndəsi silsilələr. Sonsuz azalan həndəsi silsilənin cəmi | 119-123 | 1-103 | **YÜKLƏNDİ**: 71 qapalı, 28 ədədi, 4 uyğunlaşdırma |
+| 52 | Ədədi ardıcıllıqlar. Silsilələr / Ədədi və həndəsi silsilələrə aid məsələlər | 123 sağ-125 | 1-48 (49-60 yazılı) | **YÜKLƏNDİ**: 35 qapalı, 9 ədədi, 4 uyğunlaşdırma |
+| 53 | Çoxluqlar / Çoxluqlar. Çoxluqların birləşməsi, kəsişməsi, fərqi | 127-128 | 1-29 (30-36 yazılı) | **YÜKLƏNDİ**: 26 qapalı, 2 ədədi, 1 uyğunlaşdırma |
+| 54 | Çoxluqlar / Çoxluqların birləşməsi, kəsişməsi və fərqinin elementlərinin sayı | 129 sağ-132 | 1-47 (48-52 yazılı) | **YÜKLƏNDİ**: 10 qapalı, 33 ədədi, 4 uyğunlaşdırma |
 
 ## Bölmə 4 (2026-11-17)
 - pdf 5 sağ sütun (Q1, y~178)-pdf 8 sağ sütun (Q63, y~450). Q64-96 "Ətraflı yazılı cavab" bölməsidir (pdf 8 sağ sütun, 9, 10): ATLANDI (açarda cavabları var, amma yazılı tapşırıqdır). Yazılı bölmə hər alt mövzunun sonundadır.
@@ -90,6 +143,11 @@ python -W ignore ../common/scan_segment.py riyaziyyat_I_2025.pdf --first F --las
 - `TOP` başlıqdan sonra, `BOTTOM` səhifə nömrəsindən ("- 16 -") və ya "Ətraflı yazılı" başlığından əvvəl olmalıdır. Səhifə şəkli ~800x1200-dür (preview şəkilləri 1119 hündürlükdədir: koordinatı `grid`-dən götür, preview-dan yox). Xəta mesajında "found N starts" siyahısı var: artıq başlanğıc səhifənin altlığıdırsa BOTTOM-u azalt, başlıq sətri sayılıbsa TOP-u artır.
 - Əyri səhifədə sol haşiyə sürüşür: alət hər sətrin x-ini öz qonşuluğundakı ən sol sətrə görə ölçür, uzun şaquli xətləri (sütun ayırıcısı) silir. Sualın cavab variantları (şəklin altında) haşiyədə durursa, artıq başlanğıc çıxır: `--ignore PAGE:COL:Y`. Sütun sonundan növbəti sütuna keçən sual üçün `--cont-top N:Y` (N = növbəti sütunun ilk sualı, Y = davamın başladığı sətir, başlıq xəttindən aşağı).
 - Alət sütunun tepəsində səhifə başlığının altındakı xətti (`header_rule_y`) özü tapır (TOP ≤ 95 olanda). Sütunun ən altındakı son variant 1140-dan aşağı düşə bilər (Q10/Q16 kimi): BOTTOM-u 1150-1165 qoy, amma su nişanı (CamScanner) altda yazılı olduğundan bəzən örtülü qalır. Səhifənin altlığı ("- 21 -") və "Ətraflı yazılı" başlığından sonrakı sual BOTTOM-dan kənarda qalmalıdır, yoxsa artıq başlanğıc sayılır.
+- `--cont-top` davamı yalnız `Q_top - cont_top >= 50` olanda birləşdirir (`CONT_MIN`): davam bir sətirdirsə (variantlar), cont-top-u başlıq xəttinin düz altına qoy (bölmə 28 Q30: 62), yoxsa səssizcə atlanır ("continued onto: []").
+- gap_fill bir sütunda həm başlanğıc qaçırıb, həm variant sətrini başlanğıc sayanda say düz gəlir, amma nömrələr sürüşür (bölmə 31, pdf 62 sağ). Ona görə hər sütunun ortasından bir sualı `check ... --tops` ilə yoxla.
+- `gap_fill --ignore PAGE:COL:Y`: Y xəta siyahısındakı İKİNCİ rəqəmdir (`1057/1105` → `1105`), ±8 px.
+- "Ətraflı yazılı" başlığının hansı SÜTUNDA olduğunu yoxla (bölmə 45: sağ sütunda idi, sol sütundakı Q50-53 adi test idi).
+- `import_scans.py` Windows konsolunda `UnicodeEncodeError` verir: əvvəl `export PYTHONIOENCODING=utf-8`.
 - `manifest.orig.json` (OCR varsa) OCR-ın ilkin nəticəsidir; alət onu ilk işdə saxlayır. Yenidən başlamaq üçün onu `manifest.json`-un üstünə kopyala.
 - `scan_tool.py ... check N N N` ilə yalnız əvvəl tapılmayanlara və hər bölmənin ilk/son sualına bax.
 

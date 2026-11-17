@@ -7,6 +7,8 @@ Hər yeni sessiya əvvəl bu faylı oxuyur. Vacib qərar dəyişəndə bu faylı
 Azərbaycanda buraxılış və qəbul imtahanlarına hazırlaşan şagirdlər üçün mobil tətbiq.
 Əsas ideya: test bazası yox, **şəxsi məşqçi** — şagirdin səhvlərini izləyir, zəif mövzuları göstərir,
 gündəlik planı özü qurur.
+- **Auditoriya: 10–11-ci sinif (ən aşağı 9-cu), 15–17 yaş.** Uşaq kimi davranılmır: dizayn, mətn tonu, köməkçinin sözləri və yeni fikirlər bu yaşa uyğun olmalıdır
+  (yeniyetməyə maraqlı olan: yarış və status, dostlarla müqayisə, paylaşılan gözəl kartlar, real imtahan nəticəsinə/ixtisasa yaxınlıq, vaxta qənaət).
 
 ## Layihə sahibi necə işləyir
 - Ünsiyyət dili: Azərbaycan dili. Kod, dəyişən adları və commit mesajları: ingilis dili.
@@ -29,6 +31,7 @@ gündəlik planı özü qurur.
 
 ## Sual mənbələri (hüquqi)
 - Hər sualın `source` sahəsi məcburidir.
+- **Sosial şəbəkələr (Instagram, TikTok):** DİM adı və DİM/kitab sualları paylaşılmır (razılaşma yalnız tətbiqdə istifadəni əhatə edir). Mətnlərdə yalnız tətbiqin HAZIRDA etdiyi şeylər yazılır, "tezliklə" vədləri yox.
 
 
 ## Mühitlər
@@ -88,7 +91,7 @@ env/test.json, prod.json     dart-define faylları (prod.json gitignore-dadır)
 - [ ] Mərhələ 5: taymerli sınaq imtahanı, bal hesablanması
 - [~] Mərhələ 6: veb admin panel. v1 hazırdır (`PrepAzAdmin`), migration 005 işlədilməli. Növbəti: mövzu idarəsi
 - [ ] Mərhələ 7: Play Store-a çıxış
-- Gələcək fikirlər (sual bazası bitəndən sonra): `FIKIRLER.md` (məs. müəllim-şagird qrupları, ev tapşırığı, canlı nəticə).
+- Bütün gələcək planlar, fikirlər və açıq qərarlar: `PLAN_VE_FIKIRLER.md` (tək fayl; yeni fikir yalnız ora yazılır).
 
 
 ## Sual Bazası
@@ -112,12 +115,12 @@ tools/dim/
 - Yeni fənn: `common/subjects.py`-a bir sətir + `tools/dim/<fənn>/` qovluğu (images/, out/); ortaq kod toxunulmaz qalır.
 - Bəzi ortaq faylların adı hələ `extract_kimya.py` / `build_xlsx.py`-dir (parser kimya üçün yazılıb, biologiya da onu istifadə edir); adı dəyişdirilməyib ki, köhnə qeydlər pozulmasın.
 
-## DİM kimya sualları (tools/dim, TASK_01)
+## DİM kimya sualları (tools/dim)
 - `download.py` → `extract_kimya.py` → `build_xlsx.py` → `check.py`. Nəticə: `tools/dim/kimya/out/kimya_dim_yoxlama.xlsx` (+ `images/`).
 - PDF-lər iki sütunludur; indekslər/yüklər mətndə yox, şrift ölçüsü və baseline ilə saxlanılır (`chem_text.py` bunu LaTeX-ə çevirir).
-- Köhnə `import_questions.py` və `schema.sql` silinib; `check.py` TASK_01 qaydalarını yoxlayır. Bazaya yükləmə yalnız müəllim yoxlamasından sonra.
+- Köhnə `import_questions.py` və `schema.sql` silinib; `check.py` çıxarma qaydalarını yoxlayır. Bazaya yükləmə yalnız müəllim yoxlamasından sonra.
 
-## Kimya sualları: yükləmə axını (TASK_02)
+## Kimya sualları: yükləmə axını
 1. Müəllim `tools/dim/kimya/out/muellim_1_dest.xlsx`-i doldurur (çətinlik 1-5, aktiv bəli/xeyr, qeyd).
 2. `python merge_review.py` → əsas Excel-ə köçürür (ehtiyat nüsxə ilə). `python check.py` yoxlayır.
 3. `python import_questions.py` → `out/import_kimya.sql` (xəta varsa heç nə yazmır). Sahib SQL Editor-da işlədir.
@@ -269,7 +272,6 @@ tools/dim/
 - Hələ edilməyib:
   - Play Store-da Play App Signing olsa, Play Console-dakı "App signing key" SHA-1-i üçün də ayrıca Android client lazımdır (yoxdursa Google girişi Supabase-ə çatmır: Auth loglarında `/auth/v1/token` görünmür).
   - Consent screen "Testing" rejimindədir. Yalnız əsas scope-larla (Android Credential Manager) Test users siyahısında olmayan hesab da girə bildi, amma ehtiyat üçün buraxılışdan əvvəl **Publish app** (əvvəl Branding səhifəsi doldurulmalıdır, çox güman ki məxfilik siyasəti linki lazımdır).
-  - Web client secret söhbətdə göründüyü üçün yenilənməlidir (Clients → Add secret, Supabase-də dəyiş, köhnəni sil).
   - Real (prod) Supabase qurulanda Google provider orada da ayrıca aktivləşdirilir.
 - Windows-da plugin-li layihəni build etmək üçün Developer Mode açıq olmalıdır (symlink).
 

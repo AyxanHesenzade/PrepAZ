@@ -1,7 +1,7 @@
 """Validates out/<fənn>_dim_yoxlama.xlsx. Exit code 1 on errors.
 
 The original tools/import_questions.py (--check) was lost when the old prepaz/ folder was deleted,
-so this checker enforces the rules from TASK_01 itself.
+so this checker enforces the DIM extraction rules itself.
 
 Usage: python check.py [path.xlsx] [--subject kimya|biologiya]
 """

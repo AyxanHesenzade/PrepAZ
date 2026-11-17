@@ -1,0 +1,492 @@
+[
+ {
+  "number": 1,
+  "file": "q001.png",
+  "draft_text": "gap_fill",
+  "page": 86,
+  "column": 0,
+  "gutter": 392,
+  "box": [
+   0,
+   108,
+   406,
+   194
+  ]
+ },
+ {
+  "number": 2,
+  "file": "q002.png",
+  "draft_text": "gap_fill",
+  "page": 86,
+  "column": 0,
+  "gutter": 392,
+  "box": [
+   0,
+   206,
+   406,
+   292
+  ]
+ },
+ {
+  "number": 3,
+  "file": "q003.png",
+  "draft_text": "gap_fill",
+  "page": 86,
+  "column": 0,
+  "gutter": 392,
+  "box": [
+   0,
+   304,
+   406,
+   414
+  ]
+ },
+ {
+  "number": 4,
+  "file": "q004.png",
+  "draft_text": "gap_fill",
+  "page": 86,
+  "column": 0,
+  "gutter": 392,
+  "box": [
+   0,
+   426,
+   406,
+   532
+  ]
+ },
+ {
+  "number": 5,
+  "file": "q005.png",
+  "draft_text": "gap_fill",
+  "page": 86,
+  "column": 0,
+  "gutter": 392,
+  "box": [
+   0,
+   544,
+   406,
+   630
+  ]
+ },
+ {
+  "number": 6,
+  "file": "q006.png",
+  "draft_text": "gap_fill",
+  "page": 86,
+  "column": 0,
+  "gutter": 392,
+  "box": [
+   0,
+   642,
+   406,
+   727
+  ]
+ },
+ {
+  "number": 7,
+  "file": "q007.png",
+  "draft_text": "gap_fill",
+  "page": 86,
+  "column": 0,
+  "gutter": 392,
+  "box": [
+   0,
+   739,
+   406,
+   823
+  ]
+ },
+ {
+  "number": 8,
+  "file": "q008.png",
+  "draft_text": "gap_fill",
+  "page": 86,
+  "column": 0,
+  "gutter": 392,
+  "box": [
+   0,
+   835,
+   406,
+   956
+  ]
+ },
+ {
+  "number": 9,
+  "file": "q009.png",
+  "draft_text": "gap_fill",
+  "page": 86,
+  "column": 0,
+  "gutter": 392,
+  "box": [
+   0,
+   968,
+   406,
+   1128
+  ]
+ },
+ {
+  "number": 10,
+  "file": "q010.png",
+  "draft_text": "gap_fill",
+  "page": 86,
+  "column": 1,
+  "gutter": 392,
+  "box": [
+   383,
+   50,
+   800,
+   135
+  ]
+ },
+ {
+  "number": 11,
+  "file": "q011.png",
+  "draft_text": "gap_fill",
+  "page": 86,
+  "column": 1,
+  "gutter": 392,
+  "box": [
+   383,
+   147,
+   800,
+   234
+  ]
+ },
+ {
+  "number": 12,
+  "file": "q012.png",
+  "draft_text": "gap_fill",
+  "page": 86,
+  "column": 1,
+  "gutter": 392,
+  "box": [
+   383,
+   246,
+   800,
+   364
+  ]
+ },
+ {
+  "number": 13,
+  "file": "q013.png",
+  "draft_text": "gap_fill",
+  "page": 86,
+  "column": 1,
+  "gutter": 392,
+  "box": [
+   383,
+   376,
+   800,
+   483
+  ]
+ },
+ {
+  "number": 14,
+  "file": "q014.png",
+  "draft_text": "gap_fill",
+  "page": 86,
+  "column": 1,
+  "gutter": 392,
+  "box": [
+   383,
+   495,
+   800,
+   584
+  ]
+ },
+ {
+  "number": 15,
+  "file": "q015.png",
+  "draft_text": "gap_fill",
+  "page": 86,
+  "column": 1,
+  "gutter": 392,
+  "box": [
+   383,
+   596,
+   800,
+   684
+  ]
+ },
+ {
+  "number": 16,
+  "file": "q016.png",
+  "draft_text": "gap_fill",
+  "page": 86,
+  "column": 1,
+  "gutter": 392,
+  "box": [
+   383,
+   696,
+   800,
+   819
+  ]
+ },
+ {
+  "number": 17,
+  "file": "q017.png",
+  "draft_text": "gap_fill",
+  "page": 86,
+  "column": 1,
+  "gutter": 392,
+  "box": [
+   383,
+   831,
+   800,
+   1128
+  ]
+ },
+ {
+  "number": 18,
+  "file": "q018.png",
+  "draft_text": "gap_fill",
+  "page": 87,
+  "column": 0,
+  "gutter": 387,
+  "box": [
+   0,
+   55,
+   401,
+   156
+  ]
+ },
+ {
+  "number": 19,
+  "file": "q019.png",
+  "draft_text": "gap_fill",
+  "page": 87,
+  "column": 0,
+  "gutter": 387,
+  "box": [
+   0,
+   168,
+   401,
+   292
+  ]
+ },
+ {
+  "number": 20,
+  "file": "q020.png",
+  "draft_text": "gap_fill",
+  "page": 87,
+  "column": 0,
+  "gutter": 387,
+  "box": [
+   0,
+   304,
+   401,
+   406
+  ]
+ },
+ {
+  "number": 21,
+  "file": "q021.png",
+  "draft_text": "gap_fill",
+  "page": 87,
+  "column": 0,
+  "gutter": 387,
+  "box": [
+   0,
+   418,
+   401,
+   502
+  ]
+ },
+ {
+  "number": 22,
+  "file": "q022.png",
+  "draft_text": "gap_fill",
+  "page": 87,
+  "column": 0,
+  "gutter": 387,
+  "box": [
+   0,
+   514,
+   401,
+   599
+  ]
+ },
+ {
+  "number": 23,
+  "file": "q023.png",
+  "draft_text": "gap_fill",
+  "page": 87,
+  "column": 0,
+  "gutter": 387,
+  "box": [
+   0,
+   611,
+   401,
+   693
+  ]
+ },
+ {
+  "number": 24,
+  "file": "q024.png",
+  "draft_text": "gap_fill",
+  "page": 87,
+  "column": 0,
+  "gutter": 387,
+  "box": [
+   0,
+   705,
+   401,
+   786
+  ]
+ },
+ {
+  "number": 25,
+  "file": "q025.png",
+  "draft_text": "gap_fill",
+  "page": 87,
+  "column": 0,
+  "gutter": 387,
+  "box": [
+   0,
+   798,
+   401,
+   1128
+  ]
+ },
+ {
+  "number": 26,
+  "file": "q026.png",
+  "draft_text": "gap_fill",
+  "page": 87,
+  "column": 1,
+  "gutter": 387,
+  "box": [
+   378,
+   54,
+   800,
+   157
+  ]
+ },
+ {
+  "number": 27,
+  "file": "q027.png",
+  "draft_text": "gap_fill",
+  "page": 87,
+  "column": 1,
+  "gutter": 387,
+  "box": [
+   378,
+   169,
+   800,
+   320
+  ]
+ },
+ {
+  "number": 28,
+  "file": "q028.png",
+  "draft_text": "gap_fill",
+  "page": 87,
+  "column": 1,
+  "gutter": 387,
+  "box": [
+   378,
+   332,
+   800,
+   449
+  ]
+ },
+ {
+  "number": 29,
+  "file": "q029.png",
+  "draft_text": "gap_fill",
+  "page": 87,
+  "column": 1,
+  "gutter": 387,
+  "box": [
+   378,
+   461,
+   800,
+   574
+  ]
+ },
+ {
+  "number": 30,
+  "file": "q030.png",
+  "draft_text": "gap_fill",
+  "page": 87,
+  "column": 1,
+  "gutter": 387,
+  "box": [
+   378,
+   586,
+   800,
+   687
+  ]
+ },
+ {
+  "number": 31,
+  "file": "q031.png",
+  "draft_text": "gap_fill",
+  "page": 87,
+  "column": 1,
+  "gutter": 387,
+  "box": [
+   378,
+   699,
+   800,
+   800
+  ]
+ },
+ {
+  "number": 32,
+  "file": "q032.png",
+  "draft_text": "gap_fill",
+  "page": 87,
+  "column": 1,
+  "gutter": 387,
+  "box": [
+   378,
+   812,
+   800,
+   909
+  ]
+ },
+ {
+  "number": 33,
+  "file": "q033.png",
+  "draft_text": "gap_fill",
+  "page": 87,
+  "column": 1,
+  "gutter": 387,
+  "box": [
+   378,
+   921,
+   800,
+   1128
+  ]
+ },
+ {
+  "number": 34,
+  "file": "q034.png",
+  "draft_text": "gap_fill",
+  "page": 88,
+  "column": 0,
+  "gutter": 415,
+  "box": [
+   0,
+   63,
+   429,
+   290
+  ]
+ },
+ {
+  "number": 35,
+  "file": "q035.png",
+  "draft_text": "gap_fill",
+  "page": 88,
+  "column": 0,
+  "gutter": 415,
+  "box": [
+   0,
+   302,
+   429,
+   538
+  ]
+ }
+]
