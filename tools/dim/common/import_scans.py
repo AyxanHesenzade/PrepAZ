@@ -84,7 +84,7 @@ select s.id, null, {lit(a.section_name)}, 50 from subjects s where s.slug = {lit
 on conflict (subject_id, parent_id, name) do nothing;
 
 insert into topics (subject_id, parent_id, name, sort_order)
-select s.id, p.id, {lit(a.topic)}, 50
+select s.id, p.id, {lit(a.topic)}, {a.topic_order}
   from subjects s join topics p on p.subject_id = s.id and p.parent_id is null and p.name = {lit(a.section_name)}
  where s.slug = {lit(a.subject)}
 on conflict (subject_id, parent_id, name) do nothing;
@@ -115,7 +115,7 @@ end $$;
 
 commit;
 
-select count(*) as yuklenen_sual from questions where code like 'KT{a.book}-S{a.section:02d}-%';
+select count(*) as yuklenen_sual from questions where code like '{a.prefix}{a.book}-S{a.section:02d}-%';
 """
 
 
@@ -132,7 +132,11 @@ def main():
     ap.add_argument("--year", type=int, required=True)
     ap.add_argument("--difficulty", type=int, default=3)
     ap.add_argument("--open-only", action="store_true")
+    ap.add_argument("--topic-order", type=int, default=50, help="sort_order of a NEW topic (book order: 10, 20, 30...)")
+    ap.add_argument("--prefix", default="KT", help="code prefix; must differ per subject, codes are unique (kimya KT, riyaziyyat RT)")
     a = ap.parse_args()
+    if not re.fullmatch(r"[A-Z]{2,4}", a.prefix):
+        sys.exit("--prefix: 2-4 böyük hərf")
 
     manifest = json.loads((a.dir / "manifest.json").read_text(encoding="utf-8"))
     key = json.loads(a.answers.read_text(encoding="utf-8"))["answers"]
@@ -146,18 +150,18 @@ def main():
         elif not image.exists():
             skipped.append((n, "şəkil faylı yoxdur"))
         elif parsed[0] != "qapali" or not a.open_only:
-            rows.append({"code": f"KT{a.book}-S{a.section:02d}-Q{n:03d}", "image": f"KT{a.book}-S{a.section:02d}-Q{n:03d}.webp",
+            rows.append({"code": f"{a.prefix}{a.book}-S{a.section:02d}-Q{n:03d}", "image": f"{a.prefix}{a.book}-S{a.section:02d}-Q{n:03d}.webp",
                          "type": parsed[0], "answer": parsed[1], "options": parsed[2], "src": image})
     if not rows:
         sys.exit("heç bir sual yüklənmir")
-    assert all(re.fullmatch(r"KT\d+-S\d{2}-Q\d{3}", r["code"]) for r in rows)
+    assert all(re.fullmatch(rf"{a.prefix}\d+-S\d{{2}}-Q\d{{3}}", r["code"]) for r in rows)
 
     out_dir = SUBJECTS[a.subject]["out"] / "upload_kitab"
     out_dir.mkdir(parents=True, exist_ok=True)
     for r in rows:
         convert(r["src"], out_dir / r["image"])
     suffix = "_aciq" if a.open_only else ""
-    sql_path = SUBJECTS[a.subject]["out"] / f"import_kt{a.book}_s{a.section:02d}{suffix}.sql"
+    sql_path = SUBJECTS[a.subject]["out"] / f"import_{a.prefix.lower()}{a.book}_s{a.section:02d}{suffix}.sql"
     sql_path.write_text(build_sql(rows, a), encoding="utf-8")
     print(f"{len(rows)} sual -> {sql_path.name}; şəkillər -> {out_dir}")
     print(f"buraxılan {len(skipped)}: {skipped}")

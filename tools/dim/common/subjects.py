@@ -23,4 +23,6 @@ SUBJECTS = {
     "kimya": _subject("kimya", "Kimya", "KIM", ["Ümumi kimya", "Qeyri-üzvi kimya", "Üzvi kimya"]),
     "biologiya": _subject("biologiya", "Biologiya", "BIO",
                           ["Botanika", "Zoologiya", "İnsan anatomiyası və fiziologiyası", "Ümumi biologiya"]),
+    # Math book chapters are the sections (bölmə), the book's sub-chapters are the topics (mövzu).
+    "riyaziyyat": _subject("riyaziyyat", "Riyaziyyat", "RIY", []),
 }

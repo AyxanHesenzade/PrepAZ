@@ -197,6 +197,11 @@ tools/dim/
   Əmr: `--first 10 --last 15 --start 1 --stop 75 --skip-above 10:0:105` (`--pad` defoltla: böyük pad əvvəlki sualın son sətrini yeyir).
   `scan_segment.py` indi sütunun sonunda davam edən sualları (`stitch_continuations`, `CONT_TOP`) avtomatik birləşdirir. Kəsmənin kənarı əyri sətirdə yanılsa, `manifest.json`-da `box` düzəldilib `--recrop` işlədilir.
 
+## Riyaziyyat (kitab)
+- Mənbə: DİM "Riyaziyyat test toplusu I" (2025, skan), `tools/dim/riyaziyyat/`. Harada dayandığımız: `tools/dim/riyaziyyat/KITAB_IRELILEYIS.md` (başlamazdan əvvəl oxu).
+- Kod prefiksi **`RT`** (`RT1-S01-Q001`), kimyanın `KT`-si ilə eyni deyil: `questions.code` unikaldır, eyni kod kimya sualını əzərdi. `import_scans.py` və `scan_tool.py` üçün `--prefix RT --subject riyaziyyat`.
+- Fəsil = bölmə (`topics` parent), kitabın alt mövzusu = mövzu. İş qaydası kimya ilə eynidir (`SUAL_ELAVE_AZ_TOKEN.md`).
+
 ## Açıq sual tipləri
 - `db/migrations/014_open_question_types.sql` (lokal test: `tools/dim/common/test_migration_014.py`). Yoxlama serverdədir (`check_answer`).
 - `aciq_eded`: yazı xanası, `12,5` və `12.5` eyni sayılır. Açar JSON-da onluq NÖQTƏ ilə: `12.5`.

@@ -19,6 +19,20 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "common"))
 import paths  # noqa: E402,F401  (puts common/, kimya/, biologiya/ on sys.path)
 PDF = HERE / "Kimya test toplusu I 2025 _250822_103034.pdf"
+PREFIX = "KT"
+SCAN_NAME = "kimya_I_bolme"
+
+
+def use_subject(subject, prefix):
+    """Point HERE/PDF/PREFIX at another subject (math: --subject riyaziyyat --prefix RT). Default stays chemistry."""
+    global HERE, PDF, PREFIX, SCAN_NAME
+    if subject == "kimya":
+        PREFIX = prefix
+        return
+    HERE = paths.subject_dir(subject)
+    PDF = next(HERE.glob("*.pdf"))
+    PREFIX = prefix
+    SCAN_NAME = f"{subject}_I_bolme"
 
 
 def _doc():
@@ -113,13 +127,13 @@ def done(a):
     up, dst = HERE / "out/upload_kitab", HERE / "out/images_kitab"
     moved = 0
     for s in a.sections:
-        for f in up.glob(f"KT1-S{s:02d}-Q*.webp"):
+        for f in up.glob(f"{PREFIX}1-S{s:02d}-Q*.webp"):
             shutil.move(str(f), dst / f.name); moved += 1
     # the section's PNG crops are only an intermediate step (the uploaded .webp is in images_kitab);
     # manifest.json stays, so `scan_segment.py --recrop` can cut them again
     removed = 0
     for s in a.sections:
-        for f in (HERE / "scan").glob(f"kimya_I_bolme{s}/q*.png"):
+        for f in (HERE / "scan").glob(f"{SCAN_NAME}{s}/q*.png"):
             f.unlink(); removed += 1
     print(f"moved {moved}; removed {removed} png crops; upload_kitab left: {len(list(up.iterdir()))}; "
           f"images_kitab: {len(list(dst.iterdir()))}")
@@ -139,6 +153,8 @@ def _save(img, a, name, width=None):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--tmp", default="/tmp/prepaz_scan")
+    ap.add_argument("--subject", default="kimya")
+    ap.add_argument("--prefix", default="KT")
     sub = ap.add_subparsers(dest="cmd", required=True)
     s = sub.add_parser("strip"); s.add_argument("first", type=int); s.add_argument("last", type=int); s.set_defaults(f=strip)
     s = sub.add_parser("key"); s.add_argument("page", type=int); s.add_argument("top", type=float); s.add_argument("bottom", type=float); s.set_defaults(f=key)
@@ -147,6 +163,7 @@ def main():
     s = sub.add_parser("check"); s.add_argument("dir"); s.add_argument("numbers", type=int, nargs="+"); s.add_argument("--tops", action="store_true"); s.set_defaults(f=check)
     s = sub.add_parser("done"); s.add_argument("sections", type=int, nargs="+"); s.set_defaults(f=done)
     a = ap.parse_args()
+    use_subject(a.subject, a.prefix)
     a.f(a)
 
 

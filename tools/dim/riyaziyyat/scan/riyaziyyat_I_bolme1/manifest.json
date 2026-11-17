@@ -1,0 +1,422 @@
+[
+ {
+  "number": 1,
+  "page": 2,
+  "column": 0,
+  "box": [
+   0,
+   152,
+   425,
+   247
+  ],
+  "file": "q001.png",
+  "gutter": 411,
+  "draft_text": "1.Ifadolordon hansinin qiymati n-in butun natural qiymatlarindatakdaddir? B) n² +1 A) n² -1 C) 2n² +3 D) 2n² E) 2n² +2"
+ },
+ {
+  "number": 2,
+  "page": 2,
+  "column": 0,
+  "box": [
+   0,
+   247,
+   425,
+   357
+  ],
+  "file": "q002.png",
+  "gutter": 411,
+  "draft_text": "2. (7a -3)? ifadosinin qiymoti tok daddir (aeN). Ifadalordonhansinin qiymoti cutadoddir? C) a² +a+1 A) α²-1 B)5a+2 D) a²+1 E)4a-3"
+ },
+ {
+  "number": 3,
+  "page": 2,
+  "column": 0,
+  "box": [
+   0,
+   357,
+   425,
+   462
+  ],
+  "file": "q003.png",
+  "gutter": 411,
+  "draft_text": "3. (3x -1)² ifadosinin qiymoti cut adaddir (xeN). Ifadalordonhansinin qiymati cutdoddir? B) 9x² -2x A)x²-3x+1 C) 5x-2x² E)7x²+5x D) 6x+5"
+ },
+ {
+  "number": 4,
+  "page": 2,
+  "column": 0,
+  "box": [
+   0,
+   462,
+   425,
+   574
+  ],
+  "file": "q004.png",
+  "gutter": 411,
+  "draft_text": "4.x cut,y tok dd olduqda,ifadlordn hansinin qiymati tok adaddir? A) (x+y)²+3 B) 3x+ 2y2 C)x+y+1 E) (x+2y)² D) x² + 3y"
+ },
+ {
+  "number": 5,
+  "page": 2,
+  "column": 0,
+  "box": [
+   0,
+   574,
+   425,
+   682
+  ],
+  "file": "q005.png",
+  "gutter": 411,
+  "draft_text": "5.xcut,ytkddolduqda,ifadlrdnhansinn qiymoti cutadoddir? C) (x+y)² B) 5x² + 2y2 A) 2x+ 3y2 D) (x-y)² E) 3(x+ y)"
+ },
+ {
+  "number": 6,
+  "page": 2,
+  "column": 0,
+  "box": [
+   0,
+   682,
+   425,
+   815
+  ],
+  "file": "q006.png",
+  "gutter": 411,
+  "draft_text": "6.xvycutddlrolduqda,ifadlrdnhansinin qiymati tak adad ola bilor? x²+y3 x²+y² A) 5xy C) B) 4 2 x+y E) D)x+3y 2"
+ },
+ {
+  "number": 7,
+  "page": 2,
+  "column": 0,
+  "box": [
+   0,
+   815,
+   425,
+   900
+  ],
+  "file": "q007.png",
+  "gutter": 411,
+  "draft_text": "7.Ardicil100naturaldodlorsirasindakinkicikvn boyukdadlarincmi629-aborabardir.Bu siradak1 an kicik adad necodir? E)305 A)255B)325 D)265 C)225 B)325"
+ },
+ {
+  "number": 8,
+  "page": 2,
+  "column": 0,
+  "box": [
+   0,
+   900,
+   425,
+   955
+  ],
+  "file": "q008.png",
+  "gutter": 411,
+  "draft_text": "8.ab7-ab =133 olarsa,a+b comini tapin. E)5 D) 7 C)4 A)8 B)6"
+ },
+ {
+  "number": 9,
+  "page": 2,
+  "column": 0,
+  "box": [
+   0,
+   955,
+   425,
+   1007
+  ],
+  "file": "q009.png",
+  "gutter": 411,
+  "draft_text": "9. ab8-ab =179 olarsa, a+b comini tapin. E)12 A) 11 D) 8 B)9 C)10"
+ },
+ {
+  "number": 10,
+  "page": 2,
+  "column": 0,
+  "box": [
+   0,
+   1007,
+   425,
+   1106
+  ],
+  "file": "q010.png",
+  "gutter": 411,
+  "draft_text": "10.Ikiraqomli abdadi ucunab=2a+4bolarsa, a+bcomini tapin. Scanmed with CamScanne"
+ },
+ {
+  "number": 11,
+  "page": 2,
+  "column": 1,
+  "box": [
+   402,
+   50,
+   800,
+   107
+  ],
+  "file": "q011.png",
+  "gutter": 411,
+  "draft_text": "11.1kirqomli abododi ucun ab=3a+4b olarsa, b-aforqini tapin."
+ },
+ {
+  "number": 12,
+  "page": 2,
+  "column": 1,
+  "box": [
+   402,
+   107,
+   800,
+   161
+  ],
+  "file": "q012.png",
+  "gutter": 411,
+  "draft_text": "br 12.ab=2a+5bolarsa,abddininnboyukqiymati ilaankicikqiymotininforqini tapin."
+ },
+ {
+  "number": 13,
+  "page": 2,
+  "column": 1,
+  "box": [
+   402,
+   161,
+   800,
+   224
+  ],
+  "file": "q013.png",
+  "gutter": 411,
+  "draft_text": "13.ab=4a+3bolarsa,abddininnboyukqiymati ilnkicikqiymatinincomini tapin"
+ },
+ {
+  "number": 14,
+  "page": 2,
+  "column": 1,
+  "box": [
+   402,
+   224,
+   800,
+   306
+  ],
+  "file": "q014.png",
+  "gutter": 411,
+  "draft_text": "14. 5940 adadibesraqomli abcde va adcbe (b >d) dadlarinin farqina tam bolunurso,(b-d) forqinin ala bilacayi qiymatlarin camini tapin."
+ },
+ {
+  "number": 15,
+  "page": 2,
+  "column": 1,
+  "box": [
+   402,
+   306,
+   800,
+   385
+  ],
+  "file": "q015.png",
+  "gutter": 411,
+  "draft_text": "15. 7920 adadi besraqomli abcde va adcbe (b >d) dadlorininfrqin tam bolunurs,(b-d)farqinin alabilcyiqiymstlarincamini tapin."
+ },
+ {
+  "number": 16,
+  "page": 2,
+  "column": 1,
+  "box": [
+   402,
+   385,
+   800,
+   450
+  ],
+  "file": "q016.png",
+  "gutter": 411,
+  "draft_text": "16. a va b natural adadlari ucun c =(a-5)(3b +1) tak adad olarsa, ab hasilinin on kicik qiymotini tapin."
+ },
+ {
+  "number": 17,
+  "page": 2,
+  "column": 1,
+  "box": [
+   402,
+   450,
+   800,
+   526
+  ],
+  "file": "q017.png",
+  "gutter": 411,
+  "draft_text": "17.a, b va c natural adodlori ucun 2a+b+ =50 8 olarsa,b-ninalabilcyinboyukqiymti tapin ab-ba"
+ },
+ {
+  "number": 18,
+  "page": 2,
+  "column": 1,
+  "box": [
+   402,
+   526,
+   800,
+   599
+  ],
+  "file": "q018.png",
+  "gutter": 411,
+  "draft_text": "18. +a+b=21 srtiniodayn,ab ikirqamli q-D dodlorinsayimitapin"
+ },
+ {
+  "number": 19,
+  "page": 2,
+  "column": 1,
+  "box": [
+   402,
+   599,
+   800,
+   668
+  ],
+  "file": "q019.png",
+  "gutter": 411,
+  "draft_text": "19.Ucraqomlidadin1%-ionunraqmlri comina barabardir.Buucraqomli adadin ala bilacayi n boyuk qiymatla an kicik qiymatin farqini tapin."
+ },
+ {
+  "number": 20,
+  "page": 2,
+  "column": 1,
+  "box": [
+   402,
+   668,
+   800,
+   736
+  ],
+  "file": "q020.png",
+  "gutter": 411,
+  "draft_text": "20.1kiraqomli dadin tkliklorinin sayionluqlarinin sayindan2vahidboyukdur.Buikiraqomlidadin raqmlricminahasili144olarsa,buddi tapn"
+ },
+ {
+  "number": 21,
+  "page": 2,
+  "column": 1,
+  "box": [
+   402,
+   736,
+   800,
+   837
+  ],
+  "file": "q021.png",
+  "gutter": 411,
+  "draft_text": "21.Ikirqomlidodin tskliklorinin say1onluqlarinin sayindan3dofocoxdur.Buikiraqomlidadin rqomloriforqinin moduluna hasili 234 olarsa,bu ododitapin. on  =7 olarsa, a.b"
+ },
+ {
+  "number": 22,
+  "page": 2,
+  "column": 1,
+  "box": [
+   402,
+   837,
+   800,
+   916
+  ],
+  "file": "q022.png",
+  "gutter": 411,
+  "draft_text": " =7 olarsa, a.b k1 22.ab ikiraqomli dadi ucun a+b hasilini tapin. pq-"
+ },
+ {
+  "number": 23,
+  "page": 2,
+  "column": 1,
+  "box": [
+   402,
+   916,
+   800,
+   995
+  ],
+  "file": "q023.png",
+  "gutter": 411,
+  "draft_text": "=6olarsa,a·b 23.abikiraqomli dodi ucun a+b hasilini tapin. xy-y=2olarsa,"
+ },
+ {
+  "number": 24,
+  "page": 2,
+  "column": 1,
+  "box": [
+   402,
+   995,
+   800,
+   1105
+  ],
+  "file": "q024.png",
+  "gutter": 411,
+  "draft_text": "24.xyvyxnaturalddloriucun yx-x x+ y cominin an boyuk qiymatini tapin. er-"
+ },
+ {
+  "number": 25,
+  "page": 3,
+  "column": 0,
+  "box": [
+   0,
+   76,
+   414,
+   157
+  ],
+  "file": "q025.png",
+  "gutter": 400,
+  "draft_text": "xy- =4 olarsa, 25.xy vayx naturaladdlori ucun yx-x x+ycamininnboyukqiymatini tapin"
+ },
+ {
+  "number": 26,
+  "page": 3,
+  "column": 0,
+  "box": [
+   0,
+   157,
+   414,
+   227
+  ],
+  "file": "q026.png",
+  "gutter": 400,
+  "draft_text": "26.ab+ba+a+b<84olarsa,abhasilinin alabilacyi onboyukqiymatiilankicikqiymatinincamini tapin."
+ },
+ {
+  "number": 27,
+  "page": 3,
+  "column": 0,
+  "box": [
+   0,
+   227,
+   414,
+   279
+  ],
+  "file": "q027.png",
+  "gutter": 400,
+  "draft_text": "27. a=12223 756 +1925 adadinin son raqomini tapin."
+ },
+ {
+  "number": 28,
+  "page": 3,
+  "column": 0,
+  "box": [
+   0,
+   279,
+   414,
+   417
+  ],
+  "file": "q028.png",
+  "gutter": 400,
+  "draft_text": "28.Ifadalarinqiymtlori ucunuygunlugu muoyyanedin a.9-a bolunur q+q1 b.37-yabolunur 2. ab-ba c.11-bolunur 3.aaa+bbb d.100-bolunur e.11l-abolunur"
+ },
+ {
+  "number": 29,
+  "page": 3,
+  "column": 0,
+  "box": [
+   0,
+   417,
+   414,
+   557
+  ],
+  "file": "q029.png",
+  "gutter": 400,
+  "draft_text": "29.Ifadslorin qiymatlari ucunuygunlugumuayyan edin. 1.aa-bb a.10-abolunur b.11-bolunur 2. abc-bac c.9-a bolunur 3.aaa-bbb d.111-bolunur e.99-abolunur"
+ },
+ {
+  "number": 30,
+  "page": 3,
+  "column": 0,
+  "box": [
+   0,
+   557,
+   414,
+   663
+  ],
+  "file": "q030.png",
+  "gutter": 400,
+  "draft_text": "30.ava braqomlari ucun uygunlugumuayyanedin. a.a+b=13 1.ab-ba=4a-3b b.a-b=2 2.ab=4a+8b c.a+b=7 3.ab3-ab=228 d.b-a=3 e.a+b=11 Otrafli yazili cavab talab olunan tapsiriqlar 31.ab+ca+bc=88va≠b≠colarsa,abc odadininalabilacayionboyukqiymstiilankicik qiymstinin comini tapin. 32.ac+bb+ca=77va≠b≠colarsa,abc adadinin alabilacayinboyukqiymatiilankicik qiymtinin camini tapin. Naturaladadlorintoplanmasi, cixilmasi,vurulmasivabolinmasi 1.Farq azalandan147vahidkicikdir.Cixilani tapin. A)47 B)147 C)74 D)141 E)100 2.Raqamlarimuxtolifolandordrqomlidadlordann boyuyu ilo onkiciyininforqini tapin. A)8642 B)8888 C)8876 D)8646 E)8853 CSI -Scanned with CamScann"
+ }
+]

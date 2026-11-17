@@ -1,0 +1,450 @@
+[
+ {
+  "number": 1,
+  "page": 4,
+  "column": 0,
+  "box": [
+   0,
+   758,
+   418,
+   803
+  ],
+  "file": "q001.png",
+  "gutter": 404,
+  "draft_text": "1. x- in yerina hans1 raqomi yazdiqda 53x86x3 adadi 9-a tambolunur? C)3 D)5 E)7 A)0 B)1"
+ },
+ {
+  "number": 2,
+  "page": 4,
+  "column": 0,
+  "box": [
+   0,
+   828,
+   418,
+   917
+  ],
+  "file": "q002.png",
+  "gutter": 404,
+  "draft_text": "2.a dadini 10-a boldukdanatamam qismtd c,qaliqda"
+ },
+ {
+  "number": 3,
+  "page": 4,
+  "column": 0,
+  "box": [
+   0,
+   917,
+   418,
+   983
+  ],
+  "file": "q003.png",
+  "gutter": 404,
+  "draft_text": "manual"
+ },
+ {
+  "number": 4,
+  "page": 4,
+  "column": 0,
+  "box": [
+   0,
+   983,
+   418,
+   1052
+  ],
+  "file": "q004.png",
+  "gutter": 404,
+  "draft_text": "manual"
+ },
+ {
+  "number": 5,
+  "page": 4,
+  "column": 0,
+  "box": [
+   0,
+   1052,
+   418,
+   1100
+  ],
+  "file": "q005.png",
+  "gutter": 404,
+  "draft_text": "manual"
+ },
+ {
+  "number": 6,
+  "page": 4,
+  "column": 1,
+  "box": [
+   395,
+   62,
+   780,
+   140
+  ],
+  "file": "q006.png",
+  "gutter": 404,
+  "draft_text": "manual"
+ },
+ {
+  "number": 7,
+  "page": 4,
+  "column": 1,
+  "box": [
+   395,
+   140,
+   780,
+   225
+  ],
+  "file": "q007.png",
+  "gutter": 404,
+  "draft_text": "manual"
+ },
+ {
+  "number": 8,
+  "page": 4,
+  "column": 1,
+  "box": [
+   395,
+   225,
+   780,
+   300
+  ],
+  "file": "q008.png",
+  "gutter": 404,
+  "draft_text": "manual"
+ },
+ {
+  "number": 9,
+  "page": 4,
+  "column": 1,
+  "box": [
+   395,
+   300,
+   780,
+   377
+  ],
+  "file": "q009.png",
+  "gutter": 404,
+  "draft_text": "9.328885.328882hasilinin8-abolunmasindon alinan qaligi tapin. C) 4 D)2 E)5 B)3 A)1"
+ },
+ {
+  "number": 10,
+  "page": 4,
+  "column": 1,
+  "box": [
+   395,
+   377,
+   780,
+   438
+  ],
+  "file": "q010.png",
+  "gutter": 404,
+  "draft_text": "10.xz.4yz=7344barabarliyindonx+y+zcaminitapin. B)8 E)9 A)5 C)7 D)6 1"
+ },
+ {
+  "number": 11,
+  "page": 4,
+  "column": 1,
+  "box": [
+   395,
+   438,
+   780,
+   536
+  ],
+  "file": "q011.png",
+  "gutter": 404,
+  "draft_text": "11.7x23ybesraqomlidadini5-boldukdqaliqda4 alinir.Haminadadin18-atambolunduyunubilark x.yhasilini tapin. n D)2 E) 10 B)8 C)4 A)20"
+ },
+ {
+  "number": 12,
+  "page": 4,
+  "column": 1,
+  "box": [
+   395,
+   536,
+   780,
+   625
+  ],
+  "file": "q012.png",
+  "gutter": 404,
+  "draft_text": "12.45x8ybesroqomlidadini5-boldukdaqal1qda3 alinr.Hamindadin18-tambolunduyunubilark x.yhasilini tapin. n E) 16 D)32 C)12 A)42 B)21"
+ },
+ {
+  "number": 13,
+  "page": 4,
+  "column": 1,
+  "box": [
+   395,
+   625,
+   780,
+   694
+  ],
+  "file": "q013.png",
+  "gutter": 404,
+  "draft_text": "13.3-qaliqsizbolunannaturaldadlori12-yaboldukda alinabilon muxtalif qaliqlarn camini tapin. n B)24 E)21 C)15 D)18 A)13"
+ },
+ {
+  "number": 14,
+  "page": 4,
+  "column": 1,
+  "box": [
+   395,
+   694,
+   780,
+   765
+  ],
+  "file": "q014.png",
+  "gutter": 404,
+  "draft_text": "14.7-aqaliqsizbolunannaturaladadlri28-boldukd ri. alinabilonmuxtalifqaliqlarn camini tapin. D)42 A)45 B)49 C)35 E)56"
+ },
+ {
+  "number": 15,
+  "page": 4,
+  "column": 1,
+  "box": [
+   395,
+   765,
+   780,
+   860
+  ],
+  "file": "q015.png",
+  "gutter": 404,
+  "draft_text": "15.abadodinin ba dodins bolunmasindon alinan natamamqismatvahida,qaliqisa36-yabarabr olarsa,a-nin alabilacayi qiymtlrincmini tapin. C)39 D)30 E)21 A)24 B)35 gda"
+ },
+ {
+  "number": 16,
+  "page": 4,
+  "column": 1,
+  "box": [
+   395,
+   860,
+   780,
+   912
+  ],
+  "file": "q016.png",
+  "gutter": 404,
+  "draft_text": "16.a2b6cdadi 12-ybolunrs,a+b+cifadasinin ala bilacayinkicikqiymatitapin."
+ },
+ {
+  "number": 17,
+  "page": 4,
+  "column": 1,
+  "box": [
+   395,
+   912,
+   780,
+   996
+  ],
+  "file": "q017.png",
+  "gutter": 404,
+  "draft_text": "17.Raqomloriforqliolan ikiraqomliadadi5-boldukd ni qalqnboyukolarsa,busrtiodyanne ikiraqomliadadvar?"
+ },
+ {
+  "number": 18,
+  "page": 4,
+  "column": 1,
+  "box": [
+   395,
+   996,
+   780,
+   1063
+  ],
+  "file": "q018.png",
+  "gutter": 404,
+  "draft_text": "18.aaa8abadadi30-a tambolunurs,a-nin mumkun qiymatlarinincomini tapin."
+ },
+ {
+  "number": 19,
+  "page": 4,
+  "column": 1,
+  "box": [
+   395,
+   1063,
+   780,
+   1180
+  ],
+  "file": "q019.png",
+  "gutter": 404,
+  "draft_text": "19.a6aaabdadi30-a tam bolunurso,a-nin mumkun qiymatlarinincominitapin. el6-"
+ },
+ {
+  "number": 20,
+  "page": 5,
+  "column": 0,
+  "box": [
+   0,
+   69,
+   403,
+   128
+  ],
+  "file": "q020.png",
+  "gutter": 389,
+  "draft_text": "20. ab adadini 9-a boldukda qaliqda 5 alinir. abc dadi9-a tambolunursa,c-ni tapin."
+ },
+ {
+  "number": 21,
+  "page": 5,
+  "column": 0,
+  "box": [
+   0,
+   128,
+   403,
+   198
+  ],
+  "file": "q021.png",
+  "gutter": 389,
+  "draft_text": "21.abdadini 9-a boldukda qaliqda 3 alinir.abc dadi9-atambolunurso,c-ni tapin?"
+ },
+ {
+  "number": 22,
+  "page": 5,
+  "column": 0,
+  "box": [
+   0,
+   198,
+   403,
+   260
+  ],
+  "file": "q022.png",
+  "gutter": 389,
+  "draft_text": "22.xy06:xybolmamolindnatamamqismotav qalq b olarsa,abhasilini tapin."
+ },
+ {
+  "number": 23,
+  "page": 5,
+  "column": 0,
+  "box": [
+   0,
+   260,
+   403,
+   316
+  ],
+  "file": "q023.png",
+  "gutter": 389,
+  "draft_text": "23.xy04:xybolmmolindnatamamqismtava qalq b olarsa,abhasilini tapin."
+ },
+ {
+  "number": 24,
+  "page": 5,
+  "column": 0,
+  "box": [
+   0,
+   316,
+   403,
+   389
+  ],
+  "file": "q024.png",
+  "gutter": 389,
+  "draft_text": "24.Ikinaturaldadincami211-dir.Budadlordon boyuyunukiciyinaboldukdnatamamqismatda4, qaliqda 1 alinir.dadlrdon boyuyunu tapin."
+ },
+ {
+  "number": 25,
+  "page": 5,
+  "column": 0,
+  "box": [
+   0,
+   389,
+   403,
+   457
+  ],
+  "file": "q025.png",
+  "gutter": 389,
+  "draft_text": "25. 9n3 = m087 borabarliyindon mn hasilini tapin (neN)."
+ },
+ {
+  "number": 26,
+  "page": 5,
+  "column": 0,
+  "box": [
+   0,
+   457,
+   403,
+   535
+  ],
+  "file": "q026.png",
+  "gutter": 389,
+  "draft_text": "26. 7-ya bolundukda qaliqda 4 alinan dadlor 3-3 tam bolunurs,busrtiodaynikiraqmlidadlrdnn kicikvanboyuyununcamini tapin."
+ },
+ {
+  "number": 27,
+  "page": 5,
+  "column": 0,
+  "box": [
+   0,
+   535,
+   403,
+   614
+  ],
+  "file": "q027.png",
+  "gutter": 389,
+  "draft_text": "27. m adadini 7-ya boldukda qaliqda 6 alinur. m2 + 3m +7 adadini 7-yo boldukda qaliqda neca alinar?"
+ },
+ {
+  "number": 28,
+  "page": 5,
+  "column": 0,
+  "box": [
+   0,
+   614,
+   403,
+   700
+  ],
+  "file": "q028.png",
+  "gutter": 389,
+  "draft_text": "28.mdadini5-aboldukdaqaliqda3alinir m2 +6m +5 adadini 5-3 boldukdo qaliqda necs alinar?"
+ },
+ {
+  "number": 29,
+  "page": 5,
+  "column": 0,
+  "box": [
+   0,
+   700,
+   403,
+   808
+  ],
+  "file": "q029.png",
+  "gutter": 389,
+  "draft_text": "29. n dadini mdadina boldukda (n ∈ N,m e N)natamam qismatda 2, qaliqda 31 alinrsa,n-in nkicik qiymatininraqmlori camini tapin."
+ },
+ {
+  "number": 30,
+  "page": 5,
+  "column": 0,
+  "box": [
+   0,
+   808,
+   403,
+   896
+  ],
+  "file": "q030.png",
+  "gutter": 389,
+  "draft_text": "30.ndadini35-boldukdanatamamqismatdam， qaliqda m? alinarsa, n -in an boyuk qiymatinin raqmlari camini tapin (n e N,m E N)"
+ },
+ {
+  "number": 31,
+  "page": 5,
+  "column": 0,
+  "box": [
+   0,
+   896,
+   403,
+   975
+  ],
+  "file": "q031.png",
+  "gutter": 389,
+  "draft_text": "31.402abv75cdadadlorini4-boldukdaqaliqda 3 alinir. a+b ifadosinin son boyuk qiymstini tapn. c+d"
+ },
+ {
+  "number": 32,
+  "page": 5,
+  "column": 0,
+  "box": [
+   0,
+   975,
+   403,
+   1050
+  ],
+  "file": "q032.png",
+  "gutter": 389,
+  "draft_text": "32.58abva238cdadadlorini 4-aboldukdaqaliqda 2alinir. a+b ifadssinin on boyuk qiymatini tapin. c+d"
+ }
+]
