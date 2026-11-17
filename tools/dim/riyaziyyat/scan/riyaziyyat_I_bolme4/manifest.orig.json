@@ -1,0 +1,870 @@
+[
+ {
+  "number": 1,
+  "page": 5,
+  "column": 1,
+  "box": [
+   392,
+   168,
+   799,
+   294
+  ],
+  "file": "q001.png",
+  "gutter": 389,
+  "draft_text": "1.avabnatural adadlari1-don boyukqarsiliqli sada dadlordir.OKOB（a,b):BOB（a,b)nisbatini tapin. b a A) a.b B)= D) b C) E)a b a"
+ },
+ {
+  "number": 2,
+  "page": 5,
+  "column": 1,
+  "box": [
+   392,
+   282,
+   799,
+   389
+  ],
+  "file": "q002.png",
+  "gutter": 389,
+  "draft_text": "2.adadibdodininnatural bolonidir. KOB(a, b)-BOB(a, b) farqini tapin. b a E)a·b D) b-a ( A) B)a-b 一 1b a"
+ },
+ {
+  "number": 3,
+  "page": 5,
+  "column": 1,
+  "box": [
+   392,
+   377,
+   799,
+   454
+  ],
+  "file": "q003.png",
+  "gutter": 389,
+  "draft_text": "3.24-danboyuk olmayan ikiraqomli adadlor icorisinda 24-lqarsiliqlisadaolannecanaturaladadvar? E)8 B)11 C)5 D)10 A)9"
+ },
+ {
+  "number": 4,
+  "page": 5,
+  "column": 1,
+  "box": [
+   392,
+   442,
+   799,
+   540
+  ],
+  "file": "q004.png",
+  "gutter": 389,
+  "draft_text": "4. 12-ya,15- va20-y boldukd qaliqda 3 alinan n kicikcoxraqomlinatural adadinraqomlarinin camini on tapin. D) 6 C) 7 E)24 B)15 A)9"
+ },
+ {
+  "number": 5,
+  "page": 5,
+  "column": 1,
+  "box": [
+   392,
+   528,
+   799,
+   642
+  ],
+  "file": "q005.png",
+  "gutter": 389,
+  "draft_text": "5.5-a,6-ya va7-ybolundukdaqaliqda 2alinan n kicikcoxraqomlinaturaladadinraqomlarinincamini tapin. E)3 C) 5 D)8 B) 4 A)7 KOB(120;144)"
+ },
+ {
+  "number": 6,
+  "page": 5,
+  "column": 1,
+  "box": [
+   392,
+   630,
+   799,
+   784
+  ],
+  "file": "q006.png",
+  "gutter": 389,
+  "draft_text": "nisbatini hesablayin. 6. BOB(120;144) D) 25 E)10 A)30 B)15 C)45 KOB(175;210) nisbatini hesablayin. 7 BOB(175;210) E)10 A)30 B) 50 C)20 D)5 1"
+ },
+ {
+  "number": 8,
+  "page": 5,
+  "column": 1,
+  "box": [
+   392,
+   772,
+   799,
+   874
+  ],
+  "file": "q008.png",
+  "gutter": 389,
+  "draft_text": "8.a natural dadinin3 sad vurugu,bnatural dadinin 8 sads vurugu olarsa, a·b adadinin neco sads vurugu var? A)88 B) 5 C)8 D)3 E)11"
+ },
+ {
+  "number": 9,
+  "page": 5,
+  "column": 1,
+  "box": [
+   392,
+   862,
+   799,
+   980
+  ],
+  "file": "q009.png",
+  "gutter": 389,
+  "draft_text": "9.anaturaldadinin5sadvurugu,bnaturalddinin9 sada vurugu olarsa, a·b adadinin neca sado vurugu var? C)9 A)14 B)4 D)5 E)45 n. 3"
+ },
+ {
+  "number": 10,
+  "page": 5,
+  "column": 1,
+  "box": [
+   392,
+   968,
+   799,
+   1072
+  ],
+  "file": "q010.png",
+  "gutter": 389,
+  "draft_text": "n-nu toskil edon iki natural dadin 10.Biriobirinin BOB-u 27-dir.Bu adadlorin camini tapin. n. B)243 D)405 E)810 C)189 A)135 n"
+ },
+ {
+  "number": 11,
+  "page": 5,
+  "column": 1,
+  "box": [
+   392,
+   1060,
+   799,
+   1157
+  ],
+  "file": "q011.png",
+  "gutter": 389,
+  "draft_text": "n n ifadlarinaturaldadolarsa,n-innkicik 11. 6.8.9 qiymstinin roqomlori comini tapin. E) 9 B) 10 D)7 C)8 A) 6"
+ },
+ {
+  "number": 12,
+  "page": 6,
+  "column": 0,
+  "box": [
+   0,
+   76,
+   414,
+   167
+  ],
+  "file": "q012.png",
+  "gutter": 417,
+  "draft_text": "ifadlori naturaldadlor olarsa,n-inn 12. 121810 kicikqiymatininraqomlori comini tapin. B)9 D) 6 E)10 C)7 A)8"
+ },
+ {
+  "number": 13,
+  "page": 6,
+  "column": 0,
+  "box": [
+   0,
+   155,
+   414,
+   306
+  ],
+  "file": "q013.png",
+  "gutter": 417,
+  "draft_text": "13.Birmontoqodonmuxtolif marsrutla eyni zamandaiki avtobus yola dusur. Birinci avtobus bu montaqaya har40dqiqdnbir,ikinciis30daqiqodonbir qayidir. Hansi on qisa muddatda onlar har ikisi cixdiqlan mantoqoda olarlar? C) 80 doq A) 70 dq B) 120 daq E) 240 daq bep 09 (a"
+ },
+ {
+  "number": 14,
+  "page": 6,
+  "column": 0,
+  "box": [
+   0,
+   294,
+   414,
+   452
+  ],
+  "file": "q014.png",
+  "gutter": 417,
+  "draft_text": "14.Bir noqtadon iki muxtlif cevr uzr iki noqto eyni zamandaharakatabaslayir.Birinci noqtacixis noqtosinhr50saniyadonbir,ikincisiishar 60saniyadanbir qayidir.Hansi nqisamuddatd onlar cixdiqlar noqtadagorusar? C) 240 san B) 110 san A)120san E) 90 san D) 300 san"
+ },
+ {
+  "number": 15,
+  "page": 6,
+  "column": 0,
+  "box": [
+   0,
+   440,
+   414,
+   564
+  ],
+  "file": "q015.png",
+  "gutter": 417,
+  "draft_text": "15.avabnaturaldadlar,cbudadlarinortaqolmayan ab sada vuruqlarinin hasilidir. C BOB (a, b)-ni tapin. B)256 E)32 D) 64  A)128 C) 16"
+ },
+ {
+  "number": 16,
+  "page": 6,
+  "column": 0,
+  "box": [
+   0,
+   552,
+   414,
+   632
+  ],
+  "file": "q016.png",
+  "gutter": 417,
+  "draft_text": "16.avabdadlarininhasili72000,ortaqolmayan sad vuruqlarinin hasili 20 olarsa,KOB（a,b)-i tapin. A)1200B)60C)30 D)40E)3600"
+ },
+ {
+  "number": 17,
+  "page": 6,
+  "column": 0,
+  "box": [
+   0,
+   620,
+   414,
+   698
+  ],
+  "file": "q017.png",
+  "gutter": 417,
+  "draft_text": "17.avabdadlarininhasili32000,ortaqolmayansad vuruqlarininhasili20olarsa,KOB（a,b)-i tapin D)40E)120 A)3600 C)30 B)800"
+ },
+ {
+  "number": 18,
+  "page": 6,
+  "column": 0,
+  "box": [
+   0,
+   686,
+   414,
+   803
+  ],
+  "file": "q018.png",
+  "gutter": 417,
+  "draft_text": "18.Oglanvaqiz630m uzunluqdaolanmosafoni addimlaolcdular.Oglaninaddimi45sm,qizin addimiis35smolarsa,hrakatabasladiqdansonra onlarin ayaqizlarinecadafoust-ustadusar? C)430D)250 A)400B)100C)430D)250 E)200"
+ },
+ {
+  "number": 19,
+  "page": 6,
+  "column": 0,
+  "box": [
+   0,
+   791,
+   414,
+   930
+  ],
+  "file": "q019.png",
+  "gutter": 417,
+  "draft_text": "19.Oglanva qiz1152 m uzunluqda olan mosafoni addimla0lcdular.Oglaninaddimi72sm,qizin addimiis64smolarsa,harakatabasladiqdansonra onlarin ayaq izlorineca daf ust-usto dusar? C)300D)250E)150 A)100B)200 KOB(a,b)-BOB(a,b)=45,"
+ },
+ {
+  "number": 20,
+  "page": 6,
+  "column": 0,
+  "box": [
+   0,
+   918,
+   414,
+   1020
+  ],
+  "file": "q020.png",
+  "gutter": 417,
+  "draft_text": "tonliklor 20. KOB(a,b)+ BOB(a,b)=55 sistemindabhasilini tapin. A)250B)125C)500 C)500 E)200 D)100 B)125"
+ },
+ {
+  "number": 21,
+  "page": 6,
+  "column": 0,
+  "box": [
+   0,
+   1008,
+   414,
+   1106
+  ],
+  "file": "q021.png",
+  "gutter": 417,
+  "draft_text": "21.Cami63vanboyukortaqbolani9olanikinatural adadin ortaq olmayan sadavuruqlari hasilinin n boyukqiymatini tapin. D)18 E) 24 A)12B)7 C)9 B)7"
+ },
+ {
+  "number": 22,
+  "page": 6,
+  "column": 0,
+  "box": [
+   0,
+   1094,
+   414,
+   1174
+  ],
+  "file": "q022.png",
+  "gutter": 417,
+  "draft_text": "22. n natural odadi ucun BOB (8n²+6n, 8n²+10n)=20 olarsa, OKOB (n²+n, n²+3n)-i tapin. CS"
+ },
+ {
+  "number": 23,
+  "page": 6,
+  "column": 1,
+  "box": [
+   420,
+   105,
+   793,
+   198
+  ],
+  "file": "q023.png",
+  "gutter": 417,
+  "draft_text": "23.nnatural odadiucun OBOB(2n²+n,2n²+3n)=n²-5n+9olarsa, OKOB(n+2;n+5)-utapin. iki"
+ },
+ {
+  "number": 24,
+  "page": 6,
+  "column": 1,
+  "box": [
+   420,
+   186,
+   793,
+   284
+  ],
+  "file": "q024.png",
+  "gutter": 417,
+  "draft_text": "24.nnatural dadiucun BOB(2n²+n,2n²-n)=n²-7n+16 olarsa, KOB(3n+l;n+1)-utapin."
+ },
+ {
+  "number": 25,
+  "page": 6,
+  "column": 1,
+  "box": [
+   420,
+   272,
+   793,
+   350
+  ],
+  "file": "q025.png",
+  "gutter": 417,
+  "draft_text": "25.m+n=49 va KOB(m,n)=70 sartlarini odoyan m, n naturaldadlarininboyuyunu tapin"
+ },
+ {
+  "number": 26,
+  "page": 6,
+  "column": 1,
+  "box": [
+   420,
+   338,
+   793,
+   406
+  ],
+  "file": "q026.png",
+  "gutter": 417,
+  "draft_text": "26.m+n=56va KOB(m, n)=105 sortlarini odayan m, n natural adadlorinin kiciyini tapin."
+ },
+ {
+  "number": 27,
+  "page": 6,
+  "column": 1,
+  "box": [
+   420,
+   394,
+   793,
+   472
+  ],
+  "file": "q027.png",
+  "gutter": 417,
+  "draft_text": "27.Iki ardicil cutadodinKOBvaBOB-nun cami 222olarsa,budadlardankiciyini tapin. an"
+ },
+ {
+  "number": 28,
+  "page": 6,
+  "column": 1,
+  "box": [
+   420,
+   460,
+   793,
+   552
+  ],
+  "file": "q028.png",
+  "gutter": 417,
+  "draft_text": "28.1ki ardicil cutadadinKOBvaBOB-nuncami 422 olarsa, bu adadlordon boyuyunu tapin. a3"
+ },
+ {
+  "number": 29,
+  "page": 6,
+  "column": 1,
+  "box": [
+   420,
+   540,
+   793,
+   642
+  ],
+  "file": "q029.png",
+  "gutter": 417,
+  "draft_text": "29.a,bnatural dadlari ucun eA b4 KOB（a,b)+BOB（a,b)=104olarsa,b-a-n1tapn a"
+ },
+ {
+  "number": 30,
+  "page": 6,
+  "column": 1,
+  "box": [
+   420,
+   630,
+   793,
+   723
+  ],
+  "file": "q030.png",
+  "gutter": 417,
+  "draft_text": "a e 30.a,b natural dadlari ucun b5 KOB（a,b)-BOB（a,b)=54olarsa,a+b-ni tapin"
+ },
+ {
+  "number": 31,
+  "page": 6,
+  "column": 1,
+  "box": [
+   420,
+   711,
+   793,
+   790
+  ],
+  "file": "q031.png",
+  "gutter": 417,
+  "draft_text": "31.Naturalavabddlori ucuna:b=3va ra KOB（a;b)=75olarsa,θBOB（a,b)-nitapin"
+ },
+ {
+  "number": 32,
+  "page": 6,
+  "column": 1,
+  "box": [
+   420,
+   778,
+   793,
+   854
+  ],
+  "file": "q032.png",
+  "gutter": 417,
+  "draft_text": "32.a:b=5vKOB（a,b)=45olarsa,BOB（a,b)-ni tapin. ra"
+ },
+ {
+  "number": 33,
+  "page": 6,
+  "column": 1,
+  "box": [
+   420,
+   842,
+   793,
+   923
+  ],
+  "file": "q033.png",
+  "gutter": 417,
+  "draft_text": "33. n = 572 +382 adadinin sads vuruqlarnin sayin1 tapin."
+ },
+ {
+  "number": 34,
+  "page": 6,
+  "column": 1,
+  "box": [
+   420,
+   911,
+   793,
+   972
+  ],
+  "file": "q034.png",
+  "gutter": 417,
+  "draft_text": "34. 512 +342 ododinin sads vuruqlarinin sayini tapin."
+ },
+ {
+  "number": 35,
+  "page": 6,
+  "column": 1,
+  "box": [
+   420,
+   960,
+   793,
+   1060
+  ],
+  "file": "q035.png",
+  "gutter": 417,
+  "draft_text": "35.a,b ardicil natural ddlor v 3.KOB(a,b)-2·BOB(a,b)=58 olarsa, ab hasilini tapin."
+ },
+ {
+  "number": 36,
+  "page": 6,
+  "column": 1,
+  "box": [
+   420,
+   1048,
+   793,
+   1140
+  ],
+  "file": "q036.png",
+  "gutter": 417,
+  "draft_text": "36.a,bardicil natural dadlar v 2KOB(a,b)-5BOB(a,b)= 79 olarsa, ab hasilini tapin. 0"
+ },
+ {
+  "number": 37,
+  "page": 7,
+  "column": 0,
+  "box": [
+   0,
+   63,
+   394,
+   144
+  ],
+  "file": "q037.png",
+  "gutter": 397,
+  "draft_text": "37.ava bdodlorinin ortaq olmayan sadsvuruqlarinin hasili15,BOB（a,b)=30olarsa,a+b cminin n boyukqiymatini tapin."
+ },
+ {
+  "number": 38,
+  "page": 7,
+  "column": 0,
+  "box": [
+   0,
+   132,
+   394,
+   212
+  ],
+  "file": "q038.png",
+  "gutter": 397,
+  "draft_text": "38.nnatural ododi ucun BOB(n²+5n+6;n²+6n+8) =5 olarsa,n-itapin."
+ },
+ {
+  "number": 39,
+  "page": 7,
+  "column": 0,
+  "box": [
+   0,
+   200,
+   394,
+   274
+  ],
+  "file": "q039.png",
+  "gutter": 397,
+  "draft_text": "39.120va180ddlorininortaqnaturalbolanlarinin sayini tapin."
+ },
+ {
+  "number": 40,
+  "page": 7,
+  "column": 0,
+  "box": [
+   0,
+   262,
+   394,
+   341
+  ],
+  "file": "q040.png",
+  "gutter": 397,
+  "draft_text": "40.a=2”3\"dadininsadvuruqlarinin say18,natural bolonlarinin say1 24 olarsa, m -n|-i tapin."
+ },
+ {
+  "number": 41,
+  "page": 7,
+  "column": 0,
+  "box": [
+   0,
+   329,
+   394,
+   405
+  ],
+  "file": "q041.png",
+  "gutter": 397,
+  "draft_text": "41. BOB(n²-9; n²+n-12)=15 olarsa, KOB((n-7)!(2n+1)!)dadinin sonraqomini tapin."
+ },
+ {
+  "number": 42,
+  "page": 7,
+  "column": 0,
+  "box": [
+   0,
+   393,
+   394,
+   470
+  ],
+  "file": "q042.png",
+  "gutter": 397,
+  "draft_text": "42.a,b∈N,a:b=3:4, KOB（a,b)-BOB（a,b)=88olarsa,a+b-nitapin"
+ },
+ {
+  "number": 43,
+  "page": 7,
+  "column": 0,
+  "box": [
+   0,
+   458,
+   394,
+   532
+  ],
+  "file": "q043.png",
+  "gutter": 397,
+  "draft_text": "43.m=2nva2·KOB（2°，3\")-3·BOB(2\";3)=33 olarsa, m+n comini tapin (m e N, n e N)."
+ },
+ {
+  "number": 44,
+  "page": 7,
+  "column": 0,
+  "box": [
+   0,
+   520,
+   394,
+   588
+  ],
+  "file": "q044.png",
+  "gutter": 397,
+  "draft_text": "44.n=2mv3·KOB(3;5\")-2·BOB(3\";5)=133 olarsa,m+n cmini tapin (meN,ne N)."
+ },
+ {
+  "number": 45,
+  "page": 7,
+  "column": 0,
+  "box": [
+   0,
+   576,
+   394,
+   648
+  ],
+  "file": "q045.png",
+  "gutter": 397,
+  "draft_text": "45. BOB(m,n )=108, m=4.3k+2 va n =12* olarsa, m-i tapin."
+ },
+ {
+  "number": 46,
+  "page": 7,
+  "column": 0,
+  "box": [
+   0,
+   636,
+   394,
+   712
+  ],
+  "file": "q046.png",
+  "gutter": 397,
+  "draft_text": "46. 0BOB (m,n )=162, m = 2.3k+1va n =12k olarsa, m-i tapin."
+ },
+ {
+  "number": 47,
+  "page": 7,
+  "column": 0,
+  "box": [
+   0,
+   700,
+   394,
+   791
+  ],
+  "file": "q047.png",
+  "gutter": 397,
+  "draft_text": "47.(3n-5),(4m-1), (2n+6) adadlori yazildig1 ardicilliqla artanardicilnatural adadlardir.OKOB (m, n)-ni tapin."
+ },
+ {
+  "number": 48,
+  "page": 7,
+  "column": 0,
+  "box": [
+   0,
+   779,
+   394,
+   856
+  ],
+  "file": "q048.png",
+  "gutter": 397,
+  "draft_text": "48.a=5n,b=3m+6vc=6n-4ardicilcutnatural dadlardir.KOB(m;n)-ni tapin."
+ },
+ {
+  "number": 49,
+  "page": 7,
+  "column": 0,
+  "box": [
+   0,
+   844,
+   394,
+   972
+  ],
+  "file": "q049.png",
+  "gutter": 397,
+  "draft_text": "49. (ab+ba) )comi ila m natural adadinin ortaq sads vurugu yoxdur. 0KOB(ab +ba,m) =154m olarsa, on kicik ab adadini tapin."
+ },
+ {
+  "number": 50,
+  "page": 7,
+  "column": 0,
+  "box": [
+   0,
+   960,
+   394,
+   1166
+  ],
+  "file": "q050.png",
+  "gutter": 397,
+  "draft_text": "50. (ab +ba) comi ila m natural adsdinin ortaq sads vurugu yoxdur. KOB(ab +ba,m) =132m olarsa, on kicik ab adadini tapin. ScannedwithCamScann"
+ },
+ {
+  "number": 51,
+  "page": 7,
+  "column": 1,
+  "box": [
+   400,
+   64,
+   800,
+   186
+  ],
+  "file": "q051.png",
+  "gutter": 397,
+  "draft_text": "51.aparametrininmusbat qiymatinda OBOB(k3 -27;k2 +3k +9)=ak -16 tonliyinin yegana halli olarsa, KOB(a-k;a+k)-ni tapin. 5"
+ },
+ {
+  "number": 52,
+  "page": 7,
+  "column": 1,
+  "box": [
+   400,
+   174,
+   800,
+   283
+  ],
+  "file": "q052.png",
+  "gutter": 397,
+  "draft_text": "52.a,b va cnatural dadlari ucun 15a=6b=8c olarsa, KOB(a+b;b-c) nisbatini tapin. BOB(c-a,c+a)"
+ },
+ {
+  "number": 53,
+  "page": 7,
+  "column": 1,
+  "box": [
+   400,
+   271,
+   800,
+   378
+  ],
+  "file": "q053.png",
+  "gutter": 397,
+  "draft_text": "53. (2a+3) va (3b+2) qarsiliqli sada adadlori ucun 22a+19=21bolarsa,avabnaturaldadlarinin camini tapin. n."
+ },
+ {
+  "number": 54,
+  "page": 7,
+  "column": 1,
+  "box": [
+   400,
+   366,
+   800,
+   626
+  ],
+  "file": "q054.png",
+  "gutter": 397,
+  "draft_text": "54. Uy gunlugu muayyon edin. 1. BOB(m,n)=20 2.θKOB（m;n)=7 n. 3. 0BOB(m;n)=15 3 a.mvndadlrihmis4-bolunur b.mvndadlrihmis3-bolunur c.mvndadlariqarsilqlisadaadadlarolabilr 33 d.mvandadlorihomis10-abolunur e.m dadi(n dadi)yalniz ikifarqlinatural qiymat alabilar"
+ },
+ {
+  "number": 55,
+  "page": 7,
+  "column": 1,
+  "box": [
+   400,
+   614,
+   800,
+   884
+  ],
+  "file": "q055.png",
+  "gutter": 397,
+  "draft_text": "55.Uygunlugumuayyan edin 1. BOB(m,n)=18 2. KOB(m;n)=11 3. OBOB(m;n)= 45 a.mvandadlrihamis15-bolunur b.mvndadlrihomis2-ybolunur c.mvndadloriqarsilqli sadddlorola bilor d.mvanadadlari hamis6-yabolunur e.mdadi（n dadi）yalnizikiforqli natural qiymat alabilor"
+ },
+ {
+  "number": 56,
+  "page": 7,
+  "column": 1,
+  "box": [
+   400,
+   872,
+   800,
+   1168
+  ],
+  "file": "q056.png",
+  "gutter": 397,
+  "draft_text": "56.avabdadlorininortaqolmayan sadsvuruqlarinin hasili c = 4 olarsa, uy gunlugu muayyan edin. a.ab=64 1.BOB(a;b)=6 b.ab=144 2. θBOB(a;b)=4 c. 0KOB(a;b)= 24 3. OBOB(a;b)=8 d. OKOB(a;b)=32 ab =64 C De"
+ },
+ {
+  "number": 57,
+  "page": 8,
+  "column": 0,
+  "box": [
+   0,
+   59,
+   399,
+   290
+  ],
+  "file": "q057.png",
+  "gutter": 402,
+  "draft_text": "57.avabdadlorinin ortaq olmayan sadavuruqlarin hasili c = 5 olarsa,uygunlugu muayyan edin. a.ab=500 1.BOB（a,b)=5 b.ab=125 2. BOB(a;b)=10 c. θKOB(a;b)= 25 3. BOB(a:b)=15 d. OKOB(a;b)=75 ab =225 C"
+ },
+ {
+  "number": 58,
+  "page": 8,
+  "column": 0,
+  "box": [
+   0,
+   278,
+   399,
+   508
+  ],
+  "file": "q058.png",
+  "gutter": 402,
+  "draft_text": "58.Uygunlugu muayyon edin. adadi b-ninnatural boloni olarsa, a 1.KOB(a,b):BOB(a,b) a. 1b 2.KOB（a,b)-BOB(a,b) b.b+a c.b-a 3.KOB(a,b)+BOB(a,b) b a e.2b+a"
+ },
+ {
+  "number": 59,
+  "page": 8,
+  "column": 0,
+  "box": [
+   0,
+   496,
+   399,
+   689
+  ],
+  "file": "q059.png",
+  "gutter": 402,
+  "draft_text": "59.cdadi avabnaturaladadlarininortaqolmayan sadavuruqlarhasilidir.avabucun uygunlugu muayyan edin. a.KOB（a,b)=ab 1.a=2.2.3,b=2.3.5 b.BOB（a,b)=1 2.a=2.7,b=5.11 c.c=2 3.a=2.3.5,b=2.3.5.7 d.c=10 e.BOB（a,b)=a"
+ },
+ {
+  "number": 60,
+  "page": 8,
+  "column": 0,
+  "box": [
+   0,
+   677,
+   399,
+   886
+  ],
+  "file": "q060.png",
+  "gutter": 402,
+  "draft_text": "60.Uygunlugumuayyan edin 1.avabqarsiliqlisaddadlordir 2.adadib-ninbolanidir 3.a dadi b-nin bolunonidir a.BOB(a,b)=a b. KOB(a,b)=a c.KOB(a,b)=ab d.BOB(a,b)=1 e.θKOB(a,b)=1"
+ },
+ {
+  "number": 61,
+  "page": 8,
+  "column": 0,
+  "box": [
+   0,
+   874,
+   399,
+   1176
+  ],
+  "file": "q061.png",
+  "gutter": 402,
+  "draft_text": "61.Uygunlugumuayyanedin. 1.BOB(a,b)=a a.avbqarsilqli sad 2.KOB(a,b)=ab rpreipepe 3.θKOB（a,b)=a b.θKOB(a,b)=b c.BOB（a,b)=1 d.a odadi b-ya bolunur e.ava bqarsiliqli tars rpeipepe CS"
+ },
+ {
+  "number": 62,
+  "page": 8,
+  "column": 1,
+  "box": [
+   405,
+   58,
+   795,
+   277
+  ],
+  "file": "q062.png",
+  "gutter": 402,
+  "draft_text": "62.Uygunlugu muayyan edin. rinin 1.0BOB（n²+n,n²+2n)=4olarsa, 2.BOB（n²+7n,n²+8n)=2olarsa, 3.θBOB(n²+4n,n²+5n)=3olarsa, a.buadadlorinKOB-u9-abolunur b.budadlarincmi44-brabardir c.buadadlarinOKOB-u30-abarabordir d.budadlarincami45-barabardir e.budadlorinKOB-u14-bolunur"
+ },
+ {
+  "number": 63,
+  "page": 8,
+  "column": 1,
+  "box": [
+   405,
+   265,
+   795,
+   1190
+  ],
+  "file": "q063.png",
+  "gutter": 402,
+  "draft_text": "63.Uygunlugu muoyyan edin. 1. BOB(2n²+n, 2n²+3n)=3 olarsa, 2. BOB(n²+3n, n²+4n)=2 olarsa, 3. OBOB(n²+4n, n²+5n)=4 olarsa, a.buadadlarin cami 12-yabolunur b.budadlarincami13-brabardir c.budadlarinOKOB-u189-abarabardir d.buadadlarincami68-barabardir e.budadlarinOKOB-u5-bolunur Otrafli yazili cavab talob olunan tapsirqlar 64.Diaqramdamvannaturaladadlorininmuxtalifsad vuruqlanvaonlarinsayiverilmisdir.mvan adadlarininsadavuruqlaraayrilisiniyazinva KOB（m;n):BOB(m;n)nisbatini tapin. saylar mzxtolifsada 5 2 vuruqlar 65.Diaqramdamvannaturaldadlrininmuxtalifsad vuruqlarivaonlarnsayiverilmisdir.mvan odadlarininsadvuruqlaraayrilisiniyazinva OKOB(m;n):BOB(m;n)nisbatini tapin. saylar 7xalifsa varuqlar Telio-"
+ }
+]

@@ -6,7 +6,7 @@ Son yenilənmə: 2026-11-17
 ## Qısa vəziyyət
 - **Mənbə:** DİM "Riyaziyyat test toplusu I hissə" (2025), skan. Fayl: `tools/dim/riyaziyyat/riyaziyyat_I_2025.pdf` (235 səhifə).
 - **Yüklənib (test Supabase):** Fəsil "Natural ədədlər", alt mövzular 1, 2, 3 (**79 sual**, 2026-11-17). Şəkillər `out/images_kitab/`-dadır, `out/upload_kitab/` boşdur.
-- **NÖVBƏTİ: bölmə 4** (Natural ədədlərin sadə vuruqlara ayrılışı. ƏBOB. ƏKOB), aşağıda hazır məlumat var. Sonra fəsil 2 "Adi və onluq kəsrlər".
+- **Bölmə 4** (ƏBOB/ƏKOB, 63 sual) kəsilib, `import_rt1_s04.sql` hazırdır; sahib yükləyib "done" deyəndən sonra `scan_tool.py --subject riyaziyyat --prefix RT done 4` və cədvəl yenilənir. **NÖVBƏTİ: fəsil 2 "Adi və onluq kəsrlər"** (pdf 11-dən, çap 13; açar pdf 212; bölmə nömrəsi 5-dən).
 - Riyaziyyat fənni aktivdir (`subjects.is_active = true`). Əvvəlki 2 nümunə sual (RIY-0001, RIY-0003) silinib.
 
 ## Səhifə qaydası
@@ -27,18 +27,14 @@ Son yenilənmə: 2026-11-17
 | 1 | Natural ədədlər / Natural ədədlərin onluq say sistemində yazılışı | 2-3 | 1-30 (31-32 yazılı, atlandı) | **YÜKLƏNDİ**: 9 qapalı, 18 ədədi, 3 uyğunlaşdırma |
 | 2 | Natural ədədlər / Natural ədədlərin toplanması, çıxılması, vurulması və bölünməsi | 3-4 | 1-17 (18-21 yazılı) | **YÜKLƏNDİ**: 10 qapalı, 6 ədədi, 1 uyğunlaşdırma |
 | 3 | Natural ədədlər / Natural ədədlərin bölünmə əlamətləri. Qalıqlı bölmə | 4-5 | 1-32 | **YÜKLƏNDİ**: 15 qapalı, 17 ədədi |
-| 4 | Natural ədədlər / Natural ədədlərin sadə vuruqlara ayrılışı. ƏBOB. ƏKOB | 5 (sağ sütun)-~10 | 1-96 (yazılı tapşırıqlar atlanır) | **GÖZLƏYİR** |
+| 4 | Natural ədədlər / Natural ədədlərin sadə vuruqlara ayrılışı. ƏBOB. ƏKOB | 5 (sağ sütun)-8 | 1-63 (64-96 yazılı, atlandı) | SQL + şəkillər hazır (22 qapalı, 31 ədədi, 10 uyğunlaşdırma), sahib yükləyir; sual sayı 63 (Q64-96 yazılı) |
 
-## Bölmə 4 üçün hazır məlumat (açar pdf 211 aşağı hissə, oxunub)
-- Başlıq pdf 5 sağ sütunun yuxarısındadır ("Natural ədədlərin sadə vuruqlara ayrılışı. Ən böyük ortaq bölən (ƏBOB). Ən kiçik ortaq bölünən (ƏKOB)"), Q1 başlıqdan dərhal sonra. Skan etməzdən əvvəl `scan_tool.py grid` ilə Q1-in y-sini ölç, `--skip-above 5:1:Y` ver.
-- Bölmə harada bitir (nömrə 96, "Ətraflı yazılı" başlıqları araya girir) HƏLƏ yoxlanmayıb: `scan_tool.py strip` ilə pdf 8-11-ə bax. "Ətraflı yazılı cavab" tapşırıqları (pdf 7-8-də sağ sütunda, pdf 10-da) kəsilmir, ardıcıl nömrələr onlardan keçir (nömrələr davam edir, yoxsa yenidən başlayır: yoxla).
-- Açar 1-30 (1-22 qapalı, 23-30 ədədi): 1 A, 2 D, 3 C, 4 A, 5 C, 6 A, 7 A, 8 E, 9 A, 10 C, 11 E, 12 B, 13 B, 14 D, 15 C, 16 A, 17 B, 18 E, 19 B, 20 A, 21 A, 22 E, 23 40, 24 65, 25 35, 26 21, 27 20, 28 30, 29 8, 30 42.
-- 31-53 ədədi: 31 `25`, 32 `9`, 33 `3`, 34 `3`, 35 `20`, 36 `42`, 37 `480`, 38 `3`, 39 `12`, 40 `2`, 41 `0`, 42 `56`, 43 `3`, 44 `3`, 45 `972`, 46 `486`, 47 `18`, 48 `24`, 49 `59`, 50 `39`, 51 `72`, 52 `140`, 53 `5`.
-- 54-63 uyğunlaşdırma (fırlanmış yazı, hissələri kəsik görünür: açar şəklini yenidən böyüdüb oxu): 54 `...; c, e; b`, 55 `...; c, e; a`, 56 `...; c; a; d, e`, 57 `...; c; a; d, e`, 58 `d; c; b`, 59 `d; a, b; e`, 60 `c, d; a; b`, 61 `b; a, c; d`, 62 `b; a; d, e`, 63 `a, c; e; d`. Başlanğıcları (sətir 1) oxu və yoxla.
-- 64-70 ədədi: 64 `300`, 65 `315`, 66 `520`, 67 `495`, 68 `700`, 69 `560`, 70 `24`.
-- 71 `18`, 72 `2,8 metr` (ATLA), 73 `2,7 metr` (ATLA), 74 `18`, 75 `23`, 76 `14`, 77 `17`, 78 `48`, 79 `24`, 80 `51`, 81 `24`, 82 `27`, 83 `4`, 84 uyğunlaşdırma (`a, d...`: oxu), 85 uyğunlaşdırma (`b, d...`: oxu), 86 `10`.
-- ATLANAN (sözlü/ölçü vahidli/iki cavablı): 72, 73, 87 `6 m, 32`, 88 `8 m, 26`, 89 `12 man, Anar 9, Rəşad 7`, 90 `16 man, Anar 7, Rəşad 5`, 91 `6 m`, 92 `18 m`, 93 `8 sm, 20`, 94 `4 sm, 30`. 95 `81`, 96 `91` ədədidir.
-- Açar sahibə görə şübhəli yerlər: uyğunlaşdırma açarları fırlanmış kiçik yazıdır, şəkli görmədən yazma.
+## Bölmə 4 (2026-11-17)
+- pdf 5 sağ sütun (Q1, y~178)-pdf 8 sağ sütun (Q63, y~450). Q64-96 "Ətraflı yazılı cavab" bölməsidir (pdf 8 sağ sütun, 9, 10): ATLANDI (açarda cavabları var, amma yazılı tapşırıqdır). Yazılı bölmə hər alt mövzunun sonundadır.
+- 63 sual: 1-22 qapalı, 23-53 ədədi, 54-63 uyğunlaşdırma (3 sətir). Açar: sahib şəkli verdi (`scan/riyaziyyat_I_bolme4_cavablar.json`).
+- Əmr: `--first 5 --last 8 --start 1 --stop 63 --skip-above 5:0:9999 --skip-above 5:1:165`. OCR yalnız Q7-ni tapmadı (əl ilə: `[5,1,695]`). Q6 kəsrin payı nömrədən yuxarıdadır: Q6 `[5,1,612]`. Q63 `--end 460`.
+- Qayda: kəsr/formula ilə başlayan sualda nömrə kəsrin ORTASINDADIR, əl ilə kəsəndə üst sərhədi kəsrin payından yuxarı ver.
+- Yükləmə: `out/import_rt1_s04.sql` + `out/upload_kitab/` (63 `.webp`).
 
 ## Komandalar (`tools/dim/riyaziyyat` qovluğundan)
 ```
