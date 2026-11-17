@@ -5,10 +5,11 @@ Son yenilənmə: 2026-11-17
 
 ## Qısa vəziyyət
 - **Mənbə:** DİM "Riyaziyyat test toplusu I hissə" (2025), skan. Fayl: `tools/dim/riyaziyyat/riyaziyyat_I_2025.pdf` (235 səhifə).
-- **Yüklənib (test Supabase):** Fəsil 1 "Natural ədədlər" (bölmə 1-4, 142 sual) və fəsil 2 "Adi və onluq kəsrlər" (bölmə 5-8, 114 sual), fəsil 3 "Faiz. Nisbət. Tənasüb" (bölmə 9-12, 153 sual) = **409 sual**. Şəkillər `out/images_kitab/`-dadır, `out/upload_kitab/` boşdur.
+- **Yüklənib (test Supabase):** Fəsil 1 "Natural ədədlər" (bölmə 1-4, 142 sual) və fəsil 2 "Adi və onluq kəsrlər" (bölmə 5-8, 114 sual), fəsil 3 "Faiz. Nisbət. Tənasüb" (bölmə 9-12, 153 sual) və fəsil 4 "Həqiqi ədədlər" (bölmə 13-17, 74 sual) = **483 sual**. Şəkillər `out/images_kitab/`-dadır, `out/upload_kitab/` boşdur.
 - **Fəsil 2 "Adi və onluq kəsrlər" YÜKLƏNDİ** (bölmə 5-8, 114 sual).
 - **Fəsil 3 "Faiz. Nisbət. Tənasüb" YÜKLƏNDİ** (bölmə 9-12, 153 sual).
-- **Fəsil 4 "Həqiqi ədədlər" kəsilib (bölmə 13-17, 74 sual)**, `import_rt1_s13..s17.sql` + `out/upload_kitab/` (74 `.webp`) hazırdır; sahib yükləyib "done" deyəndən sonra `scan_tool.py --subject riyaziyyat --prefix RT done 13 14 15 16 17` və cədvəl yenilənir. **NÖVBƏTİ: fəsil 5 "Tam cəbri ifadələr"** (pdf 34 sağ səhifədən, çap 36; açar pdf 214 aşağı + 215; bölmə nömrəsi 18-dən).
+- **Fəsil 4 "Həqiqi ədədlər" YÜKLƏNDİ** (bölmə 13-17, 74 sual).
+- **Fəsil 5 "Tam cəbri ifadələr" kəsilib (bölmə 18-22, 82 sual)**, `import_rt1_s18..s22.sql` + `out/upload_kitab/` (82 `.webp`) hazırdır; sahib yükləyib "done" deyəndən sonra `scan_tool.py --subject riyaziyyat --prefix RT done 18 19 20 21 22` və cədvəl yenilənir. **NÖVBƏTİ: fəsil 6 "Çoxhədlinin vuruqlara ayrılması"** (pdf 39 sağ səhifədən, çap 41; açar pdf 215 ortası; bölmə nömrəsi 23-dən).
 - Riyaziyyat fənni aktivdir (`subjects.is_active = true`). Əvvəlki 2 nümunə sual (RIY-0001, RIY-0003) silinib.
 
 ## Səhifə qaydası
@@ -38,11 +39,16 @@ Son yenilənmə: 2026-11-17
 | 10 | Faiz. Nisbət. Tənasüb / Faiz. Ədədin faizinin tapılması | 20 | 1-20 | **YÜKLƏNDİ**: 8 qapalı, 12 ədədi |
 | 11 | Faiz. Nisbət. Tənasüb / Faizinə görə ədədin tapılması. İki ədədin faiz nisbəti | 20-22 | 1-40 (41-45 yazılı, atlandı) | **YÜKLƏNDİ**: 25 qapalı, 14 ədədi, 1 uyğunlaşdırma |
 | 12 | Faiz. Nisbət. Tənasüb / Faizə aid məsələlər | 23-26 | 1-63 (64-84 yazılı, atlandı) | **YÜKLƏNDİ**: 16 qapalı, 42 ədədi, 5 uyğunlaşdırma |
-| 13 | Həqiqi ədədlər / Rasional ədədlər. Rasional ədədlər üzərində əməllər | 29 | 1-7 (8-9 yazılı) | SQL hazır: 7 qapalı |
-| 14 | Həqiqi ədədlər / İrrasional ədədlər | 29-30 | 1-12 | SQL hazır: 11 qapalı, 1 ədədi |
-| 15 | Həqiqi ədədlər / Ədədin modulu. Modul daxil olan ifadələrin çevrilməsi | 30 | 1-9 (10-11 yazılı) | SQL hazır: 6 qapalı, 3 ədədi |
-| 16 | Həqiqi ədədlər / Ədədi orta. Həqiqi ədədlərin müqayisəsi | 31-32 | 1-30 (Q11 sütunlar arası, birləşdirilib) | SQL hazır: 23 qapalı, 5 ədədi, 2 uyğunlaşdırma |
-| 17 | Həqiqi ədədlər / Ədədin tam və kəsr hissəsi. Ədədin standart şəkli | 33 | 1-16 | SQL hazır: 11 qapalı, 3 ədədi, 2 uyğunlaşdırma |
+| 13 | Həqiqi ədədlər / Rasional ədədlər. Rasional ədədlər üzərində əməllər | 29 | 1-7 (8-9 yazılı) | **YÜKLƏNDİ**: 7 qapalı |
+| 14 | Həqiqi ədədlər / İrrasional ədədlər | 29-30 | 1-12 | **YÜKLƏNDİ**: 11 qapalı, 1 ədədi |
+| 15 | Həqiqi ədədlər / Ədədin modulu. Modul daxil olan ifadələrin çevrilməsi | 30 | 1-9 (10-11 yazılı) | **YÜKLƏNDİ**: 6 qapalı, 3 ədədi |
+| 16 | Həqiqi ədədlər / Ədədi orta. Həqiqi ədədlərin müqayisəsi | 31-32 | 1-30 (Q11 sütunlar arası, birləşdirilib) | **YÜKLƏNDİ**: 23 qapalı, 5 ədədi, 2 uyğunlaşdırma |
+| 17 | Həqiqi ədədlər / Ədədin tam və kəsr hissəsi. Ədədin standart şəkli | 33 | 1-16 | **YÜKLƏNDİ**: 11 qapalı, 3 ədədi, 2 uyğunlaşdırma |
+| 18 | Tam cəbri ifadələr / Birhədli və onun standart şəkli. Natural üstlü qüvvət | 34 | 1-14 | SQL hazır: 9 qapalı, 3 ədədi, 2 uyğunlaşdırma |
+| 19 | Tam cəbri ifadələr / Çoxhədlilər və onlar üzərində əməllər | 34-36 | 1-32 (33-36 yazılı) | SQL hazır: 16 qapalı, 16 ədədi |
+| 20 | Tam cəbri ifadələr / Müxtəsər vurma düsturları | 36-37 | 1-10 (Q2 sütunlar arası, birləşdirilib) | SQL hazır: 10 qapalı |
+| 21 | Tam cəbri ifadələr / İfadələrin ədədi qiymətlərinin hesablanması | 37 | 1-12 (13-14 yazılı) | SQL hazır: 10 qapalı, 2 ədədi |
+| 22 | Tam cəbri ifadələr / İfadələrin ən kiçik və ən böyük qiymətlərinin tapılması | 38 | 1-14 | SQL hazır: 4 qapalı, 7 ədədi, 3 uyğunlaşdırma |
 
 ## Bölmə 4 (2026-11-17)
 - pdf 5 sağ sütun (Q1, y~178)-pdf 8 sağ sütun (Q63, y~450). Q64-96 "Ətraflı yazılı cavab" bölməsidir (pdf 8 sağ sütun, 9, 10): ATLANDI (açarda cavabları var, amma yazılı tapşırıqdır). Yazılı bölmə hər alt mövzunun sonundadır.

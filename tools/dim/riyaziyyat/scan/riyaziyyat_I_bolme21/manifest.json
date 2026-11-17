@@ -1,0 +1,170 @@
+[
+ {
+  "number": 1,
+  "file": "q001.png",
+  "draft_text": "gap_fill",
+  "page": 37,
+  "column": 0,
+  "gutter": 387,
+  "box": [
+   0,
+   468,
+   401,
+   545
+  ]
+ },
+ {
+  "number": 2,
+  "file": "q002.png",
+  "draft_text": "gap_fill",
+  "page": 37,
+  "column": 0,
+  "gutter": 387,
+  "box": [
+   0,
+   557,
+   401,
+   635
+  ]
+ },
+ {
+  "number": 3,
+  "file": "q003.png",
+  "draft_text": "gap_fill",
+  "page": 37,
+  "column": 0,
+  "gutter": 387,
+  "box": [
+   0,
+   647,
+   401,
+   711
+  ]
+ },
+ {
+  "number": 4,
+  "file": "q004.png",
+  "draft_text": "gap_fill",
+  "page": 37,
+  "column": 0,
+  "gutter": 387,
+  "box": [
+   0,
+   723,
+   401,
+   787
+  ]
+ },
+ {
+  "number": 5,
+  "file": "q005.png",
+  "draft_text": "gap_fill",
+  "page": 37,
+  "column": 0,
+  "gutter": 387,
+  "box": [
+   0,
+   799,
+   401,
+   842
+  ]
+ },
+ {
+  "number": 6,
+  "file": "q006.png",
+  "draft_text": "gap_fill",
+  "page": 37,
+  "column": 0,
+  "gutter": 387,
+  "box": [
+   0,
+   854,
+   401,
+   900
+  ]
+ },
+ {
+  "number": 7,
+  "file": "q007.png",
+  "draft_text": "gap_fill",
+  "page": 37,
+  "column": 0,
+  "gutter": 387,
+  "box": [
+   0,
+   912,
+   401,
+   992
+  ]
+ },
+ {
+  "number": 8,
+  "file": "q008.png",
+  "draft_text": "gap_fill",
+  "page": 37,
+  "column": 0,
+  "gutter": 387,
+  "box": [
+   0,
+   1004,
+   401,
+   1128
+  ]
+ },
+ {
+  "number": 9,
+  "file": "q009.png",
+  "draft_text": "gap_fill",
+  "page": 37,
+  "column": 1,
+  "gutter": 387,
+  "box": [
+   378,
+   65,
+   800,
+   140
+  ]
+ },
+ {
+  "number": 10,
+  "file": "q010.png",
+  "draft_text": "gap_fill",
+  "page": 37,
+  "column": 1,
+  "gutter": 387,
+  "box": [
+   378,
+   152,
+   800,
+   262
+  ]
+ },
+ {
+  "number": 11,
+  "file": "q011.png",
+  "draft_text": "gap_fill",
+  "page": 37,
+  "column": 1,
+  "gutter": 387,
+  "box": [
+   378,
+   274,
+   800,
+   353
+  ]
+ },
+ {
+  "number": 12,
+  "file": "q012.png",
+  "draft_text": "gap_fill",
+  "page": 37,
+  "column": 1,
+  "gutter": 387,
+  "box": [
+   378,
+   365,
+   800,
+   453
+  ]
+ }
+]
