@@ -1,0 +1,464 @@
+[
+ {
+  "number": 1,
+  "page": 11,
+  "column": 0,
+  "box": [
+   0,
+   185,
+   405,
+   264
+  ],
+  "file": "q001.png",
+  "gutter": 391,
+  "draft_text": "20 ifadosinin qiymatini tapin. 1. 0,15 0,26 E)3,5 D)-1,5 C)4,5 A)2,5 B)-0,5 ifadosinin qiymotini hesablayin. 2 3 12 C)8,5 D)7,5 E)-8,5 A)-6,5 B)-7,5"
+ },
+ {
+  "number": 2,
+  "file": "q002.png",
+  "draft_text": "gap_fill",
+  "page": 11,
+  "column": 0,
+  "gutter": 391,
+  "box": [
+   0,
+   276,
+   405,
+   336
+  ]
+ },
+ {
+  "number": 3,
+  "page": 11,
+  "column": 0,
+  "box": [
+   0,
+   348,
+   405,
+   404
+  ],
+  "file": "q003.png",
+  "gutter": 391,
+  "draft_text": "3.35,4·(62,4-49,9)-12,5.15,4 ifadasinin qiymatini hesablayin. E)250 C)200 D) 25 B)350 A)35"
+ },
+ {
+  "number": 4,
+  "page": 11,
+  "column": 0,
+  "box": [
+   0,
+   416,
+   405,
+   494
+  ],
+  "file": "q004.png",
+  "gutter": 391,
+  "draft_text": "4.14,7:0,49-12,48:(1,23+1,17) ifadasinin qiymtini hesablayin. C) 22,8 B) -24,8 A)-22,08 E) 24,8 D)-22,8"
+ },
+ {
+  "number": 5,
+  "page": 11,
+  "column": 0,
+  "box": [
+   0,
+   506,
+   405,
+   625
+  ],
+  "file": "q005.png",
+  "gutter": 391,
+  "draft_text": "5,75-43  3 5,75-4 4 .12 ifadasinin qiymotini hesablayn. 5. 3 16 8 2 3-4 11 C) D) 1,75 E) B)2 A)1 4 5,2:4+3:30"
+ },
+ {
+  "number": 6,
+  "page": 11,
+  "column": 0,
+  "box": [
+   0,
+   637,
+   405,
+   720
+  ],
+  "file": "q006.png",
+  "gutter": 391,
+  "draft_text": "ifadasininqiymatini hesablayin 6. 1 2 E) 1,4 D)2 C)2,1 B)2,8 A) 1,7 8 7 ifadasinin qiymatini hesablayin. 9 15 C)2 C) E)2 B)3 A) 9 9 9"
+ },
+ {
+  "number": 7,
+  "file": "q007.png",
+  "draft_text": "gap_fill",
+  "page": 11,
+  "column": 0,
+  "gutter": 391,
+  "box": [
+   0,
+   732,
+   405,
+   820
+  ]
+ },
+ {
+  "number": 8,
+  "page": 11,
+  "column": 0,
+  "box": [
+   0,
+   832,
+   405,
+   890
+  ],
+  "file": "q008.png",
+  "gutter": 391,
+  "draft_text": "ifadasinin qiymstini hesablayin. 8.14= 85 8 C)10,5D)12E)10 D)12 E)10 A) 10,25 B)12,5 135 97"
+ },
+ {
+  "number": 9,
+  "page": 11,
+  "column": 0,
+  "box": [
+   0,
+   902,
+   405,
+   987
+  ],
+  "file": "q009.png",
+  "gutter": 391,
+  "draft_text": "ifadasinin qiymotini hesablayin. 9. 357 99 3 97 97 1 1 1 B) C) E) A) D) 99 693 3 33 99 (-)(-)(-)(-3)-(-) 0. ifadasini qiymstini hesablayin. 2-3 5 3 1 4 E) A) B) D) (# 16 15 16 15 Scannedwith CamScanr"
+ },
+ {
+  "number": 10,
+  "file": "q010.png",
+  "draft_text": "gap_fill",
+  "page": 11,
+  "column": 0,
+  "gutter": 391,
+  "box": [
+   0,
+   999,
+   405,
+   1180
+  ]
+ },
+ {
+  "number": 11,
+  "file": "q011.png",
+  "draft_text": "gap_fill",
+  "page": 11,
+  "column": 1,
+  "gutter": 391,
+  "box": [
+   382,
+   58,
+   797,
+   162
+  ]
+ },
+ {
+  "number": 12,
+  "page": 11,
+  "column": 1,
+  "box": [
+   382,
+   174,
+   797,
+   295
+  ],
+  "file": "q012.png",
+  "gutter": 391,
+  "draft_text": "4 ifadasinin qiymatini tapin. 12. 1 1+ 3 2 21 1 5 1 1 B) D) E) A) C) 24 10 20 5"
+ },
+ {
+  "number": 13,
+  "page": 11,
+  "column": 1,
+  "box": [
+   382,
+   307,
+   797,
+   366
+  ],
+  "file": "q013.png",
+  "gutter": 391,
+  "draft_text": "13. -3,6:0,6+2,4·0,5 ifadsinin qiymtini hesablayin. D)-4,8E)-4,28 C)4,8 A)4,38 B)4,2 2 5 0,5.8 7"
+ },
+ {
+  "number": 14,
+  "page": 11,
+  "column": 1,
+  "box": [
+   382,
+   378,
+   797,
+   458
+  ],
+  "file": "q014.png",
+  "gutter": 391,
+  "draft_text": "7 5 2 ifadosinin qiymstini hesablayn. 14. 6,4+0,9:1,5 C) 0,25 D) 0,5 B) 2 E)5 A) 1,5 20 1"
+ },
+ {
+  "number": 15,
+  "page": 11,
+  "column": 1,
+  "box": [
+   382,
+   470,
+   797,
+   551
+  ],
+  "file": "q015.png",
+  "gutter": 391,
+  "draft_text": "ifadasinin qiymatini hesablayin. 15. 21 2 3 4 20 1 5 1 1 B) C) D) E) A) 一2 21 21 21 4"
+ },
+ {
+  "number": 16,
+  "page": 11,
+  "column": 1,
+  "box": [
+   382,
+   563,
+   797,
+   644
+  ],
+  "file": "q016.png",
+  "gutter": 391,
+  "draft_text": "16.Asagidaki kasrlordon necasi barabardir? 1495186 3'9′27′9′27'18 C) 4 D) 6 E) 3 B)2 A) 5"
+ },
+ {
+  "number": 17,
+  "page": 11,
+  "column": 1,
+  "box": [
+   382,
+   656,
+   797,
+   762
+  ],
+  "file": "q017.png",
+  "gutter": 391,
+  "draft_text": "8.12,5-0,6.12- ifadasinin 8.0,08+0,6 0.6-12- 17. 2 25 qiymstini hesablayin. C) 6,364 A) 6,464 B) 64,63 D)64,64 E) 63,64 10 12 6 1 1 4"
+ },
+ {
+  "number": 18,
+  "page": 11,
+  "column": 1,
+  "box": [
+   382,
+   774,
+   797,
+   857
+  ],
+  "file": "q018.png",
+  "gutter": 391,
+  "draft_text": "ifadosi 18. olarsa, 5 11 7 13 5 13 7 11 ipieqereq e.eu C)4aD)8+aE)4+a A) 4-a B)8a 0,2 1,2 3"
+ },
+ {
+  "number": 19,
+  "page": 11,
+  "column": 1,
+  "box": [
+   382,
+   869,
+   797,
+   934
+  ],
+  "file": "q019.png",
+  "gutter": 391,
+  "draft_text": "ifadssinin qiymatini hesablayin. 19. 0,04 0,012 0,1 E)-75 s9-(0 A)34 B)25 D)-20 5,1 0,03"
+ },
+ {
+  "number": 20,
+  "page": 11,
+  "column": 1,
+  "box": [
+   382,
+   946,
+   797,
+   1029
+  ],
+  "file": "q020.png",
+  "gutter": 391,
+  "draft_text": "ifadosinin qiymotini 20. + 0,017 0,1 0,003 hesablayin. B)610 C)801 D)320 E)330 A)331 in 5"
+ },
+ {
+  "number": 21,
+  "page": 11,
+  "column": 1,
+  "box": [
+   382,
+   1041,
+   797,
+   1180
+  ],
+  "file": "q021.png",
+  "gutter": 391,
+  "draft_text": "5 21. 0,(5)·0,3+= ifadasininqiymstini tapin. 6 59 31 19 B) 1(5 D) E)-1 A) 60 60 60"
+ },
+ {
+  "number": 22,
+  "page": 12,
+  "column": 0,
+  "box": [
+   0,
+   62,
+   420,
+   139
+  ],
+  "file": "q022.png",
+  "gutter": 406,
+  "draft_text": "1 22. 3,3.1,(6)- ifadosinin qiymatini tapin. 2 239 77 D) C)3 E) 5 A)4 B) 20 50"
+ },
+ {
+  "number": 23,
+  "page": 12,
+  "column": 0,
+  "box": [
+   0,
+   151,
+   420,
+   215
+  ],
+  "file": "q023.png",
+  "gutter": 406,
+  "draft_text": "23.(0,77.6-1,54·0,5):3,08-0,25ifadasinin qiymatini hesablayin. D) 1,5 C)1 E) 0,5 B)2,5 A)2"
+ },
+ {
+  "number": 24,
+  "page": 12,
+  "column": 0,
+  "box": [
+   0,
+   227,
+   420,
+   335
+  ],
+  "file": "q024.png",
+  "gutter": 406,
+  "draft_text": "8 24. (0,683 -0,68·0,322 ifadosinin qiymotini 17 hesablayin. 225 A) 0,36 B)0,68 C)0,64 D) 0,6 E) 289 2"
+ },
+ {
+  "number": 25,
+  "page": 12,
+  "column": 0,
+  "box": [
+   0,
+   347,
+   420,
+   441
+  ],
+  "file": "q025.png",
+  "gutter": 406,
+  "draft_text": "2 24ifadasinin -82,62:2,7 25. 2 3 qiymatini hesablayin. C)2 B)1 D)4 E) 5 A)3 1 1 1 1 1"
+ },
+ {
+  "number": 26,
+  "page": 12,
+  "column": 0,
+  "box": [
+   0,
+   453,
+   420,
+   560
+  ],
+  "file": "q026.png",
+  "gutter": 406,
+  "draft_text": "ifadasinin qiymatini 26. 9.11 1.3 5.7 7.9 3.5 hesablayin. 10 5 16 B) C)1 A) D) E) 1 11 11 11 11 1 1 1 1 1 ifadasinin 27 19.23 3.77.1111.15 15.19 7.11 qiymatini hesablayin. 26 20 23 5 5 ( E) A) B) D) 19 69 69 69 69 1 1 1"
+ },
+ {
+  "number": 27,
+  "file": "q027.png",
+  "draft_text": "gap_fill",
+  "page": 12,
+  "column": 0,
+  "gutter": 406,
+  "box": [
+   0,
+   572,
+   420,
+   682
+  ]
+ },
+ {
+  "number": 28,
+  "page": 12,
+  "column": 0,
+  "box": [
+   0,
+   694,
+   420,
+   835
+  ],
+  "file": "q028.png",
+  "gutter": 406,
+  "draft_text": "1 28. comini hesablayin +...+ + (4n -3)(4n +1) 1.5 5.9 4n 2n n B) A) C) 4n+1 4n+1 4n+1 n+1 2n+1 D) E) 4n+1 4n+1 1 1 1"
+ },
+ {
+  "number": 29,
+  "page": 12,
+  "column": 0,
+  "box": [
+   0,
+   847,
+   420,
+   994
+  ],
+  "file": "q029.png",
+  "gutter": 406,
+  "draft_text": "29. comini hesablayin +...+ 2n(2n + 2) 2.4 4.6 3n n n B) C) A) 3(n+1) 4(n +1) 4(n +1) 3n n D) E) 2(n +1) 2(n+1) 0(()-(-) ifadosinin qiymatini tapin. Scannedwith CamScanne CS"
+ },
+ {
+  "number": 30,
+  "file": "q030.png",
+  "draft_text": "gap_fill",
+  "page": 12,
+  "column": 0,
+  "gutter": 406,
+  "box": [
+   0,
+   1006,
+   420,
+   1180
+  ]
+ },
+ {
+  "number": 31,
+  "page": 12,
+  "column": 1,
+  "box": [
+   397,
+   56,
+   800,
+   126
+  ],
+  "file": "q031.png",
+  "gutter": 406,
+  "draft_text": "31. n-in neca tam qiymatinda ifadosi n tam qiymstlor alar? 2（+++（)"
+ },
+ {
+  "number": 32,
+  "page": 12,
+  "column": 1,
+  "box": [
+   397,
+   138,
+   800,
+   217
+  ],
+  "file": "q032.png",
+  "gutter": 406,
+  "draft_text": "32. ifadosinin qiymstini tapin. 12 +2²+3²+...+16²-16"
+ },
+ {
+  "number": 33,
+  "page": 12,
+  "column": 1,
+  "box": [
+   397,
+   229,
+   800,
+   430
+  ],
+  "file": "q033.png",
+  "gutter": 406,
+  "draft_text": "33.a= 1.3+2.4+3.5+...+15.17 (-)(-)(-)(- olarsa, ac -ni (+(+(+() tapin. Dizgin va dizgin olmayan kasrlar. Sonsuz doori onlug kasrlor.Adi kasrin onluq kasra ceorilmasi. 11 Onlugkasrinadikasraceorilmasi 1.0,666... sonsuz dovru onluq kosrini adi kasr cevirin 1 31 2 21 7 D) E) B) C) A) 3 4 3 9 9 5 2. m-in hansi natural qiymatlarinda m olmayan kasr olar? A)5;6;7;8;9 B)1;2,3;4;5 C)3;4;5;6 D)6;7;8; 9 E)4;5;6;7;8 4 n. kasri duzgun 3.m-in hansi natural qiymatlarinda m olmayankasr olar? C)1;2;3;4 A)2;3;4;5 B)4;5;6 D) 5; 6; 7 E)3;4;5;6 7a+6 kasri duzgun 4. a-nin hansi natural qiymstinda 20 kasr olar? E)2 C)5 D)3 B)4 A)1 b ifadosinin duzgun 5.bnkiciksaddaddirs, 5-a kosr olmasi ucun a tam adadi hansi sorti odomolidir? A)a<4 B)a>3 C)a<3 E) a>0 D) a>4 7 3 9 kosrlorindon hansi sonlu 6. 16' 50' 64′ 40' 36  64′40 36 onluqkasrsoklindogostorilabilmaz? 3 5 7 9 7 B) A) C) D) E) 16 36 64 40 50 en -14-"
+ }
+]

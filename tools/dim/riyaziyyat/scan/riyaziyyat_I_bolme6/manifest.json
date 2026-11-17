@@ -1,0 +1,478 @@
+[
+ {
+  "number": 1,
+  "page": 12,
+  "column": 1,
+  "box": [
+   397,
+   522,
+   800,
+   588
+  ],
+  "file": "q001.png",
+  "gutter": 406,
+  "draft_text": "1.0,666... sonsuz dovru onluq kosrini adi kasr cevirin 1 31 2 21 7 D) E) B) C) A) 3 4 3 9 9 5"
+ },
+ {
+  "number": 2,
+  "page": 12,
+  "column": 1,
+  "box": [
+   397,
+   600,
+   800,
+   697
+  ],
+  "file": "q002.png",
+  "gutter": 406,
+  "draft_text": "5 2. m-in hansi natural qiymatlarinda m olmayan kasr olar? A)5;6;7;8;9 B)1;2,3;4;5 C)3;4;5;6 D)6;7;8; 9 E)4;5;6;7;8 4"
+ },
+ {
+  "number": 3,
+  "page": 12,
+  "column": 1,
+  "box": [
+   397,
+   709,
+   800,
+   807
+  ],
+  "file": "q003.png",
+  "gutter": 406,
+  "draft_text": "n. kasri duzgun 3.m-in hansi natural qiymatlarinda m olmayankasr olar? C)1;2;3;4 A)2;3;4;5 B)4;5;6 D) 5; 6; 7 E)3;4;5;6 7a+6"
+ },
+ {
+  "number": 4,
+  "page": 12,
+  "column": 1,
+  "box": [
+   397,
+   819,
+   800,
+   899
+  ],
+  "file": "q004.png",
+  "gutter": 406,
+  "draft_text": "7a+6 kasri duzgun 4. a-nin hansi natural qiymstinda 20 kasr olar? E)2 C)5 D)3 B)4 A)1 b"
+ },
+ {
+  "number": 5,
+  "page": 12,
+  "column": 1,
+  "box": [
+   397,
+   911,
+   800,
+   1012
+  ],
+  "file": "q005.png",
+  "gutter": 406,
+  "draft_text": "b ifadosinin duzgun 5.bnkiciksaddaddirs, 5-a kosr olmasi ucun a tam adadi hansi sorti odomolidir? A)a<4 B)a>3 C)a<3 E) a>0 D) a>4 7 3 9"
+ },
+ {
+  "number": 6,
+  "page": 12,
+  "column": 1,
+  "box": [
+   397,
+   1024,
+   800,
+   1123
+  ],
+  "file": "q006.png",
+  "gutter": 406,
+  "draft_text": "kosrlorindon hansi sonlu"
+ },
+ {
+  "number": 7,
+  "file": "q007.png",
+  "draft_text": "gap_fill",
+  "page": 13,
+  "column": 0,
+  "gutter": 389,
+  "box": [
+   0,
+   61,
+   403,
+   137
+  ]
+ },
+ {
+  "number": 8,
+  "file": "q008.png",
+  "draft_text": "gap_fill",
+  "page": 13,
+  "column": 0,
+  "gutter": 389,
+  "box": [
+   0,
+   149,
+   403,
+   257
+  ]
+ },
+ {
+  "number": 9,
+  "file": "q009.png",
+  "draft_text": "gap_fill",
+  "page": 13,
+  "column": 0,
+  "gutter": 389,
+  "box": [
+   0,
+   269,
+   403,
+   350
+  ]
+ },
+ {
+  "number": 10,
+  "file": "q010.png",
+  "draft_text": "gap_fill",
+  "page": 13,
+  "column": 0,
+  "gutter": 389,
+  "box": [
+   0,
+   362,
+   403,
+   467
+  ]
+ },
+ {
+  "number": 11,
+  "file": "q011.png",
+  "draft_text": "gap_fill",
+  "page": 13,
+  "column": 0,
+  "gutter": 389,
+  "box": [
+   0,
+   479,
+   403,
+   579
+  ]
+ },
+ {
+  "number": 12,
+  "file": "q012.png",
+  "draft_text": "gap_fill",
+  "page": 13,
+  "column": 0,
+  "gutter": 389,
+  "box": [
+   0,
+   591,
+   403,
+   654
+  ]
+ },
+ {
+  "number": 13,
+  "file": "q013.png",
+  "draft_text": "gap_fill",
+  "page": 13,
+  "column": 0,
+  "gutter": 389,
+  "box": [
+   0,
+   666,
+   403,
+   752
+  ]
+ },
+ {
+  "number": 14,
+  "file": "q014.png",
+  "draft_text": "gap_fill",
+  "page": 13,
+  "column": 0,
+  "gutter": 389,
+  "box": [
+   0,
+   764,
+   403,
+   851
+  ]
+ },
+ {
+  "number": 15,
+  "file": "q015.png",
+  "draft_text": "gap_fill",
+  "page": 13,
+  "column": 0,
+  "gutter": 389,
+  "box": [
+   0,
+   863,
+   403,
+   964
+  ]
+ },
+ {
+  "number": 16,
+  "file": "q016.png",
+  "draft_text": "gap_fill",
+  "page": 13,
+  "column": 0,
+  "gutter": 389,
+  "box": [
+   0,
+   976,
+   403,
+   1128
+  ]
+ },
+ {
+  "number": 17,
+  "page": 13,
+  "column": 1,
+  "box": [
+   380,
+   59,
+   786,
+   210
+  ],
+  "file": "q017.png",
+  "gutter": 389,
+  "draft_text": "17.Hansibarabarlik dogrudur? la 7 8 =0,(7) A) B) =0,54(3) 15 9 8 9 C) D) =0,8(28) =0,(723) 11 11 31 E) =0,(6) 5 m +5m+6"
+ },
+ {
+  "number": 18,
+  "page": 13,
+  "column": 1,
+  "box": [
+   380,
+   222,
+   786,
+   311
+  ],
+  "file": "q018.png",
+  "gutter": 389,
+  "draft_text": "18. m-in neco natural qiymatinda kasri m natural adaddir? in. A)3 C)2 D) 1 E)6 B) 4 k²+2k+4"
+ },
+ {
+  "number": 19,
+  "page": 13,
+  "column": 1,
+  "box": [
+   380,
+   323,
+   786,
+   407
+  ],
+  "file": "q019.png",
+  "gutter": 389,
+  "draft_text": "19. k-nin neca natural qiymatinda kasri k natural adoddir? da C)2 D)4 E)5 B)1 A)3"
+ },
+ {
+  "number": 20,
+  "page": 13,
+  "column": 1,
+  "box": [
+   380,
+   419,
+   786,
+   474
+  ],
+  "file": "q020.png",
+  "gutter": 389,
+  "draft_text": "20.Maxraci 16 olan duzgunkasrlardonnecosini sonlu onluqkasr saklindogostarmak olar? E)15 C)14 D)8 B)13 A)1"
+ },
+ {
+  "number": 21,
+  "page": 13,
+  "column": 1,
+  "box": [
+   380,
+   486,
+   786,
+   543
+  ],
+  "file": "q021.png",
+  "gutter": 389,
+  "draft_text": "21.Maxraci32olan duzgunkasrlordon necosini sonlu da onluq kasrsaklindagostormokolar? E)30 C) 16 D) 15 B)31 A)24 2 2 2"
+ },
+ {
+  "number": 22,
+  "page": 13,
+  "column": 1,
+  "box": [
+   380,
+   555,
+   786,
+   642
+  ],
+  "file": "q022.png",
+  "gutter": 389,
+  "draft_text": "ifadasinin 22. 0,(3)-0,(4) * 0.(4)-0,(5) 0,(5)-0,(6) qiymatini hesablayin. D)35 C)54 E) 27 A)20 B)36 3n-9"
+ },
+ {
+  "number": 23,
+  "page": 13,
+  "column": 1,
+  "box": [
+   380,
+   654,
+   786,
+   740
+  ],
+  "file": "q023.png",
+  "gutter": 389,
+  "draft_text": "23. n-in neca natural qiymstinda kasrinin n+1 qiymatinatural adaddir? C)4 D)3 B)2 A)sonsuzsayda E)1 ab"
+ },
+ {
+  "number": 24,
+  "page": 13,
+  "column": 1,
+  "box": [
+   380,
+   752,
+   786,
+   839
+  ],
+  "file": "q024.png",
+  "gutter": 389,
+  "draft_text": "24.b≤4olarsa, soklindo olan neco duzgun kasr ba var? C)5 D) 6 E)2 A)10 B)4"
+ },
+ {
+  "number": 25,
+  "page": 13,
+  "column": 1,
+  "box": [
+   380,
+   851,
+   786,
+   906
+  ],
+  "file": "q025.png",
+  "gutter": 389,
+  "draft_text": "25.Moxraci 115olannecixtisarolunan duzgunkasr var? D)8 E)26 A)10 C)21 B) 28"
+ },
+ {
+  "number": 26,
+  "page": 13,
+  "column": 1,
+  "box": [
+   380,
+   918,
+   786,
+   977
+  ],
+  "file": "q026.png",
+  "gutter": 389,
+  "draft_text": "26.Maxraci 91 olan neca ixtisar olunan duzgun kasr var? A)8 D) 10 E)18 B)20 C)2"
+ },
+ {
+  "number": 27,
+  "page": 13,
+  "column": 1,
+  "box": [
+   380,
+   989,
+   786,
+   1055
+  ],
+  "file": "q027.png",
+  "gutter": 389,
+  "draft_text": "27. x, y qarsilqli sada adadlori ucun  y xy hasilini tapin."
+ },
+ {
+  "number": 28,
+  "page": 13,
+  "column": 1,
+  "box": [
+   380,
+   1067,
+   786,
+   1128
+  ],
+  "file": "q028.png",
+  "gutter": 389,
+  "draft_text": "28.Moxraci 5280 olan duzgunkasrlardonnecasini sonlu onluq kasr soklindsgostarmokolar? ne-"
+ },
+ {
+  "number": 29,
+  "page": 14,
+  "column": 0,
+  "box": [
+   0,
+   53,
+   416,
+   92
+  ],
+  "file": "q029.png",
+  "gutter": 402,
+  "draft_text": "29.Maxraci 3300 olan duzgun kasrlordon necasi sonlu onluqkasrsaklindagostorilabilor? 3n²+5n-12"
+ },
+ {
+  "number": 30,
+  "page": 14,
+  "column": 0,
+  "box": [
+   0,
+   104,
+   416,
+   172
+  ],
+  "file": "q030.png",
+  "gutter": 402,
+  "draft_text": "kosrinin 30.n-in nec tamqiymatinda n qiymati tam adad olar?"
+ },
+ {
+  "number": 31,
+  "page": 14,
+  "column": 0,
+  "box": [
+   0,
+   184,
+   416,
+   249
+  ],
+  "file": "q031.png",
+  "gutter": 402,
+  "draft_text": "31.ava b rqomlori ucun 0,b（a) olarsa,9b+a 9 ifadasininqiymatini tapin. 1 1 1"
+ },
+ {
+  "number": 32,
+  "page": 14,
+  "column": 0,
+  "box": [
+   0,
+   261,
+   416,
+   333
+  ],
+  "file": "q032.png",
+  "gutter": 402,
+  "draft_text": "32. camininqiymati333-3 0,0(a)0,00(a) 0,00（a) 0,(a) barabor olarsa, a rqomini tapin."
+ },
+ {
+  "number": 33,
+  "page": 14,
+  "column": 0,
+  "box": [
+   0,
+   345,
+   416,
+   620
+  ],
+  "file": "q033.png",
+  "gutter": 402,
+  "draft_text": "33.Verilmis kosrlor ucun uy gunlugu muayyan edin 7a3 duzgun kasrdir 1. 772 a78 duzgun kasrdir 2 7a7 a54 3. duzgun olmayankasrdir 754 a.a-nin ankicikqiymati7-dir b.a-larin cami 24-dur c.a-nin nkicik qiymati1-dir d.a-nin ankicikqiymti O-dur e.a-larin say1 7-dir"
+ },
+ {
+  "number": 34,
+  "page": 14,
+  "column": 0,
+  "box": [
+   0,
+   632,
+   416,
+   960
+  ],
+  "file": "q034.png",
+  "gutter": 402,
+  "draft_text": "34. Uy gunlugu muayyan edin. 0,(a)+0,(b) 1. 0,a+0,b 0,a+0,b 2. 0,(aa)+0,(bb) a,(aa)+b,(bb) 3. 0,(a)+0,(b) a.sadalasdirdikd10alinir b.sadalasdirdikda duzgunkasr alinir c.sadalosdirdikda9 alinir d.sadalasdirdikda 0,9 alinir 10 alinir e.sadalasdirdikda 9 Otrafliyazili cavab talab olunan tapsiriqlar 4n-13 35.nnaturaldadinin kasrini duzgun kasra 3n-2 ceviranqiymatlarinincamini tapin. 5n-16 kosrini duzgun kasra 36.n natural dadinin 4n-6 ceviron qiymotlorinin comini tapin. Seanned with-CamSean"
+ }
+]

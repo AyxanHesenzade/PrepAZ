@@ -5,8 +5,9 @@ Son yenilənmə: 2026-11-17
 
 ## Qısa vəziyyət
 - **Mənbə:** DİM "Riyaziyyat test toplusu I hissə" (2025), skan. Fayl: `tools/dim/riyaziyyat/riyaziyyat_I_2025.pdf` (235 səhifə).
-- **Yüklənib (test Supabase):** Fəsil "Natural ədədlər", alt mövzular 1, 2, 3 (**79 sual**, 2026-11-17). Şəkillər `out/images_kitab/`-dadır, `out/upload_kitab/` boşdur.
-- **Bölmə 4** (ƏBOB/ƏKOB, 63 sual) kəsilib, `import_rt1_s04.sql` hazırdır; sahib yükləyib "done" deyəndən sonra `scan_tool.py --subject riyaziyyat --prefix RT done 4` və cədvəl yenilənir. **NÖVBƏTİ: fəsil 2 "Adi və onluq kəsrlər"** (pdf 11-dən, çap 13; açar pdf 212; bölmə nömrəsi 5-dən).
+- **Yüklənib (test Supabase):** Fəsil 1 "Natural ədədlər" (bölmə 1-4, 142 sual) və fəsil 2 "Adi və onluq kəsrlər" (bölmə 5-8, 114 sual) = **256 sual**. Şəkillər `out/images_kitab/`-dadır, `out/upload_kitab/` boşdur.
+- **Fəsil 2 "Adi və onluq kəsrlər" YÜKLƏNDİ** (bölmə 5-8, 114 sual).
+- **Fəsil 3 "Faiz. Nisbət. Tənasüb" kəsilib (bölmə 9-12, 153 sual)**, `import_rt1_s09..s12.sql` + `out/upload_kitab/` (153 `.webp`) hazırdır; sahib yükləyib "done" deyəndən sonra `scan_tool.py --subject riyaziyyat --prefix RT done 9 10 11 12` və cədvəl yenilənir. **NÖVBƏTİ: fəsil 4 "Həqiqi ədədlər"** (pdf 29 sağ səhifədən, çap 31; açar pdf 214; bölmə nömrəsi 13-dən).
 - Riyaziyyat fənni aktivdir (`subjects.is_active = true`). Əvvəlki 2 nümunə sual (RIY-0001, RIY-0003) silinib.
 
 ## Səhifə qaydası
@@ -27,7 +28,15 @@ Son yenilənmə: 2026-11-17
 | 1 | Natural ədədlər / Natural ədədlərin onluq say sistemində yazılışı | 2-3 | 1-30 (31-32 yazılı, atlandı) | **YÜKLƏNDİ**: 9 qapalı, 18 ədədi, 3 uyğunlaşdırma |
 | 2 | Natural ədədlər / Natural ədədlərin toplanması, çıxılması, vurulması və bölünməsi | 3-4 | 1-17 (18-21 yazılı) | **YÜKLƏNDİ**: 10 qapalı, 6 ədədi, 1 uyğunlaşdırma |
 | 3 | Natural ədədlər / Natural ədədlərin bölünmə əlamətləri. Qalıqlı bölmə | 4-5 | 1-32 | **YÜKLƏNDİ**: 15 qapalı, 17 ədədi |
-| 4 | Natural ədədlər / Natural ədədlərin sadə vuruqlara ayrılışı. ƏBOB. ƏKOB | 5 (sağ sütun)-8 | 1-63 (64-96 yazılı, atlandı) | SQL + şəkillər hazır (22 qapalı, 31 ədədi, 10 uyğunlaşdırma), sahib yükləyir; sual sayı 63 (Q64-96 yazılı) |
+| 4 | Natural ədədlər / Natural ədədlərin sadə vuruqlara ayrılışı. ƏBOB. ƏKOB | 5 (sağ sütun)-8 | 1-63 (64-96 yazılı, atlandı) | **YÜKLƏNDİ**: 22 qapalı, 31 ədədi, 10 uyğunlaşdırma (Q64-96 yazılı, atlandı) |
+| 5 | Adi və onluq kəsrlər / Adi və onluq kəsrlərin toplanması, çıxılması, vurulması və bölünməsi | 11-12 | 1-33 | **YÜKLƏNDİ**: 29 qapalı, 4 ədədi |
+| 6 | Adi və onluq kəsrlər / Düzgün və düzgün olmayan kəsrlər. Sonsuz dövrü onluq kəsrlər | 12-14 | 1-34 (35-38 yazılı, atlandı) | **YÜKLƏNDİ**: 26 qapalı, 6 ədədi, 2 uyğunlaşdırma |
+| 7 | Adi və onluq kəsrlər / Kəsrlərin müqayisəsi | 14-15 | 1-14 | **YÜKLƏNDİ**: 10 qapalı, 2 ədədi, 2 uyğunlaşdırma |
+| 8 | Adi və onluq kəsrlər / Ədədin hissəsinin və hissəsinə görə ədədin tapılması | 15-17 | 1-33 (34-35 yazılı, atlandı) | **YÜKLƏNDİ**: 25 qapalı, 8 ədədi |
+| 9 | Faiz. Nisbət. Tənasüb / Nisbət. Tənasüb. Tənasübün xassələri. Düz və tərs mütənasiblik | 18-19 | 1-30 (31-40 yazılı, atlandı) | SQL hazır: 20 qapalı, 10 ədədi |
+| 10 | Faiz. Nisbət. Tənasüb / Faiz. Ədədin faizinin tapılması | 20 | 1-20 | SQL hazır: 8 qapalı, 12 ədədi |
+| 11 | Faiz. Nisbət. Tənasüb / Faizinə görə ədədin tapılması. İki ədədin faiz nisbəti | 20-22 | 1-40 (41-45 yazılı, atlandı) | SQL hazır: 25 qapalı, 14 ədədi, 1 uyğunlaşdırma |
+| 12 | Faiz. Nisbət. Tənasüb / Faizə aid məsələlər | 23-26 | 1-63 (64-84 yazılı, atlandı) | SQL hazır: 16 qapalı, 42 ədədi, 5 uyğunlaşdırma |
 
 ## Bölmə 4 (2026-11-17)
 - pdf 5 sağ sütun (Q1, y~178)-pdf 8 sağ sütun (Q63, y~450). Q64-96 "Ətraflı yazılı cavab" bölməsidir (pdf 8 sağ sütun, 9, 10): ATLANDI (açarda cavabları var, amma yazılı tapşırıqdır). Yazılı bölmə hər alt mövzunun sonundadır.
@@ -54,13 +63,25 @@ python ../kimya/scan_tool.py --subject riyaziyyat --prefix RT done K
 - `scan_tool.py` `--tmp` verilməsə `/tmp/prepaz_scan` yazır (Windows-da scratchpad qovluğu ver).
 - Qaydalar kimyadakı kimidir (`tools/dim/kimya/SUAL_ELAVE_AZ_TOKEN.md`): OCR-ın tapdığı suallara baxma, yalnız əl ilə əlavə olunanlara və ilk/son suala bir dəfə bax, kiçik qüsuru düzəltmə.
 
+## gap_fill.py: kəsmənin ƏSAS aləti (2026-11-17, fəsil 2-dən)
+OCR sual nömrələrinin bir hissəsini tapmır, uydurma nömrə də tapır ("15 km"), kəsrli suallarda üst sərhədi kəsir. Riyaziyyatda OCR (`scan_segment.py`) ARTIQ LAZIM DEYİL (fəsil 3-dən): `scan/riyaziyyat_I_bolmeK/manifest.json` faylına `[]` yaz və yalnız `gap_fill.py` + `--recrop` işlət (dəqiqələr, OCR 4 dəq/2 səhifə idi). Cavab açarını əvvəl oxu, bölmə sərhədlərini səhifə cütlərinə (0.8 miqyas) baxıb tap, sonra:
+```
+python -W ignore ../common/gap_fill.py riyaziyyat_I_2025.pdf scan/riyaziyyat_I_bolmeK --region PAGE:COL:İLK-SON[:TOP[:BOTTOM]] ... [--drop N]
+python -W ignore ../common/scan_segment.py riyaziyyat_I_2025.pdf --first F --last L --out scan/riyaziyyat_I_bolmeK --recrop
+```
+- Hər səhifə sütunu üçün bir `--region`: orada duran sualların nömrə aralığı (məs. `13:0:7-16` = pdf 13 sol sütunda 7-dən 16-ya). Alət sual başlanğıclarını səhifənin MÜREKKƏBİNDƏN tapır (nömrə sol haşiyədədir, qalan sətirlər içəridən başlayır) və hamısını yenidən yazır (OCR-ın tapdıqlarını da: kəsrin payı artıq kəsilmir). Saydığı sayı verdiyin sayla uyğun gəlməsə, tapdıqlarını çap edib dayanır.
+- `TOP` başlıqdan sonra, `BOTTOM` səhifə nömrəsindən ("- 16 -") və ya "Ətraflı yazılı" başlığından əvvəl olmalıdır. Səhifə şəkli ~800x1200-dür (preview şəkilləri 1119 hündürlükdədir: koordinatı `grid`-dən götür, preview-dan yox). Xəta mesajında "found N starts" siyahısı var: artıq başlanğıc səhifənin altlığıdırsa BOTTOM-u azalt, başlıq sətri sayılıbsa TOP-u artır.
+- Alət sütunun tepəsində səhifə başlığının altındakı xətti (`header_rule_y`) özü tapır (TOP ≤ 95 olanda). Səhifənin altlığı ("- 21 -") və "Ətraflı yazılı" başlığından sonrakı sual BOTTOM-dan kənarda qalmalıdır, yoxsa artıq başlanğıc sayılır.
+- `manifest.orig.json` (OCR varsa) OCR-ın ilkin nəticəsidir; alət onu ilk işdə saxlayır. Yenidən başlamaq üçün onu `manifest.json`-un üstünə kopyala.
+- `scan_tool.py ... check N N N` ilə yalnız əvvəl tapılmayanlara və hər bölmənin ilk/son sualına bax.
+
 ## Dərslər (bu kitabda)
 - **`--recrop` hər `y1`-ə yenə 12 px əlavə edir.** Toxunmadığın suallarda manifestdə `y1`-dən 12 çıx, yoxsa sual növbəti sualın ilk sətrini də götürür. `add` ilə qoyulan `--end` bir dəfə +12 alır.
 - Sütunun SONUNCU sualı üçün `y1` boş qalır (0) və recrop xəta verir (`lower < upper`): həmişə `--end` ver.
 - `--end` dəyəri sualın real aşağı sərhədindən bir az AŞAĞI olmalıdır (Q17 üçün 310 sətri kəsdi, 322 işlədi). Əvvəl `grid` ilə real y-ni ölç.
 - OCR sətir daxilindəki rəqəmi ("3. a ədədini 8-ə...") sual nömrəsi sanıb səhv sütunda tapa bilər (bölmə 3: Q8). Nömrə-sütun uyğunsuzluğunu hesabatda yoxla.
 - Sütunun sonundakı sual səhifə nömrəsini və "CamScanner" yazısını da qəbul edir: kiçik qüsur, düzəldilmir.
-- Cavab açarında rəqəm sütunlarını böyüdüb oxu (2x), bütün cədvəli bir şəkildə oxuma: fırlanmış yazı kəsilir.
+- Cavab açarında rəqəm sütunlarını böyüdüb oxu (onluq kəsr açarda vergüllədir: JSON-da NÖQTƏ yaz, `0.1`; idxal bazaya `0,1` yazır) (2x), bütün cədvəli bir şəkildə oxuma: fırlanmış yazı kəsilir.
 
 ## Fəsillər (içindəkilər, çap səhifəsi; pdf = çap - 2)
 Natural ədədlər 4 · Adi və onluq kəsrlər 13 · Faiz. Nisbət. Tənasüb 20 · Həqiqi ədədlər 31 · Tam cəbri ifadələr 36 · Çoxhədlinin vuruqlara ayrılması 41 · Rasional kəsrlər 47 · Kvadrat köklər 55 · Birməxsuslu tənliklər və məsələlər 68 · Tənliklər sistemi 86 · Bərabərsizliklər 97 · Ədədi ardıcıllıqlar 113 · Çoxluqlar 129 · Həndəsəyə aid anlayışlar 135 · Üçbucaqlar 144 · Çoxbucaqlılar 162 · Çevrə və dairə 173 · İsbat məsələləri · Situasiya 197 · 2025 imtahanları (buraxılış, qəbul) 209 · Mövzular üzrə testlərin düzgün cavabları 213.

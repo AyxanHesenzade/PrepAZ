@@ -1,0 +1,170 @@
+[
+ {
+  "number": 1,
+  "page": 14,
+  "column": 1,
+  "box": [
+   407,
+   232,
+   800,
+   350
+  ],
+  "file": "q001.png",
+  "gutter": 404,
+  "draft_text": "4  b =0,(4), c =0,(6) adadlarini muqayisa 1.a= 9 edin. C) a=c<b B)a>b>c A)a=b<c e E) a=b=c D)a=b>c 1"
+ },
+ {
+  "number": 2,
+  "page": 14,
+  "column": 1,
+  "box": [
+   407,
+   338,
+   800,
+   463
+  ],
+  "file": "q002.png",
+  "gutter": 404,
+  "draft_text": "b =0,(5), c =0,(6) adadlarini muqayisa 2.a= 2 edin. >D>( A)b<c<a B)c<a<b E)a<c<b D)a<b<c 11 101 1001"
+ },
+ {
+  "number": 3,
+  "page": 14,
+  "column": 1,
+  "box": [
+   407,
+   451,
+   800,
+   578
+  ],
+  "file": "q003.png",
+  "gutter": 404,
+  "draft_text": "olarsa, 3.a = C 10 100 1000 barabarsizliklordon hansi dogrudur? C) b>a>c B) c>a>b A)c>b>a D) b>c>a E) a>b>c 1717 17"
+ },
+ {
+  "number": 4,
+  "page": 14,
+  "column": 1,
+  "box": [
+   407,
+   566,
+   800,
+   692
+  ],
+  "file": "q004.png",
+  "gutter": 404,
+  "draft_text": "4.a= c=0,68kasrlarinimuqayis b 2525 25 edin. C)a=c>b A) a>b=c B) a=b=c D) b=c>a E) b>a>c 13 4"
+ },
+ {
+  "number": 5,
+  "page": 14,
+  "column": 1,
+  "box": [
+   407,
+   680,
+   800,
+   1014
+  ],
+  "file": "q005.png",
+  "gutter": 404,
+  "draft_text": "4 5.Ododlordon hansi sortini odayir? 2 15 5 71 5-6 11 11 A) B) D) E) C) 6 6 6 2 7 1 sartini odayir? uepiepepe'g 12 4 8 51 2 1 7 C) D) E) A) B) 19 6 9 6 9 9 ododlarinin n boyuyu ila ankiciyin 42 3 2 forqini tapin. 17 19 13 7 11 ar E) B) C) D) A) 20 20 20 20 20 3 5 1"
+ },
+ {
+  "number": 8,
+  "page": 14,
+  "column": 1,
+  "box": [
+   407,
+   1002,
+   800,
+   1146
+  ],
+  "file": "q008.png",
+  "gutter": 404,
+  "draft_text": "8.a-nin -nunb-nin jeqeieqeu-- u-eeu-- 2 4 6 oldugunu bilrk,a,bva cddlrini muqayisdin (a>0;b>0;c>0). C)a>b>c B)c=a=b A)c>a>b D) b>c>a E) b>a>c"
+ },
+ {
+  "number": 9,
+  "page": 15,
+  "column": 0,
+  "box": [
+   0,
+   78,
+   377,
+   239
+  ],
+  "file": "q009.png",
+  "gutter": 380,
+  "draft_text": "5 3 9.a-nin- -ninb-nin -ninis c-nin eu-- 6 4 2 4 brabroldugunubilrka,bvacddlrini miqayisa edin(a>0;b>0;c>0). A) a=b=c B)a>b>c C) b>a>c D)a>c>b E)b>c>a -(b=(-()c=(+) -"
+ },
+ {
+  "number": 10,
+  "page": 15,
+  "column": 0,
+  "box": [
+   0,
+   227,
+   377,
+   352
+  ],
+  "file": "q010.png",
+  "gutter": 380,
+  "draft_text": "10.a= odadlorinin artan sirada yazin. C)a,b,c B)a,c,b A)b,c,a E)b,a,c D) c,a, b 1"
+ },
+ {
+  "number": 11,
+  "page": 15,
+  "column": 0,
+  "box": [
+   0,
+   340,
+   377,
+   450
+  ],
+  "file": "q011.png",
+  "gutter": 380,
+  "draft_text": "1 11.Sinifdoki qizlarin say1 butin sinfin 5 1 -don az olarsa, sinifd n azi neca sagird olar? 4"
+ },
+ {
+  "number": 12,
+  "page": 15,
+  "column": 0,
+  "box": [
+   0,
+   438,
+   377,
+   566
+  ],
+  "file": "q012.png",
+  "gutter": 380,
+  "draft_text": "12.Sinifdakioglanlarinsayisinfinbutinsagirdlarinin 1 1 -indan azolarsa,sinifdn -indan cox, sayinin 4 3 azi neca sagird olar?"
+ },
+ {
+  "number": 13,
+  "page": 15,
+  "column": 0,
+  "box": [
+   0,
+   554,
+   377,
+   763
+  ],
+  "file": "q013.png",
+  "gutter": 380,
+  "draft_text": "13.Uygunlugu muayyan edin. 1.a=1,(2);b=1,(1) a.a<b b.a>b 2.a=1,12;b=1,(12) 3. α=1,(3);b=1  1 c.a+b=2- 3.a=1,(3);b=1 3 d.a=b e.a-b>1"
+ },
+ {
+  "number": 14,
+  "page": 15,
+  "column": 0,
+  "box": [
+   0,
+   751,
+   377,
+   1174
+  ],
+  "file": "q014.png",
+  "gutter": 380,
+  "draft_text": "14.Kasrlaricinuygunlugumioyyanedin 9 4 1 2 l.a= 15 20 13 12 3 9 2. 13 9 8 7 14 18 3.a= P 13 3 2 9 q>>>p b.d<a<b<c q>D>p>o' d.c<a<b<d p>o>q>D Scanned with-CamSear"
+ }
+]
