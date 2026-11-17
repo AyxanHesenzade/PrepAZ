@@ -1,0 +1,100 @@
+[
+ {
+  "number": 1,
+  "file": "q001.png",
+  "draft_text": "gap_fill",
+  "page": 29,
+  "column": 0,
+  "gutter": 371,
+  "box": [
+   0,
+   164,
+   385,
+   220
+  ]
+ },
+ {
+  "number": 2,
+  "file": "q002.png",
+  "draft_text": "gap_fill",
+  "page": 29,
+  "column": 0,
+  "gutter": 371,
+  "box": [
+   0,
+   232,
+   385,
+   288
+  ]
+ },
+ {
+  "number": 3,
+  "file": "q003.png",
+  "draft_text": "gap_fill",
+  "page": 29,
+  "column": 0,
+  "gutter": 371,
+  "box": [
+   0,
+   300,
+   385,
+   420
+  ]
+ },
+ {
+  "number": 4,
+  "file": "q004.png",
+  "draft_text": "gap_fill",
+  "page": 29,
+  "column": 0,
+  "gutter": 371,
+  "box": [
+   0,
+   432,
+   385,
+   551
+  ]
+ },
+ {
+  "number": 5,
+  "file": "q005.png",
+  "draft_text": "gap_fill",
+  "page": 29,
+  "column": 0,
+  "gutter": 371,
+  "box": [
+   0,
+   563,
+   385,
+   671
+  ]
+ },
+ {
+  "number": 6,
+  "file": "q006.png",
+  "draft_text": "gap_fill",
+  "page": 29,
+  "column": 0,
+  "gutter": 371,
+  "box": [
+   0,
+   683,
+   385,
+   798
+  ]
+ },
+ {
+  "number": 7,
+  "file": "q007.png",
+  "draft_text": "gap_fill",
+  "page": 29,
+  "column": 0,
+  "gutter": 371,
+  "box": [
+   0,
+   810,
+   385,
+   973
+  ]
+ }
+]

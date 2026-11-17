@@ -1,0 +1,170 @@
+[
+ {
+  "number": 1,
+  "file": "q001.png",
+  "draft_text": "gap_fill",
+  "page": 29,
+  "column": 1,
+  "gutter": 371,
+  "box": [
+   362,
+   215,
+   791,
+   307
+  ]
+ },
+ {
+  "number": 2,
+  "file": "q002.png",
+  "draft_text": "gap_fill",
+  "page": 29,
+  "column": 1,
+  "gutter": 371,
+  "box": [
+   362,
+   319,
+   791,
+   567
+  ]
+ },
+ {
+  "number": 3,
+  "file": "q003.png",
+  "draft_text": "gap_fill",
+  "page": 29,
+  "column": 1,
+  "gutter": 371,
+  "box": [
+   362,
+   579,
+   791,
+   757
+  ]
+ },
+ {
+  "number": 4,
+  "file": "q004.png",
+  "draft_text": "gap_fill",
+  "page": 29,
+  "column": 1,
+  "gutter": 371,
+  "box": [
+   362,
+   769,
+   791,
+   919
+  ]
+ },
+ {
+  "number": 5,
+  "file": "q005.png",
+  "draft_text": "gap_fill",
+  "page": 29,
+  "column": 1,
+  "gutter": 371,
+  "box": [
+   362,
+   931,
+   791,
+   1128
+  ]
+ },
+ {
+  "number": 6,
+  "file": "q006.png",
+  "draft_text": "gap_fill",
+  "page": 30,
+  "column": 0,
+  "gutter": 407,
+  "box": [
+   0,
+   67,
+   421,
+   209
+  ]
+ },
+ {
+  "number": 7,
+  "file": "q007.png",
+  "draft_text": "gap_fill",
+  "page": 30,
+  "column": 0,
+  "gutter": 407,
+  "box": [
+   0,
+   221,
+   421,
+   341
+  ]
+ },
+ {
+  "number": 8,
+  "file": "q008.png",
+  "draft_text": "gap_fill",
+  "page": 30,
+  "column": 0,
+  "gutter": 407,
+  "box": [
+   0,
+   353,
+   421,
+   508
+  ]
+ },
+ {
+  "number": 9,
+  "file": "q009.png",
+  "draft_text": "gap_fill",
+  "page": 30,
+  "column": 0,
+  "gutter": 407,
+  "box": [
+   0,
+   520,
+   421,
+   692
+  ]
+ },
+ {
+  "number": 10,
+  "file": "q010.png",
+  "draft_text": "gap_fill",
+  "page": 30,
+  "column": 0,
+  "gutter": 407,
+  "box": [
+   0,
+   704,
+   421,
+   791
+  ]
+ },
+ {
+  "number": 11,
+  "file": "q011.png",
+  "draft_text": "gap_fill",
+  "page": 30,
+  "column": 0,
+  "gutter": 407,
+  "box": [
+   0,
+   803,
+   421,
+   945
+  ]
+ },
+ {
+  "number": 12,
+  "file": "q012.png",
+  "draft_text": "gap_fill",
+  "page": 30,
+  "column": 0,
+  "gutter": 407,
+  "box": [
+   0,
+   957,
+   421,
+   1128
+  ]
+ }
+]

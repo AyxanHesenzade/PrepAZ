@@ -56,6 +56,20 @@ def blank_runs(img, page_gutter, col, lo, hi):
     return [r for r in runs if r[1] - r[0] >= MIN_GAP]
 
 
+def strip_vertical_rules(band, min_run=40):
+    """Removes long vertical ink runs (column rules, page borders; on a tilted page a rule crosses many pixel columns)."""
+    out = band.copy()
+    h, w = band.shape
+    for x in range(w):
+        col = band[:, x].astype(np.int8)
+        d = np.diff(np.concatenate(([0], col, [0])))
+        starts, ends = np.where(d == 1)[0], np.where(d == -1)[0]
+        for st, en in zip(starts, ends):
+            if en - st >= min_run:
+                out[st:en, x] = False
+    return out
+
+
 def text_lines(img, page_gutter, col, lo, hi):
     """Text lines [(y0, y1, min_x)] of one column (ink rows merged across gaps < 4 px), min_x = leftmost ink column."""
     a = np.array(img) < INK
@@ -65,6 +79,7 @@ def text_lines(img, page_gutter, col, lo, hi):
     rule = band.mean(axis=0) > 0.3
     rule = np.convolve(rule, np.ones(5), mode="same") > 0
     band[:, rule] = False
+    band = strip_vertical_rules(band)
     rows = band.sum(axis=1) >= 3
     lines, start, last = [], None, None
     for y in range(max(0, lo), min(hi, h)):
@@ -85,7 +100,7 @@ def text_lines(img, page_gutter, col, lo, hi):
     return out
 
 
-def question_starts(lines, margin, min_gap=MIN_GAP, window=50, slack=8):
+def question_starts(lines, margin, min_gap=MIN_GAP, window=50, slack=16):
     """Blocks of lines (separated by blank gaps >= min_gap) whose first `window` rows touch the left margin begin a question.
     Returns [(cut_y, first_line_y0)]: the cut lies in the blank gap above the block."""
     blocks, cur = [], []
@@ -141,6 +156,10 @@ def main():
     ap.add_argument("dir", type=Path)
     ap.add_argument("--region", action="append", required=True)
     ap.add_argument("--drop", default="")
+    ap.add_argument("--ignore", action="append", default=[], metavar="PAGE:COL:Y",
+                    help="a false question start (e.g. the answer options under a figure stand at the margin) near row Y")
+    ap.add_argument("--cont-top", action="append", default=[], metavar="N:Y",
+                    help="question N is the first of its column and continues the previous question: the continuation starts at row Y")
     a = ap.parse_args()
 
     mf = a.dir / "manifest.json"
@@ -167,14 +186,16 @@ def main():
             if ry is not None:
                 top = ry + 18                         # lines are read from top-10 = ry+8: below a tilted rule (up to ~18 rows)
         lines = text_lines(img, gutter, col, top - 10, bottom)
-        # the left margin where question numbers stand: from the OCR-found questions of this column, else the smallest line start
-        xs = []
-        for q in found.values():
-            near = [ln[2] for ln in lines if q["box"][1] - 6 <= ln[0] <= q["box"][1] + 40]
-            if near:
-                xs.append(min(near))
-        margin = int(np.median(xs)) if xs else min(ln[2] for ln in lines)
+        # The page may be tilted: the left margin drifts with y. Measure every line's start against the leftmost line start
+        # in its neighbourhood (question numbers are the leftmost lines), so the margin is always 0.
+        lines = [(y0, y1, x - min(l[2] for l in lines if abs((l[0] + l[1]) / 2 - (y0 + y1) / 2) <= 200))
+                 for (y0, y1, x) in lines]
+        margin = 0
         starts = [st for st in question_starts(lines, margin) if st[1] >= top - 10]
+        for ig in a.ignore:
+            ip, ic, iy = (int(v) for v in ig.split(":"))
+            if (ip, ic) == (page, col):
+                starts = [st for st in starts if abs(st[1] - iy) > 8]
         if len(starts) != len(numbers):
             print(f"{spec}: found {len(starts)} question starts, expected {len(numbers)} (margin x={margin}): "
                   + ", ".join(f"{c}/{y}" for c, y in starts))
@@ -195,6 +216,9 @@ def main():
         status = ", ".join(f"{n}{'' if n in found else '*'}@{order[i]}" for i, n in enumerate(numbers))
         print(f"p{page} c{col}: {status}")
 
+    for ct in a.cont_top:
+        n, y = (int(v) for v in ct.split(":"))
+        by[n]["cont_top"] = y
     out = sorted(by.values(), key=lambda q: q["number"])
     mf.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"{len(out)} questions in manifest ('*' = was missing). Now: scan_segment.py {a.pdf.name} --first F --last L --out {a.dir} --recrop")
