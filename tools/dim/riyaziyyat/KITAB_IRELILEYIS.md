@@ -1,15 +1,17 @@
 # Riyaziyyat test toplusu I: harada dayanmışıq
 
 Bu faylı yeni sessiyada ƏVVƏL oxu. Hər alt mövzu bitəndə yenilə.
-Son yenilənmə: 2026-11-17
+Son yenilənmə: 2026-11-17 (axşam: fəsil 6 yükləndi)
 
 ## Qısa vəziyyət
 - **Mənbə:** DİM "Riyaziyyat test toplusu I hissə" (2025), skan. Fayl: `tools/dim/riyaziyyat/riyaziyyat_I_2025.pdf` (235 səhifə).
-- **Yüklənib (test Supabase):** Fəsil 1 "Natural ədədlər" (bölmə 1-4, 142 sual) və fəsil 2 "Adi və onluq kəsrlər" (bölmə 5-8, 114 sual), fəsil 3 "Faiz. Nisbət. Tənasüb" (bölmə 9-12, 153 sual) və fəsil 4 "Həqiqi ədədlər" (bölmə 13-17, 74 sual) = **483 sual**. Şəkillər `out/images_kitab/`-dadır, `out/upload_kitab/` boşdur.
+- **Yüklənib (test Supabase):** Fəsil 1 "Natural ədədlər" (bölmə 1-4, 142 sual) və fəsil 2 "Adi və onluq kəsrlər" (bölmə 5-8, 114 sual), fəsil 3 "Faiz. Nisbət. Tənasüb" (bölmə 9-12, 153 sual) fəsil 4 "Həqiqi ədədlər" (bölmə 13-17, 74 sual) və fəsil 5 "Tam cəbri ifadələr" (bölmə 18-22, 82 sual) və fəsil 6 "Çoxhədlinin vuruqlara ayrılması" (bölmə 23-25, 61 sual) = **626 sual**. Şəkillər `out/images_kitab/`-dadır, `out/upload_kitab/` boşdur.
 - **Fəsil 2 "Adi və onluq kəsrlər" YÜKLƏNDİ** (bölmə 5-8, 114 sual).
 - **Fəsil 3 "Faiz. Nisbət. Tənasüb" YÜKLƏNDİ** (bölmə 9-12, 153 sual).
 - **Fəsil 4 "Həqiqi ədədlər" YÜKLƏNDİ** (bölmə 13-17, 74 sual).
-- **Fəsil 5 "Tam cəbri ifadələr" kəsilib (bölmə 18-22, 82 sual)**, `import_rt1_s18..s22.sql` + `out/upload_kitab/` (82 `.webp`) hazırdır; sahib yükləyib "done" deyəndən sonra `scan_tool.py --subject riyaziyyat --prefix RT done 18 19 20 21 22` və cədvəl yenilənir. **NÖVBƏTİ: fəsil 6 "Çoxhədlinin vuruqlara ayrılması"** (pdf 39 sağ səhifədən, çap 41; açar pdf 215 ortası; bölmə nömrəsi 23-dən).
+- **Fəsil 5 "Tam cəbri ifadələr" YÜKLƏNDİ** (bölmə 18-22, 82 sual).
+- **Fəsil 6 "Çoxhədlinin vuruqlara ayrılması" YÜKLƏNDİ** (bölmə 23-25, 61 sual, 2026-11-17). Qeyd: `RT1-S24-Q010`-un E variantı skanda su nişanı ilə örtülüb.
+- **NÖVBƏTİ: fəsil 7 "Rasional kəsrlər"** (pdf 44 sağ səhifədən/45-dən, çap 47; açar pdf 216 ortası: alt mövzu "Kəsrlərin ixtisarı. DMQ çoxluğu" və s.; bölmə nömrəsi 26-dan). Əvvəl bu faylın "gap_fill.py" bölməsini oxu.
 - Riyaziyyat fənni aktivdir (`subjects.is_active = true`). Əvvəlki 2 nümunə sual (RIY-0001, RIY-0003) silinib.
 
 ## Səhifə qaydası
@@ -44,11 +46,14 @@ Son yenilənmə: 2026-11-17
 | 15 | Həqiqi ədədlər / Ədədin modulu. Modul daxil olan ifadələrin çevrilməsi | 30 | 1-9 (10-11 yazılı) | **YÜKLƏNDİ**: 6 qapalı, 3 ədədi |
 | 16 | Həqiqi ədədlər / Ədədi orta. Həqiqi ədədlərin müqayisəsi | 31-32 | 1-30 (Q11 sütunlar arası, birləşdirilib) | **YÜKLƏNDİ**: 23 qapalı, 5 ədədi, 2 uyğunlaşdırma |
 | 17 | Həqiqi ədədlər / Ədədin tam və kəsr hissəsi. Ədədin standart şəkli | 33 | 1-16 | **YÜKLƏNDİ**: 11 qapalı, 3 ədədi, 2 uyğunlaşdırma |
-| 18 | Tam cəbri ifadələr / Birhədli və onun standart şəkli. Natural üstlü qüvvət | 34 | 1-14 | SQL hazır: 9 qapalı, 3 ədədi, 2 uyğunlaşdırma |
-| 19 | Tam cəbri ifadələr / Çoxhədlilər və onlar üzərində əməllər | 34-36 | 1-32 (33-36 yazılı) | SQL hazır: 16 qapalı, 16 ədədi |
-| 20 | Tam cəbri ifadələr / Müxtəsər vurma düsturları | 36-37 | 1-10 (Q2 sütunlar arası, birləşdirilib) | SQL hazır: 10 qapalı |
-| 21 | Tam cəbri ifadələr / İfadələrin ədədi qiymətlərinin hesablanması | 37 | 1-12 (13-14 yazılı) | SQL hazır: 10 qapalı, 2 ədədi |
-| 22 | Tam cəbri ifadələr / İfadələrin ən kiçik və ən böyük qiymətlərinin tapılması | 38 | 1-14 | SQL hazır: 4 qapalı, 7 ədədi, 3 uyğunlaşdırma |
+| 18 | Tam cəbri ifadələr / Birhədli və onun standart şəkli. Natural üstlü qüvvət | 34 | 1-14 | **YÜKLƏNDİ**: 9 qapalı, 3 ədədi, 2 uyğunlaşdırma |
+| 19 | Tam cəbri ifadələr / Çoxhədlilər və onlar üzərində əməllər | 34-36 | 1-32 (33-36 yazılı) | **YÜKLƏNDİ**: 16 qapalı, 16 ədədi |
+| 20 | Tam cəbri ifadələr / Müxtəsər vurma düsturları | 36-37 | 1-10 (Q2 sütunlar arası, birləşdirilib) | **YÜKLƏNDİ**: 10 qapalı |
+| 21 | Tam cəbri ifadələr / İfadələrin ədədi qiymətlərinin hesablanması | 37 | 1-12 (13-14 yazılı) | **YÜKLƏNDİ**: 10 qapalı, 2 ədədi |
+| 22 | Tam cəbri ifadələr / İfadələrin ən kiçik və ən böyük qiymətlərinin tapılması | 38 | 1-14 | **YÜKLƏNDİ**: 4 qapalı, 7 ədədi, 3 uyğunlaşdırma |
+| 23 | Çoxhədlinin vuruqlara ayrılması / Müxtəsər vurma düsturlarının köməyi ilə vuruqlara ayırma | 39 | 1-9 (10-11 yazılı) | **YÜKLƏNDİ**: 8 qapalı, 1 ədədi |
+| 24 | Çoxhədlinin vuruqlara ayrılması / Müxtəlif üsulların köməyi ilə vuruqlara ayırma | 39-42 | 1-31 (32-41 yazılı) | **YÜKLƏNDİ**: 17 qapalı, 6 ədədi, 8 uyğunlaşdırma |
+| 25 | Çoxhədlinin vuruqlara ayrılması / Vuruqlara ayırma üsulu ilə ifadələrin ədədi qiymətinin hesablanması | 43-44 | 1-21 (22-29 yazılı) | **YÜKLƏNDİ**: 12 qapalı, 7 ədədi, 2 uyğunlaşdırma |
 
 ## Bölmə 4 (2026-11-17)
 - pdf 5 sağ sütun (Q1, y~178)-pdf 8 sağ sütun (Q63, y~450). Q64-96 "Ətraflı yazılı cavab" bölməsidir (pdf 8 sağ sütun, 9, 10): ATLANDI (açarda cavabları var, amma yazılı tapşırıqdır). Yazılı bölmə hər alt mövzunun sonundadır.
@@ -84,7 +89,7 @@ python -W ignore ../common/scan_segment.py riyaziyyat_I_2025.pdf --first F --las
 - Hər səhifə sütunu üçün bir `--region`: orada duran sualların nömrə aralığı (məs. `13:0:7-16` = pdf 13 sol sütunda 7-dən 16-ya). Alət sual başlanğıclarını səhifənin MÜREKKƏBİNDƏN tapır (nömrə sol haşiyədədir, qalan sətirlər içəridən başlayır) və hamısını yenidən yazır (OCR-ın tapdıqlarını da: kəsrin payı artıq kəsilmir). Saydığı sayı verdiyin sayla uyğun gəlməsə, tapdıqlarını çap edib dayanır.
 - `TOP` başlıqdan sonra, `BOTTOM` səhifə nömrəsindən ("- 16 -") və ya "Ətraflı yazılı" başlığından əvvəl olmalıdır. Səhifə şəkli ~800x1200-dür (preview şəkilləri 1119 hündürlükdədir: koordinatı `grid`-dən götür, preview-dan yox). Xəta mesajında "found N starts" siyahısı var: artıq başlanğıc səhifənin altlığıdırsa BOTTOM-u azalt, başlıq sətri sayılıbsa TOP-u artır.
 - Əyri səhifədə sol haşiyə sürüşür: alət hər sətrin x-ini öz qonşuluğundakı ən sol sətrə görə ölçür, uzun şaquli xətləri (sütun ayırıcısı) silir. Sualın cavab variantları (şəklin altında) haşiyədə durursa, artıq başlanğıc çıxır: `--ignore PAGE:COL:Y`. Sütun sonundan növbəti sütuna keçən sual üçün `--cont-top N:Y` (N = növbəti sütunun ilk sualı, Y = davamın başladığı sətir, başlıq xəttindən aşağı).
-- Alət sütunun tepəsində səhifə başlığının altındakı xətti (`header_rule_y`) özü tapır (TOP ≤ 95 olanda). Səhifənin altlığı ("- 21 -") və "Ətraflı yazılı" başlığından sonrakı sual BOTTOM-dan kənarda qalmalıdır, yoxsa artıq başlanğıc sayılır.
+- Alət sütunun tepəsində səhifə başlığının altındakı xətti (`header_rule_y`) özü tapır (TOP ≤ 95 olanda). Sütunun ən altındakı son variant 1140-dan aşağı düşə bilər (Q10/Q16 kimi): BOTTOM-u 1150-1165 qoy, amma su nişanı (CamScanner) altda yazılı olduğundan bəzən örtülü qalır. Səhifənin altlığı ("- 21 -") və "Ətraflı yazılı" başlığından sonrakı sual BOTTOM-dan kənarda qalmalıdır, yoxsa artıq başlanğıc sayılır.
 - `manifest.orig.json` (OCR varsa) OCR-ın ilkin nəticəsidir; alət onu ilk işdə saxlayır. Yenidən başlamaq üçün onu `manifest.json`-un üstünə kopyala.
 - `scan_tool.py ... check N N N` ilə yalnız əvvəl tapılmayanlara və hər bölmənin ilk/son sualına bax.
 
