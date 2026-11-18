@@ -15,4 +15,12 @@ void main() {
     test('rejects short', () => expect(Validators.password('12345'), isNotNull));
     test('rejects null', () => expect(Validators.password(null), isNotNull));
   });
+
+  group('Validators.resetCode', () {
+    test('accepts 6 digits', () => expect(Validators.resetCode('123456'), isNull));
+    test('accepts 8 digits with spaces', () => expect(Validators.resetCode('1234 5678'), isNull));
+    test('rejects 5 digits', () => expect(Validators.resetCode('12345'), isNotNull));
+    test('rejects letters', () => expect(Validators.resetCode('12a456'), isNotNull));
+    test('rejects null', () => expect(Validators.resetCode(null), isNotNull));
+  });
 }

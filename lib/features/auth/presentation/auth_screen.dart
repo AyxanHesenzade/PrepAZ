@@ -17,6 +17,7 @@ import 'auth_controller.dart';
 import 'widgets/auth_choice_view.dart';
 import 'widgets/email_confirm_view.dart';
 import 'widgets/numbered_steps.dart';
+import 'widgets/password_reset_view.dart';
 
 class AuthScreen extends ConsumerStatefulWidget {
   const AuthScreen({super.key});
@@ -68,11 +69,17 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
       AuthMode.choose => AppStrings.choiceTitle,
       AuthMode.signIn => AppStrings.signInTitle,
       AuthMode.signUp => AppStrings.signUpTitle,
+      AuthMode.reset => AppStrings.resetTitle,
     };
   }
 
-  /// Forma ekranından seçim ekranına qayıdış. Yazılmış e-poçt silinmir.
-  void _backToChoice() => _controller.setMode(AuthMode.choose);
+  /// Forma ekranından bir addım geri: bərpadan girişə, girişdən seçim ekranına.
+  /// Yazılmış e-poçt silinmir.
+  void _back() => _controller.setMode(
+    ref.read(authControllerProvider).mode == AuthMode.reset
+        ? AuthMode.signIn
+        : AuthMode.choose,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +89,7 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
     return PopScope(
       canPop: !onForm,
       onPopInvokedWithResult: (didPop, _) {
-        if (!didPop && !form.isBusy) _backToChoice();
+        if (!didPop && !form.isBusy) _back();
       },
       child: Scaffold(
         body: SingleChildScrollView(
@@ -91,7 +98,7 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
             children: [
               _AuthHero(
                 subtitle: _subtitle(form),
-                onBack: onForm && !form.isBusy ? _backToChoice : null,
+                onBack: onForm && !form.isBusy ? _back : null,
               ),
               Center(
                 child: ConstrainedBox(
@@ -119,6 +126,9 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
         isBusy: form.isBusy,
         error: form.error,
       );
+    }
+    if (form.mode == AuthMode.reset) {
+      return PasswordResetView(initialEmail: _email.text.trim());
     }
     return _buildForm(form);
   }
@@ -187,6 +197,16 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
               validator: Validators.password,
               onSubmitted: _submit,
             ),
+            if (!form.isSignUp)
+              Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                  onPressed: form.isBusy
+                      ? null
+                      : () => _controller.setMode(AuthMode.reset),
+                  child: Text(AppStrings.forgotPassword),
+                ),
+              ),
             if (form.error != null) ...[
               AppSpacing.gapM,
               MessageBanner.error(form.error!),

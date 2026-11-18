@@ -5,8 +5,8 @@ import '../../../core/error/app_exception.dart';
 import '../domain/auth_repository.dart';
 import 'auth_providers.dart';
 
-/// [choose]: istifadəçi hələ yeni olub-olmadığını seçməyib.
-enum AuthMode { choose, signIn, signUp }
+/// [choose]: istifadəçi hələ yeni olub-olmadığını seçməyib; [reset]: parol bərpası.
+enum AuthMode { choose, signIn, signUp, reset }
 
 class AuthFormState {
   const AuthFormState({

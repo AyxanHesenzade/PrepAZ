@@ -45,6 +45,31 @@ class FakeAuthRepository implements AuthRepository {
     resentTo.add(email);
   }
 
+  Object? resetCodeError;
+  Object? resetError;
+  final resetCodesSentTo = <String>[];
+  String? lastResetEmail;
+  String? lastResetCode;
+  String? lastNewPassword;
+
+  @override
+  Future<void> sendPasswordResetCode({required String email}) async {
+    if (resetCodeError != null) throw resetCodeError!;
+    resetCodesSentTo.add(email);
+  }
+
+  @override
+  Future<void> resetPassword({
+    required String email,
+    required String code,
+    required String newPassword,
+  }) async {
+    lastResetEmail = email;
+    lastResetCode = code;
+    lastNewPassword = newPassword;
+    if (resetError != null) throw resetError!;
+  }
+
   @override
   Future<void> signOut() async {}
 

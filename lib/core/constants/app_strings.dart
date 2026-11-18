@@ -240,6 +240,63 @@ abstract final class AppStrings {
     'Too many emails requested. Please wait a while and try again.',
   );
 
+  // Parol bərpası
+  static String get forgotPassword =>
+      _t('Parolu unutmusunuz?', 'Забыли пароль?', 'Forgot your password?');
+  static String get resetTitle => _t(
+    'Yeni parol təyin edin',
+    'Установите новый пароль',
+    'Set a new password',
+  );
+  static String get resetEmailIntro => _t(
+    'Hesabınızın e-poçtunu yazın. Ora parolu yeniləmək üçün kod göndərəcəyik.',
+    'Введите почту аккаунта. Мы отправим на неё код для смены пароля.',
+    "Enter your account email. We'll send a code there to reset your password.",
+  );
+  static String get resetSendCodeAction =>
+      _t('Kod göndər', 'Отправить код', 'Send code');
+  static String get resetCodeSentTo => _t(
+    'Kodu bu ünvana göndərdik:',
+    'Мы отправили код на адрес:',
+    'We sent a code to:',
+  );
+  static String get resetCodeHint => _t(
+    'Məktubu açın və içindəki kodu aşağıya yazın. Məktub görünmürsə, 1–2 dəqiqə gözləyin və Spam qovluğuna baxın. Bu e-poçtla hesab yoxdursa, məktub gəlməyəcək.',
+    'Откройте письмо и введите код ниже. Если письма нет, подождите 1–2 минуты и проверьте «Спам». Если аккаунта с этой почтой нет, письмо не придёт.',
+    "Open the email and enter the code below. If it isn't there, wait 1–2 minutes and check Spam. If there's no account with this email, no email will arrive.",
+  );
+  static String get resetCodeLabel =>
+      _t('Məktubdakı kod', 'Код из письма', 'Code from the email');
+  static String get newPassword =>
+      _t('Yeni parol', 'Новый пароль', 'New password');
+  static String get resetConfirmAction => _t(
+    'Parolu yenilə və daxil ol',
+    'Сменить пароль и войти',
+    'Update password and sign in',
+  );
+  static String get resetResendAction => _t(
+    'Kod gəlmədi? Yenidən göndər',
+    'Код не пришёл? Отправить снова',
+    "Didn't get a code? Send again",
+  );
+  static String get resetChangeEmailAction =>
+      _t('E-poçtu dəyiş', 'Изменить почту', 'Change email');
+  static String get resetCodeResent => _t(
+    'Yeni kod göndərdik. Ən son məktubdakı kodu yazın.',
+    'Мы отправили новый код. Введите код из последнего письма.',
+    'We sent a new code. Use the code from the latest email.',
+  );
+  static String get resetCodeInvalid => _t(
+    'Kod yanlışdır və ya vaxtı keçib. Ən son məktubdakı kodu yazın və ya yenisini istəyin.',
+    'Код неверный или устарел. Введите код из последнего письма или запросите новый.',
+    'The code is wrong or has expired. Use the code from the latest email or request a new one.',
+  );
+  static String get resetCodeFormat => _t(
+    'Məktubdakı rəqəmləri yazın',
+    'Введите цифры из письма',
+    'Enter the digits from the email',
+  );
+
   // Validasiya
   static String get invalidEmail => _t(
     'E-poçtu tam yazın, məsələn: ad@gmail.com',

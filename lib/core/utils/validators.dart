@@ -24,6 +24,14 @@ abstract final class Validators {
     return length >= 2 && length <= 40 ? null : AppStrings.personNameInvalid;
   }
 
+  /// Supabase-in məktub kodu 6–10 rəqəmdir (layihə ayarından asılıdır). Boşluqlar sayılmır.
+  static final _resetCodePattern = RegExp(r'^\d{6,10}$');
+
+  static String? resetCode(String? value) {
+    final v = (value ?? '').replaceAll(' ', '');
+    return _resetCodePattern.hasMatch(v) ? null : AppStrings.resetCodeFormat;
+  }
+
   static String? password(String? value) {
     return (value ?? '').length >= minPasswordLength
         ? null

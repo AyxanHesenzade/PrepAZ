@@ -1,7 +1,7 @@
 # Riyaziyyat test toplusu I: harada dayanmışıq
 
 Bu faylı yeni sessiyada ƏVVƏL oxu. Hər alt mövzu bitəndə yenilə.
-Son yenilənmə: 2026-11-17 (gecə: fəsil 7 yükləndi)
+Son yenilənmə: 2026-11-18 (fəsil 14 hazırlandı)
 
 ## Qısa vəziyyət
 - **Mənbə:** DİM "Riyaziyyat test toplusu I hissə" (2025), skan. Fayl: `tools/dim/riyaziyyat/riyaziyyat_I_2025.pdf` (235 səhifə).
@@ -35,7 +35,8 @@ Son yenilənmə: 2026-11-17 (gecə: fəsil 7 yükləndi)
 - Bölmə 52 YÜKLƏNDİ (cəmi 2098 sual). Fəsil 12 bitdi.
 - **Fəsil 13 "Çoxluqlar"**: bölmə 53 YÜKLƏNDİ (cəmi 2127 sual).
 - Bölmə 54 YÜKLƏNDİ. Fəsil 13 bitdi (cəmi 2174 sual, 2026-11-17 axşam).
-- **NÖVBƏTİ: fəsil 14 "Həndəsənin əsas anlayışları"** (pdf 133-dən; açar pdf 224: 55 "Düz xətt, şüa, parça. Parçaların ölçülməsi" 36 sual ("33 sm" kimi vahidlər), 56 "Bucaq. Bucaqların ölçülməsi. Bucağın tənböləni" 17 (Q17 kəsr 135/7: burax), 57 "Qonşu və qarşılıqlı bucaqlar" 12, 58 "İki paralel düz xəttin üçüncü ilə kəsişməsindən alınan bucaqlar" 46, 59 "Uyğun tərəfləri paralel və perpendikulyar olan bucaqlar" 11 (Q8-9 iki halı: burax)).
+- **Fəsil 14 "Həndəsənin əsas anlayışları"**: bölmə 55-59 HAZIRLANDI (108 sual, 2026-11-18): `out/import_rt1_s55..59.sql` + `out/upload_kitab/` (108 `.webp`). Sahib yükləyib "ok" deyəndə: `done 55 56 57 58 59`. Yükləndikdən sonra cəmi 2282 sual.
+- **NÖVBƏTİ: fəsil 15 "Üçbucaqlar"** (pdf 142 "Üçbucaq. Üçbucaq bərabərsizliyi. Üçbucağın perimetri"-dən; açar pdf 224-ün altı / 225). Sonra fəsil 16 Çoxbucaqlılar, 17 Çevrə və dairə, isbat məsələləri (yazılı?), Situasiya, 2025 imtahanları (ayrıca qərar).
 - Riyaziyyat fənni aktivdir (`subjects.is_active = true`). Əvvəlki 2 nümunə sual (RIY-0001, RIY-0003) silinib.
 
 ## Səhifə qaydası
@@ -107,6 +108,11 @@ Son yenilənmə: 2026-11-17 (gecə: fəsil 7 yükləndi)
 | 52 | Ədədi ardıcıllıqlar. Silsilələr / Ədədi və həndəsi silsilələrə aid məsələlər | 123 sağ-125 | 1-48 (49-60 yazılı) | **YÜKLƏNDİ**: 35 qapalı, 9 ədədi, 4 uyğunlaşdırma |
 | 53 | Çoxluqlar / Çoxluqlar. Çoxluqların birləşməsi, kəsişməsi, fərqi | 127-128 | 1-29 (30-36 yazılı) | **YÜKLƏNDİ**: 26 qapalı, 2 ədədi, 1 uyğunlaşdırma |
 | 54 | Çoxluqlar / Çoxluqların birləşməsi, kəsişməsi və fərqinin elementlərinin sayı | 129 sağ-132 | 1-47 (48-52 yazılı) | **YÜKLƏNDİ**: 10 qapalı, 33 ədədi, 4 uyğunlaşdırma |
+| 55 | Həndəsənin əsas anlayışları / Düz xətt, şüa, parça. Parçaların ölçülməsi | 133-134 | 1-32 (33-36 yazılı) | HAZIR: 26 qapalı, 6 ədədi |
+| 56 | Həndəsənin əsas anlayışları / Bucaq. Bucaqların ölçülməsi. Bucağın tənböləni | 135 | 1-16 (17 yazılı) | HAZIR: 8 qapalı, 8 ədədi |
+| 57 | Həndəsənin əsas anlayışları / Qonşu və qarşılıqlı bucaqlar | 136 | 1-9 (10-12 yazılı) | HAZIR: 7 qapalı, 1 ədədi, 1 uyğunlaşdırma |
+| 58 | Həndəsənin əsas anlayışları / İki paralel düz xəttin üçüncü ilə kəsişməsindən alınan bucaqlar | 136 sağ-141 | 1-46 | HAZIR: 22 qapalı, 11 ədədi, 13 uyğunlaşdırma. Q38, Q43 sütun davamı (cont-top 50) |
+| 59 | Həndəsənin əsas anlayışları / Uyğun tərəfləri paralel və perpendikulyar olan bucaqlar | 141 | 1-5 (6-11 yazılı) | HAZIR: 4 qapalı, 1 ədədi |
 
 ## Bölmə 4 (2026-11-17)
 - pdf 5 sağ sütun (Q1, y~178)-pdf 8 sağ sütun (Q63, y~450). Q64-96 "Ətraflı yazılı cavab" bölməsidir (pdf 8 sağ sütun, 9, 10): ATLANDI (açarda cavabları var, amma yazılı tapşırıqdır). Yazılı bölmə hər alt mövzunun sonundadır.

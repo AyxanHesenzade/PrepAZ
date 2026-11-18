@@ -30,6 +30,16 @@ abstract interface class AuthRepository {
 
   Future<void> resendConfirmation({required String email});
 
+  /// Parol bərpası: e-poçta kod göndərir. Hesab yoxdursa da xəta vermir (kimin qeydiyyatda olduğu bilinməsin).
+  Future<void> sendPasswordResetCode({required String email});
+
+  /// Kodu yoxlayır, istifadəçini daxil edir və parolu [newPassword] edir.
+  Future<void> resetPassword({
+    required String email,
+    required String code,
+    required String newPassword,
+  });
+
   Future<void> signOut();
 
   /// Hesabı və ona bağlı bütün məlumatları birdəfəlik silir, sonra çıxış edir.

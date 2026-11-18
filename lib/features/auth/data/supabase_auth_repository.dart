@@ -78,6 +78,44 @@ class SupabaseAuthRepository implements AuthRepository {
     );
   }
 
+  /// Deep link yoxdur: məktubda link yox, kod (`{{ .Token }}`) olmalıdır.
+  /// Supabase → Authentication → Email Templates → Reset Password.
+  @override
+  Future<void> sendPasswordResetCode({required String email}) {
+    return guard(
+      () => _auth.resetPasswordForEmail(email),
+      mapper: _mapResetError,
+    );
+  }
+
+  @override
+  Future<void> resetPassword({
+    required String email,
+    required String code,
+    required String newPassword,
+  }) {
+    return guard(() async {
+      await _auth.verifyOTP(
+        type: OtpType.recovery,
+        email: email,
+        token: code,
+      );
+      try {
+        await _auth.updateUser(UserAttributes(password: newPassword));
+      } on AuthException catch (e) {
+        // Yeni parol köhnəsi ilə eynidir: istifadəçi onu onsuz da bilir, daxil olub.
+        if (e.code != 'same_password') rethrow;
+      }
+    }, mapper: _mapResetError);
+  }
+
+  static AppException? _mapResetError(Object error) {
+    if (error is AuthException && error.code == 'otp_expired') {
+      return AppException(AppStrings.resetCodeInvalid);
+    }
+    return _mapAuthError(error);
+  }
+
   @override
   Future<void> signOut() {
     return guard(() async {
@@ -131,7 +169,8 @@ class SupabaseAuthRepository implements AuthRepository {
       'email_not_confirmed' => EmailNotConfirmedException(),
       'weak_password' => AppException(AppStrings.weakPassword),
       'email_address_invalid' => AppException(AppStrings.invalidEmail),
-      'over_email_send_rate_limit' => AppException(AppStrings.emailRateLimit),
+      'over_email_send_rate_limit' ||
+      'over_request_rate_limit' => AppException(AppStrings.emailRateLimit),
       _ => null,
     };
   }

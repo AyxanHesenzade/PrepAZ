@@ -259,7 +259,9 @@ tools/dim/
 - Sahibin qərarı (test mərhələsi, pulsuz Supabase): deep link YOXDUR, Supabase-in link ayarlarına toxunulmur. Məktubdakı link boş səhifə aça bilər, amma e-poçt təsdiqlənir.
 - İstifadəçi tətbiqə qayıdanda `checkConfirmedSilently` yaddaşdakı parolla özü daxil olur. Parol yalnız yaddaşda qalır, heç yerə yazılmır.
 - Təsdiqli e-poçtla təkrar qeydiyyatda Supabase xəta vermir, boş `identities` qaytarır: bu, `AccountExistsException` olur və ekran girişə keçir.
-- Parol bərpası hələ yoxdur.
+- **Parol bərpası (2026-11-18):** deep link olmadığı üçün link yox, məktubda KOD. Giriş formasında "Parolu unutmusunuz?" → `AuthMode.reset` → `PasswordResetView` (`PasswordResetController`): e-poçt → `resetPasswordForEmail` → kod + yeni parol → `verifyOTP(type: recovery)` + `updateUser(password)` → istifadəçi daxil olur, AuthGate yönləndirir. Kod 6–10 rəqəm (`Validators.resetCode`). Hesab olmayan e-poçt xəta vermir (kimin qeydiyyatda olduğu bilinməsin). Test: `test/features/auth/password_reset_test.dart`.
+  **Supabase-də məcburi:** Authentication → Emails → "Reset Password" şablonunda `{{ .Token }}` olmalıdır (defolt şablonda yalnız link var: kod gəlməz). Test və real layihədə ayrıca.
+  Qeyd: kod təsdiqlənib parol yazıla bilməsə (nadir), istifadəçi yenə daxil olur, parol köhnə qalır.
 
 ## Google ilə giriş
 - Tətbiqdə: `AuthRepository.signInWithGoogle()` (`google_sign_in` 7.x: `GoogleSignIn.instance.initialize(serverClientId)` bir dəfə, `authenticate()`, sonra `Supabase.auth.signInWithIdToken(provider: google, idToken)`). İstifadəçi pəncərəni bağlasa `false`, xəta olsa `AppException(googleSignInFailed)`. Çıxışda və hesab silinəndə Google hesabı da çıxarılır.
