@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/constants/app_strings.dart';
 import '../../../core/error/app_exception.dart';
+import '../../../core/logging/app_log.dart';
 import '../domain/auth_repository.dart';
 import 'auth_providers.dart';
 
@@ -60,19 +61,25 @@ class AuthController extends Notifier<AuthFormState> {
       if (signUp) {
         final outcome = await _repo.signUp(email: email, password: password);
         if (outcome == SignUpOutcome.confirmationRequired) {
+          _log('sign_up_confirm_pending', email);
           _awaitConfirmation(email, password);
         } else {
+          _log('sign_up_ok', email);
           state = state.idle();
         }
       } else {
         await _repo.signIn(email: email, password: password);
+        _log('sign_in_ok', email);
         state = state.idle();
       }
-    } on EmailNotConfirmedException {
+    } on EmailNotConfirmedException catch (e) {
+      _log('email_not_confirmed', email, e.message);
       _awaitConfirmation(email, password);
     } on AccountExistsException catch (e) {
+      _log('sign_up_account_exists', email, e.message);
       state = AuthFormState(mode: AuthMode.signIn, error: e.message);
     } on AppException catch (e) {
+      _log(signUp ? 'sign_up_failed' : 'sign_in_failed', email, e.message);
       state = state.failed(e.message);
     }
   }
@@ -82,9 +89,11 @@ class AuthController extends Notifier<AuthFormState> {
     if (state.isBusy) return;
     state = state.busy();
     try {
-      await _repo.signInWithGoogle();
+      final done = await _repo.signInWithGoogle();
+      AppLog.auth(done ? 'google_ok' : 'google_cancelled');
       if (ref.mounted) state = state.idle();
     } on AppException catch (e) {
+      AppLog.auth('google_failed', message: e.message);
       if (ref.mounted) state = state.failed(e.message);
     }
   }
@@ -101,10 +110,13 @@ class AuthController extends Notifier<AuthFormState> {
     state = state.busy();
     try {
       await _repo.signIn(email: email, password: _pendingPassword);
+      _log('confirm_ok', email);
       if (ref.mounted) state = state.idle();
     } on EmailNotConfirmedException {
+      _log('confirm_check_failed', email, AppStrings.emailStillNotConfirmed);
       if (ref.mounted) state = state.failed(AppStrings.emailStillNotConfirmed);
     } on AppException catch (e) {
+      _log('confirm_check_failed', email, e.message);
       if (ref.mounted) state = state.failed(e.message);
     }
   }
@@ -115,6 +127,7 @@ class AuthController extends Notifier<AuthFormState> {
     if (email == null || state.isBusy) return;
     try {
       await _repo.signIn(email: email, password: _pendingPassword);
+      _log('confirm_ok_silent', email);
     } on AppException {
       return;
     }
@@ -126,11 +139,18 @@ class AuthController extends Notifier<AuthFormState> {
     state = state.busy();
     try {
       await _repo.resendConfirmation(email: email);
+      _log('confirm_resent', email);
       if (ref.mounted) state = state.notice(AppStrings.confirmationResent);
     } on AppException catch (e) {
+      _log('confirm_resend_failed', email, e.message);
       if (ref.mounted) state = state.failed(e.message);
     }
   }
+
+  /// Admin panel girişdə kimin çətinlik çəkdiyini görsün: e-poçt yazılır, parol HEÇ VAXT.
+  /// `*_failed` adları paneldə "uğursuz giriş" sayılır.
+  static void _log(String name, String email, [String? message]) =>
+      AppLog.auth(name, message: message, meta: {'email': email.trim().toLowerCase()});
 
   /// Gözləmə ekranından formaya qayıdır (məs. e-poçt səhv yazılıb).
   void cancelConfirmation() {

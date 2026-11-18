@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/constants/app_strings.dart';
+import '../../../core/logging/app_log.dart';
 import '../../../core/widgets/glass_nav_bar.dart';
 import '../../home/presentation/home_providers.dart';
 import '../../home/presentation/home_screen.dart';
@@ -13,6 +14,7 @@ import '../../stats/presentation/stats_tab.dart';
 import '../../tour/presentation/tour_controller.dart';
 import '../../tour/presentation/tour_targets.dart';
 import '../../tour/presentation/widgets/tour_overlay.dart';
+import '../../whats_new/presentation/whats_new_check.dart';
 
 /// Daxil olandan sonrakı əsas ekran: aşağıda menyu (Ana səhifə, İrəliləyiş, Yarış).
 /// Tablar `IndexedStack`-dədir: keçəndə ana səhifənin vəziyyəti itmir.
@@ -36,6 +38,9 @@ class _MainShellState extends ConsumerState<MainShell> {
   final _tour = TourTargets(hasBottomNav: true);
 
   void _select(int index) {
+    if (index != _index) {
+      AppLog.info('tab', meta: {'tab': const ['home', 'progress', 'compete'][index]});
+    }
     // geri qayıdanda rəqəmlər təzə olsun (ana səhifədə test həll edilmiş ola bilər)
     if (_opened.contains(index)) {
       if (index == _progress) {
@@ -57,55 +62,57 @@ class _MainShellState extends ConsumerState<MainShell> {
     final step = ref.watch(tourControllerProvider);
     final showNav = step == null || step.onBottomNav;
     return ReminderSync(
-      child: TourScope(
-        targets: _tour,
-        child: Stack(
-          fit: StackFit.expand,
-          children: [
-            Scaffold(
-              body: IndexedStack(
-                index: _index,
-                children: [
-                  const HomeScreen(),
-                  _opened.contains(_progress)
-                      ? const StatsTab()
-                      : const SizedBox.shrink(),
-                  _opened.contains(_compete)
-                      ? const LeaderboardTab()
-                      : const SizedBox.shrink(),
-                ],
+      child: WhatsNewCheck(
+        child: TourScope(
+          targets: _tour,
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              Scaffold(
+                body: IndexedStack(
+                  index: _index,
+                  children: [
+                    const HomeScreen(),
+                    _opened.contains(_progress)
+                        ? const StatsTab()
+                        : const SizedBox.shrink(),
+                    _opened.contains(_compete)
+                        ? const LeaderboardTab()
+                        : const SizedBox.shrink(),
+                  ],
+                ),
+                // panel üzür: arxasında ekranın fonu bulanıq görünür
+                extendBody: true,
+                bottomNavigationBar: !showNav
+                    ? null
+                    : GlassNavBar(
+                        selectedIndex: _index,
+                        onSelected: _select,
+                        items: [
+                          GlassNavItem(
+                            icon: Icons.home_outlined,
+                            selectedIcon: Icons.home_rounded,
+                            label: AppStrings.navHome,
+                          ),
+                          GlassNavItem(
+                            key: _tour.progress,
+                            icon: Icons.insights_outlined,
+                            selectedIcon: Icons.insights_rounded,
+                            label: AppStrings.navProgress,
+                          ),
+                          GlassNavItem(
+                            key: _tour.compete,
+                            icon: Icons.emoji_events_outlined,
+                            selectedIcon: Icons.emoji_events_rounded,
+                            label: AppStrings.navCompete,
+                          ),
+                        ],
+                      ),
               ),
-              // panel üzür: arxasında ekranın fonu bulanıq görünür
-              extendBody: true,
-              bottomNavigationBar: !showNav
-                  ? null
-                  : GlassNavBar(
-                      selectedIndex: _index,
-                      onSelected: _select,
-                      items: [
-                        GlassNavItem(
-                          icon: Icons.home_outlined,
-                          selectedIcon: Icons.home_rounded,
-                          label: AppStrings.navHome,
-                        ),
-                        GlassNavItem(
-                          key: _tour.progress,
-                          icon: Icons.insights_outlined,
-                          selectedIcon: Icons.insights_rounded,
-                          label: AppStrings.navProgress,
-                        ),
-                        GlassNavItem(
-                          key: _tour.compete,
-                          icon: Icons.emoji_events_outlined,
-                          selectedIcon: Icons.emoji_events_rounded,
-                          label: AppStrings.navCompete,
-                        ),
-                      ],
-                    ),
-            ),
-            // yan menyunun və alt menyunun da üstündə qalsın
-            const TourOverlay(),
-          ],
+              // yan menyunun və alt menyunun da üstündə qalsın
+              const TourOverlay(),
+            ],
+          ),
         ),
       ),
     );

@@ -240,6 +240,14 @@ abstract final class AppStrings {
     'Too many emails requested. Please wait a while and try again.',
   );
 
+  // Yeniliklər (yeniləmədən sonra)
+  static String get whatsNewTitle =>
+      _t('Yeniliklər ✨', 'Что нового ✨', "What's new ✨");
+  static String whatsNewVersion(String version) =>
+      _t('Versiya $version', 'Версия $version', 'Version $version');
+  static String get whatsNewOk =>
+      _t('Əla, davam!', 'Отлично, дальше!', "Nice, let's go!");
+
   // Parol bərpası
   static String get forgotPassword =>
       _t('Parolu unutmusunuz?', 'Забыли пароль?', 'Forgot your password?');

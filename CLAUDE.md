@@ -158,8 +158,14 @@ tools/dim/
 - Dərsliklər (məktəb kitabları) üçün razılıq YOXDUR: mövzu izahlarında yalnız mənbə/plan kimi, mətn öz sözlərimizlə yazılır, köçürülmür.
 
 ## Versiya
-- Cari versiya: **1.6.0**, build **12**. Mənbə: `assets/app.json`; `pubspec.yaml` → `version: 1.6.0+12` ilə eyni olmalıdır (`test/core/app_version_test.dart` uyğunsuzluğu tutur).
-- Yeni buraxılışda hər ikisini birlikdə dəyiş. Ana ekranın altında "Versiya 1.6.0 (12)" göstərilir.
+- Cari versiya: **1.7.0**, build **13**. Mənbə: `assets/app.json`; `pubspec.yaml` → `version: 1.7.0+13` ilə eyni olmalıdır (`test/core/app_version_test.dart` uyğunsuzluğu tutur).
+- Yeni buraxılışda hər ikisini birlikdə dəyiş VƏ `lib/features/whats_new/data/release_notes.dart`-a həmin build üçün sətir yaz (test tələb edir). Ana ekranın altında "Versiya 1.7.0 (13)" göstərilir.
+
+## Yeniliklər (yeniləmədən sonra)
+- `lib/features/whats_new`: yeniləmədən sonra ilk açılışda aşağıdan açılan "Yeniliklər ✨" paneli, BİR DƏFƏ. Baza/internet lazım deyil: qeydlər APK-nın içindədir (`release_notes.dart`, üç dildə, hər build üçün bir sətir; yenilik yoxdursa `items: () => const []`).
+- Qayda `notesToShow` (domain, testli): yeni istifadəçiyə (`tourSeen == false`) göstərilmir; `whatsNewSeenBuild` 0-dırsa (funksiyadan əvvəlki versiyadan gələn) yalnız cari build; atlanmış versiyalar ən yenisi birinci, ən çox 3. Görülən build `settings.whats_new_seen`-də, panel açılmazdan ƏVVƏL yazılır. Tur gedərkən açılmır.
+- `WhatsNewCheck` `MainShell`-i sarıyır. Testlərdə `whatsNewEnabledProvider` defoltda false-dur, `main.dart` true edir. Test: `test/features/whats_new_test.dart` (cari build üçün sətir yoxdursa düşür).
+- Hər buraxılışda sahib nələrin dəyişdiyini deyir, mətni Claude üç dildə yazır. Yalnız HAZIRDA işləyən şeylər, DİM adı yazılmır.
 
 ## Test Supabase-in cari vəziyyəti (2026-11-02)
 - Migration 014 işlənib, kitab 1-dən 253 şəkil-sual yüklənib (206 qapalı, 47 açıq).
@@ -238,7 +244,7 @@ tools/dim/
 
 ## Məcburi yeniləmə
 - `db/migrations/008_app_config.sql`: tək sətirli `app_config` (`min_version`, `latest_version`, `update_url`); anon də oxuya bilər (giriş əvvəli yoxlanır), yalnız admin dəyişir. Lokal test: `tools/dim/common/test_migration_008.py`.
-- Tətbiq: `lib/features/update` (`UpdateGate` `app.dart`-da `AuthGate`-i sarıyır). Versiya `assets/app.json`-dan (`1.6.0+12`) bazadakı ilə müqayisə olunur:
+- Tətbiq: `lib/features/update` (`UpdateGate` `app.dart`-da `AuthGate`-i sarıyır). Versiya `assets/app.json`-dan (`1.7.0+13`) bazadakı ilə müqayisə olunur:
   `min_version`-dan aşağı → bağlanmayan `ForceUpdateScreen`; `latest_version`-dan aşağı → bir dəfə "Sonra" düyməli xəbərdarlıq. Oxunmasa (internet yox / cədvəl yox) heç nə bloklanmır.
 - Admin panel: "Tənzimləmələr" tabı. Yeni buraxılışda ƏVVƏL APK/mağaza yüklənir və link yazılır, SONRA `latest_version` (və lazımsa `min_version`) qaldırılır.
 

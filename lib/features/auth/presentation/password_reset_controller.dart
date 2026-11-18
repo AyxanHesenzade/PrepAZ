@@ -2,6 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/constants/app_strings.dart';
 import '../../../core/error/app_exception.dart';
+import '../../../core/logging/app_log.dart';
 import '../domain/auth_repository.dart';
 import 'auth_providers.dart';
 
@@ -51,12 +52,14 @@ class PasswordResetController extends Notifier<PasswordResetState> {
     state = state.copy(email: email, isBusy: true);
     try {
       await _repo.sendPasswordResetCode(email: email);
+      _log('reset_code_sent', email);
       if (!ref.mounted) return;
       state = state.copy(
         step: ResetStep.code,
         info: resend ? AppStrings.resetCodeResent : null,
       );
     } on AppException catch (e) {
+      _log('reset_code_failed', email, e.message);
       if (ref.mounted) state = state.copy(error: e.message);
     }
   }
@@ -76,11 +79,16 @@ class PasswordResetController extends Notifier<PasswordResetState> {
         code: code.replaceAll(' ', ''),
         newPassword: newPassword,
       );
+      _log('reset_ok', state.email);
       if (ref.mounted) state = state.copy();
     } on AppException catch (e) {
+      _log('reset_failed', state.email, e.message);
       if (ref.mounted) state = state.copy(error: e.message);
     }
   }
+
+  static void _log(String name, String email, [String? message]) =>
+      AppLog.auth(name, message: message, meta: {'email': email.trim().toLowerCase()});
 
   void changeEmail() {
     if (!state.isBusy) state = PasswordResetState(email: state.email);

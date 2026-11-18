@@ -8,9 +8,12 @@ import '../domain/app_settings.dart';
 import '../domain/settings_repository.dart';
 
 /// `main.dart` burada SharedPreferences-li repository verir; testlərdə fake.
-final settingsRepositoryProvider = Provider<SettingsRepository>((ref) => InMemorySettingsRepository());
+final settingsRepositoryProvider = Provider<SettingsRepository>(
+  (ref) => InMemorySettingsRepository(),
+);
 
-final settingsControllerProvider = NotifierProvider<SettingsController, AppSettings>(SettingsController.new);
+final settingsControllerProvider =
+    NotifierProvider<SettingsController, AppSettings>(SettingsController.new);
 
 class SettingsController extends Notifier<AppSettings> {
   @override
@@ -20,15 +23,22 @@ class SettingsController extends Notifier<AppSettings> {
     return settings;
   }
 
-  Future<void> setLanguage(AppLanguage language) => _update(state.copyWith(language: language));
+  Future<void> setLanguage(AppLanguage language) =>
+      _update(state.copyWith(language: language));
 
-  Future<void> setThemeMode(AppThemeMode mode) => _update(state.copyWith(themeMode: mode));
+  Future<void> setThemeMode(AppThemeMode mode) =>
+      _update(state.copyWith(themeMode: mode));
 
   Future<void> setTourSeen() => _update(state.copyWith(tourSeen: true));
 
-  Future<void> acceptLegal(int version) => _update(state.copyWith(pendingLegalVersion: version));
+  Future<void> acceptLegal(int version) =>
+      _update(state.copyWith(pendingLegalVersion: version));
 
-  Future<void> clearPendingLegal() => _update(state.copyWith(pendingLegalVersion: 0));
+  Future<void> setWhatsNewSeen(int build) =>
+      _update(state.copyWith(whatsNewSeenBuild: build));
+
+  Future<void> clearPendingLegal() =>
+      _update(state.copyWith(pendingLegalVersion: 0));
 
   Future<void> _update(AppSettings next) async {
     if (next == state) return;
@@ -44,8 +54,8 @@ class SettingsController extends Notifier<AppSettings> {
 
 extension AppThemeModeFlutter on AppThemeMode {
   ThemeMode get flutter => switch (this) {
-        AppThemeMode.system => ThemeMode.system,
-        AppThemeMode.light => ThemeMode.light,
-        AppThemeMode.dark => ThemeMode.dark,
-      };
+    AppThemeMode.system => ThemeMode.system,
+    AppThemeMode.light => ThemeMode.light,
+    AppThemeMode.dark => ThemeMode.dark,
+  };
 }

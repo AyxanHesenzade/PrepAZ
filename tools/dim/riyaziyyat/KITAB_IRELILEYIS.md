@@ -1,7 +1,7 @@
 # Riyaziyyat test toplusu I: harada dayanmışıq
 
 Bu faylı yeni sessiyada ƏVVƏL oxu. Hər alt mövzu bitəndə yenilə.
-Son yenilənmə: 2026-11-18 (fəsil 14 hazırlandı)
+Son yenilənmə: 2026-11-18 (fəsil 16 yükləndi)
 
 ## Qısa vəziyyət
 - **Mənbə:** DİM "Riyaziyyat test toplusu I hissə" (2025), skan. Fayl: `tools/dim/riyaziyyat/riyaziyyat_I_2025.pdf` (235 səhifə).
@@ -35,8 +35,12 @@ Son yenilənmə: 2026-11-18 (fəsil 14 hazırlandı)
 - Bölmə 52 YÜKLƏNDİ (cəmi 2098 sual). Fəsil 12 bitdi.
 - **Fəsil 13 "Çoxluqlar"**: bölmə 53 YÜKLƏNDİ (cəmi 2127 sual).
 - Bölmə 54 YÜKLƏNDİ. Fəsil 13 bitdi (cəmi 2174 sual, 2026-11-17 axşam).
-- **Fəsil 14 "Həndəsənin əsas anlayışları"**: bölmə 55-59 HAZIRLANDI (108 sual, 2026-11-18): `out/import_rt1_s55..59.sql` + `out/upload_kitab/` (108 `.webp`). Sahib yükləyib "ok" deyəndə: `done 55 56 57 58 59`. Yükləndikdən sonra cəmi 2282 sual.
-- **NÖVBƏTİ: fəsil 15 "Üçbucaqlar"** (pdf 142 "Üçbucaq. Üçbucaq bərabərsizliyi. Üçbucağın perimetri"-dən; açar pdf 224-ün altı / 225). Sonra fəsil 16 Çoxbucaqlılar, 17 Çevrə və dairə, isbat məsələləri (yazılı?), Situasiya, 2025 imtahanları (ayrıca qərar).
+- **Fəsil 14 "Həndəsənin əsas anlayışları"**: bölmə 55-59 YÜKLƏNDİ (108 sual, cəmi 2282).
+- **Fəsil 15 "Üçbucaqlar"**: bölmə 60-66 YÜKLƏNDİ (246 sual, 2026-11-18). Cəmi **2528 sual**. Şəkillər `out/images_kitab/`-dadır, `out/upload_kitab/` boşdur.
+- **Fəsil 16 "Çoxbucaqlılar. Dördbucaqlılar"**: bölmə 67-70 YÜKLƏNDİ (177 sual + şəkillər, 2026-11-18). Cəmi **2705 sual**. `out/upload_kitab/` boşdur.
+- Qeyd: `common/test_import_scans.py` yalnız `KT` kodlarını tanıyır, riyaziyyat SQL-ində işləmir (yoxlama: SQL-də kod/tip sayı).
+- **NÖVBƏTİ: fəsil 17 "Çevrə və dairə"** (pdf 171-dən; açar pdf 228). Sonra isbat məsələləri, Situasiya, 2025 imtahanları (ayrıca qərar).
+- Qeyd (fəsil 15): gap_fill bir sütunda həm başlanğıc qaçırıb, həm artıq tapanda say düz çıxır (bölmə 62, pdf 146 sağ: Q15 itdi, 1036 artıq idi): eyni sütunu iki `--region`-a bölmək işləyir. Sütun sayını tez ölçmək: hər sütun üçün `--region P:C:1-1` ver, xəta mesajındakı "found N" sayını oxu. Son sualın son sətri BOTTOM-a yaxındırsa kəsilir (bölmə 66 Q34): manifestdə `box[3]`-ü artır.
 - Riyaziyyat fənni aktivdir (`subjects.is_active = true`). Əvvəlki 2 nümunə sual (RIY-0001, RIY-0003) silinib.
 
 ## Səhifə qaydası
@@ -108,11 +112,22 @@ Son yenilənmə: 2026-11-18 (fəsil 14 hazırlandı)
 | 52 | Ədədi ardıcıllıqlar. Silsilələr / Ədədi və həndəsi silsilələrə aid məsələlər | 123 sağ-125 | 1-48 (49-60 yazılı) | **YÜKLƏNDİ**: 35 qapalı, 9 ədədi, 4 uyğunlaşdırma |
 | 53 | Çoxluqlar / Çoxluqlar. Çoxluqların birləşməsi, kəsişməsi, fərqi | 127-128 | 1-29 (30-36 yazılı) | **YÜKLƏNDİ**: 26 qapalı, 2 ədədi, 1 uyğunlaşdırma |
 | 54 | Çoxluqlar / Çoxluqların birləşməsi, kəsişməsi və fərqinin elementlərinin sayı | 129 sağ-132 | 1-47 (48-52 yazılı) | **YÜKLƏNDİ**: 10 qapalı, 33 ədədi, 4 uyğunlaşdırma |
-| 55 | Həndəsənin əsas anlayışları / Düz xətt, şüa, parça. Parçaların ölçülməsi | 133-134 | 1-32 (33-36 yazılı) | HAZIR: 26 qapalı, 6 ədədi |
-| 56 | Həndəsənin əsas anlayışları / Bucaq. Bucaqların ölçülməsi. Bucağın tənböləni | 135 | 1-16 (17 yazılı) | HAZIR: 8 qapalı, 8 ədədi |
-| 57 | Həndəsənin əsas anlayışları / Qonşu və qarşılıqlı bucaqlar | 136 | 1-9 (10-12 yazılı) | HAZIR: 7 qapalı, 1 ədədi, 1 uyğunlaşdırma |
-| 58 | Həndəsənin əsas anlayışları / İki paralel düz xəttin üçüncü ilə kəsişməsindən alınan bucaqlar | 136 sağ-141 | 1-46 | HAZIR: 22 qapalı, 11 ədədi, 13 uyğunlaşdırma. Q38, Q43 sütun davamı (cont-top 50) |
-| 59 | Həndəsənin əsas anlayışları / Uyğun tərəfləri paralel və perpendikulyar olan bucaqlar | 141 | 1-5 (6-11 yazılı) | HAZIR: 4 qapalı, 1 ədədi |
+| 55 | Həndəsənin əsas anlayışları / Düz xətt, şüa, parça. Parçaların ölçülməsi | 133-134 | 1-32 (33-36 yazılı) | YÜKLƏNDİ: 26 qapalı, 6 ədədi |
+| 56 | Həndəsənin əsas anlayışları / Bucaq. Bucaqların ölçülməsi. Bucağın tənböləni | 135 | 1-16 (17 yazılı) | YÜKLƏNDİ: 8 qapalı, 8 ədədi |
+| 57 | Həndəsənin əsas anlayışları / Qonşu və qarşılıqlı bucaqlar | 136 | 1-9 (10-12 yazılı) | YÜKLƏNDİ: 7 qapalı, 1 ədədi, 1 uyğunlaşdırma |
+| 58 | Həndəsənin əsas anlayışları / İki paralel düz xəttin üçüncü ilə kəsişməsindən alınan bucaqlar | 136 sağ-141 | 1-46 | YÜKLƏNDİ: 22 qapalı, 11 ədədi, 13 uyğunlaşdırma. Q38, Q43 sütun davamı (cont-top 50) |
+| 59 | Həndəsənin əsas anlayışları / Uyğun tərəfləri paralel və perpendikulyar olan bucaqlar | 141 | 1-5 (6-11 yazılı) | YÜKLƏNDİ: 4 qapalı, 1 ədədi |
+| 60 | Üçbucaqlar / Üçbucaq. Üçbucaq bərabərsizliyi. Üçbucağın perimetri | 142 | 1-15 (16-23 yazılı) | YÜKLƏNDİ: 12 qapalı, 2 ədədi, 1 uyğunlaşdırma |
+| 61 | Üçbucaqlar / Üçbucağın medianı, tənböləni, hündürlüyü. Medianların və tənbölənlərin xassəsi | 143 sağ-145 | 1-31 | YÜKLƏNDİ: 19 qapalı, 12 ədədi. Q15 davamı (cont-top 16:50) |
+| 62 | Üçbucaqlar / Üçbucağın daxili bucaqlarının cəmi. Üçbucağın xarici bucağının xassəsi | 145 sağ-147 | 1-35 | YÜKLƏNDİ: 32 qapalı, 3 ədədi. Q14/Q15 əl ilə |
+| 63 | Üçbucaqlar / Üçbucaqların konqruentlik əlaməti. Fales teoremi. Üçbucağın orta xətti | 148 | 1-14 | YÜKLƏNDİ: 13 qapalı, 1 ədədi. Q10 davamı |
+| 64 | Üçbucaqlar / Bərabəryanlı üçbucaqlar. Bərabərtərəfli üçbucaqlar | 148 sağ-150 | 1-34 | YÜKLƏNDİ: 20 qapalı, 14 ədədi |
+| 65 | Üçbucaqlar / Düzbucaqlı üçbucaq. Pifaqor teoremi. Düzbucaqlı üçbucağın tərəfləri və bucaqları arasındakı münasibətlər | 151-156 | 1-83 (84-93 yazılı) | YÜKLƏNDİ: 61 qapalı, 16 ədədi, 6 uyğunlaşdırma. Q57 davamı |
+| 66 | Üçbucaqlar / Sinuslar teoremi. Kosinuslar teoremi | 158-159 | 1-34 (35 yazılı) | YÜKLƏNDİ: 22 qapalı, 11 ədədi, 1 uyğunlaşdırma |
+| 67 | Çoxbucaqlılar. Dördbucaqlılar / Qabarıq çoxbucaqlı. Qabarıq çoxbucaqlının daxili və xarici bucaqlarının cəmi. Düzgün çoxbucaqlı | 160-161 | 1-34 (35-37 yazılı) | YÜKLƏNDİ: 19 qapalı, 10 ədədi, 5 uyğunlaşdırma. Q34 `box[3]=625` (e variantı) |
+| 68 | Çoxbucaqlılar. Dördbucaqlılar / Paraleloqram, onun xassələri və əlamətləri | 162-163 | 1-34 (35-38 yazılı) | YÜKLƏNDİ: 18 qapalı, 15 ədədi, 1 uyğunlaşdırma |
+| 69 | Çoxbucaqlılar. Dördbucaqlılar / Düzbucaqlı, kvadrat, romb və onların xassələri | 164 (sol, y~712)-166 sol | 1-41 (42-46 yazılı) | YÜKLƏNDİ: 19 qapalı, 21 ədədi, 1 uyğunlaşdırma |
+| 70 | Çoxbucaqlılar. Dördbucaqlılar / Trapesiya və onun orta xətti | 167-170 | 1-68 (69-70 yazılı) | YÜKLƏNDİ: 43 qapalı, 22 ədədi, 3 uyğunlaşdırma |
 
 ## Bölmə 4 (2026-11-17)
 - pdf 5 sağ sütun (Q1, y~178)-pdf 8 sağ sütun (Q63, y~450). Q64-96 "Ətraflı yazılı cavab" bölməsidir (pdf 8 sağ sütun, 9, 10): ATLANDI (açarda cavabları var, amma yazılı tapşırıqdır). Yazılı bölmə hər alt mövzunun sonundadır.

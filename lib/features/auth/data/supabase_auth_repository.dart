@@ -4,6 +4,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import '../../../core/config/app_config.dart';
 import '../../../core/constants/app_strings.dart';
 import '../../../core/error/app_exception.dart';
+import '../../../core/logging/app_log.dart';
 import '../domain/auth_repository.dart';
 
 class SupabaseAuthRepository implements AuthRepository {
@@ -119,6 +120,9 @@ class SupabaseAuthRepository implements AuthRepository {
   @override
   Future<void> signOut() {
     return guard(() async {
+      // çıxışdan əvvəl göndərilir ki, hadisələr hələ bu hesaba yazılsın
+      AppLog.auth('sign_out');
+      await AppLog.flush().timeout(const Duration(seconds: 2), onTimeout: () {});
       await _googleSignOut();
       await _auth.signOut();
     }, mapper: _mapAuthError);
