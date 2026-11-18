@@ -7,7 +7,7 @@
 --       admin_set_password(user, password)  new password, the user is signed out on every device
 --       admin_confirm_email(user)           marks the e-mail as confirmed (user stuck on "confirm your e-mail")
 --       admin_delete_user(user)             deletes the account and all its rows (cascade); admins are refused
---       admin_purge_events(days)            removes log rows older than N days
+--       admin_purge_events(days)            removes log rows older than N days; 0 or null = ALL rows
 -- No service_role key is needed: the panel calls these with the admin's own session. Safe to run again.
 
 create table if not exists public.app_events (
@@ -211,7 +211,11 @@ language plpgsql security definer set search_path = '' as $$
 declare removed integer;
 begin
   perform public.require_admin();
-  delete from public.app_events where created_at < now() - make_interval(days => greatest(coalesce(p_days, 30), 1));
+  if coalesce(p_days, 0) <= 0 then
+    delete from public.app_events where true;   -- "where true": safe-update guards refuse a bare delete
+  else
+    delete from public.app_events where created_at < now() - make_interval(days => p_days);
+  end if;
   get diagnostics removed = row_count;
   return removed;
 end $$;

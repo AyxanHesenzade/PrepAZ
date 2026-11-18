@@ -177,6 +177,11 @@ def main():
         conn.execute("update app_events set created_at = now() - interval '40 days' where device_id = 'spam'")
         rows, err = attempt(conn, "authenticated", admin, "select public.admin_purge_events(30)")
         check("purge removes old rows only", err is None and rows == [(300,)] and one(conn, "select count(*) from app_events") > 0)
+        left = one(conn, "select count(*) from app_events")
+        _, err = attempt(conn, "authenticated", user, "select public.admin_purge_events(0)")
+        check("user cannot delete all", err is not None and one(conn, "select count(*) from app_events") == left)
+        rows, err = attempt(conn, "authenticated", admin, "select public.admin_purge_events(0)")
+        check("admin deletes all with 0", err is None and rows == [(left,)] and one(conn, "select count(*) from app_events") == 0)
 
         print(f"\n{len(failures)} failures")
         sys.exit(1 if failures else 0)

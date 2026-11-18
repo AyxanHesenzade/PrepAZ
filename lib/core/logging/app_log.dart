@@ -40,7 +40,14 @@ class EventLogger {
     required this.sink,
     required this.store,
     this.delay = const Duration(seconds: 5),
+    this.kinds = defaultKinds,
   }) : _queue = store.load();
+
+  /// Bazaya gedən növlər. Sahibin qərarı (2026-11-18): hamısı gedir, yer lazım olanda admin paneldən
+  /// silinir ("Bütün logları sil"). Bir növü söndürmək üçün onu buradan çıxarmaq kifayətdir.
+  static const defaultKinds = {LogKind.auth, LogKind.error, LogKind.crash, LogKind.info};
+
+  final Set<LogKind> kinds;
 
   static const maxQueue = 200;
   static const batchSize = 50;
@@ -57,6 +64,7 @@ class EventLogger {
   List<LogEvent> get pending => List.unmodifiable(_queue);
 
   void add(LogEvent event, {bool urgent = false}) {
+    if (!kinds.contains(event.kind)) return;
     _queue.add(event);
     if (_queue.length > maxQueue) _queue.removeRange(0, _queue.length - maxQueue);
     unawaited(store.save(_queue));
@@ -122,8 +130,10 @@ LogEvent describeError(
   }
   final where = projectFrame(origin) ?? projectFrame(stack);
   if (where != null) meta['where'] = where;
-  if (kind == LogKind.crash && stack != null) {
-    meta['stack'] = stack.toString().split('\n').take(12).join('\n');
+  // çökmədə həmişə, adi xətada yalnız yer tapılmayanda (məs. release-də stack başqa formatdadır)
+  final trace = kind == LogKind.crash ? stack : (where == null ? origin ?? stack : null);
+  if (trace != null) {
+    meta['stack'] = trace.toString().split('\n').take(12).join('\n');
   }
   meta.removeWhere((_, v) => v == null);
   return LogEvent(

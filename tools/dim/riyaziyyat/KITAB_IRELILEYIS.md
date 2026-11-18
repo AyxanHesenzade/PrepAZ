@@ -1,7 +1,7 @@
 # Riyaziyyat test toplusu I: harada dayanmışıq
 
 Bu faylı yeni sessiyada ƏVVƏL oxu. Hər alt mövzu bitəndə yenilə.
-Son yenilənmə: 2026-11-18 (fəsil 16 yükləndi)
+Son yenilənmə: 2026-11-18 (fəsil 17 yükləndi: kitabın mövzu hissəsi bitdi)
 
 ## Qısa vəziyyət
 - **Mənbə:** DİM "Riyaziyyat test toplusu I hissə" (2025), skan. Fayl: `tools/dim/riyaziyyat/riyaziyyat_I_2025.pdf` (235 səhifə).
@@ -39,7 +39,8 @@ Son yenilənmə: 2026-11-18 (fəsil 16 yükləndi)
 - **Fəsil 15 "Üçbucaqlar"**: bölmə 60-66 YÜKLƏNDİ (246 sual, 2026-11-18). Cəmi **2528 sual**. Şəkillər `out/images_kitab/`-dadır, `out/upload_kitab/` boşdur.
 - **Fəsil 16 "Çoxbucaqlılar. Dördbucaqlılar"**: bölmə 67-70 YÜKLƏNDİ (177 sual + şəkillər, 2026-11-18). Cəmi **2705 sual**. `out/upload_kitab/` boşdur.
 - Qeyd: `common/test_import_scans.py` yalnız `KT` kodlarını tanıyır, riyaziyyat SQL-ində işləmir (yoxlama: SQL-də kod/tip sayı).
-- **NÖVBƏTİ: fəsil 17 "Çevrə və dairə"** (pdf 171-dən; açar pdf 228). Sonra isbat məsələləri, Situasiya, 2025 imtahanları (ayrıca qərar).
+- **Fəsil 17 "Çevrə və dairə"**: bölmə 71-75 YÜKLƏNDİ (277 sual + şəkillər, 2026-11-18). Cəmi **2982 sual**, `out/upload_kitab/` boşdur. **Kitabın mövzu fəsilləri (1-17) BİTDİ.**
+- **NÖVBƏTİ:** fəsil 17-dən sonrakı hissə (pdf 192-dən: isbat məsələləri, Situasiya, 2025 imtahanları) ayrıca qərarla.
 - Qeyd (fəsil 15): gap_fill bir sütunda həm başlanğıc qaçırıb, həm artıq tapanda say düz çıxır (bölmə 62, pdf 146 sağ: Q15 itdi, 1036 artıq idi): eyni sütunu iki `--region`-a bölmək işləyir. Sütun sayını tez ölçmək: hər sütun üçün `--region P:C:1-1` ver, xəta mesajındakı "found N" sayını oxu. Son sualın son sətri BOTTOM-a yaxındırsa kəsilir (bölmə 66 Q34): manifestdə `box[3]`-ü artır.
 - Riyaziyyat fənni aktivdir (`subjects.is_active = true`). Əvvəlki 2 nümunə sual (RIY-0001, RIY-0003) silinib.
 
@@ -128,6 +129,11 @@ Son yenilənmə: 2026-11-18 (fəsil 16 yükləndi)
 | 68 | Çoxbucaqlılar. Dördbucaqlılar / Paraleloqram, onun xassələri və əlamətləri | 162-163 | 1-34 (35-38 yazılı) | YÜKLƏNDİ: 18 qapalı, 15 ədədi, 1 uyğunlaşdırma |
 | 69 | Çoxbucaqlılar. Dördbucaqlılar / Düzbucaqlı, kvadrat, romb və onların xassələri | 164 (sol, y~712)-166 sol | 1-41 (42-46 yazılı) | YÜKLƏNDİ: 19 qapalı, 21 ədədi, 1 uyğunlaşdırma |
 | 70 | Çoxbucaqlılar. Dördbucaqlılar / Trapesiya və onun orta xətti | 167-170 | 1-68 (69-70 yazılı) | YÜKLƏNDİ: 43 qapalı, 22 ədədi, 3 uyğunlaşdırma |
+| 71 | Çevrə və dairə / Çevrə. Dairə. Radius, diametr, vətər. Çevrənin və çevrə qövsünün uzunluğu. Çevrələrin qarşılıqlı vəziyyəti | 171-172 | 1-30 (31-35 yazılı) | YÜKLƏNDİ: 24 qapalı, 6 ədədi. Q23 davamı |
+| 72 | Çevrə və dairə / Mərkəzi bucaq. Daxilə çəkilmiş bucaq. Toxunanla vətər arasındakı bucaq | 173 sağ-179 | 1-86 (87-92 yazılı) | YÜKLƏNDİ: 56 qapalı, 21 ədədi, 9 uyğunlaşdırma |
+| 73 | Çevrə və dairə / Çevrədə mütənasib parçalar. Toxunan və kəsənin xassələri | 180 sağ-184 sol | 1-51 (52-53 yazılı) | YÜKLƏNDİ: 34 qapalı, 16 ədədi, 1 uyğunlaşdırma. Q12 davamı (əl ilə) |
+| 74 | Çevrə və dairə / Çevrənin daxilinə və xaricinə çəkilmiş üçbucaqlar | 184 sağ-187 | 1-55 (56-60 yazılı) | YÜKLƏNDİ: 37 qapalı, 17 ədədi, 1 uyğunlaşdırma. Q55 `box[3]=915` |
+| 75 | Çevrə və dairə / Çevrənin daxilinə və xaricinə çəkilmiş çoxbucaqlılar | 188-191 sol | 1-55 (56-61 yazılı) | YÜKLƏNDİ: 40 qapalı, 13 ədədi, 2 uyğunlaşdırma. Q7 (Q8 `cont_top` 59), Q25 davamı |
 
 ## Bölmə 4 (2026-11-17)
 - pdf 5 sağ sütun (Q1, y~178)-pdf 8 sağ sütun (Q63, y~450). Q64-96 "Ətraflı yazılı cavab" bölməsidir (pdf 8 sağ sütun, 9, 10): ATLANDI (açarda cavabları var, amma yazılı tapşırıqdır). Yazılı bölmə hər alt mövzunun sonundadır.
