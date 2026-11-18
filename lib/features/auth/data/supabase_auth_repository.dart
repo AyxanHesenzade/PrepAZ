@@ -18,6 +18,9 @@ class SupabaseAuthRepository implements AuthRepository {
   static Future<void>? _googleReady;
 
   @override
+  String? get currentEmail => _auth.currentUser?.email;
+
+  @override
   Stream<bool> watchSignedIn() async* {
     yield _auth.currentSession != null;
     yield* _auth.onAuthStateChange.map((state) => state.session != null);

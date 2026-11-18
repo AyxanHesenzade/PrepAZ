@@ -12,3 +12,14 @@ final authRepositoryProvider = Provider<AuthRepository>(
 final isSignedInProvider = StreamProvider<bool>(
   (ref) => ref.watch(authRepositoryProvider).watchSignedIn(),
 );
+
+/// Ana ekranın başlığında göstərilən e-poçt. Giriş/çıxışda yenilənir.
+/// Supabase qurulmayıbsa (məs. testlərdə) null: başlıq "Salam!" qalır.
+final currentEmailProvider = Provider<String?>((ref) {
+  ref.watch(isSignedInProvider);
+  try {
+    return ref.watch(authRepositoryProvider).currentEmail;
+  } catch (_) {
+    return null;
+  }
+});

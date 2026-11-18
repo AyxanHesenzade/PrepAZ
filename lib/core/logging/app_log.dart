@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import 'log_event.dart';
@@ -26,6 +27,12 @@ abstract final class AppLog {
   /// [origin]: xətanın baş verdiyi yerin (repository) stack-i, `guard` çağırılanda götürülür.
   static void error(Object error, {StackTrace? stack, StackTrace? origin}) =>
       _logger?.add(describeError(LogKind.error, error, stack: stack, origin: origin));
+
+  /// `FlutterError.onError`: ekran (layout) xətası çökmə deyil, `error` sayılır; yeri widget-dən götürülür.
+  static void flutterError(FlutterErrorDetails details) {
+    final event = describeFlutterError(details);
+    _logger?.add(event, urgent: event.kind == LogKind.crash);
+  }
 
   static void crash(Object error, StackTrace? stack) =>
       _logger?.add(describeError(LogKind.crash, error, stack: stack), urgent: true);
@@ -159,4 +166,36 @@ String? projectFrame(StackTrace? stack) {
     return '$path:${m.group(3)} (${m.group(1)})';
   }
   return null;
+}
+
+/// Flutter-in öz xətası. "RenderFlex overflowed" kimi ekran xətaları tətbiqi dayandırmır (və yalnız debug-da
+/// bildirilir), ona görə `error` + `layout_overflow`; yer = "səbəb olan widget"-in faylı:sətri.
+LogEvent describeFlutterError(FlutterErrorDetails details) {
+  final text = details.exceptionAsString();
+  final overflow = text.contains('overflowed');
+  final base = describeError(
+    overflow ? LogKind.error : LogKind.crash,
+    details.exception,
+    stack: overflow ? null : details.stack, // overflow-un stack-i framework-dür, faydasızdır
+  );
+  final meta = {...?base.meta};
+  final widget = causingWidget(details.toString());
+  if (widget != null) meta['where'] = widget;
+  if (details.library != null) meta['library'] = details.library;
+  return LogEvent(
+    kind: base.kind,
+    name: overflow ? 'layout_overflow' : 'FlutterError',
+    message: text.length > LogEvent.maxMessage ? text.substring(0, LogEvent.maxMessage) : text,
+    meta: meta,
+  );
+}
+
+/// "The relevant error-causing widget was: Column Column:file:///.../lib/features/x/y.dart:120:16"
+/// → `features/x/y.dart:120 (Column)`.
+String? causingWidget(String report) {
+  final m = RegExp(
+    // ad və fayl eyni sətirdə və ya alt-alta ola bilər
+    r'error-causing widget was:\s*(\w+)[\s\S]{0,300}?lib/([\w/.]+\.dart):(\d+)',
+  ).firstMatch(report);
+  return m == null ? null : '${m.group(2)}:${m.group(3)} (${m.group(1)})';
 }

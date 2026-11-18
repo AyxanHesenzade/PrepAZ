@@ -18,6 +18,9 @@ abstract interface class AuthRepository {
   /// İlk dəyəri dərhal verir, sonra hər giriş/çıxışda yenisini.
   Stream<bool> watchSignedIn();
 
+  /// Daxil olmuş istifadəçinin e-poçtu (daxil olmayıbsa və ya e-poçt yoxdursa, null).
+  String? get currentEmail;
+
   Future<void> signIn({required String email, required String password});
 
   Future<SignUpOutcome> signUp({

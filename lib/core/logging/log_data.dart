@@ -6,14 +6,15 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import '../utils/client_id.dart';
 import 'log_event.dart';
 
-/// `log_events` RPC (migration 019). `guard` İŞLƏDİLMİR: log xətası yenə loga düşüb dövr yaratmasın.
-/// İstifadəçi serverdə sessiyadan götürülür; girişdən əvvəlki hadisələr yalnız [deviceId] ilə bağlanır.
+/// `log_events` RPC (migration 019, cihaz məlumatı ilə 020). `guard` İŞLƏDİLMİR: log xətası yenə loga düşüb
+/// dövr yaratmasın. İstifadəçi serverdə sessiyadan götürülür; girişdən əvvəlki hadisələr yalnız [deviceId] ilə bağlanır.
 class SupabaseLogSink implements LogSink {
   SupabaseLogSink(
     this._db, {
     required this.deviceId,
     required this.version,
     required this.platform,
+    this.info,
   });
 
   final SupabaseClient _db;
@@ -21,16 +22,33 @@ class SupabaseLogSink implements LogSink {
   final String version;
   final String platform;
 
+  /// Telefonun məlumatı, hər göndərişdə oxunur (ekran dönə, şrift dəyişə bilər).
+  final Map<String, Object?> Function()? info;
+
+  /// Bazada 020 hələ yoxdursa, köhnə (4 parametrli) funksiyaya keçilir: loglar növbədə ilişib qalmasın.
+  bool _withoutInfo = false;
+
   @override
-  Future<void> send(List<LogEvent> events) => _db.rpc<dynamic>(
-    'log_events',
-    params: {
+  Future<void> send(List<LogEvent> events) async {
+    final params = <String, dynamic>{
       'p_events': [for (final e in events) e.toJson()],
       'p_device': deviceId,
       'p_version': version,
       'p_platform': platform,
-    },
-  );
+    };
+    final details = info?.call();
+    if (_withoutInfo || details == null) {
+      await _db.rpc<dynamic>('log_events', params: params);
+      return;
+    }
+    try {
+      await _db.rpc<dynamic>('log_events', params: {...params, 'p_info': details});
+    } on PostgrestException catch (e) {
+      if (e.code != 'PGRST202') rethrow; // funksiya tapılmadı = migration 020 işlədilməyib
+      _withoutInfo = true;
+      await _db.rpc<dynamic>('log_events', params: params);
+    }
+  }
 }
 
 class PrefsLogStore implements LogStore {

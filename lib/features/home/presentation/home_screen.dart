@@ -6,6 +6,7 @@ import '../../../core/constants/app_strings.dart';
 import '../../../core/theme/app_spacing.dart';
 import '../../../core/widgets/async_value_view.dart';
 import '../../../core/widgets/fade_slide_in.dart';
+import '../../auth/presentation/auth_providers.dart';
 import '../../browse/presentation/topic_list_screen.dart';
 import '../../offline/presentation/download_screen.dart';
 import '../../offline/presentation/offline_providers.dart';
@@ -86,9 +87,20 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   ),
                   AppSpacing.gapM,
                   Expanded(
-                    child: Text(
-                      AppStrings.homeTitle,
-                      style: Theme.of(context).textTheme.headlineMedium,
+                    child: Consumer(
+                      builder: (context, ref, _) {
+                        final email = ref.watch(currentEmailProvider);
+                        final textTheme = Theme.of(context).textTheme;
+                        if (email == null || email.isEmpty) {
+                          return Text(AppStrings.homeTitle, style: textTheme.headlineMedium);
+                        }
+                        return Text(
+                          email,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w700),
+                        );
+                      },
                     ),
                   ),
                   const HeaderMascot(),

@@ -16,6 +16,9 @@ class FakeAuthRepository implements AuthRepository {
   int googleCalls = 0;
 
   @override
+  String? currentEmail;
+
+  @override
   Future<bool> signInWithGoogle() async {
     googleCalls++;
     if (googleError != null) throw googleError!;

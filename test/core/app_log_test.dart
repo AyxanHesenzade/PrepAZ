@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:prep_az/core/error/app_exception.dart';
@@ -180,6 +181,39 @@ void main() {
       );
       expect(logger.pending, isEmpty);
     });
+  });
+
+  test('a layout overflow is an error with the widget place, not a crash', () {
+    // the same shape Flutter reports for "A RenderFlex overflowed..."
+    final details = FlutterErrorDetails(
+      exception: FlutterError('A RenderFlex overflowed by 2.0 pixels on the bottom.'),
+      library: 'rendering library',
+      informationCollector: () => [
+        DiagnosticsNode.message(
+          'The relevant error-causing widget was:\n'
+          '  Column Column:file:///C:/x/prep_az/lib/features/stats/presentation/stats_tab.dart:120:16',
+        ),
+      ],
+    );
+
+    final e = describeFlutterError(details);
+    expect(e.kind, LogKind.error);
+    expect(e.name, 'layout_overflow');
+    expect(e.message, contains('overflowed by 2.0 pixels'));
+    expect(e.meta!['where'], 'features/stats/presentation/stats_tab.dart:120 (Column)');
+    expect(describeFlutterError(FlutterErrorDetails(exception: StateError('x'))).kind, LogKind.crash);
+    expect(e.meta!['stack'], isNull);
+  });
+
+  test('causingWidget finds the project file', () {
+    expect(
+      causingWidget(
+        'The relevant error-causing widget was:\n'
+        '  Column Column:file:///C:/x/prep_az/lib/features/stats/presentation/stats_tab.dart:120:16\n',
+      ),
+      'features/stats/presentation/stats_tab.dart:120 (Column)',
+    );
+    expect(causingWidget('nothing here'), isNull);
   });
 
   test('a failed sign in is logged with the e-mail and never the password', () async {
