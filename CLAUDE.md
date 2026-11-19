@@ -149,6 +149,9 @@ tools/dim/
 - `IMAGE_BASE_URL` (env json, `AppConfig.imageBaseUrl`): boşdursa yalnız Supabase. R2-yə keçid tədricəndir: R2-də olmayan şəkil Supabase-dən açılır, loglarda `image_fallback`.
 - Disk keşi: `FileImageCache` (cache qovluğu `question_images`, 7 gün; düzəldilmiş şəkil eyni adla yükləndiyi üçün ömür var).
 - Sahibin qərarı: R2 bucket AÇIQ ola bilər. **Harada qaldığımız: `R2_IRELILEYIS.md` (kökdə), bu işə başlamazdan əvvəl oxu.** Hesab, bucket `prepaz-images-test`, açıq link və token hazırdır; köçürmə skripti `tools/dim/common/upload_r2.py`. R2 açarları heç vaxt repoya yazılmır.
+- **Vəziyyət (2026-11-19):** test bucket-inə 7740 şəkilin hamısı köçürüldü (`--check`: 0 çatışmayan), `IMAGE_BASE_URL` test mühitində R2 linkidir. Qalıb: telefonda yoxlama. Supabase-dəki şəkillər SİLİNMİR (`get_download_catalog` ölçünü oradan oxuyur).
+- Yeni şəkil indi İKİ yerə yüklənir: Supabase (`upload_images.py` / panel) + R2 (`python upload_r2.py --folder out/upload_kitab`).
+- Gizli açarlar (R2, Supabase service key) kökdəki `.env` faylındadır (gitignore-da, nümunə `.env.example`), `common/local_env.py` oxuyur. Claude `.env`-in məzmununu oxumur/göstərmir; publishable açar service key deyil.
 
 ## Fənlər və yeni sual əlavə etmək
 - Fənn parametrləri `tools/dim/common/subjects.py`-dadır (kod prefiksi, Excel, bölmələr): `kimya` (KIM-), `biologiya` (BIO-).

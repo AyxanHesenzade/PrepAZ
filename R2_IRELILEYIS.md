@@ -25,17 +25,17 @@ Onlar sahibdədir (parol meneceri). Lazım olanda yalnız terminalda mühit dəy
 - [x] Köçürmə skripti: `tools/dim/common/upload_r2.py` (oflayn test: `test_upload_r2.py`). Heç nə silmir, R2-də olanı atlayır.
 - [x] Cloudflare hesabı, R2 aktiv ($0), bucket `prepaz-images-test`, açıq r2.dev linki, API token.
 - [x] Açarlar üçün kökdə `.env` faylı (gitignore-dadır, nümunə `.env.example`); `upload_r2.py` onu özü oxuyur (`common/local_env.py`). Terminalda `$env:` ilə verilən dəyər fayldakından üstündür.
-- [ ] **NÖVBƏTİ: quru yoxlama.** Sahib kökdəki `.env`-i doldurur, sonra:
+- [x] Quru yoxlama. Sahib kökdəki `.env`-i doldurur, sonra:
   ```powershell
   pip install boto3
   cd tools\dim\common
   python upload_r2.py --from-supabase --dry-run
   ```
   Çıxışdakı "Mənbə ... · R2 ... · yüklənməli: N" sətri Claude-a göndərilir (açar görünmür). Claude `.env`-i oxumur.
-- [ ] Real köçürmə: `python upload_r2.py --from-supabase`, sonra `python upload_r2.py --check` (0 çatışmayan).
-- [ ] Brauzerdə yoxla: `https://pub-c4883393819844a5a30575d3a4ef7ccc.r2.dev/<bir şəkil adı>.webp` açılır.
-- [ ] Linki yaz: `env/test.json` → `IMAGE_BASE_URL` və `DebugDefaults.imageBaseUrl` (test ikisinin eyni olmasını yoxlayır).
-- [ ] Telefonda yoxla: sual şəkli açılır, oflayn yükləmə işləyir; admin panel Loglar-da `image_fallback` çıxmır.
+- [x] Real köçürmə (2026-11-19): 7740 fayl (7623 webp + 117 köhnə png qalığı), alınmadı 0; `--check`: 0 çatışmayan.
+- [x] Brauzerdə yoxlanıb: R2 linki ilə şəkillər açılır (HTTP 200, image/webp).
+- [x] Link yazılıb: `env/test.json` → `IMAGE_BASE_URL` və `DebugDefaults.imageBaseUrl` (test ikisinin eyni olmasını yoxlayır).
+- [ ] **NÖVBƏTİ: telefonda yoxla:** sual şəkli açılır, oflayn yükləmə işləyir; admin panel Loglar-da `image_fallback` çıxmır.
 - [ ] Yeni şəkil axını: `import_scans.py` / `upload_images.py`-dən sonra `python upload_r2.py --folder out/upload_kitab` (bir müddət hər iki yerə yüklənir).
 
 ## Sonra (R2-yə tam keçəndə)
