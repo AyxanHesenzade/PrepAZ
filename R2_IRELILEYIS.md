@@ -24,18 +24,14 @@ Onlar sahibdədir (parol meneceri). Lazım olanda yalnız terminalda mühit dəy
 - [x] `IMAGE_BASE_URL` parametri (`env/test.json`, `DebugDefaults.imageBaseUrl`): **hələ BOŞDUR** (bucket boşdur; dolu olsa hər şəkil əvvəl R2-də tapılmayıb gecikərdi).
 - [x] Köçürmə skripti: `tools/dim/common/upload_r2.py` (oflayn test: `test_upload_r2.py`). Heç nə silmir, R2-də olanı atlayır.
 - [x] Cloudflare hesabı, R2 aktiv ($0), bucket `prepaz-images-test`, açıq r2.dev linki, API token.
-- [ ] **NÖVBƏTİ: quru yoxlama.** Sahib öz terminalında (PowerShell):
+- [x] Açarlar üçün kökdə `.env` faylı (gitignore-dadır, nümunə `.env.example`); `upload_r2.py` onu özü oxuyur (`common/local_env.py`). Terminalda `$env:` ilə verilən dəyər fayldakından üstündür.
+- [ ] **NÖVBƏTİ: quru yoxlama.** Sahib kökdəki `.env`-i doldurur, sonra:
   ```powershell
   pip install boto3
-  $env:R2_ACCOUNT_ID = "..."          # R2 Overview → Account Details → Account ID
-  $env:R2_ACCESS_KEY_ID = "..."
-  $env:R2_SECRET_ACCESS_KEY = "..."
-  $env:SUPABASE_URL = "https://ehaqunuwkccwosaorvgy.supabase.co"
-  $env:SUPABASE_SERVICE_KEY = "..."   # Supabase → Project Settings → API Keys
   cd tools\dim\common
   python upload_r2.py --from-supabase --dry-run
   ```
-  Çıxışdakı "Mənbə ... · R2 ... · yüklənməli: N" sətri Claude-a göndərilir (açar görünmür).
+  Çıxışdakı "Mənbə ... · R2 ... · yüklənməli: N" sətri Claude-a göndərilir (açar görünmür). Claude `.env`-i oxumur.
 - [ ] Real köçürmə: `python upload_r2.py --from-supabase`, sonra `python upload_r2.py --check` (0 çatışmayan).
 - [ ] Brauzerdə yoxla: `https://pub-c4883393819844a5a30575d3a4ef7ccc.r2.dev/<bir şəkil adı>.webp` açılır.
 - [ ] Linki yaz: `env/test.json` → `IMAGE_BASE_URL` və `DebugDefaults.imageBaseUrl` (test ikisinin eyni olmasını yoxlayır).

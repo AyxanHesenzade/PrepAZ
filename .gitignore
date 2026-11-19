@@ -52,3 +52,6 @@ app.*.map.json
 
 # Python
 __pycache__/
+
+# Gizli açarlar (R2, Supabase service key): yalnız bu kompüterdə
+/.env

@@ -1,3 +1,5 @@
+import '../../offline/domain/download_nudge.dart';
+
 /// Axşam xatırlatmasının növü (mətn presentation-da seçilir).
 enum ReminderKind {
   /// Seriya yoxdur, bu gün hələ test həll edilməyib.
@@ -11,6 +13,9 @@ enum ReminderKind {
 
   /// Bir neçə gündür girmir: geri qayıt.
   comeBack,
+
+  /// Bu gün həll edilib, telefona yüklənməmiş mövzu qalıb: "sabah yol üçün mövzu yüklə" (üç gündən bir).
+  download,
 }
 
 class ReminderPlan {
@@ -57,10 +62,13 @@ class StreakStatus {
 ///
 /// - bu gün həll edilməyibsə və saat [hour]-a çatmayıbsa: bu axşam (`atRisk` və ya `start`);
 /// - sabah: bu gün həll edilibsə `keepGoing`, yoxsa `comeBack`;
-/// - sonrakı günlər: `comeBack` (tətbiq açılmasa da ruhlandırsın).
+/// - sonrakı günlər: `comeBack` (tətbiq açılmasa da ruhlandırsın);
+/// - bu gün həll edilibsə, telefona yüklənməmiş mövzu qalıbsa ([hasMissingTopics]) və günü uyğundursa
+///   ([isDownloadReminderDay], üç gündən bir): bu axşam `download`. Başqa bildirişi əvəz etmir (o axşam boşdur).
 List<ReminderPlan> planReminders({
   required DateTime now,
   required StreakStatus status,
+  bool hasMissingTopics = false,
   int hour = 20,
   int days = 3,
 }) {
@@ -74,6 +82,8 @@ List<ReminderPlan> planReminders({
           ? ReminderPlan(at: today, kind: ReminderKind.atRisk, streak: streak)
           : ReminderPlan(at: today, kind: ReminderKind.start),
     );
+  } else if (practicedToday && hasMissingTopics && now.isBefore(today) && isDownloadReminderDay(now)) {
+    plans.add(ReminderPlan(at: today, kind: ReminderKind.download));
   }
   for (var d = 1; d <= days; d++) {
     final at = DateTime(now.year, now.month, now.day + d, hour);

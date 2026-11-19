@@ -9,7 +9,8 @@ Modes:
   python upload_r2.py --folder out/upload_kitab  upload every .webp/.png of a local folder (new images)
   python upload_r2.py --check                    compare Supabase and R2, list what is missing in R2
 
-Needs (environment variables only, never commit or paste them anywhere; the keys are never printed):
+Needs (from the project's root .env file (gitignored, see .env.example) or terminal environment variables;
+never commit or paste them anywhere; the keys are never printed):
   R2_ACCOUNT_ID         Cloudflare account id (R2 Overview → Account Details)
   R2_ACCESS_KEY_ID      R2 API token (Object Read & Write, this bucket only)
   R2_SECRET_ACCESS_KEY
@@ -25,6 +26,8 @@ import sys
 import urllib.error
 import urllib.request
 from pathlib import Path
+
+import local_env
 
 SUPABASE_BUCKET = "question-images"
 CONTENT_TYPES = {".webp": "image/webp", ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg"}
@@ -123,6 +126,7 @@ def main(argv=None):
     ap.add_argument("--dry-run", action="store_true", help="only count, upload nothing")
     ap.add_argument("--overwrite", action="store_true", help="replace images that already exist in R2 (corrected images)")
     args = ap.parse_args(argv)
+    local_env.load()
     bucket = os.environ.get("R2_BUCKET", "prepaz-images-test")
 
     sb_url, sb_key = os.environ.get("SUPABASE_URL"), os.environ.get("SUPABASE_SERVICE_KEY")

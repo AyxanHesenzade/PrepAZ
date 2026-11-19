@@ -15,20 +15,26 @@ class QuestionCodeLabel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final label = question.reportCode;
-    final outline = Theme.of(context).colorScheme.outline;
+    final scheme = Theme.of(context).colorScheme;
+    final outline = scheme.outline;
     final small = Theme.of(context).textTheme.bodySmall?.copyWith(color: outline);
+    final red = scheme.error;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
+        // Qırmızıdır ki, şagird səhv sualı görəndə düyməni dərhal tapsın.
         TextButton.icon(
           onPressed: () => showReportSheet(context, question: question),
           style: TextButton.styleFrom(
-            foregroundColor: outline,
+            foregroundColor: red,
+            backgroundColor: red.withValues(alpha: 0.12),
+            shape: const StadiumBorder(),
+            side: BorderSide(color: red.withValues(alpha: 0.5)),
             visualDensity: VisualDensity.compact,
-            padding: const EdgeInsets.symmetric(horizontal: 6),
-            textStyle: small,
+            padding: const EdgeInsets.symmetric(horizontal: 12),
+            textStyle: small?.copyWith(fontWeight: FontWeight.w700),
           ),
-          icon: const Icon(Icons.flag_outlined, size: 16),
+          icon: const Icon(Icons.flag_rounded, size: 16),
           label: Text(AppStrings.reportButton),
         ),
         Flexible(

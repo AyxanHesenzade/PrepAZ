@@ -22,6 +22,7 @@ import 'package:prep_az/features/offline/domain/offline_models.dart';
 import 'package:prep_az/features/offline/presentation/downloaded_subjects_screen.dart';
 import 'package:prep_az/features/offline/presentation/downloaded_topics_screen.dart';
 import 'package:prep_az/features/offline/presentation/offline_providers.dart';
+import 'package:prep_az/features/offline/presentation/widgets/download_nudge_card.dart';
 import 'package:prep_az/features/quiz/domain/question.dart';
 
 import '../../support/fakes.dart';
@@ -115,7 +116,7 @@ void main() {
   tearDown(() => db.close());
 
   /// Tətbiqi (yenidən) açır. Baza eynidir, yəni telefon eynidir; internet [server.online]-dan asılıdır.
-  Future<void> openApp(WidgetTester tester) async {
+  Future<void> openApp(WidgetTester tester, {bool nudge = false}) async {
     tester.view.physicalSize = const Size(1000, 4000);
     tester.view.devicePixelRatio = 1;
     addTearDown(tester.view.reset);
@@ -133,6 +134,7 @@ void main() {
           progressRepositoryProvider.overrideWithValue(FakeProgressRepository()),
           goalRepositoryProvider.overrideWithValue(FakeGoalRepository(goal: const UserGoal(periodId: 1))),
           remoteDownloadSourceProvider.overrideWithValue(downloads),
+          downloadNudgeEnabledProvider.overrideWithValue(nudge),
         ],
         child: const MaterialApp(home: HomeScreen()),
       ),
@@ -147,6 +149,68 @@ void main() {
 
   Future<void> downloadAtom() =>
       DriftOfflineStore(db).saveTopic(subjectId: 1, topic: _atom, questions: [_closed('a', 7), _closed('b', 7)]);
+
+  testWidgets('a topic is not on the phone yet: the mascot suggests downloading, "Later" hides it', (tester) async {
+    downloads.catalog.add(_atom);
+    await openApp(tester, nudge: true);
+
+    expect(find.text(AppStrings.downloadNudgeLines.first), findsOneWidget);
+    expect(find.text(AppStrings.downloadNudgeAction), findsOneWidget);
+
+    await tester.tap(find.text(AppStrings.downloadNudgeLater));
+    await tester.pump();
+    expect(find.text(AppStrings.downloadNudgeLines.first), findsNothing);
+  });
+
+  testWidgets('several subjects with missing topics: "Download" first asks which subject', (tester) async {
+    downloads.catalog.add(_atom); // fake kataloq hər iki fənn üçün eynidir
+    await openApp(tester, nudge: true);
+
+    await tester.tap(find.text(AppStrings.downloadNudgeAction));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 500));
+
+    expect(find.byType(BottomSheet), findsOneWidget);
+    expect(find.descendant(of: find.byType(BottomSheet), matching: find.text('Biologiya')), findsOneWidget);
+  });
+
+  testWidgets('the mascot says nothing when every topic is already on the phone', (tester) async {
+    downloads.catalog.add(_atom);
+    await tester.runAsync(downloadAtom);
+    await openApp(tester, nudge: true);
+
+    expect(find.text(AppStrings.downloadNudgeAction), findsNothing);
+  });
+
+  testWidgets('subject filter: hide a subject, the button shows 1/2, "All" brings it back', (tester) async {
+    await openApp(tester);
+    expect(find.text('Biologiya'), findsWidgets);
+
+    await tester.tap(find.text(AppStrings.subjectFilterButton));
+    await tester.pumpAndSettle();
+    final sheet = find.byType(BottomSheet);
+    await tester.tap(find.descendant(of: sheet, matching: find.text('Biologiya')));
+    await tester.pump();
+    // sonuncu qalan fənn çıxarılmır
+    await tester.tap(find.descendant(of: sheet, matching: find.text('Kimya')));
+    await tester.pump();
+    await tester.tap(find.text(AppStrings.subjectFilterDone));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Biologiya'), findsNothing);
+    expect(find.text('Kimya'), findsWidgets);
+    expect(find.text(AppStrings.subjectFilterCount(1, 2)), findsOneWidget);
+
+    await tester.tap(find.text(AppStrings.subjectFilterCount(1, 2)));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text(AppStrings.subjectFilterAll));
+    await tester.pump();
+    await tester.tap(find.text(AppStrings.subjectFilterDone));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Biologiya'), findsWidgets);
+    expect(find.text(AppStrings.subjectFilterButton), findsOneWidget);
+  });
 
   testWidgets('online: no offline banner', (tester) async {
     await openApp(tester);
@@ -178,6 +242,7 @@ void main() {
 
     expect(find.text(AppStrings.homeOfflineTitle), findsOneWidget);
     expect(find.text(AppStrings.homeOfflineBodyEmpty), findsOneWidget);
+    expect(find.text(AppStrings.homeOfflineNextTime), findsOneWidget, reason: 'tip for next time');
     expect(find.text(AppStrings.homeOfflineGo), findsNothing);
   });
 

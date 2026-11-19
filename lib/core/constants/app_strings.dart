@@ -460,9 +460,65 @@ abstract final class AppStrings {
     'There is no internet, but the questions you downloaded work.',
   );
   static String get homeOfflineBodyEmpty => _t(
-    'İnternet yoxdur. Hələ mövzu yükləməmisən: internet olanda mövzuları yüklə.',
-    'Интернета нет. Ты ещё не загружал темы: загрузи их, когда будет интернет.',
-    'There is no internet and you have not downloaded any topics yet: download them when you are online.',
+    'İnternet yoxdur, telefonda da hələ yüklənmiş mövzu yoxdur.',
+    'Интернета нет, и на телефоне пока нет загруженных тем.',
+    'There is no internet and there are no downloaded topics on your phone yet.',
+  );
+  static String get subjectFilterButton => _t('Filtr', 'Фильтр', 'Filter');
+  static String subjectFilterCount(int shown, int all) => '$shown/$all';
+  static String get subjectFilterTitle =>
+      _t('Hansı fənləri göstərək?', 'Какие предметы показать?', 'Which subjects to show?');
+  static String get subjectFilterHint => _t(
+    'Yalnız hazırlaşdığın fənləri seç. Ən azı biri qalmalıdır.',
+    'Выбери только те предметы, к которым готовишься. Хотя бы один должен остаться.',
+    'Pick only the subjects you are preparing for. At least one has to stay.',
+  );
+  static String get subjectFilterAll => _t('Hamısı', 'Все', 'All');
+  static String get subjectFilterDone => _t('Hazır', 'Готово', 'Done');
+  static String get homeOfflineNextTime => _t(
+    'Növbəti dəfə üçün: internet olanda mövzunu telefona yüklə, yolda da internetsiz həll edərsən.',
+    'На будущее: когда будет интернет, загрузи тему на телефон и решай в дороге без интернета.',
+    'For next time: when you are online, download a topic to your phone and practise on the go without internet.',
+  );
+  // Köməkçinin ana ekranda "yüklə" sözü (hər göstərişdə növbəti sətir).
+  static List<String> get downloadNudgeLines => _tl(
+    [
+      'Yolda internet yoxdur? Mövzunu telefona yüklə, avtobusda da həll et 🚌',
+      'Metroda vaxt boşa getməsin: bir mövzu yüklə, internetsiz işlə 🚇',
+      'Mövzunu bir dəfə yüklə, sonra internet lazım deyil 📥',
+    ],
+    [
+      'В дороге нет интернета? Загрузи тему и решай даже в автобусе 🚌',
+      'Не трать время в метро: загрузи тему и занимайся без интернета 🚇',
+      'Загрузи тему один раз, потом интернет не нужен 📥',
+    ],
+    [
+      'No internet on the road? Download a topic and practise on the bus 🚌',
+      'Do not waste time on the metro: download a topic and work offline 🚇',
+      'Download a topic once and you will not need the internet 📥',
+    ],
+  );
+  static String get downloadNudgeAction =>
+      _t('Mövzu yüklə', 'Загрузить тему', 'Download a topic');
+  static String get downloadNudgeLater => _t('Sonra', 'Позже', 'Later');
+  static String get reminderTitleDownload => _t(
+    'Sabah yolda vaxt itirmə 📥',
+    'Не теряй время в дороге 📥',
+    'Do not waste time on the road 📥',
+  );
+  static List<String> get reminderDownload => _tl(
+    [
+      'Bir mövzunu telefona yüklə, avtobusda internetsiz həll et.',
+      'İnternet olmayanda da məşq et: bu axşam bir mövzu yüklə.',
+    ],
+    [
+      'Загрузи тему на телефон и решай в автобусе без интернета.',
+      'Занимайся и без интернета: загрузи тему сегодня вечером.',
+    ],
+    [
+      'Download a topic to your phone and practise on the bus offline.',
+      'Practise even without internet: download a topic tonight.',
+    ],
   );
   static String get homeOfflineRetry => _t(
     'İnterneti yenidən yoxla',
@@ -502,30 +558,54 @@ abstract final class AppStrings {
       'Əla gedirsən! Ardıcıl {n} düz 🔥',
       '{n} düz ardıcıl! Beyin qızdı 😎',
       'Hə, bax belə! {n} düz ardıcıl 👏',
+      'Ritmi tutdun: {n} düz ardıcıl 🎧',
+      '{n} düz! İsinmə bitdi, indi əsl oyun başlayır 🎮',
+      'Təsadüf deyil bu: {n} düz ardıcıl ✨',
+      'Səhv yoxdur, yalnız düz: {n} ardıcıl ✅',
     ],
     [
       'Отлично! {n} правильных подряд 🔥',
       '{n} подряд! Мозг разогрелся 😎',
       'Вот так! {n} правильных подряд 👏',
+      'Поймал ритм: {n} правильных подряд 🎧',
+      '{n} правильных! Разминка окончена, теперь настоящая игра 🎮',
+      'Это не случайность: {n} подряд ✨',
+      'Ни одной ошибки, только верные: {n} подряд ✅',
     ],
     [
       'Nice! {n} correct in a row 🔥',
       '{n} in a row! Your brain is warmed up 😎',
       'Yes, like that! {n} correct in a row 👏',
+      'You found the rhythm: {n} correct in a row 🎧',
+      '{n} correct! Warm-up is over, now the real game starts 🎮',
+      'That is no accident: {n} in a row ✨',
+      'No mistakes, only right answers: {n} in a row ✅',
     ],
   );
   static List<String> get cheerFive => _tl(
     [
       '{n} düz ardıcıl! Sən məşqi yeyirsən 😄',
       'Dayan, dayan... {n} düz?! Müəllimlər sənə baxır 👀',
+      '{n} düz ardıcıl! Bu forma imtahanda da lazımdır 🎯',
+      'Seriya böyüyür: {n} düz, dayanma ⚡',
+      '{n} ardıcıl düz! Yarışda kimsə narahat olmağa başladı 😏',
+      'Bu artıq təsadüf deyil, bu səviyyədir: {n} düz 📈',
     ],
     [
       '{n} подряд! Ты съедаешь эту тренировку 😄',
       'Стоп-стоп... {n} правильных?! Учителя смотрят на тебя 👀',
+      '{n} подряд! Такая форма пригодится и на экзамене 🎯',
+      'Серия растёт: {n} правильных, не останавливайся ⚡',
+      '{n} подряд! Кто-то в рейтинге уже начал волноваться 😏',
+      'Это уже не случайность, это уровень: {n} правильных 📈',
     ],
     [
       '{n} in a row! You are eating this practice for breakfast 😄',
       'Wait, wait... {n} correct?! The teachers are watching you 👀',
+      '{n} in a row! Keep this form for the exam too 🎯',
+      'The streak is growing: {n} correct, do not stop ⚡',
+      '{n} in a row! Someone on the leaderboard is getting nervous 😏',
+      'This is not luck anymore, this is skill: {n} correct 📈',
     ],
   );
   static List<String> get cheerBig => _tl(
@@ -533,16 +613,25 @@ abstract final class AppStrings {
       '{n} düz ardıcıl! Sən artıq robotsan 🤖',
       '{n} ardıcıl düz! Bu nə rekorddur belə 🏆',
       'Nəfəs al! {n} düz ardıcıl, sən yanırsan 🚀',
+      '{n} düz! Bunu ekran görüntüsü ilə dostlarına göstər 📸',
+      'Fokus rejimi aktivdir: {n} düz ardıcıl 🧠',
+      '{n} ardıcıl düz! Bu seriya çərçivəyə layiqdir 🖼️',
     ],
     [
       '{n} подряд! Ты уже робот 🤖',
       '{n} правильных подряд! Что это за рекорд 🏆',
       'Выдохни! {n} подряд, ты в огне 🚀',
+      '{n} правильных! Сделай скриншот и покажи друзьям 📸',
+      'Режим фокуса включён: {n} подряд 🧠',
+      '{n} подряд! Эту серию можно повесить в рамку 🖼️',
     ],
     [
       '{n} in a row! You are basically a robot 🤖',
       '{n} correct in a row! What a record 🏆',
       'Breathe! {n} in a row, you are on fire 🚀',
+      '{n} correct! Take a screenshot and show your friends 📸',
+      'Focus mode is on: {n} in a row 🧠',
+      '{n} in a row! This streak deserves a frame 🖼️',
     ],
   );
   static List<String> get cheerLegend => _tl(
@@ -555,30 +644,51 @@ abstract final class AppStrings {
       '{n} düz yazmışdın, bir səhv nədir ki! Davam 💪',
       'Hər kəs yanılır. Əsas odur ki, davam edirsən 😉',
       'Eybi yox, növbəti sualda qaytarırsan! 🎯',
+      'Bu səhv indi oldu, imtahanda yox. Yaxşı xəbərdir 😌',
+      'Səhv səhvlər dəftərinə düşdü, sonra onu da tutacaqsan 📒',
+      'Bir səhv seriyanı silmir: {n} düz hələ sənindir 🔥',
     ],
     [
       'Ты ответил правильно {n} раз подряд, одна ошибка не беда! Дальше 💪',
       'Все ошибаются. Главное, что ты продолжаешь 😉',
       'Ничего, на следующем вопросе отыграешься! 🎯',
+      'Эта ошибка случилась сейчас, а не на экзамене. Хорошая новость 😌',
+      'Ошибка попала в тетрадь ошибок, потом разберёшься и с ней 📒',
+      'Одна ошибка не стирает серию: {n} правильных всё ещё твои 🔥',
     ],
     [
       'You had {n} right, one mistake is nothing! Keep going 💪',
       'Everyone slips. What matters is that you keep going 😉',
       'No worries, you will win it back on the next one! 🎯',
+      'This mistake happened now, not in the exam. Good news 😌',
+      'It went into your mistakes notebook, you will beat it later 📒',
+      'One mistake does not erase the streak: those {n} are still yours 🔥',
     ],
   );
   static List<String> get cheerKimya => _tl(
     [
       'Reaksiya başladı! Ardıcıl {n} düz ⚗️',
       'Mendeleyev səninlə fəxr edərdi 🧪',
+      'Katalizator sənsən: {n} düz ardıcıl 🔥',
+      'Elektronlar yerində, cavablar da: {n} düz ⚛️',
+      'Tənlik bərabərləşdi, seriya da: {n} düz ardıcıl ⚖️',
+      'Bu reaksiya geri dönməzdir: {n} düz ➡️',
     ],
     [
       'Реакция пошла! {n} правильных подряд ⚗️',
       'Менделеев гордился бы тобой 🧪',
+      'Катализатор здесь ты: {n} подряд 🔥',
+      'Электроны на месте, ответы тоже: {n} правильных ⚛️',
+      'Уравнение уравнено, серия тоже: {n} подряд ⚖️',
+      'Эта реакция необратима: {n} правильных ➡️',
     ],
     [
       'The reaction has started! {n} correct in a row ⚗️',
       'Mendeleev would be proud of you 🧪',
+      'You are the catalyst: {n} in a row 🔥',
+      'Electrons in place, answers too: {n} correct ⚛️',
+      'The equation is balanced, and so is your streak: {n} in a row ⚖️',
+      'This reaction is irreversible: {n} correct ➡️',
     ],
   );
   static List<String> get cheerKimyaComeback => _tl(
@@ -590,14 +700,40 @@ abstract final class AppStrings {
     [
       'Hüceyrələrin də alqışlayır! {n} düz ardıcıl 🧬',
       'Təkamül səndən yan keçmir: {n} düz ardıcıl 🌱',
+      'Mitoxondri kimi işləyirsən: {n} düz, enerji tükənmir ⚡',
+      'Neyronların tam gücdədir! Ardıcıl {n} düz 🧠',
+      'Bu sürətlə DNT-ni də oxuyarsan: {n} düz ardıcıl 🔬',
     ],
     [
       'Даже клетки аплодируют! {n} правильных подряд 🧬',
       'Эволюция от тебя не отстаёт: {n} подряд 🌱',
+      'Работаешь как митохондрия: {n} правильных, энергия не кончается ⚡',
+      'Нейроны на полной мощности! {n} правильных подряд 🧠',
+      'С такой скоростью и ДНК прочитаешь: {n} подряд 🔬',
     ],
     [
       'Even your cells are applauding! {n} correct in a row 🧬',
       'Evolution cannot keep up with you: {n} in a row 🌱',
+      'You run like a mitochondrion: {n} correct and still full of energy ⚡',
+      'Your neurons are at full power! {n} correct in a row 🧠',
+      'At this speed you could read DNA: {n} in a row 🔬',
+    ],
+  );
+  static List<String> get cheerBiologiyaComeback => _tl(
+    [
+      'Təbiət də səhvlərlə təkamül edir. Sən də belə 🌱',
+      'Bir mutasiya oldu, keçdi. Növbəti düz sənindir 🧬',
+      'Biologiyada detal çoxdur. İzaha bax, sonrakı sualda tutarsan 🔬',
+    ],
+    [
+      'Природа тоже эволюционирует через ошибки. И ты так же 🌱',
+      'Одна мутация, бывает. Следующий правильный за тобой 🧬',
+      'В биологии много деталей. Посмотри объяснение, и на следующем поймаешь 🔬',
+    ],
+    [
+      'Nature evolves through mistakes too. So do you 🌱',
+      'One mutation, it happens. The next right answer is yours 🧬',
+      'Biology is full of details. Check the explanation and you will get the next one 🔬',
     ],
   );
 
@@ -793,11 +929,24 @@ abstract final class AppStrings {
 
   // Yeniləmə
   static String get updateRequiredTitle =>
-      _t('Yeniləmək lazımdır', 'Требуется обновление', 'Update required');
+      _t('Tətbiqi yenilə', 'Обнови приложение', 'Update the app');
   static String get updateRequiredText => _t(
-    'Bu versiya artıq dəstəklənmir. Davam etmək üçün tətbiqin yeni versiyasını yükləyin.',
-    'Эта версия больше не поддерживается. Чтобы продолжить, установите новую версию приложения.',
-    'This version is no longer supported. Please install the new version of the app to continue.',
+    'Bu versiya artıq işləmir. Davam etmək üçün yeni versiyanı quraşdır.',
+    'Эта версия больше не работает. Чтобы продолжить, установи новую версию.',
+    'This version no longer works. Install the new version to continue.',
+  );
+  static String updateYourVersion(String version) =>
+      _t('Sənin versiyan: $version', 'Твоя версия: $version', 'Your version: $version');
+  /// Məcburi yeniləmə ekranındakı 3 addım (APK ilə quraşdırma).
+  static List<String> get updateSteps => _tl(
+    ['"Yenilə" düyməsinə bas', 'Faylı yüklə', 'Quraşdır və aç'],
+    ['Нажми «Обновить»', 'Скачай файл', 'Установи и открой'],
+    ['Tap "Update"', 'Download the file', 'Install and open'],
+  );
+  static String get updateDataSafe => _t(
+    'Nəticələrin və seriyan yerində qalır',
+    'Твои результаты и серия сохранятся',
+    'Your results and streak stay safe',
   );
   static String get updateAvailableTitle => _t(
     'Yeni versiya var',

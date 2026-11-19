@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/constants/app_strings.dart';
 import '../../../core/theme/app_spacing.dart';
+import '../../../core/widgets/app_bottom_sheet.dart';
 import '../../../core/widgets/app_button.dart';
 import '../../../core/widgets/async_value_view.dart';
 import '../../../core/widgets/math_text.dart';
@@ -125,10 +126,8 @@ class _Exam extends StatelessWidget {
   final VoidCallback onFinish;
 
   Future<void> _jump(BuildContext context) async {
-    final chosen = await showModalBottomSheet<int>(
+    final chosen = await showAppBottomSheet<int>(
       context: context,
-      isScrollControlled: true,
-      showDragHandle: true,
       builder: (_) => _JumpSheet(state: state),
     );
     if (chosen != null) controller.go(chosen);

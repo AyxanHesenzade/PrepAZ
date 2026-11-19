@@ -71,6 +71,30 @@ class OfflineHomeBanner extends ConsumerWidget {
                     ),
                   ],
                 ),
+                if (!hasDownloads) ...[
+                  // heç nə yüklənməyibsə: növbəti dəfə üçün qabarıq ipucu
+                  AppSpacing.gapM,
+                  Container(
+                    padding: const EdgeInsets.all(AppSpacing.m),
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.surfaceContainerLowest,
+                      borderRadius: BorderRadius.circular(AppRadius.m),
+                      border: Border.all(color: color.withValues(alpha: 0.6), width: 1.5),
+                    ),
+                    child: Row(
+                      children: [
+                        const Icon(Icons.download_for_offline_rounded, color: color, size: 30),
+                        AppSpacing.gapM,
+                        Expanded(
+                          child: Text(
+                            AppStrings.homeOfflineNextTime,
+                            style: text.bodyMedium?.copyWith(fontWeight: FontWeight.w700),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
                 if (hasDownloads) ...[
                   AppSpacing.gapM,
                   Pressable(

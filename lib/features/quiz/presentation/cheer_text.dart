@@ -16,7 +16,7 @@ String cheerText(Cheer cheer, {required String subjectSlug, required Random rand
     ...switch ((subjectSlug, cheer.kind)) {
       ('kimya', CheerKind.comeback) => AppStrings.cheerKimyaComeback,
       ('kimya', _) => AppStrings.cheerKimya,
-      ('biologiya', CheerKind.comeback) => const <String>[],
+      ('biologiya', CheerKind.comeback) => AppStrings.cheerBiologiyaComeback,
       ('biologiya', _) => AppStrings.cheerBiologiya,
       _ => const <String>[],
     },

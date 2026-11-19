@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/constants/app_strings.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_spacing.dart';
+import '../../../../core/widgets/app_bottom_sheet.dart';
 import '../../../../core/widgets/pressable.dart';
 import '../../domain/subject.dart';
 
@@ -20,13 +21,9 @@ Future<int?> showSubjectSheet(
   required List<Subject> subjects,
   required int selectedId,
 }) {
-  return showModalBottomSheet<int>(
+  return showAppBottomSheet<int>(
     context: context,
-    showDragHandle: true,
-    useSafeArea: true,
-    shape: const RoundedRectangleBorder(
-      borderRadius: BorderRadius.vertical(top: Radius.circular(AppRadius.xl)),
-    ),
+    isScrollControlled: false,
     builder: (_) => _SubjectSheet(subjects: subjects, selectedId: selectedId),
   );
 }

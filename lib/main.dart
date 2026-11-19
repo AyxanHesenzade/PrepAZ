@@ -24,6 +24,7 @@ import 'features/browse/presentation/browse_providers.dart';
 import 'features/offline/data/file_image_store.dart';
 import 'features/offline/data/local_database.dart';
 import 'features/offline/presentation/offline_providers.dart';
+import 'features/offline/presentation/widgets/download_nudge_card.dart';
 import 'features/quiz/data/file_image_cache.dart';
 import 'features/quiz/presentation/quiz_providers.dart';
 import 'features/reminders/data/local_reminder_scheduler.dart';
@@ -62,6 +63,7 @@ Future<void> main() async {
         ),
         mascotMotionProvider.overrideWithValue(true),
         whatsNewEnabledProvider.overrideWithValue(true),
+        downloadNudgeEnabledProvider.overrideWithValue(true),
         reminderSchedulerProvider.overrideWithValue(
           LocalReminderScheduler(prefs, channelName: AppStrings.reminderChannel),
         ),

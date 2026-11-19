@@ -3,19 +3,14 @@ import 'package:flutter/material.dart';
 import '../../../core/constants/app_strings.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_spacing.dart';
+import '../../../core/widgets/app_bottom_sheet.dart';
 import '../../../core/widgets/app_button.dart';
 import '../domain/release_note.dart';
 
 /// "Yeniliklər": aşağıdan açılan panel, ən yeni versiya yuxarıda.
 Future<void> showWhatsNewSheet(BuildContext context, List<ReleaseNote> notes) {
-  return showModalBottomSheet<void>(
+  return showAppBottomSheet<void>(
     context: context,
-    showDragHandle: true,
-    useSafeArea: true,
-    isScrollControlled: true,
-    shape: const RoundedRectangleBorder(
-      borderRadius: BorderRadius.vertical(top: Radius.circular(AppRadius.xl)),
-    ),
     builder: (_) => WhatsNewSheet(notes: notes),
   );
 }

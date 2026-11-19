@@ -10,6 +10,7 @@ import '../../auth/presentation/auth_providers.dart';
 import '../../browse/presentation/topic_list_screen.dart';
 import '../../offline/presentation/download_screen.dart';
 import '../../offline/presentation/offline_providers.dart';
+import '../../offline/presentation/widgets/download_nudge_card.dart';
 import '../../offline/presentation/widgets/offline_home_banner.dart';
 import '../../goal/domain/exam_goal.dart';
 import '../../goal/presentation/goal_providers.dart';
@@ -22,13 +23,17 @@ import '../../update/presentation/update_banner.dart';
 import '../../tour/presentation/tour_controller.dart';
 import '../../tour/presentation/tour_targets.dart';
 import '../../tour/presentation/widgets/tour_overlay.dart';
+import '../../../core/widgets/pressable.dart';
+import '../../settings/presentation/settings_providers.dart';
 import '../domain/subject.dart';
+import '../domain/subject_filter.dart';
 import '../domain/topic_mastery.dart';
 import 'home_providers.dart';
 import 'weak_topics_screen.dart';
 import 'widgets/header_mascot.dart';
 import 'widgets/streak_card.dart';
 import 'widgets/subject_card.dart';
+import 'widgets/subject_filter_sheet.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -122,6 +127,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   children: [
                     const UpdateBanner(),
                     const OfflineHomeBanner(),
+                    const DownloadNudgeCard(),
                     const FadeSlideIn(child: _StreakSection()),
                     AppSpacing.gapM,
                     const FadeSlideIn(index: 1, child: _GoalSection()),
@@ -255,15 +261,26 @@ class _SubjectsSection extends ConsumerWidget {
     return AsyncValueView(
       value: ref.watch(subjectsProvider),
       onRetry: () => ref.invalidate(subjectsProvider),
-      builder: (subjects) {
+      builder: (all) {
         if (offline) return const SizedBox.shrink();
-        if (subjects.isEmpty) return Text(AppStrings.noSubjects);
+        if (all.isEmpty) return Text(AppStrings.noSubjects);
+        final hidden = ref.watch(settingsControllerProvider.select((s) => s.hiddenSubjectIds));
+        final subjects = visibleSubjects(all, hidden);
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              AppStrings.subjects,
-              style: Theme.of(context).textTheme.titleLarge,
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    AppStrings.subjects,
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                ),
+                // bir fənn varsa seçməyə bir şey yoxdur
+                if (all.length > 1)
+                  _SubjectFilterButton(all: all, hidden: hidden, shown: subjects.length),
+              ],
             ),
             AppSpacing.gapM,
             for (final (i, subject) in subjects.indexed)
@@ -274,6 +291,49 @@ class _SubjectsSection extends ConsumerWidget {
           ],
         );
       },
+    );
+  }
+}
+
+/// "Fənlər" başlığının yanında: filtr düyməsi. Filtr aktivdirsə "2/3" göstərir və rənglidir.
+class _SubjectFilterButton extends ConsumerWidget {
+  const _SubjectFilterButton({required this.all, required this.hidden, required this.shown});
+
+  final List<Subject> all;
+  final Set<int> hidden;
+  final int shown;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final scheme = Theme.of(context).colorScheme;
+    final active = shown < all.length;
+    final color = active ? scheme.primary : scheme.onSurfaceVariant;
+    return Pressable(
+      onTap: () async {
+        final next = await showSubjectFilterSheet(context, subjects: all, hidden: hidden);
+        if (next != null) {
+          await ref.read(settingsControllerProvider.notifier).setHiddenSubjects(next);
+        }
+      },
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: AppSpacing.m - 2, vertical: AppSpacing.s - 2),
+        decoration: BoxDecoration(
+          color: active ? scheme.primary.withValues(alpha: 0.12) : scheme.surfaceContainerLowest,
+          borderRadius: BorderRadius.circular(AppRadius.pill),
+          border: Border.all(color: active ? scheme.primary : scheme.outlineVariant),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(Icons.tune_rounded, size: 18, color: color),
+            AppSpacing.gapXs,
+            Text(
+              active ? AppStrings.subjectFilterCount(shown, all.length) : AppStrings.subjectFilterButton,
+              style: Theme.of(context).textTheme.labelLarge?.copyWith(color: color, fontWeight: FontWeight.w700),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

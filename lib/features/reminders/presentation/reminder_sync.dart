@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/constants/app_strings.dart';
 import '../../home/presentation/home_providers.dart';
+import '../../offline/domain/download_nudge.dart';
+import '../../offline/presentation/offline_providers.dart';
 import '../../tour/presentation/tour_controller.dart';
 import '../domain/reminder.dart';
 import '../domain/reminder_repository.dart';
@@ -46,13 +48,36 @@ class _ReminderSyncState extends ConsumerState<ReminderSync> {
         await scheduler.requestPermissionOnce();
       }
       final status = await ref.read(streakStatusRepositoryProvider).getStatus();
-      final plans = planReminders(now: DateTime.now(), status: status);
+      final now = DateTime.now();
+      // kataloq sorğusu yalnız lazım olan axşam (bu bildirişin günü) edilir
+      final missing = isDownloadReminderDay(now) && await _hasMissingTopics();
+      final plans = planReminders(now: now, status: status, hasMissingTopics: missing);
       await scheduler.replaceAll([for (final p in plans) toScheduled(p)]);
     } catch (_) {
       // xatırlatma köməkçi funksiyadır: internet yoxdursa köhnə plan qalır
     } finally {
       _running = false;
     }
+  }
+
+  /// Hər hansı fəndə telefona tam yüklənməmiş mövzu qalıbmı (köməkçinin sözü ilə eyni qayda)?
+  /// Oxunmasa "yox" sayılır (artıq bildiriş göndərmirik).
+  Future<bool> _hasMissingTopics() async {
+    try {
+      final subjects = await ref.read(subjectsProvider.future);
+      final stored = await ref.read(offlineStoreProvider).watchAllTopics().first;
+      final remote = ref.read(remoteDownloadSourceProvider);
+      for (final subject in subjects) {
+        try {
+          if (firstMissingTopic(await remote.fetchCatalog(subject.id), stored) != null) return true;
+        } catch (_) {
+          // bu fənnin kataloqu alınmadı: növbətisinə baxırıq
+        }
+      }
+    } catch (_) {
+      // fənlər və ya telefondakı baza oxunmadı
+    }
+    return false;
   }
 
   @override
@@ -87,6 +112,10 @@ ScheduledReminder toScheduled(ReminderPlan p) {
     ReminderKind.comeBack => (
       AppStrings.reminderTitleComeBack,
       AppStrings.reminderComeBack,
+    ),
+    ReminderKind.download => (
+      AppStrings.reminderTitleDownload,
+      AppStrings.reminderDownload,
     ),
   };
   return ScheduledReminder(

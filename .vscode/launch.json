@@ -9,6 +9,13 @@
       "args": ["--dart-define-from-file=env/test.json"]
     },
     {
+      "name": "PrepAZ (məcburi yeniləmə önbaxışı)",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": ["--dart-define-from-file=env/test.json", "--dart-define=PREVIEW_FORCE_UPDATE=true"]
+    },
+    {
       "name": "PrepAZ (prod)",
       "request": "launch",
       "type": "dart",

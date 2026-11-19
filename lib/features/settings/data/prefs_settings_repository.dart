@@ -14,6 +14,9 @@ class PrefsSettingsRepository implements SettingsRepository {
   static const _tourSeenKey = 'settings.tour_seen';
   static const _pendingLegalKey = 'settings.legal_pending';
   static const _whatsNewKey = 'settings.whats_new_seen';
+  static const _nudgeCountKey = 'settings.download_nudge_count';
+  static const _nudgeAtKey = 'settings.download_nudge_at';
+  static const _hiddenSubjectsKey = 'settings.hidden_subjects';
 
   final SharedPreferences _prefs;
 
@@ -29,6 +32,15 @@ class PrefsSettingsRepository implements SettingsRepository {
       tourSeen: _prefs.getBool(_tourSeenKey) ?? false,
       pendingLegalVersion: _prefs.getInt(_pendingLegalKey) ?? 0,
       whatsNewSeenBuild: _prefs.getInt(_whatsNewKey) ?? 0,
+      downloadNudgeCount: _prefs.getInt(_nudgeCountKey) ?? 0,
+      downloadNudgeAt: switch (_prefs.getInt(_nudgeAtKey)) {
+        final ms? when ms > 0 => DateTime.fromMillisecondsSinceEpoch(ms),
+        _ => null,
+      },
+      hiddenSubjectIds: {
+        for (final s in _prefs.getStringList(_hiddenSubjectsKey) ?? const <String>[])
+          ?int.tryParse(s),
+      },
     );
   }
 
@@ -39,5 +51,8 @@ class PrefsSettingsRepository implements SettingsRepository {
     await _prefs.setBool(_tourSeenKey, settings.tourSeen);
     await _prefs.setInt(_pendingLegalKey, settings.pendingLegalVersion);
     await _prefs.setInt(_whatsNewKey, settings.whatsNewSeenBuild);
+    await _prefs.setInt(_nudgeCountKey, settings.downloadNudgeCount);
+    await _prefs.setInt(_nudgeAtKey, settings.downloadNudgeAt?.millisecondsSinceEpoch ?? 0);
+    await _prefs.setStringList(_hiddenSubjectsKey, [for (final id in settings.hiddenSubjectIds) '$id']);
   });
 }

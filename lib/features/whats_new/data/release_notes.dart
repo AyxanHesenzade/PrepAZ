@@ -22,6 +22,21 @@ final releaseNotes = <ReleaseNote>[
         '🔑 Forgot your password? Tap "Forgot your password?" on the sign-in screen and set a new one with the code we email you.',
       ),
       _t(
+        '🚌 İnternetsiz həll et: mövzunu telefona yüklə, yolda internet olmadan da məşq et.',
+        '🚌 Решай без интернета: загрузи тему на телефон и занимайся в дороге офлайн.',
+        '🚌 Practise offline: download a topic to your phone and keep going on the road.',
+      ),
+      _t(
+        '🎯 Ana ekranda "Fənlər"in yanındakı Filtr ilə yalnız hazırlaşdığın fənləri saxla.',
+        '🎯 Кнопка «Фильтр» рядом с «Предметами» оставит на главном экране только твои предметы.',
+        '🎯 Use the Filter next to "Subjects" on the home screen to keep only the subjects you are preparing for.',
+      ),
+      _t(
+        '🚩 Sualda səhv görmüsən? Qırmızı "Xəta bildir" düyməsi indi daha görünəndir.',
+        '🚩 Нашёл ошибку в вопросе? Красная кнопка «Сообщить об ошибке» теперь заметнее.',
+        '🚩 Spotted a mistake in a question? The red "Report a problem" button is easier to find now.',
+      ),
+      _t(
         '✨ Yeniləmədən sonra nələrin dəyişdiyini burada göstərəcəyik.',
         '✨ После обновлений здесь будет видно, что нового.',
         "✨ After each update we'll show you what's new right here.",

@@ -37,6 +37,15 @@ class SettingsController extends Notifier<AppSettings> {
   Future<void> setWhatsNewSeen(int build) =>
       _update(state.copyWith(whatsNewSeenBuild: build));
 
+  /// Köməkçi "mövzunu yüklə" dedi: say artır, vaxt yazılır.
+  Future<void> markDownloadNudged(DateTime at) => _update(
+    state.copyWith(downloadNudgeCount: state.downloadNudgeCount + 1, downloadNudgeAt: at),
+  );
+
+  /// Ana ekranın fənn filtri: gizlədilən fənlərin id-ləri.
+  Future<void> setHiddenSubjects(Set<int> ids) =>
+      _update(state.copyWith(hiddenSubjectIds: Set.unmodifiable(ids)));
+
   Future<void> clearPendingLegal() =>
       _update(state.copyWith(pendingLegalVersion: 0));
 

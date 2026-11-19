@@ -5,6 +5,7 @@ import '../../../core/config/app_version.dart';
 import '../../../core/constants/app_strings.dart';
 import '../../../core/error/app_exception.dart';
 import '../../../core/theme/app_spacing.dart';
+import '../../../core/widgets/app_bottom_sheet.dart';
 import '../../../core/widgets/app_button.dart';
 import '../../../core/widgets/message_banner.dart';
 import '../../quiz/domain/question.dart';
@@ -14,10 +15,8 @@ import 'report_providers.dart';
 /// Problem bildirişi pəncərəsi. [question] verilibsə sualdakı xəta, yoxsa tətbiqdəki xəta bildirilir.
 /// Açıqlama məcburidir: boş və ya çox qısa mətnlə göndərmək olmur.
 Future<void> showReportSheet(BuildContext context, {Question? question}) {
-  return showModalBottomSheet<void>(
+  return showAppBottomSheet<void>(
     context: context,
-    isScrollControlled: true,
-    showDragHandle: true,
     builder: (_) => _ReportSheet(question: question),
   );
 }
@@ -79,7 +78,8 @@ class _ReportSheetState extends ConsumerState<_ReportSheet> {
     final scheme = Theme.of(context).colorScheme;
     final valid = ReportRules.isValid(_controller.text);
     return Padding(
-      padding: EdgeInsets.fromLTRB(AppSpacing.m + 4, 0, AppSpacing.m + 4, MediaQuery.viewInsetsOf(context).bottom + AppSpacing.m),
+      // klaviatura və sistem zolağı üçün boşluğu showAppBottomSheet verir
+      padding: const EdgeInsets.fromLTRB(AppSpacing.m + 4, 0, AppSpacing.m + 4, AppSpacing.m),
       child: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
