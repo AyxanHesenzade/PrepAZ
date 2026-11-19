@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -16,7 +17,7 @@ const _subject = Subject(id: 4, slug: 'kimya', name: 'Kimya');
 /// Link heç vaxt gəlmir: yer tutucunun görünməsini yoxlamaq üçün.
 class _HangingImages implements QuestionImageRepository {
   @override
-  Future<String> signedUrl(String path) => Completer<String>().future;
+  Future<Uint8List> fetch(String path) => Completer<Uint8List>().future;
 }
 
 Widget app(FakeQuizRepository repo, {QuestionImageRepository? images, bool imagesEnabled = true}) => ProviderScope(

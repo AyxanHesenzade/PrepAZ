@@ -3,16 +3,17 @@ import 'dart:typed_data';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../../../core/error/app_exception.dart';
-import '../../quiz/data/supabase_question_image_repository.dart';
 import '../../quiz/data/supabase_quiz_repository.dart';
 import '../../quiz/domain/question.dart';
+import '../../quiz/domain/question_image_repository.dart';
 import '../domain/offline_models.dart';
 import '../domain/remote_download_source.dart';
 
 class SupabaseDownloadSource implements RemoteDownloadSource {
-  const SupabaseDownloadSource(this._db);
+  const SupabaseDownloadSource(this._db, this._images);
 
   final SupabaseClient _db;
+  final QuestionImageRepository _images;
 
   /// Supabase bir sorğuda ən çox 1000 sətir qaytarır, ona görə səhifə-səhifə oxunur.
   static const _page = 1000;
@@ -50,14 +51,9 @@ class SupabaseDownloadSource implements RemoteDownloadSource {
     });
   }
 
+  /// Şəkil quizdəki kimi eyni mənbədən (R2 → Supabase) gəlir: mənbə dəyişəndə burada heç nə dəyişmir.
   @override
-  Future<Uint8List> downloadImage(String path) {
-    return guard(
-      () => _db.storage
-          .from(SupabaseQuestionImageRepository.bucket)
-          .download(path),
-    );
-  }
+  Future<Uint8List> downloadImage(String path) => _images.fetch(path);
 }
 
 /// `get_download_catalog` sətri → [CatalogTopic]. Ayrıca funksiyadır ki, birbaşa test olunsun.

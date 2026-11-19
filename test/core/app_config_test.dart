@@ -21,6 +21,7 @@ void main() {
       expect(DebugDefaults.supabaseUrl, json['SUPABASE_URL']);
       expect(DebugDefaults.supabaseKey, json['SUPABASE_KEY']);
       expect(DebugDefaults.googleWebClientId, json['GOOGLE_WEB_CLIENT_ID']);
+      expect(DebugDefaults.imageBaseUrl, json['IMAGE_BASE_URL']);
     },
   );
 

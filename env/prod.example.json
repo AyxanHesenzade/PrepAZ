@@ -1,4 +1,5 @@
 {
   "SUPABASE_URL": "https://REAL-LAYIHE.supabase.co",
-  "SUPABASE_KEY": "sb_publishable_REAL_ACAR"
+  "SUPABASE_KEY": "sb_publishable_REAL_ACAR",
+  "IMAGE_BASE_URL": "https://SEKIL-LINKI.example"
 }

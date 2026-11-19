@@ -10,6 +10,7 @@ import '../data/supabase_download_source.dart';
 import '../domain/answer_outbox.dart';
 import '../domain/image_store.dart';
 import '../../home/domain/subject.dart';
+import '../../quiz/presentation/quiz_providers.dart';
 import '../domain/offline_models.dart';
 import '../domain/offline_store.dart';
 import '../domain/remote_download_source.dart';
@@ -46,7 +47,10 @@ final answerOutboxProvider = Provider<AnswerOutbox>(
 final imageStoreProvider = Provider<ImageStore>((ref) => InMemoryImageStore());
 
 final remoteDownloadSourceProvider = Provider<RemoteDownloadSource>(
-  (ref) => SupabaseDownloadSource(ref.watch(supabaseClientProvider)),
+  (ref) => SupabaseDownloadSource(
+    ref.watch(supabaseClientProvider),
+    ref.watch(remoteImageRepositoryProvider),
+  ),
 );
 
 final topicDownloaderProvider = Provider<TopicDownloader>(

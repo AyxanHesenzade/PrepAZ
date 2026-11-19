@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -21,7 +22,7 @@ class QuestionImage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // Şəkil telefonda yüklənibsə, internetsiz fayldan açılır; yoxsa imzalı link ilə serverdən.
+    // Şəkil telefonda yüklənibsə (oflayn mövzu), internetsiz fayldan açılır; yoxsa keşdən və ya serverdən.
     final local = ref.watch(localImagePathProvider(path));
     return local.when(
       loading: () =>
@@ -45,18 +46,18 @@ class QuestionImage extends ConsumerWidget {
   }
 
   Widget _fromServer(BuildContext context, WidgetRef ref) {
-    final url = ref.watch(questionImageUrlProvider(path));
-    return url.when(
+    final image = ref.watch(questionImageBytesProvider(path));
+    return image.when(
       loading: () =>
           const _Placeholder(child: CircularProgressIndicator(strokeWidth: 2)),
       error: (_, _) => const _Placeholder(child: _FailedLabel()),
-      data: (link) => GestureDetector(
-        onTap: () => _zoom(context, _NetworkImage(link)),
+      data: (bytes) => GestureDetector(
+        onTap: () => _zoom(context, _MemoryImage(bytes)),
         child: ConstrainedBox(
           constraints: BoxConstraints(
             maxHeight: compact ? _compactMaxHeight : double.infinity,
           ),
-          child: _Frame(child: _NetworkImage(link, width: double.infinity)),
+          child: _Frame(child: _MemoryImage(bytes, width: double.infinity)),
         ),
       ),
     );
@@ -121,24 +122,20 @@ class _FileImage extends StatelessWidget {
   }
 }
 
-class _NetworkImage extends StatelessWidget {
-  const _NetworkImage(this.url, {this.width});
+/// Serverdən (və ya keşdən) gəlmiş baytlar. Yükləmə [questionImageBytesProvider]-də bitib.
+class _MemoryImage extends StatelessWidget {
+  const _MemoryImage(this.bytes, {this.width});
 
-  final String url;
+  final Uint8List bytes;
   final double? width;
 
   @override
   Widget build(BuildContext context) {
-    return Image.network(
-      url,
+    return Image.memory(
+      bytes,
       width: width,
       fit: BoxFit.contain,
-      loadingBuilder: (context, child, progress) => progress == null
-          ? child
-          : const SizedBox(
-              height: QuestionImage._placeholderHeight,
-              child: Center(child: CircularProgressIndicator(strokeWidth: 2)),
-            ),
+      gaplessPlayback: true,
       errorBuilder: (_, _, _) => const SizedBox(
         height: QuestionImage._placeholderHeight,
         child: Center(child: _FailedLabel()),

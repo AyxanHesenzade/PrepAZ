@@ -10,4 +10,7 @@ abstract final class DebugDefaults {
   static const supabaseKey = 'sb_publishable__y6-m0NS2qXkFn_LOCld-g_SBFkFzIV';
   static const googleWebClientId =
       '825498466904-1dhrup3mprvp07rhe7r63befe81djsen.apps.googleusercontent.com';
+
+  /// Şəkillərin açıq linki (R2). Boş = yalnız Supabase Storage.
+  static const imageBaseUrl = '';
 }

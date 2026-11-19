@@ -13,6 +13,7 @@ abstract final class AppConfig {
   static const _urlFromEnv = String.fromEnvironment('SUPABASE_URL');
   static const _keyFromEnv = String.fromEnvironment('SUPABASE_KEY');
   static const _googleFromEnv = String.fromEnvironment('GOOGLE_WEB_CLIENT_ID');
+  static const _imageFromEnv = String.fromEnvironment('IMAGE_BASE_URL');
 
   static String get supabaseUrl => _urlFromEnv.isNotEmpty
       ? _urlFromEnv
@@ -26,6 +27,12 @@ abstract final class AppConfig {
   static String get googleWebClientId => _googleFromEnv.isNotEmpty
       ? _googleFromEnv
       : (kDebugMode ? DebugDefaults.googleWebClientId : '');
+
+  /// Sual şəkillərinin açıq linki (məs. Cloudflare R2: `https://img.example.az`), sonunda `/` olmadan.
+  /// Boşdursa şəkillər yalnız Supabase Storage-dən götürülür. Doludursa əvvəl buradan, alınmasa Supabase-dən.
+  static String get imageBaseUrl => _imageFromEnv.isNotEmpty
+      ? _imageFromEnv
+      : (kDebugMode ? DebugDefaults.imageBaseUrl : '');
 
   static bool get isConfigured =>
       supabaseUrl.isNotEmpty && supabaseKey.isNotEmpty;

@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:prep_az/features/browse/domain/browse_repository.dart';
 import 'package:prep_az/features/browse/domain/browse_topic.dart';
 import 'package:prep_az/core/constants/app_strings.dart';
@@ -152,10 +154,10 @@ class FakeImageRepository implements QuestionImageRepository {
   int calls = 0;
 
   @override
-  Future<String> signedUrl(String path) async {
+  Future<Uint8List> fetch(String path) async {
     calls++;
     if (fail) throw AppException(AppStrings.imageFailed);
-    return 'https://example.invalid/$path';
+    return Uint8List(0);
   }
 }
 

@@ -11,20 +11,20 @@ import 'package:prep_az/features/quiz/domain/question_image_repository.dart';
 import 'package:prep_az/features/quiz/presentation/quiz_providers.dart';
 import 'package:prep_az/features/quiz/presentation/widgets/question_image.dart';
 
-class CountingLinks implements QuestionImageRepository {
-  int calls = 0;
-
-  @override
-  Future<String> signedUrl(String path) async {
-    calls++;
-    return 'https://example.com/$path';
-  }
-}
-
 /// 1x1 şəffaf PNG.
 final _png = base64Decode(
   'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==',
 );
+
+class CountingLinks implements QuestionImageRepository {
+  int calls = 0;
+
+  @override
+  Future<Uint8List> fetch(String path) async {
+    calls++;
+    return Uint8List.fromList(_png);
+  }
+}
 
 void main() {
   late Directory dir;
@@ -55,7 +55,7 @@ void main() {
         child: MaterialApp(home: Scaffold(body: QuestionImage(path))),
       ),
     );
-    // Əvvəl telefondakı fayl yoxlanır, sonra (yoxdursa) server linki alınır: iki asinxron addım.
+    // Əvvəl telefondakı fayl yoxlanır, sonra (yoxdursa) şəkil serverdən alınır: iki asinxron addım.
     for (var i = 0; i < 3; i++) {
       await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 20)));
       await tester.pump();
@@ -72,11 +72,11 @@ void main() {
     expect(links.calls, 0);
   });
 
-  testWidgets('an image that is not on the phone is loaded through the signed link', (tester) async {
+  testWidgets('an image that is not on the phone is loaded from the server', (tester) async {
     await show(tester, 'B.webp');
 
     final image = tester.widget<Image>(find.byType(Image));
-    expect(image.image, isA<NetworkImage>());
+    expect(image.image, isA<MemoryImage>());
     expect(links.calls, 1);
   });
 }

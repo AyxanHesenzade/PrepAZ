@@ -24,6 +24,8 @@ import 'features/browse/presentation/browse_providers.dart';
 import 'features/offline/data/file_image_store.dart';
 import 'features/offline/data/local_database.dart';
 import 'features/offline/presentation/offline_providers.dart';
+import 'features/quiz/data/file_image_cache.dart';
+import 'features/quiz/presentation/quiz_providers.dart';
 import 'features/reminders/data/local_reminder_scheduler.dart';
 import 'features/reminders/presentation/reminder_providers.dart';
 import 'features/settings/data/prefs_settings_repository.dart';
@@ -46,6 +48,8 @@ Future<void> main() async {
   await _startLogging(prefs);
   // Yüklənmiş mövzuların şəkilləri sistemin təmizləyə bilməyəcəyi qovluqda saxlanır (cache yox).
   final support = await getApplicationSupportDirectory();
+  // Onlayn baxılan şəkillərin keşi: sistem yer azalanda təmizləyə bilər, şəkil sadəcə yenidən yüklənir.
+  final cache = await getApplicationCacheDirectory();
 
   // retry: null — uğursuz sorğu öz-özünə təkrarlanmır, istifadəçi "Yenidən cəhd et" basır.
   runApp(
@@ -64,6 +68,9 @@ Future<void> main() async {
         localDatabaseProvider.overrideWithValue(LocalDatabase.open()),
         imageStoreProvider.overrideWithValue(
           FileImageStore(Directory('${support.path}${Platform.pathSeparator}offline_images')),
+        ),
+        imageCacheProvider.overrideWithValue(
+          FileImageCache(Directory('${cache.path}${Platform.pathSeparator}question_images')),
         ),
       ],
       child: const PrepAzApp(),
